@@ -7,7 +7,7 @@ namespace BLL
     {
         public void Inserir()
         {
-
+            
         }
         public void Excluir()
         {
