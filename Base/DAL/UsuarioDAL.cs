@@ -56,6 +56,10 @@ namespace DAL
 
                 throw new Exception(ex.Message);
             }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
