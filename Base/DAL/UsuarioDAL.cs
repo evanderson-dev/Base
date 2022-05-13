@@ -12,7 +12,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "";
+                cn.ConnectionString = "User ID=SA;Initial Catalog=Loja;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";//ESTRUTURA DE CONEXÃO
                 SqlCommand cmd = new SqlCommand
                 {
                     Connection = cn,
