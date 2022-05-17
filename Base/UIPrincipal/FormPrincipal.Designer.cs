@@ -1,0 +1,234 @@
+﻿
+namespace UIPrincipal
+{
+    partial class FormPrincipal
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gRUPODEUSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gRUPODEUSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aJUDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOCAISDEUSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sOBREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gRUPODEUSUARIOToolStripMenuItem,
+            this.aJUDAToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // gRUPODEUSUARIOToolStripMenuItem
+            // 
+            this.gRUPODEUSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uSUARIOSToolStripMenuItem,
+            this.gRUPODEUSUARIOSToolStripMenuItem});
+            this.gRUPODEUSUARIOToolStripMenuItem.Name = "gRUPODEUSUARIOToolStripMenuItem";
+            this.gRUPODEUSUARIOToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.gRUPODEUSUARIOToolStripMenuItem.Text = "CADASTRO";
+            this.gRUPODEUSUARIOToolStripMenuItem.Click += new System.EventHandler(this.gRUPODEUSUARIOToolStripMenuItem_Click);
+            // 
+            // uSUARIOSToolStripMenuItem
+            // 
+            this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
+            this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
+            // 
+            // gRUPODEUSUARIOSToolStripMenuItem
+            // 
+            this.gRUPODEUSUARIOSToolStripMenuItem.Name = "gRUPODEUSUARIOSToolStripMenuItem";
+            this.gRUPODEUSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.gRUPODEUSUARIOSToolStripMenuItem.Text = "GRUPO DE USUARIOS";
+            // 
+            // aJUDAToolStripMenuItem
+            // 
+            this.aJUDAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lOCAISDEUSUARIOSToolStripMenuItem,
+            this.sOBREToolStripMenuItem,
+            this.sAIRToolStripMenuItem});
+            this.aJUDAToolStripMenuItem.Name = "aJUDAToolStripMenuItem";
+            this.aJUDAToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.aJUDAToolStripMenuItem.Text = "AJUDA";
+            // 
+            // lOCAISDEUSUARIOSToolStripMenuItem
+            // 
+            this.lOCAISDEUSUARIOSToolStripMenuItem.Name = "lOCAISDEUSUARIOSToolStripMenuItem";
+            this.lOCAISDEUSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.lOCAISDEUSUARIOSToolStripMenuItem.Text = "LOCAIS DE USUARIOS";
+            // 
+            // sOBREToolStripMenuItem
+            // 
+            this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.sOBREToolStripMenuItem.Text = "SOBRE";
+            // 
+            // sAIRToolStripMenuItem
+            // 
+            this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.sAIRToolStripMenuItem.Text = "SAIR";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(513, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(95, 95);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(311, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 95);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(412, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(95, 95);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(210, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 95);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 575);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(138, 17);
+            this.toolStripStatusLabel1.Text = "USUARIO: ANONYMOUS";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 124);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 451);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // FormPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 597);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "FormPrincipal";
+            this.Text = "FormPrincipal";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gRUPODEUSUARIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aJUDAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sAIRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lOCAISDEUSUARIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sOBREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gRUPODEUSUARIOSToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+    }
+}
