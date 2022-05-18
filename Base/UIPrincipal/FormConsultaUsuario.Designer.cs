@@ -32,9 +32,9 @@ namespace UIPrincipal
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultaUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonSair = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonNovo = new System.Windows.Forms.Button();
@@ -60,6 +60,17 @@ namespace UIPrincipal
             this.panel1.Size = new System.Drawing.Size(764, 100);
             this.panel1.TabIndex = 0;
             // 
+            // buttonSair
+            // 
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(22, 42);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(66, 30);
+            this.buttonSair.TabIndex = 3;
+            this.buttonSair.Text = "&VOLTAR";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,17 +92,6 @@ namespace UIPrincipal
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(784, 35);
             this.panel2.TabIndex = 1;
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(22, 42);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(66, 30);
-            this.buttonSair.TabIndex = 3;
-            this.buttonSair.Text = "&VOLTAR";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // buttonExcluir
             // 
@@ -125,6 +125,7 @@ namespace UIPrincipal
             this.buttonNovo.TabIndex = 0;
             this.buttonNovo.Text = "&NOVO";
             this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // textBox1
             // 
