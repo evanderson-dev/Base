@@ -47,12 +47,43 @@ namespace UIPrincipal
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            idLabel.Location = new System.Drawing.Point(12, 64);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 6;
+            idLabel.Text = "Id:";
+            // 
+            // nomeUsuarioLabel
+            // 
+            nomeUsuarioLabel.AutoSize = true;
+            nomeUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            nomeUsuarioLabel.Location = new System.Drawing.Point(115, 64);
+            nomeUsuarioLabel.Name = "nomeUsuarioLabel";
+            nomeUsuarioLabel.Size = new System.Drawing.Size(77, 13);
+            nomeUsuarioLabel.TabIndex = 8;
+            nomeUsuarioLabel.Text = "Nome Usuario:";
+            // 
+            // senhaLabel
+            // 
+            senhaLabel.AutoSize = true;
+            senhaLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            senhaLabel.Location = new System.Drawing.Point(550, 64);
+            senhaLabel.Name = "senhaLabel";
+            senhaLabel.Size = new System.Drawing.Size(41, 13);
+            senhaLabel.TabIndex = 10;
+            senhaLabel.Text = "Senha:";
+            senhaLabel.Click += new System.EventHandler(this.senhaLabel_Click);
+            // 
             // buttonSalvar
             // 
             this.buttonSalvar.Location = new System.Drawing.Point(12, 415);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvar.TabIndex = 1;
+            this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "SAL&VAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -62,16 +93,17 @@ namespace UIPrincipal
             this.buttonSalvarECadastrarNovo.Location = new System.Drawing.Point(93, 415);
             this.buttonSalvarECadastrarNovo.Name = "buttonSalvarECadastrarNovo";
             this.buttonSalvarECadastrarNovo.Size = new System.Drawing.Size(192, 23);
-            this.buttonSalvarECadastrarNovo.TabIndex = 3;
+            this.buttonSalvarECadastrarNovo.TabIndex = 4;
             this.buttonSalvarECadastrarNovo.Text = "SALVAR E CADASTRAR UM NOVO";
             this.buttonSalvarECadastrarNovo.UseVisualStyleBackColor = true;
+            this.buttonSalvarECadastrarNovo.Click += new System.EventHandler(this.buttonSalvarECadastrarNovo_Click);
             // 
             // buttonSair
             // 
             this.buttonSair.Location = new System.Drawing.Point(713, 415);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 4;
+            this.buttonSair.TabIndex = 5;
             this.buttonSair.Text = "&SAIR";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -87,19 +119,9 @@ namespace UIPrincipal
             this.ativoCheckBox.Location = new System.Drawing.Point(736, 78);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(52, 24);
-            this.ativoCheckBox.TabIndex = 6;
+            this.ativoCheckBox.TabIndex = 2;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            idLabel.Location = new System.Drawing.Point(12, 64);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 6;
-            idLabel.Text = "Id:";
             // 
             // idTextBox
             // 
@@ -110,16 +132,6 @@ namespace UIPrincipal
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTextBox.TabIndex = 7;
             // 
-            // nomeUsuarioLabel
-            // 
-            nomeUsuarioLabel.AutoSize = true;
-            nomeUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(115, 64);
-            nomeUsuarioLabel.Name = "nomeUsuarioLabel";
-            nomeUsuarioLabel.Size = new System.Drawing.Size(77, 13);
-            nomeUsuarioLabel.TabIndex = 8;
-            nomeUsuarioLabel.Text = "Nome Usuario:";
-            // 
             // nomeUsuarioTextBox
             // 
             this.nomeUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
@@ -127,18 +139,7 @@ namespace UIPrincipal
             this.nomeUsuarioTextBox.Location = new System.Drawing.Point(118, 80);
             this.nomeUsuarioTextBox.Name = "nomeUsuarioTextBox";
             this.nomeUsuarioTextBox.Size = new System.Drawing.Size(429, 20);
-            this.nomeUsuarioTextBox.TabIndex = 9;
-            // 
-            // senhaLabel
-            // 
-            senhaLabel.AutoSize = true;
-            senhaLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            senhaLabel.Location = new System.Drawing.Point(550, 64);
-            senhaLabel.Name = "senhaLabel";
-            senhaLabel.Size = new System.Drawing.Size(41, 13);
-            senhaLabel.TabIndex = 10;
-            senhaLabel.Text = "Senha:";
-            senhaLabel.Click += new System.EventHandler(this.senhaLabel_Click);
+            this.nomeUsuarioTextBox.TabIndex = 0;
             // 
             // senhaTextBox
             // 
@@ -148,7 +149,7 @@ namespace UIPrincipal
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.PasswordChar = '*';
             this.senhaTextBox.Size = new System.Drawing.Size(177, 20);
-            this.senhaTextBox.TabIndex = 11;
+            this.senhaTextBox.TabIndex = 1;
             // 
             // FormCadastroUsuario
             // 
@@ -172,7 +173,6 @@ namespace UIPrincipal
             this.Name = "FormCadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRO DE USUARIO";
-            this.Load += new System.EventHandler(this.FormCadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
