@@ -35,12 +35,12 @@ namespace UIPrincipal
             System.Windows.Forms.Label senhaLabel;
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
-            this.buttonSair = new System.Windows.Forms.Button();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nomeUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.senhaTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             idLabel = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             senhaLabel = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@ namespace UIPrincipal
             // 
             idLabel.AutoSize = true;
             idLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            idLabel.Location = new System.Drawing.Point(12, 122);
+            idLabel.Location = new System.Drawing.Point(19, 122);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 6;
@@ -80,9 +80,10 @@ namespace UIPrincipal
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(12, 526);
+            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvar.Location = new System.Drawing.Point(22, 526);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.Size = new System.Drawing.Size(65, 23);
             this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "SAL&VAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -90,23 +91,14 @@ namespace UIPrincipal
             // 
             // buttonSalvarECadastrarNovo
             // 
+            this.buttonSalvarECadastrarNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarECadastrarNovo.Location = new System.Drawing.Point(93, 526);
             this.buttonSalvarECadastrarNovo.Name = "buttonSalvarECadastrarNovo";
-            this.buttonSalvarECadastrarNovo.Size = new System.Drawing.Size(192, 23);
+            this.buttonSalvarECadastrarNovo.Size = new System.Drawing.Size(226, 23);
             this.buttonSalvarECadastrarNovo.TabIndex = 4;
             this.buttonSalvarECadastrarNovo.Text = "SALVAR E CADASTRAR UM NOVO";
             this.buttonSalvarECadastrarNovo.UseVisualStyleBackColor = true;
             this.buttonSalvarECadastrarNovo.Click += new System.EventHandler(this.buttonSalvarECadastrarNovo_Click);
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.Location = new System.Drawing.Point(677, 526);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 5;
-            this.buttonSair.Text = "&SAIR";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // usuarioBindingSource
             // 
@@ -127,9 +119,9 @@ namespace UIPrincipal
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
             this.idTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.idTextBox.Location = new System.Drawing.Point(12, 138);
+            this.idTextBox.Location = new System.Drawing.Point(22, 138);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(75, 20);
+            this.idTextBox.Size = new System.Drawing.Size(65, 20);
             this.idTextBox.TabIndex = 7;
             // 
             // nomeUsuarioTextBox
@@ -151,12 +143,26 @@ namespace UIPrincipal
             this.senhaTextBox.Size = new System.Drawing.Size(177, 20);
             this.senhaTextBox.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(22, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 30);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "&VOLTAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(764, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(senhaLabel);
             this.Controls.Add(this.senhaTextBox);
             this.Controls.Add(nomeUsuarioLabel);
@@ -164,7 +170,6 @@ namespace UIPrincipal
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.ativoCheckBox);
-            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonSalvarECadastrarNovo);
             this.Controls.Add(this.buttonSalvar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -172,6 +177,7 @@ namespace UIPrincipal
             this.MinimizeBox = false;
             this.Name = "FormCadastroUsuario";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRO DE USUARIO";
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
@@ -183,12 +189,12 @@ namespace UIPrincipal
         #endregion
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonSalvarECadastrarNovo;
-        private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.CheckBox ativoCheckBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nomeUsuarioTextBox;
         private System.Windows.Forms.TextBox senhaTextBox;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -18,10 +18,7 @@ namespace UIPrincipal
 
         }
 
-        private void buttonSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
@@ -56,6 +53,11 @@ namespace UIPrincipal
             MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
             usuarioBindingSource.AddNew();
             nomeUsuarioTextBox.Focus();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

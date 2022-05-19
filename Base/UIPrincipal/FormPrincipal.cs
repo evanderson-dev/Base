@@ -34,5 +34,10 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
+
+        private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

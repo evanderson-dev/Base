@@ -61,5 +61,94 @@ namespace DAL
                 cn.Close();
             }
         }
+        public DataTable Buscar(string _filtro)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = "User ID=SA;Initial Catalog=Loja;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarUsuario";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
+                pfiltro.Value = _filtro;
+                da.Fill(dt);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public void Excluir(int _id)
+        {
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = "";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_ExcluirUsuario";
+                SqlParameter pid = new SqlParameter();
+                pid.Value = _id;
+                cmd.Parameters.Add(pid);
+                
+                cn.Open();
+                int resultado = cmd.ExecuteNonQuery();
+                if (resultado != 1)
+                    throw new Exception("NÃO FOI POSSIVEL EXCLUIR O USUARIO: " + _id.ToString());
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch(Exception ex){
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public Usuario Alterar(Usuario _usuario)
+        {
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = "";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_AlterarUsuario";
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return null;
+        }
     }
 }
