@@ -40,7 +40,7 @@ namespace UIPrincipal
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             Usuario usuario = new Usuario();
             usuario.Id = Convert.ToInt32(idTextBox.Text);
-            usuario.NomeUsuario = nomeUsuarioTextBox.Text;
+            usuario.NomeUsuario = textBoxNomeUsuario.Text;
             usuario.Senha = senhaTextBox.Text;
             usuario.Ativo = ativoCheckBox.Checked;
             usuarioBLL.Inserir(usuario);
@@ -52,12 +52,17 @@ namespace UIPrincipal
             Inserir();
             MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
             usuarioBindingSource.AddNew();
-            nomeUsuarioTextBox.Focus();
+            textBoxNomeUsuario.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

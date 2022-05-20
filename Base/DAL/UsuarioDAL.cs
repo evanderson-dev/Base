@@ -77,6 +77,9 @@ namespace DAL
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
                 pfiltro.Value = _filtro;
+                da.SelectCommand.Parameters.Add(pfiltro);
+
+                cn.Open();
                 da.Fill(dt);
                 return dt;
             }
@@ -98,12 +101,12 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "";
+                cn.ConnectionString = "User ID=SA;Initial Catalog=Loja;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";//ESTRUTURA DE CONEXÃO;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_ExcluirUsuario";
-                SqlParameter pid = new SqlParameter();
+                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
                 pid.Value = _id;
                 cmd.Parameters.Add(pid);
                 
@@ -134,6 +137,24 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarUsuario";
+                SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
+                pnomeUsuario.Value = _usuario.NomeUsuario;
+                cmd.Parameters.Add(pnomeUsuario);
+
+                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
+                pid.Value = _usuario.Id;
+                cmd.Parameters.Add(pid);
+
+                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
+                psenha.Value = _usuario.Senha;
+                cmd.Parameters.Add(psenha);
+
+                SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit);
+                pativo.Value = _usuario.Ativo;
+                cmd.Parameters.Add(pativo);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)

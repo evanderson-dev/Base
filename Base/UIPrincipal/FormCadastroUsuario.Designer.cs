@@ -38,7 +38,7 @@ namespace UIPrincipal
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.nomeUsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.textBoxNomeUsuario = new System.Windows.Forms.TextBox();
             this.senhaTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             idLabel = new System.Windows.Forms.Label();
@@ -124,14 +124,15 @@ namespace UIPrincipal
             this.idTextBox.Size = new System.Drawing.Size(65, 20);
             this.idTextBox.TabIndex = 7;
             // 
-            // nomeUsuarioTextBox
+            // textBoxNomeUsuario
             // 
-            this.nomeUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
-            this.nomeUsuarioTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.nomeUsuarioTextBox.Location = new System.Drawing.Point(93, 138);
-            this.nomeUsuarioTextBox.Name = "nomeUsuarioTextBox";
-            this.nomeUsuarioTextBox.Size = new System.Drawing.Size(429, 20);
-            this.nomeUsuarioTextBox.TabIndex = 0;
+            this.textBoxNomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
+            this.textBoxNomeUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBoxNomeUsuario.Location = new System.Drawing.Point(93, 138);
+            this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
+            this.textBoxNomeUsuario.Size = new System.Drawing.Size(429, 20);
+            this.textBoxNomeUsuario.TabIndex = 0;
+            this.textBoxNomeUsuario.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // senhaTextBox
             // 
@@ -166,7 +167,7 @@ namespace UIPrincipal
             this.Controls.Add(senhaLabel);
             this.Controls.Add(this.senhaTextBox);
             this.Controls.Add(nomeUsuarioLabel);
-            this.Controls.Add(this.nomeUsuarioTextBox);
+            this.Controls.Add(this.textBoxNomeUsuario);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.ativoCheckBox);
@@ -192,7 +193,7 @@ namespace UIPrincipal
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.CheckBox ativoCheckBox;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox nomeUsuarioTextBox;
+        private System.Windows.Forms.TextBox textBoxNomeUsuario;
         private System.Windows.Forms.TextBox senhaTextBox;
         private System.Windows.Forms.Button button1;
     }

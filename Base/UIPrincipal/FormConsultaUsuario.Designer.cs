@@ -38,12 +38,13 @@ namespace UIPrincipal
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonNovo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -62,12 +63,18 @@ namespace UIPrincipal
             // 
             // buttonSair
             // 
+            this.buttonSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSair.FlatAppearance.BorderSize = 0;
+            this.buttonSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Image = ((System.Drawing.Image)(resources.GetObject("buttonSair.Image")));
             this.buttonSair.Location = new System.Drawing.Point(22, 42);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(66, 30);
+            this.buttonSair.Size = new System.Drawing.Size(40, 40);
             this.buttonSair.TabIndex = 3;
-            this.buttonSair.Text = "&VOLTAR";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
@@ -88,27 +95,33 @@ namespace UIPrincipal
             this.panel2.Controls.Add(this.buttonExcluir);
             this.panel2.Controls.Add(this.buttonAlterar);
             this.panel2.Controls.Add(this.buttonNovo);
-            this.panel2.Location = new System.Drawing.Point(0, 526);
+            this.panel2.Location = new System.Drawing.Point(0, 519);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 35);
+            this.panel2.Size = new System.Drawing.Size(784, 42);
             this.panel2.TabIndex = 1;
             // 
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExcluir.FlatAppearance.BorderSize = 0;
+            this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(234, 3);
+            this.buttonExcluir.Image = ((System.Drawing.Image)(resources.GetObject("buttonExcluir.Image")));
+            this.buttonExcluir.Location = new System.Drawing.Point(234, 4);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(100, 30);
+            this.buttonExcluir.Size = new System.Drawing.Size(40, 38);
             this.buttonExcluir.TabIndex = 2;
-            this.buttonExcluir.Text = "&EXCLUIR";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.Location = new System.Drawing.Point(128, 3);
+            this.buttonAlterar.Location = new System.Drawing.Point(128, 10);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(100, 30);
             this.buttonAlterar.TabIndex = 1;
@@ -119,7 +132,7 @@ namespace UIPrincipal
             // 
             this.buttonNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNovo.Location = new System.Drawing.Point(22, 3);
+            this.buttonNovo.Location = new System.Drawing.Point(22, 10);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(100, 30);
             this.buttonNovo.TabIndex = 0;
@@ -127,14 +140,14 @@ namespace UIPrincipal
             this.buttonNovo.UseVisualStyleBackColor = true;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
-            // textBox1
+            // textBoxBuscar
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(22, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(642, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxBuscar.Location = new System.Drawing.Point(22, 106);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(642, 20);
+            this.textBoxBuscar.TabIndex = 2;
             // 
             // buttonBuscar
             // 
@@ -161,7 +174,8 @@ namespace UIPrincipal
             this.usuarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn1,
+            this.Ativo});
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
             this.usuarioDataGridView.Location = new System.Drawing.Point(22, 132);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
@@ -173,7 +187,7 @@ namespace UIPrincipal
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 75;
+            this.dataGridViewTextBoxColumn2.Width = 50;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -181,6 +195,13 @@ namespace UIPrincipal
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NomeUsuario";
             this.dataGridViewTextBoxColumn1.HeaderText = "USUARIO";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.Width = 50;
             // 
             // FormConsultaUsuario
             // 
@@ -190,7 +211,7 @@ namespace UIPrincipal
             this.Controls.Add(this.usuarioDataGridView);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -219,12 +240,13 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonNovo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.DataGridView usuarioDataGridView;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
     }
 }

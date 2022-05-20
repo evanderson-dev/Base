@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BLL;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -19,7 +14,8 @@ namespace UIPrincipal
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscar.Text);
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -41,6 +37,19 @@ namespace UIPrincipal
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
+
+            usuarioBLL.Excluir(id);
+            usuarioBindingSource.RemoveCurrent();
+            MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
         }
     }
 }
