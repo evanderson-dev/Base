@@ -132,7 +132,6 @@ namespace UIPrincipal
             this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
             this.textBoxNomeUsuario.Size = new System.Drawing.Size(429, 20);
             this.textBoxNomeUsuario.TabIndex = 0;
-            this.textBoxNomeUsuario.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // senhaTextBox
             // 

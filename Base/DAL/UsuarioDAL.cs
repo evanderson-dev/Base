@@ -12,7 +12,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "User ID=SA;Initial Catalog=Loja;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";//ESTRUTURA DE CONEXÃO
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
                 SqlCommand cmd = new SqlCommand
                 {
                     Connection = cn,
@@ -69,7 +69,7 @@ namespace DAL
 
             try
             {
-                cn.ConnectionString = "User ID=SA;Initial Catalog=Loja;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";//ESTRUTURA DE CONEXÃO
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
                 SqlCommand cmd = new SqlCommand();
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cn;
@@ -101,7 +101,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "User ID=SA;Initial Catalog=Loja;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";//ESTRUTURA DE CONEXÃO;
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -132,7 +132,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "";
+                cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
