@@ -98,7 +98,7 @@ namespace UIPrincipal
             this.panel2.Controls.Add(this.buttonNovo);
             this.panel2.Location = new System.Drawing.Point(0, 519);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 42);
+            this.panel2.Size = new System.Drawing.Size(764, 42);
             this.panel2.TabIndex = 1;
             // 
             // buttonExcluir
@@ -111,9 +111,9 @@ namespace UIPrincipal
             this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.Image = ((System.Drawing.Image)(resources.GetObject("buttonExcluir.Image")));
-            this.buttonExcluir.Location = new System.Drawing.Point(444, 2);
+            this.buttonExcluir.Location = new System.Drawing.Point(444, 0);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(48, 40);
+            this.buttonExcluir.Size = new System.Drawing.Size(40, 40);
             this.buttonExcluir.TabIndex = 2;
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
@@ -121,18 +121,19 @@ namespace UIPrincipal
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonAlterar.BackColor = System.Drawing.Color.White;
             this.buttonAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAlterar.FlatAppearance.BorderSize = 0;
             this.buttonAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAlterar.Image")));
-            this.buttonAlterar.Location = new System.Drawing.Point(368, 7);
+            this.buttonAlterar.ImageKey = "001.png";
+            this.buttonAlterar.ImageList = this.imageList1;
+            this.buttonAlterar.Location = new System.Drawing.Point(364, 0);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(46, 30);
+            this.buttonAlterar.Size = new System.Drawing.Size(40, 40);
             this.buttonAlterar.TabIndex = 1;
-            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.UseVisualStyleBackColor = false;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonNovo
@@ -145,9 +146,9 @@ namespace UIPrincipal
             this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNovo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNovo.Image")));
-            this.buttonNovo.Location = new System.Drawing.Point(286, 2);
+            this.buttonNovo.Location = new System.Drawing.Point(286, 0);
             this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(46, 40);
+            this.buttonNovo.Size = new System.Drawing.Size(40, 40);
             this.buttonNovo.TabIndex = 0;
             this.buttonNovo.UseVisualStyleBackColor = true;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
@@ -217,9 +218,12 @@ namespace UIPrincipal
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "001.png");
+            this.imageList1.Images.SetKeyName(1, "002.png");
+            this.imageList1.Images.SetKeyName(2, "003.png");
+            this.imageList1.Images.SetKeyName(3, "004.png");
             // 
             // FormConsultaUsuario
             // 
