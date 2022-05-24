@@ -37,6 +37,7 @@ namespace UIPrincipal
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.buttonNovo = new System.Windows.Forms.Button();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@ namespace UIPrincipal
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -96,26 +96,27 @@ namespace UIPrincipal
             this.panel2.Controls.Add(this.buttonExcluir);
             this.panel2.Controls.Add(this.buttonAlterar);
             this.panel2.Controls.Add(this.buttonNovo);
-            this.panel2.Location = new System.Drawing.Point(0, 519);
+            this.panel2.Location = new System.Drawing.Point(0, 499);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 42);
+            this.panel2.Size = new System.Drawing.Size(764, 62);
             this.panel2.TabIndex = 1;
             // 
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonExcluir.BackColor = System.Drawing.Color.White;
             this.buttonExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExcluir.FlatAppearance.BorderSize = 0;
             this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Image = ((System.Drawing.Image)(resources.GetObject("buttonExcluir.Image")));
-            this.buttonExcluir.Location = new System.Drawing.Point(444, 0);
+            this.buttonExcluir.ImageKey = "003.png";
+            this.buttonExcluir.ImageList = this.imageList1;
+            this.buttonExcluir.Location = new System.Drawing.Point(418, 3);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(40, 40);
-            this.buttonExcluir.TabIndex = 2;
-            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Size = new System.Drawing.Size(55, 55);
+            this.buttonExcluir.TabIndex = 1;
+            this.buttonExcluir.UseVisualStyleBackColor = false;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonAlterar
@@ -129,28 +130,38 @@ namespace UIPrincipal
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.ImageKey = "001.png";
             this.buttonAlterar.ImageList = this.imageList1;
-            this.buttonAlterar.Location = new System.Drawing.Point(364, 0);
+            this.buttonAlterar.Location = new System.Drawing.Point(357, 3);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(40, 40);
+            this.buttonAlterar.Size = new System.Drawing.Size(55, 55);
             this.buttonAlterar.TabIndex = 1;
             this.buttonAlterar.UseVisualStyleBackColor = false;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "001.png");
+            this.imageList1.Images.SetKeyName(1, "002.png");
+            this.imageList1.Images.SetKeyName(2, "003.png");
+            this.imageList1.Images.SetKeyName(3, "004.png");
+            // 
             // buttonNovo
             // 
             this.buttonNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNovo.BackColor = System.Drawing.Color.White;
             this.buttonNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNovo.FlatAppearance.BorderSize = 0;
             this.buttonNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNovo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNovo.Image")));
-            this.buttonNovo.Location = new System.Drawing.Point(286, 0);
+            this.buttonNovo.ImageKey = "002.png";
+            this.buttonNovo.ImageList = this.imageList1;
+            this.buttonNovo.Location = new System.Drawing.Point(296, 4);
             this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(40, 40);
+            this.buttonNovo.Size = new System.Drawing.Size(55, 55);
             this.buttonNovo.TabIndex = 0;
-            this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.UseVisualStyleBackColor = false;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // textBoxBuscar
@@ -165,13 +176,19 @@ namespace UIPrincipal
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBuscar.FlatAppearance.BorderSize = 0;
+            this.buttonBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscar.Location = new System.Drawing.Point(670, 104);
+            this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
+            this.buttonBuscar.Location = new System.Drawing.Point(666, 95);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 24);
+            this.buttonBuscar.Size = new System.Drawing.Size(38, 38);
             this.buttonBuscar.TabIndex = 2;
-            this.buttonBuscar.Text = "BUSCAR";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.UseVisualStyleBackColor = false;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // usuarioBindingSource
@@ -192,7 +209,7 @@ namespace UIPrincipal
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
             this.usuarioDataGridView.Location = new System.Drawing.Point(22, 132);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
-            this.usuarioDataGridView.Size = new System.Drawing.Size(722, 388);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(722, 369);
             this.usuarioDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn2
@@ -215,15 +232,6 @@ namespace UIPrincipal
             this.Ativo.HeaderText = "Ativo";
             this.Ativo.Name = "Ativo";
             this.Ativo.Width = 50;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "001.png");
-            this.imageList1.Images.SetKeyName(1, "002.png");
-            this.imageList1.Images.SetKeyName(2, "003.png");
-            this.imageList1.Images.SetKeyName(3, "004.png");
             // 
             // FormConsultaUsuario
             // 
