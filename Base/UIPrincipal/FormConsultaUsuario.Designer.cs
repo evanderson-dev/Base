@@ -46,6 +46,7 @@ namespace UIPrincipal
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -72,7 +73,7 @@ namespace UIPrincipal
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Image = ((System.Drawing.Image)(resources.GetObject("buttonSair.Image")));
-            this.buttonSair.Location = new System.Drawing.Point(22, 42);
+            this.buttonSair.Location = new System.Drawing.Point(22, 30);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(40, 40);
             this.buttonSair.TabIndex = 3;
@@ -93,6 +94,7 @@ namespace UIPrincipal
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel2.Controls.Add(this.buttonExcluir);
             this.panel2.Controls.Add(this.buttonAlterar);
             this.panel2.Controls.Add(this.buttonNovo);
@@ -106,16 +108,19 @@ namespace UIPrincipal
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonExcluir.BackColor = System.Drawing.Color.White;
             this.buttonExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExcluir.FlatAppearance.BorderSize = 0;
             this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.ImageKey = "003.png";
-            this.buttonExcluir.ImageList = this.imageList1;
-            this.buttonExcluir.Location = new System.Drawing.Point(418, 3);
+            this.buttonExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExcluir.ImageKey = "excluir01.png";
+            this.buttonExcluir.ImageList = this.imageList2;
+            this.buttonExcluir.Location = new System.Drawing.Point(434, 10);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(55, 55);
+            this.buttonExcluir.Size = new System.Drawing.Size(100, 40);
             this.buttonExcluir.TabIndex = 1;
+            this.buttonExcluir.Text = "E&XCLUIR";
+            this.buttonExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonExcluir.UseVisualStyleBackColor = false;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
@@ -124,16 +129,19 @@ namespace UIPrincipal
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAlterar.BackColor = System.Drawing.Color.White;
             this.buttonAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAlterar.FlatAppearance.BorderSize = 0;
             this.buttonAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.ImageKey = "001.png";
+            this.buttonAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAlterar.ImageKey = "editar01.png";
             this.buttonAlterar.ImageList = this.imageList1;
-            this.buttonAlterar.Location = new System.Drawing.Point(357, 3);
+            this.buttonAlterar.Location = new System.Drawing.Point(328, 10);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(55, 55);
+            this.buttonAlterar.Size = new System.Drawing.Size(100, 40);
             this.buttonAlterar.TabIndex = 1;
+            this.buttonAlterar.Text = "&EDITAR";
+            this.buttonAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAlterar.UseVisualStyleBackColor = false;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
@@ -145,22 +153,28 @@ namespace UIPrincipal
             this.imageList1.Images.SetKeyName(1, "002.png");
             this.imageList1.Images.SetKeyName(2, "003.png");
             this.imageList1.Images.SetKeyName(3, "004.png");
+            this.imageList1.Images.SetKeyName(4, "editar01.png");
+            this.imageList1.Images.SetKeyName(5, "excluir02.png");
+            this.imageList1.Images.SetKeyName(6, "novo01.png");
             // 
             // buttonNovo
             // 
             this.buttonNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNovo.BackColor = System.Drawing.Color.White;
             this.buttonNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNovo.FlatAppearance.BorderSize = 0;
             this.buttonNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNovo.ImageKey = "002.png";
-            this.buttonNovo.ImageList = this.imageList1;
-            this.buttonNovo.Location = new System.Drawing.Point(296, 4);
+            this.buttonNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNovo.ImageKey = "novo01.png";
+            this.buttonNovo.ImageList = this.imageList2;
+            this.buttonNovo.Location = new System.Drawing.Point(222, 10);
             this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(55, 55);
+            this.buttonNovo.Size = new System.Drawing.Size(100, 40);
             this.buttonNovo.TabIndex = 0;
+            this.buttonNovo.Text = "&NOVO";
+            this.buttonNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNovo.UseVisualStyleBackColor = false;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
@@ -233,10 +247,31 @@ namespace UIPrincipal
             this.Ativo.Name = "Ativo";
             this.Ativo.Width = 50;
             // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "anonymous01.png");
+            this.imageList2.Images.SetKeyName(1, "avancar01.png");
+            this.imageList2.Images.SetKeyName(2, "confirmar01.png");
+            this.imageList2.Images.SetKeyName(3, "excluir01.png");
+            this.imageList2.Images.SetKeyName(4, "excluir03.png");
+            this.imageList2.Images.SetKeyName(5, "excluir04.png");
+            this.imageList2.Images.SetKeyName(6, "novo01.png");
+            this.imageList2.Images.SetKeyName(7, "novo02.png");
+            this.imageList2.Images.SetKeyName(8, "pesquisar0.png");
+            this.imageList2.Images.SetKeyName(9, "pesquisar03.png");
+            this.imageList2.Images.SetKeyName(10, "salvar01.png");
+            this.imageList2.Images.SetKeyName(11, "voltar01.png");
+            this.imageList2.Images.SetKeyName(12, "voltar03.png");
+            this.imageList2.Images.SetKeyName(13, "voltar05.png");
+            // 
             // FormConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(764, 561);
             this.Controls.Add(this.usuarioDataGridView);
             this.Controls.Add(this.buttonBuscar);
@@ -279,5 +314,6 @@ namespace UIPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }
