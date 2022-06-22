@@ -36,6 +36,7 @@ namespace UIPrincipal
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonExcluir = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.buttonNovo = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace UIPrincipal
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -124,6 +124,25 @@ namespace UIPrincipal
             this.buttonExcluir.UseVisualStyleBackColor = false;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "anonymous01.png");
+            this.imageList2.Images.SetKeyName(1, "avancar01.png");
+            this.imageList2.Images.SetKeyName(2, "confirmar01.png");
+            this.imageList2.Images.SetKeyName(3, "excluir01.png");
+            this.imageList2.Images.SetKeyName(4, "excluir03.png");
+            this.imageList2.Images.SetKeyName(5, "excluir04.png");
+            this.imageList2.Images.SetKeyName(6, "novo01.png");
+            this.imageList2.Images.SetKeyName(7, "novo02.png");
+            this.imageList2.Images.SetKeyName(8, "pesquisar0.png");
+            this.imageList2.Images.SetKeyName(9, "pesquisar03.png");
+            this.imageList2.Images.SetKeyName(10, "salvar01.png");
+            this.imageList2.Images.SetKeyName(11, "voltar01.png");
+            this.imageList2.Images.SetKeyName(12, "voltar03.png");
+            this.imageList2.Images.SetKeyName(13, "voltar05.png");
+            // 
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -184,7 +203,7 @@ namespace UIPrincipal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.Location = new System.Drawing.Point(22, 106);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(642, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(680, 20);
             this.textBoxBuscar.TabIndex = 2;
             // 
             // buttonBuscar
@@ -198,7 +217,7 @@ namespace UIPrincipal
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
-            this.buttonBuscar.Location = new System.Drawing.Point(666, 95);
+            this.buttonBuscar.Location = new System.Drawing.Point(708, 95);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(38, 38);
             this.buttonBuscar.TabIndex = 2;
@@ -246,25 +265,6 @@ namespace UIPrincipal
             this.Ativo.HeaderText = "Ativo";
             this.Ativo.Name = "Ativo";
             this.Ativo.Width = 50;
-            // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "anonymous01.png");
-            this.imageList2.Images.SetKeyName(1, "avancar01.png");
-            this.imageList2.Images.SetKeyName(2, "confirmar01.png");
-            this.imageList2.Images.SetKeyName(3, "excluir01.png");
-            this.imageList2.Images.SetKeyName(4, "excluir03.png");
-            this.imageList2.Images.SetKeyName(5, "excluir04.png");
-            this.imageList2.Images.SetKeyName(6, "novo01.png");
-            this.imageList2.Images.SetKeyName(7, "novo02.png");
-            this.imageList2.Images.SetKeyName(8, "pesquisar0.png");
-            this.imageList2.Images.SetKeyName(9, "pesquisar03.png");
-            this.imageList2.Images.SetKeyName(10, "salvar01.png");
-            this.imageList2.Images.SetKeyName(11, "voltar01.png");
-            this.imageList2.Images.SetKeyName(12, "voltar03.png");
-            this.imageList2.Images.SetKeyName(13, "voltar05.png");
             // 
             // FormConsultaUsuario
             // 
