@@ -126,7 +126,27 @@
   <metadata name="senhaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAONJREFUSEu1
+        ljEOwjAUQxFDD4XgZuzAWVg5EjAibgA2Uiq78hCF3ye94TvEVUG02YAJXuATfgp8wyPcQuMMlx/ewRH2
+        sHVcIW9i5gH1IrSXtEezG5wvpgvNXtIezSjv7Pc1LhdoL2mPZk3+ZnGhl7RHs+YLxoVe0h7N1Bx2kvZo
+        puawk7RHMzWG/D+McICpj8ZwDWO4hjFcQxtGn3EJfe5RH4qxbhuKsW4birFuG4qxbhuKsW4birFuG4qx
+        bhuKsW4birFuPZxU03rvHPS4Nfp6SOgr48SAxyFeLB27/pWd6N5MXyflMFy3pVt7AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="usuarioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        uQAAALkB4qdB6AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADYSURBVFhHxdfB
+        CcMwEARAd+IK3EfegXxTliEVpLM88koHyq1R4BArBRluzzAPr4X3sEGgpZSy2LWap3kZBJHQga61dh/l
+        H9MujIZOdB/TsAUK6JZ89h500wdKNFSioRINlWioRMN/3uZqdpedRcMRlG91F8MQ7fNZNOzx5Vu9b9fM
+        oiETUQ40bEWVAw29yHKgoXdH+Sy7Lu4dIzT00gdI/wUQOQQNmaghaNgTMQQNR/wQ8q34B0PczMNlZ9FQ
+        iYZKNFSioRINlfIPJulHs9zDad3Rko7nZfkCXxUqkZ11tlMAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

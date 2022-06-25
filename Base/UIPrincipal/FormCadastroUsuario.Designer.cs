@@ -33,6 +33,7 @@ namespace UIPrincipal
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nomeUsuarioLabel;
             System.Windows.Forms.Label senhaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,7 +51,7 @@ namespace UIPrincipal
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            idLabel.ForeColor = System.Drawing.Color.Black;
             idLabel.Location = new System.Drawing.Point(19, 122);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
@@ -60,7 +61,7 @@ namespace UIPrincipal
             // nomeUsuarioLabel
             // 
             nomeUsuarioLabel.AutoSize = true;
-            nomeUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            nomeUsuarioLabel.ForeColor = System.Drawing.Color.Black;
             nomeUsuarioLabel.Location = new System.Drawing.Point(90, 122);
             nomeUsuarioLabel.Name = "nomeUsuarioLabel";
             nomeUsuarioLabel.Size = new System.Drawing.Size(77, 13);
@@ -70,7 +71,7 @@ namespace UIPrincipal
             // senhaLabel
             // 
             senhaLabel.AutoSize = true;
-            senhaLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            senhaLabel.ForeColor = System.Drawing.Color.Black;
             senhaLabel.Location = new System.Drawing.Point(525, 122);
             senhaLabel.Name = "senhaLabel";
             senhaLabel.Size = new System.Drawing.Size(41, 13);
@@ -80,12 +81,17 @@ namespace UIPrincipal
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSalvar.FlatAppearance.BorderSize = 0;
+            this.buttonSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(22, 526);
+            this.buttonSalvar.Image = ((System.Drawing.Image)(resources.GetObject("buttonSalvar.Image")));
+            this.buttonSalvar.Location = new System.Drawing.Point(22, 517);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(65, 23);
+            this.buttonSalvar.Size = new System.Drawing.Size(40, 40);
             this.buttonSalvar.TabIndex = 3;
-            this.buttonSalvar.Text = "SAL&VAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
@@ -107,7 +113,7 @@ namespace UIPrincipal
             // ativoCheckBox
             // 
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
-            this.ativoCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ativoCheckBox.ForeColor = System.Drawing.Color.Black;
             this.ativoCheckBox.Location = new System.Drawing.Point(711, 136);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(52, 24);
@@ -145,14 +151,18 @@ namespace UIPrincipal
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(22, 42);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(22, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 30);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "&VOLTAR";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -160,7 +170,7 @@ namespace UIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(764, 561);
             this.Controls.Add(this.button1);
             this.Controls.Add(senhaLabel);
@@ -172,6 +182,7 @@ namespace UIPrincipal
             this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.buttonSalvarECadastrarNovo);
             this.Controls.Add(this.buttonSalvar);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
