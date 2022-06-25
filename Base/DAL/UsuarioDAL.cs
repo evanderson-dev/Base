@@ -110,8 +110,9 @@ namespace DAL
                 pid.Value = _id;
                 cmd.Parameters.Add(pid);
                 
+                //ABRE A CONEXÃO COM O BANCO DE DADOS
                 cn.Open();
-                int resultado = cmd.ExecuteNonQuery();
+                int resultado = cmd.ExecuteNonQuery();//EXECUTA O COMANDO SQL NO BANCO DE DADOS
                 if (resultado != 1)
                     throw new Exception("NÃO FOI POSSIVEL EXCLUIR O USUARIO: " + _id.ToString());
             }
@@ -124,6 +125,7 @@ namespace DAL
             }
             finally
             {
+                //FECHA A CONEÃO COM O BANDO DE DADOS
                 cn.Close();
             }
         }
