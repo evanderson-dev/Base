@@ -30,53 +30,53 @@ namespace UIPrincipal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nomeUsuarioLabel;
             System.Windows.Forms.Label cpfLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxId = new System.Windows.Forms.TextBox();
             this.textBoxNomeUsuario = new System.Windows.Forms.TextBox();
             this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.buttonCancelarCadastro = new System.Windows.Forms.Button();
-            idLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.ForeColor = System.Drawing.Color.Black;
-            idLabel.Location = new System.Drawing.Point(19, 122);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 6;
-            idLabel.Text = "Id:";
             // 
             // nomeUsuarioLabel
             // 
             nomeUsuarioLabel.AutoSize = true;
             nomeUsuarioLabel.ForeColor = System.Drawing.Color.Black;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(90, 122);
+            nomeUsuarioLabel.Location = new System.Drawing.Point(19, 458);
             nomeUsuarioLabel.Name = "nomeUsuarioLabel";
-            nomeUsuarioLabel.Size = new System.Drawing.Size(46, 13);
+            nomeUsuarioLabel.Size = new System.Drawing.Size(43, 13);
             nomeUsuarioLabel.TabIndex = 8;
-            nomeUsuarioLabel.Text = "Usuario:";
+            nomeUsuarioLabel.Text = "LOGIN:";
             // 
             // cpfLabel
             // 
             cpfLabel.AutoSize = true;
             cpfLabel.ForeColor = System.Drawing.Color.Black;
-            cpfLabel.Location = new System.Drawing.Point(525, 122);
+            cpfLabel.Location = new System.Drawing.Point(525, 3);
             cpfLabel.Name = "cpfLabel";
-            cpfLabel.Size = new System.Drawing.Size(26, 13);
+            cpfLabel.Size = new System.Drawing.Size(30, 13);
             cpfLabel.TabIndex = 10;
-            cpfLabel.Text = "Cpf:";
+            cpfLabel.Text = "CPF:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = System.Drawing.Color.Black;
+            label1.Location = new System.Drawing.Point(19, 3);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(104, 13);
+            label1.TabIndex = 11;
+            label1.Text = "NOME COMPLETO:";
             // 
             // buttonSalvar
             // 
@@ -109,7 +109,7 @@ namespace UIPrincipal
             // 
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.ativoCheckBox.Location = new System.Drawing.Point(711, 136);
+            this.ativoCheckBox.Location = new System.Drawing.Point(711, 17);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(52, 24);
             this.ativoCheckBox.TabIndex = 2;
@@ -120,20 +120,11 @@ namespace UIPrincipal
             // 
             this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
-            // textBoxId
-            // 
-            this.textBoxId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
-            this.textBoxId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxId.Location = new System.Drawing.Point(22, 138);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(65, 20);
-            this.textBoxId.TabIndex = 7;
-            // 
             // textBoxNomeUsuario
             // 
             this.textBoxNomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
             this.textBoxNomeUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxNomeUsuario.Location = new System.Drawing.Point(93, 138);
+            this.textBoxNomeUsuario.Location = new System.Drawing.Point(22, 474);
             this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
             this.textBoxNomeUsuario.Size = new System.Drawing.Size(429, 20);
             this.textBoxNomeUsuario.TabIndex = 0;
@@ -142,7 +133,7 @@ namespace UIPrincipal
             // 
             this.textBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.textBoxCpf.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxCpf.Location = new System.Drawing.Point(528, 138);
+            this.textBoxCpf.Location = new System.Drawing.Point(528, 19);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.Size = new System.Drawing.Size(177, 20);
             this.textBoxCpf.TabIndex = 1;
@@ -164,19 +155,28 @@ namespace UIPrincipal
             this.buttonCancelarCadastro.UseVisualStyleBackColor = false;
             this.buttonCancelarCadastro.Click += new System.EventHandler(this.buttonCancelarCadastro_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox1.Location = new System.Drawing.Point(22, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(429, 20);
+            this.textBox1.TabIndex = 12;
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(764, 561);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(label1);
             this.Controls.Add(this.buttonCancelarCadastro);
             this.Controls.Add(cpfLabel);
             this.Controls.Add(this.textBoxCpf);
             this.Controls.Add(nomeUsuarioLabel);
             this.Controls.Add(this.textBoxNomeUsuario);
-            this.Controls.Add(idLabel);
-            this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.buttonSalvarECadastrarNovo);
             this.Controls.Add(this.buttonSalvar);
@@ -200,10 +200,10 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonSalvarECadastrarNovo;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.CheckBox ativoCheckBox;
-        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.TextBox textBoxNomeUsuario;
         private System.Windows.Forms.TextBox textBoxCpf;
         private System.Windows.Forms.Button buttonCancelarCadastro;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
