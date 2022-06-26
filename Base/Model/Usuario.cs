@@ -11,6 +11,8 @@ namespace Model{
         private int id  ;
         private bool ativo;
         private string senha;
+        private int id_Plano;
+        private string cpf;
 
         public string NomeUsuario
         {
@@ -31,6 +33,18 @@ namespace Model{
         {
             get { return senha; }
             set { senha = value; }
+        }
+
+        public int Id_Plano
+        {
+            get { return id_Plano; }
+            set { id_Plano = value; }
+        }
+
+        public string Cpf
+        {
+            get { return cpf; }
+            set { cpf = value; }
         }
 
     }

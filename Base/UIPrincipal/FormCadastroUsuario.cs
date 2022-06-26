@@ -23,13 +23,6 @@ namespace UIPrincipal
             inserindoNovo = false;
         }
 
-        private void senhaLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -49,10 +42,14 @@ namespace UIPrincipal
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             Usuario usuario = new Usuario();
-            
-            usuario.Id = Convert.ToInt32(idTextBox.Text);
+
+            //usuario.Id = Convert.ToInt32(idTextBox.Text);
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
-            usuario.Senha = senhaTextBox.Text;
+            usuario.Cpf = textBoxCpf.Text;
+            //usuario.Cpf = textBoxCpf.Text;
+            //usuario.Id_Plano = Convert.ToInt32(textBoxNomeUsuario.Text);
+            //usuario.Senha = textBoxInicioContrato.Text;
+            //usuario.InicioContrato = 
             usuario.Ativo = ativoCheckBox.Checked;
 
             if (inserindoNovo)
@@ -72,7 +69,7 @@ namespace UIPrincipal
             textBoxNomeUsuario.Focus();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCancelarCadastro_Click(object sender, EventArgs e)
         {
             Close();
         }

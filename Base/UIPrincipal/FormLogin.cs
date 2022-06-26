@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UIPrincipal
 {
-    public partial class FormPrincipalOS : Form
+    public partial class FormLogin : Form
     {
-        public FormPrincipalOS()
+        public FormLogin()
         {
             InitializeComponent();
         }

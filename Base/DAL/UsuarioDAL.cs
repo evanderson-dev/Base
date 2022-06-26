@@ -25,16 +25,22 @@ namespace DAL
                     Value = _usuario.Ativo
                 };
                 cmd.Parameters.Add(pativo);
+
                 cmd.Parameters.Add(new SqlParameter("@NomeUsuario", SqlDbType.VarChar)
                 {
                     Value = _usuario.NomeUsuario
                 });
 
-                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar)
+                cmd.Parameters.Add(new SqlParameter("@Cpf", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Cpf
+                });
+
+                /*SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar)
                 {
                     Value = _usuario.Senha
                 };
-                cmd.Parameters.Add(psenha);
+                cmd.Parameters.Add(psenha);*/
 
                 SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int)
                 {
@@ -61,6 +67,12 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public DataTable BuscarUsuarioPorNome(string nome)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataTable Buscar(string _filtro)
         {
             SqlDataAdapter da = new SqlDataAdapter();
@@ -139,6 +151,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarUsuario";
+
                 SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
                 pnomeUsuario.Value = _usuario.NomeUsuario;
                 cmd.Parameters.Add(pnomeUsuario);
@@ -147,13 +160,17 @@ namespace DAL
                 pid.Value = _usuario.Id;
                 cmd.Parameters.Add(pid);
 
-                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
+                /*SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
                 psenha.Value = _usuario.Senha;
-                cmd.Parameters.Add(psenha);
+                cmd.Parameters.Add(psenha);*/
 
                 SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit);
                 pativo.Value = _usuario.Ativo;
                 cmd.Parameters.Add(pativo);
+
+                SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
+                pcpf.Value = _usuario.Cpf;
+                cmd.Parameters.Add(pcpf);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();

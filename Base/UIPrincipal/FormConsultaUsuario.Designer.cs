@@ -215,7 +215,7 @@ namespace UIPrincipal
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeUsuario";
             this.dataGridViewTextBoxColumn3.HeaderText = "NOME";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 378;
