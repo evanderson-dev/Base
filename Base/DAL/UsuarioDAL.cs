@@ -26,9 +26,25 @@ namespace DAL
                 };
                 cmd.Parameters.Add(pativo);
 
+                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int)
+                {
+                    Value = _usuario.Id
+                };
+                cmd.Parameters.Add(pid);
+
                 cmd.Parameters.Add(new SqlParameter("@NomeUsuario", SqlDbType.VarChar)
                 {
                     Value = _usuario.NomeUsuario
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Senha", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Senha
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@NomeCompleto", SqlDbType.VarChar)
+                {
+                    Value = _usuario.NomeCompleto
                 });
 
                 cmd.Parameters.Add(new SqlParameter("@Cpf", SqlDbType.VarChar)
@@ -36,17 +52,7 @@ namespace DAL
                     Value = _usuario.Cpf
                 });
 
-                /*SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar)
-                {
-                    Value = _usuario.Senha
-                };
-                cmd.Parameters.Add(psenha);*/
-
-                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int)
-                {
-                    Value = _usuario.Id
-                };
-                cmd.Parameters.Add(pid);
+                
 
                 cn.Open();
                 _usuario.Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -68,11 +74,6 @@ namespace DAL
             }
         }
 
-        public DataTable BuscarUsuarioPorNome(string nome)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable Buscar(string _filtro)
         {
             SqlDataAdapter da = new SqlDataAdapter();
@@ -85,14 +86,17 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cn;
-                da.SelectCommand.CommandText = "SP_BuscarUsuario";
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.CommandText = "SP_BuscarUsuario";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
                 SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
                 pfiltro.Value = _filtro;
+
                 da.SelectCommand.Parameters.Add(pfiltro);
 
-                cn.Open();
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
                 da.Fill(dt);
+
                 return dt;
             }
             catch (SqlException ex)

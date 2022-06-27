@@ -19,7 +19,17 @@ namespace UIPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            Login();
+        }
 
+        private void Login()
+        {
+            using (FormLogin frm = new FormLogin())
+            {
+                frm.ShowDialog();
+                if (!frm.Logou)
+                    Application.Exit();
+            }
         }
 
         private void gRUPODEUSUARIOToolStripMenuItem_Click(object sender, EventArgs e)

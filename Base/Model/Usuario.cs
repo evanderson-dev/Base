@@ -8,6 +8,7 @@ namespace Model{
     public class Usuario{
 
         private string nomeUsuario;
+        private string nomeCompleto;
         private int id  ;
         private bool ativo;
         private string senha;
@@ -18,6 +19,12 @@ namespace Model{
         {
             get { return nomeUsuario; }
             set { nomeUsuario = value; }
+        }
+
+        public string NomeCompleto
+        {
+            get { return nomeCompleto; }
+            set { nomeCompleto = value; }
         }
         public int Id
         {

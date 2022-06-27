@@ -32,7 +32,7 @@ namespace UIPrincipal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelSenha = new System.Windows.Forms.Label();
@@ -42,34 +42,37 @@ namespace UIPrincipal
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(397, 298);
+            this.buttonLogin.Location = new System.Drawing.Point(427, 298);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "LOGAR";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonSair
             // 
-            this.buttonSair.Location = new System.Drawing.Point(478, 298);
+            this.buttonSair.Location = new System.Drawing.Point(508, 298);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 3;
             this.buttonSair.Text = "SAIR";
             this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // textBoxLogin
+            // textBoxUsuario
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(397, 175);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(156, 20);
-            this.textBoxLogin.TabIndex = 0;
+            this.textBoxUsuario.Location = new System.Drawing.Point(397, 175);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(208, 20);
+            this.textBoxUsuario.TabIndex = 0;
             // 
             // textBoxSenha
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(397, 243);
             this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(156, 20);
+            this.textBoxSenha.PasswordChar = '*';
+            this.textBoxSenha.Size = new System.Drawing.Size(208, 20);
             this.textBoxSenha.TabIndex = 1;
             // 
             // labelLogin
@@ -109,7 +112,7 @@ namespace UIPrincipal
             this.Controls.Add(this.labelSenha);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.textBoxSenha);
-            this.Controls.Add(this.textBoxLogin);
+            this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -117,6 +120,7 @@ namespace UIPrincipal
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "LOGIN DE USUARIO";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,7 +131,7 @@ namespace UIPrincipal
 
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonSair;
-        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.TextBox textBoxSenha;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelSenha;

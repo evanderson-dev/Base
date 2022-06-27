@@ -45,12 +45,11 @@ namespace UIPrincipal
 
             //usuario.Id = Convert.ToInt32(idTextBox.Text);
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
+            usuario.Senha = textBoxSenha.Text;
+            usuario.NomeCompleto = textBoxNomeCompleto.Text;
             usuario.Cpf = textBoxCpf.Text;
-            //usuario.Cpf = textBoxCpf.Text;
-            //usuario.Id_Plano = Convert.ToInt32(textBoxNomeUsuario.Text);
-            //usuario.Senha = textBoxInicioContrato.Text;
-            //usuario.InicioContrato = 
             usuario.Ativo = ativoCheckBox.Checked;
+
 
             if (inserindoNovo)
                 usuarioBLL.Inserir(usuario);
