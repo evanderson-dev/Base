@@ -52,7 +52,70 @@ namespace DAL
                     Value = _usuario.Cpf
                 });
 
+                cmd.Parameters.Add(new SqlParameter("@Rg", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Rg
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@OrgaoExpeditor", SqlDbType.VarChar)
+                {
+                    Value = _usuario.OrgaoExpeditor
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@DataNascimento", SqlDbType.DateTime)
+                {
+                    Value = _usuario.DataNascimento
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Rua", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Rua
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@NumCasa", SqlDbType.VarChar)
+                {
+                    Value = _usuario.NumCasa
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@EstadoCivil", SqlDbType.VarChar)
+                {
+                    Value = _usuario.EstadoCivil
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Nacionalidade", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Nacionalidade
+                });
                 
+                cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Email
+                });
+                
+                cmd.Parameters.Add(new SqlParameter("@Telefone", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Telefone
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@CelularUm", SqlDbType.VarChar)
+                {
+                    Value = _usuario.CelularUm
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@CelularDois", SqlDbType.VarChar)
+                {
+                    Value = _usuario.CelularDois
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Cidade", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Cidade
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Uf", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Uf
+                });
 
                 cn.Open();
                 _usuario.Id = Convert.ToInt32(cmd.ExecuteScalar());

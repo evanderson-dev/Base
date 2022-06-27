@@ -47,8 +47,29 @@ namespace UIPrincipal
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
             usuario.NomeCompleto = textBoxNomeCompleto.Text;
-            usuario.Cpf = textBoxCpf.Text;
+            usuario.Cpf = maskedTextBoxCpf.Text;//textBoxCpf.Text;
             usuario.Ativo = ativoCheckBox.Checked;
+            usuario.Rg = textBoxRg.Text;
+            usuario.OrgaoExpeditor = textBoxOrgExpeditor.Text;
+            usuario.DataNascimento = maskedTextBoxDataNascimento.Text;
+            usuario.Rua = textBoxRua.Text;
+            usuario.NumCasa = textBoxNumCasa.Text;
+            usuario.EstadoCivil = textBoxEstadoCivil.Text;
+            usuario.Nacionalidade = textBoxNacionalidade.Text;
+            /*
+                @Email,------------
+	            @Telefone,---------
+	            @CelularUm,--------
+	            @CelularDois,------
+	            @Cidade,-----------
+	            @Uf)---------------
+                */
+            usuario.Email = textBoxEmail.Text;
+            usuario.Telefone = maskedTextBoxTelefone.Text;
+            usuario.CelularUm = maskedTextBoxCelularUm.Text;
+            usuario.CelularDois = maskedTextBoxCelularDois.Text;
+            usuario.Cidade = textBoxCidade.Text;
+            usuario.Uf = textBoxUf.Text;
 
 
             if (inserindoNovo)

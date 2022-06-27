@@ -1,9 +1,9 @@
 ﻿using BLL;
 using System;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using DAL;//ADICIONADO PARA TESTE
-using System.Data;//ADICIONADO PARA TESTE
+///using System.Data.SqlClient;
+///using DAL;//ADICIONADO PARA TESTE
+///using System.Data;//ADICIONADO PARA TESTE
 
 namespace UIPrincipal
 {
@@ -15,10 +15,10 @@ namespace UIPrincipal
             InitializeComponent();
             Logou = false;
         }
-        ///////////////////////////////////////////////////////////////////////////////
+        /*//////////////////////////////////////////////////////////////////////////////
         SqlConnection cn = new SqlConnection(@"Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS; Integrated Security=True");
         string nome, senha;
-        ///////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////*/
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Application.Exit();//FORÇA O FECHAMENTO DE TODO O SISTEMA
