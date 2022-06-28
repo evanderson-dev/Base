@@ -51,5 +51,11 @@ namespace UIPrincipal
                 textBoxSenha.Focus();
             }
         }
+
+        private void textBoxSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonLogin_Click(null, null);
+        }
     }
 }

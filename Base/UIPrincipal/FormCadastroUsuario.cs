@@ -62,22 +62,23 @@ namespace UIPrincipal
             usuario.CelularDois = maskedTextBoxCelularDois.Text;
             usuario.Cidade = textBoxCidade.Text;
             usuario.Uf = textBoxUf.Text;
-            //usuario.Id = Convert.ToInt32(idTextBox.Text);
-            //usuario.Ativo = ativoCheckBox.Checked;
-            /*/@Id_Permissao,--###############
-            int idpermissao = 0;
-            foreach (int i in checkedListBoxNivelFuncionario.CheckedItems)
-            {
-                idpermissao += i;
-            }
-            usuario.Id_Permissao = Convert.ToInt32(idpermissao);
-            ////////////////////////////////*/
-            usuario.Id_Permissao = 2;
+
+            int idpermissao = 3;
+
+            if (radioButtonNivelUm.Checked)
+                idpermissao = 1;
+            else if (radioButtonNivelDois.Checked)
+                idpermissao = 2;
+
+            usuario.Id_Permissao = idpermissao;
 
             usuario.Salario = textBoxSalario.Text;
             usuario.Cargo = textBoxCargo.Text;
             usuario.DataAdmissao = maskedTextBoxDataAdmissao.Text;
             usuario.DataDemissao = maskedTextBoxDataDemissao.Text;
+            usuario.Funcionario = checkBoxFuncionario.Checked;
+            usuario.Cliente = checkBoxCliente.Checked;
+            usuario.Cep = maskedTextBoxCep.Text;
 
             if (inserindoNovo)
                 usuarioBLL.Inserir(usuario);

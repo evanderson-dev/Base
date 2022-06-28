@@ -86,12 +86,12 @@ namespace DAL
                 {
                     Value = _usuario.Nacionalidade
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar)
                 {
                     Value = _usuario.Email
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Telefone", SqlDbType.VarChar)
                 {
                     Value = _usuario.Telefone
@@ -137,11 +137,28 @@ namespace DAL
                     Value = _usuario.DataAdmissao
                 });
 
-                cmd.Parameters.Add(new SqlParameter("@DataDemissao", SqlDbType.DateTime)
+                if (_usuario.DataDemissao.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@DataDemissao", SqlDbType.DateTime)
+                    {
+                        Value = _usuario.DataDemissao
+                    });
+
+                cmd.Parameters.Add(new SqlParameter("@Funcionario", SqlDbType.Bit)
                 {
-                    Value = _usuario.DataDemissao
+                    Value = _usuario.Funcionario
                 });
 
+                cmd.Parameters.Add(new SqlParameter("@Cliente", SqlDbType.Bit)
+                {
+                    Value = _usuario.Cliente
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Cep", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Cep
+                });
+
+                /////////////////////////////////////////////////////////////
                 cn.Open();
                 _usuario.Id = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -191,7 +208,7 @@ namespace DAL
             {
                 throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -213,7 +230,7 @@ namespace DAL
                 SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
                 pid.Value = _id;
                 cmd.Parameters.Add(pid);
-                
+
                 //ABRE A CONEXÃO COM O BANCO DE DADOS
                 cn.Open();
                 int resultado = cmd.ExecuteNonQuery();//EXECUTA O COMANDO SQL NO BANCO DE DADOS
@@ -224,7 +241,8 @@ namespace DAL
             {
                 throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 throw new Exception(ex.Message);
             }
             finally

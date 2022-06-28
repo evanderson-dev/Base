@@ -74,6 +74,7 @@ namespace UIPrincipal
             this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(208, 20);
             this.textBoxSenha.TabIndex = 1;
+            this.textBoxSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSenha_KeyDown);
             // 
             // labelLogin
             // 

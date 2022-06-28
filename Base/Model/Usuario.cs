@@ -32,6 +32,10 @@ namespace Model{
         private string cargo;
         private string dataAdmissao;
         private string dataDemissao;
+        private bool funcionario;
+        private bool cliente;
+        private string cep;
+
         public string NomeUsuario
         {
             get { return nomeUsuario; }
@@ -157,6 +161,23 @@ namespace Model{
         {
             get { return dataDemissao; }
             set { dataDemissao = value; }
+        }
+
+        public bool Funcionario
+        {
+            get { return funcionario; }
+            set { funcionario = value; }
+        }
+
+        public bool Cliente
+        {
+            get { return cliente; }
+            set { cliente = value; }
+        }
+        public string Cep
+        {
+            get { return cep; }
+            set { cep = value; }
         }
     }
 }

@@ -55,6 +55,7 @@ namespace UIPrincipal
             System.Windows.Forms.Label labelNumConta;
             System.Windows.Forms.Label labelDataAdmissao;
             System.Windows.Forms.Label labelDataDemissao;
+            System.Windows.Forms.Label label4;
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
@@ -78,22 +79,24 @@ namespace UIPrincipal
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
+            this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
+            this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
+            this.radioButtonNivelUm = new System.Windows.Forms.RadioButton();
+            this.maskedTextBoxDataDemissao = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxNumConta = new System.Windows.Forms.TextBox();
+            this.textBoxAgencia = new System.Windows.Forms.TextBox();
+            this.textBoxBanco = new System.Windows.Forms.TextBox();
+            this.textBoxCargo = new System.Windows.Forms.TextBox();
+            this.textBoxSalario = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBoxDadosDeAcesso = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.checkedListBoxNivelFuncionario = new System.Windows.Forms.CheckedListBox();
-            this.textBoxSalario = new System.Windows.Forms.TextBox();
-            this.textBoxCargo = new System.Windows.Forms.TextBox();
-            this.textBoxBanco = new System.Windows.Forms.TextBox();
-            this.textBoxAgencia = new System.Windows.Forms.TextBox();
-            this.textBoxNumConta = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxDataDemissao = new System.Windows.Forms.MaskedTextBox();
+            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
+            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.radioButtonNivelUm = new System.Windows.Forms.RadioButton();
-            this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
-            this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
+            this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -119,6 +122,7 @@ namespace UIPrincipal
             labelNumConta = new System.Windows.Forms.Label();
             labelDataAdmissao = new System.Windows.Forms.Label();
             labelDataDemissao = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             this.groupBoxFuncionario.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBoxDadosDeAcesso.SuspendLayout();
@@ -200,7 +204,7 @@ namespace UIPrincipal
             // 
             label3.AutoSize = true;
             label3.ForeColor = System.Drawing.Color.Black;
-            label3.Location = new System.Drawing.Point(509, 23);
+            label3.Location = new System.Drawing.Point(425, 23);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(81, 13);
             label3.TabIndex = 1;
@@ -230,7 +234,7 @@ namespace UIPrincipal
             // 
             labelRua.AutoSize = true;
             labelRua.ForeColor = System.Drawing.Color.Black;
-            labelRua.Location = new System.Drawing.Point(3, 101);
+            labelRua.Location = new System.Drawing.Point(74, 101);
             labelRua.Name = "labelRua";
             labelRua.Size = new System.Drawing.Size(33, 13);
             labelRua.TabIndex = 32;
@@ -240,11 +244,11 @@ namespace UIPrincipal
             // 
             labelNumCasa.AutoSize = true;
             labelNumCasa.ForeColor = System.Drawing.Color.Black;
-            labelNumCasa.Location = new System.Drawing.Point(254, 101);
+            labelNumCasa.Location = new System.Drawing.Point(285, 101);
             labelNumCasa.Name = "labelNumCasa";
-            labelNumCasa.Size = new System.Drawing.Size(58, 13);
+            labelNumCasa.Size = new System.Drawing.Size(22, 13);
             labelNumCasa.TabIndex = 25;
-            labelNumCasa.Text = "NUMERO:";
+            labelNumCasa.Text = "N°:";
             // 
             // labelEmail
             // 
@@ -290,7 +294,7 @@ namespace UIPrincipal
             // 
             labelCidade.AutoSize = true;
             labelCidade.ForeColor = System.Drawing.Color.Black;
-            labelCidade.Location = new System.Drawing.Point(315, 101);
+            labelCidade.Location = new System.Drawing.Point(327, 101);
             labelCidade.Name = "labelCidade";
             labelCidade.Size = new System.Drawing.Size(50, 13);
             labelCidade.TabIndex = 24;
@@ -300,11 +304,81 @@ namespace UIPrincipal
             // 
             labelUf.AutoSize = true;
             labelUf.ForeColor = System.Drawing.Color.Black;
-            labelUf.Location = new System.Drawing.Point(458, 101);
+            labelUf.Location = new System.Drawing.Point(470, 101);
             labelUf.Name = "labelUf";
             labelUf.Size = new System.Drawing.Size(24, 13);
             labelUf.TabIndex = 17;
             labelUf.Text = "UF:";
+            // 
+            // labelSalario
+            // 
+            labelSalario.AutoSize = true;
+            labelSalario.ForeColor = System.Drawing.Color.Black;
+            labelSalario.Location = new System.Drawing.Point(169, 93);
+            labelSalario.Name = "labelSalario";
+            labelSalario.Size = new System.Drawing.Size(56, 13);
+            labelSalario.TabIndex = 4;
+            labelSalario.Text = "SALARIO:";
+            // 
+            // labelCargo
+            // 
+            labelCargo.AutoSize = true;
+            labelCargo.ForeColor = System.Drawing.Color.Black;
+            labelCargo.Location = new System.Drawing.Point(3, 93);
+            labelCargo.Name = "labelCargo";
+            labelCargo.Size = new System.Drawing.Size(48, 13);
+            labelCargo.TabIndex = 2;
+            labelCargo.Text = "CARGO:";
+            // 
+            // labelBanco
+            // 
+            labelBanco.AutoSize = true;
+            labelBanco.ForeColor = System.Drawing.Color.Black;
+            labelBanco.Location = new System.Drawing.Point(272, 93);
+            labelBanco.Name = "labelBanco";
+            labelBanco.Size = new System.Drawing.Size(47, 13);
+            labelBanco.TabIndex = 6;
+            labelBanco.Text = "BANCO:";
+            // 
+            // labelAgencia
+            // 
+            labelAgencia.AutoSize = true;
+            labelAgencia.ForeColor = System.Drawing.Color.Black;
+            labelAgencia.Location = new System.Drawing.Point(500, 93);
+            labelAgencia.Name = "labelAgencia";
+            labelAgencia.Size = new System.Drawing.Size(57, 13);
+            labelAgencia.TabIndex = 8;
+            labelAgencia.Text = "AGÊNCIA:";
+            // 
+            // labelNumConta
+            // 
+            labelNumConta.AutoSize = true;
+            labelNumConta.ForeColor = System.Drawing.Color.Black;
+            labelNumConta.Location = new System.Drawing.Point(603, 93);
+            labelNumConta.Name = "labelNumConta";
+            labelNumConta.Size = new System.Drawing.Size(116, 13);
+            labelNumConta.TabIndex = 10;
+            labelNumConta.Text = "NUMERO DA CONTA:";
+            // 
+            // labelDataAdmissao
+            // 
+            labelDataAdmissao.AutoSize = true;
+            labelDataAdmissao.ForeColor = System.Drawing.Color.Black;
+            labelDataAdmissao.Location = new System.Drawing.Point(3, 132);
+            labelDataAdmissao.Name = "labelDataAdmissao";
+            labelDataAdmissao.Size = new System.Drawing.Size(116, 13);
+            labelDataAdmissao.TabIndex = 12;
+            labelDataAdmissao.Text = "DATA DE ADMISSÃO:";
+            // 
+            // labelDataDemissao
+            // 
+            labelDataDemissao.AutoSize = true;
+            labelDataDemissao.ForeColor = System.Drawing.Color.Black;
+            labelDataDemissao.Location = new System.Drawing.Point(138, 132);
+            labelDataDemissao.Name = "labelDataDemissao";
+            labelDataDemissao.Size = new System.Drawing.Size(116, 13);
+            labelDataDemissao.TabIndex = 14;
+            labelDataDemissao.Text = "DATA DE DEMISSÃO:";
             // 
             // buttonSalvar
             // 
@@ -383,7 +457,7 @@ namespace UIPrincipal
             // 
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(77, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
-            this.textBoxNomeCompleto.Size = new System.Drawing.Size(429, 20);
+            this.textBoxNomeCompleto.Size = new System.Drawing.Size(345, 20);
             this.textBoxNomeCompleto.TabIndex = 0;
             // 
             // textBoxSenha
@@ -417,7 +491,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxDataNascimento
             // 
-            this.maskedTextBoxDataNascimento.Location = new System.Drawing.Point(512, 39);
+            this.maskedTextBoxDataNascimento.Location = new System.Drawing.Point(428, 39);
             this.maskedTextBoxDataNascimento.Mask = "00-00-0000";
             this.maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
             this.maskedTextBoxDataNascimento.Size = new System.Drawing.Size(78, 20);
@@ -440,30 +514,30 @@ namespace UIPrincipal
             // 
             // textBoxRua
             // 
-            this.textBoxRua.Location = new System.Drawing.Point(6, 117);
+            this.textBoxRua.Location = new System.Drawing.Point(77, 117);
             this.textBoxRua.Name = "textBoxRua";
-            this.textBoxRua.Size = new System.Drawing.Size(245, 20);
+            this.textBoxRua.Size = new System.Drawing.Size(207, 20);
             this.textBoxRua.TabIndex = 8;
             // 
             // textBoxNumCasa
             // 
-            this.textBoxNumCasa.Location = new System.Drawing.Point(257, 117);
+            this.textBoxNumCasa.Location = new System.Drawing.Point(288, 117);
             this.textBoxNumCasa.Name = "textBoxNumCasa";
-            this.textBoxNumCasa.Size = new System.Drawing.Size(55, 20);
+            this.textBoxNumCasa.Size = new System.Drawing.Size(36, 20);
             this.textBoxNumCasa.TabIndex = 9;
             // 
             // textBoxCidade
             // 
-            this.textBoxCidade.Location = new System.Drawing.Point(318, 117);
+            this.textBoxCidade.Location = new System.Drawing.Point(330, 117);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(137, 20);
             this.textBoxCidade.TabIndex = 10;
             // 
             // textBoxUf
             // 
-            this.textBoxUf.Location = new System.Drawing.Point(461, 117);
+            this.textBoxUf.Location = new System.Drawing.Point(473, 117);
             this.textBoxUf.Name = "textBoxUf";
-            this.textBoxUf.Size = new System.Drawing.Size(45, 20);
+            this.textBoxUf.Size = new System.Drawing.Size(33, 20);
             this.textBoxUf.TabIndex = 11;
             // 
             // maskedTextBoxCelularUm
@@ -499,9 +573,8 @@ namespace UIPrincipal
             // 
             // groupBoxFuncionario
             // 
-            this.groupBoxFuncionario.Controls.Add(this.radioButtonNivelTres);
-            this.groupBoxFuncionario.Controls.Add(this.radioButtonNivelDois);
-            this.groupBoxFuncionario.Controls.Add(this.radioButtonNivelUm);
+            this.groupBoxFuncionario.Controls.Add(this.checkBoxCliente);
+            this.groupBoxFuncionario.Controls.Add(this.checkBoxFuncionario);
             this.groupBoxFuncionario.Controls.Add(this.maskedTextBoxDataDemissao);
             this.groupBoxFuncionario.Controls.Add(this.maskedTextBoxDataAdmissao);
             this.groupBoxFuncionario.Controls.Add(labelDataDemissao);
@@ -525,9 +598,96 @@ namespace UIPrincipal
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "DADOS DO FUNCIONARIO";
             // 
+            // radioButtonNivelTres
+            // 
+            this.radioButtonNivelTres.AutoSize = true;
+            this.radioButtonNivelTres.Location = new System.Drawing.Point(9, 46);
+            this.radioButtonNivelTres.Name = "radioButtonNivelTres";
+            this.radioButtonNivelTres.Size = new System.Drawing.Size(298, 17);
+            this.radioButtonNivelTres.TabIndex = 6;
+            this.radioButtonNivelTres.Text = "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)";
+            this.radioButtonNivelTres.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNivelDois
+            // 
+            this.radioButtonNivelDois.AutoSize = true;
+            this.radioButtonNivelDois.Location = new System.Drawing.Point(9, 31);
+            this.radioButtonNivelDois.Name = "radioButtonNivelDois";
+            this.radioButtonNivelDois.Size = new System.Drawing.Size(271, 17);
+            this.radioButtonNivelDois.TabIndex = 15;
+            this.radioButtonNivelDois.Text = "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S";
+            this.radioButtonNivelDois.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNivelUm
+            // 
+            this.radioButtonNivelUm.AutoSize = true;
+            this.radioButtonNivelUm.Checked = true;
+            this.radioButtonNivelUm.Location = new System.Drawing.Point(9, 16);
+            this.radioButtonNivelUm.Name = "radioButtonNivelUm";
+            this.radioButtonNivelUm.Size = new System.Drawing.Size(102, 17);
+            this.radioButtonNivelUm.TabIndex = 6;
+            this.radioButtonNivelUm.TabStop = true;
+            this.radioButtonNivelUm.Text = "N1 - ABRIR O.S";
+            this.radioButtonNivelUm.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxDataDemissao
+            // 
+            this.maskedTextBoxDataDemissao.Location = new System.Drawing.Point(141, 148);
+            this.maskedTextBoxDataDemissao.Mask = "00-00-0000";
+            this.maskedTextBoxDataDemissao.Name = "maskedTextBoxDataDemissao";
+            this.maskedTextBoxDataDemissao.Size = new System.Drawing.Size(128, 20);
+            this.maskedTextBoxDataDemissao.TabIndex = 6;
+            this.maskedTextBoxDataDemissao.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxDataAdmissao
+            // 
+            this.maskedTextBoxDataAdmissao.Location = new System.Drawing.Point(6, 148);
+            this.maskedTextBoxDataAdmissao.Mask = "00-00-0000";
+            this.maskedTextBoxDataAdmissao.Name = "maskedTextBoxDataAdmissao";
+            this.maskedTextBoxDataAdmissao.Size = new System.Drawing.Size(129, 20);
+            this.maskedTextBoxDataAdmissao.TabIndex = 5;
+            this.maskedTextBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
+            // 
+            // textBoxNumConta
+            // 
+            this.textBoxNumConta.Location = new System.Drawing.Point(606, 109);
+            this.textBoxNumConta.Name = "textBoxNumConta";
+            this.textBoxNumConta.Size = new System.Drawing.Size(131, 20);
+            this.textBoxNumConta.TabIndex = 4;
+            // 
+            // textBoxAgencia
+            // 
+            this.textBoxAgencia.Location = new System.Drawing.Point(500, 109);
+            this.textBoxAgencia.Name = "textBoxAgencia";
+            this.textBoxAgencia.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAgencia.TabIndex = 3;
+            // 
+            // textBoxBanco
+            // 
+            this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
+            this.textBoxBanco.Name = "textBoxBanco";
+            this.textBoxBanco.Size = new System.Drawing.Size(219, 20);
+            this.textBoxBanco.TabIndex = 2;
+            // 
+            // textBoxCargo
+            // 
+            this.textBoxCargo.Location = new System.Drawing.Point(6, 109);
+            this.textBoxCargo.Name = "textBoxCargo";
+            this.textBoxCargo.Size = new System.Drawing.Size(157, 20);
+            this.textBoxCargo.TabIndex = 0;
+            // 
+            // textBoxSalario
+            // 
+            this.textBoxSalario.Location = new System.Drawing.Point(169, 109);
+            this.textBoxSalario.Name = "textBoxSalario";
+            this.textBoxSalario.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSalario.TabIndex = 1;
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkedListBoxNivelFuncionario);
+            this.groupBox3.Controls.Add(this.radioButtonNivelUm);
+            this.groupBox3.Controls.Add(this.radioButtonNivelDois);
+            this.groupBox3.Controls.Add(this.radioButtonNivelTres);
             this.groupBox3.Location = new System.Drawing.Point(333, 20);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(404, 70);
@@ -559,6 +719,8 @@ namespace UIPrincipal
             // 
             // groupBoxDadosPessoais
             // 
+            this.groupBoxDadosPessoais.Controls.Add(label4);
+            this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCep);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxCodigo);
             this.groupBoxDadosPessoais.Controls.Add(this.ativoCheckBox);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRg);
@@ -599,177 +761,47 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
             // 
-            // checkedListBoxNivelFuncionario
+            // checkBoxFuncionario
             // 
-            this.checkedListBoxNivelFuncionario.FormattingEnabled = true;
-            this.checkedListBoxNivelFuncionario.Items.AddRange(new object[] {
-            "N1 - ABRIR O.S",
-            "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S",
-            "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)"});
-            this.checkedListBoxNivelFuncionario.Location = new System.Drawing.Point(6, 14);
-            this.checkedListBoxNivelFuncionario.Name = "checkedListBoxNivelFuncionario";
-            this.checkedListBoxNivelFuncionario.Size = new System.Drawing.Size(392, 49);
-            this.checkedListBoxNivelFuncionario.TabIndex = 0;
+            this.checkBoxFuncionario.AutoSize = true;
+            this.checkBoxFuncionario.Location = new System.Drawing.Point(569, 148);
+            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
+            this.checkBoxFuncionario.Size = new System.Drawing.Size(100, 17);
+            this.checkBoxFuncionario.TabIndex = 16;
+            this.checkBoxFuncionario.Text = "FUNCIONARIO";
+            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
             // 
-            // textBoxSalario
+            // checkBoxCliente
             // 
-            this.textBoxSalario.Location = new System.Drawing.Point(169, 109);
-            this.textBoxSalario.Name = "textBoxSalario";
-            this.textBoxSalario.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSalario.TabIndex = 1;
-            // 
-            // labelSalario
-            // 
-            labelSalario.AutoSize = true;
-            labelSalario.ForeColor = System.Drawing.Color.Black;
-            labelSalario.Location = new System.Drawing.Point(169, 93);
-            labelSalario.Name = "labelSalario";
-            labelSalario.Size = new System.Drawing.Size(56, 13);
-            labelSalario.TabIndex = 4;
-            labelSalario.Text = "SALARIO:";
-            // 
-            // textBoxCargo
-            // 
-            this.textBoxCargo.Location = new System.Drawing.Point(6, 109);
-            this.textBoxCargo.Name = "textBoxCargo";
-            this.textBoxCargo.Size = new System.Drawing.Size(157, 20);
-            this.textBoxCargo.TabIndex = 0;
-            // 
-            // labelCargo
-            // 
-            labelCargo.AutoSize = true;
-            labelCargo.ForeColor = System.Drawing.Color.Black;
-            labelCargo.Location = new System.Drawing.Point(3, 93);
-            labelCargo.Name = "labelCargo";
-            labelCargo.Size = new System.Drawing.Size(48, 13);
-            labelCargo.TabIndex = 2;
-            labelCargo.Text = "CARGO:";
-            // 
-            // textBoxBanco
-            // 
-            this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
-            this.textBoxBanco.Name = "textBoxBanco";
-            this.textBoxBanco.Size = new System.Drawing.Size(219, 20);
-            this.textBoxBanco.TabIndex = 2;
-            // 
-            // textBoxAgencia
-            // 
-            this.textBoxAgencia.Location = new System.Drawing.Point(500, 109);
-            this.textBoxAgencia.Name = "textBoxAgencia";
-            this.textBoxAgencia.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAgencia.TabIndex = 3;
-            // 
-            // textBoxNumConta
-            // 
-            this.textBoxNumConta.Location = new System.Drawing.Point(606, 109);
-            this.textBoxNumConta.Name = "textBoxNumConta";
-            this.textBoxNumConta.Size = new System.Drawing.Size(131, 20);
-            this.textBoxNumConta.TabIndex = 4;
-            // 
-            // labelBanco
-            // 
-            labelBanco.AutoSize = true;
-            labelBanco.ForeColor = System.Drawing.Color.Black;
-            labelBanco.Location = new System.Drawing.Point(272, 93);
-            labelBanco.Name = "labelBanco";
-            labelBanco.Size = new System.Drawing.Size(47, 13);
-            labelBanco.TabIndex = 6;
-            labelBanco.Text = "BANCO:";
-            // 
-            // labelAgencia
-            // 
-            labelAgencia.AutoSize = true;
-            labelAgencia.ForeColor = System.Drawing.Color.Black;
-            labelAgencia.Location = new System.Drawing.Point(500, 93);
-            labelAgencia.Name = "labelAgencia";
-            labelAgencia.Size = new System.Drawing.Size(57, 13);
-            labelAgencia.TabIndex = 8;
-            labelAgencia.Text = "AGÊNCIA:";
-            // 
-            // labelNumConta
-            // 
-            labelNumConta.AutoSize = true;
-            labelNumConta.ForeColor = System.Drawing.Color.Black;
-            labelNumConta.Location = new System.Drawing.Point(603, 93);
-            labelNumConta.Name = "labelNumConta";
-            labelNumConta.Size = new System.Drawing.Size(116, 13);
-            labelNumConta.TabIndex = 10;
-            labelNumConta.Text = "NUMERO DA CONTA:";
-            // 
-            // labelDataAdmissao
-            // 
-            labelDataAdmissao.AutoSize = true;
-            labelDataAdmissao.ForeColor = System.Drawing.Color.Black;
-            labelDataAdmissao.Location = new System.Drawing.Point(3, 132);
-            labelDataAdmissao.Name = "labelDataAdmissao";
-            labelDataAdmissao.Size = new System.Drawing.Size(116, 13);
-            labelDataAdmissao.TabIndex = 12;
-            labelDataAdmissao.Text = "DATA DE ADMISSÃO:";
-            // 
-            // labelDataDemissao
-            // 
-            labelDataDemissao.AutoSize = true;
-            labelDataDemissao.ForeColor = System.Drawing.Color.Black;
-            labelDataDemissao.Location = new System.Drawing.Point(138, 132);
-            labelDataDemissao.Name = "labelDataDemissao";
-            labelDataDemissao.Size = new System.Drawing.Size(116, 13);
-            labelDataDemissao.TabIndex = 14;
-            labelDataDemissao.Text = "DATA DE DEMISSÃO:";
-            // 
-            // maskedTextBoxDataAdmissao
-            // 
-            this.maskedTextBoxDataAdmissao.Location = new System.Drawing.Point(6, 148);
-            this.maskedTextBoxDataAdmissao.Mask = "00-00-0000";
-            this.maskedTextBoxDataAdmissao.Name = "maskedTextBoxDataAdmissao";
-            this.maskedTextBoxDataAdmissao.Size = new System.Drawing.Size(129, 20);
-            this.maskedTextBoxDataAdmissao.TabIndex = 5;
-            this.maskedTextBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBoxDataDemissao
-            // 
-            this.maskedTextBoxDataDemissao.Location = new System.Drawing.Point(141, 148);
-            this.maskedTextBoxDataDemissao.Mask = "00-00-0000";
-            this.maskedTextBoxDataDemissao.Name = "maskedTextBoxDataDemissao";
-            this.maskedTextBoxDataDemissao.Size = new System.Drawing.Size(128, 20);
-            this.maskedTextBoxDataDemissao.TabIndex = 6;
-            this.maskedTextBoxDataDemissao.ValidatingType = typeof(System.DateTime);
+            this.checkBoxCliente.AutoSize = true;
+            this.checkBoxCliente.Location = new System.Drawing.Point(569, 171);
+            this.checkBoxCliente.Name = "checkBoxCliente";
+            this.checkBoxCliente.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxCliente.TabIndex = 17;
+            this.checkBoxCliente.Text = "CLIENTE";
+            this.checkBoxCliente.UseVisualStyleBackColor = true;
             // 
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
-            // radioButtonNivelUm
+            // maskedTextBoxCep
             // 
-            this.radioButtonNivelUm.AutoSize = true;
-            this.radioButtonNivelUm.Location = new System.Drawing.Point(350, 175);
-            this.radioButtonNivelUm.Name = "radioButtonNivelUm";
-            this.radioButtonNivelUm.Size = new System.Drawing.Size(102, 17);
-            this.radioButtonNivelUm.TabIndex = 6;
-            this.radioButtonNivelUm.TabStop = true;
-            this.radioButtonNivelUm.Text = "N1 - ABRIR O.S";
-            this.radioButtonNivelUm.UseVisualStyleBackColor = true;
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 117);
+            this.maskedTextBoxCep.Mask = "00000-000";
+            this.maskedTextBoxCep.Name = "maskedTextBoxCep";
+            this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
+            this.maskedTextBoxCep.TabIndex = 6;
             // 
-            // radioButtonNivelDois
+            // label4
             // 
-            this.radioButtonNivelDois.AutoSize = true;
-            this.radioButtonNivelDois.Location = new System.Drawing.Point(350, 198);
-            this.radioButtonNivelDois.Name = "radioButtonNivelDois";
-            this.radioButtonNivelDois.Size = new System.Drawing.Size(271, 17);
-            this.radioButtonNivelDois.TabIndex = 15;
-            this.radioButtonNivelDois.TabStop = true;
-            this.radioButtonNivelDois.Text = "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S";
-            this.radioButtonNivelDois.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNivelTres
-            // 
-            this.radioButtonNivelTres.AutoSize = true;
-            this.radioButtonNivelTres.Location = new System.Drawing.Point(350, 221);
-            this.radioButtonNivelTres.Name = "radioButtonNivelTres";
-            this.radioButtonNivelTres.Size = new System.Drawing.Size(298, 17);
-            this.radioButtonNivelTres.TabIndex = 6;
-            this.radioButtonNivelTres.TabStop = true;
-            this.radioButtonNivelTres.Text = "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)";
-            this.radioButtonNivelTres.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.ForeColor = System.Drawing.Color.Black;
+            label4.Location = new System.Drawing.Point(4, 101);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 33;
+            label4.Text = "CEP:";
             // 
             // FormCadastroUsuario
             // 
@@ -795,6 +827,7 @@ namespace UIPrincipal
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBoxDadosDeAcesso.ResumeLayout(false);
             this.groupBoxDadosDeAcesso.PerformLayout();
             this.groupBoxDadosPessoais.ResumeLayout(false);
@@ -833,7 +866,6 @@ namespace UIPrincipal
         private System.Windows.Forms.GroupBox groupBoxDadosPessoais;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBoxDadosDeAcesso;
-        private System.Windows.Forms.CheckedListBox checkedListBoxNivelFuncionario;
         private System.Windows.Forms.TextBox textBoxNumConta;
         private System.Windows.Forms.TextBox textBoxAgencia;
         private System.Windows.Forms.TextBox textBoxBanco;
@@ -844,6 +876,9 @@ namespace UIPrincipal
         private System.Windows.Forms.RadioButton radioButtonNivelTres;
         private System.Windows.Forms.RadioButton radioButtonNivelDois;
         private System.Windows.Forms.RadioButton radioButtonNivelUm;
+        private System.Windows.Forms.CheckBox checkBoxCliente;
+        private System.Windows.Forms.CheckBox checkBoxFuncionario;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCep;
     }
 }
 

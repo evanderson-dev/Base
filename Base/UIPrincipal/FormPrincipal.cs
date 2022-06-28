@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -39,15 +32,17 @@ namespace UIPrincipal
 
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //this.Visible = !this.Visible;
             using (FormConsultaUsuario frm = new FormConsultaUsuario())
             {
                 frm.ShowDialog();
             }
+            //this.Visible = !this.Visible;
         }
 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Login();
         }
     }
 }

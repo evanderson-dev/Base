@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Model;
+using System;
 using System.Data;
 
 namespace BLL
@@ -8,6 +9,11 @@ namespace BLL
     {
         public void Inserir(Usuario _usuario)
         {
+            if (_usuario.DataNascimento.ToString().Trim().Length < 6)
+                throw new Exception("Informe a data de nascimento.");
+            if (_usuario.DataAdmissao.ToString().Trim().Length < 6)
+                throw new Exception("Informe a data de admissão.");
+
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Inserir(_usuario);
         }
