@@ -48,6 +48,13 @@ namespace UIPrincipal
             System.Windows.Forms.Label labelCelularDois;
             System.Windows.Forms.Label labelCidade;
             System.Windows.Forms.Label labelUf;
+            System.Windows.Forms.Label labelSalario;
+            System.Windows.Forms.Label labelCargo;
+            System.Windows.Forms.Label labelBanco;
+            System.Windows.Forms.Label labelAgencia;
+            System.Windows.Forms.Label labelNumConta;
+            System.Windows.Forms.Label labelDataAdmissao;
+            System.Windows.Forms.Label labelDataDemissao;
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
@@ -70,10 +77,23 @@ namespace UIPrincipal
             this.maskedTextBoxCelularDois = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxDadosDeAcesso = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNivelFuncionario = new System.Windows.Forms.CheckedListBox();
+            this.textBoxSalario = new System.Windows.Forms.TextBox();
+            this.textBoxCargo = new System.Windows.Forms.TextBox();
+            this.textBoxBanco = new System.Windows.Forms.TextBox();
+            this.textBoxAgencia = new System.Windows.Forms.TextBox();
+            this.textBoxNumConta = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxDataDemissao = new System.Windows.Forms.MaskedTextBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.radioButtonNivelUm = new System.Windows.Forms.RadioButton();
+            this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
+            this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -92,19 +112,28 @@ namespace UIPrincipal
             labelCelularDois = new System.Windows.Forms.Label();
             labelCidade = new System.Windows.Forms.Label();
             labelUf = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            labelSalario = new System.Windows.Forms.Label();
+            labelCargo = new System.Windows.Forms.Label();
+            labelBanco = new System.Windows.Forms.Label();
+            labelAgencia = new System.Windows.Forms.Label();
+            labelNumConta = new System.Windows.Forms.Label();
+            labelDataAdmissao = new System.Windows.Forms.Label();
+            labelDataDemissao = new System.Windows.Forms.Label();
             this.groupBoxFuncionario.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBoxDadosDeAcesso.SuspendLayout();
+            this.groupBoxDadosPessoais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeUsuarioLabel
             // 
             nomeUsuarioLabel.AutoSize = true;
             nomeUsuarioLabel.ForeColor = System.Drawing.Color.Black;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(6, 16);
+            nomeUsuarioLabel.Location = new System.Drawing.Point(3, 15);
             nomeUsuarioLabel.Name = "nomeUsuarioLabel";
             nomeUsuarioLabel.Size = new System.Drawing.Size(43, 13);
-            nomeUsuarioLabel.TabIndex = 8;
+            nomeUsuarioLabel.TabIndex = 3;
             nomeUsuarioLabel.Text = "LOGIN:";
             // 
             // cpfLabel
@@ -114,7 +143,7 @@ namespace UIPrincipal
             cpfLabel.Location = new System.Drawing.Point(3, 62);
             cpfLabel.Name = "cpfLabel";
             cpfLabel.Size = new System.Drawing.Size(30, 13);
-            cpfLabel.TabIndex = 10;
+            cpfLabel.TabIndex = 9;
             cpfLabel.Text = "CPF:";
             // 
             // label1
@@ -124,17 +153,17 @@ namespace UIPrincipal
             label1.Location = new System.Drawing.Point(74, 23);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(104, 13);
-            label1.TabIndex = 11;
+            label1.TabIndex = 5;
             label1.Text = "NOME COMPLETO:";
             // 
             // labelSenha
             // 
             labelSenha.AutoSize = true;
             labelSenha.ForeColor = System.Drawing.Color.Black;
-            labelSenha.Location = new System.Drawing.Point(389, 16);
+            labelSenha.Location = new System.Drawing.Point(159, 15);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new System.Drawing.Size(47, 13);
-            labelSenha.TabIndex = 14;
+            labelSenha.TabIndex = 0;
             labelSenha.Text = "SENHA:";
             // 
             // label2
@@ -144,7 +173,7 @@ namespace UIPrincipal
             label2.Location = new System.Drawing.Point(3, 23);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(52, 13);
-            label2.TabIndex = 16;
+            label2.TabIndex = 3;
             label2.Text = "CODIGO:";
             // 
             // RgLabel
@@ -154,7 +183,7 @@ namespace UIPrincipal
             RgLabel.Location = new System.Drawing.Point(100, 62);
             RgLabel.Name = "RgLabel";
             RgLabel.Size = new System.Drawing.Size(26, 13);
-            RgLabel.TabIndex = 18;
+            RgLabel.TabIndex = 7;
             RgLabel.Text = "RG:";
             // 
             // labelOrgExpeditor
@@ -164,7 +193,7 @@ namespace UIPrincipal
             labelOrgExpeditor.Location = new System.Drawing.Point(191, 62);
             labelOrgExpeditor.Name = "labelOrgExpeditor";
             labelOrgExpeditor.Size = new System.Drawing.Size(102, 13);
-            labelOrgExpeditor.TabIndex = 20;
+            labelOrgExpeditor.TabIndex = 11;
             labelOrgExpeditor.Text = "ORG. EXPEDITOR:";
             // 
             // label3
@@ -174,7 +203,7 @@ namespace UIPrincipal
             label3.Location = new System.Drawing.Point(509, 23);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(81, 13);
-            label3.TabIndex = 22;
+            label3.TabIndex = 1;
             label3.Text = "NASCIMENTO:";
             // 
             // labelNacionalidade
@@ -184,7 +213,7 @@ namespace UIPrincipal
             labelNacionalidade.Location = new System.Drawing.Point(299, 62);
             labelNacionalidade.Name = "labelNacionalidade";
             labelNacionalidade.Size = new System.Drawing.Size(97, 13);
-            labelNacionalidade.TabIndex = 24;
+            labelNacionalidade.TabIndex = 13;
             labelNacionalidade.Text = "NACIONALIDADE:";
             // 
             // labelEstadoCivil
@@ -194,7 +223,7 @@ namespace UIPrincipal
             labelEstadoCivil.Location = new System.Drawing.Point(403, 62);
             labelEstadoCivil.Name = "labelEstadoCivil";
             labelEstadoCivil.Size = new System.Drawing.Size(83, 13);
-            labelEstadoCivil.TabIndex = 26;
+            labelEstadoCivil.TabIndex = 15;
             labelEstadoCivil.Text = "ESTADO CICIL:";
             // 
             // labelRua
@@ -204,7 +233,7 @@ namespace UIPrincipal
             labelRua.Location = new System.Drawing.Point(3, 101);
             labelRua.Name = "labelRua";
             labelRua.Size = new System.Drawing.Size(33, 13);
-            labelRua.TabIndex = 28;
+            labelRua.TabIndex = 32;
             labelRua.Text = "RUA:";
             // 
             // labelNumCasa
@@ -214,7 +243,7 @@ namespace UIPrincipal
             labelNumCasa.Location = new System.Drawing.Point(254, 101);
             labelNumCasa.Name = "labelNumCasa";
             labelNumCasa.Size = new System.Drawing.Size(58, 13);
-            labelNumCasa.TabIndex = 30;
+            labelNumCasa.TabIndex = 25;
             labelNumCasa.Text = "NUMERO:";
             // 
             // labelEmail
@@ -224,7 +253,7 @@ namespace UIPrincipal
             labelEmail.Location = new System.Drawing.Point(3, 140);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new System.Drawing.Size(45, 13);
-            labelEmail.TabIndex = 31;
+            labelEmail.TabIndex = 30;
             labelEmail.Text = "E-MAIL:";
             // 
             // labelTelefone
@@ -234,7 +263,7 @@ namespace UIPrincipal
             labelTelefone.Location = new System.Drawing.Point(218, 140);
             labelTelefone.Name = "labelTelefone";
             labelTelefone.Size = new System.Drawing.Size(66, 13);
-            labelTelefone.TabIndex = 32;
+            labelTelefone.TabIndex = 27;
             labelTelefone.Text = "TELEFONE:";
             // 
             // labelCelularUm
@@ -244,7 +273,7 @@ namespace UIPrincipal
             labelCelularUm.Location = new System.Drawing.Point(315, 140);
             labelCelularUm.Name = "labelCelularUm";
             labelCelularUm.Size = new System.Drawing.Size(68, 13);
-            labelCelularUm.TabIndex = 33;
+            labelCelularUm.TabIndex = 22;
             labelCelularUm.Text = "CELULAR 1:";
             // 
             // labelCelularDois
@@ -254,7 +283,7 @@ namespace UIPrincipal
             labelCelularDois.Location = new System.Drawing.Point(412, 140);
             labelCelularDois.Name = "labelCelularDois";
             labelCelularDois.Size = new System.Drawing.Size(68, 13);
-            labelCelularDois.TabIndex = 34;
+            labelCelularDois.TabIndex = 19;
             labelCelularDois.Text = "CELULAR 2:";
             // 
             // labelCidade
@@ -264,7 +293,7 @@ namespace UIPrincipal
             labelCidade.Location = new System.Drawing.Point(315, 101);
             labelCidade.Name = "labelCidade";
             labelCidade.Size = new System.Drawing.Size(50, 13);
-            labelCidade.TabIndex = 35;
+            labelCidade.TabIndex = 24;
             labelCidade.Text = "CIDADE:";
             // 
             // labelUf
@@ -274,7 +303,7 @@ namespace UIPrincipal
             labelUf.Location = new System.Drawing.Point(458, 101);
             labelUf.Name = "labelUf";
             labelUf.Size = new System.Drawing.Size(24, 13);
-            labelUf.TabIndex = 36;
+            labelUf.TabIndex = 17;
             labelUf.Text = "UF:";
             // 
             // buttonSalvar
@@ -288,7 +317,7 @@ namespace UIPrincipal
             this.buttonSalvar.Location = new System.Drawing.Point(22, 526);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(65, 23);
-            this.buttonSalvar.TabIndex = 5;
+            this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -299,7 +328,7 @@ namespace UIPrincipal
             this.buttonSalvarECadastrarNovo.Location = new System.Drawing.Point(93, 526);
             this.buttonSalvarECadastrarNovo.Name = "buttonSalvarECadastrarNovo";
             this.buttonSalvarECadastrarNovo.Size = new System.Drawing.Size(226, 23);
-            this.buttonSalvarECadastrarNovo.TabIndex = 6;
+            this.buttonSalvarECadastrarNovo.TabIndex = 4;
             this.buttonSalvarECadastrarNovo.Text = "SALVAR E CADASTRAR UM NOVO";
             this.buttonSalvarECadastrarNovo.UseVisualStyleBackColor = true;
             this.buttonSalvarECadastrarNovo.Click += new System.EventHandler(this.buttonSalvarECadastrarNovo_Click);
@@ -319,10 +348,10 @@ namespace UIPrincipal
             // 
             this.textBoxNomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
             this.textBoxNomeUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxNomeUsuario.Location = new System.Drawing.Point(9, 32);
+            this.textBoxNomeUsuario.Location = new System.Drawing.Point(6, 31);
             this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
-            this.textBoxNomeUsuario.Size = new System.Drawing.Size(377, 20);
-            this.textBoxNomeUsuario.TabIndex = 3;
+            this.textBoxNomeUsuario.Size = new System.Drawing.Size(150, 20);
+            this.textBoxNomeUsuario.TabIndex = 0;
             // 
             // textBoxRg
             // 
@@ -331,7 +360,7 @@ namespace UIPrincipal
             this.textBoxRg.Location = new System.Drawing.Point(103, 78);
             this.textBoxRg.Name = "textBoxRg";
             this.textBoxRg.Size = new System.Drawing.Size(85, 20);
-            this.textBoxRg.TabIndex = 1;
+            this.textBoxRg.TabIndex = 4;
             // 
             // buttonCancelarCadastro
             // 
@@ -345,7 +374,7 @@ namespace UIPrincipal
             this.buttonCancelarCadastro.Location = new System.Drawing.Point(325, 526);
             this.buttonCancelarCadastro.Name = "buttonCancelarCadastro";
             this.buttonCancelarCadastro.Size = new System.Drawing.Size(82, 23);
-            this.buttonCancelarCadastro.TabIndex = 7;
+            this.buttonCancelarCadastro.TabIndex = 5;
             this.buttonCancelarCadastro.Text = "CANCELAR";
             this.buttonCancelarCadastro.UseVisualStyleBackColor = false;
             this.buttonCancelarCadastro.Click += new System.EventHandler(this.buttonCancelarCadastro_Click);
@@ -359,17 +388,17 @@ namespace UIPrincipal
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(392, 32);
+            this.textBoxSenha.Location = new System.Drawing.Point(162, 31);
             this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(267, 20);
-            this.textBoxSenha.TabIndex = 4;
+            this.textBoxSenha.Size = new System.Drawing.Size(150, 20);
+            this.textBoxSenha.TabIndex = 1;
             // 
             // textBoxCodigo
             // 
             this.textBoxCodigo.Location = new System.Drawing.Point(6, 39);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(65, 20);
-            this.textBoxCodigo.TabIndex = 15;
+            this.textBoxCodigo.TabIndex = 4;
             // 
             // maskedTextBoxCpf
             // 
@@ -377,14 +406,14 @@ namespace UIPrincipal
             this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxCpf.TabIndex = 17;
+            this.maskedTextBoxCpf.TabIndex = 3;
             // 
             // textBoxOrgExpeditor
             // 
             this.textBoxOrgExpeditor.Location = new System.Drawing.Point(194, 78);
             this.textBoxOrgExpeditor.Name = "textBoxOrgExpeditor";
             this.textBoxOrgExpeditor.Size = new System.Drawing.Size(100, 20);
-            this.textBoxOrgExpeditor.TabIndex = 19;
+            this.textBoxOrgExpeditor.TabIndex = 5;
             // 
             // maskedTextBoxDataNascimento
             // 
@@ -392,7 +421,7 @@ namespace UIPrincipal
             this.maskedTextBoxDataNascimento.Mask = "00-00-0000";
             this.maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
             this.maskedTextBoxDataNascimento.Size = new System.Drawing.Size(78, 20);
-            this.maskedTextBoxDataNascimento.TabIndex = 21;
+            this.maskedTextBoxDataNascimento.TabIndex = 1;
             this.maskedTextBoxDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // textBoxNacionalidade
@@ -400,42 +429,42 @@ namespace UIPrincipal
             this.textBoxNacionalidade.Location = new System.Drawing.Point(300, 78);
             this.textBoxNacionalidade.Name = "textBoxNacionalidade";
             this.textBoxNacionalidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNacionalidade.TabIndex = 23;
+            this.textBoxNacionalidade.TabIndex = 6;
             // 
             // textBoxEstadoCivil
             // 
             this.textBoxEstadoCivil.Location = new System.Drawing.Point(406, 78);
             this.textBoxEstadoCivil.Name = "textBoxEstadoCivil";
             this.textBoxEstadoCivil.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEstadoCivil.TabIndex = 25;
+            this.textBoxEstadoCivil.TabIndex = 7;
             // 
             // textBoxRua
             // 
             this.textBoxRua.Location = new System.Drawing.Point(6, 117);
             this.textBoxRua.Name = "textBoxRua";
             this.textBoxRua.Size = new System.Drawing.Size(245, 20);
-            this.textBoxRua.TabIndex = 27;
+            this.textBoxRua.TabIndex = 8;
             // 
             // textBoxNumCasa
             // 
             this.textBoxNumCasa.Location = new System.Drawing.Point(257, 117);
             this.textBoxNumCasa.Name = "textBoxNumCasa";
             this.textBoxNumCasa.Size = new System.Drawing.Size(55, 20);
-            this.textBoxNumCasa.TabIndex = 29;
+            this.textBoxNumCasa.TabIndex = 9;
             // 
             // textBoxCidade
             // 
             this.textBoxCidade.Location = new System.Drawing.Point(318, 117);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(137, 20);
-            this.textBoxCidade.TabIndex = 37;
+            this.textBoxCidade.TabIndex = 10;
             // 
             // textBoxUf
             // 
             this.textBoxUf.Location = new System.Drawing.Point(461, 117);
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.Size = new System.Drawing.Size(45, 20);
-            this.textBoxUf.TabIndex = 38;
+            this.textBoxUf.TabIndex = 11;
             // 
             // maskedTextBoxCelularUm
             // 
@@ -443,7 +472,7 @@ namespace UIPrincipal
             this.maskedTextBoxCelularUm.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularUm.Name = "maskedTextBoxCelularUm";
             this.maskedTextBoxCelularUm.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxCelularUm.TabIndex = 39;
+            this.maskedTextBoxCelularUm.TabIndex = 14;
             // 
             // maskedTextBoxCelularDois
             // 
@@ -451,7 +480,7 @@ namespace UIPrincipal
             this.maskedTextBoxCelularDois.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularDois.Name = "maskedTextBoxCelularDois";
             this.maskedTextBoxCelularDois.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxCelularDois.TabIndex = 40;
+            this.maskedTextBoxCelularDois.TabIndex = 15;
             // 
             // maskedTextBoxTelefone
             // 
@@ -459,82 +488,288 @@ namespace UIPrincipal
             this.maskedTextBoxTelefone.Mask = "(99) 0000-0000";
             this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             this.maskedTextBoxTelefone.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxTelefone.TabIndex = 41;
+            this.maskedTextBoxTelefone.TabIndex = 13;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(6, 156);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(209, 20);
-            this.textBoxEmail.TabIndex = 42;
+            this.textBoxEmail.TabIndex = 12;
+            // 
+            // groupBoxFuncionario
+            // 
+            this.groupBoxFuncionario.Controls.Add(this.radioButtonNivelTres);
+            this.groupBoxFuncionario.Controls.Add(this.radioButtonNivelDois);
+            this.groupBoxFuncionario.Controls.Add(this.radioButtonNivelUm);
+            this.groupBoxFuncionario.Controls.Add(this.maskedTextBoxDataDemissao);
+            this.groupBoxFuncionario.Controls.Add(this.maskedTextBoxDataAdmissao);
+            this.groupBoxFuncionario.Controls.Add(labelDataDemissao);
+            this.groupBoxFuncionario.Controls.Add(labelDataAdmissao);
+            this.groupBoxFuncionario.Controls.Add(labelNumConta);
+            this.groupBoxFuncionario.Controls.Add(labelAgencia);
+            this.groupBoxFuncionario.Controls.Add(labelBanco);
+            this.groupBoxFuncionario.Controls.Add(this.textBoxNumConta);
+            this.groupBoxFuncionario.Controls.Add(this.textBoxAgencia);
+            this.groupBoxFuncionario.Controls.Add(this.textBoxBanco);
+            this.groupBoxFuncionario.Controls.Add(labelCargo);
+            this.groupBoxFuncionario.Controls.Add(this.textBoxCargo);
+            this.groupBoxFuncionario.Controls.Add(labelSalario);
+            this.groupBoxFuncionario.Controls.Add(this.textBoxSalario);
+            this.groupBoxFuncionario.Controls.Add(this.groupBox3);
+            this.groupBoxFuncionario.Controls.Add(this.groupBoxDadosDeAcesso);
+            this.groupBoxFuncionario.Location = new System.Drawing.Point(9, 202);
+            this.groupBoxFuncionario.Name = "groupBoxFuncionario";
+            this.groupBoxFuncionario.Size = new System.Drawing.Size(743, 244);
+            this.groupBoxFuncionario.TabIndex = 1;
+            this.groupBoxFuncionario.TabStop = false;
+            this.groupBoxFuncionario.Text = "DADOS DO FUNCIONARIO";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.checkedListBoxNivelFuncionario);
+            this.groupBox3.Location = new System.Drawing.Point(333, 20);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(404, 70);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "NIVEL DO FUNCIONARIO NO SISTEMA";
+            // 
+            // groupBoxDadosDeAcesso
+            // 
+            this.groupBoxDadosDeAcesso.Controls.Add(this.textBoxNomeUsuario);
+            this.groupBoxDadosDeAcesso.Controls.Add(labelSenha);
+            this.groupBoxDadosDeAcesso.Controls.Add(nomeUsuarioLabel);
+            this.groupBoxDadosDeAcesso.Controls.Add(this.textBoxSenha);
+            this.groupBoxDadosDeAcesso.Location = new System.Drawing.Point(7, 20);
+            this.groupBoxDadosDeAcesso.Name = "groupBoxDadosDeAcesso";
+            this.groupBoxDadosDeAcesso.Size = new System.Drawing.Size(319, 70);
+            this.groupBoxDadosDeAcesso.TabIndex = 1;
+            this.groupBoxDadosDeAcesso.TabStop = false;
+            this.groupBoxDadosDeAcesso.Text = "DADOS DE ACESSO";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(9, 480);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(743, 40);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "DADOS DO CLIENTE";
+            // 
+            // groupBoxDadosPessoais
+            // 
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxCodigo);
+            this.groupBoxDadosPessoais.Controls.Add(this.ativoCheckBox);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxRg);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxEmail);
+            this.groupBoxDadosPessoais.Controls.Add(cpfLabel);
+            this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxTelefone);
+            this.groupBoxDadosPessoais.Controls.Add(label1);
+            this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCelularDois);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxNomeCompleto);
+            this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCelularUm);
+            this.groupBoxDadosPessoais.Controls.Add(label2);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxUf);
+            this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCpf);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxCidade);
+            this.groupBoxDadosPessoais.Controls.Add(RgLabel);
+            this.groupBoxDadosPessoais.Controls.Add(labelUf);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxOrgExpeditor);
+            this.groupBoxDadosPessoais.Controls.Add(labelCidade);
+            this.groupBoxDadosPessoais.Controls.Add(labelOrgExpeditor);
+            this.groupBoxDadosPessoais.Controls.Add(labelCelularDois);
+            this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxDataNascimento);
+            this.groupBoxDadosPessoais.Controls.Add(labelCelularUm);
+            this.groupBoxDadosPessoais.Controls.Add(label3);
+            this.groupBoxDadosPessoais.Controls.Add(labelTelefone);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxNacionalidade);
+            this.groupBoxDadosPessoais.Controls.Add(labelEmail);
+            this.groupBoxDadosPessoais.Controls.Add(labelNacionalidade);
+            this.groupBoxDadosPessoais.Controls.Add(labelNumCasa);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxEstadoCivil);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxNumCasa);
+            this.groupBoxDadosPessoais.Controls.Add(labelEstadoCivil);
+            this.groupBoxDadosPessoais.Controls.Add(labelRua);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
+            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(9, 12);
+            this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
+            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(743, 184);
+            this.groupBoxDadosPessoais.TabIndex = 0;
+            this.groupBoxDadosPessoais.TabStop = false;
+            this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
+            // 
+            // checkedListBoxNivelFuncionario
+            // 
+            this.checkedListBoxNivelFuncionario.FormattingEnabled = true;
+            this.checkedListBoxNivelFuncionario.Items.AddRange(new object[] {
+            "N1 - ABRIR O.S",
+            "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S",
+            "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)"});
+            this.checkedListBoxNivelFuncionario.Location = new System.Drawing.Point(6, 14);
+            this.checkedListBoxNivelFuncionario.Name = "checkedListBoxNivelFuncionario";
+            this.checkedListBoxNivelFuncionario.Size = new System.Drawing.Size(392, 49);
+            this.checkedListBoxNivelFuncionario.TabIndex = 0;
+            // 
+            // textBoxSalario
+            // 
+            this.textBoxSalario.Location = new System.Drawing.Point(169, 109);
+            this.textBoxSalario.Name = "textBoxSalario";
+            this.textBoxSalario.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSalario.TabIndex = 1;
+            // 
+            // labelSalario
+            // 
+            labelSalario.AutoSize = true;
+            labelSalario.ForeColor = System.Drawing.Color.Black;
+            labelSalario.Location = new System.Drawing.Point(169, 93);
+            labelSalario.Name = "labelSalario";
+            labelSalario.Size = new System.Drawing.Size(56, 13);
+            labelSalario.TabIndex = 4;
+            labelSalario.Text = "SALARIO:";
+            // 
+            // textBoxCargo
+            // 
+            this.textBoxCargo.Location = new System.Drawing.Point(6, 109);
+            this.textBoxCargo.Name = "textBoxCargo";
+            this.textBoxCargo.Size = new System.Drawing.Size(157, 20);
+            this.textBoxCargo.TabIndex = 0;
+            // 
+            // labelCargo
+            // 
+            labelCargo.AutoSize = true;
+            labelCargo.ForeColor = System.Drawing.Color.Black;
+            labelCargo.Location = new System.Drawing.Point(3, 93);
+            labelCargo.Name = "labelCargo";
+            labelCargo.Size = new System.Drawing.Size(48, 13);
+            labelCargo.TabIndex = 2;
+            labelCargo.Text = "CARGO:";
+            // 
+            // textBoxBanco
+            // 
+            this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
+            this.textBoxBanco.Name = "textBoxBanco";
+            this.textBoxBanco.Size = new System.Drawing.Size(219, 20);
+            this.textBoxBanco.TabIndex = 2;
+            // 
+            // textBoxAgencia
+            // 
+            this.textBoxAgencia.Location = new System.Drawing.Point(500, 109);
+            this.textBoxAgencia.Name = "textBoxAgencia";
+            this.textBoxAgencia.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAgencia.TabIndex = 3;
+            // 
+            // textBoxNumConta
+            // 
+            this.textBoxNumConta.Location = new System.Drawing.Point(606, 109);
+            this.textBoxNumConta.Name = "textBoxNumConta";
+            this.textBoxNumConta.Size = new System.Drawing.Size(131, 20);
+            this.textBoxNumConta.TabIndex = 4;
+            // 
+            // labelBanco
+            // 
+            labelBanco.AutoSize = true;
+            labelBanco.ForeColor = System.Drawing.Color.Black;
+            labelBanco.Location = new System.Drawing.Point(272, 93);
+            labelBanco.Name = "labelBanco";
+            labelBanco.Size = new System.Drawing.Size(47, 13);
+            labelBanco.TabIndex = 6;
+            labelBanco.Text = "BANCO:";
+            // 
+            // labelAgencia
+            // 
+            labelAgencia.AutoSize = true;
+            labelAgencia.ForeColor = System.Drawing.Color.Black;
+            labelAgencia.Location = new System.Drawing.Point(500, 93);
+            labelAgencia.Name = "labelAgencia";
+            labelAgencia.Size = new System.Drawing.Size(57, 13);
+            labelAgencia.TabIndex = 8;
+            labelAgencia.Text = "AGÊNCIA:";
+            // 
+            // labelNumConta
+            // 
+            labelNumConta.AutoSize = true;
+            labelNumConta.ForeColor = System.Drawing.Color.Black;
+            labelNumConta.Location = new System.Drawing.Point(603, 93);
+            labelNumConta.Name = "labelNumConta";
+            labelNumConta.Size = new System.Drawing.Size(116, 13);
+            labelNumConta.TabIndex = 10;
+            labelNumConta.Text = "NUMERO DA CONTA:";
+            // 
+            // labelDataAdmissao
+            // 
+            labelDataAdmissao.AutoSize = true;
+            labelDataAdmissao.ForeColor = System.Drawing.Color.Black;
+            labelDataAdmissao.Location = new System.Drawing.Point(3, 132);
+            labelDataAdmissao.Name = "labelDataAdmissao";
+            labelDataAdmissao.Size = new System.Drawing.Size(116, 13);
+            labelDataAdmissao.TabIndex = 12;
+            labelDataAdmissao.Text = "DATA DE ADMISSÃO:";
+            // 
+            // labelDataDemissao
+            // 
+            labelDataDemissao.AutoSize = true;
+            labelDataDemissao.ForeColor = System.Drawing.Color.Black;
+            labelDataDemissao.Location = new System.Drawing.Point(138, 132);
+            labelDataDemissao.Name = "labelDataDemissao";
+            labelDataDemissao.Size = new System.Drawing.Size(116, 13);
+            labelDataDemissao.TabIndex = 14;
+            labelDataDemissao.Text = "DATA DE DEMISSÃO:";
+            // 
+            // maskedTextBoxDataAdmissao
+            // 
+            this.maskedTextBoxDataAdmissao.Location = new System.Drawing.Point(6, 148);
+            this.maskedTextBoxDataAdmissao.Mask = "00-00-0000";
+            this.maskedTextBoxDataAdmissao.Name = "maskedTextBoxDataAdmissao";
+            this.maskedTextBoxDataAdmissao.Size = new System.Drawing.Size(129, 20);
+            this.maskedTextBoxDataAdmissao.TabIndex = 5;
+            this.maskedTextBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxDataDemissao
+            // 
+            this.maskedTextBoxDataDemissao.Location = new System.Drawing.Point(141, 148);
+            this.maskedTextBoxDataDemissao.Mask = "00-00-0000";
+            this.maskedTextBoxDataDemissao.Name = "maskedTextBoxDataDemissao";
+            this.maskedTextBoxDataDemissao.Size = new System.Drawing.Size(128, 20);
+            this.maskedTextBoxDataDemissao.TabIndex = 6;
+            this.maskedTextBoxDataDemissao.ValidatingType = typeof(System.DateTime);
             // 
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
-            // groupBoxFuncionario
+            // radioButtonNivelUm
             // 
-            this.groupBoxFuncionario.Controls.Add(this.textBoxNomeUsuario);
-            this.groupBoxFuncionario.Controls.Add(nomeUsuarioLabel);
-            this.groupBoxFuncionario.Controls.Add(this.textBoxSenha);
-            this.groupBoxFuncionario.Controls.Add(labelSenha);
-            this.groupBoxFuncionario.Location = new System.Drawing.Point(22, 409);
-            this.groupBoxFuncionario.Name = "groupBoxFuncionario";
-            this.groupBoxFuncionario.Size = new System.Drawing.Size(730, 65);
-            this.groupBoxFuncionario.TabIndex = 43;
-            this.groupBoxFuncionario.TabStop = false;
-            this.groupBoxFuncionario.Text = "DADOS DO FUNCIONARIO";
+            this.radioButtonNivelUm.AutoSize = true;
+            this.radioButtonNivelUm.Location = new System.Drawing.Point(350, 175);
+            this.radioButtonNivelUm.Name = "radioButtonNivelUm";
+            this.radioButtonNivelUm.Size = new System.Drawing.Size(102, 17);
+            this.radioButtonNivelUm.TabIndex = 6;
+            this.radioButtonNivelUm.TabStop = true;
+            this.radioButtonNivelUm.Text = "N1 - ABRIR O.S";
+            this.radioButtonNivelUm.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // radioButtonNivelDois
             // 
-            this.groupBox1.Location = new System.Drawing.Point(22, 480);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(730, 40);
-            this.groupBox1.TabIndex = 44;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DADOS DO CLIENTE";
+            this.radioButtonNivelDois.AutoSize = true;
+            this.radioButtonNivelDois.Location = new System.Drawing.Point(350, 198);
+            this.radioButtonNivelDois.Name = "radioButtonNivelDois";
+            this.radioButtonNivelDois.Size = new System.Drawing.Size(271, 17);
+            this.radioButtonNivelDois.TabIndex = 15;
+            this.radioButtonNivelDois.TabStop = true;
+            this.radioButtonNivelDois.Text = "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S";
+            this.radioButtonNivelDois.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // radioButtonNivelTres
             // 
-            this.groupBox2.Controls.Add(this.textBoxCodigo);
-            this.groupBox2.Controls.Add(this.ativoCheckBox);
-            this.groupBox2.Controls.Add(this.textBoxRg);
-            this.groupBox2.Controls.Add(this.textBoxEmail);
-            this.groupBox2.Controls.Add(cpfLabel);
-            this.groupBox2.Controls.Add(this.maskedTextBoxTelefone);
-            this.groupBox2.Controls.Add(label1);
-            this.groupBox2.Controls.Add(this.maskedTextBoxCelularDois);
-            this.groupBox2.Controls.Add(this.textBoxNomeCompleto);
-            this.groupBox2.Controls.Add(this.maskedTextBoxCelularUm);
-            this.groupBox2.Controls.Add(label2);
-            this.groupBox2.Controls.Add(this.textBoxUf);
-            this.groupBox2.Controls.Add(this.maskedTextBoxCpf);
-            this.groupBox2.Controls.Add(this.textBoxCidade);
-            this.groupBox2.Controls.Add(RgLabel);
-            this.groupBox2.Controls.Add(labelUf);
-            this.groupBox2.Controls.Add(this.textBoxOrgExpeditor);
-            this.groupBox2.Controls.Add(labelCidade);
-            this.groupBox2.Controls.Add(labelOrgExpeditor);
-            this.groupBox2.Controls.Add(labelCelularDois);
-            this.groupBox2.Controls.Add(this.maskedTextBoxDataNascimento);
-            this.groupBox2.Controls.Add(labelCelularUm);
-            this.groupBox2.Controls.Add(label3);
-            this.groupBox2.Controls.Add(labelTelefone);
-            this.groupBox2.Controls.Add(this.textBoxNacionalidade);
-            this.groupBox2.Controls.Add(labelEmail);
-            this.groupBox2.Controls.Add(labelNacionalidade);
-            this.groupBox2.Controls.Add(labelNumCasa);
-            this.groupBox2.Controls.Add(this.textBoxEstadoCivil);
-            this.groupBox2.Controls.Add(this.textBoxNumCasa);
-            this.groupBox2.Controls.Add(labelEstadoCivil);
-            this.groupBox2.Controls.Add(labelRua);
-            this.groupBox2.Controls.Add(this.textBoxRua);
-            this.groupBox2.Location = new System.Drawing.Point(9, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(743, 214);
-            this.groupBox2.TabIndex = 45;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.radioButtonNivelTres.AutoSize = true;
+            this.radioButtonNivelTres.Location = new System.Drawing.Point(350, 221);
+            this.radioButtonNivelTres.Name = "radioButtonNivelTres";
+            this.radioButtonNivelTres.Size = new System.Drawing.Size(298, 17);
+            this.radioButtonNivelTres.TabIndex = 6;
+            this.radioButtonNivelTres.TabStop = true;
+            this.radioButtonNivelTres.Text = "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)";
+            this.radioButtonNivelTres.UseVisualStyleBackColor = true;
             // 
             // FormCadastroUsuario
             // 
@@ -542,7 +777,7 @@ namespace UIPrincipal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(764, 561);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxDadosPessoais);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.buttonCancelarCadastro);
@@ -557,11 +792,14 @@ namespace UIPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRO DE USUARIO";
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBoxDadosDeAcesso.ResumeLayout(false);
+            this.groupBoxDadosDeAcesso.PerformLayout();
+            this.groupBoxDadosPessoais.ResumeLayout(false);
+            this.groupBoxDadosPessoais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -592,7 +830,20 @@ namespace UIPrincipal
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.GroupBox groupBoxFuncionario;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxDadosPessoais;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxDadosDeAcesso;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNivelFuncionario;
+        private System.Windows.Forms.TextBox textBoxNumConta;
+        private System.Windows.Forms.TextBox textBoxAgencia;
+        private System.Windows.Forms.TextBox textBoxBanco;
+        private System.Windows.Forms.TextBox textBoxCargo;
+        private System.Windows.Forms.TextBox textBoxSalario;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxDataDemissao;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxDataAdmissao;
+        private System.Windows.Forms.RadioButton radioButtonNivelTres;
+        private System.Windows.Forms.RadioButton radioButtonNivelDois;
+        private System.Windows.Forms.RadioButton radioButtonNivelUm;
     }
 }
 

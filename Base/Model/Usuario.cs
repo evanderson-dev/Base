@@ -27,14 +27,11 @@ namespace Model{
         private string celularDois;
         private string cidade;
         private string uf;
-        /*
-                @Email,------------
-	            @Telefone,---------
-	            @CelularUm,--------
-	            @CelularDois,------
-	            @Cidade,-----------
-	            @Uf)---------------
-                */
+        private int id_Permissao;
+        private string salario;
+        private string cargo;
+        private string dataAdmissao;
+        private string dataDemissao;
         public string NomeUsuario
         {
             get { return nomeUsuario; }
@@ -105,7 +102,6 @@ namespace Model{
             get { return nacionalidade; }
             set { nacionalidade = value; }
         }
-        //////////////////////////////////
         public string Email
         {
             get { return email; }
@@ -135,6 +131,32 @@ namespace Model{
         {
             get { return uf; }
             set { uf = value; }
+        }
+        /////////////////////////////////////
+        public int Id_Permissao
+        {
+            get { return id_Permissao; }
+            set { id_Permissao = value; }
+        }
+        public string Salario
+        {
+            get { return salario; }
+            set { salario = value; }
+        }
+        public string Cargo
+        {
+            get { return cargo; }
+            set { cargo = value; }
+        }
+        public string DataAdmissao
+        {
+            get { return dataAdmissao; }
+            set { dataAdmissao = value; }
+        }
+        public string DataDemissao
+        {
+            get { return dataDemissao; }
+            set { dataDemissao = value; }
         }
     }
 }

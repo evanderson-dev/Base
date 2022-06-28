@@ -116,6 +116,31 @@ namespace DAL
                 {
                     Value = _usuario.Uf
                 });
+                /////////////////
+                cmd.Parameters.Add(new SqlParameter("@Id_Permissao", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Id_Permissao
+                });
+                ////////////////
+                cmd.Parameters.Add(new SqlParameter("@Salario", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Salario
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Cargo", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Cargo
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@DataAdmissao", SqlDbType.DateTime)
+                {
+                    Value = _usuario.DataAdmissao
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@DataDemissao", SqlDbType.DateTime)
+                {
+                    Value = _usuario.DataDemissao
+                });
 
                 cn.Open();
                 _usuario.Id = Convert.ToInt32(cmd.ExecuteScalar());

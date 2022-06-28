@@ -47,7 +47,7 @@ namespace UIPrincipal
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
             usuario.NomeCompleto = textBoxNomeCompleto.Text;
-            usuario.Cpf = maskedTextBoxCpf.Text;//textBoxCpf.Text;
+            usuario.Cpf = maskedTextBoxCpf.Text;
             usuario.Ativo = ativoCheckBox.Checked;
             usuario.Rg = textBoxRg.Text;
             usuario.OrgaoExpeditor = textBoxOrgExpeditor.Text;
@@ -56,21 +56,28 @@ namespace UIPrincipal
             usuario.NumCasa = textBoxNumCasa.Text;
             usuario.EstadoCivil = textBoxEstadoCivil.Text;
             usuario.Nacionalidade = textBoxNacionalidade.Text;
-            /*
-                @Email,------------
-	            @Telefone,---------
-	            @CelularUm,--------
-	            @CelularDois,------
-	            @Cidade,-----------
-	            @Uf)---------------
-                */
             usuario.Email = textBoxEmail.Text;
             usuario.Telefone = maskedTextBoxTelefone.Text;
             usuario.CelularUm = maskedTextBoxCelularUm.Text;
             usuario.CelularDois = maskedTextBoxCelularDois.Text;
             usuario.Cidade = textBoxCidade.Text;
             usuario.Uf = textBoxUf.Text;
+            //usuario.Id = Convert.ToInt32(idTextBox.Text);
+            //usuario.Ativo = ativoCheckBox.Checked;
+            /*/@Id_Permissao,--###############
+            int idpermissao = 0;
+            foreach (int i in checkedListBoxNivelFuncionario.CheckedItems)
+            {
+                idpermissao += i;
+            }
+            usuario.Id_Permissao = Convert.ToInt32(idpermissao);
+            ////////////////////////////////*/
+            usuario.Id_Permissao = 2;
 
+            usuario.Salario = textBoxSalario.Text;
+            usuario.Cargo = textBoxCargo.Text;
+            usuario.DataAdmissao = maskedTextBoxDataAdmissao.Text;
+            usuario.DataDemissao = maskedTextBoxDataDemissao.Text;
 
             if (inserindoNovo)
                 usuarioBLL.Inserir(usuario);
