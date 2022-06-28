@@ -116,7 +116,12 @@ CREATE PROCEDURE SP_InserirUsuario
 	@CelularUm VARCHAR(16),
 	@CelularDois VARCHAR(16),
 	@Cidade VARCHAR(10),
-	@Uf VARCHAR(2)
+	@Uf VARCHAR(2),
+	@Id_Permissao INT,--##########
+	@Salario FLOAT,
+	@Cargo VARCHAR(50),
+	@DataAdmissao DATETIME,
+	@DataDemissao DATETIME
 AS
 	INSERT INTO Pessoa(
 	Ativo,
@@ -136,7 +141,12 @@ AS
 	CelularUm,
 	CelularDois,
 	Cidade,
-	Uf)
+	Uf,
+	Id_Permissao,--############
+	Salario,
+	Cargo,
+	DataAdmissao,
+	DataDemissao)
 	VALUES(@Ativo,
 	@NomeUsuario,
 	@Senha,
@@ -154,11 +164,18 @@ AS
 	@CelularUm,
 	@CelularDois,
 	@Cidade,
-	@Uf)
+	@Uf,
+	@Id_Permissao,--###############
+	@Salario,
+	@Cargo,
+	@DataAdmissao,
+	@DataDemissao)
 	SET @Id = (SELECT @@IDENTITY)
 GO
---EXEC SP_InserirUsuario 0, 1, 'USUARIO TESTE2', 'Senha@123', 'EVANDERSON RIBEIRO', '02227855193', '6666666', 'SSP', '05-01-1988', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'teste@email.com', '3411-2300', '63992019277', '13992019277', 'ARAGUAINA', 'TO'
---SELECT * FROM Pessoa
+EXEC SP_InserirUsuario 0, 1, 'USUARIO TESTE2', 'Senha@123', 'EVANDERSON RIBEIRO', '02227855193', '6666666', 'SSP',
+'05-01-1988', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'teste@email.com', '3411-2300', '63992019277', '13992019277',
+'ARAGUAINA', 'TO', '3', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022'
+SELECT * FROM Pessoa
 
 --TABELA "GESTÃO DE O.S"
 CREATE TABLE GestaoDeOs
@@ -233,7 +250,8 @@ GO*/
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
-	SELECT Id, NomeCompleto, Cpf, Ativo FROM Pessoa WHERE NomeCompleto LIKE '%' + @filtro + '%'
+	SELECT Id, NomeCompleto, Cpf, Ativo, Senha, NomeUsuario FROM Pessoa WHERE NomeUsuario LIKE '%' + @filtro + '%'
+	OR CONVERT(VARCHAR(50), Id) = @Filtro
 GO
 
 CREATE PROC SP_ExcluirUsuario
@@ -261,7 +279,7 @@ GO
 
 --SELECT*FROM Permissao
 --SELECT*FROM Plano
-SELECT*FROM Pessoa
+--SELECT*FROM Pessoa
 --SELECT NomeUsuario, Senha FROM Pessoa
 --SELECT NomeUsuario, Senha FROM Pessoa WHERE NomeUsuario='admin' AND Senha='admin'
 --SELECT*FROM Funcionario
