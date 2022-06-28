@@ -76,11 +76,11 @@ CREATE TABLE Pessoa
 	Cidade VARCHAR(10),-------------------FEITO
 	Uf VARCHAR(2),------------------------FEITO
 	-- DADOS DO FUNCIONARIO
-	Id_Permissao INT,
-	Salario FLOAT,
-	Cargo VARCHAR(50),
-	DataAdmissao DATETIME,
-	DataDemissao DATETIME,
+	Id_Permissao INT,---------------------A FAZER
+	Salario FLOAT,------------------------FEITO
+	Cargo VARCHAR(50),--------------------FEITO
+	DataAdmissao DATETIME,----------------FEITO
+	DataDemissao DATETIME,----------------FEITO
 	-- DADOS DO CLIENTE
 	Id_Plano INT,
 	InicioDoContrato DATETIME,
@@ -174,7 +174,7 @@ AS
 GO
 EXEC SP_InserirUsuario 0, 1, 'USUARIO TESTE2', 'Senha@123', 'EVANDERSON RIBEIRO', '02227855193', '6666666', 'SSP',
 '05-01-1988', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'teste@email.com', '3411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', '3', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022'
+'ARAGUAINA', 'TO', '1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022'
 SELECT * FROM Pessoa
 
 --TABELA "GESTÃO DE O.S"
