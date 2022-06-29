@@ -56,6 +56,7 @@ namespace UIPrincipal
             System.Windows.Forms.Label labelDataAdmissao;
             System.Windows.Forms.Label labelDataDemissao;
             System.Windows.Forms.Label label4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             System.Windows.Forms.Label labelPlano;
             System.Windows.Forms.Label labelInicioContrato;
             System.Windows.Forms.Label labelFimContrato;
@@ -855,9 +856,13 @@ namespace UIPrincipal
             // 
             // pictureBoxFotoPessoa
             // 
+            this.pictureBoxFotoPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxFotoPessoa.ErrorImage = null;
+            this.pictureBoxFotoPessoa.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFotoPessoa.Image")));
             this.pictureBoxFotoPessoa.Location = new System.Drawing.Point(631, 23);
             this.pictureBoxFotoPessoa.Name = "pictureBoxFotoPessoa";
             this.pictureBoxFotoPessoa.Size = new System.Drawing.Size(126, 153);
+            this.pictureBoxFotoPessoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFotoPessoa.TabIndex = 35;
             this.pictureBoxFotoPessoa.TabStop = false;
             // 
@@ -929,6 +934,7 @@ namespace UIPrincipal
             // 
             // textBoxObservacao
             // 
+            this.textBoxObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxObservacao.Location = new System.Drawing.Point(7, 203);
             this.textBoxObservacao.Multiline = true;
             this.textBoxObservacao.Name = "textBoxObservacao";
