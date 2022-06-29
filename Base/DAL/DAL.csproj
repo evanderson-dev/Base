@@ -45,6 +45,7 @@
     <Compile Include="ComandoSQL.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ParametroSQL.cs" />
+    <Compile Include="PlanoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>

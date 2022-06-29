@@ -56,6 +56,10 @@ namespace UIPrincipal
             System.Windows.Forms.Label labelDataAdmissao;
             System.Windows.Forms.Label labelDataDemissao;
             System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label labelPlano;
+            System.Windows.Forms.Label labelInicioContrato;
+            System.Windows.Forms.Label labelFimContrato;
+            System.Windows.Forms.Label labelObservacao;
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
@@ -79,9 +83,8 @@ namespace UIPrincipal
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
-            this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
-            this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
-            this.radioButtonNivelUm = new System.Windows.Forms.RadioButton();
+            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
+            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
             this.maskedTextBoxDataDemissao = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
             this.textBoxNumConta = new System.Windows.Forms.TextBox();
@@ -89,14 +92,22 @@ namespace UIPrincipal
             this.textBoxBanco = new System.Windows.Forms.TextBox();
             this.textBoxCargo = new System.Windows.Forms.TextBox();
             this.textBoxSalario = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxNivelFuncionario = new System.Windows.Forms.GroupBox();
+            this.radioButtonNivelUm = new System.Windows.Forms.RadioButton();
+            this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
+            this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
             this.groupBoxDadosDeAcesso = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxDadosCliente = new System.Windows.Forms.GroupBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
-            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
+            this.groupBoxTipo = new System.Windows.Forms.GroupBox();
+            this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
+            this.groupBoxSituacao = new System.Windows.Forms.GroupBox();
+            this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
+            this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxFimContrato = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxObservacao = new System.Windows.Forms.TextBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -123,10 +134,18 @@ namespace UIPrincipal
             labelDataAdmissao = new System.Windows.Forms.Label();
             labelDataDemissao = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            labelPlano = new System.Windows.Forms.Label();
+            labelInicioContrato = new System.Windows.Forms.Label();
+            labelFimContrato = new System.Windows.Forms.Label();
+            labelObservacao = new System.Windows.Forms.Label();
             this.groupBoxFuncionario.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxNivelFuncionario.SuspendLayout();
             this.groupBoxDadosDeAcesso.SuspendLayout();
+            this.groupBoxDadosCliente.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
+            this.groupBoxTipo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).BeginInit();
+            this.groupBoxSituacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -380,6 +399,16 @@ namespace UIPrincipal
             labelDataDemissao.TabIndex = 14;
             labelDataDemissao.Text = "DATA DE DEMISSÃO:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = System.Drawing.Color.Black;
+            label4.Location = new System.Drawing.Point(4, 101);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 33;
+            label4.Text = "CEP:";
+            // 
             // buttonSalvar
             // 
             this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -411,11 +440,11 @@ namespace UIPrincipal
             // 
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.ativoCheckBox.Location = new System.Drawing.Point(596, 37);
+            this.ativoCheckBox.Location = new System.Drawing.Point(6, 16);
             this.ativoCheckBox.Name = "ativoCheckBox";
-            this.ativoCheckBox.Size = new System.Drawing.Size(52, 24);
+            this.ativoCheckBox.Size = new System.Drawing.Size(58, 24);
             this.ativoCheckBox.TabIndex = 2;
-            this.ativoCheckBox.Text = "Ativo";
+            this.ativoCheckBox.Text = "ATIVO";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
             // 
             // textBoxNomeUsuario
@@ -435,6 +464,7 @@ namespace UIPrincipal
             this.textBoxRg.Name = "textBoxRg";
             this.textBoxRg.Size = new System.Drawing.Size(85, 20);
             this.textBoxRg.TabIndex = 4;
+            this.textBoxRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRg_KeyPress);
             // 
             // buttonCancelarCadastro
             // 
@@ -455,10 +485,12 @@ namespace UIPrincipal
             // 
             // textBoxNomeCompleto
             // 
+            this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(77, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
             this.textBoxNomeCompleto.Size = new System.Drawing.Size(345, 20);
             this.textBoxNomeCompleto.TabIndex = 0;
+            this.textBoxNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNomeCompleto_KeyPress);
             // 
             // textBoxSenha
             // 
@@ -484,6 +516,7 @@ namespace UIPrincipal
             // 
             // textBoxOrgExpeditor
             // 
+            this.textBoxOrgExpeditor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxOrgExpeditor.Location = new System.Drawing.Point(194, 78);
             this.textBoxOrgExpeditor.Name = "textBoxOrgExpeditor";
             this.textBoxOrgExpeditor.Size = new System.Drawing.Size(100, 20);
@@ -500,20 +533,25 @@ namespace UIPrincipal
             // 
             // textBoxNacionalidade
             // 
+            this.textBoxNacionalidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNacionalidade.Location = new System.Drawing.Point(300, 78);
             this.textBoxNacionalidade.Name = "textBoxNacionalidade";
             this.textBoxNacionalidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxNacionalidade.TabIndex = 6;
+            this.textBoxNacionalidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNacionalidade_KeyPress);
             // 
             // textBoxEstadoCivil
             // 
+            this.textBoxEstadoCivil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEstadoCivil.Location = new System.Drawing.Point(406, 78);
             this.textBoxEstadoCivil.Name = "textBoxEstadoCivil";
             this.textBoxEstadoCivil.Size = new System.Drawing.Size(100, 20);
             this.textBoxEstadoCivil.TabIndex = 7;
+            this.textBoxEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEstadoCivil_KeyPress);
             // 
             // textBoxRua
             // 
+            this.textBoxRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRua.Location = new System.Drawing.Point(77, 117);
             this.textBoxRua.Name = "textBoxRua";
             this.textBoxRua.Size = new System.Drawing.Size(207, 20);
@@ -528,17 +566,21 @@ namespace UIPrincipal
             // 
             // textBoxCidade
             // 
+            this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCidade.Location = new System.Drawing.Point(330, 117);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(137, 20);
             this.textBoxCidade.TabIndex = 10;
+            this.textBoxCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCidade_KeyPress);
             // 
             // textBoxUf
             // 
+            this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxUf.Location = new System.Drawing.Point(473, 117);
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.Size = new System.Drawing.Size(33, 20);
             this.textBoxUf.TabIndex = 11;
+            this.textBoxUf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUf_KeyPress);
             // 
             // maskedTextBoxCelularUm
             // 
@@ -566,6 +608,7 @@ namespace UIPrincipal
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxEmail.Location = new System.Drawing.Point(6, 156);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(209, 20);
@@ -573,8 +616,6 @@ namespace UIPrincipal
             // 
             // groupBoxFuncionario
             // 
-            this.groupBoxFuncionario.Controls.Add(this.checkBoxCliente);
-            this.groupBoxFuncionario.Controls.Add(this.checkBoxFuncionario);
             this.groupBoxFuncionario.Controls.Add(this.maskedTextBoxDataDemissao);
             this.groupBoxFuncionario.Controls.Add(this.maskedTextBoxDataAdmissao);
             this.groupBoxFuncionario.Controls.Add(labelDataDemissao);
@@ -589,46 +630,34 @@ namespace UIPrincipal
             this.groupBoxFuncionario.Controls.Add(this.textBoxCargo);
             this.groupBoxFuncionario.Controls.Add(labelSalario);
             this.groupBoxFuncionario.Controls.Add(this.textBoxSalario);
-            this.groupBoxFuncionario.Controls.Add(this.groupBox3);
+            this.groupBoxFuncionario.Controls.Add(this.groupBoxNivelFuncionario);
             this.groupBoxFuncionario.Controls.Add(this.groupBoxDadosDeAcesso);
-            this.groupBoxFuncionario.Location = new System.Drawing.Point(9, 202);
+            this.groupBoxFuncionario.Location = new System.Drawing.Point(9, 279);
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
-            this.groupBoxFuncionario.Size = new System.Drawing.Size(743, 244);
+            this.groupBoxFuncionario.Size = new System.Drawing.Size(763, 176);
             this.groupBoxFuncionario.TabIndex = 1;
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "DADOS DO FUNCIONARIO";
             // 
-            // radioButtonNivelTres
+            // checkBoxCliente
             // 
-            this.radioButtonNivelTres.AutoSize = true;
-            this.radioButtonNivelTres.Location = new System.Drawing.Point(9, 46);
-            this.radioButtonNivelTres.Name = "radioButtonNivelTres";
-            this.radioButtonNivelTres.Size = new System.Drawing.Size(298, 17);
-            this.radioButtonNivelTres.TabIndex = 6;
-            this.radioButtonNivelTres.Text = "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)";
-            this.radioButtonNivelTres.UseVisualStyleBackColor = true;
+            this.checkBoxCliente.AutoSize = true;
+            this.checkBoxCliente.Location = new System.Drawing.Point(5, 36);
+            this.checkBoxCliente.Name = "checkBoxCliente";
+            this.checkBoxCliente.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxCliente.TabIndex = 17;
+            this.checkBoxCliente.Text = "CLIENTE";
+            this.checkBoxCliente.UseVisualStyleBackColor = true;
             // 
-            // radioButtonNivelDois
+            // checkBoxFuncionario
             // 
-            this.radioButtonNivelDois.AutoSize = true;
-            this.radioButtonNivelDois.Location = new System.Drawing.Point(9, 31);
-            this.radioButtonNivelDois.Name = "radioButtonNivelDois";
-            this.radioButtonNivelDois.Size = new System.Drawing.Size(271, 17);
-            this.radioButtonNivelDois.TabIndex = 15;
-            this.radioButtonNivelDois.Text = "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S";
-            this.radioButtonNivelDois.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNivelUm
-            // 
-            this.radioButtonNivelUm.AutoSize = true;
-            this.radioButtonNivelUm.Checked = true;
-            this.radioButtonNivelUm.Location = new System.Drawing.Point(9, 16);
-            this.radioButtonNivelUm.Name = "radioButtonNivelUm";
-            this.radioButtonNivelUm.Size = new System.Drawing.Size(102, 17);
-            this.radioButtonNivelUm.TabIndex = 6;
-            this.radioButtonNivelUm.TabStop = true;
-            this.radioButtonNivelUm.Text = "N1 - ABRIR O.S";
-            this.radioButtonNivelUm.UseVisualStyleBackColor = true;
+            this.checkBoxFuncionario.AutoSize = true;
+            this.checkBoxFuncionario.Location = new System.Drawing.Point(5, 59);
+            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
+            this.checkBoxFuncionario.Size = new System.Drawing.Size(100, 17);
+            this.checkBoxFuncionario.TabIndex = 16;
+            this.checkBoxFuncionario.Text = "FUNCIONARIO";
+            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
             // 
             // maskedTextBoxDataDemissao
             // 
@@ -664,6 +693,7 @@ namespace UIPrincipal
             // 
             // textBoxBanco
             // 
+            this.textBoxBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
             this.textBoxBanco.Name = "textBoxBanco";
             this.textBoxBanco.Size = new System.Drawing.Size(219, 20);
@@ -671,6 +701,7 @@ namespace UIPrincipal
             // 
             // textBoxCargo
             // 
+            this.textBoxCargo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCargo.Location = new System.Drawing.Point(6, 109);
             this.textBoxCargo.Name = "textBoxCargo";
             this.textBoxCargo.Size = new System.Drawing.Size(157, 20);
@@ -683,17 +714,49 @@ namespace UIPrincipal
             this.textBoxSalario.Size = new System.Drawing.Size(100, 20);
             this.textBoxSalario.TabIndex = 1;
             // 
-            // groupBox3
+            // groupBoxNivelFuncionario
             // 
-            this.groupBox3.Controls.Add(this.radioButtonNivelUm);
-            this.groupBox3.Controls.Add(this.radioButtonNivelDois);
-            this.groupBox3.Controls.Add(this.radioButtonNivelTres);
-            this.groupBox3.Location = new System.Drawing.Point(333, 20);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(404, 70);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "NIVEL DO FUNCIONARIO NO SISTEMA";
+            this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelUm);
+            this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelDois);
+            this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelTres);
+            this.groupBoxNivelFuncionario.Location = new System.Drawing.Point(333, 20);
+            this.groupBoxNivelFuncionario.Name = "groupBoxNivelFuncionario";
+            this.groupBoxNivelFuncionario.Size = new System.Drawing.Size(404, 70);
+            this.groupBoxNivelFuncionario.TabIndex = 0;
+            this.groupBoxNivelFuncionario.TabStop = false;
+            this.groupBoxNivelFuncionario.Text = "NIVEL DO FUNCIONARIO NO SISTEMA";
+            // 
+            // radioButtonNivelUm
+            // 
+            this.radioButtonNivelUm.AutoSize = true;
+            this.radioButtonNivelUm.Checked = true;
+            this.radioButtonNivelUm.Location = new System.Drawing.Point(9, 16);
+            this.radioButtonNivelUm.Name = "radioButtonNivelUm";
+            this.radioButtonNivelUm.Size = new System.Drawing.Size(102, 17);
+            this.radioButtonNivelUm.TabIndex = 6;
+            this.radioButtonNivelUm.TabStop = true;
+            this.radioButtonNivelUm.Text = "N1 - ABRIR O.S";
+            this.radioButtonNivelUm.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNivelDois
+            // 
+            this.radioButtonNivelDois.AutoSize = true;
+            this.radioButtonNivelDois.Location = new System.Drawing.Point(9, 31);
+            this.radioButtonNivelDois.Name = "radioButtonNivelDois";
+            this.radioButtonNivelDois.Size = new System.Drawing.Size(271, 17);
+            this.radioButtonNivelDois.TabIndex = 15;
+            this.radioButtonNivelDois.Text = "N2 - ABRIR O.S, FECHAR O.S, ENCAMINHAR O.S";
+            this.radioButtonNivelDois.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNivelTres
+            // 
+            this.radioButtonNivelTres.AutoSize = true;
+            this.radioButtonNivelTres.Location = new System.Drawing.Point(9, 46);
+            this.radioButtonNivelTres.Name = "radioButtonNivelTres";
+            this.radioButtonNivelTres.Size = new System.Drawing.Size(298, 17);
+            this.radioButtonNivelTres.TabIndex = 6;
+            this.radioButtonNivelTres.Text = "N3 - ADMINISTRADOR DO SISTEMA (ACESSO TOTAL)";
+            this.radioButtonNivelTres.UseVisualStyleBackColor = true;
             // 
             // groupBoxDadosDeAcesso
             // 
@@ -708,21 +771,31 @@ namespace UIPrincipal
             this.groupBoxDadosDeAcesso.TabStop = false;
             this.groupBoxDadosDeAcesso.Text = "DADOS DE ACESSO";
             // 
-            // groupBox1
+            // groupBoxDadosCliente
             // 
-            this.groupBox1.Location = new System.Drawing.Point(9, 480);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 40);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DADOS DO CLIENTE";
+            this.groupBoxDadosCliente.Controls.Add(labelFimContrato);
+            this.groupBoxDadosCliente.Controls.Add(labelInicioContrato);
+            this.groupBoxDadosCliente.Controls.Add(this.maskedTextBoxFimContrato);
+            this.groupBoxDadosCliente.Controls.Add(this.maskedTextBoxInicioContrato);
+            this.groupBoxDadosCliente.Controls.Add(labelPlano);
+            this.groupBoxDadosCliente.Controls.Add(this.comboBoxPlanos);
+            this.groupBoxDadosCliente.Location = new System.Drawing.Point(9, 461);
+            this.groupBoxDadosCliente.Name = "groupBoxDadosCliente";
+            this.groupBoxDadosCliente.Size = new System.Drawing.Size(763, 59);
+            this.groupBoxDadosCliente.TabIndex = 2;
+            this.groupBoxDadosCliente.TabStop = false;
+            this.groupBoxDadosCliente.Text = "DADOS DO CLIENTE";
             // 
             // groupBoxDadosPessoais
             // 
+            this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxObservacao);
+            this.groupBoxDadosPessoais.Controls.Add(this.groupBoxSituacao);
+            this.groupBoxDadosPessoais.Controls.Add(this.pictureBoxFotoPessoa);
+            this.groupBoxDadosPessoais.Controls.Add(this.groupBoxTipo);
             this.groupBoxDadosPessoais.Controls.Add(label4);
             this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCep);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxCodigo);
-            this.groupBoxDadosPessoais.Controls.Add(this.ativoCheckBox);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRg);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxEmail);
             this.groupBoxDadosPessoais.Controls.Add(cpfLabel);
@@ -756,34 +829,10 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
             this.groupBoxDadosPessoais.Location = new System.Drawing.Point(9, 12);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
-            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(743, 184);
+            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(763, 261);
             this.groupBoxDadosPessoais.TabIndex = 0;
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
-            // 
-            // checkBoxFuncionario
-            // 
-            this.checkBoxFuncionario.AutoSize = true;
-            this.checkBoxFuncionario.Location = new System.Drawing.Point(569, 148);
-            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
-            this.checkBoxFuncionario.Size = new System.Drawing.Size(100, 17);
-            this.checkBoxFuncionario.TabIndex = 16;
-            this.checkBoxFuncionario.Text = "FUNCIONARIO";
-            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxCliente
-            // 
-            this.checkBoxCliente.AutoSize = true;
-            this.checkBoxCliente.Location = new System.Drawing.Point(569, 171);
-            this.checkBoxCliente.Name = "checkBoxCliente";
-            this.checkBoxCliente.Size = new System.Drawing.Size(71, 17);
-            this.checkBoxCliente.TabIndex = 17;
-            this.checkBoxCliente.Text = "CLIENTE";
-            this.checkBoxCliente.UseVisualStyleBackColor = true;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // maskedTextBoxCep
             // 
@@ -793,24 +842,121 @@ namespace UIPrincipal
             this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
             this.maskedTextBoxCep.TabIndex = 6;
             // 
-            // label4
+            // groupBoxTipo
             // 
-            label4.AutoSize = true;
-            label4.ForeColor = System.Drawing.Color.Black;
-            label4.Location = new System.Drawing.Point(4, 101);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(31, 13);
-            label4.TabIndex = 33;
-            label4.Text = "CEP:";
+            this.groupBoxTipo.Controls.Add(this.checkBoxCliente);
+            this.groupBoxTipo.Controls.Add(this.checkBoxFuncionario);
+            this.groupBoxTipo.Location = new System.Drawing.Point(514, 71);
+            this.groupBoxTipo.Name = "groupBoxTipo";
+            this.groupBoxTipo.Size = new System.Drawing.Size(111, 105);
+            this.groupBoxTipo.TabIndex = 34;
+            this.groupBoxTipo.TabStop = false;
+            this.groupBoxTipo.Text = "TIPO";
+            // 
+            // pictureBoxFotoPessoa
+            // 
+            this.pictureBoxFotoPessoa.Location = new System.Drawing.Point(631, 23);
+            this.pictureBoxFotoPessoa.Name = "pictureBoxFotoPessoa";
+            this.pictureBoxFotoPessoa.Size = new System.Drawing.Size(126, 153);
+            this.pictureBoxFotoPessoa.TabIndex = 35;
+            this.pictureBoxFotoPessoa.TabStop = false;
+            // 
+            // groupBoxSituacao
+            // 
+            this.groupBoxSituacao.Controls.Add(this.ativoCheckBox);
+            this.groupBoxSituacao.Location = new System.Drawing.Point(514, 17);
+            this.groupBoxSituacao.Name = "groupBoxSituacao";
+            this.groupBoxSituacao.Size = new System.Drawing.Size(111, 48);
+            this.groupBoxSituacao.TabIndex = 36;
+            this.groupBoxSituacao.TabStop = false;
+            this.groupBoxSituacao.Text = "SITUAÇÃO";
+            // 
+            // comboBoxPlanos
+            // 
+            this.comboBoxPlanos.FormattingEnabled = true;
+            this.comboBoxPlanos.Location = new System.Drawing.Point(6, 32);
+            this.comboBoxPlanos.Name = "comboBoxPlanos";
+            this.comboBoxPlanos.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPlanos.TabIndex = 1;
+            // 
+            // labelPlano
+            // 
+            labelPlano.AutoSize = true;
+            labelPlano.ForeColor = System.Drawing.Color.Black;
+            labelPlano.Location = new System.Drawing.Point(3, 16);
+            labelPlano.Name = "labelPlano";
+            labelPlano.Size = new System.Drawing.Size(46, 13);
+            labelPlano.TabIndex = 4;
+            labelPlano.Text = "PLANO:";
+            // 
+            // maskedTextBoxInicioContrato
+            // 
+            this.maskedTextBoxInicioContrato.Location = new System.Drawing.Point(133, 32);
+            this.maskedTextBoxInicioContrato.Mask = "00-00-0000";
+            this.maskedTextBoxInicioContrato.Name = "maskedTextBoxInicioContrato";
+            this.maskedTextBoxInicioContrato.Size = new System.Drawing.Size(121, 20);
+            this.maskedTextBoxInicioContrato.TabIndex = 5;
+            this.maskedTextBoxInicioContrato.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxFimContrato
+            // 
+            this.maskedTextBoxFimContrato.Location = new System.Drawing.Point(260, 32);
+            this.maskedTextBoxFimContrato.Mask = "00-00-0000";
+            this.maskedTextBoxFimContrato.Name = "maskedTextBoxFimContrato";
+            this.maskedTextBoxFimContrato.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxFimContrato.TabIndex = 6;
+            this.maskedTextBoxFimContrato.ValidatingType = typeof(System.DateTime);
+            // 
+            // labelInicioContrato
+            // 
+            labelInicioContrato.AutoSize = true;
+            labelInicioContrato.ForeColor = System.Drawing.Color.Black;
+            labelInicioContrato.Location = new System.Drawing.Point(130, 16);
+            labelInicioContrato.Name = "labelInicioContrato";
+            labelInicioContrato.Size = new System.Drawing.Size(124, 13);
+            labelInicioContrato.TabIndex = 7;
+            labelInicioContrato.Text = "INICIO DO CONTRATO:";
+            // 
+            // labelFimContrato
+            // 
+            labelFimContrato.AutoSize = true;
+            labelFimContrato.ForeColor = System.Drawing.Color.Black;
+            labelFimContrato.Location = new System.Drawing.Point(257, 16);
+            labelFimContrato.Name = "labelFimContrato";
+            labelFimContrato.Size = new System.Drawing.Size(110, 13);
+            labelFimContrato.TabIndex = 8;
+            labelFimContrato.Text = "FIM DO CONTRATO:";
+            // 
+            // textBoxObservacao
+            // 
+            this.textBoxObservacao.Location = new System.Drawing.Point(7, 203);
+            this.textBoxObservacao.Multiline = true;
+            this.textBoxObservacao.Name = "textBoxObservacao";
+            this.textBoxObservacao.Size = new System.Drawing.Size(750, 52);
+            this.textBoxObservacao.TabIndex = 37;
+            // 
+            // labelObservacao
+            // 
+            labelObservacao.AutoSize = true;
+            labelObservacao.ForeColor = System.Drawing.Color.Black;
+            labelObservacao.Location = new System.Drawing.Point(6, 187);
+            labelObservacao.Name = "labelObservacao";
+            labelObservacao.Size = new System.Drawing.Size(83, 13);
+            labelObservacao.TabIndex = 38;
+            labelObservacao.Text = "OBSERVAÇÃO:";
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(764, 561);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBoxDadosPessoais);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxDadosCliente);
             this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.buttonCancelarCadastro);
             this.Controls.Add(this.buttonSalvarECadastrarNovo);
@@ -826,12 +972,18 @@ namespace UIPrincipal
             this.Text = "CADASTRO DE USUARIO";
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBoxNivelFuncionario.ResumeLayout(false);
+            this.groupBoxNivelFuncionario.PerformLayout();
             this.groupBoxDadosDeAcesso.ResumeLayout(false);
             this.groupBoxDadosDeAcesso.PerformLayout();
+            this.groupBoxDadosCliente.ResumeLayout(false);
+            this.groupBoxDadosCliente.PerformLayout();
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
+            this.groupBoxTipo.ResumeLayout(false);
+            this.groupBoxTipo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).EndInit();
+            this.groupBoxSituacao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -862,9 +1014,9 @@ namespace UIPrincipal
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.GroupBox groupBoxFuncionario;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxDadosCliente;
         private System.Windows.Forms.GroupBox groupBoxDadosPessoais;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxNivelFuncionario;
         private System.Windows.Forms.GroupBox groupBoxDadosDeAcesso;
         private System.Windows.Forms.TextBox textBoxNumConta;
         private System.Windows.Forms.TextBox textBoxAgencia;
@@ -879,6 +1031,13 @@ namespace UIPrincipal
         private System.Windows.Forms.CheckBox checkBoxCliente;
         private System.Windows.Forms.CheckBox checkBoxFuncionario;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCep;
+        private System.Windows.Forms.GroupBox groupBoxSituacao;
+        private System.Windows.Forms.PictureBox pictureBoxFotoPessoa;
+        private System.Windows.Forms.GroupBox groupBoxTipo;
+        private System.Windows.Forms.ComboBox comboBoxPlanos;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxFimContrato;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxInicioContrato;
+        private System.Windows.Forms.TextBox textBoxObservacao;
     }
 }
 

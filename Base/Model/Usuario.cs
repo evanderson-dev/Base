@@ -35,6 +35,10 @@ namespace Model{
         private bool funcionario;
         private bool cliente;
         private string cep;
+        private string banco;
+        private string numeroAgenciaBanco;
+        private string numeroContaBanco;
+        private string observacao;
 
         public string NomeUsuario
         {
@@ -136,7 +140,7 @@ namespace Model{
             get { return uf; }
             set { uf = value; }
         }
-        /////////////////////////////////////
+        
         public int Id_Permissao
         {
             get { return id_Permissao; }
@@ -178,6 +182,26 @@ namespace Model{
         {
             get { return cep; }
             set { cep = value; }
+        }
+        public string Banco
+        {
+            get { return banco; }
+            set { banco = value; }
+        }
+        public string NumeroAgenciaBanco
+        {
+            get { return numeroAgenciaBanco; }
+            set { numeroAgenciaBanco = value; }
+        }
+        public string NumeroContaBanco
+        {
+            get { return numeroContaBanco; }
+            set { numeroContaBanco = value; }
+        }
+        public string Observacao
+        {
+            get { return observacao; }
+            set { observacao = value; }
         }
     }
 }

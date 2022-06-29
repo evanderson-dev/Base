@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="GrupoUsuario.cs" />
     <Compile Include="Permissao.cs" />
+    <Compile Include="Plano.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

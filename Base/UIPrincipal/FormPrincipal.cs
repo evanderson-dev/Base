@@ -32,12 +32,10 @@ namespace UIPrincipal
 
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.Visible = !this.Visible;
             using (FormConsultaUsuario frm = new FormConsultaUsuario())
             {
                 frm.ShowDialog();
             }
-            //this.Visible = !this.Visible;
         }
 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)

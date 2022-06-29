@@ -116,12 +116,12 @@ namespace DAL
                 {
                     Value = _usuario.Uf
                 });
-                /////////////////
+                
                 cmd.Parameters.Add(new SqlParameter("@Id_Permissao", SqlDbType.VarChar)
                 {
                     Value = _usuario.Id_Permissao
                 });
-                ////////////////
+                
                 cmd.Parameters.Add(new SqlParameter("@Salario", SqlDbType.VarChar)
                 {
                     Value = _usuario.Salario
@@ -157,6 +157,28 @@ namespace DAL
                 {
                     Value = _usuario.Cep
                 });
+
+                cmd.Parameters.Add(new SqlParameter("@Banco", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Banco
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar)
+                {
+                    Value = _usuario.NumeroAgenciaBanco
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@NumeroContaBanco", SqlDbType.VarChar)
+                {
+                    Value = _usuario.NumeroContaBanco
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Observacao", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Observacao
+                });
+
+
 
                 /////////////////////////////////////////////////////////////
                 cn.Open();

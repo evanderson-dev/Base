@@ -35,7 +35,6 @@ namespace UIPrincipal
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gRUPODEUSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lOCAISDEUSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOBREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,7 +60,7 @@ namespace UIPrincipal
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(764, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,42 +77,35 @@ namespace UIPrincipal
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.uSUARIOSToolStripMenuItem.Text = "FUNCIONARIO/CLIENTE";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
             // 
             // gRUPODEUSUARIOSToolStripMenuItem
             // 
             this.gRUPODEUSUARIOSToolStripMenuItem.Name = "gRUPODEUSUARIOSToolStripMenuItem";
-            this.gRUPODEUSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.gRUPODEUSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.gRUPODEUSUARIOSToolStripMenuItem.Text = "GRUPO DE USUARIOS";
             // 
             // aJUDAToolStripMenuItem
             // 
             this.aJUDAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lOCAISDEUSUARIOSToolStripMenuItem,
             this.sOBREToolStripMenuItem,
             this.sAIRToolStripMenuItem});
             this.aJUDAToolStripMenuItem.Name = "aJUDAToolStripMenuItem";
             this.aJUDAToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.aJUDAToolStripMenuItem.Text = "AJUDA";
             // 
-            // lOCAISDEUSUARIOSToolStripMenuItem
-            // 
-            this.lOCAISDEUSUARIOSToolStripMenuItem.Name = "lOCAISDEUSUARIOSToolStripMenuItem";
-            this.lOCAISDEUSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.lOCAISDEUSUARIOSToolStripMenuItem.Text = "LOCAIS DE USUARIOS";
-            // 
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sOBREToolStripMenuItem.Text = "SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sAIRToolStripMenuItem.Text = "SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
@@ -126,13 +118,13 @@ namespace UIPrincipal
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(764, 100);
+            this.panel1.Size = new System.Drawing.Size(784, 100);
             this.panel1.TabIndex = 1;
             // 
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(503, 5);
+            this.button4.Location = new System.Drawing.Point(513, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 90);
             this.button4.TabIndex = 3;
@@ -141,7 +133,7 @@ namespace UIPrincipal
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(402, 5);
+            this.button3.Location = new System.Drawing.Point(412, 5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 90);
             this.button3.TabIndex = 2;
@@ -150,7 +142,7 @@ namespace UIPrincipal
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(301, 5);
+            this.button2.Location = new System.Drawing.Point(311, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 90);
             this.button2.TabIndex = 1;
@@ -159,7 +151,7 @@ namespace UIPrincipal
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(200, 5);
+            this.button1.Location = new System.Drawing.Point(210, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 90);
             this.button1.TabIndex = 0;
@@ -171,7 +163,7 @@ namespace UIPrincipal
             this.toolStripStatusLabelUsuario});
             this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(764, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -188,7 +180,7 @@ namespace UIPrincipal
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 124);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(764, 415);
+            this.pictureBox1.Size = new System.Drawing.Size(784, 415);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -198,7 +190,7 @@ namespace UIPrincipal
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(764, 561);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
@@ -227,7 +219,6 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem gRUPODEUSUARIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aJUDAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sAIRToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lOCAISDEUSUARIOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sOBREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gRUPODEUSUARIOSToolStripMenuItem;

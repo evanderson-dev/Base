@@ -62,14 +62,12 @@ namespace UIPrincipal
             usuario.CelularDois = maskedTextBoxCelularDois.Text;
             usuario.Cidade = textBoxCidade.Text;
             usuario.Uf = textBoxUf.Text;
-
             int idpermissao = 3;
             if (radioButtonNivelUm.Checked)
                 idpermissao = 1;
             else if (radioButtonNivelDois.Checked)
                 idpermissao = 2;
             usuario.Id_Permissao = idpermissao;
-
             usuario.Salario = textBoxSalario.Text;
             usuario.Cargo = textBoxCargo.Text;
             usuario.DataAdmissao = maskedTextBoxDataAdmissao.Text;
@@ -77,7 +75,13 @@ namespace UIPrincipal
             usuario.Funcionario = checkBoxFuncionario.Checked;
             usuario.Cliente = checkBoxCliente.Checked;
             usuario.Cep = maskedTextBoxCep.Text;
+            usuario.Banco = textBoxBanco.Text;
+            usuario.NumeroAgenciaBanco = textBoxAgencia.Text;
+            usuario.NumeroContaBanco = textBoxNumConta.Text;
+            usuario.Observacao = textBoxObservacao.Text;
 
+
+            ////////////////////////////////////////////////////////////////////
             if (inserindoNovo)
                 usuarioBLL.Inserir(usuario);
             else
@@ -98,6 +102,52 @@ namespace UIPrincipal
         private void buttonCancelarCadastro_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBoxRg_KeyPress(object sender, KeyPressEventArgs e)
+        {// ESTE EVENTO PERMITE QUE APENAS NUMEROS SEJAM INSERIDOS NO TEXTBOX
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
+        private void textBoxNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
+        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+            if (!char.IsControl(e.KeyChar) &&
+                    !char.IsLetter(e.KeyChar) &&
+                    !char.IsWhiteSpace(e.KeyChar))
+                    e.Handled = true;
+        }
+
+        private void textBoxNacionalidade_KeyPress(object sender, KeyPressEventArgs e)
+        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+            if (!char.IsControl(e.KeyChar) &&
+                    !char.IsLetter(e.KeyChar) &&
+                    !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void textBoxEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
+        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+            if (!char.IsControl(e.KeyChar) &&
+                    !char.IsLetter(e.KeyChar) &&
+                    !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void textBoxUf_KeyPress(object sender, KeyPressEventArgs e)
+        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+            if (!char.IsControl(e.KeyChar) &&
+                    !char.IsLetter(e.KeyChar) &&
+                    !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void textBoxCidade_KeyPress(object sender, KeyPressEventArgs e)
+        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+            if (!char.IsControl(e.KeyChar) &&
+                    !char.IsLetter(e.KeyChar) &&
+                    !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
