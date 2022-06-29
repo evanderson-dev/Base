@@ -262,21 +262,25 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarUsuario";
 
-                SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
-                pnomeUsuario.Value = _usuario.NomeUsuario;
-                cmd.Parameters.Add(pnomeUsuario);
-
-                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
+                /*SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
                 pid.Value = _usuario.Id;
-                cmd.Parameters.Add(pid);
-
-                /*SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
-                psenha.Value = _usuario.Senha;
-                cmd.Parameters.Add(psenha);*/
+                cmd.Parameters.Add(pid);*/
 
                 SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit);
                 pativo.Value = _usuario.Ativo;
                 cmd.Parameters.Add(pativo);
+
+                SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
+                pnomeUsuario.Value = _usuario.NomeUsuario;
+                cmd.Parameters.Add(pnomeUsuario);
+
+                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
+                psenha.Value = _usuario.Senha;
+                cmd.Parameters.Add(psenha);
+
+                SqlParameter pnomeCompleto = new SqlParameter("@NomeCompleto", SqlDbType.VarChar);
+                pnomeCompleto.Value = _usuario.NomeCompleto;
+                cmd.Parameters.Add(pnomeCompleto);
 
                 SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
                 pcpf.Value = _usuario.Cpf;

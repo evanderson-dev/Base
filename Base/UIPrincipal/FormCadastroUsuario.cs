@@ -64,12 +64,10 @@ namespace UIPrincipal
             usuario.Uf = textBoxUf.Text;
 
             int idpermissao = 3;
-
             if (radioButtonNivelUm.Checked)
                 idpermissao = 1;
             else if (radioButtonNivelDois.Checked)
                 idpermissao = 2;
-
             usuario.Id_Permissao = idpermissao;
 
             usuario.Salario = textBoxSalario.Text;
