@@ -29,28 +29,26 @@ CREATE TABLE Plano
 	Valor FLOAT
 )
 GO
---TABELA "CLIENTE"
-/*CREATE TABLE Cliente
-(
-	Id INT PRIMARY KEY,
-	Id_Plano INT,
-	InicioDoContrato DATETIME,
-	FimDoContrato DATETIME
-)
+INSERT INTO Plano(Descricao, Valor)
+	VALUES('300 MEGAS', 99.90),
+	('350 MEGAS + 1 ROTEADOR EM COMODATO', 119.90),
+	('400 MEGAS + 1 ROTEADOR EM COMODATO', 129.90),
+	('500 MEGAS + 2 ROTEADORES EM COMODATO', 139.90)
 GO
---TABELA "FUNCIONARIO"
-CREATE TABLE Funcionario
-(
-	Id INT PRIMARY KEY,
-	Id_Permissao INT,
-	Usuario VARCHAR(50),
-	Senha VARCHAR(150),
-	Salario FLOAT,
-	Cargo VARCHAR(50),
-	DataAdmissao DATETIME,
-	DataDemissao DATETIME
-)
-GO*/
+CREATE PROCEDURE SP_InserirPlano
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(100),
+	@Valor FLOAT
+AS
+	INSERT INTO Plano(
+	Descricao,
+	Valor)
+	VALUES(@Descricao,
+	@Valor)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+--EXEC SP_InserirPlano 0, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
+--SELECT*FROM Plano
 
 --TABELA "PESSOA"
 --DROP TABLE Pessoa
@@ -84,11 +82,16 @@ CREATE TABLE Pessoa
 	Cargo VARCHAR(50),--------------------FEITO
 	DataAdmissao DATETIME,----------------FEITO
 	DataDemissao DATETIME NULL,-----------FEITO
+	Banco VARCHAR(40),--------------------FEITO
+	NumeroAgenciaBanco VARCHAR(10),-------FEITO
+	NumeroContaBanco VARCHAR(15),---------FEITO
 	-- DADOS DO CLIENTE
 	Cliente BIT,--------------------------FEITO
 	Id_Plano INT,
 	InicioDoContrato DATETIME,
-	FimDoContrato DATETIME
+	FimDoContrato DATETIME,
+	-- OBSERVAÇOES GERAIS
+	Observacao VARCHAR(250)---------------FEITO
 )
 GO
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone)
@@ -97,8 +100,8 @@ INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua,
 	--('DaviSenai', 'Senha@456', 'DAVI TAL', '98765432198', 1),
 	--('WandersonSenai', 'Senha@654', 'WANDERSON TAL', '7418529374', 1)
 GO
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf)
-	VALUES ('admin', 'admin', 'Admin', 'Admin')
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, Cpf)
+	VALUES (1, 'admin', 'admin', 'Admin', 'Admin')
 GO
 --DROP PROCEDURE SP_InserirUsuario
 CREATE PROCEDURE SP_InserirUsuario
@@ -128,7 +131,11 @@ CREATE PROCEDURE SP_InserirUsuario
 	@Cargo VARCHAR(50),
 	@DataAdmissao DATETIME,
 	@DataDemissao DATETIME = NULL,
-	@Cliente BIT
+	@Banco VARCHAR(40),
+	@NumeroAgenciaBanco VARCHAR(10),
+	@NumeroContaBanco VARCHAR(15),
+	@Cliente BIT,
+	@Observacao VARCHAR(250)
 AS
 	INSERT INTO Pessoa(
 	Ativo,
@@ -156,7 +163,11 @@ AS
 	Cargo,
 	DataAdmissao,
 	DataDemissao,
-	Cliente)
+	Banco,
+	NumeroAgenciaBanco,
+	NumeroContaBanco,
+	Cliente,
+	Observacao)
 	VALUES(@Ativo,
 	@NomeUsuario,
 	@Senha,
@@ -182,12 +193,16 @@ AS
 	@Cargo,
 	@DataAdmissao,
 	@DataDemissao,
-	@Cliente)
+	@Banco,
+	@NumeroAgenciaBanco,
+	@NumeroContaBanco,
+	@Cliente,
+	@Observacao)
 	SET @Id = (SELECT @@IDENTITY)
 GO
 EXEC SP_InserirUsuario 0, 1, 'SuperAdmin', 'SuperAdmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 1
+'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1, 'TEXTO TESTE DE OBSERVACAO'
 SELECT * FROM Pessoa
 
 --TABELA "GESTÃO DE O.S"
