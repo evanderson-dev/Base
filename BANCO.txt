@@ -1,3 +1,4 @@
+-- CTR + SHIFT + R = ATUALIZA O SCRIP CASO ESTEJA ACUSANDO ERROS
 USE MASTER
 GO
 
@@ -65,6 +66,7 @@ CREATE TABLE Pessoa
 	Rg VARCHAR(13),-----------------------FEITO
 	OrgaoExpeditor VARCHAR(6),------------FEITO
 	DataNascimento DATETIME,--------------FEITO
+	Cep VARCHAR(10),
 	Rua VARCHAR(150),---------------------FEITO
 	NumCasa VARCHAR(10),------------------FEITO
 	EstadoCivil VARCHAR(10),--------------FEITO
@@ -76,12 +78,14 @@ CREATE TABLE Pessoa
 	Cidade VARCHAR(10),-------------------FEITO
 	Uf VARCHAR(2),------------------------FEITO
 	-- DADOS DO FUNCIONARIO
-	Id_Permissao INT,---------------------A FAZER
+	Funcionario BIT,----------------------FEITO
+	Id_Permissao INT,---------------------FEITO
 	Salario FLOAT,------------------------FEITO
 	Cargo VARCHAR(50),--------------------FEITO
 	DataAdmissao DATETIME,----------------FEITO
-	DataDemissao DATETIME,----------------FEITO
+	DataDemissao DATETIME NULL,-----------FEITO
 	-- DADOS DO CLIENTE
+	Cliente BIT,--------------------------FEITO
 	Id_Plano INT,
 	InicioDoContrato DATETIME,
 	FimDoContrato DATETIME
@@ -107,6 +111,7 @@ CREATE PROCEDURE SP_InserirUsuario
 	@Rg VARCHAR(13),
 	@OrgaoExpeditor VARCHAR(6),
 	@DataNascimento DATETIME,
+	@Cep VARCHAR(10),
 	@Rua VARCHAR(150),
 	@NumCasa VARCHAR(10),
 	@EstadoCivil VARCHAR(10),
@@ -117,11 +122,13 @@ CREATE PROCEDURE SP_InserirUsuario
 	@CelularDois VARCHAR(16),
 	@Cidade VARCHAR(10),
 	@Uf VARCHAR(2),
-	@Id_Permissao INT,--##########
+	@Funcionario BIT,
+	@Id_Permissao INT,
 	@Salario FLOAT,
 	@Cargo VARCHAR(50),
 	@DataAdmissao DATETIME,
-	@DataDemissao DATETIME
+	@DataDemissao DATETIME = NULL,
+	@Cliente BIT
 AS
 	INSERT INTO Pessoa(
 	Ativo,
@@ -132,6 +139,7 @@ AS
 	Rg,
 	OrgaoExpeditor,
 	DataNascimento,
+	Cep,
 	Rua,
 	NumCasa,
 	EstadoCivil,
@@ -142,11 +150,13 @@ AS
 	CelularDois,
 	Cidade,
 	Uf,
-	Id_Permissao,--############
+	Funcionario,
+	Id_Permissao,
 	Salario,
 	Cargo,
 	DataAdmissao,
-	DataDemissao)
+	DataDemissao,
+	Cliente)
 	VALUES(@Ativo,
 	@NomeUsuario,
 	@Senha,
@@ -155,6 +165,7 @@ AS
 	@Rg,
 	@OrgaoExpeditor,
 	@DataNascimento,
+	@Cep,
 	@Rua,
 	@NumCasa,
 	@EstadoCivil,
@@ -165,16 +176,18 @@ AS
 	@CelularDois,
 	@Cidade,
 	@Uf,
-	@Id_Permissao,--###############
+	@Funcionario,
+	@Id_Permissao,
 	@Salario,
 	@Cargo,
 	@DataAdmissao,
-	@DataDemissao)
+	@DataDemissao,
+	@Cliente)
 	SET @Id = (SELECT @@IDENTITY)
 GO
-EXEC SP_InserirUsuario 0, 1, 'USUARIO TESTE2', 'Senha@123', 'EVANDERSON RIBEIRO', '02227855193', '6666666', 'SSP',
-'05-01-1988', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'teste@email.com', '3411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', '1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022'
+EXEC SP_InserirUsuario 0, 1, 'SuperAdmin', 'SuperAdmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
+'05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
+'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 1
 SELECT * FROM Pessoa
 
 --TABELA "GESTÃO DE O.S"
