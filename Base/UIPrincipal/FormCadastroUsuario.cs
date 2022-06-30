@@ -78,6 +78,8 @@ namespace UIPrincipal
             usuario.Banco = textBoxBanco.Text;
             usuario.NumeroAgenciaBanco = textBoxAgencia.Text;
             usuario.NumeroContaBanco = textBoxNumConta.Text;
+            usuario.InicioDoContrato = maskedTextBoxInicioContrato.Text;
+            usuario.FimDoContrato = maskedTextBoxFimContrato.Text;
             usuario.Observacao = textBoxObservacao.Text;
 
 
@@ -88,16 +90,6 @@ namespace UIPrincipal
                 usuarioBLL.Alterar(usuario);
         }
 
-        private void buttonSalvarECadastrarNovo_Click(object sender, EventArgs e)
-        {
-            usuarioBindingSource.EndEdit();
-            Inserir();
-            MessageBox.Show("CADASTRO REALIZADO COM SUCESSO - INSERINDO NOVO!");
-            usuarioBindingSource.DataSource = typeof(Usuario);
-            usuarioBindingSource.AddNew();
-            inserindoNovo = true;
-            textBoxNomeUsuario.Focus();
-        }
 
         private void buttonCancelarCadastro_Click(object sender, EventArgs e)
         {

@@ -39,6 +39,8 @@ namespace Model{
         private string numeroAgenciaBanco;
         private string numeroContaBanco;
         private string observacao;
+        private string inicioDoContrato;
+        private string fimDoContrato;
 
         public string NomeUsuario
         {
@@ -139,8 +141,7 @@ namespace Model{
         {
             get { return uf; }
             set { uf = value; }
-        }
-        
+        }        
         public int Id_Permissao
         {
             get { return id_Permissao; }
@@ -166,13 +167,11 @@ namespace Model{
             get { return dataDemissao; }
             set { dataDemissao = value; }
         }
-
         public bool Funcionario
         {
             get { return funcionario; }
             set { funcionario = value; }
         }
-
         public bool Cliente
         {
             get { return cliente; }
@@ -202,6 +201,16 @@ namespace Model{
         {
             get { return observacao; }
             set { observacao = value; }
+        }
+        public string InicioDoContrato
+        {
+            get { return inicioDoContrato; }
+            set { inicioDoContrato = value; }
+        }
+        public string FimDoContrato
+        {
+            get { return fimDoContrato; }
+            set { fimDoContrato = value; }
         }
     }
 }

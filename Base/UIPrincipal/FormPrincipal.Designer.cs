@@ -33,7 +33,6 @@ namespace UIPrincipal
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gRUPODEUSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gRUPODEUSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOBREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +44,7 @@ namespace UIPrincipal
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pLANOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -68,7 +68,7 @@ namespace UIPrincipal
             // 
             this.gRUPODEUSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uSUARIOSToolStripMenuItem,
-            this.gRUPODEUSUARIOSToolStripMenuItem});
+            this.pLANOToolStripMenuItem});
             this.gRUPODEUSUARIOToolStripMenuItem.Name = "gRUPODEUSUARIOToolStripMenuItem";
             this.gRUPODEUSUARIOToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.gRUPODEUSUARIOToolStripMenuItem.Text = "CADASTRO";
@@ -80,12 +80,6 @@ namespace UIPrincipal
             this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.uSUARIOSToolStripMenuItem.Text = "FUNCIONARIO/CLIENTE";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
-            // 
-            // gRUPODEUSUARIOSToolStripMenuItem
-            // 
-            this.gRUPODEUSUARIOSToolStripMenuItem.Name = "gRUPODEUSUARIOSToolStripMenuItem";
-            this.gRUPODEUSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.gRUPODEUSUARIOSToolStripMenuItem.Text = "GRUPO DE USUARIOS";
             // 
             // aJUDAToolStripMenuItem
             // 
@@ -99,13 +93,13 @@ namespace UIPrincipal
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sOBREToolStripMenuItem.Text = "SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sAIRToolStripMenuItem.Text = "SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
@@ -185,6 +179,13 @@ namespace UIPrincipal
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // pLANOToolStripMenuItem
+            // 
+            this.pLANOToolStripMenuItem.Name = "pLANOToolStripMenuItem";
+            this.pLANOToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.pLANOToolStripMenuItem.Text = "PLANO";
+            this.pLANOToolStripMenuItem.Click += new System.EventHandler(this.pLANOToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +222,6 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem sAIRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sOBREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gRUPODEUSUARIOSToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -230,5 +230,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem pLANOToolStripMenuItem;
     }
 }

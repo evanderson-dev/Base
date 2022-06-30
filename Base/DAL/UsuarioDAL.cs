@@ -132,10 +132,11 @@ namespace DAL
                     Value = _usuario.Cargo
                 });
 
-                cmd.Parameters.Add(new SqlParameter("@DataAdmissao", SqlDbType.DateTime)
-                {
-                    Value = _usuario.DataAdmissao
-                });
+                if (_usuario.DataAdmissao.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@DataAdmissao", SqlDbType.DateTime)
+                    {
+                        Value = _usuario.DataAdmissao
+                    });
 
                 if (_usuario.DataDemissao.ToString().Trim().Length > 6)
                     cmd.Parameters.Add(new SqlParameter("@DataDemissao", SqlDbType.DateTime)
@@ -171,6 +172,16 @@ namespace DAL
                 cmd.Parameters.Add(new SqlParameter("@NumeroContaBanco", SqlDbType.VarChar)
                 {
                     Value = _usuario.NumeroContaBanco
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@InicioDoContrato", SqlDbType.VarChar)
+                {
+                    Value = _usuario.InicioDoContrato
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@FimDoContrato", SqlDbType.VarChar)
+                {
+                    Value = _usuario.FimDoContrato
                 });
 
                 cmd.Parameters.Add(new SqlParameter("@Observacao", SqlDbType.VarChar)
@@ -286,11 +297,11 @@ namespace DAL
 
                 /*SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
                 pid.Value = _usuario.Id;
-                cmd.Parameters.Add(pid);*/
+                cmd.Parameters.Add(pid);
 
                 SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit);
                 pativo.Value = _usuario.Ativo;
-                cmd.Parameters.Add(pativo);
+                cmd.Parameters.Add(pativo);*/
 
                 SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
                 pnomeUsuario.Value = _usuario.NomeUsuario;
@@ -304,9 +315,9 @@ namespace DAL
                 pnomeCompleto.Value = _usuario.NomeCompleto;
                 cmd.Parameters.Add(pnomeCompleto);
 
-                SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
-                pcpf.Value = _usuario.Cpf;
-                cmd.Parameters.Add(pcpf);
+                //SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
+                //pcpf.Value = _usuario.Cpf;
+                //cmd.Parameters.Add(pcpf);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();

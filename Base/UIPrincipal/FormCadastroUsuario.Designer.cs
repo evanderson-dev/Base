@@ -56,14 +56,14 @@ namespace UIPrincipal
             System.Windows.Forms.Label labelDataAdmissao;
             System.Windows.Forms.Label labelDataDemissao;
             System.Windows.Forms.Label label4;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             System.Windows.Forms.Label labelPlano;
             System.Windows.Forms.Label labelInicioContrato;
             System.Windows.Forms.Label labelFimContrato;
             System.Windows.Forms.Label labelObservacao;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonSalvarECadastrarNovo = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNomeUsuario = new System.Windows.Forms.TextBox();
             this.textBoxRg = new System.Windows.Forms.TextBox();
             this.buttonCancelarCadastro = new System.Windows.Forms.Button();
@@ -84,8 +84,6 @@ namespace UIPrincipal
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
-            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
-            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
             this.maskedTextBoxDataDemissao = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
             this.textBoxNumConta = new System.Windows.Forms.TextBox();
@@ -98,17 +96,18 @@ namespace UIPrincipal
             this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
             this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
             this.groupBoxDadosDeAcesso = new System.Windows.Forms.GroupBox();
+            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
+            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
             this.groupBoxDadosCliente = new System.Windows.Forms.GroupBox();
-            this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
-            this.groupBoxTipo = new System.Windows.Forms.GroupBox();
-            this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
-            this.groupBoxSituacao = new System.Windows.Forms.GroupBox();
-            this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
-            this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxFimContrato = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
+            this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
             this.textBoxObservacao = new System.Windows.Forms.TextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBoxSituacao = new System.Windows.Forms.GroupBox();
+            this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
+            this.groupBoxTipo = new System.Windows.Forms.GroupBox();
+            this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -139,15 +138,15 @@ namespace UIPrincipal
             labelInicioContrato = new System.Windows.Forms.Label();
             labelFimContrato = new System.Windows.Forms.Label();
             labelObservacao = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.groupBoxFuncionario.SuspendLayout();
             this.groupBoxNivelFuncionario.SuspendLayout();
             this.groupBoxDadosDeAcesso.SuspendLayout();
             this.groupBoxDadosCliente.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
-            this.groupBoxTipo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).BeginInit();
             this.groupBoxSituacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).BeginInit();
+            this.groupBoxTipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeUsuarioLabel
@@ -410,6 +409,46 @@ namespace UIPrincipal
             label4.TabIndex = 33;
             label4.Text = "CEP:";
             // 
+            // labelPlano
+            // 
+            labelPlano.AutoSize = true;
+            labelPlano.ForeColor = System.Drawing.Color.Black;
+            labelPlano.Location = new System.Drawing.Point(3, 16);
+            labelPlano.Name = "labelPlano";
+            labelPlano.Size = new System.Drawing.Size(46, 13);
+            labelPlano.TabIndex = 4;
+            labelPlano.Text = "PLANO:";
+            // 
+            // labelInicioContrato
+            // 
+            labelInicioContrato.AutoSize = true;
+            labelInicioContrato.ForeColor = System.Drawing.Color.Black;
+            labelInicioContrato.Location = new System.Drawing.Point(272, 16);
+            labelInicioContrato.Name = "labelInicioContrato";
+            labelInicioContrato.Size = new System.Drawing.Size(124, 13);
+            labelInicioContrato.TabIndex = 7;
+            labelInicioContrato.Text = "INICIO DO CONTRATO:";
+            // 
+            // labelFimContrato
+            // 
+            labelFimContrato.AutoSize = true;
+            labelFimContrato.ForeColor = System.Drawing.Color.Black;
+            labelFimContrato.Location = new System.Drawing.Point(399, 16);
+            labelFimContrato.Name = "labelFimContrato";
+            labelFimContrato.Size = new System.Drawing.Size(110, 13);
+            labelFimContrato.TabIndex = 8;
+            labelFimContrato.Text = "FIM DO CONTRATO:";
+            // 
+            // labelObservacao
+            // 
+            labelObservacao.AutoSize = true;
+            labelObservacao.ForeColor = System.Drawing.Color.Black;
+            labelObservacao.Location = new System.Drawing.Point(6, 187);
+            labelObservacao.Name = "labelObservacao";
+            labelObservacao.Size = new System.Drawing.Size(83, 13);
+            labelObservacao.TabIndex = 38;
+            labelObservacao.Text = "OBSERVAÇÃO:";
+            // 
             // buttonSalvar
             // 
             this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -418,24 +457,13 @@ namespace UIPrincipal
             this.buttonSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(22, 526);
+            this.buttonSalvar.Location = new System.Drawing.Point(301, 526);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(65, 23);
+            this.buttonSalvar.Size = new System.Drawing.Size(80, 22);
             this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-            // 
-            // buttonSalvarECadastrarNovo
-            // 
-            this.buttonSalvarECadastrarNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarECadastrarNovo.Location = new System.Drawing.Point(93, 526);
-            this.buttonSalvarECadastrarNovo.Name = "buttonSalvarECadastrarNovo";
-            this.buttonSalvarECadastrarNovo.Size = new System.Drawing.Size(226, 23);
-            this.buttonSalvarECadastrarNovo.TabIndex = 4;
-            this.buttonSalvarECadastrarNovo.Text = "SALVAR E CADASTRAR UM NOVO";
-            this.buttonSalvarECadastrarNovo.UseVisualStyleBackColor = true;
-            this.buttonSalvarECadastrarNovo.Click += new System.EventHandler(this.buttonSalvarECadastrarNovo_Click);
             // 
             // ativoCheckBox
             // 
@@ -447,6 +475,10 @@ namespace UIPrincipal
             this.ativoCheckBox.TabIndex = 2;
             this.ativoCheckBox.Text = "ATIVO";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // textBoxNomeUsuario
             // 
@@ -476,9 +508,9 @@ namespace UIPrincipal
             this.buttonCancelarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonCancelarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCancelarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastro.Location = new System.Drawing.Point(325, 526);
+            this.buttonCancelarCadastro.Location = new System.Drawing.Point(387, 526);
             this.buttonCancelarCadastro.Name = "buttonCancelarCadastro";
-            this.buttonCancelarCadastro.Size = new System.Drawing.Size(82, 23);
+            this.buttonCancelarCadastro.Size = new System.Drawing.Size(80, 22);
             this.buttonCancelarCadastro.TabIndex = 5;
             this.buttonCancelarCadastro.Text = "CANCELAR";
             this.buttonCancelarCadastro.UseVisualStyleBackColor = false;
@@ -640,26 +672,6 @@ namespace UIPrincipal
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "DADOS DO FUNCIONARIO";
             // 
-            // checkBoxCliente
-            // 
-            this.checkBoxCliente.AutoSize = true;
-            this.checkBoxCliente.Location = new System.Drawing.Point(5, 36);
-            this.checkBoxCliente.Name = "checkBoxCliente";
-            this.checkBoxCliente.Size = new System.Drawing.Size(71, 17);
-            this.checkBoxCliente.TabIndex = 17;
-            this.checkBoxCliente.Text = "CLIENTE";
-            this.checkBoxCliente.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFuncionario
-            // 
-            this.checkBoxFuncionario.AutoSize = true;
-            this.checkBoxFuncionario.Location = new System.Drawing.Point(5, 59);
-            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
-            this.checkBoxFuncionario.Size = new System.Drawing.Size(100, 17);
-            this.checkBoxFuncionario.TabIndex = 16;
-            this.checkBoxFuncionario.Text = "FUNCIONARIO";
-            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
-            // 
             // maskedTextBoxDataDemissao
             // 
             this.maskedTextBoxDataDemissao.Location = new System.Drawing.Point(141, 148);
@@ -772,6 +784,26 @@ namespace UIPrincipal
             this.groupBoxDadosDeAcesso.TabStop = false;
             this.groupBoxDadosDeAcesso.Text = "DADOS DE ACESSO";
             // 
+            // checkBoxCliente
+            // 
+            this.checkBoxCliente.AutoSize = true;
+            this.checkBoxCliente.Location = new System.Drawing.Point(5, 36);
+            this.checkBoxCliente.Name = "checkBoxCliente";
+            this.checkBoxCliente.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxCliente.TabIndex = 17;
+            this.checkBoxCliente.Text = "CLIENTE";
+            this.checkBoxCliente.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFuncionario
+            // 
+            this.checkBoxFuncionario.AutoSize = true;
+            this.checkBoxFuncionario.Location = new System.Drawing.Point(5, 59);
+            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
+            this.checkBoxFuncionario.Size = new System.Drawing.Size(100, 17);
+            this.checkBoxFuncionario.TabIndex = 16;
+            this.checkBoxFuncionario.Text = "FUNCIONARIO";
+            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
+            // 
             // groupBoxDadosCliente
             // 
             this.groupBoxDadosCliente.Controls.Add(labelFimContrato);
@@ -786,6 +818,32 @@ namespace UIPrincipal
             this.groupBoxDadosCliente.TabIndex = 2;
             this.groupBoxDadosCliente.TabStop = false;
             this.groupBoxDadosCliente.Text = "DADOS DO CLIENTE";
+            // 
+            // maskedTextBoxFimContrato
+            // 
+            this.maskedTextBoxFimContrato.Location = new System.Drawing.Point(402, 32);
+            this.maskedTextBoxFimContrato.Mask = "00-00-0000";
+            this.maskedTextBoxFimContrato.Name = "maskedTextBoxFimContrato";
+            this.maskedTextBoxFimContrato.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxFimContrato.TabIndex = 6;
+            this.maskedTextBoxFimContrato.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxInicioContrato
+            // 
+            this.maskedTextBoxInicioContrato.Location = new System.Drawing.Point(275, 32);
+            this.maskedTextBoxInicioContrato.Mask = "00-00-0000";
+            this.maskedTextBoxInicioContrato.Name = "maskedTextBoxInicioContrato";
+            this.maskedTextBoxInicioContrato.Size = new System.Drawing.Size(121, 20);
+            this.maskedTextBoxInicioContrato.TabIndex = 5;
+            this.maskedTextBoxInicioContrato.ValidatingType = typeof(System.DateTime);
+            // 
+            // comboBoxPlanos
+            // 
+            this.comboBoxPlanos.FormattingEnabled = true;
+            this.comboBoxPlanos.Location = new System.Drawing.Point(6, 32);
+            this.comboBoxPlanos.Name = "comboBoxPlanos";
+            this.comboBoxPlanos.Size = new System.Drawing.Size(263, 21);
+            this.comboBoxPlanos.TabIndex = 1;
             // 
             // groupBoxDadosPessoais
             // 
@@ -835,24 +893,24 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
             // 
-            // maskedTextBoxCep
+            // textBoxObservacao
             // 
-            this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 117);
-            this.maskedTextBoxCep.Mask = "00000-000";
-            this.maskedTextBoxCep.Name = "maskedTextBoxCep";
-            this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
-            this.maskedTextBoxCep.TabIndex = 6;
+            this.textBoxObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxObservacao.Location = new System.Drawing.Point(7, 203);
+            this.textBoxObservacao.Multiline = true;
+            this.textBoxObservacao.Name = "textBoxObservacao";
+            this.textBoxObservacao.Size = new System.Drawing.Size(750, 52);
+            this.textBoxObservacao.TabIndex = 37;
             // 
-            // groupBoxTipo
+            // groupBoxSituacao
             // 
-            this.groupBoxTipo.Controls.Add(this.checkBoxCliente);
-            this.groupBoxTipo.Controls.Add(this.checkBoxFuncionario);
-            this.groupBoxTipo.Location = new System.Drawing.Point(514, 71);
-            this.groupBoxTipo.Name = "groupBoxTipo";
-            this.groupBoxTipo.Size = new System.Drawing.Size(111, 105);
-            this.groupBoxTipo.TabIndex = 34;
-            this.groupBoxTipo.TabStop = false;
-            this.groupBoxTipo.Text = "TIPO";
+            this.groupBoxSituacao.Controls.Add(this.ativoCheckBox);
+            this.groupBoxSituacao.Location = new System.Drawing.Point(514, 17);
+            this.groupBoxSituacao.Name = "groupBoxSituacao";
+            this.groupBoxSituacao.Size = new System.Drawing.Size(111, 48);
+            this.groupBoxSituacao.TabIndex = 36;
+            this.groupBoxSituacao.TabStop = false;
+            this.groupBoxSituacao.Text = "SITUAÇÃO";
             // 
             // pictureBoxFotoPessoa
             // 
@@ -866,94 +924,24 @@ namespace UIPrincipal
             this.pictureBoxFotoPessoa.TabIndex = 35;
             this.pictureBoxFotoPessoa.TabStop = false;
             // 
-            // groupBoxSituacao
+            // groupBoxTipo
             // 
-            this.groupBoxSituacao.Controls.Add(this.ativoCheckBox);
-            this.groupBoxSituacao.Location = new System.Drawing.Point(514, 17);
-            this.groupBoxSituacao.Name = "groupBoxSituacao";
-            this.groupBoxSituacao.Size = new System.Drawing.Size(111, 48);
-            this.groupBoxSituacao.TabIndex = 36;
-            this.groupBoxSituacao.TabStop = false;
-            this.groupBoxSituacao.Text = "SITUAÇÃO";
+            this.groupBoxTipo.Controls.Add(this.checkBoxCliente);
+            this.groupBoxTipo.Controls.Add(this.checkBoxFuncionario);
+            this.groupBoxTipo.Location = new System.Drawing.Point(514, 71);
+            this.groupBoxTipo.Name = "groupBoxTipo";
+            this.groupBoxTipo.Size = new System.Drawing.Size(111, 105);
+            this.groupBoxTipo.TabIndex = 34;
+            this.groupBoxTipo.TabStop = false;
+            this.groupBoxTipo.Text = "TIPO";
             // 
-            // comboBoxPlanos
+            // maskedTextBoxCep
             // 
-            this.comboBoxPlanos.FormattingEnabled = true;
-            this.comboBoxPlanos.Location = new System.Drawing.Point(6, 32);
-            this.comboBoxPlanos.Name = "comboBoxPlanos";
-            this.comboBoxPlanos.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPlanos.TabIndex = 1;
-            // 
-            // labelPlano
-            // 
-            labelPlano.AutoSize = true;
-            labelPlano.ForeColor = System.Drawing.Color.Black;
-            labelPlano.Location = new System.Drawing.Point(3, 16);
-            labelPlano.Name = "labelPlano";
-            labelPlano.Size = new System.Drawing.Size(46, 13);
-            labelPlano.TabIndex = 4;
-            labelPlano.Text = "PLANO:";
-            // 
-            // maskedTextBoxInicioContrato
-            // 
-            this.maskedTextBoxInicioContrato.Location = new System.Drawing.Point(133, 32);
-            this.maskedTextBoxInicioContrato.Mask = "00-00-0000";
-            this.maskedTextBoxInicioContrato.Name = "maskedTextBoxInicioContrato";
-            this.maskedTextBoxInicioContrato.Size = new System.Drawing.Size(121, 20);
-            this.maskedTextBoxInicioContrato.TabIndex = 5;
-            this.maskedTextBoxInicioContrato.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBoxFimContrato
-            // 
-            this.maskedTextBoxFimContrato.Location = new System.Drawing.Point(260, 32);
-            this.maskedTextBoxFimContrato.Mask = "00-00-0000";
-            this.maskedTextBoxFimContrato.Name = "maskedTextBoxFimContrato";
-            this.maskedTextBoxFimContrato.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxFimContrato.TabIndex = 6;
-            this.maskedTextBoxFimContrato.ValidatingType = typeof(System.DateTime);
-            // 
-            // labelInicioContrato
-            // 
-            labelInicioContrato.AutoSize = true;
-            labelInicioContrato.ForeColor = System.Drawing.Color.Black;
-            labelInicioContrato.Location = new System.Drawing.Point(130, 16);
-            labelInicioContrato.Name = "labelInicioContrato";
-            labelInicioContrato.Size = new System.Drawing.Size(124, 13);
-            labelInicioContrato.TabIndex = 7;
-            labelInicioContrato.Text = "INICIO DO CONTRATO:";
-            // 
-            // labelFimContrato
-            // 
-            labelFimContrato.AutoSize = true;
-            labelFimContrato.ForeColor = System.Drawing.Color.Black;
-            labelFimContrato.Location = new System.Drawing.Point(257, 16);
-            labelFimContrato.Name = "labelFimContrato";
-            labelFimContrato.Size = new System.Drawing.Size(110, 13);
-            labelFimContrato.TabIndex = 8;
-            labelFimContrato.Text = "FIM DO CONTRATO:";
-            // 
-            // textBoxObservacao
-            // 
-            this.textBoxObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxObservacao.Location = new System.Drawing.Point(7, 203);
-            this.textBoxObservacao.Multiline = true;
-            this.textBoxObservacao.Name = "textBoxObservacao";
-            this.textBoxObservacao.Size = new System.Drawing.Size(750, 52);
-            this.textBoxObservacao.TabIndex = 37;
-            // 
-            // labelObservacao
-            // 
-            labelObservacao.AutoSize = true;
-            labelObservacao.ForeColor = System.Drawing.Color.Black;
-            labelObservacao.Location = new System.Drawing.Point(6, 187);
-            labelObservacao.Name = "labelObservacao";
-            labelObservacao.Size = new System.Drawing.Size(83, 13);
-            labelObservacao.TabIndex = 38;
-            labelObservacao.Text = "OBSERVAÇÃO:";
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 117);
+            this.maskedTextBoxCep.Mask = "00000-000";
+            this.maskedTextBoxCep.Name = "maskedTextBoxCep";
+            this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
+            this.maskedTextBoxCep.TabIndex = 6;
             // 
             // FormCadastroUsuario
             // 
@@ -965,7 +953,6 @@ namespace UIPrincipal
             this.Controls.Add(this.groupBoxDadosCliente);
             this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.buttonCancelarCadastro);
-            this.Controls.Add(this.buttonSalvarECadastrarNovo);
             this.Controls.Add(this.buttonSalvar);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -976,6 +963,7 @@ namespace UIPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRO DE USUARIO";
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
             this.groupBoxNivelFuncionario.ResumeLayout(false);
@@ -986,18 +974,16 @@ namespace UIPrincipal
             this.groupBoxDadosCliente.PerformLayout();
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
+            this.groupBoxSituacao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).EndInit();
             this.groupBoxTipo.ResumeLayout(false);
             this.groupBoxTipo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).EndInit();
-            this.groupBoxSituacao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.Button buttonSalvarECadastrarNovo;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.CheckBox ativoCheckBox;
         private System.Windows.Forms.TextBox textBoxNomeUsuario;

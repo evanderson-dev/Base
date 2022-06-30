@@ -42,5 +42,13 @@ namespace UIPrincipal
         {
             Login();
         }
+
+        private void pLANOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaPlano frm = new FormConsultaPlano())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
