@@ -26,10 +26,8 @@ namespace UIPrincipal
 
             if (usuarioBindingSource.Count != 0)
             {
-                string nome = ((DataRowView)usuarioBindingSource.Current).Row["NomeUsuario"].ToString();//PARA CORRIGIR
-                string senha = ((DataRowView)usuarioBindingSource.Current).Row["Senha"].ToString();//PARA CORRIGIR
-                //string nome = "admin";//"SELET NomeUsuario FROM Pessoa WHERE NomeUsuario='" + textBoxUsuario.Text + "'";
-                //string senha = "admin";//"SELET Senha FROM Pessoa WHERE Senha='"+textBoxSenha.Text+"'";
+                string nome = ((DataRowView)usuarioBindingSource.Current).Row["NomeUsuario"].ToString();
+                string senha = ((DataRowView)usuarioBindingSource.Current).Row["Senha"].ToString();
 
                 //NAO ALTERAR ABAIXO
                 if ((nome == textBoxUsuario.Text) && (senha == textBoxSenha.Text))

@@ -333,7 +333,7 @@ namespace UIPrincipal
             // 
             labelSalario.AutoSize = true;
             labelSalario.ForeColor = System.Drawing.Color.Black;
-            labelSalario.Location = new System.Drawing.Point(169, 93);
+            labelSalario.Location = new System.Drawing.Point(166, 93);
             labelSalario.Name = "labelSalario";
             labelSalario.Size = new System.Drawing.Size(56, 13);
             labelSalario.TabIndex = 4;
@@ -363,7 +363,7 @@ namespace UIPrincipal
             // 
             labelAgencia.AutoSize = true;
             labelAgencia.ForeColor = System.Drawing.Color.Black;
-            labelAgencia.Location = new System.Drawing.Point(500, 93);
+            labelAgencia.Location = new System.Drawing.Point(512, 93);
             labelAgencia.Name = "labelAgencia";
             labelAgencia.Size = new System.Drawing.Size(57, 13);
             labelAgencia.TabIndex = 8;
@@ -373,7 +373,7 @@ namespace UIPrincipal
             // 
             labelNumConta.AutoSize = true;
             labelNumConta.ForeColor = System.Drawing.Color.Black;
-            labelNumConta.Location = new System.Drawing.Point(603, 93);
+            labelNumConta.Location = new System.Drawing.Point(615, 93);
             labelNumConta.Name = "labelNumConta";
             labelNumConta.Size = new System.Drawing.Size(116, 13);
             labelNumConta.TabIndex = 10;
@@ -692,14 +692,14 @@ namespace UIPrincipal
             // 
             // textBoxNumConta
             // 
-            this.textBoxNumConta.Location = new System.Drawing.Point(606, 109);
+            this.textBoxNumConta.Location = new System.Drawing.Point(618, 109);
             this.textBoxNumConta.Name = "textBoxNumConta";
-            this.textBoxNumConta.Size = new System.Drawing.Size(131, 20);
+            this.textBoxNumConta.Size = new System.Drawing.Size(139, 20);
             this.textBoxNumConta.TabIndex = 4;
             // 
             // textBoxAgencia
             // 
-            this.textBoxAgencia.Location = new System.Drawing.Point(500, 109);
+            this.textBoxAgencia.Location = new System.Drawing.Point(512, 109);
             this.textBoxAgencia.Name = "textBoxAgencia";
             this.textBoxAgencia.Size = new System.Drawing.Size(100, 20);
             this.textBoxAgencia.TabIndex = 3;
@@ -709,7 +709,7 @@ namespace UIPrincipal
             this.textBoxBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
             this.textBoxBanco.Name = "textBoxBanco";
-            this.textBoxBanco.Size = new System.Drawing.Size(219, 20);
+            this.textBoxBanco.Size = new System.Drawing.Size(231, 20);
             this.textBoxBanco.TabIndex = 2;
             // 
             // textBoxCargo
@@ -732,7 +732,7 @@ namespace UIPrincipal
             this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelUm);
             this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelDois);
             this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelTres);
-            this.groupBoxNivelFuncionario.Location = new System.Drawing.Point(333, 20);
+            this.groupBoxNivelFuncionario.Location = new System.Drawing.Point(353, 20);
             this.groupBoxNivelFuncionario.Name = "groupBoxNivelFuncionario";
             this.groupBoxNivelFuncionario.Size = new System.Drawing.Size(404, 70);
             this.groupBoxNivelFuncionario.TabIndex = 0;
@@ -962,7 +962,7 @@ namespace UIPrincipal
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CADASTRO DE USUARIO";
+            this.Text = "CADASTRO DE PESSOAS";
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();

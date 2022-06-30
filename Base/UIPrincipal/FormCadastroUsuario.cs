@@ -8,21 +8,18 @@ namespace UIPrincipal
     public partial class FormCadastroUsuario : Form
     {
         private bool inserindoNovo;
-
         public FormCadastroUsuario()
         {
             InitializeComponent();
             usuarioBindingSource.AddNew();
             inserindoNovo = true;
         }
-
         public FormCadastroUsuario(object _current)
         {
             InitializeComponent();
             usuarioBindingSource.DataSource = _current;
             inserindoNovo = false;
         }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -97,7 +94,7 @@ namespace UIPrincipal
         }
 
         private void textBoxRg_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS NUMEROS SEJAM INSERIDOS NO TEXTBOX
+        {// ESTE EVENTO PERMITE QUE APENAS NUMEROS SEJAM INSERIDOS E APAGADOS NO TEXTBOX
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
                 e.Handled = true;
         }

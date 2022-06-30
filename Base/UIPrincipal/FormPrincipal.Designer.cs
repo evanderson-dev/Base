@@ -33,6 +33,7 @@ namespace UIPrincipal
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gRUPODEUSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pLANOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOBREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@ namespace UIPrincipal
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pLANOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -80,6 +80,13 @@ namespace UIPrincipal
             this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.uSUARIOSToolStripMenuItem.Text = "FUNCIONARIO/CLIENTE";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
+            // 
+            // pLANOToolStripMenuItem
+            // 
+            this.pLANOToolStripMenuItem.Name = "pLANOToolStripMenuItem";
+            this.pLANOToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.pLANOToolStripMenuItem.Text = "PLANO";
+            this.pLANOToolStripMenuItem.Click += new System.EventHandler(this.pLANOToolStripMenuItem_Click);
             // 
             // aJUDAToolStripMenuItem
             // 
@@ -179,13 +186,6 @@ namespace UIPrincipal
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // pLANOToolStripMenuItem
-            // 
-            this.pLANOToolStripMenuItem.Name = "pLANOToolStripMenuItem";
-            this.pLANOToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.pLANOToolStripMenuItem.Text = "PLANO";
-            this.pLANOToolStripMenuItem.Click += new System.EventHandler(this.pLANOToolStripMenuItem_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +202,7 @@ namespace UIPrincipal
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrincipal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -10,7 +10,7 @@ namespace Model
     {
         private int id;
         private string descricao;
-        private float valor;
+        private string valor;
 
         public int Id
         {
@@ -24,7 +24,7 @@ namespace Model
             set { descricao = value; }
         }
 
-        public float Valor
+        public string Valor
         {
             get { return valor; }
             set { valor = value; }

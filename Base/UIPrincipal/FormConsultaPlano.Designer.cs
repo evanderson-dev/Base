@@ -32,10 +32,10 @@ namespace UIPrincipal
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultaPlano));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,10 +63,6 @@ namespace UIPrincipal
             this.dataGridView1.Size = new System.Drawing.Size(742, 388);
             this.dataGridView1.TabIndex = 0;
             // 
-            // planoBindingSource
-            // 
-            this.planoBindingSource.DataSource = typeof(Model.Plano);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -87,6 +83,10 @@ namespace UIPrincipal
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
             this.valorDataGridViewTextBoxColumn.HeaderText = "VALOR";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            // 
+            // planoBindingSource
+            // 
+            this.planoBindingSource.DataSource = typeof(Model.Plano);
             // 
             // textBoxBuscar
             // 
@@ -149,6 +149,7 @@ namespace UIPrincipal
             this.buttonExcluir.TabIndex = 7;
             this.buttonExcluir.Text = "EXCLUIR";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonAlterar
             // 

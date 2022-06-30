@@ -247,7 +247,7 @@ namespace DAL
             }
             finally
             {
-                cn.Close();
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
             }
         }
         public void Excluir(int _id)
@@ -264,8 +264,7 @@ namespace DAL
                 pid.Value = _id;
                 cmd.Parameters.Add(pid);
 
-                //ABRE A CONEXÃO COM O BANCO DE DADOS
-                cn.Open();
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
                 int resultado = cmd.ExecuteNonQuery();//EXECUTA O COMANDO SQL NO BANCO DE DADOS
                 if (resultado != 1)
                     throw new Exception("NÃO FOI POSSIVEL EXCLUIR O USUARIO: " + _id.ToString());
@@ -280,8 +279,7 @@ namespace DAL
             }
             finally
             {
-                //FECHA A CONEÃO COM O BANDO DE DADOS
-                cn.Close();
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
             }
         }
         public Usuario Alterar(Usuario _usuario)
@@ -303,17 +301,17 @@ namespace DAL
                 pativo.Value = _usuario.Ativo;
                 cmd.Parameters.Add(pativo);*/
 
-                SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
-                pnomeUsuario.Value = _usuario.NomeUsuario;
-                cmd.Parameters.Add(pnomeUsuario);
+                SqlParameter nomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
+                nomeUsuario.Value = _usuario.NomeUsuario;
+                cmd.Parameters.Add(nomeUsuario);
 
-                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
-                psenha.Value = _usuario.Senha;
-                cmd.Parameters.Add(psenha);
+                SqlParameter senha = new SqlParameter("@Senha", SqlDbType.VarChar);
+                senha.Value = _usuario.Senha;
+                cmd.Parameters.Add(senha);
 
-                SqlParameter pnomeCompleto = new SqlParameter("@NomeCompleto", SqlDbType.VarChar);
-                pnomeCompleto.Value = _usuario.NomeCompleto;
-                cmd.Parameters.Add(pnomeCompleto);
+                SqlParameter nomeCompleto = new SqlParameter("@NomeCompleto", SqlDbType.VarChar);
+                nomeCompleto.Value = _usuario.NomeCompleto;
+                cmd.Parameters.Add(nomeCompleto);
 
                 //SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
                 //pcpf.Value = _usuario.Cpf;

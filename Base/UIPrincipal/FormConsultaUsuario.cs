@@ -22,20 +22,12 @@ namespace UIPrincipal
         {
             Close();
         }
-
-        private void FormConsultaUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                buttonSair_Click(null, null);
-            }
-        }
-
+                
         private void buttonNovo_Click(object sender, EventArgs e)
         {
             using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
-                frm.ShowDialog();
+                frm.ShowDialog();////////////////////////////////
             }
         }
 
@@ -57,6 +49,13 @@ namespace UIPrincipal
             using (FormCadastroUsuario frm = new FormCadastroUsuario(usuarioBindingSource.Current))
             {
                 frm.ShowDialog();
+            }
+        }
+        private void FormConsultaUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                buttonSair_Click(null, null);
             }
         }
     }

@@ -50,5 +50,14 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resposta =  MessageBox.Show("DESEJA ENCERRAR O SISTEMA?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (resposta == DialogResult.No)
+            {
+                //
+            }
+        }
     }
 }
