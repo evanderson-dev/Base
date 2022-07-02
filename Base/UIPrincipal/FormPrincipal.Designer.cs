@@ -72,7 +72,6 @@ namespace UIPrincipal
             this.gRUPODEUSUARIOToolStripMenuItem.Name = "gRUPODEUSUARIOToolStripMenuItem";
             this.gRUPODEUSUARIOToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.gRUPODEUSUARIOToolStripMenuItem.Text = "CADASTRO";
-            this.gRUPODEUSUARIOToolStripMenuItem.Click += new System.EventHandler(this.gRUPODEUSUARIOToolStripMenuItem_Click);
             // 
             // uSUARIOSToolStripMenuItem
             // 

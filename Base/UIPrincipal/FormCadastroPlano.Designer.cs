@@ -1,4 +1,5 @@
-﻿namespace UIPrincipal
+﻿
+namespace UIPrincipal
 {
     partial class FormCadastroPlano
     {
@@ -29,159 +30,151 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.Label nomeUsuarioLabel;
+            System.Windows.Forms.Label senhaLabel;
+            this.buttonSalvar = new System.Windows.Forms.Button();
+            this.buttonSair = new System.Windows.Forms.Button();
+            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.textBoxDescricao = new System.Windows.Forms.TextBox();
+            this.textBoxValor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonCancelarCadastroPlano = new System.Windows.Forms.Button();
-            this.buttonSalvarPlano = new System.Windows.Forms.Button();
-            this.textBoxIdPlano = new System.Windows.Forms.TextBox();
-            this.textBoxDescricaoPlano = new System.Windows.Forms.TextBox();
-            this.textBoxValorPlano = new System.Windows.Forms.TextBox();
-            this.labelCodigo = new System.Windows.Forms.Label();
-            this.labelDescricao = new System.Windows.Forms.Label();
-            this.labelValor = new System.Windows.Forms.Label();
-            this.panelCadstroPlanos = new System.Windows.Forms.Panel();
+            idLabel = new System.Windows.Forms.Label();
+            nomeUsuarioLabel = new System.Windows.Forms.Label();
+            senhaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
-            this.panelCadstroPlanos.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(27, 48);
+            idLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(16, 13);
+            idLabel.TabIndex = 8;
+            idLabel.Text = "Id";
+            // 
+            // nomeUsuarioLabel
+            // 
+            nomeUsuarioLabel.AutoSize = true;
+            nomeUsuarioLabel.Location = new System.Drawing.Point(106, 48);
+            nomeUsuarioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nomeUsuarioLabel.Name = "nomeUsuarioLabel";
+            nomeUsuarioLabel.Size = new System.Drawing.Size(55, 13);
+            nomeUsuarioLabel.TabIndex = 0;
+            nomeUsuarioLabel.Text = "Descrição";
+            // 
+            // senhaLabel
+            // 
+            senhaLabel.AutoSize = true;
+            senhaLabel.Location = new System.Drawing.Point(423, 48);
+            senhaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            senhaLabel.Name = "senhaLabel";
+            senhaLabel.Size = new System.Drawing.Size(31, 13);
+            senhaLabel.TabIndex = 2;
+            senhaLabel.Text = "Valor";
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(9, 330);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(56, 26);
+            this.buttonSalvar.TabIndex = 5;
+            this.buttonSalvar.Text = "Sal&var";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Location = new System.Drawing.Point(535, 330);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(56, 26);
+            this.buttonSair.TabIndex = 7;
+            this.buttonSair.Text = "&Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // textBoxId
+            // 
+            this.textBoxId.Location = new System.Drawing.Point(29, 64);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(76, 20);
+            this.textBoxId.TabIndex = 9;
+            // 
+            // textBoxDescricao
+            // 
+            this.textBoxDescricao.Location = new System.Drawing.Point(109, 64);
+            this.textBoxDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxDescricao.Name = "textBoxDescricao";
+            this.textBoxDescricao.Size = new System.Drawing.Size(313, 20);
+            this.textBoxDescricao.TabIndex = 1;
+            // 
+            // textBoxValor
+            // 
+            this.textBoxValor.Location = new System.Drawing.Point(425, 64);
+            this.textBoxValor.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxValor.Name = "textBoxValor";
+            this.textBoxValor.PasswordChar = '*';
+            this.textBoxValor.Size = new System.Drawing.Size(122, 20);
+            this.textBoxValor.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(606, 48);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "CADASTRO DE PLANOS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // planoBindingSource
             // 
             this.planoBindingSource.DataSource = typeof(Model.Plano);
             // 
-            // buttonCancelarCadastroPlano
-            // 
-            this.buttonCancelarCadastroPlano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelarCadastroPlano.BackColor = System.Drawing.Color.White;
-            this.buttonCancelarCadastroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancelarCadastroPlano.FlatAppearance.BorderSize = 0;
-            this.buttonCancelarCadastroPlano.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonCancelarCadastroPlano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonCancelarCadastroPlano.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCancelarCadastroPlano.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroPlano.Location = new System.Drawing.Point(387, 203);
-            this.buttonCancelarCadastroPlano.Name = "buttonCancelarCadastroPlano";
-            this.buttonCancelarCadastroPlano.Size = new System.Drawing.Size(80, 22);
-            this.buttonCancelarCadastroPlano.TabIndex = 7;
-            this.buttonCancelarCadastroPlano.Text = "CANCELAR";
-            this.buttonCancelarCadastroPlano.UseVisualStyleBackColor = false;
-            this.buttonCancelarCadastroPlano.Click += new System.EventHandler(this.buttonCancelarCadastroPlano_Click);
-            // 
-            // buttonSalvarPlano
-            // 
-            this.buttonSalvarPlano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSalvarPlano.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSalvarPlano.FlatAppearance.BorderSize = 0;
-            this.buttonSalvarPlano.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonSalvarPlano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonSalvarPlano.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonSalvarPlano.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarPlano.Location = new System.Drawing.Point(301, 203);
-            this.buttonSalvarPlano.Name = "buttonSalvarPlano";
-            this.buttonSalvarPlano.Size = new System.Drawing.Size(80, 22);
-            this.buttonSalvarPlano.TabIndex = 6;
-            this.buttonSalvarPlano.Text = "SALVAR";
-            this.buttonSalvarPlano.UseVisualStyleBackColor = true;
-            this.buttonSalvarPlano.Click += new System.EventHandler(this.buttonSalvarPlano_Click);
-            // 
-            // textBoxIdPlano
-            // 
-            this.textBoxIdPlano.Location = new System.Drawing.Point(103, 98);
-            this.textBoxIdPlano.Name = "textBoxIdPlano";
-            this.textBoxIdPlano.Size = new System.Drawing.Size(100, 20);
-            this.textBoxIdPlano.TabIndex = 8;
-            // 
-            // textBoxDescricaoPlano
-            // 
-            this.textBoxDescricaoPlano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDescricaoPlano.Location = new System.Drawing.Point(209, 98);
-            this.textBoxDescricaoPlano.Name = "textBoxDescricaoPlano";
-            this.textBoxDescricaoPlano.Size = new System.Drawing.Size(361, 20);
-            this.textBoxDescricaoPlano.TabIndex = 9;
-            // 
-            // textBoxValorPlano
-            // 
-            this.textBoxValorPlano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxValorPlano.Location = new System.Drawing.Point(576, 98);
-            this.textBoxValorPlano.Name = "textBoxValorPlano";
-            this.textBoxValorPlano.Size = new System.Drawing.Size(100, 20);
-            this.textBoxValorPlano.TabIndex = 10;
-            // 
-            // labelCodigo
-            // 
-            this.labelCodigo.AutoSize = true;
-            this.labelCodigo.Location = new System.Drawing.Point(100, 82);
-            this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(52, 13);
-            this.labelCodigo.TabIndex = 11;
-            this.labelCodigo.Text = "CODIGO:";
-            // 
-            // labelDescricao
-            // 
-            this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Location = new System.Drawing.Point(206, 82);
-            this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(164, 13);
-            this.labelDescricao.TabIndex = 12;
-            this.labelDescricao.Text = "DESCRIÇÃO DO NOVO PLANO:";
-            // 
-            // labelValor
-            // 
-            this.labelValor.AutoSize = true;
-            this.labelValor.Location = new System.Drawing.Point(573, 82);
-            this.labelValor.Name = "labelValor";
-            this.labelValor.Size = new System.Drawing.Size(46, 13);
-            this.labelValor.TabIndex = 13;
-            this.labelValor.Text = "VALOR:";
-            // 
-            // panelCadstroPlanos
-            // 
-            this.panelCadstroPlanos.Controls.Add(this.textBoxDescricaoPlano);
-            this.panelCadstroPlanos.Controls.Add(this.buttonCancelarCadastroPlano);
-            this.panelCadstroPlanos.Controls.Add(this.buttonSalvarPlano);
-            this.panelCadstroPlanos.Controls.Add(this.labelValor);
-            this.panelCadstroPlanos.Controls.Add(this.textBoxIdPlano);
-            this.panelCadstroPlanos.Controls.Add(this.labelDescricao);
-            this.panelCadstroPlanos.Controls.Add(this.textBoxValorPlano);
-            this.panelCadstroPlanos.Controls.Add(this.labelCodigo);
-            this.panelCadstroPlanos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCadstroPlanos.Location = new System.Drawing.Point(0, 0);
-            this.panelCadstroPlanos.Name = "panelCadstroPlanos";
-            this.panelCadstroPlanos.Size = new System.Drawing.Size(784, 238);
-            this.panelCadstroPlanos.TabIndex = 14;
-            // 
             // FormCadastroPlano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 238);
-            this.Controls.Add(this.panelCadstroPlanos);
-            this.ForeColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(606, 372);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(senhaLabel);
+            this.Controls.Add(this.textBoxValor);
+            this.Controls.Add(nomeUsuarioLabel);
+            this.Controls.Add(this.textBoxDescricao);
+            this.Controls.Add(idLabel);
+            this.Controls.Add(this.textBoxId);
+            this.Controls.Add(this.buttonSair);
+            this.Controls.Add(this.buttonSalvar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroPlano";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
-            this.panelCadstroPlanos.ResumeLayout(false);
-            this.panelCadstroPlanos.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.TextBox textBoxDescricao;
+        private System.Windows.Forms.TextBox textBoxValor;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource planoBindingSource;
-        private System.Windows.Forms.Button buttonCancelarCadastroPlano;
-        private System.Windows.Forms.Button buttonSalvarPlano;
-        private System.Windows.Forms.TextBox textBoxIdPlano;
-        private System.Windows.Forms.TextBox textBoxDescricaoPlano;
-        private System.Windows.Forms.TextBox textBoxValorPlano;
-        private System.Windows.Forms.Label labelCodigo;
-        private System.Windows.Forms.Label labelDescricao;
-        private System.Windows.Forms.Label labelValor;
-        private System.Windows.Forms.Panel panelCadstroPlanos;
     }
 }
+

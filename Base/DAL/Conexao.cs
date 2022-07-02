@@ -1,7 +1,4 @@
-﻿//System.Data.Sql;
-//System.Data.SqlClient;
-
-namespace DAL
+﻿namespace DAL
 {
     public static class Conexao
     {

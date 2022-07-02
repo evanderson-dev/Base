@@ -49,13 +49,13 @@
     <Compile Include="FormCadastroPlano.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroPlano.Designer.cs">
+    <Compile Include="FormCadastroPlano.designer.cs">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
     </Compile>
     <Compile Include="FormConsultaPlano.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsultaPlano.Designer.cs">
+    <Compile Include="FormConsultaPlano.designer.cs">
       <DependentUpon>FormConsultaPlano.cs</DependentUpon>
     </Compile>
     <Compile Include="FormConsultaUsuario.cs">

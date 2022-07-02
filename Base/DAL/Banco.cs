@@ -1,10 +1,6 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -32,4 +28,4 @@ namespace DAL
             return true;
         }
     }
-}//
+}

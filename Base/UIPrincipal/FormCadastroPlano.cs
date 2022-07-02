@@ -8,6 +8,7 @@ namespace UIPrincipal
     public partial class FormCadastroPlano : Form
     {
         private bool inserindoNovo;
+
         public FormCadastroPlano()
         {
             InitializeComponent();
@@ -20,37 +21,39 @@ namespace UIPrincipal
             planoBindingSource.DataSource = _current;
             inserindoNovo = false;
         }
-        private void buttonSalvarPlano_Click(object sender, EventArgs e)
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
             {
                 planoBindingSource.EndEdit();
                 Inserir();
-                MessageBox.Show("OPERAÇÃO REALIZADO COM SUCESSO!");
+                MessageBox.Show("Cadastro realizado com sucesso!");
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("OCORREU UM ERRO! " + ex.Message);
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
             }
         }
+
         private void Inserir()
         {
-            PlanoBLL planoBLL = new PlanoBLL();
-            Plano plano = new Plano();
+            PlanoBLL usuarioBLL = new PlanoBLL();
+            Plano usuario = new Plano();
 
-            plano.Descricao = textBoxDescricaoPlano.Text;
-            plano.Valor = textBoxValorPlano.Text;
+            usuario.Id = Convert.ToInt32(textBoxId.Text);
+            usuario.Descricao = textBoxDescricao.Text;
+            usuario.Valor = textBoxValor.Text;
 
             if (inserindoNovo)
-                planoBLL.Inserir(plano);
+                usuarioBLL.Inserir(usuario);
             else
-                planoBLL.Alterar(plano);
+                usuarioBLL.Alterar(usuario);
         }
-        private void buttonCancelarCadastroPlano_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-               
     }
 }

@@ -7,10 +7,10 @@ namespace BLL
 {
     public class PlanoBLL
     {
-        public void Inserir(Plano _plano)
+        public Plano Inserir(Plano _plano)
         {
             PlanoDAL planoDAL = new PlanoDAL();
-            planoDAL.Inserir(_plano);
+            return planoDAL.Inserir(_plano);
         }
         public void Excluir(int _id)
         {

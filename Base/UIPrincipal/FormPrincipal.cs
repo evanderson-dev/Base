@@ -24,12 +24,6 @@ namespace UIPrincipal
                     Application.Exit();
             }
         }
-
-        private void gRUPODEUSUARIOToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormConsultaUsuario frm = new FormConsultaUsuario())
@@ -37,7 +31,6 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login();

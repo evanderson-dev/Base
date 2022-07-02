@@ -13,14 +13,12 @@ namespace DAL
             try
             {
                 cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
-                SqlCommand cmd = new SqlCommand
-                {
-                    Connection = cn,
-                    CommandType = CommandType.StoredProcedure,
-                    CommandText = "SP_InserirPlano"
-                };
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_InserirPlano";
 
-                cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.VarChar)
+                cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)
                 {
                     Value = _plano.Id
                 });
@@ -75,7 +73,6 @@ namespace DAL
 
                 SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
                 pfiltro.Value = _filtro;
-
                 da.SelectCommand.Parameters.Add(pfiltro);
 
                 cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
@@ -141,13 +138,21 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarPlano";
 
-                SqlParameter pplano = new SqlParameter("@Id", SqlDbType.Int);
-                pplano.Value = _plano.Id;
-                cmd.Parameters.Add(pplano);
+                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
+                pid.Value = _plano.Id;
+                cmd.Parameters.Add(pid);
+
+                SqlParameter pdescricao = new SqlParameter("@Descricao", SqlDbType.VarChar);
+                pdescricao.Value = _plano.Descricao;
+                cmd.Parameters.Add(pdescricao);
+
+                SqlParameter pvalor = new SqlParameter("@Valor", SqlDbType.Float);
+                pvalor.Value = _plano.Valor;
+                cmd.Parameters.Add(pvalor);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
-
+                return _plano;
             }
             catch (SqlException ex)
             {
@@ -161,7 +166,6 @@ namespace DAL
             {
                 cn.Close();
             }
-            return null;
         }
     }
 }
