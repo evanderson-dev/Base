@@ -25,8 +25,8 @@ GO
 CREATE TABLE Plano
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Descricao VARCHAR(250),
-	Valor FLOAT
+	Descricao VARCHAR(150),
+	Valor VARCHAR(50)
 )
 GO
 INSERT INTO Plano(Descricao, Valor)
@@ -35,26 +35,40 @@ INSERT INTO Plano(Descricao, Valor)
 	('400 MEGAS + 1 ROTEADOR EM COMODATO', 129.90),
 	('500 MEGAS + 2 ROTEADORES EM COMODATO', 139.90)
 GO
-CREATE PROCEDURE SP_InserirPlano --SP_BuscarPlano
+CREATE PROCEDURE SP_InserirPlano
 	@Id INT OUTPUT,
-	@Descricao VARCHAR(100),
-	@Valor FLOAT
+	@Descricao VARCHAR(150),
+	@Valor VARCHAR(50)
 AS
-	INSERT INTO Plano(
-	Descricao,
-	Valor)
-	VALUES(@Descricao,
-	@Valor)
+	INSERT INTO Plano(Descricao, Valor)
+		VALUES(@Descricao,	@Valor)
 	SET @Id = (SELECT @@IDENTITY)
 GO
---EXEC SP_InserirPlano 0, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
+--EXEC SP_InserirPlano 5, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
+--SELECT * FROM Plano
 CREATE PROC SP_BuscarPlano
 	@Filtro VARCHAR(250) = ''
 AS
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-	OR CONVERT(VARCHAR(50), Id) = @Filtro
+	OR Id LIKE '%'+ @filtro +'%'--OR CONVERT(VARCHAR(50), Id) = @Filtro
 GO
---SELECT*FROM Plano
+CREATE PROC SP_ExcluirPlano
+	@Id INT
+AS
+	DELETE FROM Plano WHERE Id = @Id
+GO
+CREATE PROC SP_AlterarPlano
+	@Id INT,
+	@Descricao VARCHAR(150),
+	@Valor VARCHAR(50)
+AS
+	UPDATE Plano SET
+	Descricao = @Descricao,
+	Valor = @Valor
+	WHERE Id = @Id
+GO
+-- EXEC SP_AlterarPlano 9, '600', '100'
+-- SELECT*FROM Plano
 
 --TABELA "PESSOA"
 --DROP TABLE Pessoa
@@ -101,7 +115,7 @@ CREATE TABLE Pessoa
 )
 GO
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '66666666666', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277')
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227855193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277')
 	--('LuizSenai', 'Senha@321', 'LUIZ TAL', '12345678912', 1),
 	--('DaviSenai', 'Senha@456', 'DAVI TAL', '98765432198', 1),
 	--('WandersonSenai', 'Senha@654', 'WANDERSON TAL', '7418529374', 1)
@@ -212,10 +226,11 @@ AS
 	@Observacao)
 	SET @Id = (SELECT @@IDENTITY)
 GO
-EXEC SP_InserirUsuario 0, 1, 'SuperAdmin', 'SuperAdmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
+EXEC SP_InserirUsuario 0, 1, null, null, 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO'
+GO
 
 --TABELA "GESTÃO DE O.S"
 CREATE TABLE GestaoDeOs
@@ -256,18 +271,12 @@ GO
 INSERT INTO GestaoDeOs(TipoChamado, Descricao, DataAbertura, DataDeFechamento, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
 	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
 GO
-
---TABELA "CLIENTE"
-/*INSERT INTO Cliente(Id , Id_Plano,	InicioDoContrato, FimDoContrato)
-	VALUES(3,	1, null, NULL)
-GO*/
-
 --DROP PROC SP_BuscarUsuario
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
 	SELECT Id, NomeCompleto, Cpf, Ativo, Senha, NomeUsuario FROM Pessoa WHERE NomeUsuario LIKE '%' + @filtro + '%'
-	OR CONVERT(VARCHAR(50), Id) = @Filtro
+	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
 
 CREATE PROC SP_ExcluirUsuario
@@ -277,7 +286,7 @@ AS
 GO
 
 --DROP PROC SP_AlterarUsuario
-CREATE PROC SP_AlterarUsuario
+/*CREATE PROC SP_AlterarUsuario
 	@Id INT OUTPUT,
 	--@Ativo BIT,
 	@NomeUsuario VARCHAR(150),
@@ -340,6 +349,18 @@ AS
 	NumeroContaBanco = @NumeroContaBanco,
 	Cliente = @Cliente,
 	Observacao = @Observacao*/
+	WHERE Id = @Id
+GO*/
+CREATE PROC SP_AlterarUsuario
+	@Id INT OUTPUT,
+	@NomeUsuario VARCHAR(150),
+	@Senha VARCHAR(150),
+	@NomeCompleto VARCHAR(150)
+AS
+	UPDATE Pessoa SET
+	NomeUsuario = @NomeUsuario,
+	Senha = @Senha,
+	NomeCompleto = @NomeCompleto
 	WHERE Id = @Id
 GO
 --EXEC SP_AlterarUsuario 2, 'adminDois', 'senhaAdminDois', ' ADMINISTRADOR DOIS'
