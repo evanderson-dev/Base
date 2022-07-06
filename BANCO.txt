@@ -46,8 +46,6 @@ AS
 	SET @Id = (SELECT @@IDENTITY)
 GO
 --EXEC SP_InserirPlano 5, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
-SELECT * FROM Pessoa
-GO
 CREATE PROC SP_BuscarPlano
 	@Filtro VARCHAR(250) = ''
 AS
@@ -234,11 +232,11 @@ AS
 	@Id_Plano)
 	SET @Id = (SELECT @@IDENTITY)
 GO
-/*EXEC SP_InserirUsuario 0, 1, null, null, 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
+EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
-'2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO'
-GO*/
+'2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO', 1
+GO
 
 --TABELA "GESTÃO DE O.S"
 CREATE TABLE GestaoDeOs
@@ -254,6 +252,73 @@ CREATE TABLE GestaoDeOs
 	Id_Plano INT,
 	Id_Status INT
 )
+
+--DROP PROC SP_AlterarUsuario
+CREATE PROC SP_AlterarUsuario
+	@Id INT OUTPUT,
+	@Ativo BIT,
+	@NomeUsuario VARCHAR(150),
+	@Senha VARCHAR(150),
+	@NomeCompleto VARCHAR(150),
+	@Cpf VARCHAR(14),
+	@Rg VARCHAR(13),
+	@OrgaoExpeditor VARCHAR(6),
+	@DataNascimento DATETIME,
+	@Cep VARCHAR(10),
+	@Rua VARCHAR(150),
+	@NumCasa VARCHAR(10),
+	@EstadoCivil VARCHAR(10),
+	@Nacionalidade VARCHAR(10),
+	@Email VARCHAR(150),
+	@Telefone VARCHAR(15),
+	@CelularUm VARCHAR(16),
+	@CelularDois VARCHAR(16),
+	@Cidade VARCHAR(10),
+	@Uf VARCHAR(2),
+	@Funcionario BIT,
+	@Id_Permissao INT,
+	@Salario FLOAT,
+	@Cargo VARCHAR(50),
+	@DataAdmissao DATETIME = NULL,
+	@DataDemissao DATETIME = NULL,
+	@Banco VARCHAR(40),
+	@NumeroAgenciaBanco VARCHAR(10),
+	@NumeroContaBanco VARCHAR(15),
+	@Cliente BIT,
+	@Observacao VARCHAR(250)
+AS
+	UPDATE Pessoa SET
+	Ativo = @Ativo,
+	NomeUsuario = @NomeUsuario,
+	Senha = @Senha,
+	NomeCompleto = @NomeCompleto,
+	Cpf = @Cpf,
+	Rg = @Rg,
+	OrgaoExpeditor = @OrgaoExpeditor,
+	DataNascimento = @DataNascimento,
+	Cep = @Cep,
+	Rua = @Rua,
+	NumCasa = @NumCasa,
+	EstadoCivil = @EstadoCivil,
+	Nacionalidade = @Nacionalidade,
+	Email = @Email,
+	Telefone = @Telefone,
+	CelularUm = @CelularUm,
+	CelularDois = @CelularDois,
+	Cidade = @Cidade,
+	Uf = @Uf,
+	Funcionario = @Funcionario,
+	Id_Permissao = @Id_Permissao,
+	Cargo = @Cargo,
+	DataAdmissao = @DataAdmissao,
+	DataDemissao = @DataDemissao,
+	Banco = @Banco,
+	NumeroAgenciaBanco = @NumeroAgenciaBanco,
+	NumeroContaBanco = @NumeroContaBanco,
+	Cliente = @Cliente,
+	Observacao = @Observacao
+	WHERE Id = @Id
+GO
 
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs
@@ -293,84 +358,6 @@ AS
 	DELETE FROM Pessoa WHERE Id = @Id
 GO
 
---DROP PROC SP_AlterarUsuario
-/*CREATE PROC SP_AlterarUsuario
-	@Id INT OUTPUT,
-	--@Ativo BIT,
-	@NomeUsuario VARCHAR(150),
-	@Senha VARCHAR(150),
-	@NomeCompleto VARCHAR(150)
-	/*@Cpf VARCHAR(14),
-	@Rg VARCHAR(13),
-	@OrgaoExpeditor VARCHAR(6),
-	@DataNascimento DATETIME,
-	@Cep VARCHAR(10),
-	@Rua VARCHAR(150),
-	@NumCasa VARCHAR(10),
-	@EstadoCivil VARCHAR(10),
-	@Nacionalidade VARCHAR(10),
-	@Email VARCHAR(150),
-	@Telefone VARCHAR(15),
-	@CelularUm VARCHAR(16),
-	@CelularDois VARCHAR(16),
-	@Cidade VARCHAR(10),
-	@Uf VARCHAR(2),
-	@Funcionario BIT,
-	@Id_Permissao INT,
-	@Salario FLOAT,
-	@Cargo VARCHAR(50),
-	@DataAdmissao DATETIME = NULL,
-	@DataDemissao DATETIME = NULL,
-	@Banco VARCHAR(40),
-	@NumeroAgenciaBanco VARCHAR(10),
-	@NumeroContaBanco VARCHAR(15),
-	@Cliente BIT,
-	@Observacao VARCHAR(250)*/
-AS
-	UPDATE Pessoa SET
-	--Ativo = @Ativo,
-	NomeUsuario = @NomeUsuario,
-	Senha = @Senha,
-	NomeCompleto = @NomeCompleto
-	/*Cpf = @Cpf,
-	Rg = @Rg,
-	OrgaoExpeditor = @OrgaoExpeditor,
-	DataNascimento = @DataNascimento,
-	Cep = @Cep,
-	Rua = @Rua,
-	NumCasa = @NumCasa,
-	EstadoCivil = @EstadoCivil,
-	Nacionalidade = @Nacionalidade,
-	Email = @Email,
-	Telefone = @Telefone,
-	CelularUm = @CelularUm,
-	CelularDois = @CelularDois,
-	Cidade = @Cidade,
-	Uf = @Uf,
-	Funcionario = @Funcionario,
-	Id_Permissao = @Id_Permissao,
-	Cargo = @Cargo,
-	DataAdmissao = @DataAdmissao,
-	DataDemissao = @DataDemissao,
-	Banco = @Banco,
-	NumeroAgenciaBanco = @NumeroAgenciaBanco,
-	NumeroContaBanco = @NumeroContaBanco,
-	Cliente = @Cliente,
-	Observacao = @Observacao*/
-	WHERE Id = @Id
-GO*/
-CREATE PROC SP_AlterarUsuario
-	@Id INT OUTPUT,
-	@NomeUsuario VARCHAR(150),
-	@Senha VARCHAR(150),
-	@NomeCompleto VARCHAR(150)
-AS
-	UPDATE Pessoa SET
-	NomeUsuario = @NomeUsuario,
-	Senha = @Senha,
-	NomeCompleto = @NomeCompleto
-	WHERE Id = @Id
-GO
 --EXEC SP_AlterarUsuario 2, 'adminDois', 'senhaAdminDois', ' ADMINISTRADOR DOIS'
 SELECT * FROM PESSOA
 
@@ -394,6 +381,4 @@ IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
 	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
 ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-
-
-	*/
+*/
