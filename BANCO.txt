@@ -1,4 +1,5 @@
 -- CTR + SHIFT + R = ATUALIZA O SCRIP CASO ESTEJA ACUSANDO ERROS
+-- CTR = ATALHO PARA FECHAR RESULTADO
 USE MASTER
 GO
 
@@ -45,13 +46,16 @@ AS
 	SET @Id = (SELECT @@IDENTITY)
 GO
 --EXEC SP_InserirPlano 5, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
---SELECT * FROM Plano
+SELECT * FROM Pessoa
+GO
 CREATE PROC SP_BuscarPlano
 	@Filtro VARCHAR(250) = ''
 AS
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-	OR Id LIKE '%'+ @filtro +'%'--OR CONVERT(VARCHAR(50), Id) = @Filtro
+	OR CONVERT(VARCHAR(50), Id) = @Filtro
 GO
+
+-- OR Id LIKE '%'+ @filtro +'%'
 CREATE PROC SP_ExcluirPlano
 	@Id INT
 AS
@@ -124,6 +128,7 @@ INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, Cpf)
 	VALUES (1, 'admin', 'admin', 'Admin', 'Admin')
 GO
 --DROP PROCEDURE SP_InserirUsuario
+GO
 CREATE PROCEDURE SP_InserirUsuario
 	@Id INT OUTPUT,
 	@Ativo BIT,
@@ -157,7 +162,8 @@ CREATE PROCEDURE SP_InserirUsuario
 	@Cliente BIT,
 	@InicioDoContrato DATETIME = NULL,
 	@FimDoContrato DATETIME = NULL,
-	@Observacao VARCHAR(250)
+	@Observacao VARCHAR(250),
+	@Id_Plano INT
 AS
 	INSERT INTO Pessoa(
 	Ativo,
@@ -191,7 +197,8 @@ AS
 	Cliente,
 	InicioDoContrato,
 	FimDoContrato,
-	Observacao)
+	Observacao,
+	Id_Plano)
 	VALUES(@Ativo,
 	@NomeUsuario,
 	@Senha,
@@ -223,14 +230,15 @@ AS
 	@Cliente,
 	@InicioDoContrato,
 	@FimDoContrato,
-	@Observacao)
+	@Observacao,
+	@Id_Plano)
 	SET @Id = (SELECT @@IDENTITY)
 GO
-EXEC SP_InserirUsuario 0, 1, null, null, 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
+/*EXEC SP_InserirUsuario 0, 1, null, null, 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO'
-GO
+GO*/
 
 --TABELA "GESTÃO DE O.S"
 CREATE TABLE GestaoDeOs
@@ -378,3 +386,14 @@ SELECT * FROM PESSOA
 --SELECT*FROM GestaoDeOs
 --SELECT*FROM Cliente
 --SELECT*FROM StatusOs
+
+/*
+DECLARE @Filtro VARCHAR(50) = '50'
+
+IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
+
+
+	*/
