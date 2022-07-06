@@ -36,10 +36,10 @@ namespace UIPrincipal
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.textBoxId = new System.Windows.Forms.TextBox();
+            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.textBoxValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             idLabel = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             senhaLabel = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@ namespace UIPrincipal
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(56, 26);
-            this.buttonSalvar.TabIndex = 5;
+            this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "Sal&var";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -93,7 +93,7 @@ namespace UIPrincipal
             this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(56, 26);
-            this.buttonSair.TabIndex = 7;
+            this.buttonSair.TabIndex = 4;
             this.buttonSair.Text = "&Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -105,7 +105,11 @@ namespace UIPrincipal
             this.textBoxId.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(76, 20);
-            this.textBoxId.TabIndex = 9;
+            this.textBoxId.TabIndex = 0;
+            // 
+            // planoBindingSource
+            // 
+            this.planoBindingSource.DataSource = typeof(Model.Plano);
             // 
             // textBoxDescricao
             // 
@@ -122,9 +126,8 @@ namespace UIPrincipal
             this.textBoxValor.Location = new System.Drawing.Point(425, 64);
             this.textBoxValor.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.PasswordChar = '*';
             this.textBoxValor.Size = new System.Drawing.Size(122, 20);
-            this.textBoxValor.TabIndex = 3;
+            this.textBoxValor.TabIndex = 2;
             // 
             // label1
             // 
@@ -137,10 +140,6 @@ namespace UIPrincipal
             this.label1.TabIndex = 12;
             this.label1.Text = "CADASTRO DE PLANOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // planoBindingSource
-            // 
-            this.planoBindingSource.DataSource = typeof(Model.Plano);
             // 
             // FormCadastroPlano
             // 

@@ -467,6 +467,7 @@ namespace UIPrincipal
             // 
             // ativoCheckBox
             // 
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.ForeColor = System.Drawing.Color.Black;
             this.ativoCheckBox.Location = new System.Drawing.Point(6, 16);
@@ -491,7 +492,6 @@ namespace UIPrincipal
             // 
             // textBoxRg
             // 
-            this.textBoxRg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.textBoxRg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBoxRg.Location = new System.Drawing.Point(103, 78);
             this.textBoxRg.Name = "textBoxRg";
@@ -519,6 +519,7 @@ namespace UIPrincipal
             // textBoxNomeCompleto
             // 
             this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxNomeCompleto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeCompleto", true));
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(77, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
             this.textBoxNomeCompleto.Size = new System.Drawing.Size(345, 20);
@@ -534,6 +535,7 @@ namespace UIPrincipal
             // 
             // textBoxCodigo
             // 
+            this.textBoxCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
             this.textBoxCodigo.Location = new System.Drawing.Point(6, 39);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(65, 20);
@@ -541,6 +543,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxCpf
             // 
+            this.maskedTextBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cpf", true));
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(6, 78);
             this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";

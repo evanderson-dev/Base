@@ -138,7 +138,7 @@ namespace UIPrincipal
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(624, 20);
-            this.textBoxBuscar.TabIndex = 2;
+            this.textBoxBuscar.TabIndex = 0;
             // 
             // buttonBuscar
             // 
@@ -147,7 +147,7 @@ namespace UIPrincipal
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(56, 19);
-            this.buttonBuscar.TabIndex = 3;
+            this.buttonBuscar.TabIndex = 1;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
