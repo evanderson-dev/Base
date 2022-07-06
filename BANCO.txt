@@ -252,6 +252,7 @@ CREATE TABLE GestaoDeOs
 	Id_Plano INT,
 	Id_Status INT
 )
+GO
 
 --DROP PROC SP_AlterarUsuario
 CREATE PROC SP_AlterarUsuario
