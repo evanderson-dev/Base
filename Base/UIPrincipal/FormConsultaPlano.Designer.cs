@@ -40,13 +40,10 @@ namespace UIPrincipal
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
@@ -165,10 +162,7 @@ namespace UIPrincipal
             this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Descricao,
-            this.Valor,
-            this.idDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn});
+            this.Valor});
             this.usuarioDataGridView.DataSource = this.planoBindingSource;
             this.usuarioDataGridView.Location = new System.Drawing.Point(9, 109);
             this.usuarioDataGridView.Margin = new System.Windows.Forms.Padding(2);
@@ -177,6 +171,10 @@ namespace UIPrincipal
             this.usuarioDataGridView.RowTemplate.Height = 24;
             this.usuarioDataGridView.Size = new System.Drawing.Size(684, 311);
             this.usuarioDataGridView.TabIndex = 5;
+            // 
+            // planoBindingSource
+            // 
+            this.planoBindingSource.DataSource = typeof(Model.Plano);
             // 
             // Id
             // 
@@ -198,28 +196,6 @@ namespace UIPrincipal
             this.Valor.DataPropertyName = "Valor";
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
-            // 
-            // planoBindingSource
-            // 
-            this.planoBindingSource.DataSource = typeof(Model.Plano);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             // 
             // FormConsultaPlano
             // 
@@ -267,8 +243,5 @@ namespace UIPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
     }
 }

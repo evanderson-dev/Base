@@ -100,6 +100,7 @@ namespace UIPrincipal
             // 
             // textBoxId
             // 
+            this.textBoxId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.planoBindingSource, "Id", true));
             this.textBoxId.Location = new System.Drawing.Point(29, 64);
             this.textBoxId.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxId.Name = "textBoxId";
@@ -108,6 +109,7 @@ namespace UIPrincipal
             // 
             // textBoxDescricao
             // 
+            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.planoBindingSource, "Descricao", true));
             this.textBoxDescricao.Location = new System.Drawing.Point(109, 64);
             this.textBoxDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescricao.Name = "textBoxDescricao";
@@ -116,6 +118,7 @@ namespace UIPrincipal
             // 
             // textBoxValor
             // 
+            this.textBoxValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.planoBindingSource, "Valor", true));
             this.textBoxValor.Location = new System.Drawing.Point(425, 64);
             this.textBoxValor.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxValor.Name = "textBoxValor";

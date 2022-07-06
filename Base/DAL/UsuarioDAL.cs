@@ -189,6 +189,11 @@ namespace DAL
                     Value = _usuario.Observacao
                 });
 
+                cmd.Parameters.Add(new SqlParameter("@Id_PLano", SqlDbType.Int)
+                {
+                    Value = _usuario.Id_Plano
+                });
+
 
 
                 /////////////////////////////////////////////////////////////

@@ -844,6 +844,7 @@ namespace UIPrincipal
             this.comboBoxPlanos.Name = "comboBoxPlanos";
             this.comboBoxPlanos.Size = new System.Drawing.Size(263, 21);
             this.comboBoxPlanos.TabIndex = 1;
+            this.comboBoxPlanos.Enter += new System.EventHandler(this.comboBoxPlanos_Enter);
             // 
             // groupBoxDadosPessoais
             // 

@@ -78,6 +78,7 @@ namespace UIPrincipal
             usuario.InicioDoContrato = maskedTextBoxInicioContrato.Text;
             usuario.FimDoContrato = maskedTextBoxFimContrato.Text;
             usuario.Observacao = textBoxObservacao.Text;
+            usuario.Id_Plano = Convert.ToInt32(comboBoxPlanos.SelectedValue);
 
 
             ////////////////////////////////////////////////////////////////////
@@ -137,6 +138,18 @@ namespace UIPrincipal
                     !char.IsLetter(e.KeyChar) &&
                     !char.IsWhiteSpace(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void comboBoxPlanos_Enter(object sender, EventArgs e)
+        {
+            PlanoBLL planoBLL = new PlanoBLL();
+            BindingSource planoBindingSource = new BindingSource();
+            planoBindingSource.DataSource = planoBLL.Buscar("");
+            
+            this.comboBoxPlanos.DataSource = planoBindingSource;
+            this.comboBoxPlanos.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", planoBindingSource, "Id", true));
+            this.comboBoxPlanos.DisplayMember = "Descricao";
+            this.comboBoxPlanos.ValueMember = "Id";
         }
     }
 }

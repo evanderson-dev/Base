@@ -49,7 +49,7 @@ namespace UIPrincipal
             DialogResult resposta =  MessageBox.Show("DESEJA ENCERRAR O SISTEMA?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (resposta == DialogResult.No)
             {
-                //
+                e.Cancel = true;
             }
         }
     }
