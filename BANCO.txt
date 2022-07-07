@@ -30,6 +30,7 @@ CREATE TABLE Plano
 	Valor VARCHAR(50)
 )
 GO
+
 INSERT INTO Plano(Descricao, Valor)
 	VALUES('300 MEGAS', 99.90),
 	('350 MEGAS + 1 ROTEADOR EM COMODATO', 119.90),
@@ -45,12 +46,15 @@ AS
 		VALUES(@Descricao,	@Valor)
 	SET @Id = (SELECT @@IDENTITY)
 GO
+
 --EXEC SP_InserirPlano 5, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
 CREATE PROC SP_BuscarPlano
-	@Filtro VARCHAR(250) = ''
-AS
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-	OR CONVERT(VARCHAR(50), Id) = @Filtro
 GO
 
 -- OR Id LIKE '%'+ @filtro +'%'
@@ -232,6 +236,9 @@ AS
 	@Id_Plano)
 	SET @Id = (SELECT @@IDENTITY)
 GO
+
+SELECT*FROM Pessoa
+
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
@@ -310,6 +317,7 @@ AS
 	Uf = @Uf,
 	Funcionario = @Funcionario,
 	Id_Permissao = @Id_Permissao,
+	Salario= @Salario,
 	Cargo = @Cargo,
 	DataAdmissao = @DataAdmissao,
 	DataDemissao = @DataDemissao,
