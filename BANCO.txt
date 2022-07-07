@@ -345,13 +345,44 @@ GO
 INSERT INTO GestaoDeOs(TipoChamado, Descricao, DataAbertura, DataDeFechamento, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
 	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
 GO
+
+
+
+
+
+
+
+
+
+
+
 --DROP PROC SP_BuscarUsuario
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
-	SELECT Id, NomeCompleto, Cpf, Ativo, Senha, NomeUsuario FROM Pessoa WHERE NomeUsuario LIKE '%' + @filtro + '%'
+	SELECT Id, NomeCompleto, Cpf, Ativo, Senha, NomeUsuario, Rg,OrgaoExpeditor, 
+			DataNascimento, Cep, Rua, NumCasa, EstadoCivil, Nacionalidade, Telefone, 
+			CelularUm, CelularDois, Cidade, Uf, Funcionario, Id_Permissao, Cargo, DataAdmissao, 
+			DataDemissao, Banco, NumeroAgenciaBanco, NumeroContaBanco, Cliente, Observacao 
+			FROM Pessoa WHERE NomeUsuario LIKE '%' + @filtro + '%'
 	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 CREATE PROC SP_ExcluirUsuario
 	@Id INT
