@@ -69,7 +69,6 @@ namespace UIPrincipal
             this.buttonCancelarCadastro = new System.Windows.Forms.Button();
             this.textBoxNomeCompleto = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.textBoxOrgExpeditor = new System.Windows.Forms.TextBox();
             this.maskedTextBoxDataNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -108,6 +107,7 @@ namespace UIPrincipal
             this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -467,8 +467,6 @@ namespace UIPrincipal
             // 
             // ativoCheckBox
             // 
-            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ativo", true));
-            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.ForeColor = System.Drawing.Color.Black;
             this.ativoCheckBox.Location = new System.Drawing.Point(6, 16);
             this.ativoCheckBox.Name = "ativoCheckBox";
@@ -492,6 +490,7 @@ namespace UIPrincipal
             // 
             // textBoxRg
             // 
+            this.textBoxRg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rg", true));
             this.textBoxRg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBoxRg.Location = new System.Drawing.Point(103, 78);
             this.textBoxRg.Name = "textBoxRg";
@@ -533,14 +532,6 @@ namespace UIPrincipal
             this.textBoxSenha.Size = new System.Drawing.Size(150, 20);
             this.textBoxSenha.TabIndex = 1;
             // 
-            // textBoxCodigo
-            // 
-            this.textBoxCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
-            this.textBoxCodigo.Location = new System.Drawing.Point(6, 39);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(65, 20);
-            this.textBoxCodigo.TabIndex = 4;
-            // 
             // maskedTextBoxCpf
             // 
             this.maskedTextBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cpf", true));
@@ -553,6 +544,7 @@ namespace UIPrincipal
             // textBoxOrgExpeditor
             // 
             this.textBoxOrgExpeditor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxOrgExpeditor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "OrgaoExpeditor", true));
             this.textBoxOrgExpeditor.Location = new System.Drawing.Point(194, 78);
             this.textBoxOrgExpeditor.Name = "textBoxOrgExpeditor";
             this.textBoxOrgExpeditor.Size = new System.Drawing.Size(100, 20);
@@ -560,6 +552,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxDataNascimento
             // 
+            this.maskedTextBoxDataNascimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "DataNascimento", true));
             this.maskedTextBoxDataNascimento.Location = new System.Drawing.Point(428, 39);
             this.maskedTextBoxDataNascimento.Mask = "00-00-0000";
             this.maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
@@ -570,6 +563,7 @@ namespace UIPrincipal
             // textBoxNacionalidade
             // 
             this.textBoxNacionalidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxNacionalidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nacionalidade", true));
             this.textBoxNacionalidade.Location = new System.Drawing.Point(300, 78);
             this.textBoxNacionalidade.Name = "textBoxNacionalidade";
             this.textBoxNacionalidade.Size = new System.Drawing.Size(100, 20);
@@ -579,6 +573,7 @@ namespace UIPrincipal
             // textBoxEstadoCivil
             // 
             this.textBoxEstadoCivil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxEstadoCivil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "EstadoCivil", true));
             this.textBoxEstadoCivil.Location = new System.Drawing.Point(406, 78);
             this.textBoxEstadoCivil.Name = "textBoxEstadoCivil";
             this.textBoxEstadoCivil.Size = new System.Drawing.Size(100, 20);
@@ -842,6 +837,7 @@ namespace UIPrincipal
             // 
             // comboBoxPlanos
             // 
+            this.comboBoxPlanos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPlanos.FormattingEnabled = true;
             this.comboBoxPlanos.Location = new System.Drawing.Point(6, 32);
             this.comboBoxPlanos.Name = "comboBoxPlanos";
@@ -851,6 +847,7 @@ namespace UIPrincipal
             // 
             // groupBoxDadosPessoais
             // 
+            this.groupBoxDadosPessoais.Controls.Add(this.label5);
             this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.groupBoxSituacao);
@@ -858,7 +855,6 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.Controls.Add(this.groupBoxTipo);
             this.groupBoxDadosPessoais.Controls.Add(label4);
             this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCep);
-            this.groupBoxDadosPessoais.Controls.Add(this.textBoxCodigo);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRg);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxEmail);
             this.groupBoxDadosPessoais.Controls.Add(cpfLabel);
@@ -947,6 +943,16 @@ namespace UIPrincipal
             this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
             this.maskedTextBoxCep.TabIndex = 6;
             // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
+            this.label5.Location = new System.Drawing.Point(6, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.TabIndex = 39;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -995,7 +1001,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonCancelarCadastro;
         private System.Windows.Forms.TextBox textBoxNomeCompleto;
         private System.Windows.Forms.TextBox textBoxSenha;
-        private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCpf;
         private System.Windows.Forms.TextBox textBoxOrgExpeditor;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataNascimento;
@@ -1034,6 +1039,7 @@ namespace UIPrincipal
         private System.Windows.Forms.MaskedTextBox maskedTextBoxFimContrato;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxInicioContrato;
         private System.Windows.Forms.TextBox textBoxObservacao;
+        private System.Windows.Forms.Label label5;
     }
 }
 

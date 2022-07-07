@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Model;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -88,7 +89,7 @@ namespace UIPrincipal
                 usuarioBLL.Alterar(usuario);
         }
 
-        private void letrasMaiusculas(object sender, KeyPressEventArgs e)
+        private void somenteLetras(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) &&
                     !char.IsLetter(e.KeyChar) &&
@@ -108,54 +109,44 @@ namespace UIPrincipal
 
         private void textBoxNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
-            if (!char.IsControl(e.KeyChar) &&
-                    !char.IsLetter(e.KeyChar) &&
-                    !char.IsWhiteSpace(e.KeyChar))
-                    e.Handled = true;
+            somenteLetras(sender, e);
         }
 
         private void textBoxNacionalidade_KeyPress(object sender, KeyPressEventArgs e)
         {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
-            if (!char.IsControl(e.KeyChar) &&
-                    !char.IsLetter(e.KeyChar) &&
-                    !char.IsWhiteSpace(e.KeyChar))
-                e.Handled = true;
+            somenteLetras(sender, e);
         }
 
         private void textBoxEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
         {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
-            if (!char.IsControl(e.KeyChar) &&
-                    !char.IsLetter(e.KeyChar) &&
-                    !char.IsWhiteSpace(e.KeyChar))
-                e.Handled = true;
+            somenteLetras(sender, e);
         }
 
         private void textBoxUf_KeyPress(object sender, KeyPressEventArgs e)
         {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
-            if (!char.IsControl(e.KeyChar) &&
-                    !char.IsLetter(e.KeyChar) &&
-                    !char.IsWhiteSpace(e.KeyChar))
-                e.Handled = true;
+            somenteLetras(sender, e);
         }
 
         private void textBoxCidade_KeyPress(object sender, KeyPressEventArgs e)
         {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
-            if (!char.IsControl(e.KeyChar) &&
-                    !char.IsLetter(e.KeyChar) &&
-                    !char.IsWhiteSpace(e.KeyChar))
-                e.Handled = true;
+            somenteLetras(sender, e);
         }
 
+
+        PlanoBLL planoBLL;
         private void comboBoxPlanos_Enter(object sender, EventArgs e)
         {
-            PlanoBLL planoBLL = new PlanoBLL();
-            BindingSource planoBindingSource = new BindingSource();
-            planoBindingSource.DataSource = planoBLL.Buscar("");
-            
-            this.comboBoxPlanos.DataSource = planoBindingSource;
-            this.comboBoxPlanos.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", planoBindingSource, "Id", true));
-            this.comboBoxPlanos.DisplayMember = "Descricao";
-            this.comboBoxPlanos.ValueMember = "Id";
+            if (comboBoxPlanos.Text == "")
+            {
+                planoBLL = new PlanoBLL();
+                BindingSource planoBindingSource = new BindingSource();
+                planoBindingSource.DataSource = planoBLL.Buscar("");
+                comboBoxPlanos.DataSource = planoBindingSource;
+
+                comboBoxPlanos.DataSource = planoBLL.Buscar("");
+                comboBoxPlanos.DisplayMember = "Descricao";
+                comboBoxPlanos.ValueMember = "Id";
+            }
         }
     }
 }
