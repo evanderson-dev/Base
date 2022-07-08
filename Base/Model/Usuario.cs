@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model{
+﻿namespace Model
+{
     public class Usuario{
 
-        private string nomeUsuario;
-        private string nomeCompleto;
         private int id;
         private bool ativo;
+        private string nomeUsuario;
         private string senha;
-        private int id_Plano;
+        private string nomeCompleto;
         private string cpf;
         private string rg;
         private string orgaoExpeditor;
         private string dataNascimento;
+        private string cep;
         private string rua;
         private string numCasa;
         private string estadoCivil;
@@ -27,31 +22,21 @@ namespace Model{
         private string celularDois;
         private string cidade;
         private string uf;
+        private bool funcionario;
         private int id_Permissao;
         private string salario;
         private string cargo;
         private string dataAdmissao;
         private string dataDemissao;
-        private bool funcionario;
-        private bool cliente;
-        private string cep;
         private string banco;
         private string numeroAgenciaBanco;
         private string numeroContaBanco;
-        private string observacao;
+        private bool cliente;
         private string inicioDoContrato;
         private string fimDoContrato;
+        private string observacao;
+        private int id_Plano;
 
-        public string NomeUsuario
-        {
-            get { return nomeUsuario; }
-            set { nomeUsuario = value; }
-        }
-        public string NomeCompleto
-        {
-            get { return nomeCompleto; }
-            set { nomeCompleto = value; }
-        }
         public int Id
         {
             get { return id; }
@@ -62,15 +47,20 @@ namespace Model{
             get { return ativo; }
             set { ativo = value; }
         }
+        public string NomeUsuario
+        {
+            get { return nomeUsuario; }
+            set { nomeUsuario = value; }
+        }
         public string Senha
         {
             get { return senha; }
             set { senha = value; }
         }
-        public int Id_Plano
+        public string NomeCompleto
         {
-            get { return id_Plano; }
-            set { id_Plano = value; }
+            get { return nomeCompleto; }
+            set { nomeCompleto = value; }
         }
         public string Cpf
         {
@@ -91,6 +81,11 @@ namespace Model{
         {
             get { return dataNascimento; }
             set { dataNascimento = value; }
+        }
+        public string Cep
+        {
+            get { return cep; }
+            set { cep = value; }
         }
         public string Rua
         {
@@ -142,6 +137,11 @@ namespace Model{
             get { return uf; }
             set { uf = value; }
         }        
+        public bool Funcionario
+        {
+            get { return funcionario; }
+            set { funcionario = value; }
+        }
         public int Id_Permissao
         {
             get { return id_Permissao; }
@@ -167,21 +167,6 @@ namespace Model{
             get { return dataDemissao; }
             set { dataDemissao = value; }
         }
-        public bool Funcionario
-        {
-            get { return funcionario; }
-            set { funcionario = value; }
-        }
-        public bool Cliente
-        {
-            get { return cliente; }
-            set { cliente = value; }
-        }
-        public string Cep
-        {
-            get { return cep; }
-            set { cep = value; }
-        }
         public string Banco
         {
             get { return banco; }
@@ -197,10 +182,10 @@ namespace Model{
             get { return numeroContaBanco; }
             set { numeroContaBanco = value; }
         }
-        public string Observacao
+        public bool Cliente
         {
-            get { return observacao; }
-            set { observacao = value; }
+            get { return cliente; }
+            set { cliente = value; }
         }
         public string InicioDoContrato
         {
@@ -211,6 +196,16 @@ namespace Model{
         {
             get { return fimDoContrato; }
             set { fimDoContrato = value; }
+        }
+        public string Observacao
+        {
+            get { return observacao; }
+            set { observacao = value; }
+        }
+        public int Id_Plano
+        {
+            get { return id_Plano; }
+            set { id_Plano = value; }
         }
     }
 }

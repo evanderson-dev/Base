@@ -22,18 +22,24 @@ namespace DAL
 
                 #region Parâmetros
 
-                SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit)
-                {
-                    Value = _usuario.Ativo
-                };
-                cmd.Parameters.Add(pativo);
-
-                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int)
-                {
-                    Value = _usuario.Id
-                };
+                /*SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int)
+                { Value = _usuario.Id };
                 cmd.Parameters.Add(pid);
 
+                SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit)
+                { Value = _usuario.Ativo };
+                cmd.Parameters.Add(pativo);*/
+
+                cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)
+                {
+                    Value = _usuario.Id
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Ativo", SqlDbType.Bit)
+                {
+                    Value = _usuario.Ativo
+                });
+                
                 cmd.Parameters.Add(new SqlParameter("@NomeUsuario", SqlDbType.VarChar)
                 {
                     Value = _usuario.NomeUsuario
@@ -67,6 +73,11 @@ namespace DAL
                 cmd.Parameters.Add(new SqlParameter("@DataNascimento", SqlDbType.DateTime)
                 {
                     Value = _usuario.DataNascimento
+                });
+                
+                cmd.Parameters.Add(new SqlParameter("@Cep", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Cep
                 });
 
                 cmd.Parameters.Add(new SqlParameter("@Rua", SqlDbType.VarChar)
@@ -119,6 +130,11 @@ namespace DAL
                     Value = _usuario.Uf
                 });
                 
+                cmd.Parameters.Add(new SqlParameter("@Funcionario", SqlDbType.Bit)
+                {
+                    Value = _usuario.Funcionario
+                });
+                
                 cmd.Parameters.Add(new SqlParameter("@Id_Permissao", SqlDbType.VarChar)
                 {
                     Value = _usuario.Id_Permissao
@@ -146,26 +162,11 @@ namespace DAL
                         Value = _usuario.DataDemissao
                     });
 
-                cmd.Parameters.Add(new SqlParameter("@Funcionario", SqlDbType.Bit)
-                {
-                    Value = _usuario.Funcionario
-                });
-
-                cmd.Parameters.Add(new SqlParameter("@Cliente", SqlDbType.Bit)
-                {
-                    Value = _usuario.Cliente
-                });
-
-                cmd.Parameters.Add(new SqlParameter("@Cep", SqlDbType.VarChar)
-                {
-                    Value = _usuario.Cep
-                });
-
                 cmd.Parameters.Add(new SqlParameter("@Banco", SqlDbType.VarChar)
                 {
                     Value = _usuario.Banco
                 });
-
+                
                 cmd.Parameters.Add(new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar)
                 {
                     Value = _usuario.NumeroAgenciaBanco
@@ -175,13 +176,18 @@ namespace DAL
                 {
                     Value = _usuario.NumeroContaBanco
                 });
+                
+                cmd.Parameters.Add(new SqlParameter("@Cliente", SqlDbType.Bit)
+                {
+                    Value = _usuario.Cliente
+                });
 
                 if (_usuario.InicioDoContrato.ToString().Trim().Length > 6)
                     cmd.Parameters.Add(new SqlParameter("@InicioDoContrato", SqlDbType.DateTime)
                     {
                         Value = _usuario.InicioDoContrato
                     });
-                
+
                 if (_usuario.FimDoContrato.ToString().Trim().Length > 6)
                     cmd.Parameters.Add(new SqlParameter("@FimDoContrato", SqlDbType.DateTime)
                     {
@@ -302,13 +308,13 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarUsuario";
 
-                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
-                pid.Value = _usuario.Id;
-                cmd.Parameters.Add(pid);
+                SqlParameter id = new SqlParameter("@Id", SqlDbType.Int);
+                id.Value = _usuario.Id;
+                cmd.Parameters.Add(id);
 
-                SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit);
-                pativo.Value = _usuario.Ativo;
-                cmd.Parameters.Add(pativo);
+                SqlParameter ativo = new SqlParameter("@Ativo", SqlDbType.Bit);
+                ativo.Value = _usuario.Ativo;
+                cmd.Parameters.Add(ativo);
 
                 SqlParameter nomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
                 nomeUsuario.Value = _usuario.NomeUsuario;
@@ -322,9 +328,9 @@ namespace DAL
                 nomeCompleto.Value = _usuario.NomeCompleto;
                 cmd.Parameters.Add(nomeCompleto);
 
-                SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
-                pcpf.Value = _usuario.Cpf;
-                cmd.Parameters.Add(pcpf);
+                SqlParameter cpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
+                cpf.Value = _usuario.Cpf;
+                cmd.Parameters.Add(cpf);
 
                 SqlParameter rg = new SqlParameter("@Rg", SqlDbType.VarChar);
                 rg.Value = _usuario.Rg;
@@ -334,9 +340,9 @@ namespace DAL
                 orgaoExpeditor.Value = _usuario.OrgaoExpeditor;
                 cmd.Parameters.Add(orgaoExpeditor);
 
-                SqlParameter datanascimento = new SqlParameter("@DataNascimento", SqlDbType.DateTime); // varchar??
-                datanascimento.Value = _usuario.DataNascimento;
-                cmd.Parameters.Add(datanascimento);
+                SqlParameter dataNascimento = new SqlParameter("@DataNascimento", SqlDbType.DateTime); // varchar??
+                dataNascimento.Value = _usuario.DataNascimento;
+                cmd.Parameters.Add(dataNascimento);
 
                 SqlParameter cep = new SqlParameter("@Cep", SqlDbType.VarChar);
                 cep.Value = _usuario.Cep;
@@ -390,6 +396,10 @@ namespace DAL
                 id_Permissao.Value = _usuario.Id_Permissao;
                 cmd.Parameters.Add(id_Permissao);
 
+                SqlParameter salario = new SqlParameter("@Salario", SqlDbType.VarChar);
+                salario.Value = _usuario.Salario;
+                cmd.Parameters.Add(salario);
+
                 SqlParameter cargo = new SqlParameter("@Cargo", SqlDbType.VarChar); 
                 cargo.Value = _usuario.Cargo;
                 cmd.Parameters.Add(cargo);
@@ -430,7 +440,7 @@ namespace DAL
                 observacao.Value = _usuario.Observacao;
                 cmd.Parameters.Add(observacao);
 
-                SqlParameter id_Plano = new SqlParameter("@Id_Plano", SqlDbType.VarChar);
+                SqlParameter id_Plano = new SqlParameter("@Id_Plano", SqlDbType.Int);
                 id_Plano.Value = _usuario.Id_Plano;
                 cmd.Parameters.Add(id_Plano);
 

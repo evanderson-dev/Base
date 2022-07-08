@@ -42,14 +42,15 @@ namespace UIPrincipal
             Usuario usuario = new Usuario();
 
             //usuario.Id = Convert.ToInt32(idTextBox.Text);
+            usuario.Ativo = ativoCheckBox.Checked;
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
             usuario.NomeCompleto = textBoxNomeCompleto.Text;
             usuario.Cpf = maskedTextBoxCpf.Text;
-            usuario.Ativo = ativoCheckBox.Checked;
             usuario.Rg = textBoxRg.Text;
             usuario.OrgaoExpeditor = textBoxOrgExpeditor.Text;
             usuario.DataNascimento = maskedTextBoxDataNascimento.Text;
+            usuario.Cep = maskedTextBoxCep.Text;
             usuario.Rua = textBoxRua.Text;
             usuario.NumCasa = textBoxNumCasa.Text;
             usuario.EstadoCivil = textBoxEstadoCivil.Text;
@@ -60,6 +61,7 @@ namespace UIPrincipal
             usuario.CelularDois = maskedTextBoxCelularDois.Text;
             usuario.Cidade = textBoxCidade.Text;
             usuario.Uf = textBoxUf.Text;
+            usuario.Funcionario = checkBoxFuncionario.Checked;
             int idpermissao = 3;
             if (radioButtonNivelUm.Checked)
                 idpermissao = 1;
@@ -70,12 +72,10 @@ namespace UIPrincipal
             usuario.Cargo = textBoxCargo.Text;
             usuario.DataAdmissao = maskedTextBoxDataAdmissao.Text;
             usuario.DataDemissao = maskedTextBoxDataDemissao.Text;
-            usuario.Funcionario = checkBoxFuncionario.Checked;
-            usuario.Cliente = checkBoxCliente.Checked;
-            usuario.Cep = maskedTextBoxCep.Text;
             usuario.Banco = textBoxBanco.Text;
             usuario.NumeroAgenciaBanco = textBoxAgencia.Text;
             usuario.NumeroContaBanco = textBoxNumConta.Text;
+            usuario.Cliente = checkBoxCliente.Checked;
             usuario.InicioDoContrato = maskedTextBoxInicioContrato.Text;
             usuario.FimDoContrato = maskedTextBoxFimContrato.Text;
             usuario.Observacao = textBoxObservacao.Text;
@@ -133,15 +133,15 @@ namespace UIPrincipal
         }
 
 
-        PlanoBLL planoBLL;
+        //PlanoBLL planoBLL;
         private void comboBoxPlanos_Enter(object sender, EventArgs e)
         {
             if (comboBoxPlanos.Text == "")
             {
-                planoBLL = new PlanoBLL();
-                BindingSource planoBindingSource = new BindingSource();
-                planoBindingSource.DataSource = planoBLL.Buscar("");
-                comboBoxPlanos.DataSource = planoBindingSource;
+                PlanoBLL planoBLL = new PlanoBLL();
+                //BindingSource planoBindingSource = new BindingSource();
+                //planoBindingSource.DataSource = planoBLL.Buscar("");
+                //comboBoxPlanos.DataSource = planoBindingSource;
 
                 comboBoxPlanos.DataSource = planoBLL.Buscar("");
                 comboBoxPlanos.DisplayMember = "Descricao";
