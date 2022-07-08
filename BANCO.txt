@@ -237,8 +237,6 @@ AS
 	SET @Id = (SELECT @@IDENTITY)
 GO
 
-SELECT*FROM Pessoa
-
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
@@ -293,7 +291,10 @@ CREATE PROC SP_AlterarUsuario
 	@NumeroAgenciaBanco VARCHAR(10),
 	@NumeroContaBanco VARCHAR(15),
 	@Cliente BIT,
-	@Observacao VARCHAR(250)
+	@InicioDoContrato DATETIME = NULL,
+	@FimDoContrato DATETIME = NULL,
+	@Observacao VARCHAR(250),
+	@Id_Plano INT
 AS
 	UPDATE Pessoa SET
 	Ativo = @Ativo,
@@ -317,7 +318,7 @@ AS
 	Uf = @Uf,
 	Funcionario = @Funcionario,
 	Id_Permissao = @Id_Permissao,
-	Salario= @Salario,
+	Salario = @Salario,
 	Cargo = @Cargo,
 	DataAdmissao = @DataAdmissao,
 	DataDemissao = @DataDemissao,
@@ -325,10 +326,14 @@ AS
 	NumeroAgenciaBanco = @NumeroAgenciaBanco,
 	NumeroContaBanco = @NumeroContaBanco,
 	Cliente = @Cliente,
-	Observacao = @Observacao
+	InicioDoContrato = @InicioDoContrato,
+	FimDoContrato = @FimDoContrato,
+	Observacao = @Observacao,
+	Id_Plano = @Id_Plano
 	WHERE Id = @Id
 GO
-
+--SELECT * FROM Pessoa
+--SELECT NomeCompleto, Ativo, Cliente, Funcionario FROM Pessoa
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs
 	(
