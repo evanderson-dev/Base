@@ -63,7 +63,6 @@ namespace UIPrincipal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNomeUsuario = new System.Windows.Forms.TextBox();
             this.textBoxRg = new System.Windows.Forms.TextBox();
             this.buttonCancelarCadastro = new System.Windows.Forms.Button();
@@ -102,12 +101,13 @@ namespace UIPrincipal
             this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelIdPessoa = new System.Windows.Forms.Label();
             this.textBoxObservacao = new System.Windows.Forms.TextBox();
             this.groupBoxSituacao = new System.Windows.Forms.GroupBox();
             this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -138,7 +138,6 @@ namespace UIPrincipal
             labelInicioContrato = new System.Windows.Forms.Label();
             labelFimContrato = new System.Windows.Forms.Label();
             labelObservacao = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.groupBoxFuncionario.SuspendLayout();
             this.groupBoxNivelFuncionario.SuspendLayout();
             this.groupBoxDadosDeAcesso.SuspendLayout();
@@ -147,6 +146,7 @@ namespace UIPrincipal
             this.groupBoxSituacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).BeginInit();
             this.groupBoxTipo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeUsuarioLabel
@@ -476,10 +476,6 @@ namespace UIPrincipal
             this.ativoCheckBox.Text = "ATIVO";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
-            // 
             // textBoxNomeUsuario
             // 
             this.textBoxNomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
@@ -528,6 +524,7 @@ namespace UIPrincipal
             // 
             // textBoxSenha
             // 
+            this.textBoxSenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.textBoxSenha.Location = new System.Drawing.Point(162, 31);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(150, 20);
@@ -537,7 +534,7 @@ namespace UIPrincipal
             // 
             this.maskedTextBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cpf", true));
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(6, 78);
-            this.maskedTextBoxCpf.Mask = "000.000.000-00";
+            this.maskedTextBoxCpf.Mask = "000,000,000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(91, 20);
             this.maskedTextBoxCpf.TabIndex = 3;
@@ -699,6 +696,7 @@ namespace UIPrincipal
             // 
             // textBoxNumConta
             // 
+            this.textBoxNumConta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroContaBanco", true));
             this.textBoxNumConta.Location = new System.Drawing.Point(618, 109);
             this.textBoxNumConta.Name = "textBoxNumConta";
             this.textBoxNumConta.Size = new System.Drawing.Size(139, 20);
@@ -706,6 +704,7 @@ namespace UIPrincipal
             // 
             // textBoxAgencia
             // 
+            this.textBoxAgencia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroAgenciaBanco", true));
             this.textBoxAgencia.Location = new System.Drawing.Point(512, 109);
             this.textBoxAgencia.Name = "textBoxAgencia";
             this.textBoxAgencia.Size = new System.Drawing.Size(100, 20);
@@ -714,6 +713,7 @@ namespace UIPrincipal
             // textBoxBanco
             // 
             this.textBoxBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxBanco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Banco", true));
             this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
             this.textBoxBanco.Name = "textBoxBanco";
             this.textBoxBanco.Size = new System.Drawing.Size(231, 20);
@@ -722,6 +722,7 @@ namespace UIPrincipal
             // textBoxCargo
             // 
             this.textBoxCargo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxCargo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cargo", true));
             this.textBoxCargo.Location = new System.Drawing.Point(6, 109);
             this.textBoxCargo.Name = "textBoxCargo";
             this.textBoxCargo.Size = new System.Drawing.Size(157, 20);
@@ -729,6 +730,7 @@ namespace UIPrincipal
             // 
             // textBoxSalario
             // 
+            this.textBoxSalario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Salario", true));
             this.textBoxSalario.Location = new System.Drawing.Point(169, 109);
             this.textBoxSalario.Name = "textBoxSalario";
             this.textBoxSalario.Size = new System.Drawing.Size(100, 20);
@@ -801,6 +803,7 @@ namespace UIPrincipal
             this.checkBoxCliente.TabIndex = 17;
             this.checkBoxCliente.Text = "CLIENTE";
             this.checkBoxCliente.UseVisualStyleBackColor = true;
+            this.checkBoxCliente.CheckedChanged += new System.EventHandler(this.checkBoxCliente_CheckedChanged);
             // 
             // checkBoxFuncionario
             // 
@@ -858,7 +861,7 @@ namespace UIPrincipal
             // 
             // groupBoxDadosPessoais
             // 
-            this.groupBoxDadosPessoais.Controls.Add(this.label5);
+            this.groupBoxDadosPessoais.Controls.Add(this.labelIdPessoa);
             this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.groupBoxSituacao);
@@ -904,19 +907,20 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
             // 
-            // label5
+            // labelIdPessoa
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
-            this.label5.Location = new System.Drawing.Point(6, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 20);
-            this.label5.TabIndex = 39;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelIdPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelIdPessoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
+            this.labelIdPessoa.Location = new System.Drawing.Point(6, 39);
+            this.labelIdPessoa.Name = "labelIdPessoa";
+            this.labelIdPessoa.Size = new System.Drawing.Size(65, 20);
+            this.labelIdPessoa.TabIndex = 39;
+            this.labelIdPessoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxObservacao
             // 
             this.textBoxObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxObservacao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Observacao", true));
             this.textBoxObservacao.Location = new System.Drawing.Point(7, 203);
             this.textBoxObservacao.Multiline = true;
             this.textBoxObservacao.Name = "textBoxObservacao";
@@ -965,6 +969,10 @@ namespace UIPrincipal
             this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
             this.maskedTextBoxCep.TabIndex = 6;
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -985,7 +993,6 @@ namespace UIPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRO DE PESSOAS";
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
             this.groupBoxNivelFuncionario.ResumeLayout(false);
@@ -1000,6 +1007,7 @@ namespace UIPrincipal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).EndInit();
             this.groupBoxTipo.ResumeLayout(false);
             this.groupBoxTipo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1051,7 +1059,7 @@ namespace UIPrincipal
         private System.Windows.Forms.MaskedTextBox maskedTextBoxFimContrato;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxInicioContrato;
         private System.Windows.Forms.TextBox textBoxObservacao;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelIdPessoa;
     }
 }
 

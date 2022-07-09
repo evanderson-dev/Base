@@ -39,7 +39,7 @@ namespace DAL
                 {
                     Value = _usuario.Ativo
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@NomeUsuario", SqlDbType.VarChar)
                 {
                     Value = _usuario.NomeUsuario
@@ -74,7 +74,7 @@ namespace DAL
                 {
                     Value = _usuario.DataNascimento
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Cep", SqlDbType.VarChar)
                 {
                     Value = _usuario.Cep
@@ -129,17 +129,17 @@ namespace DAL
                 {
                     Value = _usuario.Uf
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Funcionario", SqlDbType.Bit)
                 {
                     Value = _usuario.Funcionario
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Id_Permissao", SqlDbType.VarChar)
                 {
                     Value = _usuario.Id_Permissao
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Salario", SqlDbType.VarChar)
                 {
                     Value = _usuario.Salario
@@ -166,7 +166,7 @@ namespace DAL
                 {
                     Value = _usuario.Banco
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar)
                 {
                     Value = _usuario.NumeroAgenciaBanco
@@ -176,7 +176,7 @@ namespace DAL
                 {
                     Value = _usuario.NumeroContaBanco
                 });
-                
+
                 cmd.Parameters.Add(new SqlParameter("@Cliente", SqlDbType.Bit)
                 {
                     Value = _usuario.Cliente
@@ -334,7 +334,7 @@ namespace DAL
 
                 SqlParameter rg = new SqlParameter("@Rg", SqlDbType.VarChar);
                 rg.Value = _usuario.Rg;
-                cmd.Parameters.Add(rg); 
+                cmd.Parameters.Add(rg);
 
                 SqlParameter orgaoExpeditor = new SqlParameter("@OrgaoExpeditor", SqlDbType.VarChar); // varchar??
                 orgaoExpeditor.Value = _usuario.OrgaoExpeditor;
@@ -348,15 +348,15 @@ namespace DAL
                 cep.Value = _usuario.Cep;
                 cmd.Parameters.Add(cep);
 
-                SqlParameter rua = new SqlParameter("@Rua", SqlDbType.VarChar); 
+                SqlParameter rua = new SqlParameter("@Rua", SqlDbType.VarChar);
                 rua.Value = _usuario.Rua;
                 cmd.Parameters.Add(rua);
 
-                SqlParameter numCasa = new SqlParameter("@NumCasa", SqlDbType.VarChar); 
+                SqlParameter numCasa = new SqlParameter("@NumCasa", SqlDbType.VarChar);
                 numCasa.Value = _usuario.NumCasa;
                 cmd.Parameters.Add(numCasa);
 
-                SqlParameter estadoCivil = new SqlParameter("@EstadoCivil", SqlDbType.VarChar); 
+                SqlParameter estadoCivil = new SqlParameter("@EstadoCivil", SqlDbType.VarChar);
                 estadoCivil.Value = _usuario.EstadoCivil;
                 cmd.Parameters.Add(estadoCivil);
 
@@ -368,11 +368,11 @@ namespace DAL
                 email.Value = _usuario.Email;
                 cmd.Parameters.Add(email);
 
-                SqlParameter telefone = new SqlParameter("@Telefone", SqlDbType.VarChar); 
+                SqlParameter telefone = new SqlParameter("@Telefone", SqlDbType.VarChar);
                 telefone.Value = _usuario.Telefone;
                 cmd.Parameters.Add(telefone);
 
-                SqlParameter celularUm = new SqlParameter("@CelularUm", SqlDbType.VarChar); 
+                SqlParameter celularUm = new SqlParameter("@CelularUm", SqlDbType.VarChar);
                 celularUm.Value = _usuario.CelularUm;
                 cmd.Parameters.Add(celularUm);
 
@@ -400,41 +400,49 @@ namespace DAL
                 salario.Value = _usuario.Salario;
                 cmd.Parameters.Add(salario);
 
-                SqlParameter cargo = new SqlParameter("@Cargo", SqlDbType.VarChar); 
+                SqlParameter cargo = new SqlParameter("@Cargo", SqlDbType.VarChar);
                 cargo.Value = _usuario.Cargo;
                 cmd.Parameters.Add(cargo);
 
-                SqlParameter dataAdmissao = new SqlParameter("@DataAdmissao", SqlDbType.DateTime); // datatime??
-                dataAdmissao.Value = _usuario.DataAdmissao;
-                cmd.Parameters.Add(dataAdmissao);
+                if (_usuario.DataAdmissao.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@DataAdmissao", SqlDbType.DateTime)
+                    {
+                        Value = _usuario.DataAdmissao
+                    });
 
-                SqlParameter dataDemissao = new SqlParameter("@DataDemissao", SqlDbType.DateTime); //datetime??
-                dataDemissao.Value = _usuario.DataDemissao;
-                cmd.Parameters.Add(dataDemissao);
+                if (_usuario.DataDemissao.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@DataDemissao", SqlDbType.DateTime)
+                    {
+                        Value = _usuario.DataDemissao
+                    });
 
-                SqlParameter banco = new SqlParameter("@Banco", SqlDbType.VarChar); 
+                SqlParameter banco = new SqlParameter("@Banco", SqlDbType.VarChar);
                 banco.Value = _usuario.Banco;
                 cmd.Parameters.Add(banco);
 
-                SqlParameter numeroAgenciaBanco = new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar); 
+                SqlParameter numeroAgenciaBanco = new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar);
                 numeroAgenciaBanco.Value = _usuario.NumeroAgenciaBanco;
                 cmd.Parameters.Add(numeroAgenciaBanco);
 
-                SqlParameter numeroContaBanco = new SqlParameter("@NumeroContaBanco ", SqlDbType.VarChar); 
+                SqlParameter numeroContaBanco = new SqlParameter("@NumeroContaBanco ", SqlDbType.VarChar);
                 numeroContaBanco.Value = _usuario.NumeroContaBanco;
                 cmd.Parameters.Add(numeroContaBanco);
 
-                SqlParameter cliente = new SqlParameter("@Cliente", SqlDbType.Bit); 
+                SqlParameter cliente = new SqlParameter("@Cliente", SqlDbType.Bit);
                 cliente.Value = _usuario.Cliente;
                 cmd.Parameters.Add(cliente);
 
-                SqlParameter inicioDoContrato = new SqlParameter("@InicioDoContrato", SqlDbType.DateTime);
-                inicioDoContrato.Value = _usuario.InicioDoContrato;
-                cmd.Parameters.Add(inicioDoContrato);
+                if (_usuario.InicioDoContrato.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@InicioDoContrato", SqlDbType.DateTime)
+                    {
+                        Value = _usuario.InicioDoContrato
+                    });
 
-                SqlParameter fimDoContrato = new SqlParameter("@FimDoContrato", SqlDbType.DateTime);
-                fimDoContrato.Value = _usuario.FimDoContrato;
-                cmd.Parameters.Add(fimDoContrato);
+                if (_usuario.FimDoContrato.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@FimDoContrato", SqlDbType.DateTime)
+                    {
+                        Value = _usuario.FimDoContrato
+                    });
 
                 SqlParameter observacao = new SqlParameter("@Observacao", SqlDbType.VarChar);
                 observacao.Value = _usuario.Observacao;

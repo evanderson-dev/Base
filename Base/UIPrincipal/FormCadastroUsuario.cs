@@ -1,7 +1,6 @@
 ﻿using BLL;
 using Model;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -41,7 +40,7 @@ namespace UIPrincipal
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             Usuario usuario = new Usuario();
 
-            //usuario.Id = Convert.ToInt32(idTextBox.Text);
+            usuario.Id = Convert.ToInt32(labelIdPessoa.Text);
             usuario.Ativo = ativoCheckBox.Checked;
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
@@ -132,21 +131,31 @@ namespace UIPrincipal
             somenteLetras(sender, e);
         }
 
-
-        //PlanoBLL planoBLL;
         private void comboBoxPlanos_Enter(object sender, EventArgs e)
         {
-            if (comboBoxPlanos.Text == "")
+            /*if (comboBoxPlanos.Text == "")
             {
                 PlanoBLL planoBLL = new PlanoBLL();
-                //BindingSource planoBindingSource = new BindingSource();
-                //planoBindingSource.DataSource = planoBLL.Buscar("");
-                //comboBoxPlanos.DataSource = planoBindingSource;
+
+                comboBoxPlanos.DataSource = planoBLL.Buscar("");
+                comboBoxPlanos.DisplayMember = "Descricao";
+                comboBoxPlanos.ValueMember = "Id";
+            }*/
+            
+        }
+
+        private void checkBoxCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCliente.Checked)
+            {
+                PlanoBLL planoBLL = new PlanoBLL();
 
                 comboBoxPlanos.DataSource = planoBLL.Buscar("");
                 comboBoxPlanos.DisplayMember = "Descricao";
                 comboBoxPlanos.ValueMember = "Id";
             }
+            else
+                comboBoxPlanos.DataSource = null;
         }
     }
 }
