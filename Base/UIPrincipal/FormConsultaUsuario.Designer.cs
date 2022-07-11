@@ -41,10 +41,10 @@ namespace UIPrincipal
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,13 +108,12 @@ namespace UIPrincipal
             this.buttonExcluir.FlatAppearance.BorderSize = 0;
             this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.Location = new System.Drawing.Point(414, 9);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 24);
             this.buttonExcluir.TabIndex = 2;
-            this.buttonExcluir.Text = "EXCLUIR";
+            this.buttonExcluir.Text = "&EXCLUIR";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
@@ -126,15 +125,14 @@ namespace UIPrincipal
             this.buttonAlterar.FlatAppearance.BorderSize = 0;
             this.buttonAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.ImageKey = "(nenhum/a)";
             this.buttonAlterar.Location = new System.Drawing.Point(333, 9);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 24);
             this.buttonAlterar.TabIndex = 1;
-            this.buttonAlterar.Text = "EDITAR";
-            this.buttonAlterar.UseVisualStyleBackColor = false;
+            this.buttonAlterar.Text = "&EDITAR";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonNovo
@@ -144,7 +142,6 @@ namespace UIPrincipal
             this.buttonNovo.FlatAppearance.BorderSize = 0;
             this.buttonNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNovo.Location = new System.Drawing.Point(252, 9);
             this.buttonNovo.Name = "buttonNovo";
@@ -171,7 +168,7 @@ namespace UIPrincipal
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 24);
             this.buttonBuscar.TabIndex = 1;
-            this.buttonBuscar.Text = "BUSCAR";
+            this.buttonBuscar.Text = "&BUSCAR";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
@@ -194,6 +191,13 @@ namespace UIPrincipal
             this.usuarioDataGridView.Size = new System.Drawing.Size(742, 388);
             this.usuarioDataGridView.TabIndex = 5;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 70;
+            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeCompleto";
@@ -214,13 +218,6 @@ namespace UIPrincipal
             this.Ativo.HeaderText = "Ativo";
             this.Ativo.Name = "Ativo";
             this.Ativo.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 70;
             // 
             // usuarioBindingSource
             // 

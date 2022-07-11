@@ -130,32 +130,33 @@ namespace UIPrincipal
         {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
             somenteLetras(sender, e);
         }
-
-        private void comboBoxPlanos_Enter(object sender, EventArgs e)
+        public void checkBoxCliente_CheckedChanged(object sender, EventArgs e)
         {
-            /*if (comboBoxPlanos.Text == "")
+            if (!checkBoxCliente.Checked)
+            {
+                comboBoxPlanos.DataSource = null;
+            }
+            else
             {
                 PlanoBLL planoBLL = new PlanoBLL();
-
-                comboBoxPlanos.DataSource = planoBLL.Buscar("");
-                comboBoxPlanos.DisplayMember = "Descricao";
-                comboBoxPlanos.ValueMember = "Id";
-            }*/
-            
-        }
-
-        private void checkBoxCliente_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxCliente.Checked)
-            {
-                PlanoBLL planoBLL = new PlanoBLL();
-
-                comboBoxPlanos.DataSource = planoBLL.Buscar("");
+                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
                 comboBoxPlanos.DisplayMember = "Descricao";
                 comboBoxPlanos.ValueMember = "Id";
             }
-            else
-                comboBoxPlanos.DataSource = null;
+        }
+
+        private void FormCadastroUsuario_Load(object sender, EventArgs e)
+        {
+            if (inserindoNovo)
+                checkBoxCliente.Checked = false;
+
+           if (checkBoxCliente.Checked == true)
+            {
+                comboBoxPlanos.DataSource = usuarioBindingSource;
+                comboBoxPlanos.DisplayMember = "Id";
+                //ESTA PASSANDO O ID DO PLANO, MAS DEVERÁ PASSAR A DESCRICAO DO PLANO
+
+            }
         }
     }
 }

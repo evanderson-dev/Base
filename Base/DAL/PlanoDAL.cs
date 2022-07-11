@@ -56,7 +56,7 @@ namespace DAL
             }
         }
 
-        public DataTable Buscar(string _filtro)
+        public DataTable BuscarPlano(string _filtro)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();

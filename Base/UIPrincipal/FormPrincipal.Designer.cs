@@ -71,20 +71,20 @@ namespace UIPrincipal
             this.pLANOToolStripMenuItem});
             this.gRUPODEUSUARIOToolStripMenuItem.Name = "gRUPODEUSUARIOToolStripMenuItem";
             this.gRUPODEUSUARIOToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.gRUPODEUSUARIOToolStripMenuItem.Text = "CADASTRO";
+            this.gRUPODEUSUARIOToolStripMenuItem.Text = "&CADASTRO";
             // 
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
             this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.uSUARIOSToolStripMenuItem.Text = "FUNCIONARIO/CLIENTE";
+            this.uSUARIOSToolStripMenuItem.Text = "&FUNCIONARIO/CLIENTE";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
             // 
             // pLANOToolStripMenuItem
             // 
             this.pLANOToolStripMenuItem.Name = "pLANOToolStripMenuItem";
             this.pLANOToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.pLANOToolStripMenuItem.Text = "PLANO";
+            this.pLANOToolStripMenuItem.Text = "&PLANO";
             this.pLANOToolStripMenuItem.Click += new System.EventHandler(this.pLANOToolStripMenuItem_Click);
             // 
             // aJUDAToolStripMenuItem
@@ -94,19 +94,19 @@ namespace UIPrincipal
             this.sAIRToolStripMenuItem});
             this.aJUDAToolStripMenuItem.Name = "aJUDAToolStripMenuItem";
             this.aJUDAToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.aJUDAToolStripMenuItem.Text = "AJUDA";
+            this.aJUDAToolStripMenuItem.Text = "&AJUDA";
             // 
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.sOBREToolStripMenuItem.Text = "SOBRE";
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sOBREToolStripMenuItem.Text = "&SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.sAIRToolStripMenuItem.Text = "SAIR";
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sAIRToolStripMenuItem.Text = "&SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
             // panel1
@@ -201,6 +201,7 @@ namespace UIPrincipal
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);

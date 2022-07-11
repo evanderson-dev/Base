@@ -24,11 +24,7 @@ namespace DAL
 
                 /*SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int)
                 { Value = _usuario.Id };
-                cmd.Parameters.Add(pid);
-
-                SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit)
-                { Value = _usuario.Ativo };
-                cmd.Parameters.Add(pativo);*/
+                cmd.Parameters.Add(pid);*/
 
                 cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int)
                 {
@@ -265,6 +261,46 @@ namespace DAL
                 cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
             }
         }
+        /////////////////////  BUSCAR PLANO  /////////////////////////////////
+        public DataTable BuscarPlano(string _filtro)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarPlano";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
+                pfiltro.Value = _filtro;
+
+                da.SelectCommand.Parameters.Add(pfiltro);
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
+            }
+        }//////////////////////////////////////////////////////
+
         public void Excluir(int _id)
         {
             SqlConnection cn = new SqlConnection();
@@ -416,21 +452,25 @@ namespace DAL
                         Value = _usuario.DataDemissao
                     });
 
-                SqlParameter banco = new SqlParameter("@Banco", SqlDbType.VarChar);
-                banco.Value = _usuario.Banco;
-                cmd.Parameters.Add(banco);
+                cmd.Parameters.Add(new SqlParameter("@Banco", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Banco
+                });
 
-                SqlParameter numeroAgenciaBanco = new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar);
-                numeroAgenciaBanco.Value = _usuario.NumeroAgenciaBanco;
-                cmd.Parameters.Add(numeroAgenciaBanco);
+                cmd.Parameters.Add(new SqlParameter("@NumeroAgenciaBanco", SqlDbType.VarChar)
+                {
+                    Value = _usuario.NumeroAgenciaBanco
+                });
 
-                SqlParameter numeroContaBanco = new SqlParameter("@NumeroContaBanco ", SqlDbType.VarChar);
-                numeroContaBanco.Value = _usuario.NumeroContaBanco;
-                cmd.Parameters.Add(numeroContaBanco);
+                cmd.Parameters.Add(new SqlParameter("@NumeroContaBanco", SqlDbType.VarChar)
+                {
+                    Value = _usuario.NumeroContaBanco
+                });
 
-                SqlParameter cliente = new SqlParameter("@Cliente", SqlDbType.Bit);
-                cliente.Value = _usuario.Cliente;
-                cmd.Parameters.Add(cliente);
+                cmd.Parameters.Add(new SqlParameter("@Cliente", SqlDbType.Bit)
+                {
+                    Value = _usuario.Cliente
+                });
 
                 if (_usuario.InicioDoContrato.ToString().Trim().Length > 6)
                     cmd.Parameters.Add(new SqlParameter("@InicioDoContrato", SqlDbType.DateTime)
@@ -444,15 +484,16 @@ namespace DAL
                         Value = _usuario.FimDoContrato
                     });
 
-                SqlParameter observacao = new SqlParameter("@Observacao", SqlDbType.VarChar);
-                observacao.Value = _usuario.Observacao;
-                cmd.Parameters.Add(observacao);
+                cmd.Parameters.Add(new SqlParameter("@Observacao", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Observacao
+                });
 
-                SqlParameter id_Plano = new SqlParameter("@Id_Plano", SqlDbType.Int);
-                id_Plano.Value = _usuario.Id_Plano;
-                cmd.Parameters.Add(id_Plano);
+                cmd.Parameters.Add(new SqlParameter("@Id_Plano", SqlDbType.Int)
+                {
+                    Value = _usuario.Id_Plano
+                });
 
-                //////////////////////////////////////////////////////////////////////////
                 cn.Open();
                 cmd.ExecuteNonQuery();
 

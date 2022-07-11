@@ -11,8 +11,6 @@ namespace BLL
         {
             if (_usuario.DataNascimento.ToString().Trim().Length < 6)
                 throw new Exception("INFORME A DATA DE NASCIMENTO!");
-            //if (_usuario.DataAdmissao.ToString().Trim().Length < 6)
-                //throw new Exception("Informe a data de admissão.");
 
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Inserir(_usuario);
@@ -31,6 +29,14 @@ namespace BLL
         {
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             return usuarioDAL.Buscar(_filtro);
+        }
+
+
+        //CRIADO PARA TESTE
+        public DataTable BuscarPlano(string _id)
+        {
+            PlanoDAL planoDAL = new PlanoDAL();
+            return planoDAL.BuscarPlano(_id);
         }
     }
 }

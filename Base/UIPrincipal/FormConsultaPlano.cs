@@ -36,7 +36,7 @@ namespace UIPrincipal
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             PlanoBLL planoBLL = new PlanoBLL();
-            planoBindingSource.DataSource = planoBLL.Buscar(textBoxBuscar.Text);
+            planoBindingSource.DataSource = planoBLL.BuscarPlano(textBoxBuscar.Text);
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)

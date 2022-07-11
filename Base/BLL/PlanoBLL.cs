@@ -22,10 +22,10 @@ namespace BLL
             PlanoDAL planoDAL = new PlanoDAL();
             return planoDAL.Alterar(_plano);
         }
-        public DataTable Buscar(string _filtro)
+        public DataTable BuscarPlano(string _filtro)
         {
             PlanoDAL planoDAL = new PlanoDAL();
-            return planoDAL.Buscar(_filtro);
+            return planoDAL.BuscarPlano(_filtro);
         }
     }
 }

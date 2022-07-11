@@ -63,6 +63,7 @@ namespace UIPrincipal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNomeUsuario = new System.Windows.Forms.TextBox();
             this.textBoxRg = new System.Windows.Forms.TextBox();
             this.buttonCancelarCadastro = new System.Windows.Forms.Button();
@@ -107,7 +108,7 @@ namespace UIPrincipal
             this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -138,6 +139,7 @@ namespace UIPrincipal
             labelInicioContrato = new System.Windows.Forms.Label();
             labelFimContrato = new System.Windows.Forms.Label();
             labelObservacao = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.groupBoxFuncionario.SuspendLayout();
             this.groupBoxNivelFuncionario.SuspendLayout();
             this.groupBoxDadosDeAcesso.SuspendLayout();
@@ -146,7 +148,7 @@ namespace UIPrincipal
             this.groupBoxSituacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).BeginInit();
             this.groupBoxTipo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeUsuarioLabel
@@ -455,13 +457,12 @@ namespace UIPrincipal
             this.buttonSalvar.FlatAppearance.BorderSize = 0;
             this.buttonSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.Location = new System.Drawing.Point(301, 526);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(80, 22);
             this.buttonSalvar.TabIndex = 3;
-            this.buttonSalvar.Text = "SALVAR";
+            this.buttonSalvar.Text = "&SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
@@ -475,6 +476,10 @@ namespace UIPrincipal
             this.ativoCheckBox.TabIndex = 2;
             this.ativoCheckBox.Text = "ATIVO";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // textBoxNomeUsuario
             // 
@@ -502,14 +507,13 @@ namespace UIPrincipal
             this.buttonCancelarCadastro.FlatAppearance.BorderSize = 0;
             this.buttonCancelarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonCancelarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonCancelarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCancelarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastro.Location = new System.Drawing.Point(387, 526);
             this.buttonCancelarCadastro.Name = "buttonCancelarCadastro";
             this.buttonCancelarCadastro.Size = new System.Drawing.Size(80, 22);
             this.buttonCancelarCadastro.TabIndex = 5;
-            this.buttonCancelarCadastro.Text = "CANCELAR";
-            this.buttonCancelarCadastro.UseVisualStyleBackColor = false;
+            this.buttonCancelarCadastro.Text = "&CANCELAR";
+            this.buttonCancelarCadastro.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastro.Click += new System.EventHandler(this.buttonCancelarCadastro_Click);
             // 
             // textBoxNomeCompleto
@@ -857,7 +861,6 @@ namespace UIPrincipal
             this.comboBoxPlanos.Name = "comboBoxPlanos";
             this.comboBoxPlanos.Size = new System.Drawing.Size(263, 21);
             this.comboBoxPlanos.TabIndex = 1;
-            this.comboBoxPlanos.Enter += new System.EventHandler(this.comboBoxPlanos_Enter);
             // 
             // groupBoxDadosPessoais
             // 
@@ -969,10 +972,6 @@ namespace UIPrincipal
             this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
             this.maskedTextBoxCep.TabIndex = 6;
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
-            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -993,6 +992,8 @@ namespace UIPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRO DE PESSOAS";
+            this.Load += new System.EventHandler(this.FormCadastroUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
             this.groupBoxNivelFuncionario.ResumeLayout(false);
@@ -1007,7 +1008,7 @@ namespace UIPrincipal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).EndInit();
             this.groupBoxTipo.ResumeLayout(false);
             this.groupBoxTipo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1060,6 +1061,7 @@ namespace UIPrincipal
         private System.Windows.Forms.MaskedTextBox maskedTextBoxInicioContrato;
         private System.Windows.Forms.TextBox textBoxObservacao;
         private System.Windows.Forms.Label labelIdPessoa;
+        private System.Windows.Forms.BindingSource planoBindingSource;
     }
 }
 
