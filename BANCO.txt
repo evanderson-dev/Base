@@ -1,5 +1,5 @@
 -- CTR + SHIFT + R = ATUALIZA O SCRIP CASO ESTEJA ACUSANDO ERROS
--- CTR = ATALHO PARA FECHAR RESULTADO
+-- CTR + R = ATALHO PARA FECHAR RESULTADO
 USE MASTER
 GO
 
@@ -77,7 +77,6 @@ GO
 -- SELECT*FROM Plano
 
 --TABELA "PESSOA"
---DROP TABLE Pessoa
 CREATE TABLE Pessoa
 (
 	-- DADOS PESSOAIS
@@ -95,7 +94,7 @@ CREATE TABLE Pessoa
 	NumCasa VARCHAR(10),------------------FEITO
 	EstadoCivil VARCHAR(10),--------------FEITO
 	Nacionalidade VARCHAR(10),------------FEITO
-	Email VARCHAR(150),-------------------FEITO
+	Email VARCHAR(30),--------------------FEITO
 	Telefone VARCHAR(15),-----------------FEITO
 	CelularUm VARCHAR(16),----------------FEITO
 	CelularDois VARCHAR(16),--------------FEITO
@@ -104,9 +103,9 @@ CREATE TABLE Pessoa
 	-- DADOS DO FUNCIONARIO
 	Funcionario BIT,----------------------FEITO
 	Id_Permissao INT,---------------------FEITO
-	Salario FLOAT,------------------------FEITO
+	Salario varchar(15),
 	Cargo VARCHAR(50),--------------------FEITO
-	DataAdmissao DATETIME NULL,----------------FEITO
+	DataAdmissao DATETIME NULL,-----------FEITO
 	DataDemissao DATETIME NULL,-----------FEITO
 	Banco VARCHAR(40),--------------------FEITO
 	NumeroAgenciaBanco VARCHAR(10),-------FEITO
@@ -146,7 +145,7 @@ CREATE PROCEDURE SP_InserirUsuario
 	@NumCasa VARCHAR(10),
 	@EstadoCivil VARCHAR(10),
 	@Nacionalidade VARCHAR(10),
-	@Email VARCHAR(150),
+	@Email VARCHAR(30),
 	@Telefone VARCHAR(15),
 	@CelularUm VARCHAR(16),
 	@CelularDois VARCHAR(16),
@@ -154,7 +153,7 @@ CREATE PROCEDURE SP_InserirUsuario
 	@Uf VARCHAR(2),
 	@Funcionario BIT,
 	@Id_Permissao INT,
-	@Salario FLOAT,
+	@Salario VARCHAR(15),
 	@Cargo VARCHAR(50),
 	@DataAdmissao DATETIME = NULL,
 	@DataDemissao DATETIME = NULL,
@@ -238,9 +237,9 @@ AS
 GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
-'05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '3411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', 1,'1', '2500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
-'2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO', 1
+'05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
+'ARAGUAINA', 'TO', 1,'1', '2.500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
 
 --TABELA "GESTÃO DE O.S"
@@ -261,7 +260,7 @@ GO
 
 --DROP PROC SP_AlterarUsuario
 CREATE PROC SP_AlterarUsuario
-	@Id INT OUTPUT,
+	@Id INT, --OUTPUT,
 	@Ativo BIT,
 	@NomeUsuario VARCHAR(150),
 	@Senha VARCHAR(150),
@@ -275,7 +274,7 @@ CREATE PROC SP_AlterarUsuario
 	@NumCasa VARCHAR(10),
 	@EstadoCivil VARCHAR(10),
 	@Nacionalidade VARCHAR(10),
-	@Email VARCHAR(150),
+	@Email VARCHAR(30),
 	@Telefone VARCHAR(15),
 	@CelularUm VARCHAR(16),
 	@CelularDois VARCHAR(16),
@@ -333,7 +332,7 @@ AS
 	WHERE Id = @Id
 GO
 --SELECT * FROM Pessoa
---SELECT NomeCompleto, Ativo, Cliente, Funcionario FROM Pessoa
+SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano FROM Pessoa
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs
 	(
@@ -359,42 +358,48 @@ INSERT INTO GestaoDeOs(TipoChamado, Descricao, DataAbertura, DataDeFechamento, T
 	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
 GO
 
-
-
-
-
-
-
-
-
-
-
 --DROP PROC SP_BuscarUsuario
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
-	SELECT Id, NomeCompleto, Cpf, Ativo, Senha, NomeUsuario, Rg,OrgaoExpeditor, 
-			DataNascimento, Cep, Rua, NumCasa, EstadoCivil, Nacionalidade, Telefone, 
-			CelularUm, CelularDois, Cidade, Uf, Funcionario, Id_Permissao, Cargo, DataAdmissao, 
-			DataDemissao, Banco, NumeroAgenciaBanco, NumeroContaBanco, Cliente, Observacao 
-			FROM Pessoa WHERE NomeUsuario LIKE '%' + @filtro + '%'
+	SELECT
+	Id,
+	Ativo,
+	NomeUsuario,
+	Senha,
+	NomeCompleto,
+	Cpf,
+	Rg,
+	OrgaoExpeditor,
+	DataNascimento,
+	Cep,
+	Rua,
+	NumCasa,
+	EstadoCivil,
+	Nacionalidade,
+	Email,
+	Telefone,
+	CelularUm,
+	CelularDois,
+	Cidade,
+	Uf,
+	Funcionario,
+	Id_Permissao,
+	Salario,
+	Cargo,
+	DataAdmissao,
+	DataDemissao,
+	Banco,
+	NumeroAgenciaBanco,
+	NumeroContaBanco,
+	Cliente,
+	InicioDoContrato,
+	FimDoContrato,
+	Observacao,
+	Id_Plano
+	FROM Pessoa WHERE NomeCompleto LIKE '%' + @filtro + '%'
 	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 CREATE PROC SP_ExcluirUsuario
@@ -402,22 +407,6 @@ CREATE PROC SP_ExcluirUsuario
 AS
 	DELETE FROM Pessoa WHERE Id = @Id
 GO
-
---EXEC SP_AlterarUsuario 2, 'adminDois', 'senhaAdminDois', ' ADMINISTRADOR DOIS'
-SELECT * FROM PESSOA
-
-
---EXEC SP_InserirUsuario 0, 'USUARIO TESTE', 'Senha@123', 'EVANDERSON RIBEIRO', '02227855193', 1
-
---SELECT*FROM Permissao
---SELECT*FROM Plano
---SELECT*FROM Pessoa
---SELECT NomeUsuario, Senha FROM Pessoa
---SELECT NomeUsuario, Senha FROM Pessoa WHERE NomeUsuario='admin' AND Senha='admin'
---SELECT*FROM Funcionario
---SELECT*FROM GestaoDeOs
---SELECT*FROM Cliente
---SELECT*FROM StatusOs
 
 /*
 DECLARE @Filtro VARCHAR(50) = '50'
