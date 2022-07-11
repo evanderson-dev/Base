@@ -89,7 +89,7 @@ namespace UIPrincipal
         }
 
         private void somenteLetras(object sender, KeyPressEventArgs e)
-        {
+        {// ESTE METODO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
             if (!char.IsControl(e.KeyChar) &&
                     !char.IsLetter(e.KeyChar) &&
                     !char.IsWhiteSpace(e.KeyChar))
@@ -107,37 +107,39 @@ namespace UIPrincipal
         }
 
         private void textBoxNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+        {
             somenteLetras(sender, e);
         }
 
         private void textBoxNacionalidade_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+        {
             somenteLetras(sender, e);
         }
 
         private void textBoxEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+        {
             somenteLetras(sender, e);
         }
 
         private void textBoxUf_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+        {
             somenteLetras(sender, e);
         }
 
         private void textBoxCidade_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
+        {
             somenteLetras(sender, e);
         }
         public void checkBoxCliente_CheckedChanged(object sender, EventArgs e)
         {
+            //SE O checkBoxCliente NÃO ESTIVER MARCADO, O comboBoxPlanos FICARÁ VAZIO
             if (!checkBoxCliente.Checked)
             {
                 comboBoxPlanos.DataSource = null;
             }
             else
             {
+                //SE O checkBoxCliente ESTIVER MARCADO, O comboBoxPlanos SERÁ PREENCHIDO
                 PlanoBLL planoBLL = new PlanoBLL();
                 comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
                 comboBoxPlanos.DisplayMember = "Descricao";
@@ -147,15 +149,17 @@ namespace UIPrincipal
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-            if (inserindoNovo)
+           PlanoBLL planoBLL = new PlanoBLL();
+
+            if (inserindoNovo) // SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
                 checkBoxCliente.Checked = false;
 
-           if (checkBoxCliente.Checked == true)
+            if (checkBoxCliente.Checked == true)
             {
-                comboBoxPlanos.DataSource = usuarioBindingSource;
-                comboBoxPlanos.DisplayMember = "Id";
-                //ESTA PASSANDO O ID DO PLANO, MAS DEVERÁ PASSAR A DESCRICAO DO PLANO
-
+                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
+                comboBoxPlanos.SelectedIndex = Convert.ToInt32(labelIdPlano.Text) - 1;
+                comboBoxPlanos.DisplayMember = "Descricao";
+                comboBoxPlanos.ValueMember = "Id";
             }
         }
     }

@@ -109,6 +109,7 @@ namespace UIPrincipal
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelIdPlano = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -972,12 +973,24 @@ namespace UIPrincipal
             this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
             this.maskedTextBoxCep.TabIndex = 6;
             // 
+            // labelIdPlano
+            // 
+            this.labelIdPlano.BackColor = System.Drawing.Color.Transparent;
+            this.labelIdPlano.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id_Plano", true));
+            this.labelIdPlano.ForeColor = System.Drawing.Color.Transparent;
+            this.labelIdPlano.Location = new System.Drawing.Point(707, 532);
+            this.labelIdPlano.Name = "labelIdPlano";
+            this.labelIdPlano.Size = new System.Drawing.Size(65, 20);
+            this.labelIdPlano.TabIndex = 40;
+            this.labelIdPlano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.labelIdPlano);
             this.Controls.Add(this.groupBoxDadosPessoais);
             this.Controls.Add(this.groupBoxDadosCliente);
             this.Controls.Add(this.groupBoxFuncionario);
@@ -1062,6 +1075,7 @@ namespace UIPrincipal
         private System.Windows.Forms.TextBox textBoxObservacao;
         private System.Windows.Forms.Label labelIdPessoa;
         private System.Windows.Forms.BindingSource planoBindingSource;
+        private System.Windows.Forms.Label labelIdPlano;
     }
 }
 
