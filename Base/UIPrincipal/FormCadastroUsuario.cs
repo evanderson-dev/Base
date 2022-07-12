@@ -161,6 +161,18 @@ namespace UIPrincipal
                 comboBoxPlanos.DisplayMember = "Descricao";
                 comboBoxPlanos.ValueMember = "Id";
             }
+
+            // CARREGAMENTO DO NIVEL DE ACESSO DO CLIENTE
+            if (labelId_Permissao.Text == "1")
+            {
+                radioButtonNivelUm.Checked = true;
+            } else if (labelId_Permissao.Text == "2")
+            {
+                radioButtonNivelDois.Checked = true;
+            } else
+            {
+                radioButtonNivelTres.Checked = true;
+            }
         }
     }
 }

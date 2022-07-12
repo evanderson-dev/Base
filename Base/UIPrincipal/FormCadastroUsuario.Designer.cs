@@ -110,6 +110,7 @@ namespace UIPrincipal
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelIdPlano = new System.Windows.Forms.Label();
+            this.labelId_Permissao = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -984,12 +985,24 @@ namespace UIPrincipal
             this.labelIdPlano.TabIndex = 40;
             this.labelIdPlano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelId_Permissao
+            // 
+            this.labelId_Permissao.BackColor = System.Drawing.Color.Transparent;
+            this.labelId_Permissao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id_Permissao", true));
+            this.labelId_Permissao.ForeColor = System.Drawing.Color.Transparent;
+            this.labelId_Permissao.Location = new System.Drawing.Point(12, 532);
+            this.labelId_Permissao.Name = "labelId_Permissao";
+            this.labelId_Permissao.Size = new System.Drawing.Size(65, 20);
+            this.labelId_Permissao.TabIndex = 41;
+            this.labelId_Permissao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.labelId_Permissao);
             this.Controls.Add(this.labelIdPlano);
             this.Controls.Add(this.groupBoxDadosPessoais);
             this.Controls.Add(this.groupBoxDadosCliente);
@@ -1076,6 +1089,7 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelIdPessoa;
         private System.Windows.Forms.BindingSource planoBindingSource;
         private System.Windows.Forms.Label labelIdPlano;
+        private System.Windows.Forms.Label labelId_Permissao;
     }
 }
 

@@ -57,7 +57,6 @@ ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
 GO
 
--- OR Id LIKE '%'+ @filtro +'%'
 CREATE PROC SP_ExcluirPlano
 	@Id INT
 AS
@@ -74,7 +73,7 @@ AS
 	WHERE Id = @Id
 GO
 -- EXEC SP_AlterarPlano 9, '600', '100'
--- SELECT*FROM Plano
+--SELECT*FROM Plano
 
 --TABELA "PESSOA"
 CREATE TABLE Pessoa
@@ -119,14 +118,14 @@ CREATE TABLE Pessoa
 	Observacao VARCHAR(250)---------------FEITO
 )
 GO
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227855193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277')
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Id_Permissao, Id_Plano, Cliente)
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227855193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 4, 1)
 	--('LuizSenai', 'Senha@321', 'LUIZ TAL', '12345678912', 1),
 	--('DaviSenai', 'Senha@456', 'DAVI TAL', '98765432198', 1),
 	--('WandersonSenai', 'Senha@654', 'WANDERSON TAL', '7418529374', 1)
 GO
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, Cpf)
-	VALUES (1, 'admin', 'admin', 'Admin', 'Admin')
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, Cpf, Id_Permissao, Id_Plano, Cliente)
+	VALUES (1, 'admin', 'admin', 'USUARIO TESTE', '14523678955', 2, 2, 1)
 GO
 --DROP PROCEDURE SP_InserirUsuario
 GO
@@ -238,7 +237,7 @@ GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', 1,'1', '2.500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'ARAGUAINA', 'TO', 1, 3, '2.500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
 
@@ -331,8 +330,9 @@ AS
 	Id_Plano = @Id_Plano
 	WHERE Id = @Id
 GO
---SELECT * FROM Pessoa
-SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano FROM Pessoa
+
+SELECT * FROM PLano
+SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao FROM Pessoa
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs
 	(
