@@ -363,7 +363,7 @@ CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
 	SELECT
-	Id,
+	Pessoa.Id,
 	Ativo,
 	NomeUsuario,
 	Senha,
@@ -396,8 +396,11 @@ AS
 	InicioDoContrato,
 	FimDoContrato,
 	Observacao,
-	Id_Plano
-	FROM Pessoa WHERE NomeCompleto LIKE '%' + @filtro + '%'
+	Id_Plano,
+	Plano.Descricao AS Plano
+	FROM Pessoa 
+	LEFT JOIN Plano ON Pessoa.Id_Plano = Plano.Id
+	WHERE NomeCompleto LIKE '%' + @filtro + '%'
 	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
 

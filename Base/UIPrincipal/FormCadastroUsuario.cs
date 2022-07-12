@@ -149,18 +149,21 @@ namespace UIPrincipal
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-           PlanoBLL planoBLL = new PlanoBLL();
+            //PlanoBLL planoBLL = new PlanoBLL();
 
             if (inserindoNovo) // SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
                 checkBoxCliente.Checked = false;
-
-            if (checkBoxCliente.Checked == true)
-            {
-                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
-                comboBoxPlanos.SelectedIndex = Convert.ToInt32(labelIdPlano.Text) - 1;
-                comboBoxPlanos.DisplayMember = "Descricao";
-                comboBoxPlanos.ValueMember = "Id";
-            }
+            
+            comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
+            //if (checkBoxCliente.Checked == true)
+            //if (checkBoxCliente.Checked)
+            //{
+            //    comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
+            //    //comboBoxPlanos.SelectedIndex = Convert.ToInt32(labelIdPlano.Text) - 1;
+            //    comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
+            //    comboBoxPlanos.DisplayMember = "Descricao";
+            //    comboBoxPlanos.ValueMember = "Id";
+            //}
 
             // CARREGAMENTO DO NIVEL DE ACESSO DO CLIENTE
             if (labelId_Permissao.Text == "1")

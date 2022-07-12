@@ -36,6 +36,7 @@
         private string fimDoContrato;
         private string observacao;
         private int id_Plano;
+        private string plano;
 
         public int Id
         {
@@ -207,5 +208,11 @@
             get { return id_Plano; }
             set { id_Plano = value; }
         }
+        public string Plano
+        {
+            get { return plano; }
+            set { plano = value; }
+        }
+
     }
 }
