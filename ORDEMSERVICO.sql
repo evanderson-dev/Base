@@ -57,6 +57,7 @@ ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
 GO
 
+-- OR Id LIKE '%'+ @filtro +'%'
 CREATE PROC SP_ExcluirPlano
 	@Id INT
 AS
@@ -73,7 +74,7 @@ AS
 	WHERE Id = @Id
 GO
 -- EXEC SP_AlterarPlano 9, '600', '100'
---SELECT*FROM Plano
+-- SELECT*FROM Plano
 
 --TABELA "PESSOA"
 CREATE TABLE Pessoa
@@ -118,14 +119,14 @@ CREATE TABLE Pessoa
 	Observacao VARCHAR(250)---------------FEITO
 )
 GO
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Id_Permissao, Id_Plano, Cliente)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227855193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 4, 1)
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao)
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3)
 	--('LuizSenai', 'Senha@321', 'LUIZ TAL', '12345678912', 1),
 	--('DaviSenai', 'Senha@456', 'DAVI TAL', '98765432198', 1),
 	--('WandersonSenai', 'Senha@654', 'WANDERSON TAL', '7418529374', 1)
 GO
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, Cpf, Id_Permissao, Id_Plano, Cliente)
-	VALUES (1, 'admin', 'admin', 'USUARIO TESTE', '14523678955', 2, 2, 1)
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao)
+	VALUES ('admin', 'admin', 'USUARIO TESTE', '02227855153', 1, 1, 2, 1)
 GO
 --DROP PROCEDURE SP_InserirUsuario
 GO
@@ -331,8 +332,9 @@ AS
 	WHERE Id = @Id
 GO
 
-SELECT * FROM PLano
+SELECT * FROM Plano
 SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao FROM Pessoa
+GO
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs
 	(
@@ -359,6 +361,48 @@ INSERT INTO GestaoDeOs(TipoChamado, Descricao, DataAbertura, DataDeFechamento, T
 GO
 
 --DROP PROC SP_BuscarUsuario
+/*CREATE PROC SP_BuscarUsuario
+	@Filtro VARCHAR(250) = ''
+AS
+	SELECT
+	Id,
+	Ativo,
+	NomeUsuario,
+	Senha,
+	NomeCompleto,
+	Cpf,
+	Rg,
+	OrgaoExpeditor,
+	DataNascimento,
+	Cep,
+	Rua,
+	NumCasa,
+	EstadoCivil,
+	Nacionalidade,
+	Email,
+	Telefone,
+	CelularUm,
+	CelularDois,
+	Cidade,
+	Uf,
+	Funcionario,
+	Id_Permissao,
+	Salario,
+	Cargo,
+	DataAdmissao,
+	DataDemissao,
+	Banco,
+	NumeroAgenciaBanco,
+	NumeroContaBanco,
+	Cliente,
+	InicioDoContrato,
+	FimDoContrato,
+	Observacao,
+	Id_Plano
+	FROM Pessoa WHERE NomeCompleto LIKE '%' + @filtro + '%'
+	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
+GO*/
+
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
