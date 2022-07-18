@@ -360,49 +360,6 @@ INSERT INTO GestaoDeOs(TipoChamado, Descricao, DataAbertura, DataDeFechamento, T
 	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
 GO
 
---DROP PROC SP_BuscarUsuario
-/*CREATE PROC SP_BuscarUsuario
-	@Filtro VARCHAR(250) = ''
-AS
-	SELECT
-	Id,
-	Ativo,
-	NomeUsuario,
-	Senha,
-	NomeCompleto,
-	Cpf,
-	Rg,
-	OrgaoExpeditor,
-	DataNascimento,
-	Cep,
-	Rua,
-	NumCasa,
-	EstadoCivil,
-	Nacionalidade,
-	Email,
-	Telefone,
-	CelularUm,
-	CelularDois,
-	Cidade,
-	Uf,
-	Funcionario,
-	Id_Permissao,
-	Salario,
-	Cargo,
-	DataAdmissao,
-	DataDemissao,
-	Banco,
-	NumeroAgenciaBanco,
-	NumeroContaBanco,
-	Cliente,
-	InicioDoContrato,
-	FimDoContrato,
-	Observacao,
-	Id_Plano
-	FROM Pessoa WHERE NomeCompleto LIKE '%' + @filtro + '%'
-	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
-GO*/
-
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
@@ -445,7 +402,7 @@ AS
 	FROM Pessoa 
 	LEFT JOIN Plano ON Pessoa.Id_Plano = Plano.Id
 	WHERE NomeCompleto LIKE '%' + @filtro + '%'
-	OR Cpf LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
+	OR Cpf LIKE '%'+ @filtro +'%' OR NomeUsuario LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
 
 

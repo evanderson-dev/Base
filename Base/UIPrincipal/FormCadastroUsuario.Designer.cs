@@ -111,6 +111,8 @@ namespace UIPrincipal
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelIdPlano = new System.Windows.Forms.Label();
             this.labelId_Permissao = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialogBuscarFoto = new System.Windows.Forms.OpenFileDialog();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -866,6 +868,7 @@ namespace UIPrincipal
             // 
             // groupBoxDadosPessoais
             // 
+            this.groupBoxDadosPessoais.Controls.Add(this.button1);
             this.groupBoxDadosPessoais.Controls.Add(this.labelIdPessoa);
             this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxObservacao);
@@ -996,6 +999,19 @@ namespace UIPrincipal
             this.labelId_Permissao.TabIndex = 41;
             this.labelId_Permissao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(644, 161);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "BUSCAR FOTO";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialogBuscarFoto
+            // 
+            this.openFileDialogBuscarFoto.FileName = "openFileDialogBuscarFoto";
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1090,6 +1106,8 @@ namespace UIPrincipal
         private System.Windows.Forms.BindingSource planoBindingSource;
         private System.Windows.Forms.Label labelIdPlano;
         private System.Windows.Forms.Label labelId_Permissao;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialogBuscarFoto;
     }
 }
 
