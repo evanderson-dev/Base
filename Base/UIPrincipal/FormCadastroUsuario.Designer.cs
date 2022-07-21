@@ -102,6 +102,7 @@ namespace UIPrincipal
             this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.labelIdPessoa = new System.Windows.Forms.Label();
             this.textBoxObservacao = new System.Windows.Forms.TextBox();
             this.groupBoxSituacao = new System.Windows.Forms.GroupBox();
@@ -111,7 +112,6 @@ namespace UIPrincipal
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelIdPlano = new System.Windows.Forms.Label();
             this.labelId_Permissao = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.openFileDialogBuscarFoto = new System.Windows.Forms.OpenFileDialog();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
@@ -686,6 +686,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxDataDemissao
             // 
+            this.maskedTextBoxDataDemissao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "DataDemissao", true));
             this.maskedTextBoxDataDemissao.Location = new System.Drawing.Point(141, 148);
             this.maskedTextBoxDataDemissao.Mask = "00-00-0000";
             this.maskedTextBoxDataDemissao.Name = "maskedTextBoxDataDemissao";
@@ -695,6 +696,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxDataAdmissao
             // 
+            this.maskedTextBoxDataAdmissao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "DataAdmissao", true));
             this.maskedTextBoxDataAdmissao.Location = new System.Drawing.Point(6, 148);
             this.maskedTextBoxDataAdmissao.Mask = "00-00-0000";
             this.maskedTextBoxDataAdmissao.Name = "maskedTextBoxDataAdmissao";
@@ -823,6 +825,7 @@ namespace UIPrincipal
             this.checkBoxFuncionario.TabIndex = 16;
             this.checkBoxFuncionario.Text = "FUNCIONARIO";
             this.checkBoxFuncionario.UseVisualStyleBackColor = true;
+            this.checkBoxFuncionario.CheckedChanged += new System.EventHandler(this.checkBoxFuncionario_CheckedChanged);
             // 
             // groupBoxDadosCliente
             // 
@@ -841,6 +844,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxFimContrato
             // 
+            this.maskedTextBoxFimContrato.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "FimDoContrato", true));
             this.maskedTextBoxFimContrato.Location = new System.Drawing.Point(402, 32);
             this.maskedTextBoxFimContrato.Mask = "00-00-0000";
             this.maskedTextBoxFimContrato.Name = "maskedTextBoxFimContrato";
@@ -850,6 +854,7 @@ namespace UIPrincipal
             // 
             // maskedTextBoxInicioContrato
             // 
+            this.maskedTextBoxInicioContrato.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "InicioDoContrato", true));
             this.maskedTextBoxInicioContrato.Location = new System.Drawing.Point(275, 32);
             this.maskedTextBoxInicioContrato.Mask = "00-00-0000";
             this.maskedTextBoxInicioContrato.Name = "maskedTextBoxInicioContrato";
@@ -914,6 +919,15 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.TabIndex = 0;
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(644, 161);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "BUSCAR FOTO";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // labelIdPessoa
             // 
@@ -998,15 +1012,6 @@ namespace UIPrincipal
             this.labelId_Permissao.Size = new System.Drawing.Size(65, 20);
             this.labelId_Permissao.TabIndex = 41;
             this.labelId_Permissao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(644, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "BUSCAR FOTO";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // openFileDialogBuscarFoto
             // 

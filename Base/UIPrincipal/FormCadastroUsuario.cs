@@ -136,6 +136,7 @@ namespace UIPrincipal
             if (!checkBoxCliente.Checked)
             {
                 comboBoxPlanos.DataSource = null;
+                this.maskedTextBoxDataAdmissao.Text = null;
             }
             else
             {
@@ -144,9 +145,21 @@ namespace UIPrincipal
                 comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
                 comboBoxPlanos.DisplayMember = "Descricao";
                 comboBoxPlanos.ValueMember = "Id";
+
+                if (inserindoNovo)
+                    this.maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
             }
         }
-
+        public void checkBoxFuncionario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFuncionario.Checked)
+            {
+                if (inserindoNovo)
+                    this.maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
+            }
+            else
+                maskedTextBoxInicioContrato.Text = null;
+        }
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
             //PlanoBLL planoBLL = new PlanoBLL();

@@ -113,12 +113,14 @@ CREATE TABLE Pessoa
 	-- DADOS DO CLIENTE
 	Cliente BIT,--------------------------FEITO
 	Id_Plano INT,
+	--InicioDoContrato DATETIME NULL,	--COMENTADO PARA REALIZAR TESTES
 	InicioDoContrato DATETIME NULL,
 	FimDoContrato DATETIME NULL,
 	-- OBSERVAÇOES GERAIS
 	Observacao VARCHAR(250)---------------FEITO
 )
 GO
+
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao)
 	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3)
 	--('LuizSenai', 'Senha@321', 'LUIZ TAL', '12345678912', 1),
@@ -238,8 +240,8 @@ GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', 1, 3, '2.500', 'SUPORTE1', '05-01-2021', '05-01-2022', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
-'2020-05-01', '2022-05-01', 'TEXTO TESTE DE OBSERVACAO', 3
+'ARAGUAINA', 'TO', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
 
 --TABELA "GESTÃO DE O.S"
@@ -333,7 +335,7 @@ AS
 GO
 
 SELECT * FROM Plano
-SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao FROM Pessoa
+SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, FimDoContrato, DataAdmissao, DataDemissao FROM Pessoa
 GO
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs

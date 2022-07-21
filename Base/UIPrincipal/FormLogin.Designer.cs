@@ -37,12 +37,14 @@ namespace UIPrincipal
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelSenha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBoxLogin = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(427, 298);
+            this.buttonLogin.Location = new System.Drawing.Point(284, 188);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 2;
@@ -52,7 +54,7 @@ namespace UIPrincipal
             // 
             // buttonSair
             // 
-            this.buttonSair.Location = new System.Drawing.Point(508, 298);
+            this.buttonSair.Location = new System.Drawing.Point(365, 188);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 3;
@@ -62,14 +64,14 @@ namespace UIPrincipal
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(397, 175);
+            this.textBoxUsuario.Location = new System.Drawing.Point(254, 65);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(208, 20);
             this.textBoxUsuario.TabIndex = 0;
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(397, 243);
+            this.textBoxSenha.Location = new System.Drawing.Point(254, 133);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(208, 20);
@@ -79,7 +81,7 @@ namespace UIPrincipal
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(394, 159);
+            this.labelLogin.Location = new System.Drawing.Point(251, 49);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(40, 13);
             this.labelLogin.TabIndex = 4;
@@ -88,7 +90,7 @@ namespace UIPrincipal
             // labelSenha
             // 
             this.labelSenha.AutoSize = true;
-            this.labelSenha.Location = new System.Drawing.Point(394, 227);
+            this.labelSenha.Location = new System.Drawing.Point(251, 117);
             this.labelSenha.Name = "labelSenha";
             this.labelSenha.Size = new System.Drawing.Size(44, 13);
             this.labelSenha.TabIndex = 5;
@@ -97,34 +99,46 @@ namespace UIPrincipal
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(170, 159);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(178, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // groupBoxLogin
+            // 
+            this.groupBoxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBoxLogin.Controls.Add(this.pictureBox1);
+            this.groupBoxLogin.Controls.Add(this.buttonLogin);
+            this.groupBoxLogin.Controls.Add(this.labelSenha);
+            this.groupBoxLogin.Controls.Add(this.buttonSair);
+            this.groupBoxLogin.Controls.Add(this.labelLogin);
+            this.groupBoxLogin.Controls.Add(this.textBoxUsuario);
+            this.groupBoxLogin.Controls.Add(this.textBoxSenha);
+            this.groupBoxLogin.Location = new System.Drawing.Point(151, 158);
+            this.groupBoxLogin.Name = "groupBoxLogin";
+            this.groupBoxLogin.Size = new System.Drawing.Size(494, 280);
+            this.groupBoxLogin.TabIndex = 7;
+            this.groupBoxLogin.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.labelSenha);
-            this.Controls.Add(this.labelLogin);
-            this.Controls.Add(this.textBoxSenha);
-            this.Controls.Add(this.textBoxUsuario);
-            this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.groupBoxLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN DE USUARIO";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxLogin.ResumeLayout(false);
+            this.groupBoxLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -137,5 +151,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBoxLogin;
     }
 }
