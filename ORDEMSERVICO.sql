@@ -390,6 +390,7 @@ AS
 	CelularDois,
 	Cidade,
 	Uf,
+	Foto,
 	Funcionario,
 	Id_Permissao,
 	Salario,
