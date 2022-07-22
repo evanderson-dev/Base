@@ -129,9 +129,10 @@ namespace UIPrincipal
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBoxLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN DE USUARIO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

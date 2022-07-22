@@ -1,9 +1,9 @@
 ﻿using BLL;
 using Model;
+using Infra;
 using System;
-using System.Windows.Forms;
-
 using System.IO;
+using System.Windows.Forms;
 
 namespace UIPrincipal
 {
@@ -13,7 +13,7 @@ namespace UIPrincipal
 
         string origemCompleto = "";
         string foto = "";
-        string pastaDestino = @"C:\Users\axel_\source\repos\3V4ND3R5ON\Base\imgs\";
+        string pastaDestino = Constante.DiretorioDeImagem;
         string destinoCompleto = "";
         public FormCadastroUsuario()
         {
@@ -51,7 +51,6 @@ namespace UIPrincipal
                     }
                 }
             }
-
 
             ///// nao alterar abaixo /////
             try
@@ -221,17 +220,16 @@ namespace UIPrincipal
             {
                 radioButtonNivelTres.Checked = true;
             }
-            //PlanoBLL planoBLL = new PlanoBLL();
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            //pictureBoxFoto.DataSource = planoBLL.BuscarPlano("");
             pictureBoxFoto.ImageLocation = labelFoto.Text;
+            pictureBoxFoto.ImageLocation.Insert(0, "Foto");
+            //comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
         }
 
         private void buttonAddFoto_Click(object sender, EventArgs e)
         {
             origemCompleto = "";
             foto = "";
-            pastaDestino = @"C:\Users\axel_\source\repos\3V4ND3R5ON\Base\imgs\";//ALTERAR PARA GLOBAL POSTERIORMENTE
+            pastaDestino = Constante.DiretorioDeImagem;
             destinoCompleto = "";
 
             if (openFileDialogAddFoto.ShowDialog() == DialogResult.OK)

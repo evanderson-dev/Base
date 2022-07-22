@@ -244,8 +244,14 @@ GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', 'C:\Users\axel_\source\repos\3V4ND3R5ON\Base\imgs', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'ARAGUAINA', 'TO', null, 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
+GO
+
+EXEC SP_InserirUsuario 0, 1, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
+'05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
+'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
 GO
 
 --TABELA "GESTÃO DE O.S"
@@ -286,6 +292,7 @@ CREATE PROC SP_AlterarUsuario
 	@CelularDois VARCHAR(16),
 	@Cidade VARCHAR(10),
 	@Uf VARCHAR(2),
+	@Foto VARCHAR(150),
 	@Funcionario BIT,
 	@Id_Permissao INT,
 	@Salario FLOAT,
@@ -321,6 +328,7 @@ AS
 	CelularDois = @CelularDois,
 	Cidade = @Cidade,
 	Uf = @Uf,
+	Foto = @Foto,
 	Funcionario = @Funcionario,
 	Id_Permissao = @Id_Permissao,
 	Salario = @Salario,
@@ -339,7 +347,7 @@ AS
 GO
 
 SELECT * FROM Plano
-SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, FimDoContrato, DataAdmissao, DataDemissao, Foto FROM Pessoa
+SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, DataAdmissao, Foto FROM Pessoa
 GO
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs
