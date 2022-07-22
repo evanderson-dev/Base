@@ -125,6 +125,10 @@ namespace DAL
                 {
                     Value = _usuario.Uf
                 });
+                cmd.Parameters.Add(new SqlParameter("@Foto", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Foto
+                });
 
                 cmd.Parameters.Add(new SqlParameter("@Funcionario", SqlDbType.Bit)
                 {
@@ -423,6 +427,11 @@ namespace DAL
                 SqlParameter uf = new SqlParameter("@Uf", SqlDbType.VarChar);
                 uf.Value = _usuario.Uf;
                 cmd.Parameters.Add(uf);
+
+                cmd.Parameters.Add(new SqlParameter("@Foto", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Foto
+                });
 
                 SqlParameter funcionario = new SqlParameter("@Funcionario", SqlDbType.Bit);
                 funcionario.Value = _usuario.Funcionario;

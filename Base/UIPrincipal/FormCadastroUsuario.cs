@@ -3,11 +3,18 @@ using Model;
 using System;
 using System.Windows.Forms;
 
+using System.IO;
+
 namespace UIPrincipal
 {
     public partial class FormCadastroUsuario : Form
     {
         private bool inserindoNovo;
+
+        string origemCompleto = "";
+        string foto = "";
+        string pastaDestino = @"C:\Users\axel_\source\repos\3V4ND3R5ON\Base\imgs\";
+        string destinoCompleto = "";
         public FormCadastroUsuario()
         {
             InitializeComponent();
@@ -22,6 +29,31 @@ namespace UIPrincipal
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            if (destinoCompleto == "")
+            {
+                if (MessageBox.Show("DESEJA CADASTRAR SEM FOTO?","ERRO!",MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if (destinoCompleto != "")
+            {
+                System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+                if (File.Exists(destinoCompleto))
+                {
+                    pictureBoxFoto.ImageLocation = destinoCompleto;
+                }
+                else
+                {
+                    if (MessageBox.Show("ERRO SO LOCALIZAR A FOTO, DESEJA CONTINUAR?", "ERRO!", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+            }
+
+
+            ///// nao alterar abaixo /////
             try
             {
                 usuarioBindingSource.EndEdit();
@@ -60,6 +92,7 @@ namespace UIPrincipal
             usuario.CelularDois = maskedTextBoxCelularDois.Text;
             usuario.Cidade = textBoxCidade.Text;
             usuario.Uf = textBoxUf.Text;
+            usuario.Foto = destinoCompleto;///////////////
             usuario.Funcionario = checkBoxFuncionario.Checked;
             int idpermissao = 3;
             if (radioButtonNivelUm.Checked)
@@ -173,7 +206,6 @@ namespace UIPrincipal
             //{
             //    comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
             //    //comboBoxPlanos.SelectedIndex = Convert.ToInt32(labelIdPlano.Text) - 1;
-            //    comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
             //    comboBoxPlanos.DisplayMember = "Descricao";
             //    comboBoxPlanos.ValueMember = "Id";
             //}
@@ -188,6 +220,42 @@ namespace UIPrincipal
             } else
             {
                 radioButtonNivelTres.Checked = true;
+            }
+            //PlanoBLL planoBLL = new PlanoBLL();
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            //pictureBoxFoto.DataSource = planoBLL.BuscarPlano("");
+            pictureBoxFoto.ImageLocation = labelFoto.Text;
+        }
+
+        private void buttonAddFoto_Click(object sender, EventArgs e)
+        {
+            origemCompleto = "";
+            foto = "";
+            pastaDestino = @"C:\Users\axel_\source\repos\3V4ND3R5ON\Base\imgs\";//ALTERAR PARA GLOBAL POSTERIORMENTE
+            destinoCompleto = "";
+
+            if (openFileDialogAddFoto.ShowDialog() == DialogResult.OK)
+            {
+                origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
+                foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
+                destinoCompleto = pastaDestino + foto;
+            }
+
+            if (File.Exists(destinoCompleto))
+            {
+                if (MessageBox.Show("O ARQUIVO JÁ EXISTE, DESEJA SUBSTITUIR?","SUBSTITUIR",MessageBoxButtons.YesNo)==DialogResult.No)
+                {
+                    return;
+                }
+            }
+            System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+            if (File.Exists(destinoCompleto))
+            {
+                pictureBoxFoto.ImageLocation = destinoCompleto;
+            }
+            else
+            {
+                MessageBox.Show("ARQUIVO NÃO COPIADO");
             }
         }
     }

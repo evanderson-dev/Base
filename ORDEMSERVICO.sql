@@ -100,6 +100,7 @@ CREATE TABLE Pessoa
 	CelularDois VARCHAR(16),--------------FEITO
 	Cidade VARCHAR(10),-------------------FEITO
 	Uf VARCHAR(2),------------------------FEITO
+	Foto VARCHAR(150),
 	-- DADOS DO FUNCIONARIO
 	Funcionario BIT,----------------------FEITO
 	Id_Permissao INT,---------------------FEITO
@@ -153,6 +154,7 @@ CREATE PROCEDURE SP_InserirUsuario
 	@CelularDois VARCHAR(16),
 	@Cidade VARCHAR(10),
 	@Uf VARCHAR(2),
+	@Foto VARCHAR(150),
 	@Funcionario BIT,
 	@Id_Permissao INT,
 	@Salario VARCHAR(15),
@@ -188,6 +190,7 @@ AS
 	CelularDois,
 	Cidade,
 	Uf,
+	Foto,
 	Funcionario,
 	Id_Permissao,
 	Salario,
@@ -221,6 +224,7 @@ AS
 	@CelularDois,
 	@Cidade,
 	@Uf,
+	@Foto,
 	@Funcionario,
 	@Id_Permissao,
 	@Salario,
@@ -240,7 +244,7 @@ GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'ARAGUAINA', 'TO', 'C:\Users\axel_\source\repos\3V4ND3R5ON\Base\imgs', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
 
@@ -335,7 +339,7 @@ AS
 GO
 
 SELECT * FROM Plano
-SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, FimDoContrato, DataAdmissao, DataDemissao FROM Pessoa
+SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, FimDoContrato, DataAdmissao, DataDemissao, Foto FROM Pessoa
 GO
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOs

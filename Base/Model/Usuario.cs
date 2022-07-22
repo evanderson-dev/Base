@@ -22,6 +22,7 @@
         private string celularDois;
         private string cidade;
         private string uf;
+        private string foto;
         private bool funcionario;
         private int id_Permissao;
         private string salario;
@@ -137,7 +138,12 @@
         {
             get { return uf; }
             set { uf = value; }
-        }        
+        }
+        public string Foto
+        {
+            get { return foto; }
+            set { foto = value; }
+        }
         public bool Funcionario
         {
             get { return funcionario; }
@@ -213,6 +219,5 @@
             get { return plano; }
             set { plano = value; }
         }
-
     }
 }

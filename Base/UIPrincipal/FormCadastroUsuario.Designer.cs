@@ -102,17 +102,18 @@ namespace UIPrincipal
             this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddFoto = new System.Windows.Forms.Button();
             this.labelIdPessoa = new System.Windows.Forms.Label();
             this.textBoxObservacao = new System.Windows.Forms.TextBox();
             this.groupBoxSituacao = new System.Windows.Forms.GroupBox();
-            this.pictureBoxFotoPessoa = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelIdPlano = new System.Windows.Forms.Label();
             this.labelId_Permissao = new System.Windows.Forms.Label();
-            this.openFileDialogBuscarFoto = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
+            this.labelFoto = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -150,7 +151,7 @@ namespace UIPrincipal
             this.groupBoxDadosCliente.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
             this.groupBoxSituacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBoxTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -873,12 +874,13 @@ namespace UIPrincipal
             // 
             // groupBoxDadosPessoais
             // 
-            this.groupBoxDadosPessoais.Controls.Add(this.button1);
+            this.groupBoxDadosPessoais.Controls.Add(this.labelFoto);
+            this.groupBoxDadosPessoais.Controls.Add(this.buttonAddFoto);
             this.groupBoxDadosPessoais.Controls.Add(this.labelIdPessoa);
             this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxObservacao);
             this.groupBoxDadosPessoais.Controls.Add(this.groupBoxSituacao);
-            this.groupBoxDadosPessoais.Controls.Add(this.pictureBoxFotoPessoa);
+            this.groupBoxDadosPessoais.Controls.Add(this.pictureBoxFoto);
             this.groupBoxDadosPessoais.Controls.Add(this.groupBoxTipo);
             this.groupBoxDadosPessoais.Controls.Add(label4);
             this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCep);
@@ -920,14 +922,15 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
             // 
-            // button1
+            // buttonAddFoto
             // 
-            this.button1.Location = new System.Drawing.Point(644, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "BUSCAR FOTO";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAddFoto.Location = new System.Drawing.Point(652, 165);
+            this.buttonAddFoto.Name = "buttonAddFoto";
+            this.buttonAddFoto.Size = new System.Drawing.Size(87, 23);
+            this.buttonAddFoto.TabIndex = 40;
+            this.buttonAddFoto.Text = "ADD FOTO";
+            this.buttonAddFoto.UseVisualStyleBackColor = true;
+            this.buttonAddFoto.Click += new System.EventHandler(this.buttonAddFoto_Click);
             // 
             // labelIdPessoa
             // 
@@ -959,17 +962,18 @@ namespace UIPrincipal
             this.groupBoxSituacao.TabStop = false;
             this.groupBoxSituacao.Text = "SITUAÇÃO";
             // 
-            // pictureBoxFotoPessoa
+            // pictureBoxFoto
             // 
-            this.pictureBoxFotoPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxFotoPessoa.ErrorImage = null;
-            this.pictureBoxFotoPessoa.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFotoPessoa.Image")));
-            this.pictureBoxFotoPessoa.Location = new System.Drawing.Point(631, 23);
-            this.pictureBoxFotoPessoa.Name = "pictureBoxFotoPessoa";
-            this.pictureBoxFotoPessoa.Size = new System.Drawing.Size(126, 153);
-            this.pictureBoxFotoPessoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxFotoPessoa.TabIndex = 35;
-            this.pictureBoxFotoPessoa.TabStop = false;
+            this.pictureBoxFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxFoto.ErrorImage = null;
+            this.pictureBoxFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFoto.Image")));
+            this.pictureBoxFoto.InitialImage = null;
+            this.pictureBoxFoto.Location = new System.Drawing.Point(631, 23);
+            this.pictureBoxFoto.Name = "pictureBoxFoto";
+            this.pictureBoxFoto.Size = new System.Drawing.Size(126, 153);
+            this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxFoto.TabIndex = 35;
+            this.pictureBoxFoto.TabStop = false;
             // 
             // groupBoxTipo
             // 
@@ -1013,9 +1017,21 @@ namespace UIPrincipal
             this.labelId_Permissao.TabIndex = 41;
             this.labelId_Permissao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // openFileDialogBuscarFoto
+            // openFileDialogAddFoto
             // 
-            this.openFileDialogBuscarFoto.FileName = "openFileDialogBuscarFoto";
+            this.openFileDialogAddFoto.FileName = "openFileDialogAddFoto";
+            this.openFileDialogAddFoto.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
+            // 
+            // labelFoto
+            // 
+            this.labelFoto.AutoSize = true;
+            this.labelFoto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Foto", true));
+            this.labelFoto.ForeColor = System.Drawing.Color.Transparent;
+            this.labelFoto.Location = new System.Drawing.Point(677, 9);
+            this.labelFoto.Name = "labelFoto";
+            this.labelFoto.Size = new System.Drawing.Size(36, 13);
+            this.labelFoto.TabIndex = 41;
+            this.labelFoto.Text = "FOTO";
             // 
             // FormCadastroUsuario
             // 
@@ -1052,7 +1068,7 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
             this.groupBoxSituacao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPessoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.groupBoxTipo.ResumeLayout(false);
             this.groupBoxTipo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
@@ -1101,7 +1117,7 @@ namespace UIPrincipal
         private System.Windows.Forms.CheckBox checkBoxFuncionario;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCep;
         private System.Windows.Forms.GroupBox groupBoxSituacao;
-        private System.Windows.Forms.PictureBox pictureBoxFotoPessoa;
+        private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.GroupBox groupBoxTipo;
         private System.Windows.Forms.ComboBox comboBoxPlanos;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxFimContrato;
@@ -1111,8 +1127,9 @@ namespace UIPrincipal
         private System.Windows.Forms.BindingSource planoBindingSource;
         private System.Windows.Forms.Label labelIdPlano;
         private System.Windows.Forms.Label labelId_Permissao;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.OpenFileDialog openFileDialogBuscarFoto;
+        private System.Windows.Forms.Button buttonAddFoto;
+        private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
+        private System.Windows.Forms.Label labelFoto;
     }
 }
 
