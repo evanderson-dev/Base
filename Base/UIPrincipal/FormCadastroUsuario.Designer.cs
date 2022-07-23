@@ -113,7 +113,6 @@ namespace UIPrincipal
             this.labelIdPlano = new System.Windows.Forms.Label();
             this.labelId_Permissao = new System.Windows.Forms.Label();
             this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
-            this.labelFoto = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -874,7 +873,7 @@ namespace UIPrincipal
             // 
             // groupBoxDadosPessoais
             // 
-            this.groupBoxDadosPessoais.Controls.Add(this.labelFoto);
+            this.groupBoxDadosPessoais.BackColor = System.Drawing.Color.White;
             this.groupBoxDadosPessoais.Controls.Add(this.buttonAddFoto);
             this.groupBoxDadosPessoais.Controls.Add(this.labelIdPessoa);
             this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
@@ -1022,28 +1021,17 @@ namespace UIPrincipal
             this.openFileDialogAddFoto.FileName = "openFileDialogAddFoto";
             this.openFileDialogAddFoto.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
             // 
-            // labelFoto
-            // 
-            this.labelFoto.AutoSize = true;
-            this.labelFoto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Foto", true));
-            this.labelFoto.ForeColor = System.Drawing.Color.Transparent;
-            this.labelFoto.Location = new System.Drawing.Point(677, 9);
-            this.labelFoto.Name = "labelFoto";
-            this.labelFoto.Size = new System.Drawing.Size(36, 13);
-            this.labelFoto.TabIndex = 41;
-            this.labelFoto.Text = "FOTO";
-            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.labelId_Permissao);
             this.Controls.Add(this.labelIdPlano);
             this.Controls.Add(this.groupBoxDadosPessoais);
             this.Controls.Add(this.groupBoxDadosCliente);
-            this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.buttonCancelarCadastro);
             this.Controls.Add(this.buttonSalvar);
             this.ForeColor = System.Drawing.Color.Black;
@@ -1129,7 +1117,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelId_Permissao;
         private System.Windows.Forms.Button buttonAddFoto;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
-        private System.Windows.Forms.Label labelFoto;
     }
 }
 

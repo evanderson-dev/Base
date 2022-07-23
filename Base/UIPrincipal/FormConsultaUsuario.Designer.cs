@@ -54,7 +54,6 @@ namespace UIPrincipal
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonSair);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -69,13 +68,12 @@ namespace UIPrincipal
             this.buttonSair.FlatAppearance.BorderSize = 0;
             this.buttonSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Image = ((System.Drawing.Image)(resources.GetObject("buttonSair.Image")));
-            this.buttonSair.Location = new System.Drawing.Point(22, 42);
+            this.buttonSair.Location = new System.Drawing.Point(476, 9);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(40, 40);
+            this.buttonSair.Size = new System.Drawing.Size(81, 24);
             this.buttonSair.TabIndex = 4;
+            this.buttonSair.Text = "&CANCELAR";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
@@ -93,6 +91,7 @@ namespace UIPrincipal
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.Controls.Add(this.buttonSair);
             this.panel2.Controls.Add(this.buttonExcluir);
             this.panel2.Controls.Add(this.buttonAlterar);
             this.panel2.Controls.Add(this.buttonNovo);
@@ -109,7 +108,7 @@ namespace UIPrincipal
             this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(414, 9);
+            this.buttonExcluir.Location = new System.Drawing.Point(395, 9);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 24);
             this.buttonExcluir.TabIndex = 2;
@@ -127,7 +126,7 @@ namespace UIPrincipal
             this.buttonAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.ImageKey = "(nenhum/a)";
-            this.buttonAlterar.Location = new System.Drawing.Point(333, 9);
+            this.buttonAlterar.Location = new System.Drawing.Point(314, 9);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 24);
             this.buttonAlterar.TabIndex = 1;
@@ -143,7 +142,7 @@ namespace UIPrincipal
             this.buttonNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNovo.Location = new System.Drawing.Point(252, 9);
+            this.buttonNovo.Location = new System.Drawing.Point(233, 9);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(75, 24);
             this.buttonNovo.TabIndex = 0;

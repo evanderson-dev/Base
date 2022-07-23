@@ -1,6 +1,7 @@
 ﻿using BLL;
 using System;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -39,7 +40,11 @@ namespace UIPrincipal
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
 
+            // EXCLUSAO DA FOTO NO DIRETORIO
+            File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
+            // EXCLUSÃO DO CADASTRO NO BANCO
             usuarioBLL.Excluir(id);
+            // ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
             usuarioBindingSource.RemoveCurrent();
             MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
         }
