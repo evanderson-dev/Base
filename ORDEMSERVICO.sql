@@ -122,14 +122,11 @@ CREATE TABLE Pessoa
 )
 GO
 
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3)
-	--('LuizSenai', 'Senha@321', 'LUIZ TAL', '12345678912', 1),
-	--('DaviSenai', 'Senha@456', 'DAVI TAL', '98765432198', 1),
-	--('WandersonSenai', 'Senha@654', 'WANDERSON TAL', '7418529374', 1)
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3, '')
 GO
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao)
-	VALUES ('admin', 'admin', 'USUARIO TESTE', '02227855153', 1, 1, 2, 1)
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
+	VALUES ('admin', 'admin', 'USUARIO TESTE', '02227855153', 1, 1, 2, 1, '')
 GO
 --DROP PROCEDURE SP_InserirUsuario
 GO
@@ -244,18 +241,18 @@ GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', null, 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'ARAGUAINA', 'TO', '', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
-
+--C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg
 EXEC SP_InserirUsuario 0, 1, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
-'ARAGUAINA', 'TO', 'C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
 GO
 
 --TABELA "GESTÃO DE O.S"
-CREATE TABLE GestaoDeOs
+CREATE TABLE OrdemServico
 	(
 	Protocolo INT PRIMARY KEY IDENTITY(1,1),
 	TipoChamado VARCHAR (150),
@@ -370,7 +367,7 @@ INSERT INTO StatusOs(Descricao)
 	('Encaminhado')
 GO
 --TABELA "GESTÃO DE O.S"
-INSERT INTO GestaoDeOs(TipoChamado, Descricao, DataAbertura, DataDeFechamento, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
+INSERT INTO OrdemServico(TipoChamado, Descricao, DataAbertura, DataDeFechamento, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
 	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
 GO
 
