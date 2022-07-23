@@ -28,25 +28,25 @@ namespace UIPrincipal
         {
             using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
-                frm.ShowDialog();////////////////////////////////
+                frm.ShowDialog();
             }
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
                 return;
-
+            }
+            else
+            {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
-
-            // EXCLUSAO DA FOTO NO DIRETORIO
-            File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
-            // EXCLUSÃO DO CADASTRO NO BANCO
-            usuarioBLL.Excluir(id);
-            // ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
-            usuarioBindingSource.RemoveCurrent();
+            File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);// EXCLUSAO DA FOTO NO DIRETORIO
+            usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
+            usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
             MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
+            }
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)

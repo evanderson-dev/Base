@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrdemServico.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Plano.cs" />
     <Compile Include="Usuario.cs" />

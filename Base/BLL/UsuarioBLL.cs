@@ -31,7 +31,6 @@ namespace BLL
             return usuarioDAL.Buscar(_filtro);
         }
 
-
         //CRIADO PARA TESTE
         public DataTable BuscarPlano(string _id)
         {

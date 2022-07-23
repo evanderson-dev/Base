@@ -53,7 +53,6 @@ namespace UIPrincipal
                 }
             }
 
-            ///// nao alterar abaixo /////
             try
             {
                 usuarioBindingSource.EndEdit();
@@ -92,7 +91,7 @@ namespace UIPrincipal
             usuario.CelularDois = maskedTextBoxCelularDois.Text;
             usuario.Cidade = textBoxCidade.Text;
             usuario.Uf = textBoxUf.Text;
-            usuario.Foto = destinoCompleto;///////////////
+            usuario.Foto = destinoCompleto;
             usuario.Funcionario = checkBoxFuncionario.Checked;
             int idpermissao = 3;
             if (radioButtonNivelUm.Checked)
@@ -113,8 +112,6 @@ namespace UIPrincipal
             usuario.Observacao = textBoxObservacao.Text;
             usuario.Id_Plano = Convert.ToInt32(comboBoxPlanos.SelectedValue);
 
-
-            ////////////////////////////////////////////////////////////////////
             if (inserindoNovo)
                 usuarioBLL.Inserir(usuario);
             else
@@ -165,39 +162,58 @@ namespace UIPrincipal
         }
         public void checkBoxCliente_CheckedChanged(object sender, EventArgs e)
         {
-            //SE O checkBoxCliente NÃO ESTIVER MARCADO, O comboBoxPlanos FICARÁ VAZIO
             if (!checkBoxCliente.Checked)
             {
                 comboBoxPlanos.DataSource = null;
-                this.maskedTextBoxDataAdmissao.Text = null;
+                maskedTextBoxInicioContrato.Text = null;
             }
             else
             {
-                //SE O checkBoxCliente ESTIVER MARCADO, O comboBoxPlanos SERÁ PREENCHIDO
                 PlanoBLL planoBLL = new PlanoBLL();
                 comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
                 comboBoxPlanos.DisplayMember = "Descricao";
                 comboBoxPlanos.ValueMember = "Id";
-
-                if (inserindoNovo)
-                    this.maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
+                maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
+            }
+            // O CODIGO ABAIXO É TEMPORARIO
+            if (checkBoxCliente.Checked && checkBoxFuncionario.Checked)
+            {
+                PlanoBLL planoBLL = new PlanoBLL();
+                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
+                comboBoxPlanos.DisplayMember = "Descricao";
+                comboBoxPlanos.ValueMember = "Id";
+                maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
+                maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
             }
         }
         public void checkBoxFuncionario_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxFuncionario.Checked)
-            {
-                if (inserindoNovo)
-                    this.maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
-            }
+            if (!checkBoxFuncionario.Checked)
+                maskedTextBoxDataAdmissao.Text = null;
             else
-                maskedTextBoxInicioContrato.Text = null;
+                maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
+            // O CODIGO ABAIXO É TEMPORARIO
+            if (checkBoxCliente.Checked && checkBoxFuncionario.Checked)
+            {
+                PlanoBLL planoBLL = new PlanoBLL();
+                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
+                comboBoxPlanos.DisplayMember = "Descricao";
+                comboBoxPlanos.ValueMember = "Id";
+                maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
+                maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
+            }
         }
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-            if (inserindoNovo) // SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
+            if (inserindoNovo)
+            {// SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
                 checkBoxCliente.Checked = false;
-            
+            }
+            else
+            {
+                pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
+            }
+                        
             comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
             
             // CARREGAMENTO DO NIVEL DE ACESSO DO CLIENTE
@@ -212,7 +228,7 @@ namespace UIPrincipal
                 radioButtonNivelTres.Checked = true;
             }
             
-            pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
+            //pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
         }
 
         private void buttonAddFoto_Click(object sender, EventArgs e)
