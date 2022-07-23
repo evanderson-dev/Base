@@ -42,7 +42,10 @@ namespace UIPrincipal
             {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
-            File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);// EXCLUSAO DA FOTO NO DIRETORIO
+            if ((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"] != "")
+            {
+                File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
+            }
             usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
             usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
             MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
