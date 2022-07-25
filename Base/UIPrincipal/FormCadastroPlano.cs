@@ -32,12 +32,12 @@ namespace UIPrincipal
             {
                 planoBindingSource.EndEdit();
                 Inserir();
-                MessageBox.Show("Cadastro realizado com sucesso!");
+                MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                MessageBox.Show("OCORREU UM ERRO: " + ex.Message);
             }
         }
 

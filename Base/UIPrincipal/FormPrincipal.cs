@@ -45,7 +45,7 @@ namespace UIPrincipal
         }
         private void tIPODECHAMADOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (TipoChamado frm = new TipoChamado())
+            using (FormTipoChamado frm = new FormTipoChamado())
             {
                 frm.ShowDialog();
             }

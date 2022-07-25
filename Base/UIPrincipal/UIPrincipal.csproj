@@ -90,11 +90,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TipoChamado.cs">
+    <Compile Include="FormTipoChamado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TipoChamado.Designer.cs">
-      <DependentUpon>TipoChamado.cs</DependentUpon>
+    <Compile Include="FormTipoChamado.Designer.cs">
+      <DependentUpon>FormTipoChamado.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormCadastroPlano.resx">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
@@ -126,8 +126,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TipoChamado.resx">
-      <DependentUpon>TipoChamado.cs</DependentUpon>
+    <EmbeddedResource Include="FormTipoChamado.resx">
+      <DependentUpon>FormTipoChamado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Model.GrupoUsuario.datasource" />
     <None Include="Properties\DataSources\Model.Permissao.datasource" />

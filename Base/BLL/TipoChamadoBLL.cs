@@ -7,25 +7,25 @@ namespace BLL
 {
     public class TipoChamadoBLL
     {
-        public TipoChamado InserirTipoChamado(TipoChamado _tipoChamado)
+        public TipoChamado Inserir(TipoChamado _tipoChamado)
         {
             TipoChamadoDAL tipoChamadoDAL = new TipoChamadoDAL();
-            return tipoChamadoDAL.InserirTipoChamado(_tipoChamado);
+            return tipoChamadoDAL.Inserir(_tipoChamado);
         }
-        public void ExcluirTipoChamado(int _id)
+        public void Excluir(int _id)
         {
             TipoChamadoDAL tipoChamadoDAL = new TipoChamadoDAL();
-            tipoChamadoDAL.ExcluirTipoChamado(_id);
+            tipoChamadoDAL.Excluir(_id);
         }
-        public TipoChamado AlterarTipoChamado(TipoChamado _tipoChamado)
+        public TipoChamado Alterar(TipoChamado _tipoChamado)
         {
             TipoChamadoDAL tipoChamadoDAL = new TipoChamadoDAL();
-            return tipoChamadoDAL.AlterarTipoChamado(_tipoChamado);
+            return tipoChamadoDAL.Alterar(_tipoChamado);
         }
         public DataTable BuscarTipoChamado(string _filtro)
         {
             TipoChamadoDAL tipoChamadoDAL = new TipoChamadoDAL();
-            return tipoChamadoDAL.BuscarTipoChamado(_filtro);
+            return tipoChamadoDAL.Buscar(_filtro);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace DAL
 {
     public class TipoChamadoDAL
     {
-        public TipoChamado InserirTipoChamado(TipoChamado _tipoChamado)
+        public TipoChamado Inserir(TipoChamado _tipoChamado)
         {
             SqlConnection cn = new SqlConnection();
             try
@@ -51,7 +51,7 @@ namespace DAL
             }
         }
 
-        public DataTable BuscarTipoChamado(string _filtro)
+        public DataTable Buscar(string _filtro)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
@@ -88,7 +88,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void ExcluirTipoChamado(int _id)
+        public void Excluir(int _id)
         {
             SqlConnection cn = new SqlConnection();
             try
@@ -122,7 +122,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public TipoChamado AlterarTipoChamado(TipoChamado _tipoChamado)
+        public TipoChamado Alterar(TipoChamado _tipoChamado)
         {
             SqlConnection cn = new SqlConnection();
             try
