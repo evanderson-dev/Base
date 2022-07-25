@@ -180,14 +180,14 @@ namespace UIPrincipal
             // Id
             // 
             this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
+            this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.Width = 45;
             // 
             // Descricao
             // 
             this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.HeaderText = "DESCRIÇÃO";
             this.Descricao.Name = "Descricao";
             this.Descricao.Width = 500;
             // 
@@ -195,7 +195,7 @@ namespace UIPrincipal
             // 
             this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Valor.DataPropertyName = "Valor";
-            this.Valor.HeaderText = "Valor";
+            this.Valor.HeaderText = "VALOR";
             this.Valor.Name = "Valor";
             // 
             // FormConsultaPlano
