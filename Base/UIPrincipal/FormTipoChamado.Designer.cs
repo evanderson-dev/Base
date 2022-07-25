@@ -30,8 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tipoChamadoDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoChamadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
@@ -43,10 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
-            this.buttonCancelar = new System.Windows.Forms.Button();
             this.labelCadastroTipoChamado = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -65,6 +65,20 @@
             this.tipoChamadoDataGridView.Size = new System.Drawing.Size(264, 298);
             this.tipoChamadoDataGridView.TabIndex = 0;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.Width = 50;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            // 
             // tipoChamadoBindingSource
             // 
             this.tipoChamadoBindingSource.DataSource = typeof(Model.TipoChamado);
@@ -82,6 +96,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(553, 45);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(279, 4);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(85, 37);
+            this.buttonCancelar.TabIndex = 8;
+            this.buttonCancelar.Text = "&CANCELAR";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonSalvar
             // 
@@ -195,17 +220,6 @@
             this.textBoxId.TabIndex = 4;
             this.textBoxId.Text = "0";
             // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Location = new System.Drawing.Point(279, 4);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(85, 37);
-            this.buttonCancelar.TabIndex = 8;
-            this.buttonCancelar.Text = "&CANCELAR";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
             // labelCadastroTipoChamado
             // 
             this.labelCadastroTipoChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,20 +229,6 @@
             this.labelCadastroTipoChamado.TabIndex = 6;
             this.labelCadastroTipoChamado.Text = "CADASTRO DE TIPO DE CHAMADO";
             this.labelCadastroTipoChamado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.Width = 50;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             // 
             // FormTipoChamado
             // 
@@ -250,6 +250,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTipoChamado_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

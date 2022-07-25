@@ -9,6 +9,8 @@ namespace UIPrincipal
     public partial class FormOrdemServico : Form
     {
         private bool inserindoNovo;
+        UsuarioBLL usuarioBLL = new UsuarioBLL();
+        TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
         public FormOrdemServico()
         {
             InitializeComponent();
@@ -23,8 +25,15 @@ namespace UIPrincipal
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            //UsuarioBLL usuarioBLL = new UsuarioBLL();
             usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscar.Text);
+        }
+
+        private void FormOrdemServico_Load(object sender, EventArgs e)
+        {
+            comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
+            comboBoxTipoChamado.DisplayMember = "Descricao";
+            comboBoxTipoChamado.ValueMember = "Id";
         }
     }
 }

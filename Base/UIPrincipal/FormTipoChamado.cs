@@ -27,6 +27,13 @@ namespace UIPrincipal
         {
             Close();
         }
+        private void FormTipoChamado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                buttonSair_Click(null, null);
+            }
+        }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
