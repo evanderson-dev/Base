@@ -41,10 +41,11 @@ namespace UIPrincipal
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAbrirOS = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tIPODECHAMADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -68,6 +69,7 @@ namespace UIPrincipal
             // 
             this.gRUPODEUSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uSUARIOSToolStripMenuItem,
+            this.tIPODECHAMADOToolStripMenuItem,
             this.pLANOToolStripMenuItem});
             this.gRUPODEUSUARIOToolStripMenuItem.Name = "gRUPODEUSUARIOToolStripMenuItem";
             this.gRUPODEUSUARIOToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
@@ -99,13 +101,13 @@ namespace UIPrincipal
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sOBREToolStripMenuItem.Text = "&SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sAIRToolStripMenuItem.Text = "&SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
@@ -114,7 +116,7 @@ namespace UIPrincipal
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonAbrirOS);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
@@ -124,38 +126,40 @@ namespace UIPrincipal
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(513, 5);
+            this.button4.Location = new System.Drawing.Point(505, 40);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 90);
+            this.button4.Size = new System.Drawing.Size(75, 24);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(412, 5);
+            this.button3.Location = new System.Drawing.Point(404, 40);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 90);
+            this.button3.Size = new System.Drawing.Size(75, 24);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(311, 5);
+            this.button2.Location = new System.Drawing.Point(303, 40);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 90);
+            this.button2.Size = new System.Drawing.Size(75, 24);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonAbrirOS
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(210, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 90);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAbrirOS.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAbrirOS.Location = new System.Drawing.Point(202, 40);
+            this.buttonAbrirOS.Name = "buttonAbrirOS";
+            this.buttonAbrirOS.Size = new System.Drawing.Size(75, 24);
+            this.buttonAbrirOS.TabIndex = 0;
+            this.buttonAbrirOS.Text = "ABRIR &O.S";
+            this.buttonAbrirOS.UseVisualStyleBackColor = true;
+            this.buttonAbrirOS.Click += new System.EventHandler(this.buttonAbrirOS_Click);
             // 
             // statusStrip1
             // 
@@ -184,6 +188,13 @@ namespace UIPrincipal
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // tIPODECHAMADOToolStripMenuItem
+            // 
+            this.tIPODECHAMADOToolStripMenuItem.Name = "tIPODECHAMADOToolStripMenuItem";
+            this.tIPODECHAMADOToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.tIPODECHAMADOToolStripMenuItem.Text = "TIPO DE CHAMADO";
+            this.tIPODECHAMADOToolStripMenuItem.Click += new System.EventHandler(this.tIPODECHAMADOToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -224,7 +235,7 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem sOBREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAbrirOS;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -232,5 +243,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem pLANOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tIPODECHAMADOToolStripMenuItem;
     }
 }

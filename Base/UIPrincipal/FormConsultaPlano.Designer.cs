@@ -79,10 +79,10 @@ namespace UIPrincipal
             this.panel2.Controls.Add(this.buttonAlterar);
             this.panel2.Controls.Add(this.buttonNovo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 435);
+            this.panel2.Location = new System.Drawing.Point(0, 438);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(704, 48);
+            this.panel2.Size = new System.Drawing.Size(704, 45);
             this.panel2.TabIndex = 1;
             // 
             // buttonSair
@@ -139,6 +139,7 @@ namespace UIPrincipal
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(624, 20);
             this.textBoxBuscar.TabIndex = 0;
+            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // buttonBuscar
             // 

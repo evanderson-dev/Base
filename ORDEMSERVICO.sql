@@ -125,11 +125,11 @@ GO
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
 	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3, '')
 GO
+
 INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
 	VALUES ('admin', 'admin', 'USUARIO TESTE', '02227855153', 1, 1, 2, 1, '')
 GO
---DROP PROCEDURE SP_InserirUsuario
-GO
+
 CREATE PROCEDURE SP_InserirUsuario
 	@Id INT OUTPUT,
 	@Ativo BIT,
@@ -244,10 +244,11 @@ EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTE
 'ARAGUAINA', 'TO', '', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
---C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg
+--'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
+--'C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
 EXEC SP_InserirUsuario 0, 1, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
-'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+'ARAGUAINA', 'TO', 'C:\Users\axel_\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
 GO
 
@@ -255,10 +256,10 @@ GO
 CREATE TABLE OrdemServico
 	(
 	Protocolo INT PRIMARY KEY IDENTITY(1,1),
-	TipoChamado VARCHAR (150),
+	Id_TipoChamado INT,
 	Descricao VARCHAR(1000),
-	DataAbertura DATETIME,
-	DataDeFechamento DATETIME,
+	DataAbertura DATETIME NULL,
+	DataDeFechamento DATETIME NULL,
 	TecnicoResponsavel VARCHAR(150),
 	Id_Funcionario INT,
 	Id_Cliente INT,
@@ -266,7 +267,61 @@ CREATE TABLE OrdemServico
 	Id_Status INT
 )
 GO
+--TABELA TipoChamado
+CREATE TABLE TipoChamado
+	(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Descricao VARCHAR(30) 
+)
+GO
+--SP_InserirTipoChamado
+CREATE PROCEDURE SP_InserirTipoChamado
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(150)
+AS
+	INSERT INTO TipoChamado(Descricao)
+		VALUES(@Descricao)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+--EXEC SP_InserirTipoChamado 0, 'TESTE TIPO DE CHAMADO'
+--SP_ExcluirTipoChamado
+CREATE PROC SP_ExcluirTipoChamado
+	@Id INT
+AS
+	DELETE FROM TipoChamado WHERE Id = @Id
+GO
+--EXEC SP_ExcluirTipoChamado 3
+--SP_AlterarTipoChamado
+CREATE PROC SP_AlterarTipoChamado
+	@Id INT,
+	@Descricao VARCHAR(150)
+AS
+	UPDATE TipoChamado SET
+	Descricao = @Descricao
+	WHERE Id = @Id
+GO
+--EXEC SP_AlterarTipoChamado 2, 'TESTE DE ALTERAÇÃO'
+CREATE PROC SP_BuscarTipoChamado
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM TipoChamado WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao FROM TipoChamado WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao FROM TipoChamado WHERE Descricao LIKE '%' + @filtro + '%'
+GO
+--EXEC SP_BuscarTipoChamado ''
+--INSERT DA TABELA "TIPO DE CHAMADO"
+--SELECT * FROM TipoChamado
+INSERT INTO TipoChamado(Descricao)
+	VALUES('SUPORTE LOSS'),
+	('SUPORTE FIBRA'),
+	('INSTALAÇÃO FIBRA'),
+	('MUDANÇA DE ENDEREÇO')
+GO
 
+INSERT INTO OrdemServico(Descricao, DataAbertura, DataDeFechamento, Id_TipoChamado, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
+	VALUES ('Cliente sem conexão, ONU apresentando perca de sinal.', NULL, NULL, 2, NULL, 1, 3, 1, 1)
+GO
 --DROP PROC SP_AlterarUsuario
 CREATE PROC SP_AlterarUsuario
 	@Id INT, --OUTPUT,
@@ -352,8 +407,9 @@ CREATE TABLE StatusOs
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Descricao VARCHAR(15) 
 )
+GO
 
---INSERT DAS TABELAS "PERMISSÃO"
+--INSERT DA TABELA "PERMISSÃO"
 INSERT INTO Permissao(Descricao)
 	VALUES('Abrir O.S'),
 	('Abrir O.S, Fechar O.S'),
@@ -367,9 +423,7 @@ INSERT INTO StatusOs(Descricao)
 	('Encaminhado')
 GO
 --TABELA "GESTÃO DE O.S"
-INSERT INTO OrdemServico(TipoChamado, Descricao, DataAbertura, DataDeFechamento, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
-	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
-GO
+
 
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
@@ -431,4 +485,7 @@ IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
 	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
 ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
+
+SELECT * FROM OrdemServico
+GO
 */

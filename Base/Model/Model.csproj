@@ -44,6 +44,7 @@
     <Compile Include="OrdemServico.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Plano.cs" />
+    <Compile Include="TipoChamado.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

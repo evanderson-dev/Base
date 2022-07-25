@@ -43,13 +43,27 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
-
+        private void tIPODECHAMADOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (TipoChamado frm = new TipoChamado())
+            {
+                frm.ShowDialog();
+            }
+        }
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult resposta =  MessageBox.Show("DESEJA ENCERRAR O SISTEMA?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (resposta == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void buttonAbrirOS_Click(object sender, EventArgs e)
+        {
+            using (FormOrdemServico frm = new FormOrdemServico())
+            {
+                frm.ShowDialog();
             }
         }
     }
