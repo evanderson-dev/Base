@@ -63,6 +63,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxTipoChamado = new System.Windows.Forms.ComboBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.labelIdPessoa = new System.Windows.Forms.Label();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -78,7 +79,6 @@
             this.textBoxRua = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.tipoChamadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxBairro = new System.Windows.Forms.TextBox();
             labelDescricao = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -230,6 +230,16 @@
             labelRua.TabIndex = 32;
             labelRua.Text = "RUA:";
             // 
+            // labelBairro
+            // 
+            labelBairro.AutoSize = true;
+            labelBairro.ForeColor = System.Drawing.Color.Black;
+            labelBairro.Location = new System.Drawing.Point(286, 63);
+            labelBairro.Name = "labelBairro";
+            labelBairro.Size = new System.Drawing.Size(51, 13);
+            labelBairro.TabIndex = 41;
+            labelBairro.Text = "BAIRRO:";
+            // 
             // usuarioDataGridView
             // 
             this.usuarioDataGridView.AllowUserToOrderColumns = true;
@@ -244,7 +254,7 @@
             this.usuarioDataGridView.Location = new System.Drawing.Point(15, 35);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.Size = new System.Drawing.Size(300, 500);
-            this.usuarioDataGridView.TabIndex = 8;
+            this.usuarioDataGridView.TabIndex = 10;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -270,7 +280,7 @@
             this.buttonBuscar.Location = new System.Drawing.Point(240, 5);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 24);
-            this.buttonBuscar.TabIndex = 7;
+            this.buttonBuscar.TabIndex = 0;
             this.buttonBuscar.Text = "&BUSCAR";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
@@ -280,7 +290,7 @@
             this.textBoxBuscar.Location = new System.Drawing.Point(15, 7);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(219, 20);
-            this.textBoxBuscar.TabIndex = 6;
+            this.textBoxBuscar.TabIndex = 0;
             // 
             // textBoxProtocolo
             // 
@@ -288,7 +298,7 @@
             this.textBoxProtocolo.Name = "textBoxProtocolo";
             this.textBoxProtocolo.ReadOnly = true;
             this.textBoxProtocolo.Size = new System.Drawing.Size(136, 20);
-            this.textBoxProtocolo.TabIndex = 9;
+            this.textBoxProtocolo.TabIndex = 1;
             // 
             // textBox4
             // 
@@ -371,7 +381,7 @@
             this.panelBotoes.Location = new System.Drawing.Point(0, 538);
             this.panelBotoes.Name = "panelBotoes";
             this.panelBotoes.Size = new System.Drawing.Size(1090, 41);
-            this.panelBotoes.TabIndex = 28;
+            this.panelBotoes.TabIndex = 0;
             // 
             // panel1
             // 
@@ -391,7 +401,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1090, 538);
-            this.panel1.TabIndex = 29;
+            this.panel1.TabIndex = 1;
             // 
             // comboBoxTipoChamado
             // 
@@ -438,9 +448,18 @@
             this.groupBoxDadosPessoais.Location = new System.Drawing.Point(321, 35);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
             this.groupBoxDadosPessoais.Size = new System.Drawing.Size(763, 147);
-            this.groupBoxDadosPessoais.TabIndex = 27;
+            this.groupBoxDadosPessoais.TabIndex = 0;
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS DO CLIENTE";
+            // 
+            // textBoxBairro
+            // 
+            this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cidade", true));
+            this.textBoxBairro.Location = new System.Drawing.Point(290, 79);
+            this.textBoxBairro.Name = "textBoxBairro";
+            this.textBoxBairro.Size = new System.Drawing.Size(94, 20);
+            this.textBoxBairro.TabIndex = 40;
             // 
             // labelIdPessoa
             // 
@@ -495,7 +514,7 @@
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(70, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
             this.textBoxNomeCompleto.Size = new System.Drawing.Size(387, 20);
-            this.textBoxNomeCompleto.TabIndex = 0;
+            this.textBoxNomeCompleto.TabIndex = 13;
             // 
             // maskedTextBoxCelularUm
             // 
@@ -531,7 +550,7 @@
             this.maskedTextBoxDataNascimento.Mask = "00-00-0000";
             this.maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
             this.maskedTextBoxDataNascimento.Size = new System.Drawing.Size(78, 20);
-            this.maskedTextBoxDataNascimento.TabIndex = 1;
+            this.maskedTextBoxDataNascimento.TabIndex = 8;
             this.maskedTextBoxDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // textBoxPlano
@@ -540,7 +559,7 @@
             this.textBoxPlano.Location = new System.Drawing.Point(547, 39);
             this.textBoxPlano.Name = "textBoxPlano";
             this.textBoxPlano.Size = new System.Drawing.Size(209, 20);
-            this.textBoxPlano.TabIndex = 15;
+            this.textBoxPlano.TabIndex = 9;
             // 
             // textBoxNumCasa
             // 
@@ -572,25 +591,6 @@
             // 
             this.tipoChamadoBindingSource.DataSource = typeof(Model.TipoChamado);
             // 
-            // textBoxBairro
-            // 
-            this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cidade", true));
-            this.textBoxBairro.Location = new System.Drawing.Point(290, 79);
-            this.textBoxBairro.Name = "textBoxBairro";
-            this.textBoxBairro.Size = new System.Drawing.Size(94, 20);
-            this.textBoxBairro.TabIndex = 40;
-            // 
-            // labelBairro
-            // 
-            labelBairro.AutoSize = true;
-            labelBairro.ForeColor = System.Drawing.Color.Black;
-            labelBairro.Location = new System.Drawing.Point(286, 63);
-            labelBairro.Name = "labelBairro";
-            labelBairro.Size = new System.Drawing.Size(51, 13);
-            labelBairro.TabIndex = 41;
-            labelBairro.Text = "BAIRRO:";
-            // 
             // FormOrdemServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,6 +603,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormOrdemServico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();

@@ -31,9 +31,12 @@ namespace UIPrincipal
 
         private void FormOrdemServico_Load(object sender, EventArgs e)
         {
+            textBoxBuscar.Focus();
             comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             comboBoxTipoChamado.DisplayMember = "Descricao";
             comboBoxTipoChamado.ValueMember = "Id";
+            //textBoxProtocolo.Text = DateTime.Now.ToShortDateString().Replace("/","");
+            textBoxProtocolo.Text = DateTime.Now.ToString("yyyyMMddHHmmss");//("ano/MES/dia/HORA/minuto/segundo")
         }
     }
 }
