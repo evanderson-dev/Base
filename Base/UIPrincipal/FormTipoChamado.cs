@@ -10,6 +10,7 @@ namespace UIPrincipal
     {
         private bool inserindoNovo;
         private bool permitirSalvar = false;
+        TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
         public FormTipoChamado()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace UIPrincipal
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
+            //TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
             tipoChamadoBindingSource.DataSource = tipoChamadoBLL.BuscarTipoChamado(textBoxBuscar.Text);
         }
 
@@ -45,7 +46,7 @@ namespace UIPrincipal
             if (MessageBox.Show("DESEJA EXCLUIR O TIPO DE CHAMADO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
+            //TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
             int id;
             id = Convert.ToInt32(((DataRowView)tipoChamadoBindingSource.Current).Row["Id"]);
             
@@ -85,7 +86,7 @@ namespace UIPrincipal
                 try
                 {
                     tipoChamadoBindingSource.EndEdit();
-                    TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
+                    //TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
                     TipoChamado tipoChamado = new TipoChamado();
 
                     tipoChamado.Id = Convert.ToInt32(textBoxId.Text);
@@ -113,6 +114,14 @@ namespace UIPrincipal
             else
             {
                 MessageBox.Show("SELECIONE A OPÇÃO NOVO OU ALTERAR ANTES DE SALVAR!");
+            }
+        }
+
+        private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                tipoChamadoBindingSource.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             }
         }
     }

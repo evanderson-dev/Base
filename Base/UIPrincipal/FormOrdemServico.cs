@@ -11,6 +11,7 @@ namespace UIPrincipal
         private bool inserindoNovo;
         UsuarioBLL usuarioBLL = new UsuarioBLL();
         TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
+        StatusOSBLL statusOSBLL = new StatusOSBLL();
         public FormOrdemServico()
         {
             InitializeComponent();
@@ -31,12 +32,28 @@ namespace UIPrincipal
 
         private void FormOrdemServico_Load(object sender, EventArgs e)
         {
+            //textBoxProtocolo.Text = DateTime.Now.ToShortDateString().Replace("/","");
+            textBoxProtocolo.Text = DateTime.Now.ToString("yyyyMMddHHmmss");//("ano/MES/dia/HORA/minuto/segundo")
+
+            maskedTextBoxDataAbertura.Text = DateTime.Now.ToString();
+
             textBoxBuscar.Focus();
+
             comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             comboBoxTipoChamado.DisplayMember = "Descricao";
             comboBoxTipoChamado.ValueMember = "Id";
-            //textBoxProtocolo.Text = DateTime.Now.ToShortDateString().Replace("/","");
-            textBoxProtocolo.Text = DateTime.Now.ToString("yyyyMMddHHmmss");//("ano/MES/dia/HORA/minuto/segundo")
+
+            comboBoxStatusOS.DataSource = statusOSBLL.BuscarStatusOS("");
+            comboBoxStatusOS.DisplayMember = "Descricao";
+            comboBoxStatusOS.ValueMember = "Id";
+        }
+
+        private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonBuscar_Click(null,null);
+            }
         }
     }
 }

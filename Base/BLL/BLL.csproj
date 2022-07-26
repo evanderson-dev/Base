@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="OrdemServicoBLL.cs" />
     <Compile Include="PlanoBLL.cs" />
+    <Compile Include="StatusOSBLL.cs" />
     <Compile Include="TipoChamadoBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

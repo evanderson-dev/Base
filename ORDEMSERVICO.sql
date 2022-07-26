@@ -22,6 +22,12 @@ CREATE TABLE Permissao
 	Descricao VARCHAR(250)
 )
 GO
+--INSERT DA TABELA "PERMISSÃO"
+INSERT INTO Permissao(Descricao)
+	VALUES('Abrir O.S'),
+	('Abrir O.S, Fechar O.S'),
+	('Abrir O.S, Fechar O.S, Encaminhar O.S')
+GO
 --TABELA "PLANO"
 CREATE TABLE Plano
 (
@@ -402,29 +408,54 @@ GO
 SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, DataAdmissao, Foto FROM Pessoa
 GO
 --TABELA "STATUS DA O.S"
-CREATE TABLE StatusOs
+CREATE TABLE StatusOS
 	(
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Descricao VARCHAR(15) 
+	Descricao VARCHAR(20) 
 )
 GO
-
---INSERT DA TABELA "PERMISSÃO"
-INSERT INTO Permissao(Descricao)
-	VALUES('Abrir O.S'),
-	('Abrir O.S, Fechar O.S'),
-	('Abrir O.S, Fechar O.S, Encaminhar O.S')
-GO
-
 --TABELA "STATUS DA O.S"
-INSERT INTO StatusOs(Descricao)
-	VALUES ('Aberto'),
-	('Fechado'),
-	('Encaminhado')
+INSERT INTO StatusOS(Descricao)
+	VALUES ('ABERTO'),
+	('FECHADO'),
+	('ENCAMINHADO')
 GO
---TABELA "GESTÃO DE O.S"
+--SELECT * FROM StatusOS
+--EXEC SP_InserirStatusOS 0, "TESTE DE INSERIR"
+CREATE PROCEDURE SP_InserirStatusOS
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(150)
+AS
+	INSERT INTO StatusOS(Descricao)
+		VALUES(@Descricao)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+--EXEC SP_ExcluirStatusOS 4
+CREATE PROC SP_ExcluirStatusOS
+	@Id INT
+AS
+	DELETE FROM StatusOS WHERE Id = @Id
+GO
+--EXEC SP_AlterarStatusOS 5, "TESTE DE ALTERAÇÃO"
+CREATE PROC SP_AlterarStatusOS
+	@Id INT,
+	@Descricao VARCHAR(150)
+AS
+	UPDATE StatusOS SET
+	Descricao = @Descricao
+	WHERE Id = @Id
+GO
+--EXEC SP_BuscarStatusOS "5"
+CREATE PROC SP_BuscarStatusOS
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM StatusOS WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao FROM StatusOS WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao FROM StatusOS WHERE Descricao LIKE '%' + @filtro + '%'
+GO
 
-
+--################################################--
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS

@@ -132,6 +132,7 @@
     <None Include="Properties\DataSources\Model.GrupoUsuario.datasource" />
     <None Include="Properties\DataSources\Model.Permissao.datasource" />
     <None Include="Properties\DataSources\Model.Plano.datasource" />
+    <None Include="Properties\DataSources\Model.StatusOS.datasource" />
     <None Include="Properties\DataSources\Model.TipoChamado.datasource" />
     <None Include="Properties\DataSources\Model.Usuario.datasource" />
     <None Include="Properties\Settings.settings">

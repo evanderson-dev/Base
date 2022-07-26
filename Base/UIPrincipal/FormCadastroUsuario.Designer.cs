@@ -253,7 +253,7 @@ namespace UIPrincipal
             labelEstadoCivil.Name = "labelEstadoCivil";
             labelEstadoCivil.Size = new System.Drawing.Size(83, 13);
             labelEstadoCivil.TabIndex = 15;
-            labelEstadoCivil.Text = "ESTADO CICIL:";
+            labelEstadoCivil.Text = "ESTADO CIVIL:";
             // 
             // labelRua
             // 
