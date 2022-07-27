@@ -11,10 +11,10 @@ namespace UIPrincipal
             InitializeComponent();
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
+        /*private void FormPrincipal_Load(object sender, EventArgs e)
         {
             Login();
-        }
+        }*/
 
         private void Login()
         {
@@ -63,6 +63,15 @@ namespace UIPrincipal
         private void FormPrincipal_Activated(object sender, EventArgs e)
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resposta = MessageBox.Show("DESEJA ENCERRAR O SISTEMA?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resposta == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

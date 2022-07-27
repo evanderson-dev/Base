@@ -18,7 +18,13 @@ namespace UIPrincipal
         {
             Application.Exit();//FORÇA O FECHAMENTO DE TODO O SISTEMA
         }
-
+        private void TelaInicial()
+        {
+            using (FormPrincipal frm = new FormPrincipal())
+            {
+                frm.ShowDialog();
+            }
+        }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
@@ -37,6 +43,7 @@ namespace UIPrincipal
                     UsuarioLogado.NomeCompleto = ((DataRowView)usuarioBindingSource.Current).Row["NomeCompleto"].ToString();
                     UsuarioLogado.NomeUsuario = nome;
                     Logou = true;
+                    TelaInicial();
                     Close();
                 }
                 else if (ativo == "False")
