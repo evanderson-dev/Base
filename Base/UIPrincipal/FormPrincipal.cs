@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infra;
+using System;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -65,6 +66,11 @@ namespace UIPrincipal
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void FormPrincipal_Activated(object sender, EventArgs e)
+        {
+            toolStripStatusLabelUsuario.Text = Constante.UsuarioLogado;
         }
     }
 }

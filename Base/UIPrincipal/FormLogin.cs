@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Data;
+using Infra;
 
 namespace UIPrincipal
 {
@@ -28,10 +29,10 @@ namespace UIPrincipal
             {
                 string nome = ((DataRowView)usuarioBindingSource.Current).Row["NomeUsuario"].ToString();
                 string senha = ((DataRowView)usuarioBindingSource.Current).Row["Senha"].ToString();
-
                 //NAO ALTERAR ABAIXO
                 if ((nome == textBoxUsuario.Text) && (senha == textBoxSenha.Text))
                 {
+                    Constante.UsuarioLogado = nome;
                     Logou = true;
                     Close();
                 }
