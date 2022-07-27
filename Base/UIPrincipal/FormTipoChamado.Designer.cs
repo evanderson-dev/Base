@@ -62,6 +62,8 @@
             this.tipoChamadoDataGridView.DataSource = this.tipoChamadoBindingSource;
             this.tipoChamadoDataGridView.Location = new System.Drawing.Point(12, 95);
             this.tipoChamadoDataGridView.Name = "tipoChamadoDataGridView";
+            this.tipoChamadoDataGridView.ReadOnly = true;
+            this.tipoChamadoDataGridView.RowHeadersVisible = false;
             this.tipoChamadoDataGridView.Size = new System.Drawing.Size(264, 298);
             this.tipoChamadoDataGridView.TabIndex = 0;
             // 
@@ -70,6 +72,7 @@
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Width = 50;
             // 
             // descricaoDataGridViewTextBoxColumn
@@ -78,6 +81,7 @@
             this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
             this.descricaoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tipoChamadoBindingSource
             // 

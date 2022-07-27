@@ -167,6 +167,8 @@ namespace UIPrincipal
             this.usuarioDataGridView.Location = new System.Drawing.Point(9, 109);
             this.usuarioDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
+            this.usuarioDataGridView.ReadOnly = true;
+            this.usuarioDataGridView.RowHeadersVisible = false;
             this.usuarioDataGridView.RowHeadersWidth = 51;
             this.usuarioDataGridView.RowTemplate.Height = 24;
             this.usuarioDataGridView.Size = new System.Drawing.Size(684, 311);
@@ -181,6 +183,7 @@ namespace UIPrincipal
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Width = 45;
             // 
             // Descricao
@@ -188,6 +191,7 @@ namespace UIPrincipal
             this.Descricao.DataPropertyName = "Descricao";
             this.Descricao.HeaderText = "DESCRIÇÃO";
             this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
             this.Descricao.Width = 500;
             // 
             // Valor
@@ -196,6 +200,7 @@ namespace UIPrincipal
             this.Valor.DataPropertyName = "Valor";
             this.Valor.HeaderText = "VALOR";
             this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
             // 
             // FormConsultaPlano
             // 

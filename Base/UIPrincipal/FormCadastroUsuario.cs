@@ -30,7 +30,7 @@ namespace UIPrincipal
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            if (destinoCompleto == "")
+            if (pictureBoxFoto.ImageLocation == "")
             {
                 if (MessageBox.Show("DESEJA CADASTRAR SEM FOTO?","ERRO!",MessageBoxButtons.YesNo) == DialogResult.No)
                 {
@@ -55,7 +55,7 @@ namespace UIPrincipal
 
             try
             {
-                usuarioBindingSource.EndEdit();
+                //usuarioBindingSource.EndEdit();
                 Inserir();
                 MessageBox.Show("OPERAÇÃO REALIZADO COM SUCESSO!");
                 Close();
@@ -240,6 +240,11 @@ namespace UIPrincipal
 
             if (openFileDialogAddFoto.ShowDialog() == DialogResult.OK)
             {
+                if (!Directory.Exists(Constante.DiretorioDeImagem))//CRIA A PASTA CASO ELA NAO EXISTA
+                {
+                    Directory.CreateDirectory(Constante.DiretorioDeImagem);
+                    Console.WriteLine(Constante.DiretorioDeImagem);
+                }
                 origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
                 foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
                 destinoCompleto = pastaDestino + foto;
