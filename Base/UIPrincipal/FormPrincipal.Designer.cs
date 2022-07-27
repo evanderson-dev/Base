@@ -46,6 +46,7 @@ namespace UIPrincipal
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -151,16 +152,17 @@ namespace UIPrincipal
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(303, 40);
+            this.button2.Location = new System.Drawing.Point(271, 40);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Size = new System.Drawing.Size(107, 24);
             this.button2.TabIndex = 1;
+            this.button2.Text = "CONSULTAR O.S";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // buttonAbrirOS
             // 
             this.buttonAbrirOS.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonAbrirOS.Location = new System.Drawing.Point(202, 40);
+            this.buttonAbrirOS.Location = new System.Drawing.Point(168, 40);
             this.buttonAbrirOS.Name = "buttonAbrirOS";
             this.buttonAbrirOS.Size = new System.Drawing.Size(75, 24);
             this.buttonAbrirOS.TabIndex = 0;
@@ -171,9 +173,11 @@ namespace UIPrincipal
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelUsuario});
+            this.toolStripStatusLabelUsuario,
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusStrip1.Size = new System.Drawing.Size(784, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
@@ -181,8 +185,8 @@ namespace UIPrincipal
             // toolStripStatusLabelUsuario
             // 
             this.toolStripStatusLabelUsuario.Name = "toolStripStatusLabelUsuario";
-            this.toolStripStatusLabelUsuario.Size = new System.Drawing.Size(138, 17);
-            this.toolStripStatusLabelUsuario.Text = "USUARIO: ANONYMOUS";
+            this.toolStripStatusLabelUsuario.Size = new System.Drawing.Size(56, 17);
+            this.toolStripStatusLabelUsuario.Text = "USUARIO";
             // 
             // pictureBox1
             // 
@@ -195,6 +199,12 @@ namespace UIPrincipal
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(101, 17);
+            this.toolStripStatusLabel1.Text = " :LOGADO COMO";
             // 
             // FormPrincipal
             // 
@@ -214,7 +224,6 @@ namespace UIPrincipal
             this.Text = "UNM2001";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FormPrincipal_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -245,5 +254,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem pLANOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tIPODECHAMADOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

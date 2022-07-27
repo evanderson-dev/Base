@@ -45,11 +45,12 @@
             System.Windows.Forms.Label labelBairro;
             System.Windows.Forms.Label label1CpfCNPJ;
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.textBoxProtocolo = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBoxAtendente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,8 +60,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panelBotoes = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxTecnicoResponsavel = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBoxlLigarAntes = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.maskedTextBoxDataFechamento = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxDataAbertura = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxStatusOS = new System.Windows.Forms.ComboBox();
             this.comboBoxTipoChamado = new System.Windows.Forms.ComboBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.labelIdPessoa = new System.Windows.Forms.Label();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
@@ -76,17 +86,8 @@
             this.textBoxNumCasa = new System.Windows.Forms.TextBox();
             this.textBoxRua = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
-            this.comboBoxStatusOS = new System.Windows.Forms.ComboBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoChamadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.maskedTextBoxDataAbertura = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxDataFechamento = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxlLigarAntes = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxCpf = new System.Windows.Forms.TextBox();
+            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             labelDescricao = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -103,10 +104,11 @@
             labelBairro = new System.Windows.Forms.Label();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDescricao
@@ -249,6 +251,16 @@
             labelBairro.TabIndex = 41;
             labelBairro.Text = "BAIRRO:";
             // 
+            // label1CpfCNPJ
+            // 
+            label1CpfCNPJ.AutoSize = true;
+            label1CpfCNPJ.ForeColor = System.Drawing.Color.Black;
+            label1CpfCNPJ.Location = new System.Drawing.Point(544, 23);
+            label1CpfCNPJ.Name = "label1CpfCNPJ";
+            label1CpfCNPJ.Size = new System.Drawing.Size(68, 13);
+            label1CpfCNPJ.TabIndex = 43;
+            label1CpfCNPJ.Text = "CPF / CNPJ:";
+            // 
             // usuarioDataGridView
             // 
             this.usuarioDataGridView.AllowUserToOrderColumns = true;
@@ -265,12 +277,23 @@
             this.usuarioDataGridView.Size = new System.Drawing.Size(300, 500);
             this.usuarioDataGridView.TabIndex = 10;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeCompleto";
             this.dataGridViewTextBoxColumn3.HeaderText = "NOME";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // buttonBuscar
             // 
@@ -301,17 +324,11 @@
             this.textBoxProtocolo.Size = new System.Drawing.Size(136, 16);
             this.textBoxProtocolo.TabIndex = 1;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(868, 204);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 20);
-            this.textBox4.TabIndex = 12;
-            // 
             // textBoxAtendente
             // 
             this.textBoxAtendente.Location = new System.Drawing.Point(547, 118);
             this.textBoxAtendente.Name = "textBoxAtendente";
+            this.textBoxAtendente.ReadOnly = true;
             this.textBoxAtendente.Size = new System.Drawing.Size(258, 20);
             this.textBoxAtendente.TabIndex = 13;
             // 
@@ -379,6 +396,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBoxTecnicoResponsavel);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.comboBoxlLigarAntes);
             this.panel1.Controls.Add(this.label10);
@@ -390,7 +408,6 @@
             this.panel1.Controls.Add(this.groupBoxDadosPessoais);
             this.panel1.Controls.Add(labelDescricao);
             this.panel1.Controls.Add(this.usuarioDataGridView);
-            this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBoxDescricao);
             this.panel1.Controls.Add(this.textBoxBuscar);
@@ -404,6 +421,82 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1144, 538);
             this.panel1.TabIndex = 1;
+            // 
+            // comboBoxTecnicoResponsavel
+            // 
+            this.comboBoxTecnicoResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
+            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(868, 204);
+            this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
+            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(258, 21);
+            this.comboBoxTecnicoResponsavel.TabIndex = 46;
+            this.comboBoxTecnicoResponsavel.Click += new System.EventHandler(this.comboBoxTecnicoResponsavel_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(613, 189);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "LIGAR ANTES:";
+            // 
+            // comboBoxlLigarAntes
+            // 
+            this.comboBoxlLigarAntes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxlLigarAntes.FormattingEnabled = true;
+            this.comboBoxlLigarAntes.Items.AddRange(new object[] {
+            "SIM",
+            "NAO"});
+            this.comboBoxlLigarAntes.Location = new System.Drawing.Point(616, 204);
+            this.comboBoxlLigarAntes.Name = "comboBoxlLigarAntes";
+            this.comboBoxlLigarAntes.Size = new System.Drawing.Size(78, 21);
+            this.comboBoxlLigarAntes.TabIndex = 44;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(781, 187);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "FECHAMENTO:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(697, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "ABERTURA:";
+            // 
+            // maskedTextBoxDataFechamento
+            // 
+            this.maskedTextBoxDataFechamento.Location = new System.Drawing.Point(784, 204);
+            this.maskedTextBoxDataFechamento.Mask = "00-00-0000";
+            this.maskedTextBoxDataFechamento.Name = "maskedTextBoxDataFechamento";
+            this.maskedTextBoxDataFechamento.ReadOnly = true;
+            this.maskedTextBoxDataFechamento.Size = new System.Drawing.Size(78, 20);
+            this.maskedTextBoxDataFechamento.TabIndex = 41;
+            // 
+            // maskedTextBoxDataAbertura
+            // 
+            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(700, 204);
+            this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
+            this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
+            this.maskedTextBoxDataAbertura.ReadOnly = true;
+            this.maskedTextBoxDataAbertura.Size = new System.Drawing.Size(78, 20);
+            this.maskedTextBoxDataAbertura.TabIndex = 40;
+            // 
+            // comboBoxStatusOS
+            // 
+            this.comboBoxStatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatusOS.FormattingEnabled = true;
+            this.comboBoxStatusOS.Location = new System.Drawing.Point(493, 204);
+            this.comboBoxStatusOS.Name = "comboBoxStatusOS";
+            this.comboBoxStatusOS.Size = new System.Drawing.Size(117, 21);
+            this.comboBoxStatusOS.TabIndex = 39;
             // 
             // comboBoxTipoChamado
             // 
@@ -453,6 +546,16 @@
             this.groupBoxDadosPessoais.Size = new System.Drawing.Size(811, 147);
             this.groupBoxDadosPessoais.TabIndex = 0;
             this.groupBoxDadosPessoais.TabStop = false;
+            // 
+            // textBoxCpf
+            // 
+            this.textBoxCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cpf", true));
+            this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
+            this.textBoxCpf.Name = "textBoxCpf";
+            this.textBoxCpf.ReadOnly = true;
+            this.textBoxCpf.Size = new System.Drawing.Size(258, 20);
+            this.textBoxCpf.TabIndex = 42;
             // 
             // textBoxBairro
             // 
@@ -602,106 +705,13 @@
             this.textBoxDescricao.Size = new System.Drawing.Size(800, 100);
             this.textBoxDescricao.TabIndex = 37;
             // 
-            // comboBoxStatusOS
-            // 
-            this.comboBoxStatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStatusOS.FormattingEnabled = true;
-            this.comboBoxStatusOS.Location = new System.Drawing.Point(493, 204);
-            this.comboBoxStatusOS.Name = "comboBoxStatusOS";
-            this.comboBoxStatusOS.Size = new System.Drawing.Size(117, 21);
-            this.comboBoxStatusOS.TabIndex = 39;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
             // tipoChamadoBindingSource
             // 
             this.tipoChamadoBindingSource.DataSource = typeof(Model.TipoChamado);
             // 
-            // maskedTextBoxDataAbertura
+            // funcionarioBindingSource
             // 
-            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(700, 204);
-            this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
-            this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
-            this.maskedTextBoxDataAbertura.ReadOnly = true;
-            this.maskedTextBoxDataAbertura.Size = new System.Drawing.Size(78, 20);
-            this.maskedTextBoxDataAbertura.TabIndex = 40;
-            // 
-            // maskedTextBoxDataFechamento
-            // 
-            this.maskedTextBoxDataFechamento.Location = new System.Drawing.Point(784, 204);
-            this.maskedTextBoxDataFechamento.Mask = "00-00-0000";
-            this.maskedTextBoxDataFechamento.Name = "maskedTextBoxDataFechamento";
-            this.maskedTextBoxDataFechamento.ReadOnly = true;
-            this.maskedTextBoxDataFechamento.Size = new System.Drawing.Size(78, 20);
-            this.maskedTextBoxDataFechamento.TabIndex = 41;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(697, 187);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 42;
-            this.label5.Text = "ABERTURA:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(781, 187);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "FECHAMENTO:";
-            // 
-            // comboBoxlLigarAntes
-            // 
-            this.comboBoxlLigarAntes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxlLigarAntes.FormattingEnabled = true;
-            this.comboBoxlLigarAntes.Items.AddRange(new object[] {
-            "SIM",
-            "NAO"});
-            this.comboBoxlLigarAntes.Location = new System.Drawing.Point(616, 204);
-            this.comboBoxlLigarAntes.Name = "comboBoxlLigarAntes";
-            this.comboBoxlLigarAntes.Size = new System.Drawing.Size(78, 21);
-            this.comboBoxlLigarAntes.TabIndex = 44;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(613, 189);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 13);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "LIGAR ANTES:";
-            // 
-            // label1CpfCNPJ
-            // 
-            label1CpfCNPJ.AutoSize = true;
-            label1CpfCNPJ.ForeColor = System.Drawing.Color.Black;
-            label1CpfCNPJ.Location = new System.Drawing.Point(544, 23);
-            label1CpfCNPJ.Name = "label1CpfCNPJ";
-            label1CpfCNPJ.Size = new System.Drawing.Size(68, 13);
-            label1CpfCNPJ.TabIndex = 43;
-            label1CpfCNPJ.Text = "CPF / CNPJ:";
-            // 
-            // textBoxCpf
-            // 
-            this.textBoxCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cpf", true));
-            this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
-            this.textBoxCpf.Name = "textBoxCpf";
-            this.textBoxCpf.ReadOnly = true;
-            this.textBoxCpf.Size = new System.Drawing.Size(258, 20);
-            this.textBoxCpf.TabIndex = 42;
+            this.funcionarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // FormOrdemServico
             // 
@@ -719,12 +729,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormOrdemServico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -736,7 +747,6 @@
         private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.TextBox textBoxProtocolo;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBoxAtendente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -774,5 +784,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBoxlLigarAntes;
         private System.Windows.Forms.TextBox textBoxCpf;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxTecnicoResponsavel;
     }
 }

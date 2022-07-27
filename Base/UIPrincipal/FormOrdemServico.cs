@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Infra;
 using System;
 using System.Data;
 using System.IO;
@@ -26,10 +27,15 @@ namespace UIPrincipal
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            //UsuarioBLL usuarioBLL = new UsuarioBLL();
             usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscar.Text);
         }
-
+        private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonBuscar_Click(null, null);
+            }
+        }
         private void FormOrdemServico_Load(object sender, EventArgs e)
         {
             //textBoxProtocolo.Text = DateTime.Now.ToShortDateString().Replace("/","");
@@ -46,14 +52,15 @@ namespace UIPrincipal
             comboBoxStatusOS.DataSource = statusOSBLL.BuscarStatusOS("");
             comboBoxStatusOS.DisplayMember = "Descricao";
             comboBoxStatusOS.ValueMember = "Id";
+
+            textBoxAtendente.Text = UsuarioLogado.NomeCompleto;
         }
 
-        private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        private void comboBoxTecnicoResponsavel_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonBuscar_Click(null,null);
-            }
+            comboBoxTecnicoResponsavel.DataSource = usuarioBLL.BuscarFuncionario("1");
+            comboBoxTecnicoResponsavel.DisplayMember = "NomeCompleto";
+            comboBoxTecnicoResponsavel.ValueMember = "Id";
         }
     }
 }

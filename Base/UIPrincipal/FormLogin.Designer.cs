@@ -38,6 +38,7 @@ namespace UIPrincipal
             this.labelSenha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
+            this.labelUsuarioDesativado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@ namespace UIPrincipal
             // groupBoxLogin
             // 
             this.groupBoxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBoxLogin.Controls.Add(this.labelUsuarioDesativado);
             this.groupBoxLogin.Controls.Add(this.pictureBox1);
             this.groupBoxLogin.Controls.Add(this.buttonLogin);
             this.groupBoxLogin.Controls.Add(this.labelSenha);
@@ -121,6 +123,15 @@ namespace UIPrincipal
             this.groupBoxLogin.Size = new System.Drawing.Size(494, 280);
             this.groupBoxLogin.TabIndex = 7;
             this.groupBoxLogin.TabStop = false;
+            // 
+            // labelUsuarioDesativado
+            // 
+            this.labelUsuarioDesativado.AutoSize = true;
+            this.labelUsuarioDesativado.ForeColor = System.Drawing.Color.Red;
+            this.labelUsuarioDesativado.Location = new System.Drawing.Point(251, 88);
+            this.labelUsuarioDesativado.Name = "labelUsuarioDesativado";
+            this.labelUsuarioDesativado.Size = new System.Drawing.Size(0, 13);
+            this.labelUsuarioDesativado.TabIndex = 7;
             // 
             // FormLogin
             // 
@@ -153,5 +164,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBoxLogin;
+        private System.Windows.Forms.Label labelUsuarioDesativado;
     }
 }

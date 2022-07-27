@@ -21,11 +21,6 @@ namespace BLL
         {
             OrdemServicoDAL ordemServicoDAL = new OrdemServicoDAL();
             return ordemServicoDAL.BuscarOrdemServico(_filtro);
-        /*public void ExcluirOS(int _id)
-        {
-            OrdemServicoDAL ordemServicoDAL = new OrdemServicoDAL();
-            ordemServicoDAL.ExcluirOrdemServico(_id);
-        }*/
         }
     }
 }

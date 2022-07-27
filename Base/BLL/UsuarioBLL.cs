@@ -37,5 +37,10 @@ namespace BLL
             PlanoDAL planoDAL = new PlanoDAL();
             return planoDAL.BuscarPlano(_id);
         }
+        public DataTable BuscarFuncionario(string _filtro)
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarFuncionario(_filtro);
+        }
     }
 }

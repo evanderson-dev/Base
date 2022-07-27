@@ -29,23 +29,38 @@ namespace UIPrincipal
             {
                 string nome = ((DataRowView)usuarioBindingSource.Current).Row["NomeUsuario"].ToString();
                 string senha = ((DataRowView)usuarioBindingSource.Current).Row["Senha"].ToString();
-                //NAO ALTERAR ABAIXO
-                if ((nome == textBoxUsuario.Text) && (senha == textBoxSenha.Text))
+                string ativo = ((DataRowView)usuarioBindingSource.Current).Row["Ativo"].ToString();
+
+                if ((nome == textBoxUsuario.Text) && (senha == textBoxSenha.Text) && ativo == "True")
                 {
-                    Constante.UsuarioLogado = nome;
+                    UsuarioLogado.Id = ((DataRowView)usuarioBindingSource.Current).Row["Id"].ToString();
+                    UsuarioLogado.NomeCompleto = ((DataRowView)usuarioBindingSource.Current).Row["NomeCompleto"].ToString();
+                    UsuarioLogado.NomeUsuario = nome;
                     Logou = true;
                     Close();
                 }
+                else if (ativo == "False")
+                {
+                    labelUsuarioDesativado.Text = "USUARIO DESATIVADO!";
+                    textBoxSenha.Text = "";
+                    textBoxUsuario.Focus();
+                }                
+                else if(senha != textBoxSenha.Text)
+                {
+                    labelUsuarioDesativado.Text = "SENHA INCORRETA!";
+                    textBoxSenha.Text = "";
+                    textBoxSenha.Focus();
+                }                
                 else
                 {
-                    MessageBox.Show("USUARIO OU SENHA INCORRETO!");
+                    labelUsuarioDesativado.Text = "USUARIO OU SENHA INCORRETO!";
                     textBoxSenha.Text = "";
                     textBoxSenha.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("USUARIO OU SENHA INCORRETO!");
+                labelUsuarioDesativado.Text = "USUARIO OU SENHA INCORRETO!";
                 textBoxSenha.Text = "";
                 textBoxSenha.Focus();
             }

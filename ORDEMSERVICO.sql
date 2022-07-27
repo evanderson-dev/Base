@@ -132,8 +132,8 @@ INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua,
 	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3, '')
 GO
 
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES ('admin', 'admin', 'USUARIO TESTE', '02227855153', 1, 1, 2, 1, '')
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('admin', 'admin', 'USUARIO TESTE', '01-01-2000', '02227855153', 1, 0, 2, 1, '', 1)
 GO
 
 CREATE PROCEDURE SP_InserirUsuario
@@ -252,7 +252,7 @@ EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTE
 GO
 --'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
 --'C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
-EXEC SP_InserirUsuario 0, 1, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
+EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
 '05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
 'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
@@ -501,7 +501,22 @@ AS
 	WHERE NomeCompleto LIKE '%' + @filtro + '%'
 	OR Cpf LIKE '%'+ @filtro +'%' OR NomeUsuario LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
-
+--###################################################################################
+CREATE PROC SP_BuscarFuncionario
+	@Filtro VARCHAR(250) = ''
+AS
+	SELECT
+	Pessoa.Id,
+	Ativo,
+	NomeUsuario,
+	NomeCompleto,
+	Funcionario,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Funcionario LIKE '%' + @filtro + '%' AND Ativo = 1
+GO
+--EXEC SP_BuscarFuncionario '0'
+--####################################################################################
 
 CREATE PROC SP_ExcluirUsuario
 	@Id INT
@@ -518,5 +533,6 @@ ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
 
 SELECT * FROM OrdemServico
+SELECT * FROM Pessoa
 GO
 */
