@@ -130,6 +130,7 @@
       <DependentUpon>FormTipoChamado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Model.GrupoUsuario.datasource" />
+    <None Include="Properties\DataSources\Model.OrdemServico.datasource" />
     <None Include="Properties\DataSources\Model.Permissao.datasource" />
     <None Include="Properties\DataSources\Model.Plano.datasource" />
     <None Include="Properties\DataSources\Model.StatusOS.datasource" />

@@ -86,6 +86,11 @@ namespace DAL
                     Value = _usuario.NumCasa
                 });
 
+                cmd.Parameters.Add(new SqlParameter("@Bairro", SqlDbType.VarChar)
+                {
+                    Value = _usuario.Bairro
+                });
+
                 cmd.Parameters.Add(new SqlParameter("@EstadoCivil", SqlDbType.VarChar)
                 {
                     Value = _usuario.EstadoCivil
@@ -433,6 +438,10 @@ namespace DAL
                 SqlParameter numCasa = new SqlParameter("@NumCasa", SqlDbType.VarChar);
                 numCasa.Value = _usuario.NumCasa;
                 cmd.Parameters.Add(numCasa);
+
+                SqlParameter bairro = new SqlParameter("@Bairro", SqlDbType.VarChar);
+                bairro.Value = _usuario.Bairro;
+                cmd.Parameters.Add(bairro);
 
                 SqlParameter estadoCivil = new SqlParameter("@EstadoCivil", SqlDbType.VarChar);
                 estadoCivil.Value = _usuario.EstadoCivil;

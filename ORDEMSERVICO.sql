@@ -98,6 +98,7 @@ CREATE TABLE Pessoa
 	Cep VARCHAR(10),
 	Rua VARCHAR(150),---------------------FEITO
 	NumCasa VARCHAR(10),------------------FEITO
+	Bairro VARCHAR(150),------------------ADICIONADO RECENTE
 	EstadoCivil VARCHAR(10),--------------FEITO
 	Nacionalidade VARCHAR(10),------------FEITO
 	Email VARCHAR(30),--------------------FEITO
@@ -149,6 +150,7 @@ CREATE PROCEDURE SP_InserirUsuario
 	@Cep VARCHAR(10),
 	@Rua VARCHAR(150),
 	@NumCasa VARCHAR(10),
+	@Bairro VARCHAR(150),
 	@EstadoCivil VARCHAR(10),
 	@Nacionalidade VARCHAR(10),
 	@Email VARCHAR(30),
@@ -185,6 +187,7 @@ AS
 	Cep,
 	Rua,
 	NumCasa,
+	Bairro,
 	EstadoCivil,
 	Nacionalidade,
 	Email,
@@ -219,6 +222,7 @@ AS
 	@Cep,
 	@Rua,
 	@NumCasa,
+	@Bairro,
 	@EstadoCivil,
 	@Nacionalidade,
 	@Email,
@@ -246,33 +250,18 @@ AS
 GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
-'05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
+'05-01-1988', '77827-150', 'RUA TAL', '543', 'CENTRO', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', '', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
 --'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
 --'C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
 EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
-'05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
+'05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'CENTRO', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
 'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
 GO
 
---TABELA "GESTÃO DE O.S"
-CREATE TABLE OrdemServico
-	(
-	Protocolo INT PRIMARY KEY IDENTITY(1,1),
-	Id_TipoChamado INT,
-	Descricao VARCHAR(1000),
-	DataAbertura DATETIME NULL,
-	DataDeFechamento DATETIME NULL,
-	TecnicoResponsavel VARCHAR(150),
-	Id_Funcionario INT,
-	Id_Cliente INT,
-	Id_Plano INT,
-	Id_Status INT
-)
-GO
 --TABELA TipoChamado
 CREATE TABLE TipoChamado
 	(
@@ -325,9 +314,6 @@ INSERT INTO TipoChamado(Descricao)
 	('MUDANÇA DE ENDEREÇO')
 GO
 
-INSERT INTO OrdemServico(Descricao, DataAbertura, DataDeFechamento, Id_TipoChamado, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
-	VALUES ('Cliente sem conexão, ONU apresentando perca de sinal.', NULL, NULL, 2, NULL, 1, 3, 1, 1)
-GO
 --DROP PROC SP_AlterarUsuario
 CREATE PROC SP_AlterarUsuario
 	@Id INT, --OUTPUT,
@@ -341,6 +327,7 @@ CREATE PROC SP_AlterarUsuario
 	@DataNascimento DATETIME,
 	@Cep VARCHAR(10),
 	@Rua VARCHAR(150),
+	@Bairro VARCHAR(150),
 	@NumCasa VARCHAR(10),
 	@EstadoCivil VARCHAR(10),
 	@Nacionalidade VARCHAR(10),
@@ -378,6 +365,7 @@ AS
 	Cep = @Cep,
 	Rua = @Rua,
 	NumCasa = @NumCasa,
+	Bairro = @Bairro,
 	EstadoCivil = @EstadoCivil,
 	Nacionalidade = @Nacionalidade,
 	Email = @Email,
@@ -405,8 +393,8 @@ AS
 GO
 
 --SELECT * FROM Plano
-SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, DataAdmissao, Foto FROM Pessoa
-GO
+--SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, DataAdmissao, Foto FROM Pessoa
+--GO
 --TABELA "STATUS DA O.S"
 CREATE TABLE StatusOS
 	(
@@ -472,6 +460,7 @@ AS
 	Cep,
 	Rua,
 	NumCasa,
+	Bairro,
 	EstadoCivil,
 	Nacionalidade,
 	Email,
@@ -524,15 +513,65 @@ AS
 	DELETE FROM Pessoa WHERE Id = @Id
 GO
 
-/*
-DECLARE @Filtro VARCHAR(50) = '50'
-
-IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
-	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
-ELSE
-	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-
-SELECT * FROM OrdemServico
-SELECT * FROM Pessoa
+--TABELA "GESTÃO DE O.S"
+CREATE TABLE OrdemServico
+	(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Protocolo VARCHAR (20),
+	Id_Cliente INT,
+	TipoChamado VARCHAR(50),
+	Descricao VARCHAR(1000),
+	DataAbertura DATETIME NULL,
+	DataPrazo DATETIME NULL,
+	DataDeFechamento DATETIME NULL,
+	TecnicoResponsavel VARCHAR(150),
+	Atendente VARCHAR(150),
+	EstatusOS VARCHAR(20),
+	LigarAntes VARCHAR(5)
+)
 GO
-*/
+
+CREATE PROCEDURE SP_AbrirOrdemServico
+	@Id INT OUTPUT,
+	@Protocolo VARCHAR (20),
+	@Id_Cliente INT,
+	@TipoChamado VARCHAR(50),
+	@Descricao VARCHAR(1000),
+	@DataAbertura DATETIME NULL,
+	@DataPrazo DATETIME NULL,
+	@TecnicoResponsavel VARCHAR(150),
+	@Atendente VARCHAR(150),
+	@EstatusOS VARCHAR(20),
+	@LigarAntes VARCHAR(5)
+AS
+	INSERT INTO OrdemServico(
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes
+	)
+		VALUES(
+		@Protocolo,
+		@Id_Cliente,
+		@TipoChamado,
+		@Descricao,
+		@DataAbertura,
+		@DataPrazo,
+		@TecnicoResponsavel,
+		@Atendente,
+		@EstatusOS,
+		@LigarAntes
+		)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+
+EXEC SP_AbrirOrdemServico 0, 123456789, 1, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
+EXEC SP_AbrirOrdemServico 0, 987654321, 2, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+SELECT * FROM OrdemServico
+GO

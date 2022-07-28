@@ -1,18 +1,20 @@
 ﻿using BLL;
 using Infra;
+using Model;
 using System;
-using System.Data;
-using System.IO;
 using System.Windows.Forms;
 
 namespace UIPrincipal
 {
     public partial class FormOrdemServico : Form
     {
+        private bool permitirSalvar = false;
         private bool inserindoNovo;
+
         UsuarioBLL usuarioBLL = new UsuarioBLL();
         TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
         StatusOSBLL statusOSBLL = new StatusOSBLL();
+        OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         public FormOrdemServico()
         {
             InitializeComponent();
@@ -36,6 +38,12 @@ namespace UIPrincipal
                 buttonBuscar_Click(null, null);
             }
         }
+        private void comboBoxTecnicoResponsavel_Click(object sender, EventArgs e)
+        {
+            comboBoxTecnicoResponsavel.DataSource = usuarioBLL.BuscarFuncionario("1");
+            comboBoxTecnicoResponsavel.DisplayMember = "NomeCompleto";
+            comboBoxTecnicoResponsavel.ValueMember = "Id";
+        }
         private void FormOrdemServico_Load(object sender, EventArgs e)
         {
             //textBoxProtocolo.Text = DateTime.Now.ToShortDateString().Replace("/","");
@@ -54,13 +62,95 @@ namespace UIPrincipal
             comboBoxStatusOS.ValueMember = "Id";
 
             textBoxAtendente.Text = UsuarioLogado.NomeCompleto;
+
+            comboBoxTipoChamado.Enabled = false;
+            comboBoxlLigarAntes.Enabled = false;
+            comboBoxStatusOS.Enabled = false;
+            comboBoxTecnicoResponsavel.Enabled = false;
+            textBoxDescricao.Enabled = false;
+        }
+                
+        private void buttonNovo_Click(object sender, EventArgs e)
+        {
+            inserindoNovo = true;
+            permitirSalvar = true;
+            comboBoxTipoChamado.Enabled = true;
+            comboBoxlLigarAntes.Enabled = true;
+            comboBoxStatusOS.Enabled = true;
+            comboBoxTecnicoResponsavel.Enabled = true;
+            textBoxDescricao.Enabled = true;
+            maskedTextBoxPrazo.ReadOnly = false;
+            DateTime dateTime = DateTime.Now;
+            maskedTextBoxPrazo.Text = Convert.ToString(dateTime.AddDays(2));
         }
 
-        private void comboBoxTecnicoResponsavel_Click(object sender, EventArgs e)
+        private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            comboBoxTecnicoResponsavel.DataSource = usuarioBLL.BuscarFuncionario("1");
-            comboBoxTecnicoResponsavel.DisplayMember = "NomeCompleto";
-            comboBoxTecnicoResponsavel.ValueMember = "Id";
+            inserindoNovo = false;
+            permitirSalvar = false;
+
+            comboBoxTipoChamado.Enabled = false;
+            comboBoxlLigarAntes.Enabled = false;
+            comboBoxStatusOS.Enabled = false;
+            comboBoxTecnicoResponsavel.Enabled = false;
+            textBoxDescricao.Enabled = false;
+
+            comboBoxTipoChamado.Text = null;
+            comboBoxlLigarAntes.Text = null;
+            comboBoxStatusOS.Text = null;
+            comboBoxTecnicoResponsavel.Text = null;
+            textBoxDescricao.Text = null;
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            if (permitirSalvar)
+            {
+                try
+                {
+                    usuarioBindingSource.EndEdit();
+                    OrdemServico ordemServico = new OrdemServico();
+
+                    ordemServico.Id = Convert.ToInt32(labelIdPessoa.Text);
+                    ordemServico.Protocolo = textBoxProtocolo.Text;
+                    ordemServico.Id_Cliente = Convert.ToInt32(labelIdPessoa.Text);
+                    ordemServico.TipoChamado = comboBoxTipoChamado.Text;
+                    ordemServico.Descricao = textBoxDescricao.Text;
+                    ordemServico.DataAbertura = maskedTextBoxDataAbertura.Text;
+                    ordemServico.DataPrazo = maskedTextBoxPrazo.Text;
+                    ordemServico.TecnicoResponsavel = comboBoxTecnicoResponsavel.Text;
+                    ordemServico.Atendente = textBoxAtendente.Text;
+                    ordemServico.EstatusOS = comboBoxStatusOS.Text;
+                    ordemServico.LigarAntes = comboBoxlLigarAntes.Text;
+                                        
+                    if (inserindoNovo)
+                    {
+                        ordemServicoBLL.AbrirOS(ordemServico);
+                    }
+                    else
+                    {
+                        ordemServicoBLL.AlterarOS(ordemServico);
+                    }
+                    textBoxDescricao.ReadOnly = true;
+                    usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscar.Text);
+                    permitirSalvar = false;
+
+                    MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("OCORREU UM ERRO" + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("SELECIONE A OPÇÃO NOVO OU ALTERAR ANTES DE SALVAR!");
+            }
         }
     }
 }

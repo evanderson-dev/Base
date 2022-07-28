@@ -35,7 +35,6 @@
             this.tipoChamadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.labelId = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.labelCadastroTipoChamado = new System.Windows.Forms.Label();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -111,17 +111,6 @@
             this.buttonCancelar.Text = "&CANCELAR";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.Location = new System.Drawing.Point(190, 4);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(85, 37);
-            this.buttonSalvar.TabIndex = 7;
-            this.buttonSalvar.Text = "&SALVAR";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonSair
             // 
@@ -235,6 +224,17 @@
             this.labelCadastroTipoChamado.Text = "CADASTRO DE TIPO DE CHAMADO";
             this.labelCadastroTipoChamado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(190, 4);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(85, 37);
+            this.buttonSalvar.TabIndex = 7;
+            this.buttonSalvar.Text = "&SALVAR";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
             // FormTipoChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,12 +277,12 @@
         private System.Windows.Forms.BindingSource tipoChamadoBindingSource;
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label labelCadastroTipoChamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button buttonSalvar;
     }
 }

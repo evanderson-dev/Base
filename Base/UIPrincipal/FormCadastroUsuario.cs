@@ -83,6 +83,7 @@ namespace UIPrincipal
             usuario.Cep = maskedTextBoxCep.Text;
             usuario.Rua = textBoxRua.Text;
             usuario.NumCasa = textBoxNumCasa.Text;
+            usuario.Bairro = textBoxBairro.Text;
             usuario.EstadoCivil = textBoxEstadoCivil.Text;
             usuario.Nacionalidade = textBoxNacionalidade.Text;
             usuario.Email = textBoxEmail.Text;

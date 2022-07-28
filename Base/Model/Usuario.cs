@@ -14,6 +14,7 @@
         private string cep;
         private string rua;
         private string numCasa;
+        private string bairro;
         private string estadoCivil;
         private string nacionalidade;
         private string email;
@@ -98,6 +99,11 @@
         {
             get { return numCasa; }
             set { numCasa = value; }
+        }
+        public string Bairro
+        {
+            get { return bairro; }
+            set { bairro = value; }
         }
         public string EstadoCivil
         {

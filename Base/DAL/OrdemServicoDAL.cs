@@ -23,8 +23,60 @@ namespace DAL
                     Value = _ordemServico.Id
                 });
 
+                cmd.Parameters.Add(new SqlParameter("@Protocolo", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.Protocolo
+                });
 
-                /////////////////////////////////////////////////////////////
+                cmd.Parameters.Add(new SqlParameter("@Id_Cliente", SqlDbType.Int)
+                {
+                    Value = _ordemServico.Id_Cliente
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@TipoChamado", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.TipoChamado
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Descricao", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.Descricao
+                });
+
+                if (_ordemServico.DataAbertura.ToString().Trim().Length > 6)
+                    cmd.Parameters.Add(new SqlParameter("@DataAbertura", SqlDbType.DateTime)
+                    {
+                        Value = _ordemServico.DataAbertura
+                    });
+
+                if (_ordemServico.DataPrazo.ToString().Trim().Length > 6)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@DataPrazo", SqlDbType.DateTime)
+                    {
+                        Value = _ordemServico.DataPrazo
+                    });
+                }
+
+                cmd.Parameters.Add(new SqlParameter("@TecnicoResponsavel", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.TecnicoResponsavel
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@Atendente", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.Atendente
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@EstatusOS", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.EstatusOS
+                });
+
+                cmd.Parameters.Add(new SqlParameter("@LigarAntes", SqlDbType.VarChar)
+                {
+                    Value = _ordemServico.LigarAntes
+                });
+
                 cn.Open();
                 _ordemServico.Id = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -94,9 +146,9 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarOrdemServico";
 
-                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
-                pid.Value = _ordemServico.Id;
-                cmd.Parameters.Add(pid);
+                SqlParameter protocolo = new SqlParameter("@Protocolo", SqlDbType.VarChar);
+                protocolo.Value = _ordemServico.Protocolo;
+                cmd.Parameters.Add(protocolo);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();

@@ -5,7 +5,7 @@ using System.Data;
 
 namespace BLL
 {
-    internal class OrdemServicoBLL
+    public class OrdemServicoBLL
     {
         public OrdemServico AbrirOS(OrdemServico _ordemServico)
         {

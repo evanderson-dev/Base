@@ -16,7 +16,7 @@ namespace UIPrincipal
         }
         private void buttonSair_Click(object sender, EventArgs e)
         {
-            Application.Exit();//FORÇA O FECHAMENTO DE TODO O SISTEMA
+            Close();//FORÇA O FECHAMENTO DE TODO O SISTEMA
         }
         private void TelaInicial()
         {

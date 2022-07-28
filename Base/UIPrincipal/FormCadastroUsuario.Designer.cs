@@ -60,6 +60,7 @@ namespace UIPrincipal
             System.Windows.Forms.Label labelInicioContrato;
             System.Windows.Forms.Label labelFimContrato;
             System.Windows.Forms.Label labelObservacao;
+            System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuario));
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
@@ -102,6 +103,7 @@ namespace UIPrincipal
             this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxPlanos = new System.Windows.Forms.ComboBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.buttonAddFoto = new System.Windows.Forms.Button();
             this.labelIdPessoa = new System.Windows.Forms.Label();
             this.textBoxObservacao = new System.Windows.Forms.TextBox();
@@ -143,6 +145,7 @@ namespace UIPrincipal
             labelInicioContrato = new System.Windows.Forms.Label();
             labelFimContrato = new System.Windows.Forms.Label();
             labelObservacao = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.groupBoxFuncionario.SuspendLayout();
             this.groupBoxNivelFuncionario.SuspendLayout();
@@ -179,7 +182,7 @@ namespace UIPrincipal
             // 
             label1.AutoSize = true;
             label1.ForeColor = System.Drawing.Color.Black;
-            label1.Location = new System.Drawing.Point(74, 23);
+            label1.Location = new System.Drawing.Point(67, 23);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(104, 13);
             label1.TabIndex = 5;
@@ -259,7 +262,7 @@ namespace UIPrincipal
             // 
             labelRua.AutoSize = true;
             labelRua.ForeColor = System.Drawing.Color.Black;
-            labelRua.Location = new System.Drawing.Point(74, 101);
+            labelRua.Location = new System.Drawing.Point(67, 101);
             labelRua.Name = "labelRua";
             labelRua.Size = new System.Drawing.Size(33, 13);
             labelRua.TabIndex = 32;
@@ -269,7 +272,7 @@ namespace UIPrincipal
             // 
             labelNumCasa.AutoSize = true;
             labelNumCasa.ForeColor = System.Drawing.Color.Black;
-            labelNumCasa.Location = new System.Drawing.Point(285, 101);
+            labelNumCasa.Location = new System.Drawing.Point(218, 101);
             labelNumCasa.Name = "labelNumCasa";
             labelNumCasa.Size = new System.Drawing.Size(22, 13);
             labelNumCasa.TabIndex = 25;
@@ -319,7 +322,7 @@ namespace UIPrincipal
             // 
             labelCidade.AutoSize = true;
             labelCidade.ForeColor = System.Drawing.Color.Black;
-            labelCidade.Location = new System.Drawing.Point(327, 101);
+            labelCidade.Location = new System.Drawing.Point(372, 101);
             labelCidade.Name = "labelCidade";
             labelCidade.Size = new System.Drawing.Size(50, 13);
             labelCidade.TabIndex = 24;
@@ -329,7 +332,7 @@ namespace UIPrincipal
             // 
             labelUf.AutoSize = true;
             labelUf.ForeColor = System.Drawing.Color.Black;
-            labelUf.Location = new System.Drawing.Point(470, 101);
+            labelUf.Location = new System.Drawing.Point(478, 101);
             labelUf.Name = "labelUf";
             labelUf.Size = new System.Drawing.Size(24, 13);
             labelUf.TabIndex = 17;
@@ -455,6 +458,16 @@ namespace UIPrincipal
             labelObservacao.TabIndex = 38;
             labelObservacao.Text = "OBSERVAÇÃO:";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = System.Drawing.Color.Black;
+            label5.Location = new System.Drawing.Point(260, 101);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(51, 13);
+            label5.TabIndex = 42;
+            label5.Text = "BAIRRO:";
+            // 
             // buttonSalvar
             // 
             this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -524,9 +537,9 @@ namespace UIPrincipal
             // 
             this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNomeCompleto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeCompleto", true));
-            this.textBoxNomeCompleto.Location = new System.Drawing.Point(77, 39);
+            this.textBoxNomeCompleto.Location = new System.Drawing.Point(70, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
-            this.textBoxNomeCompleto.Size = new System.Drawing.Size(345, 20);
+            this.textBoxNomeCompleto.Size = new System.Drawing.Size(352, 20);
             this.textBoxNomeCompleto.TabIndex = 0;
             this.textBoxNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNomeCompleto_KeyPress);
             // 
@@ -590,15 +603,15 @@ namespace UIPrincipal
             // 
             this.textBoxRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rua", true));
-            this.textBoxRua.Location = new System.Drawing.Point(77, 117);
+            this.textBoxRua.Location = new System.Drawing.Point(70, 117);
             this.textBoxRua.Name = "textBoxRua";
-            this.textBoxRua.Size = new System.Drawing.Size(207, 20);
+            this.textBoxRua.Size = new System.Drawing.Size(145, 20);
             this.textBoxRua.TabIndex = 8;
             // 
             // textBoxNumCasa
             // 
             this.textBoxNumCasa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumCasa", true));
-            this.textBoxNumCasa.Location = new System.Drawing.Point(288, 117);
+            this.textBoxNumCasa.Location = new System.Drawing.Point(221, 117);
             this.textBoxNumCasa.Name = "textBoxNumCasa";
             this.textBoxNumCasa.Size = new System.Drawing.Size(36, 20);
             this.textBoxNumCasa.TabIndex = 9;
@@ -607,9 +620,9 @@ namespace UIPrincipal
             // 
             this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cidade", true));
-            this.textBoxCidade.Location = new System.Drawing.Point(330, 117);
+            this.textBoxCidade.Location = new System.Drawing.Point(375, 117);
             this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(137, 20);
+            this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxCidade.TabIndex = 10;
             this.textBoxCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCidade_KeyPress);
             // 
@@ -617,9 +630,9 @@ namespace UIPrincipal
             // 
             this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxUf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Uf", true));
-            this.textBoxUf.Location = new System.Drawing.Point(473, 117);
+            this.textBoxUf.Location = new System.Drawing.Point(481, 117);
             this.textBoxUf.Name = "textBoxUf";
-            this.textBoxUf.Size = new System.Drawing.Size(33, 20);
+            this.textBoxUf.Size = new System.Drawing.Size(25, 20);
             this.textBoxUf.TabIndex = 11;
             this.textBoxUf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUf_KeyPress);
             // 
@@ -874,6 +887,8 @@ namespace UIPrincipal
             // groupBoxDadosPessoais
             // 
             this.groupBoxDadosPessoais.BackColor = System.Drawing.Color.White;
+            this.groupBoxDadosPessoais.Controls.Add(label5);
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxBairro);
             this.groupBoxDadosPessoais.Controls.Add(this.buttonAddFoto);
             this.groupBoxDadosPessoais.Controls.Add(this.labelIdPessoa);
             this.groupBoxDadosPessoais.Controls.Add(labelObservacao);
@@ -921,6 +936,15 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
             // 
+            // textBoxBairro
+            // 
+            this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rua", true));
+            this.textBoxBairro.Location = new System.Drawing.Point(263, 117);
+            this.textBoxBairro.Name = "textBoxBairro";
+            this.textBoxBairro.Size = new System.Drawing.Size(106, 20);
+            this.textBoxBairro.TabIndex = 41;
+            // 
             // buttonAddFoto
             // 
             this.buttonAddFoto.Location = new System.Drawing.Point(652, 165);
@@ -937,7 +961,7 @@ namespace UIPrincipal
             this.labelIdPessoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
             this.labelIdPessoa.Location = new System.Drawing.Point(6, 39);
             this.labelIdPessoa.Name = "labelIdPessoa";
-            this.labelIdPessoa.Size = new System.Drawing.Size(65, 20);
+            this.labelIdPessoa.Size = new System.Drawing.Size(58, 20);
             this.labelIdPessoa.TabIndex = 39;
             this.labelIdPessoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -991,7 +1015,7 @@ namespace UIPrincipal
             this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 117);
             this.maskedTextBoxCep.Mask = "00000-000";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
-            this.maskedTextBoxCep.Size = new System.Drawing.Size(65, 20);
+            this.maskedTextBoxCep.Size = new System.Drawing.Size(58, 20);
             this.maskedTextBoxCep.TabIndex = 6;
             // 
             // labelIdPlano
@@ -1117,6 +1141,7 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelId_Permissao;
         private System.Windows.Forms.Button buttonAddFoto;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
+        private System.Windows.Forms.TextBox textBoxBairro;
     }
 }
 
