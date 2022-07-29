@@ -109,7 +109,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cn;
-                da.SelectCommand.CommandText = "SP_BuscarOrdemServico";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandText = "SP_BuscarOS";//PROCEDURE DO BANCO SQL
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
 
                 SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);

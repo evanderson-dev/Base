@@ -129,8 +129,8 @@ CREATE TABLE Pessoa
 )
 GO
 
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3, '')
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
 GO
 
 INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
@@ -571,7 +571,90 @@ AS
 	SET @Id = (SELECT @@IDENTITY)
 GO
 
+CREATE PROC SP_BuscarOS
+	@Filtro VARCHAR(50) = ''
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	Pessoa.NomeCompleto,
+	Pessoa.Cpf,
+	Pessoa.Cep,
+	Pessoa.Rua,
+	Pessoa.NumCasa,
+	Pessoa.Bairro,
+	Pessoa.Email,
+	Pessoa.Telefone,
+	Pessoa.CelularUm,
+	Pessoa.CelularDois,
+	Pessoa.Cidade,
+	Pessoa.Uf
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE Protocolo LIKE '%' + @filtro + '%'
+GO
+--EXEC SP_BuscarOS '123456789'
+--SELECT * FROM OrdemServico
+
+/*
+	Pessoa.NomeCompleto,
+	Pessoa.Cpf,
+	Pessoa.Rg,
+	Pessoa.OrgaoExpeditor,
+	Pessoa.DataNascimento,
+	Pessoa.Cep,
+	Pessoa.Rua,
+	Pessoa.NumCasa,
+	Pessoa.Bairro,
+	Pessoa.Email,
+	Pessoa.Telefone,
+	Pessoa.CelularUm,
+	Pessoa.CelularDois,
+	Pessoa.Cidade,
+	Pessoa.Uf
+
+///////////////////////////////////// ESSE ESTA FUNCIONANDO
+CREATE PROC SP_BuscarOS
+	@Filtro VARCHAR(50) = ''
+AS
+	SELECT
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes
+	FROM OrdemServico
+	WHERE Protocolo LIKE '%' + @filtro + '%'
+GO
+////////////////////////////////////
+
+
+
+
+CREATE PROC SP_BuscarPlano
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
+GO*/
+
 EXEC SP_AbrirOrdemServico 0, 123456789, 1, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
 EXEC SP_AbrirOrdemServico 0, 987654321, 2, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
-SELECT * FROM OrdemServico
+SELECT * FROM Pessoa
 GO

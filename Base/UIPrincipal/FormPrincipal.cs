@@ -68,5 +68,11 @@ namespace UIPrincipal
                 e.Cancel = true;
             }*/
         }
+
+        private void buttonBuscarOS_Click(object sender, EventArgs e)
+        {
+            FormConsultaOS formConsultaOS = new FormConsultaOS();
+            formConsultaOS.ShowDialog();
+        }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="FormCadastroPlano.designer.cs">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaOS.Designer.cs">
+      <DependentUpon>FormConsultaOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultaPlano.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="FormCadastroPlano.resx">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaOS.resx">
+      <DependentUpon>FormConsultaOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaPlano.resx">
       <DependentUpon>FormConsultaPlano.cs</DependentUpon>

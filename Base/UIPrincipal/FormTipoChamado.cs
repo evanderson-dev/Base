@@ -37,7 +37,6 @@ namespace UIPrincipal
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            //TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
             tipoChamadoBindingSource.DataSource = tipoChamadoBLL.BuscarTipoChamado(textBoxBuscar.Text);
         }
 
@@ -46,7 +45,6 @@ namespace UIPrincipal
             if (MessageBox.Show("DESEJA EXCLUIR O TIPO DE CHAMADO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            //TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
             int id;
             id = Convert.ToInt32(((DataRowView)tipoChamadoBindingSource.Current).Row["Id"]);
             
@@ -86,7 +84,6 @@ namespace UIPrincipal
                 try
                 {
                     tipoChamadoBindingSource.EndEdit();
-                    //TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
                     TipoChamado tipoChamado = new TipoChamado();
 
                     tipoChamado.Id = Convert.ToInt32(textBoxId.Text);

@@ -136,11 +136,9 @@ namespace UIPrincipal
                     {
                         ordemServicoBLL.AlterarOS(ordemServico);
                     }
-                    textBoxDescricao.ReadOnly = true;
-                    usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscar.Text);
-                    permitirSalvar = false;
 
-                    MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
+                    MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Close();
                 }
                 catch (Exception ex)
                 {
@@ -149,7 +147,7 @@ namespace UIPrincipal
             }
             else
             {
-                MessageBox.Show("SELECIONE A OPÇÃO NOVO OU ALTERAR ANTES DE SALVAR!");
+                MessageBox.Show("DADOS INSUFICIENTES!","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
     }
