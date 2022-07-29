@@ -597,32 +597,18 @@ AS
 	Pessoa.CelularUm,
 	Pessoa.CelularDois,
 	Pessoa.Cidade,
-	Pessoa.Uf
+	Pessoa.Uf,
+	Pessoa.Id_Plano
 	FROM OrdemServico
 	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
 	WHERE Protocolo LIKE '%' + @filtro + '%'
 GO
 --EXEC SP_BuscarOS '123456789'
 --SELECT * FROM OrdemServico
+--SELECT * FROM Pessoa
+--SELECT * FROM Plano
 
-/*
-	Pessoa.NomeCompleto,
-	Pessoa.Cpf,
-	Pessoa.Rg,
-	Pessoa.OrgaoExpeditor,
-	Pessoa.DataNascimento,
-	Pessoa.Cep,
-	Pessoa.Rua,
-	Pessoa.NumCasa,
-	Pessoa.Bairro,
-	Pessoa.Email,
-	Pessoa.Telefone,
-	Pessoa.CelularUm,
-	Pessoa.CelularDois,
-	Pessoa.Cidade,
-	Pessoa.Uf
-
-///////////////////////////////////// ESSE ESTA FUNCIONANDO
+/*///////////////////////////////////// ESSE ESTA FUNCIONANDO
 CREATE PROC SP_BuscarOS
 	@Filtro VARCHAR(50) = ''
 AS
@@ -640,10 +626,8 @@ AS
 	FROM OrdemServico
 	WHERE Protocolo LIKE '%' + @filtro + '%'
 GO
+
 ////////////////////////////////////
-
-
-
 
 CREATE PROC SP_BuscarPlano
 	@Filtro VARCHAR(50)

@@ -1,13 +1,6 @@
 ﻿using BLL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -18,6 +11,7 @@ namespace UIPrincipal
         OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
         StatusOSBLL statusOSBLL = new StatusOSBLL();
+        PlanoBLL planoBLL = new PlanoBLL();
         public FormConsultaOS()
         {
             InitializeComponent();
@@ -66,6 +60,10 @@ namespace UIPrincipal
             comboBoxTecnicoResponsavel.DisplayMember = "NomeCompleto";
             comboBoxTecnicoResponsavel.ValueMember = "Id";
             comboBoxTecnicoResponsavel.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["TecnicoResponsavel"];
+
+            string id_Plano = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["Id_Plano"]);
+            planoBindingSource.DataSource = planoBLL.BuscarPlano(id_Plano);
+            textBoxPlano.Text = (string)(((DataRowView)planoBindingSource.Current).Row["Descricao"]);
         }
 
         private void textBoxBuscarOS_KeyDown(object sender, KeyEventArgs e)

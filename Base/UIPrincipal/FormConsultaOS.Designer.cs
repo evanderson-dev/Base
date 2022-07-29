@@ -49,6 +49,7 @@
             this.maskedTextBoxPrazo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxDataAbertura = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.textBoxPlano = new System.Windows.Forms.TextBox();
             this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.labelIdPessoa = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.textBoxUf = new System.Windows.Forms.TextBox();
             this.textBoxAtendente = new System.Windows.Forms.TextBox();
             this.textBoxCidade = new System.Windows.Forms.TextBox();
-            this.textBoxPlano = new System.Windows.Forms.TextBox();
             this.textBoxNumCasa = new System.Windows.Forms.TextBox();
             this.textBoxRua = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,6 +79,12 @@
             this.comboBoxEstatusOS = new System.Windows.Forms.ComboBox();
             this.comboBoxLigarAntes = new System.Windows.Forms.ComboBox();
             this.comboBoxTecnicoResponsavel = new System.Windows.Forms.ComboBox();
+            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAtualizar = new System.Windows.Forms.Button();
+            this.buttonFechar = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -95,6 +101,7 @@
             labelDescricao = new System.Windows.Forms.Label();
             this.groupBoxDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1CpfCNPJ
@@ -285,6 +292,7 @@
             // groupBoxDadosPessoais
             // 
             this.groupBoxDadosPessoais.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxDadosPessoais.Controls.Add(this.textBoxPlano);
             this.groupBoxDadosPessoais.Controls.Add(label1CpfCNPJ);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxCpf);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxBairro);
@@ -307,7 +315,6 @@
             this.groupBoxDadosPessoais.Controls.Add(labelUf);
             this.groupBoxDadosPessoais.Controls.Add(labelCidade);
             this.groupBoxDadosPessoais.Controls.Add(labelCelularDois);
-            this.groupBoxDadosPessoais.Controls.Add(this.textBoxPlano);
             this.groupBoxDadosPessoais.Controls.Add(labelCelularUm);
             this.groupBoxDadosPessoais.Controls.Add(labelTelefone);
             this.groupBoxDadosPessoais.Controls.Add(labelEmail);
@@ -317,9 +324,17 @@
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
             this.groupBoxDadosPessoais.Location = new System.Drawing.Point(6, 81);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
-            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(811, 147);
+            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(825, 147);
             this.groupBoxDadosPessoais.TabIndex = 48;
             this.groupBoxDadosPessoais.TabStop = false;
+            // 
+            // textBoxPlano
+            // 
+            this.textBoxPlano.Location = new System.Drawing.Point(547, 79);
+            this.textBoxPlano.Name = "textBoxPlano";
+            this.textBoxPlano.ReadOnly = true;
+            this.textBoxPlano.Size = new System.Drawing.Size(272, 20);
+            this.textBoxPlano.TabIndex = 68;
             // 
             // textBoxCpf
             // 
@@ -327,7 +342,7 @@
             this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.ReadOnly = true;
-            this.textBoxCpf.Size = new System.Drawing.Size(258, 20);
+            this.textBoxCpf.Size = new System.Drawing.Size(272, 20);
             this.textBoxCpf.TabIndex = 42;
             // 
             // textBoxBairro
@@ -434,7 +449,7 @@
             this.textBoxAtendente.Location = new System.Drawing.Point(547, 118);
             this.textBoxAtendente.Name = "textBoxAtendente";
             this.textBoxAtendente.ReadOnly = true;
-            this.textBoxAtendente.Size = new System.Drawing.Size(258, 20);
+            this.textBoxAtendente.Size = new System.Drawing.Size(272, 20);
             this.textBoxAtendente.TabIndex = 13;
             // 
             // textBoxCidade
@@ -445,14 +460,6 @@
             this.textBoxCidade.ReadOnly = true;
             this.textBoxCidade.Size = new System.Drawing.Size(112, 20);
             this.textBoxCidade.TabIndex = 10;
-            // 
-            // textBoxPlano
-            // 
-            this.textBoxPlano.Location = new System.Drawing.Point(547, 79);
-            this.textBoxPlano.Name = "textBoxPlano";
-            this.textBoxPlano.ReadOnly = true;
-            this.textBoxPlano.Size = new System.Drawing.Size(258, 20);
-            this.textBoxPlano.TabIndex = 9;
             // 
             // textBoxNumCasa
             // 
@@ -486,7 +493,7 @@
             this.textBoxDescricao.Location = new System.Drawing.Point(11, 290);
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(800, 100);
+            this.textBoxDescricao.Size = new System.Drawing.Size(814, 100);
             this.textBoxDescricao.TabIndex = 7;
             // 
             // label7
@@ -584,14 +591,64 @@
             this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
             this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(553, 250);
             this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
-            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(258, 21);
+            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(272, 21);
             this.comboBoxTecnicoResponsavel.TabIndex = 66;
+            // 
+            // buttonAtualizar
+            // 
+            this.buttonAtualizar.Location = new System.Drawing.Point(211, 526);
+            this.buttonAtualizar.Name = "buttonAtualizar";
+            this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAtualizar.TabIndex = 67;
+            this.buttonAtualizar.Text = "EDITAR";
+            this.buttonAtualizar.UseVisualStyleBackColor = true;
+            // 
+            // buttonFechar
+            // 
+            this.buttonFechar.Location = new System.Drawing.Point(454, 526);
+            this.buttonFechar.Name = "buttonFechar";
+            this.buttonFechar.Size = new System.Drawing.Size(75, 23);
+            this.buttonFechar.TabIndex = 68;
+            this.buttonFechar.Text = "FECHAR";
+            this.buttonFechar.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(373, 526);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.TabIndex = 69;
+            this.buttonCancelar.Text = "CANCELAR";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(535, 526);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "SAIR";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(292, 526);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 71;
+            this.button2.Text = "SALVAR";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FormConsultaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 561);
+            this.ClientSize = new System.Drawing.Size(838, 561);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonFechar);
+            this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.comboBoxTecnicoResponsavel);
             this.Controls.Add(this.comboBoxLigarAntes);
             this.Controls.Add(this.comboBoxEstatusOS);
@@ -616,11 +673,11 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormConsultaOS";
             this.Load += new System.EventHandler(this.FormConsultaOS_Load);
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -647,7 +704,6 @@
         private System.Windows.Forms.TextBox textBoxUf;
         private System.Windows.Forms.TextBox textBoxAtendente;
         private System.Windows.Forms.TextBox textBoxCidade;
-        private System.Windows.Forms.TextBox textBoxPlano;
         private System.Windows.Forms.TextBox textBoxNumCasa;
         private System.Windows.Forms.TextBox textBoxRua;
         private System.Windows.Forms.Label label3;
@@ -663,5 +719,12 @@
         private System.Windows.Forms.ComboBox comboBoxEstatusOS;
         private System.Windows.Forms.ComboBox comboBoxLigarAntes;
         private System.Windows.Forms.ComboBox comboBoxTecnicoResponsavel;
+        private System.Windows.Forms.TextBox textBoxPlano;
+        private System.Windows.Forms.BindingSource planoBindingSource;
+        private System.Windows.Forms.Button buttonAtualizar;
+        private System.Windows.Forms.Button buttonFechar;
+        private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
