@@ -6,19 +6,10 @@ namespace UIPrincipal
 {
     public partial class FormPrincipal : Form
     {
+        private bool Logado = true;
         public FormPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void Login()
-        {
-            using (FormLogin frm = new FormLogin())
-            {
-                frm.ShowDialog();
-                if (!frm.Logou)
-                    Application.Exit();
-            }
         }
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -27,11 +18,7 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
-        private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Login();
-        }
-
+        
         private void pLANOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormConsultaPlano frm = new FormConsultaPlano())
@@ -55,18 +42,31 @@ namespace UIPrincipal
             }
         }
 
-        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult resposta = MessageBox.Show("DESEJA ENCERRAR O SISTEMA?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resposta == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
+        }
+                
+        private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin frmLogin = new FormLogin();
+            frmLogin.Logou = false;
+            if (!frmLogin.Logou)
+            {
+                this.Hide();
+                frmLogin.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            /*DialogResult resposta = MessageBox.Show("DESEJA ENCERRAR O SISTEMA?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resposta == DialogResult.No)
+            {
+                e.Cancel = true;
+            }*/
         }
     }
 }

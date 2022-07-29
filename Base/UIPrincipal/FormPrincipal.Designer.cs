@@ -109,13 +109,13 @@ namespace UIPrincipal
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sOBREToolStripMenuItem.Text = "&SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sAIRToolStripMenuItem.Text = "&SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 

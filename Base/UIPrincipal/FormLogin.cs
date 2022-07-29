@@ -16,7 +16,7 @@ namespace UIPrincipal
         }
         private void buttonSair_Click(object sender, EventArgs e)
         {
-            Close();//FORÇA O FECHAMENTO DE TODO O SISTEMA
+            Close();
         }
         private void TelaInicial()
         {
@@ -43,8 +43,9 @@ namespace UIPrincipal
                     UsuarioLogado.NomeCompleto = ((DataRowView)usuarioBindingSource.Current).Row["NomeCompleto"].ToString();
                     UsuarioLogado.NomeUsuario = nome;
                     Logou = true;
+                    this.Hide();
                     TelaInicial();
-                    Close();
+                    this.Close();
                 }
                 else if (ativo == "False")
                 {

@@ -118,7 +118,7 @@ namespace UIPrincipal
             this.groupBoxLogin.Controls.Add(this.labelLogin);
             this.groupBoxLogin.Controls.Add(this.textBoxUsuario);
             this.groupBoxLogin.Controls.Add(this.textBoxSenha);
-            this.groupBoxLogin.Location = new System.Drawing.Point(151, 158);
+            this.groupBoxLogin.Location = new System.Drawing.Point(41, 40);
             this.groupBoxLogin.Name = "groupBoxLogin";
             this.groupBoxLogin.Size = new System.Drawing.Size(494, 280);
             this.groupBoxLogin.TabIndex = 7;
@@ -137,16 +137,15 @@ namespace UIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(580, 361);
             this.Controls.Add(this.groupBoxLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN DE USUARIO";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxLogin.ResumeLayout(false);
             this.groupBoxLogin.PerformLayout();
