@@ -22,6 +22,12 @@ CREATE TABLE Permissao
 	Descricao VARCHAR(250)
 )
 GO
+--INSERT DA TABELA "PERMISSÃO"
+INSERT INTO Permissao(Descricao)
+	VALUES('Abrir O.S'),
+	('Abrir O.S, Fechar O.S'),
+	('Abrir O.S, Fechar O.S, Encaminhar O.S')
+GO
 --TABELA "PLANO"
 CREATE TABLE Plano
 (
@@ -92,6 +98,7 @@ CREATE TABLE Pessoa
 	Cep VARCHAR(10),
 	Rua VARCHAR(150),---------------------FEITO
 	NumCasa VARCHAR(10),------------------FEITO
+	Bairro VARCHAR(150),------------------ADICIONADO RECENTE
 	EstadoCivil VARCHAR(10),--------------FEITO
 	Nacionalidade VARCHAR(10),------------FEITO
 	Email VARCHAR(30),--------------------FEITO
@@ -122,14 +129,14 @@ CREATE TABLE Pessoa
 )
 GO
 
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Rua, NumCasa, Cpf, Rg, OrgaoExpeditor, Email, Telefone, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', 'RUA DOS ABACATEIROS', '543', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '63992019277', 1, 1, 4, 3, '')
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
 GO
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES ('admin', 'admin', 'USUARIO TESTE', '02227855153', 1, 1, 2, 1, '')
+
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('admin', 'admin', 'USUARIO TESTE', '01-01-2000', '02227855153', 1, 0, 2, 1, '', 1)
 GO
---DROP PROCEDURE SP_InserirUsuario
-GO
+
 CREATE PROCEDURE SP_InserirUsuario
 	@Id INT OUTPUT,
 	@Ativo BIT,
@@ -143,6 +150,7 @@ CREATE PROCEDURE SP_InserirUsuario
 	@Cep VARCHAR(10),
 	@Rua VARCHAR(150),
 	@NumCasa VARCHAR(10),
+	@Bairro VARCHAR(150),
 	@EstadoCivil VARCHAR(10),
 	@Nacionalidade VARCHAR(10),
 	@Email VARCHAR(30),
@@ -179,6 +187,7 @@ AS
 	Cep,
 	Rua,
 	NumCasa,
+	Bairro,
 	EstadoCivil,
 	Nacionalidade,
 	Email,
@@ -213,6 +222,7 @@ AS
 	@Cep,
 	@Rua,
 	@NumCasa,
+	@Bairro,
 	@EstadoCivil,
 	@Nacionalidade,
 	@Email,
@@ -240,32 +250,68 @@ AS
 GO
 
 EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
-'05-01-1988', '77827-150', 'RUA TAL', '543', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
+'05-01-1988', '77827-150', 'RUA TAL', '543', 'CENTRO', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
 'ARAGUAINA', 'TO', '', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
 GO
 --'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
 --'C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
-EXEC SP_InserirUsuario 0, 1, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
-'05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
-'ARAGUAINA', 'TO', 'C:\Users\axel_\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
+EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
+'05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'CENTRO', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
+'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
 GO
 
---TABELA "GESTÃO DE O.S"
-CREATE TABLE OrdemServico
+--TABELA TipoChamado
+CREATE TABLE TipoChamado
 	(
-	Protocolo INT PRIMARY KEY IDENTITY(1,1),
-	TipoChamado VARCHAR (150),
-	Descricao VARCHAR(1000),
-	DataAbertura DATETIME,
-	DataDeFechamento DATETIME,
-	TecnicoResponsavel VARCHAR(150),
-	Id_Funcionario INT,
-	Id_Cliente INT,
-	Id_Plano INT,
-	Id_Status INT
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Descricao VARCHAR(30) 
 )
+GO
+--SP_InserirTipoChamado
+CREATE PROCEDURE SP_InserirTipoChamado
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(150)
+AS
+	INSERT INTO TipoChamado(Descricao)
+		VALUES(@Descricao)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+--EXEC SP_InserirTipoChamado 0, 'TESTE TIPO DE CHAMADO'
+--SP_ExcluirTipoChamado
+CREATE PROC SP_ExcluirTipoChamado
+	@Id INT
+AS
+	DELETE FROM TipoChamado WHERE Id = @Id
+GO
+--EXEC SP_ExcluirTipoChamado 3
+--SP_AlterarTipoChamado
+CREATE PROC SP_AlterarTipoChamado
+	@Id INT,
+	@Descricao VARCHAR(150)
+AS
+	UPDATE TipoChamado SET
+	Descricao = @Descricao
+	WHERE Id = @Id
+GO
+--EXEC SP_AlterarTipoChamado 2, 'TESTE DE ALTERAÇÃO'
+CREATE PROC SP_BuscarTipoChamado
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM TipoChamado WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao FROM TipoChamado WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao FROM TipoChamado WHERE Descricao LIKE '%' + @filtro + '%'
+GO
+--EXEC SP_BuscarTipoChamado ''
+--INSERT DA TABELA "TIPO DE CHAMADO"
+--SELECT * FROM TipoChamado
+INSERT INTO TipoChamado(Descricao)
+	VALUES('SUPORTE LOSS'),
+	('SUPORTE FIBRA'),
+	('INSTALAÇÃO FIBRA'),
+	('MUDANÇA DE ENDEREÇO')
 GO
 
 --DROP PROC SP_AlterarUsuario
@@ -281,6 +327,7 @@ CREATE PROC SP_AlterarUsuario
 	@DataNascimento DATETIME,
 	@Cep VARCHAR(10),
 	@Rua VARCHAR(150),
+	@Bairro VARCHAR(150),
 	@NumCasa VARCHAR(10),
 	@EstadoCivil VARCHAR(10),
 	@Nacionalidade VARCHAR(10),
@@ -318,6 +365,7 @@ AS
 	Cep = @Cep,
 	Rua = @Rua,
 	NumCasa = @NumCasa,
+	Bairro = @Bairro,
 	EstadoCivil = @EstadoCivil,
 	Nacionalidade = @Nacionalidade,
 	Email = @Email,
@@ -345,33 +393,57 @@ AS
 GO
 
 --SELECT * FROM Plano
-SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, DataAdmissao, Foto FROM Pessoa
-GO
+--SELECT NomeCompleto, Cpf, Ativo, Cliente, Funcionario, Id_Plano, Id_Permissao, InicioDoContrato, DataAdmissao, Foto FROM Pessoa
+--GO
 --TABELA "STATUS DA O.S"
-CREATE TABLE StatusOs
+CREATE TABLE StatusOS
 	(
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Descricao VARCHAR(15) 
+	Descricao VARCHAR(20) 
 )
-
---INSERT DAS TABELAS "PERMISSÃO"
-INSERT INTO Permissao(Descricao)
-	VALUES('Abrir O.S'),
-	('Abrir O.S, Fechar O.S'),
-	('Abrir O.S, Fechar O.S, Encaminhar O.S')
 GO
-
 --TABELA "STATUS DA O.S"
-INSERT INTO StatusOs(Descricao)
-	VALUES ('Aberto'),
-	('Fechado'),
-	('Encaminhado')
+INSERT INTO StatusOS(Descricao)
+	VALUES ('ABERTO'),
+	('FECHADO'),
+	('ENCAMINHADO')
 GO
---TABELA "GESTÃO DE O.S"
-INSERT INTO OrdemServico(TipoChamado, Descricao, DataAbertura, DataDeFechamento, TecnicoResponsavel, Id_Funcionario, Id_Cliente, Id_Plano, Id_Status)
-	VALUES ('Loss',	'Cliente sem conexão, ONU apresentando perca de sinal.', null, NULL, NULL , 1, 3, 1, 1)
+--SELECT * FROM StatusOS
+--EXEC SP_InserirStatusOS 0, "TESTE DE INSERIR"
+CREATE PROCEDURE SP_InserirStatusOS
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(150)
+AS
+	INSERT INTO StatusOS(Descricao)
+		VALUES(@Descricao)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+--EXEC SP_ExcluirStatusOS 4
+CREATE PROC SP_ExcluirStatusOS
+	@Id INT
+AS
+	DELETE FROM StatusOS WHERE Id = @Id
+GO
+--EXEC SP_AlterarStatusOS 5, "TESTE DE ALTERAÇÃO"
+CREATE PROC SP_AlterarStatusOS
+	@Id INT,
+	@Descricao VARCHAR(150)
+AS
+	UPDATE StatusOS SET
+	Descricao = @Descricao
+	WHERE Id = @Id
+GO
+--EXEC SP_BuscarStatusOS "5"
+CREATE PROC SP_BuscarStatusOS
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM StatusOS WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao FROM StatusOS WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao FROM StatusOS WHERE Descricao LIKE '%' + @filtro + '%'
 GO
 
+--################################################--
 CREATE PROC SP_BuscarUsuario
 	@Filtro VARCHAR(250) = ''
 AS
@@ -388,6 +460,7 @@ AS
 	Cep,
 	Rua,
 	NumCasa,
+	Bairro,
 	EstadoCivil,
 	Nacionalidade,
 	Email,
@@ -417,7 +490,22 @@ AS
 	WHERE NomeCompleto LIKE '%' + @filtro + '%'
 	OR Cpf LIKE '%'+ @filtro +'%' OR NomeUsuario LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
 GO
-
+--###################################################################################
+CREATE PROC SP_BuscarFuncionario
+	@Filtro VARCHAR(250) = ''
+AS
+	SELECT
+	Pessoa.Id,
+	Ativo,
+	NomeUsuario,
+	NomeCompleto,
+	Funcionario,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Funcionario LIKE '%' + @filtro + '%' AND Ativo = 1
+GO
+--EXEC SP_BuscarFuncionario '0'
+--####################################################################################
 
 CREATE PROC SP_ExcluirUsuario
 	@Id INT
@@ -425,11 +513,132 @@ AS
 	DELETE FROM Pessoa WHERE Id = @Id
 GO
 
-/*
-DECLARE @Filtro VARCHAR(50) = '50'
+--TABELA "GESTÃO DE O.S"
+CREATE TABLE OrdemServico
+	(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Protocolo VARCHAR (20),
+	Id_Cliente INT,
+	TipoChamado VARCHAR(50),
+	Descricao VARCHAR(1000),
+	DataAbertura DATETIME NULL,
+	DataPrazo DATETIME NULL,
+	DataDeFechamento DATETIME NULL,
+	TecnicoResponsavel VARCHAR(150),
+	Atendente VARCHAR(150),
+	EstatusOS VARCHAR(20),
+	LigarAntes VARCHAR(5)
+)
+GO
 
+CREATE PROCEDURE SP_AbrirOrdemServico
+	@Id INT OUTPUT,
+	@Protocolo VARCHAR (20),
+	@Id_Cliente INT,
+	@TipoChamado VARCHAR(50),
+	@Descricao VARCHAR(1000),
+	@DataAbertura DATETIME NULL,
+	@DataPrazo DATETIME NULL,
+	@TecnicoResponsavel VARCHAR(150),
+	@Atendente VARCHAR(150),
+	@EstatusOS VARCHAR(20),
+	@LigarAntes VARCHAR(5)
+AS
+	INSERT INTO OrdemServico(
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes
+	)
+		VALUES(
+		@Protocolo,
+		@Id_Cliente,
+		@TipoChamado,
+		@Descricao,
+		@DataAbertura,
+		@DataPrazo,
+		@TecnicoResponsavel,
+		@Atendente,
+		@EstatusOS,
+		@LigarAntes
+		)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+
+CREATE PROC SP_BuscarOS
+	@Filtro VARCHAR(50) = ''
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	Pessoa.NomeCompleto,
+	Pessoa.Cpf,
+	Pessoa.Cep,
+	Pessoa.Rua,
+	Pessoa.NumCasa,
+	Pessoa.Bairro,
+	Pessoa.Email,
+	Pessoa.Telefone,
+	Pessoa.CelularUm,
+	Pessoa.CelularDois,
+	Pessoa.Cidade,
+	Pessoa.Uf,
+	Pessoa.Id_Plano
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE Protocolo LIKE '%' + @filtro + '%'
+GO
+--EXEC SP_BuscarOS '123456789'
+--SELECT * FROM OrdemServico
+--SELECT * FROM Pessoa
+--SELECT * FROM Plano
+
+/*///////////////////////////////////// ESSE ESTA FUNCIONANDO
+CREATE PROC SP_BuscarOS
+	@Filtro VARCHAR(50) = ''
+AS
+	SELECT
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes
+	FROM OrdemServico
+	WHERE Protocolo LIKE '%' + @filtro + '%'
+GO
+
+////////////////////////////////////
+
+CREATE PROC SP_BuscarPlano
+	@Filtro VARCHAR(50)
+	as
 IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
 	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
 ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-*/
+GO*/
+
+EXEC SP_AbrirOrdemServico 0, 123456789, 1, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
+EXEC SP_AbrirOrdemServico 0, 987654321, 2, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+SELECT * FROM Pessoa
+GO

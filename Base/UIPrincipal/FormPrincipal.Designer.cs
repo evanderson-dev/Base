@@ -109,13 +109,13 @@ namespace UIPrincipal
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sOBREToolStripMenuItem.Text = "&SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sAIRToolStripMenuItem.Text = "&SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
@@ -223,7 +223,7 @@ namespace UIPrincipal
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UNM2001";
+            this.Text = "SISTEMA O.S";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
