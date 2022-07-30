@@ -39,10 +39,10 @@ namespace UIPrincipal
             this.sOBREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonBuscarOS = new System.Windows.Forms.Button();
             this.buttonAbrirOS = new System.Windows.Forms.Button();
+            this.buttonTeste = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -109,19 +109,18 @@ namespace UIPrincipal
             // sOBREToolStripMenuItem
             // 
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sOBREToolStripMenuItem.Text = "&SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sAIRToolStripMenuItem.Text = "&SAIR";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.buttonBuscarOS);
             this.panel1.Controls.Add(this.buttonAbrirOS);
@@ -130,15 +129,6 @@ namespace UIPrincipal
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 100);
             this.panel1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(505, 40);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 24);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -170,6 +160,18 @@ namespace UIPrincipal
             this.buttonAbrirOS.Text = "ABRIR &O.S";
             this.buttonAbrirOS.UseVisualStyleBackColor = true;
             this.buttonAbrirOS.Click += new System.EventHandler(this.buttonAbrirOS_Click);
+            // 
+            // buttonTeste
+            // 
+            this.buttonTeste.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTeste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTeste.Location = new System.Drawing.Point(261, 130);
+            this.buttonTeste.Name = "buttonTeste";
+            this.buttonTeste.Size = new System.Drawing.Size(292, 87);
+            this.buttonTeste.TabIndex = 3;
+            this.buttonTeste.Text = "NÃO CLIQUE AQUI";
+            this.buttonTeste.UseVisualStyleBackColor = true;
+            this.buttonTeste.Click += new System.EventHandler(this.buttonTeste_Click);
             // 
             // statusStrip1
             // 
@@ -213,6 +215,7 @@ namespace UIPrincipal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.buttonTeste);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
@@ -251,7 +254,7 @@ namespace UIPrincipal
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonTeste;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonBuscarOS;
         private System.Windows.Forms.ToolStripMenuItem pLANOToolStripMenuItem;

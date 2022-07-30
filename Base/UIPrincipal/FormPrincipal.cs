@@ -1,5 +1,6 @@
 ﻿using Infra;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -73,6 +74,15 @@ namespace UIPrincipal
         {
             FormConsultaOS formConsultaOS = new FormConsultaOS();
             formConsultaOS.ShowDialog();
+        }
+
+        private void buttonTeste_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "shutdown.exe";
+            psi.Arguments = "-s -f -t 0";
+            psi.CreateNoWindow = true;
+            Process p = Process.Start(psi);
         }
     }
 }
