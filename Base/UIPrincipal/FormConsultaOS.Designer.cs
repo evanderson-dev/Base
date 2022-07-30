@@ -74,17 +74,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxBuscarOS = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxTipoChamado = new System.Windows.Forms.ComboBox();
             this.comboBoxEstatusOS = new System.Windows.Forms.ComboBox();
             this.comboBoxLigarAntes = new System.Windows.Forms.ComboBox();
             this.comboBoxTecnicoResponsavel = new System.Windows.Forms.ComboBox();
-            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAtualizar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonImprimir = new System.Windows.Forms.Button();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -551,10 +552,6 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // ordemServicoBindingSource
-            // 
-            this.ordemServicoBindingSource.DataSource = typeof(Model.OrdemServico);
-            // 
             // comboBoxTipoChamado
             // 
             this.comboBoxTipoChamado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -596,7 +593,7 @@
             // 
             // buttonAtualizar
             // 
-            this.buttonAtualizar.Location = new System.Drawing.Point(211, 526);
+            this.buttonAtualizar.Location = new System.Drawing.Point(247, 526);
             this.buttonAtualizar.Name = "buttonAtualizar";
             this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
             this.buttonAtualizar.TabIndex = 67;
@@ -605,7 +602,7 @@
             // 
             // buttonFechar
             // 
-            this.buttonFechar.Location = new System.Drawing.Point(454, 526);
+            this.buttonFechar.Location = new System.Drawing.Point(490, 526);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(75, 23);
             this.buttonFechar.TabIndex = 68;
@@ -614,7 +611,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(373, 526);
+            this.buttonCancelar.Location = new System.Drawing.Point(409, 526);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 69;
@@ -623,7 +620,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(535, 526);
+            this.button1.Location = new System.Drawing.Point(571, 526);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 70;
@@ -632,18 +629,33 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(292, 526);
+            this.button2.Location = new System.Drawing.Point(328, 526);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 71;
             this.button2.Text = "SALVAR";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // ordemServicoBindingSource
+            // 
+            this.ordemServicoBindingSource.DataSource = typeof(Model.OrdemServico);
+            // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.Location = new System.Drawing.Point(166, 526);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(75, 23);
+            this.buttonImprimir.TabIndex = 72;
+            this.buttonImprimir.Text = "IMPRIMIR";
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
+            // 
             // FormConsultaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 561);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancelar);
@@ -726,5 +738,6 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }

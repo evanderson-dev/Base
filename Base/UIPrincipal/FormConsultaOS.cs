@@ -2,6 +2,9 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace UIPrincipal
 {
@@ -73,6 +76,11 @@ namespace UIPrincipal
                 buttonBuscar_Click(null,null);
                 //ordemServicoBindingSource.DataSource = ordemServicoBLL.BuscarOS("");
             }
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
