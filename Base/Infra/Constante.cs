@@ -9,6 +9,7 @@ namespace Infra
     public static class Constante
     {
         public static string DiretorioDeImagem = Environment.CurrentDirectory + "\\Imgs\\";
+        public static string DiretorioDePDF = Environment.CurrentDirectory + @"\PDF\";
     }
     public static class UsuarioLogado
     {
