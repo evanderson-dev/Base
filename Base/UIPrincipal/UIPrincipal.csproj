@@ -113,6 +113,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaOS.resx">
       <DependentUpon>FormConsultaOS.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaPlano.resx">
       <DependentUpon>FormConsultaPlano.cs</DependentUpon>

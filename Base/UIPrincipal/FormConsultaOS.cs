@@ -83,7 +83,7 @@ namespace UIPrincipal
         [Obsolete]
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            string filepath = Infra.Constante.DiretorioDePDF + @"\testePDF.pdf";
+            string filepath = Constante.DiretorioDePDF + @"\testePDF.pdf";
 
             Document doc = new Document(PageSize.A4);//criando e estipulando o tipo da folha usada
             doc.SetMargins(40, 40, 40, 80);//estibulando o espaçamento das margens que queremos
@@ -100,8 +100,33 @@ namespace UIPrincipal
             PdfPTable table = new PdfPTable(6);
             table.TotalWidth = 520f;
             table.LockedWidth = true;
+            //###################################
+            string origemCompleto = "";
+            string foto = @"\logoSenai.png";
+            string pastaDestino = Constante.DiretorioDeImagem;
+            string destinoCompleto = "";
 
-            Image logo = Image.GetInstance(Infra.Constante.DiretorioDeImagem + "/logoSenai.png");
+            try
+            {
+                if (!Directory.Exists(pastaDestino))
+                {
+                    MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Directory.CreateDirectory(pastaDestino);
+                    openFileDialogAddFoto.ShowDialog();
+                    origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
+                    foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
+                    destinoCompleto = pastaDestino + foto;
+                    System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+                    File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //###################################
+
+            Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logoSenai.png");
             logo.ScaleToFit(100f, 100f);
             PdfPCell cell_Imagem = new PdfPCell(new Phrase($"IMG", new Font(iTextSharp.text.Font.NORMAL, 10, (int)System.Drawing.FontStyle.Bold)));
             cell_Imagem.AddElement(logo);

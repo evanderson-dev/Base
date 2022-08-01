@@ -86,6 +86,7 @@
             this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonImprimir = new System.Windows.Forms.Button();
+            this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -651,6 +652,11 @@
             this.buttonImprimir.UseVisualStyleBackColor = true;
             this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
+            // openFileDialogAddFoto
+            // 
+            this.openFileDialogAddFoto.FileName = "openFileDialogAddFoto";
+            this.openFileDialogAddFoto.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
+            // 
             // FormConsultaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -740,5 +746,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonImprimir;
+        private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
     }
 }
