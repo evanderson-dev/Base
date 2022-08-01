@@ -22,5 +22,10 @@ namespace BLL
             OrdemServicoDAL ordemServicoDAL = new OrdemServicoDAL();
             return ordemServicoDAL.BuscarOrdemServico(_filtro);
         }
+        public DataTable BuscarOSAberta(string _filtro)
+        {
+            OrdemServicoDAL ordemServicoDAL = new OrdemServicoDAL();
+            return ordemServicoDAL.BuscarOSAberta(_filtro);
+        }
     }
 }

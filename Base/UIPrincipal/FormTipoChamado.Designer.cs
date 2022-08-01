@@ -35,6 +35,7 @@
             this.tipoChamadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
@@ -45,11 +46,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
+            this.panelCentro = new System.Windows.Forms.Panel();
             this.labelCadastroTipoChamado = new System.Windows.Forms.Label();
-            this.buttonSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelCentro.SuspendLayout();
             this.SuspendLayout();
             // 
             // tipoChamadoDataGridView
@@ -60,11 +62,11 @@
             this.Id,
             this.descricaoDataGridViewTextBoxColumn});
             this.tipoChamadoDataGridView.DataSource = this.tipoChamadoBindingSource;
-            this.tipoChamadoDataGridView.Location = new System.Drawing.Point(12, 95);
+            this.tipoChamadoDataGridView.Location = new System.Drawing.Point(180, 105);
             this.tipoChamadoDataGridView.Name = "tipoChamadoDataGridView";
             this.tipoChamadoDataGridView.ReadOnly = true;
             this.tipoChamadoDataGridView.RowHeadersVisible = false;
-            this.tipoChamadoDataGridView.Size = new System.Drawing.Size(264, 298);
+            this.tipoChamadoDataGridView.Size = new System.Drawing.Size(264, 405);
             this.tipoChamadoDataGridView.TabIndex = 0;
             // 
             // Id
@@ -89,21 +91,21 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.Controls.Add(this.buttonCancelar);
             this.panel1.Controls.Add(this.buttonSalvar);
             this.panel1.Controls.Add(this.buttonSair);
             this.panel1.Controls.Add(this.buttonExcluir);
             this.panel1.Controls.Add(this.buttonAlterar);
             this.panel1.Controls.Add(this.buttonNovo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 397);
+            this.panel1.Location = new System.Drawing.Point(0, 516);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(553, 45);
+            this.panel1.Size = new System.Drawing.Size(838, 45);
             this.panel1.TabIndex = 1;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(279, 4);
+            this.buttonCancelar.Location = new System.Drawing.Point(446, 2);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(85, 37);
@@ -112,10 +114,21 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(357, 2);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(85, 37);
+            this.buttonSalvar.TabIndex = 7;
+            this.buttonSalvar.Text = "&SALVAR";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
             // buttonSair
             // 
             this.buttonSair.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonSair.Location = new System.Drawing.Point(457, 4);
+            this.buttonSair.Location = new System.Drawing.Point(624, 2);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(84, 37);
@@ -126,7 +139,7 @@
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Location = new System.Drawing.Point(368, 4);
+            this.buttonExcluir.Location = new System.Drawing.Point(535, 2);
             this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(85, 37);
@@ -137,7 +150,7 @@
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Location = new System.Drawing.Point(101, 4);
+            this.buttonAlterar.Location = new System.Drawing.Point(268, 2);
             this.buttonAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(85, 37);
@@ -148,7 +161,7 @@
             // 
             // buttonNovo
             // 
-            this.buttonNovo.Location = new System.Drawing.Point(12, 4);
+            this.buttonNovo.Location = new System.Drawing.Point(179, 2);
             this.buttonNovo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(85, 37);
@@ -159,7 +172,7 @@
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(212, 70);
+            this.buttonBuscar.Location = new System.Drawing.Point(380, 80);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(65, 19);
@@ -170,7 +183,7 @@
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(12, 70);
+            this.textBoxBuscar.Location = new System.Drawing.Point(180, 80);
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(196, 20);
@@ -180,7 +193,7 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoChamadoBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(352, 95);
+            this.textBoxDescricao.Location = new System.Drawing.Point(520, 105);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.ReadOnly = true;
             this.textBoxDescricao.Size = new System.Drawing.Size(189, 20);
@@ -189,7 +202,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 79);
+            this.label1.Location = new System.Drawing.Point(517, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 3;
@@ -198,7 +211,7 @@
             // labelId
             // 
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(293, 79);
+            this.labelId.Location = new System.Drawing.Point(461, 89);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(21, 13);
             this.labelId.TabIndex = 5;
@@ -207,50 +220,50 @@
             // textBoxId
             // 
             this.textBoxId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoChamadoBindingSource, "Id", true));
-            this.textBoxId.Location = new System.Drawing.Point(296, 95);
+            this.textBoxId.Location = new System.Drawing.Point(464, 105);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.ReadOnly = true;
             this.textBoxId.Size = new System.Drawing.Size(50, 20);
             this.textBoxId.TabIndex = 4;
             this.textBoxId.Text = "0";
             // 
+            // panelCentro
+            // 
+            this.panelCentro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panelCentro.Controls.Add(this.labelCadastroTipoChamado);
+            this.panelCentro.Controls.Add(this.tipoChamadoDataGridView);
+            this.panelCentro.Controls.Add(this.textBoxBuscar);
+            this.panelCentro.Controls.Add(this.labelId);
+            this.panelCentro.Controls.Add(this.buttonBuscar);
+            this.panelCentro.Controls.Add(this.textBoxId);
+            this.panelCentro.Controls.Add(this.textBoxDescricao);
+            this.panelCentro.Controls.Add(this.label1);
+            this.panelCentro.Location = new System.Drawing.Point(0, 0);
+            this.panelCentro.Name = "panelCentro";
+            this.panelCentro.Size = new System.Drawing.Size(838, 516);
+            this.panelCentro.TabIndex = 7;
+            // 
             // labelCadastroTipoChamado
             // 
             this.labelCadastroTipoChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCadastroTipoChamado.Location = new System.Drawing.Point(12, 9);
+            this.labelCadastroTipoChamado.Location = new System.Drawing.Point(176, 9);
             this.labelCadastroTipoChamado.Name = "labelCadastroTipoChamado";
             this.labelCadastroTipoChamado.Size = new System.Drawing.Size(529, 49);
-            this.labelCadastroTipoChamado.TabIndex = 6;
+            this.labelCadastroTipoChamado.TabIndex = 7;
             this.labelCadastroTipoChamado.Text = "CADASTRO DE TIPO DE CHAMADO";
             this.labelCadastroTipoChamado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.Location = new System.Drawing.Point(190, 4);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(85, 37);
-            this.buttonSalvar.TabIndex = 7;
-            this.buttonSalvar.Text = "&SALVAR";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // FormTipoChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 442);
-            this.Controls.Add(this.labelCadastroTipoChamado);
-            this.Controls.Add(this.labelId);
-            this.Controls.Add(this.textBoxId);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxDescricao);
-            this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBoxBuscar);
+            this.ClientSize = new System.Drawing.Size(838, 561);
+            this.Controls.Add(this.panelCentro);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tipoChamadoDataGridView);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(854, 600);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(854, 600);
             this.Name = "FormTipoChamado";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -259,8 +272,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panelCentro.ResumeLayout(false);
+            this.panelCentro.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -280,9 +294,10 @@
         private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.Label labelCadastroTipoChamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.Panel panelCentro;
+        private System.Windows.Forms.Label labelCadastroTipoChamado;
     }
 }

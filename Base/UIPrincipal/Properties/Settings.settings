@@ -10,5 +10,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=EVANDERSON\SQLEXPRESS;Initial Catalog=ORDEMSERVICO;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="ORDEMSERVICOConnectionStringFunciona" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=TLD-AUX-SU-006\SQLEXPRESS;Initial Catalog=ORDEMSERVICO;User ID=sa;Password=Senailab05&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=TLD-AUX-SU-006\SQLEXPRESS;Initial Catalog=ORDEMSERVICO;User ID=sa;Password=Senailab05</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

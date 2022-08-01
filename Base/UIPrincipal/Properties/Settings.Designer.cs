@@ -33,5 +33,16 @@ namespace UIPrincipal.Properties {
                 return ((string)(this["ORDEMSERVICOConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TLD-AUX-SU-006\\SQLEXPRESS;Initial Catalog=ORDEMSERVICO;User ID=sa;Pas" +
+            "sword=Senailab05")]
+        public string ORDEMSERVICOConnectionStringFunciona {
+            get {
+                return ((string)(this["ORDEMSERVICOConnectionStringFunciona"]));
+            }
+        }
     }
 }

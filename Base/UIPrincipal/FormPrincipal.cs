@@ -1,5 +1,7 @@
-﻿using Infra;
+﻿using BLL;
+using Infra;
 using System;
+using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -8,6 +10,7 @@ namespace UIPrincipal
     public partial class FormPrincipal : Form
     {
         private bool Logado = true;
+        OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         public FormPrincipal()
         {
             InitializeComponent();
@@ -83,6 +86,11 @@ namespace UIPrincipal
             psi.Arguments = "-s -f -t 0";
             psi.CreateNoWindow = true;
             Process p = Process.Start(psi);
+        }
+
+        private void pictureBoxAtualizar_Click(object sender, EventArgs e)
+        {
+            dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSAberta("");
         }
     }
 }

@@ -603,12 +603,33 @@ AS
 	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
 	WHERE Protocolo LIKE '%' + @filtro + '%'
 GO
+
+CREATE PROC SP_BuscarOSAberta
+	@Filtro VARCHAR(50) = ''
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	Pessoa.NomeCompleto AS NomeCompleto
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE EstatusOS = 'ABERTO' OR EstatusOS = 'ENCAMINHADO'--LIKE '%' + @filtro + '%'
+GO
 --EXEC SP_BuscarOS '123456789'
 --SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
 
-/*///////////////////////////////////// ESSE ESTA FUNCIONANDO
+/*'ABERTO' 'FECHADO' 'ENCAMINHADO'///////////////////////////////////// ESSE ESTA FUNCIONANDO
 CREATE PROC SP_BuscarOS
 	@Filtro VARCHAR(50) = ''
 AS
@@ -636,9 +657,17 @@ IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
 	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
 ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-GO*/
+GO
+'SUPORTE LOSS'
+'SUPORTE FIBRA'
+'INSTALAÇÃO FIBRA'
+'MUDANÇA DE ENDEREÇO' */
 
-EXEC SP_AbrirOrdemServico 0, 123456789, 1, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
-EXEC SP_AbrirOrdemServico 0, 987654321, 2, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080101, 1, 'INSTALAÇÃO FIBRA','REALIZAR A INSTALAÇÃO', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
+EXEC SP_AbrirOrdemServico 0, 2022080102, 1, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
+EXEC SP_AbrirOrdemServico 0, 2022080103, 1, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080104, 3, 'INSTALAÇÃO FIBRA','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
+EXEC SP_AbrirOrdemServico 0, 2022080105, 3, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080106, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
 SELECT * FROM Pessoa
 GO

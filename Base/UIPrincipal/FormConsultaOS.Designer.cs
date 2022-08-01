@@ -275,6 +275,7 @@
             // 
             // maskedTextBoxPrazo
             // 
+            this.maskedTextBoxPrazo.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxPrazo.Location = new System.Drawing.Point(469, 251);
             this.maskedTextBoxPrazo.Mask = "00-00-0000";
             this.maskedTextBoxPrazo.Name = "maskedTextBoxPrazo";
@@ -284,6 +285,7 @@
             // 
             // maskedTextBoxDataAbertura
             // 
+            this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(385, 251);
             this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
             this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
@@ -332,6 +334,7 @@
             // 
             // textBoxPlano
             // 
+            this.textBoxPlano.BackColor = System.Drawing.Color.White;
             this.textBoxPlano.Location = new System.Drawing.Point(547, 79);
             this.textBoxPlano.Name = "textBoxPlano";
             this.textBoxPlano.ReadOnly = true;
@@ -340,6 +343,7 @@
             // 
             // textBoxCpf
             // 
+            this.textBoxCpf.BackColor = System.Drawing.Color.White;
             this.textBoxCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
             this.textBoxCpf.Name = "textBoxCpf";
@@ -349,6 +353,7 @@
             // 
             // textBoxBairro
             // 
+            this.textBoxBairro.BackColor = System.Drawing.Color.White;
             this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxBairro.Location = new System.Drawing.Point(290, 79);
             this.textBoxBairro.Name = "textBoxBairro";
@@ -358,6 +363,7 @@
             // 
             // labelIdPessoa
             // 
+            this.labelIdPessoa.BackColor = System.Drawing.Color.White;
             this.labelIdPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelIdPessoa.Location = new System.Drawing.Point(6, 39);
             this.labelIdPessoa.Name = "labelIdPessoa";
@@ -367,6 +373,7 @@
             // 
             // maskedTextBoxCep
             // 
+            this.maskedTextBoxCep.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 79);
             this.maskedTextBoxCep.Mask = "00000-000";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
@@ -376,6 +383,7 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.BackColor = System.Drawing.Color.White;
             this.textBoxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxEmail.Location = new System.Drawing.Point(6, 118);
             this.textBoxEmail.Name = "textBoxEmail";
@@ -385,6 +393,7 @@
             // 
             // maskedTextBoxTelefone
             // 
+            this.maskedTextBoxTelefone.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxTelefone.Location = new System.Drawing.Point(248, 118);
             this.maskedTextBoxTelefone.Mask = "(99) 0000-0000";
             this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
@@ -394,6 +403,7 @@
             // 
             // maskedTextBoxCelularDois
             // 
+            this.maskedTextBoxCelularDois.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxCelularDois.Location = new System.Drawing.Point(450, 118);
             this.maskedTextBoxCelularDois.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularDois.Name = "maskedTextBoxCelularDois";
@@ -403,6 +413,7 @@
             // 
             // textBoxNomeCompleto
             // 
+            this.textBoxNomeCompleto.BackColor = System.Drawing.Color.White;
             this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(70, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
@@ -430,6 +441,7 @@
             // 
             // maskedTextBoxCelularUm
             // 
+            this.maskedTextBoxCelularUm.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxCelularUm.Location = new System.Drawing.Point(349, 118);
             this.maskedTextBoxCelularUm.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularUm.Name = "maskedTextBoxCelularUm";
@@ -439,6 +451,7 @@
             // 
             // textBoxUf
             // 
+            this.textBoxUf.BackColor = System.Drawing.Color.White;
             this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxUf.Location = new System.Drawing.Point(508, 79);
             this.textBoxUf.Name = "textBoxUf";
@@ -448,6 +461,7 @@
             // 
             // textBoxAtendente
             // 
+            this.textBoxAtendente.BackColor = System.Drawing.Color.White;
             this.textBoxAtendente.Location = new System.Drawing.Point(547, 118);
             this.textBoxAtendente.Name = "textBoxAtendente";
             this.textBoxAtendente.ReadOnly = true;
@@ -456,6 +470,7 @@
             // 
             // textBoxCidade
             // 
+            this.textBoxCidade.BackColor = System.Drawing.Color.White;
             this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCidade.Location = new System.Drawing.Point(390, 79);
             this.textBoxCidade.Name = "textBoxCidade";
@@ -465,6 +480,7 @@
             // 
             // textBoxNumCasa
             // 
+            this.textBoxNumCasa.BackColor = System.Drawing.Color.White;
             this.textBoxNumCasa.Location = new System.Drawing.Point(248, 79);
             this.textBoxNumCasa.Name = "textBoxNumCasa";
             this.textBoxNumCasa.ReadOnly = true;
@@ -473,6 +489,7 @@
             // 
             // textBoxRua
             // 
+            this.textBoxRua.BackColor = System.Drawing.Color.White;
             this.textBoxRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRua.Location = new System.Drawing.Point(70, 79);
             this.textBoxRua.Name = "textBoxRua";
@@ -491,10 +508,12 @@
             // 
             // textBoxDescricao
             // 
+            this.textBoxDescricao.BackColor = System.Drawing.Color.White;
             this.textBoxDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDescricao.Location = new System.Drawing.Point(11, 290);
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
+            this.textBoxDescricao.ReadOnly = true;
             this.textBoxDescricao.Size = new System.Drawing.Size(814, 100);
             this.textBoxDescricao.TabIndex = 7;
             // 
@@ -555,7 +574,9 @@
             // 
             // comboBoxTipoChamado
             // 
+            this.comboBoxTipoChamado.BackColor = System.Drawing.Color.White;
             this.comboBoxTipoChamado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoChamado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxTipoChamado.FormattingEnabled = true;
             this.comboBoxTipoChamado.Location = new System.Drawing.Point(13, 250);
             this.comboBoxTipoChamado.Name = "comboBoxTipoChamado";
@@ -565,6 +586,7 @@
             // comboBoxEstatusOS
             // 
             this.comboBoxEstatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEstatusOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxEstatusOS.FormattingEnabled = true;
             this.comboBoxEstatusOS.Location = new System.Drawing.Point(179, 250);
             this.comboBoxEstatusOS.Name = "comboBoxEstatusOS";
@@ -574,6 +596,7 @@
             // comboBoxLigarAntes
             // 
             this.comboBoxLigarAntes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLigarAntes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxLigarAntes.FormattingEnabled = true;
             this.comboBoxLigarAntes.Items.AddRange(new object[] {
             "SIM",
@@ -586,6 +609,7 @@
             // comboBoxTecnicoResponsavel
             // 
             this.comboBoxTecnicoResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTecnicoResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
             this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(553, 250);
             this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
@@ -714,7 +738,6 @@
         private System.Windows.Forms.Label labelIdPessoa;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCep;
         private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCelularDois;
         private System.Windows.Forms.TextBox textBoxNomeCompleto;
         private System.Windows.Forms.Label label6;
@@ -747,5 +770,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
     }
 }

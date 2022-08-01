@@ -22,6 +22,12 @@ namespace UIPrincipal
         {
             InitializeComponent();
         }
+        public FormConsultaOS(object _current)
+        {
+            InitializeComponent();
+            ordemServicoBindingSource.DataSource = _current;
+        }
+
         private void FormConsultaOS_Load(object sender, EventArgs e)
         {
             textBoxBuscarOS.Focus();
