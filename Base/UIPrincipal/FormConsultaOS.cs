@@ -25,7 +25,11 @@ namespace UIPrincipal
         public FormConsultaOS(object _current)
         {
             InitializeComponent();
-            ordemServicoBindingSource.DataSource = _current;
+            textBoxBuscarOS.Text = _current.ToString();
+            buttonBuscar_Click(null,null);
+            textBoxBuscarOS.Text = null;
+            textBoxBuscarOS.Visible = false;
+            buttonBuscar.Visible = false;
         }
 
         private void FormConsultaOS_Load(object sender, EventArgs e)

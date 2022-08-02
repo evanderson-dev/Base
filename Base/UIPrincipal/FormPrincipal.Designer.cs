@@ -279,6 +279,7 @@ namespace UIPrincipal
             this.dataGridViewOSAbertas.RowHeadersVisible = false;
             this.dataGridViewOSAbertas.Size = new System.Drawing.Size(814, 386);
             this.dataGridViewOSAbertas.TabIndex = 3;
+            this.dataGridViewOSAbertas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 

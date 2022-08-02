@@ -92,5 +92,13 @@ namespace UIPrincipal
         {
             dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSAberta("");
         }
+
+        private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewOSAbertas.CurrentRow.Selected = true;
+            string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            FormConsultaOS frm = new FormConsultaOS(protocolo);
+            frm.Show();
+        }
     }
 }
