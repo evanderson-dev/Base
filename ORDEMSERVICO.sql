@@ -605,7 +605,6 @@ AS
 GO
 
 CREATE PROC SP_BuscarOSAberta
-	@Filtro VARCHAR(50) = ''
 AS
 	SELECT
 	OrdemServico.Id,
@@ -622,9 +621,10 @@ AS
 	Pessoa.NomeCompleto AS NomeCompleto
 	FROM OrdemServico
 	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
-	WHERE EstatusOS = 'ABERTO' OR EstatusOS = 'ENCAMINHADO'--LIKE '%' + @filtro + '%'
+	WHERE EstatusOS != 'FECHADO'
 GO
 --EXEC SP_BuscarOS '123456789'
+--EXEC SP_BuscarOSAberta
 --SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
