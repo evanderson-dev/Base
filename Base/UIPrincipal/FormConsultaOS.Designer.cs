@@ -674,6 +674,7 @@
             this.buttonImprimir.TabIndex = 72;
             this.buttonImprimir.Text = "IMPRIMIR";
             this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // openFileDialogAddFoto
             // 
