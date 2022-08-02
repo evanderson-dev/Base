@@ -674,7 +674,6 @@
             this.buttonImprimir.TabIndex = 72;
             this.buttonImprimir.Text = "IMPRIMIR";
             this.buttonImprimir.UseVisualStyleBackColor = true;
-            this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // openFileDialogAddFoto
             // 
@@ -714,7 +713,6 @@
             this.MinimumSize = new System.Drawing.Size(840, 600);
             this.Name = "FormConsultaOS";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormConsultaOS_Load);
             this.groupBoxDadosPessoais.ResumeLayout(false);

@@ -10,6 +10,7 @@ namespace UIPrincipal
     public partial class FormPrincipal : Form
     {
         private bool Logado = true;
+        private string protocoloOculto = "";
         OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         public FormPrincipal()
         {
@@ -49,6 +50,7 @@ namespace UIPrincipal
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
+            toolStripTextBoxPesquisar.Focus();
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,11 +74,16 @@ namespace UIPrincipal
                 e.Cancel = true;
             }*/
         }
-
-        private void buttonBuscarOS_Click(object sender, EventArgs e)
+        private void visualizarImpressãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConsultaOS formConsultaOS = new FormConsultaOS();
-            formConsultaOS.ShowDialog();
+            if (toolStripTextBoxPesquisar.Text != null)
+            {
+                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOS(toolStripTextBoxPesquisar.Text);
+            }
+            else
+            {
+            dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSAberta(toolStripTextBoxPesquisar.Text);
+            }
         }
 
         private void buttonTeste_Click(object sender, EventArgs e)
@@ -88,17 +95,39 @@ namespace UIPrincipal
             Process p = Process.Start(psi);
         }
 
-        private void pictureBoxAtualizar_Click(object sender, EventArgs e)
-        {
-            dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSAberta("");
-        }
-
         private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridViewOSAbertas.CurrentRow.Selected = true;
             string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
             FormConsultaOS frm = new FormConsultaOS(protocolo);
             frm.Show();
+        }
+        private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewOSAbertas.CurrentRow.Selected = true;
+            protocoloOculto = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConsultaOS frm = new FormConsultaOS(protocoloOculto);
+            frm.Show();
+        }
+
+        private void toolStripMenuItemNovo_Click(object sender, EventArgs e)
+        {
+            using (FormOrdemServico frm = new FormOrdemServico())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void deligarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "shutdown.exe";
+            psi.Arguments = "-s -f -t 0";
+            psi.CreateNoWindow = true;
+            Process p = Process.Start(psi);
         }
     }
 }
