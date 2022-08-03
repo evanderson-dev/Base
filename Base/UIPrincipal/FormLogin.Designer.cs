@@ -48,7 +48,7 @@ namespace UIPrincipal
             this.buttonLogin.BackColor = System.Drawing.Color.White;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.Black;
-            this.buttonLogin.Location = new System.Drawing.Point(284, 188);
+            this.buttonLogin.Location = new System.Drawing.Point(281, 188);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 2;
@@ -61,7 +61,7 @@ namespace UIPrincipal
             this.buttonSair.BackColor = System.Drawing.Color.White;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.ForeColor = System.Drawing.Color.Black;
-            this.buttonSair.Location = new System.Drawing.Point(365, 188);
+            this.buttonSair.Location = new System.Drawing.Point(362, 188);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 3;
