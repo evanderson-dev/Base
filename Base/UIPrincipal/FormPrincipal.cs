@@ -62,7 +62,7 @@ namespace UIPrincipal
             if (!frmLogin.Logou)
             {
                 this.Hide();
-                frmLogin.Show();
+                frmLogin.ShowDialog();
                 this.Close();
             }
         }

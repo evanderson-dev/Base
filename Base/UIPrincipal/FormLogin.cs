@@ -22,7 +22,7 @@ namespace UIPrincipal
         {
             using (FormPrincipal frm = new FormPrincipal())
             {
-                frm.Show();
+                frm.ShowDialog();
             }
         }
         private void buttonLogin_Click(object sender, EventArgs e)
