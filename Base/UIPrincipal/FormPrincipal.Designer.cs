@@ -52,13 +52,6 @@ namespace UIPrincipal
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelCentro = new System.Windows.Forms.Panel();
             this.dataGridViewOSAbertas = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoChamadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPBuscarOSAbertaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -67,6 +60,13 @@ namespace UIPrincipal
             this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBoxPesquisar = new System.Windows.Forms.ToolStripTextBox();
             this.sP_BuscarOSAbertaTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSAbertaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoChamadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             separador1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -285,55 +285,6 @@ namespace UIPrincipal
             this.dataGridViewOSAbertas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellClick);
             this.dataGridViewOSAbertas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellDoubleClick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // protocoloDataGridViewTextBoxColumn
-            // 
-            this.protocoloDataGridViewTextBoxColumn.DataPropertyName = "Protocolo";
-            this.protocoloDataGridViewTextBoxColumn.HeaderText = "Protocolo";
-            this.protocoloDataGridViewTextBoxColumn.Name = "protocoloDataGridViewTextBoxColumn";
-            this.protocoloDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // nomeCompletoDataGridViewTextBoxColumn
-            // 
-            this.nomeCompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeCompletoDataGridViewTextBoxColumn.DataPropertyName = "NomeCompleto";
-            this.nomeCompletoDataGridViewTextBoxColumn.HeaderText = "Cliente";
-            this.nomeCompletoDataGridViewTextBoxColumn.Name = "nomeCompletoDataGridViewTextBoxColumn";
-            // 
-            // tipoChamadoDataGridViewTextBoxColumn
-            // 
-            this.tipoChamadoDataGridViewTextBoxColumn.DataPropertyName = "TipoChamado";
-            this.tipoChamadoDataGridViewTextBoxColumn.HeaderText = "Tipo de Chamado";
-            this.tipoChamadoDataGridViewTextBoxColumn.Name = "tipoChamadoDataGridViewTextBoxColumn";
-            this.tipoChamadoDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // estatusOSDataGridViewTextBoxColumn
-            // 
-            this.estatusOSDataGridViewTextBoxColumn.DataPropertyName = "EstatusOS";
-            this.estatusOSDataGridViewTextBoxColumn.HeaderText = "Estatus";
-            this.estatusOSDataGridViewTextBoxColumn.Name = "estatusOSDataGridViewTextBoxColumn";
-            // 
-            // dataAberturaDataGridViewTextBoxColumn
-            // 
-            this.dataAberturaDataGridViewTextBoxColumn.DataPropertyName = "DataAbertura";
-            this.dataAberturaDataGridViewTextBoxColumn.HeaderText = "Abertura";
-            this.dataAberturaDataGridViewTextBoxColumn.Name = "dataAberturaDataGridViewTextBoxColumn";
-            this.dataAberturaDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // dataPrazoDataGridViewTextBoxColumn
-            // 
-            this.dataPrazoDataGridViewTextBoxColumn.DataPropertyName = "DataPrazo";
-            this.dataPrazoDataGridViewTextBoxColumn.HeaderText = "Prazo";
-            this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
-            this.dataPrazoDataGridViewTextBoxColumn.Width = 70;
-            // 
             // sPBuscarOSAbertaBindingSource
             // 
             this.sPBuscarOSAbertaBindingSource.DataMember = "SP_BuscarOSAberta";
@@ -404,7 +355,6 @@ namespace UIPrincipal
             this.toolStripTextBoxPesquisar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBoxPesquisar.BackColor = System.Drawing.Color.White;
             this.toolStripTextBoxPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBoxPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxPesquisar.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripTextBoxPesquisar.MaxLength = 14;
             this.toolStripTextBoxPesquisar.Name = "toolStripTextBoxPesquisar";
@@ -414,6 +364,55 @@ namespace UIPrincipal
             // sP_BuscarOSAbertaTableAdapter
             // 
             this.sP_BuscarOSAbertaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // protocoloDataGridViewTextBoxColumn
+            // 
+            this.protocoloDataGridViewTextBoxColumn.DataPropertyName = "Protocolo";
+            this.protocoloDataGridViewTextBoxColumn.HeaderText = "Protocolo";
+            this.protocoloDataGridViewTextBoxColumn.Name = "protocoloDataGridViewTextBoxColumn";
+            this.protocoloDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // nomeCompletoDataGridViewTextBoxColumn
+            // 
+            this.nomeCompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeCompletoDataGridViewTextBoxColumn.DataPropertyName = "NomeCompleto";
+            this.nomeCompletoDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.nomeCompletoDataGridViewTextBoxColumn.Name = "nomeCompletoDataGridViewTextBoxColumn";
+            // 
+            // tipoChamadoDataGridViewTextBoxColumn
+            // 
+            this.tipoChamadoDataGridViewTextBoxColumn.DataPropertyName = "TipoChamado";
+            this.tipoChamadoDataGridViewTextBoxColumn.HeaderText = "Tipo de Chamado";
+            this.tipoChamadoDataGridViewTextBoxColumn.Name = "tipoChamadoDataGridViewTextBoxColumn";
+            this.tipoChamadoDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // estatusOSDataGridViewTextBoxColumn
+            // 
+            this.estatusOSDataGridViewTextBoxColumn.DataPropertyName = "EstatusOS";
+            this.estatusOSDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusOSDataGridViewTextBoxColumn.Name = "estatusOSDataGridViewTextBoxColumn";
+            // 
+            // dataAberturaDataGridViewTextBoxColumn
+            // 
+            this.dataAberturaDataGridViewTextBoxColumn.DataPropertyName = "DataAbertura";
+            this.dataAberturaDataGridViewTextBoxColumn.HeaderText = "Abertura";
+            this.dataAberturaDataGridViewTextBoxColumn.Name = "dataAberturaDataGridViewTextBoxColumn";
+            this.dataAberturaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // dataPrazoDataGridViewTextBoxColumn
+            // 
+            this.dataPrazoDataGridViewTextBoxColumn.DataPropertyName = "DataPrazo";
+            this.dataPrazoDataGridViewTextBoxColumn.HeaderText = "Prazo";
+            this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
+            this.dataPrazoDataGridViewTextBoxColumn.Width = 70;
             // 
             // FormPrincipal
             // 
