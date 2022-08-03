@@ -49,10 +49,18 @@ namespace UIPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente'. Você pode movê-la ou removê-la conforme necessário.
-            this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
             toolStripTextBoxPesquisar.Focus();
+
+            /*try
+            {
+            // TODO: esta linha de código carrega dados na tabela 'oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente'. Você pode movê-la ou removê-la conforme necessário.
+            this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
