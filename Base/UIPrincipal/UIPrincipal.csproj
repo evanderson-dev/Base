@@ -100,10 +100,13 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ORDEMSERVICODataSet.Designer.cs">
+    <Compile Include="ORDEMSERVICODataSetOsPendente.cs">
+      <DependentUpon>ORDEMSERVICODataSetOsPendente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ORDEMSERVICODataSetOsPendente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ORDEMSERVICODataSet.xsd</DependentUpon>
+      <DependentUpon>ORDEMSERVICODataSetOsPendente.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,16 +153,16 @@
     <EmbeddedResource Include="FormTipoChamado.resx">
       <DependentUpon>FormTipoChamado.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ORDEMSERVICODataSet.xsc">
-      <DependentUpon>ORDEMSERVICODataSet.xsd</DependentUpon>
+    <None Include="ORDEMSERVICODataSetOsPendente.xsc">
+      <DependentUpon>ORDEMSERVICODataSetOsPendente.xsd</DependentUpon>
     </None>
-    <None Include="ORDEMSERVICODataSet.xsd">
+    <None Include="ORDEMSERVICODataSetOsPendente.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ORDEMSERVICODataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ORDEMSERVICODataSetOsPendente.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ORDEMSERVICODataSet.xss">
-      <DependentUpon>ORDEMSERVICODataSet.xsd</DependentUpon>
+    <None Include="ORDEMSERVICODataSetOsPendente.xss">
+      <DependentUpon>ORDEMSERVICODataSetOsPendente.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Model.GrupoUsuario.datasource" />

@@ -49,6 +49,8 @@ namespace UIPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente'. Você pode movê-la ou removê-la conforme necessário.
+            this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
             toolStripTextBoxPesquisar.Focus();
         }
@@ -82,7 +84,8 @@ namespace UIPrincipal
             }
             else
             {
-            dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSAberta(toolStripTextBoxPesquisar.Text);
+                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+                //this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
             }
         }
 
@@ -97,15 +100,29 @@ namespace UIPrincipal
 
         private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridViewOSAbertas.CurrentRow.Selected = true;
-            string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
-            FormConsultaOS frm = new FormConsultaOS(protocolo);
-            frm.Show();
+            try
+            {
+                dataGridViewOSAbertas.CurrentRow.Selected = true;
+                string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                FormConsultaOS frm = new FormConsultaOS(protocolo);
+                frm.Show();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridViewOSAbertas.CurrentRow.Selected = true;
-            protocoloOculto = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            try
+            {
+                dataGridViewOSAbertas.CurrentRow.Selected = true;
+                protocoloOculto = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
         }
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {

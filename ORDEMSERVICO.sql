@@ -604,7 +604,7 @@ AS
 	WHERE Protocolo LIKE '%' + @filtro + '%'
 GO
 
-CREATE PROC SP_BuscarOSAberta
+CREATE PROC SP_BuscarOSPendente
 AS
 	SELECT
 	OrdemServico.Id,
@@ -623,6 +623,7 @@ AS
 	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
 	WHERE EstatusOS != 'FECHADO'
 GO
+
 --EXEC SP_BuscarOS '123456789'
 --EXEC SP_BuscarOSAberta
 --SELECT * FROM OrdemServico

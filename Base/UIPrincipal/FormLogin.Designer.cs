@@ -45,22 +45,28 @@ namespace UIPrincipal
             // 
             // buttonLogin
             // 
+            this.buttonLogin.BackColor = System.Drawing.Color.White;
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.ForeColor = System.Drawing.Color.Black;
             this.buttonLogin.Location = new System.Drawing.Point(284, 188);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "LOGAR";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonSair
             // 
+            this.buttonSair.BackColor = System.Drawing.Color.White;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.ForeColor = System.Drawing.Color.Black;
             this.buttonSair.Location = new System.Drawing.Point(365, 188);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 3;
             this.buttonSair.Text = "SAIR";
-            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // textBoxUsuario
@@ -82,18 +88,22 @@ namespace UIPrincipal
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.ForeColor = System.Drawing.Color.White;
             this.labelLogin.Location = new System.Drawing.Point(251, 49);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(40, 13);
+            this.labelLogin.Size = new System.Drawing.Size(45, 13);
             this.labelLogin.TabIndex = 4;
             this.labelLogin.Text = "LOGIN";
             // 
             // labelSenha
             // 
             this.labelSenha.AutoSize = true;
+            this.labelSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSenha.ForeColor = System.Drawing.Color.White;
             this.labelSenha.Location = new System.Drawing.Point(251, 117);
             this.labelSenha.Name = "labelSenha";
-            this.labelSenha.Size = new System.Drawing.Size(44, 13);
+            this.labelSenha.Size = new System.Drawing.Size(49, 13);
             this.labelSenha.TabIndex = 5;
             this.labelSenha.Text = "SENHA";
             // 
@@ -137,9 +147,10 @@ namespace UIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(580, 361);
             this.Controls.Add(this.groupBoxLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

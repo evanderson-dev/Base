@@ -134,7 +134,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public DataTable BuscarOSAberta(string _filtro)
+        public DataTable BuscarOSPendete()
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
@@ -146,12 +146,12 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cn;
-                da.SelectCommand.CommandText = "SP_BuscarOSAberta";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandText = "SP_BuscarOSPendente";//PROCEDURE DO BANCO SQL
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
 
                 SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
-                pfiltro.Value = _filtro;
-                da.SelectCommand.Parameters.Add(pfiltro);
+                //pfiltro.Value = _filtro;
+                //da.SelectCommand.Parameters.Add(pfiltro);
 
                 cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
                 da.Fill(dt);
