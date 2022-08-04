@@ -50,6 +50,7 @@ namespace UIPrincipal
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
+            dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
             toolStripTextBoxPesquisar.Focus();
 
             /*try
