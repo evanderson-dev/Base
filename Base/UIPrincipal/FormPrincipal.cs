@@ -51,17 +51,6 @@ namespace UIPrincipal
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
             dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
-            toolStripTextBoxPesquisar.Focus();
-
-            /*try
-            {
-            // TODO: esta linha de código carrega dados na tabela 'oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente'. Você pode movê-la ou removê-la conforme necessário.
-            this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,14 +76,13 @@ namespace UIPrincipal
         }
         private void visualizarImpressãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (toolStripTextBoxPesquisar.Text != null)
+            if (toolStripTextBoxPesquisar.Text == "")
             {
-                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOS(toolStripTextBoxPesquisar.Text);
+                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
             }
             else
             {
-                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
-                //this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
+                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOS(toolStripTextBoxPesquisar.Text);
             }
         }
 
