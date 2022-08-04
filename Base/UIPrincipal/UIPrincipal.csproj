@@ -149,6 +149,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="FormTipoChamado.resx">
       <DependentUpon>FormTipoChamado.cs</DependentUpon>
@@ -202,6 +203,993 @@
       <Project>{9b3f7edf-617a-4d2a-a15c-b2b517c0d278}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_14.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_15.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_17.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_18.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_19.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_22.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_25.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_27.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_28.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_30.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_31.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_33.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_34.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_35.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_36.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_37.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_38.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_39.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_40.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_41.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_42.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_43.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_44.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_46.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_47.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_54.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_55.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_56.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_57.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_58.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_59.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_60.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_61.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_62.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_63.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_65.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_66.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_67.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_68.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_69.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_73.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_74.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_75.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_76.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_77.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_78.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_79.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_81.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_84.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_85.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_89.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_90.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_91.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_92.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_93.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_94.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_95.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_96.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_98.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_99.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_102.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_103.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_104.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_105.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_106.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_107.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_108.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_109.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_110.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_111.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_112.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_113.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_114.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_115.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_116.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_117.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_123.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_124.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_125.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_126.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_127.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_129.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_131.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_132.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_133.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_134.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_135.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_136.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_137.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_138.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_139.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_140.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_141.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_142.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_143.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_146.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_147.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_149.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_152.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_158.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_159.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_160.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_162.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_163.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_165.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_166.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_167.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_168.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_171.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_172.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_173.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_174.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_175.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_178.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_180.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_181.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_183.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_184.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_185.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_186.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_189.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1002.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1003.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1004.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1005.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1008.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1010.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1013.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1014.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1020.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1022.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1023.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1024.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1025.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1027.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1030.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1031.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1032.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1033.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1034.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1035.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1036.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1037.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1040.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1043.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1301.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1302.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1303.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5101.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5102.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5205.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5206.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5210.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5301.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5302.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5303.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5304.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5305.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5306.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5307.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5308.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5309.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5310.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5311.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5312.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5313.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5314.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5315.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5318.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5319.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5320.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5322.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5323.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5324.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5325.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5326.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5327.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5328.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5330.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5331.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5332.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5333.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5334.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5335.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5336.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5337.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5338.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5339.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5340.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5341.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5342.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5343.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5344.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5345.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5346.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5347.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5348.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5349.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5350.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5351.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5352.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5353.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5355.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5356.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5357.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5358.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5359.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5360.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5361.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5364.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5365.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5366.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5367.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5368.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5369.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5370.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5371.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5372.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5374.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5377.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5378.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5379.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5381.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5382.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5383.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5402.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5403.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5404.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5405.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5406.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5407.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5408.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5409.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5411.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5412.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6000.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6002.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6003.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6004.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6005.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6020.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6021.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6022.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6023.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6024.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6025.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6050.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6051.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6052.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6053.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6054.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6055.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6070.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6071.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6072.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6073.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6074.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6075.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6101.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6102.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6103.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6104.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6105.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6120.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6121.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6122.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6123.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6124.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6125.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6150.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6151.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6152.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6153.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6154.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6155.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6170.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6171.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6172.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6173.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6174.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6175.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6180.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6181.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6182.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6183.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6184.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6185.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6190.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6191.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6192.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6193.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6194.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6195.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6200.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6201.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6202.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6203.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6204.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6205.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6250.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6251.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6252.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6253.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6254.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6255.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6256.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6257.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6300.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6301.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6302.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6303.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_6400.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_SHIDI_SHIELD_INTERNAL.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

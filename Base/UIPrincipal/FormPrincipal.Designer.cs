@@ -30,7 +30,6 @@ namespace UIPrincipal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ToolStripMenuItem separador1;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,14 +52,6 @@ namespace UIPrincipal
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelCentro = new System.Windows.Forms.Panel();
             this.dataGridViewOSAbertas = new System.Windows.Forms.DataGridView();
-            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItemNovo = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBoxPesquisar = new System.Windows.Forms.ToolStripTextBox();
-            this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +59,16 @@ namespace UIPrincipal
             this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            separador1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItemNovo = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBoxPesquisar = new System.Windows.Forms.ToolStripTextBox();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
+            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -77,17 +77,6 @@ namespace UIPrincipal
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // separador1
-            // 
-            separador1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            separador1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            separador1.Enabled = false;
-            separador1.ForeColor = System.Drawing.Color.Black;
-            separador1.Name = "separador1";
-            separador1.ShowShortcutKeys = false;
-            separador1.Size = new System.Drawing.Size(22, 23);
-            separador1.Text = "|";
             // 
             // menuStrip1
             // 
@@ -277,7 +266,7 @@ namespace UIPrincipal
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewOSAbertas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewOSAbertas.Location = new System.Drawing.Point(12, 34);
+            this.dataGridViewOSAbertas.Location = new System.Drawing.Point(12, 53);
             this.dataGridViewOSAbertas.MaximumSize = new System.Drawing.Size(830, 600);
             this.dataGridViewOSAbertas.MinimumSize = new System.Drawing.Size(814, 386);
             this.dataGridViewOSAbertas.Name = "dataGridViewOSAbertas";
@@ -293,91 +282,10 @@ namespace UIPrincipal
             this.dataGridViewOSAbertas.RowHeadersVisible = false;
             this.dataGridViewOSAbertas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewOSAbertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewOSAbertas.Size = new System.Drawing.Size(830, 514);
+            this.dataGridViewOSAbertas.Size = new System.Drawing.Size(830, 489);
             this.dataGridViewOSAbertas.TabIndex = 3;
             this.dataGridViewOSAbertas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellClick);
             this.dataGridViewOSAbertas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellDoubleClick);
-            // 
-            // sPBuscarOSPendenteBindingSource
-            // 
-            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
-            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
-            // 
-            // oRDEMSERVICODataSetOsPendente
-            // 
-            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
-            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.BackColor = System.Drawing.Color.Black;
-            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemNovo,
-            separador1,
-            this.imprimirToolStripMenuItem,
-            this.visualizarImpressãoToolStripMenuItem,
-            this.toolStripTextBoxPesquisar});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(6, 2, 0, 6);
-            this.menuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip2.ShowItemToolTips = true;
-            this.menuStrip2.Size = new System.Drawing.Size(854, 31);
-            this.menuStrip2.TabIndex = 5;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // toolStripMenuItemNovo
-            // 
-            this.toolStripMenuItemNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItemNovo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemNovo.Image")));
-            this.toolStripMenuItemNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripMenuItemNovo.Name = "toolStripMenuItemNovo";
-            this.toolStripMenuItemNovo.Size = new System.Drawing.Size(28, 23);
-            this.toolStripMenuItemNovo.Text = "&Novo";
-            this.toolStripMenuItemNovo.ToolTipText = "Nova O.S";
-            this.toolStripMenuItemNovo.Click += new System.EventHandler(this.toolStripMenuItemNovo_Click);
-            // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.imprimirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripMenuItem.Image")));
-            this.imprimirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(28, 23);
-            this.imprimirToolStripMenuItem.Text = "&Imprimir";
-            this.imprimirToolStripMenuItem.ToolTipText = "Imprimir O.S";
-            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
-            // 
-            // visualizarImpressãoToolStripMenuItem
-            // 
-            this.visualizarImpressãoToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.visualizarImpressãoToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.visualizarImpressãoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("visualizarImpressãoToolStripMenuItem.Image")));
-            this.visualizarImpressãoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.visualizarImpressãoToolStripMenuItem.Name = "visualizarImpressãoToolStripMenuItem";
-            this.visualizarImpressãoToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.visualizarImpressãoToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.visualizarImpressãoToolStripMenuItem.Size = new System.Drawing.Size(40, 23);
-            this.visualizarImpressãoToolStripMenuItem.Text = "Visuali&zar Impressão";
-            this.visualizarImpressãoToolStripMenuItem.ToolTipText = "Pesquisar O.S";
-            this.visualizarImpressãoToolStripMenuItem.Click += new System.EventHandler(this.visualizarImpressãoToolStripMenuItem_Click);
-            // 
-            // toolStripTextBoxPesquisar
-            // 
-            this.toolStripTextBoxPesquisar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBoxPesquisar.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBoxPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBoxPesquisar.Margin = new System.Windows.Forms.Padding(0);
-            this.toolStripTextBoxPesquisar.MaxLength = 14;
-            this.toolStripTextBoxPesquisar.Name = "toolStripTextBoxPesquisar";
-            this.toolStripTextBoxPesquisar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripTextBoxPesquisar.Size = new System.Drawing.Size(150, 23);
-            // 
-            // sP_BuscarOSPendenteTableAdapter
-            // 
-            this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -433,6 +341,108 @@ namespace UIPrincipal
             this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
             this.dataPrazoDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataPrazoDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // sPBuscarOSPendenteBindingSource
+            // 
+            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
+            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
+            // 
+            // oRDEMSERVICODataSetOsPendente
+            // 
+            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
+            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.Color.Black;
+            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemNovo,
+            this.imprimirToolStripMenuItem,
+            this.visualizarImpressãoToolStripMenuItem,
+            this.toolStripTextBoxPesquisar,
+            this.clientesToolStripMenuItem,
+            this.tToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(6, 2, 0, 6);
+            this.menuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip2.ShowItemToolTips = true;
+            this.menuStrip2.Size = new System.Drawing.Size(854, 44);
+            this.menuStrip2.TabIndex = 5;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripMenuItemNovo
+            // 
+            this.toolStripMenuItemNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItemNovo.Image = global::UIPrincipal.Properties.Resources.imageres_90;
+            this.toolStripMenuItemNovo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItemNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripMenuItemNovo.Name = "toolStripMenuItemNovo";
+            this.toolStripMenuItemNovo.Size = new System.Drawing.Size(44, 36);
+            this.toolStripMenuItemNovo.Text = "&Novo";
+            this.toolStripMenuItemNovo.ToolTipText = "Nova O.S";
+            this.toolStripMenuItemNovo.Click += new System.EventHandler(this.toolStripMenuItemNovo_Click);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.imprimirToolStripMenuItem.Image = global::UIPrincipal.Properties.Resources.imageres_76;
+            this.imprimirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.imprimirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(44, 36);
+            this.imprimirToolStripMenuItem.Text = "&Imprimir";
+            this.imprimirToolStripMenuItem.ToolTipText = "Imprimir O.S";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
+            // 
+            // visualizarImpressãoToolStripMenuItem
+            // 
+            this.visualizarImpressãoToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.visualizarImpressãoToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.visualizarImpressãoToolStripMenuItem.Image = global::UIPrincipal.Properties.Resources.imageres_18;
+            this.visualizarImpressãoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.visualizarImpressãoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.visualizarImpressãoToolStripMenuItem.Name = "visualizarImpressãoToolStripMenuItem";
+            this.visualizarImpressãoToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.visualizarImpressãoToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.visualizarImpressãoToolStripMenuItem.Size = new System.Drawing.Size(56, 36);
+            this.visualizarImpressãoToolStripMenuItem.Text = "Visuali&zar Impressão";
+            this.visualizarImpressãoToolStripMenuItem.ToolTipText = "Pesquisar O.S";
+            this.visualizarImpressãoToolStripMenuItem.Click += new System.EventHandler(this.visualizarImpressãoToolStripMenuItem_Click);
+            // 
+            // toolStripTextBoxPesquisar
+            // 
+            this.toolStripTextBoxPesquisar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBoxPesquisar.BackColor = System.Drawing.Color.White;
+            this.toolStripTextBoxPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBoxPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBoxPesquisar.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBoxPesquisar.MaxLength = 14;
+            this.toolStripTextBoxPesquisar.Name = "toolStripTextBoxPesquisar";
+            this.toolStripTextBoxPesquisar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBoxPesquisar.Size = new System.Drawing.Size(150, 36);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Image = global::UIPrincipal.Properties.Resources.imageres_79;
+            this.clientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(44, 36);
+            this.clientesToolStripMenuItem.ToolTipText = "Clientes";
+            // 
+            // sP_BuscarOSPendenteTableAdapter
+            // 
+            this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
+            // 
+            // tToolStripMenuItem
+            // 
+            this.tToolStripMenuItem.Image = global::UIPrincipal.Properties.Resources.imageres_5324;
+            this.tToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
+            this.tToolStripMenuItem.Size = new System.Drawing.Size(44, 36);
+            this.tToolStripMenuItem.ToolTipText = "Usuarios";
             // 
             // FormPrincipal
             // 
@@ -506,5 +516,7 @@ namespace UIPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAberturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPrazoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
     }
 }
