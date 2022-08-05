@@ -42,5 +42,30 @@ namespace BLL
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             return usuarioDAL.BuscarFuncionario(_filtro);
         }
+        public DataTable BuscarFuncionarioInativo()
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarFuncionarioInativo();
+        }
+        public DataTable BuscarClienteInativo()
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarClienteInativo();
+        }
+        public DataTable BuscarClienteAtivo()
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarClienteAtivo();
+        }
+        public DataTable BuscarClienteFuncionarioInativo()
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarClienteFuncionarioInativo();
+        }
+        public DataTable BuscarClienteFuncionarioAtivo()
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarClienteFuncionarioAtivo();
+        }
     }
 }

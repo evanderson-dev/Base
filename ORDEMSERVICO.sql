@@ -488,23 +488,114 @@ AS
 	FROM Pessoa 
 	LEFT JOIN Plano ON Pessoa.Id_Plano = Plano.Id
 	WHERE NomeCompleto LIKE '%' + @filtro + '%'
-	OR Cpf LIKE '%'+ @filtro +'%' OR NomeUsuario LIKE '%'+ @filtro +'%'--CONVERT(VARCHAR(50), Id) = @Filtro
+	OR Cpf = @filtro OR NomeUsuario = @filtro --CONVERT(VARCHAR(50), Id) = @Filtro
 GO
 --###################################################################################
-CREATE PROC SP_BuscarFuncionario
+CREATE PROC SP_BuscarFuncionario --FUNCIONARIO ATIVO
 	@Filtro VARCHAR(250) = ''
 AS
 	SELECT
 	Pessoa.Id,
-	Ativo,
 	NomeUsuario,
 	NomeCompleto,
+	Cpf,
+	Email,
 	Funcionario,
+	Cliente,
+	Ativo,
 	Id_Permissao
 	FROM Pessoa
 	WHERE Funcionario LIKE '%' + @filtro + '%' AND Ativo = 1
 GO
+
+CREATE PROC SP_BuscarFuncionarioInativo
+AS
+	SELECT
+	Pessoa.Id,
+	NomeUsuario,
+	NomeCompleto,
+	Cpf,
+	Email,
+	Funcionario,
+	Cliente,
+	Ativo,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Funcionario = 1 AND Cliente = 0 AND Ativo = 0
+GO
+--EXEC SP_BuscarFuncionarioInativo
+CREATE PROC SP_BuscarClienteAtivo
+AS
+	SELECT
+	Pessoa.Id,
+	NomeUsuario,
+	NomeCompleto,
+	Cpf,
+	Email,
+	Funcionario,
+	Cliente,
+	Ativo,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Cliente = 1 AND Funcionario = 0 AND Ativo = 1
+GO
+
+CREATE PROC SP_BuscarClienteInativo
+AS
+	SELECT
+	Pessoa.Id,
+	NomeUsuario,
+	NomeCompleto,
+	Cpf,
+	Email,
+	Funcionario,
+	Cliente,
+	Ativo,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Cliente = 1 AND Funcionario = 0 AND Ativo = 0
+GO
+
+CREATE PROC SP_BuscarClienteFuncionarioAtivo
+AS
+	SELECT
+	Pessoa.Id,
+	NomeUsuario,
+	NomeCompleto,
+	Cpf,
+	Email,
+	Funcionario,
+	Cliente,
+	Ativo,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Cliente = 1 AND Funcionario = 1 AND Ativo = 1
+GO
+
+CREATE PROC SP_BuscarClienteFuncionarioInativo
+AS
+	SELECT
+	Pessoa.Id,
+	NomeUsuario,
+	NomeCompleto,
+	Cpf,
+	Email,
+	Funcionario,
+	Cliente,
+	Ativo,
+	Id_Permissao
+	FROM Pessoa
+	WHERE Cliente = 1 AND Funcionario = 1 AND Ativo = 0
+GO
+
+--SELECT NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
+--EXEC SP_BuscarFuncionario '1'
 --EXEC SP_BuscarFuncionario '0'
+--EXEC SP_BuscarFuncionarioInativo
+--EXEC SP_BuscarClienteAtivo
+--EXEC SP_BuscarClienteInativo
+--EXEC SP_BuscarClienteFuncionarioInativo
+--EXEC SP_BuscarClienteFuncionarioAtivo
 --####################################################################################
 
 CREATE PROC SP_ExcluirUsuario
@@ -629,6 +720,7 @@ GO
 --SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
+SELECT NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
 
 /*'ABERTO' 'FECHADO' 'ENCAMINHADO'///////////////////////////////////// ESSE ESTA FUNCIONANDO
 CREATE PROC SP_BuscarOS
@@ -673,5 +765,5 @@ EXEC SP_AbrirOrdemServico 0, 2022080106, 3, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO D
 EXEC SP_AbrirOrdemServico 0, 2022080107, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
 EXEC SP_AbrirOrdemServico 0, 2022080108, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
 EXEC SP_AbrirOrdemServico 0, 2022080109, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
-SELECT * FROM Pessoa
+--SELECT * FROM Pessoa
 GO

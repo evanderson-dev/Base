@@ -308,6 +308,171 @@ namespace DAL
                 cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
             }
         }
+        public DataTable BuscarFuncionarioInativo()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarFuncionarioInativo";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
+            }
+        }
+        public DataTable BuscarClienteInativo()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarClienteInativo";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
+            }
+        }
+        public DataTable BuscarClienteAtivo()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarClienteAtivo";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
+            }
+        }
+        public DataTable BuscarClienteFuncionarioInativo()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarClienteFuncionarioInativo";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
+            }
+        }
+        public DataTable BuscarClienteFuncionarioAtivo()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarClienteFuncionarioAtivo";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();//FECHAMENTO DA CONEXÃO COM O BANCO
+            }
+        }
         /////////////////////  BUSCAR PLANO  /////////////////////////////////
         public DataTable BuscarPlano(string _filtro)
         {
