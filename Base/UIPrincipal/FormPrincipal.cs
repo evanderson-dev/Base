@@ -76,15 +76,15 @@ namespace UIPrincipal
             }*/
         }
         private void visualizarImpressãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (toolStripTextBoxPesquisar.Text == "")
+        {// COD PARA SER RETIRADO
+            /*if (toolStripTextBoxPesquisar.Text == "")
             {
                 dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
             }
             else
             {
                 dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOS(toolStripTextBoxPesquisar.Text);
-            }
+            }*/
         }
 
         private void buttonTeste_Click(object sender, EventArgs e)
@@ -153,41 +153,53 @@ namespace UIPrincipal
 
         private void buttonBuscarCadastro_Click(object sender, EventArgs e)
         {
-            /*if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == true)
+            if (tabControlConsulta.SelectedIndex == 0)
             {
-                usuarioBindingSource.DataSource = usuarioBLL.Buscar("");
-            }*/
-            if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == false && checkBoxAtivo.Checked == false)
-            {   // FUNCIONARIO INATIVO
-                usuarioBindingSource.DataSource = usuarioBLL.BuscarFuncionarioInativo();
+                //labelFilto.Visible = false;
+                if (textBoxBuscarCadastro.Text == "")
+                {
+                    dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+                }
+                else
+                {
+                    dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOS(textBoxBuscarCadastro.Text);
+                }
             }
-            else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == false && checkBoxAtivo.Checked == true)
-            {   // FUNCIONARIO ATIVO
-                usuarioBindingSource.DataSource = usuarioBLL.BuscarFuncionario("1");
-            }
-            else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == false && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == false)
-            {   // CLIENTE INATIVO
-                usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteInativo();
-            }
-            else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == false && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == true)
-            {   // CLIENTE ATIVO
-                usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteAtivo();
-            }
-            else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == false)
-            {   // CLIENTE E FUNCIONARIO INATIVO
-                usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteFuncionarioInativo();
-            }
-            else if(textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == true)
-            {   // CLIENTE E FUNCIONARIO ATIVO
-                usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteFuncionarioAtivo();
-            }
-            else
+            else if (tabControlConsulta.SelectedIndex == 1)
             {
-                usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscarCadastro.Text);
+                if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == false && checkBoxAtivo.Checked == false)
+                {   // FUNCIONARIO INATIVO
+                    usuarioBindingSource.DataSource = usuarioBLL.BuscarFuncionarioInativo();
+                }
+                else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == false && checkBoxAtivo.Checked == true)
+                {   // FUNCIONARIO ATIVO
+                    usuarioBindingSource.DataSource = usuarioBLL.BuscarFuncionario("1");
+                }
+                else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == false && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == false)
+                {   // CLIENTE INATIVO
+                    usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteInativo();
+                }
+                else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == false && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == true)
+                {   // CLIENTE ATIVO
+                    usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteAtivo();
+                }
+                else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == false)
+                {   // CLIENTE E FUNCIONARIO INATIVO
+                    usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteFuncionarioInativo();
+                }
+                else if (textBoxBuscarCadastro.Text == "" && checkBoxFuncionario.Checked == true && checkBoxCliente.Checked == true && checkBoxAtivo.Checked == true)
+                {   // CLIENTE E FUNCIONARIO ATIVO
+                    usuarioBindingSource.DataSource = usuarioBLL.BuscarClienteFuncionarioAtivo();
+                }
+                else
+                {
+                    usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscarCadastro.Text);
+                }
             }
+            //######################################
+            
         }
-
-        private void buttonLimpar_Click(object sender, EventArgs e)
+        private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             usuarioBindingSource.DataSource = null;
             usuarioDataGridView.DataSource = usuarioBindingSource;
