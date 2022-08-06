@@ -54,16 +54,15 @@ namespace UIPrincipal
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelCentro = new System.Windows.Forms.Panel();
-            this.panelFiltroPessoa = new System.Windows.Forms.Panel();
-            this.labelFilto = new System.Windows.Forms.Label();
-            this.groupBoxFiltroCadastro = new System.Windows.Forms.GroupBox();
-            this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
-            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
-            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
             this.textBoxBuscarCadastro = new System.Windows.Forms.TextBox();
             this.buttonBuscarCadastro = new System.Windows.Forms.Button();
             this.tabControlConsulta = new System.Windows.Forms.TabControl();
             this.tabPageOSPendentes = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.dataGridViewOSAbertas = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +74,12 @@ namespace UIPrincipal
             this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
             this.tabPageCadastrados = new System.Windows.Forms.TabPage();
+            this.panelFiltroPessoa = new System.Windows.Forms.Panel();
+            this.labelFilto = new System.Windows.Forms.Label();
+            this.groupBoxFiltroCadastro = new System.Windows.Forms.GroupBox();
+            this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
+            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
+            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCompletoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,27 +95,22 @@ namespace UIPrincipal
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
-            this.panelFiltroPessoa.SuspendLayout();
-            this.groupBoxFiltroCadastro.SuspendLayout();
             this.tabControlConsulta.SuspendLayout();
             this.tabPageOSPendentes.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
             this.tabPageCadastrados.SuspendLayout();
+            this.panelFiltroPessoa.SuspendLayout();
+            this.groupBoxFiltroCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.menuStrip2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -268,75 +268,6 @@ namespace UIPrincipal
             this.panelCentro.Size = new System.Drawing.Size(854, 551);
             this.panelCentro.TabIndex = 3;
             // 
-            // panelFiltroPessoa
-            // 
-            this.panelFiltroPessoa.BackColor = System.Drawing.Color.DarkGray;
-            this.panelFiltroPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelFiltroPessoa.Controls.Add(this.labelFilto);
-            this.panelFiltroPessoa.Controls.Add(this.groupBoxFiltroCadastro);
-            this.panelFiltroPessoa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFiltroPessoa.Location = new System.Drawing.Point(3, 3);
-            this.panelFiltroPessoa.Name = "panelFiltroPessoa";
-            this.panelFiltroPessoa.Size = new System.Drawing.Size(834, 25);
-            this.panelFiltroPessoa.TabIndex = 4;
-            // 
-            // labelFilto
-            // 
-            this.labelFilto.AutoSize = true;
-            this.labelFilto.ForeColor = System.Drawing.Color.Black;
-            this.labelFilto.Location = new System.Drawing.Point(5, 4);
-            this.labelFilto.Name = "labelFilto";
-            this.labelFilto.Size = new System.Drawing.Size(105, 13);
-            this.labelFilto.TabIndex = 10;
-            this.labelFilto.Text = "FILTRO DE BUSCA:";
-            // 
-            // groupBoxFiltroCadastro
-            // 
-            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxAtivo);
-            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxCliente);
-            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxFuncionario);
-            this.groupBoxFiltroCadastro.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxFiltroCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFiltroCadastro.ForeColor = System.Drawing.Color.Brown;
-            this.groupBoxFiltroCadastro.Location = new System.Drawing.Point(113, -6);
-            this.groupBoxFiltroCadastro.Name = "groupBoxFiltroCadastro";
-            this.groupBoxFiltroCadastro.Size = new System.Drawing.Size(205, 27);
-            this.groupBoxFiltroCadastro.TabIndex = 8;
-            this.groupBoxFiltroCadastro.TabStop = false;
-            // 
-            // checkBoxAtivo
-            // 
-            this.checkBoxAtivo.AutoSize = true;
-            this.checkBoxAtivo.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxAtivo.Location = new System.Drawing.Point(154, 8);
-            this.checkBoxAtivo.Name = "checkBoxAtivo";
-            this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
-            this.checkBoxAtivo.TabIndex = 11;
-            this.checkBoxAtivo.Text = "Ativo";
-            this.checkBoxAtivo.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxCliente
-            // 
-            this.checkBoxCliente.AutoSize = true;
-            this.checkBoxCliente.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxCliente.Location = new System.Drawing.Point(92, 8);
-            this.checkBoxCliente.Name = "checkBoxCliente";
-            this.checkBoxCliente.Size = new System.Drawing.Size(58, 17);
-            this.checkBoxCliente.TabIndex = 10;
-            this.checkBoxCliente.Text = "Cliente";
-            this.checkBoxCliente.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFuncionario
-            // 
-            this.checkBoxFuncionario.AutoSize = true;
-            this.checkBoxFuncionario.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxFuncionario.Location = new System.Drawing.Point(6, 8);
-            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
-            this.checkBoxFuncionario.Size = new System.Drawing.Size(81, 17);
-            this.checkBoxFuncionario.TabIndex = 0;
-            this.checkBoxFuncionario.Text = "Funcionario";
-            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
-            // 
             // textBoxBuscarCadastro
             // 
             this.textBoxBuscarCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -382,6 +313,62 @@ namespace UIPrincipal
             this.tabPageOSPendentes.TabIndex = 0;
             this.tabPageOSPendentes.Text = "O.S Pendentes";
             this.tabPageOSPendentes.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 25);
+            this.panel1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(5, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "FILTRO DE BUSCA:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox1.Location = new System.Drawing.Point(113, -6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(155, 27);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.ForeColor = System.Drawing.Color.Black;
+            this.checkBox2.Location = new System.Drawing.Point(61, 8);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(91, 17);
+            this.checkBox2.TabIndex = 10;
+            this.checkBox2.Text = "Encaminhada";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.ForeColor = System.Drawing.Color.Black;
+            this.checkBox3.Location = new System.Drawing.Point(6, 8);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(57, 17);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "Aberta";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // dataGridViewOSAbertas
             // 
@@ -444,7 +431,7 @@ namespace UIPrincipal
             this.idDataGridViewTextBoxColumn.HeaderText = "COD";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 40;
+            this.idDataGridViewTextBoxColumn.Width = 50;
             // 
             // protocoloDataGridViewTextBoxColumn
             // 
@@ -516,11 +503,83 @@ namespace UIPrincipal
             this.tabPageCadastrados.Text = "Cadastros";
             this.tabPageCadastrados.UseVisualStyleBackColor = true;
             // 
+            // panelFiltroPessoa
+            // 
+            this.panelFiltroPessoa.BackColor = System.Drawing.Color.DarkGray;
+            this.panelFiltroPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelFiltroPessoa.Controls.Add(this.labelFilto);
+            this.panelFiltroPessoa.Controls.Add(this.groupBoxFiltroCadastro);
+            this.panelFiltroPessoa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFiltroPessoa.Location = new System.Drawing.Point(3, 3);
+            this.panelFiltroPessoa.Name = "panelFiltroPessoa";
+            this.panelFiltroPessoa.Size = new System.Drawing.Size(834, 25);
+            this.panelFiltroPessoa.TabIndex = 4;
+            // 
+            // labelFilto
+            // 
+            this.labelFilto.AutoSize = true;
+            this.labelFilto.ForeColor = System.Drawing.Color.Black;
+            this.labelFilto.Location = new System.Drawing.Point(5, 4);
+            this.labelFilto.Name = "labelFilto";
+            this.labelFilto.Size = new System.Drawing.Size(105, 13);
+            this.labelFilto.TabIndex = 10;
+            this.labelFilto.Text = "FILTRO DE BUSCA:";
+            // 
+            // groupBoxFiltroCadastro
+            // 
+            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxAtivo);
+            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxCliente);
+            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxFuncionario);
+            this.groupBoxFiltroCadastro.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBoxFiltroCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxFiltroCadastro.ForeColor = System.Drawing.Color.Brown;
+            this.groupBoxFiltroCadastro.Location = new System.Drawing.Point(113, -6);
+            this.groupBoxFiltroCadastro.Name = "groupBoxFiltroCadastro";
+            this.groupBoxFiltroCadastro.Size = new System.Drawing.Size(205, 27);
+            this.groupBoxFiltroCadastro.TabIndex = 8;
+            this.groupBoxFiltroCadastro.TabStop = false;
+            // 
+            // checkBoxAtivo
+            // 
+            this.checkBoxAtivo.AutoSize = true;
+            this.checkBoxAtivo.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxAtivo.Location = new System.Drawing.Point(154, 8);
+            this.checkBoxAtivo.Name = "checkBoxAtivo";
+            this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxAtivo.TabIndex = 11;
+            this.checkBoxAtivo.Text = "Ativo";
+            this.checkBoxAtivo.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCliente
+            // 
+            this.checkBoxCliente.AutoSize = true;
+            this.checkBoxCliente.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxCliente.Location = new System.Drawing.Point(92, 8);
+            this.checkBoxCliente.Name = "checkBoxCliente";
+            this.checkBoxCliente.Size = new System.Drawing.Size(58, 17);
+            this.checkBoxCliente.TabIndex = 10;
+            this.checkBoxCliente.Text = "Cliente";
+            this.checkBoxCliente.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFuncionario
+            // 
+            this.checkBoxFuncionario.AutoSize = true;
+            this.checkBoxFuncionario.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxFuncionario.Location = new System.Drawing.Point(6, 8);
+            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
+            this.checkBoxFuncionario.Size = new System.Drawing.Size(81, 17);
+            this.checkBoxFuncionario.TabIndex = 0;
+            this.checkBoxFuncionario.Text = "Funcionario";
+            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
+            // 
             // usuarioDataGridView
             // 
+            this.usuarioDataGridView.AllowUserToOrderColumns = true;
             this.usuarioDataGridView.AutoGenerateColumns = false;
             this.usuarioDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.usuarioDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.usuarioDataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.usuarioDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -559,8 +618,13 @@ namespace UIPrincipal
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.usuarioDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.usuarioDataGridView.RowHeadersVisible = false;
+            this.usuarioDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.usuarioDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.usuarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.usuarioDataGridView.Size = new System.Drawing.Size(834, 459);
             this.usuarioDataGridView.TabIndex = 6;
+            this.usuarioDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellClick);
+            this.usuarioDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -679,68 +743,12 @@ namespace UIPrincipal
             this.clientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.clientesToolStripMenuItem.ToolTipText = "Clientes";
+            this.clientesToolStripMenuItem.ToolTipText = "Consultar Cadastros";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // sP_BuscarOSPendenteTableAdapter
             // 
             this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 25);
-            this.panel1.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(5, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "FILTRO DE BUSCA:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox1.Location = new System.Drawing.Point(113, -6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(151, 27);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.Color.Black;
-            this.checkBox2.Location = new System.Drawing.Point(61, 8);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(91, 17);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "Encaminhada";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.ForeColor = System.Drawing.Color.Black;
-            this.checkBox3.Location = new System.Drawing.Point(6, 8);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(57, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Aberta";
-            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 
@@ -769,24 +777,24 @@ namespace UIPrincipal
             this.statusStrip1.PerformLayout();
             this.panelCentro.ResumeLayout(false);
             this.panelCentro.PerformLayout();
-            this.panelFiltroPessoa.ResumeLayout(false);
-            this.panelFiltroPessoa.PerformLayout();
-            this.groupBoxFiltroCadastro.ResumeLayout(false);
-            this.groupBoxFiltroCadastro.PerformLayout();
             this.tabControlConsulta.ResumeLayout(false);
             this.tabPageOSPendentes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
-            this.tabPageCadastrados.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
+            this.tabPageCadastrados.ResumeLayout(false);
+            this.panelFiltroPessoa.ResumeLayout(false);
+            this.panelFiltroPessoa.PerformLayout();
+            this.groupBoxFiltroCadastro.ResumeLayout(false);
+            this.groupBoxFiltroCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,13 +826,6 @@ namespace UIPrincipal
         private System.Windows.Forms.BindingSource sPBuscarOSPendenteBindingSource;
         private ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter sP_BuscarOSPendenteTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem fORMPARATESTESToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn protocoloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCompletoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoChamadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estatusOSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataAberturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataPrazoDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControlConsulta;
         private System.Windows.Forms.TabPage tabPageOSPendentes;
@@ -852,5 +853,12 @@ namespace UIPrincipal
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn protocoloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCompletoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoChamadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusOSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataAberturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataPrazoDataGridViewTextBoxColumn;
     }
 }

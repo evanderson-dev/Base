@@ -11,8 +11,10 @@ namespace UIPrincipal
     {
         private bool Logado = true;
         private string protocoloOculto = "";
+        private string cpfPessoa = "";
         OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         UsuarioBLL usuarioBLL = new UsuarioBLL();
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -75,27 +77,6 @@ namespace UIPrincipal
                 e.Cancel = true;
             }*/
         }
-        private void visualizarImpressãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {// COD PARA SER RETIRADO
-            /*if (toolStripTextBoxPesquisar.Text == "")
-            {
-                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
-            }
-            else
-            {
-                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOS(toolStripTextBoxPesquisar.Text);
-            }*/
-        }
-
-        private void buttonTeste_Click(object sender, EventArgs e)
-        {
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = "shutdown.exe";
-            psi.Arguments = "-s -f -t 0";
-            psi.CreateNoWindow = true;
-            Process p = Process.Start(psi);
-        }
-
         private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -196,8 +177,6 @@ namespace UIPrincipal
                     usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxBuscarCadastro.Text);
                 }
             }
-            //######################################
-            
         }
         private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -207,6 +186,29 @@ namespace UIPrincipal
             checkBoxFuncionario.Checked = false;
             checkBoxCliente.Checked = false;
             checkBoxAtivo.Checked = false;
+        }
+
+        private void usuarioDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                usuarioDataGridView.CurrentRow.Selected = true;
+                cpfPessoa = usuarioDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
+        }
+
+        private void usuarioDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BindingSource bindingSourceConsultaCadastro = new BindingSource();
+            bindingSourceConsultaCadastro.DataSource = usuarioBLL.Buscar(cpfPessoa);
+            using (FormCadastroUsuario frm = new FormCadastroUsuario(bindingSourceConsultaCadastro))
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }
