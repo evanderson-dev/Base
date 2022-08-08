@@ -129,14 +129,6 @@ CREATE TABLE Pessoa
 )
 GO
 
-INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
-GO
-
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('admin', 'admin', 'USUARIO TESTE', '01-01-2000', '02227855153', 1, 0, 2, 1, '', 1)
-GO
-
 CREATE PROCEDURE SP_InserirUsuario
 	@Id INT OUTPUT,
 	@Ativo BIT,
@@ -249,14 +241,7 @@ AS
 	SET @Id = (SELECT @@IDENTITY)
 GO
 
-EXEC SP_InserirUsuario 0, 1, 'Superadmin', 'Superadmin', 'ADMINISTRADOR DO SISTEMA', '666.666.666-66', '66.666.666', 'SSP',
-'05-01-1988', '77827-150', 'RUA TAL', '543', 'CENTRO', 'CASADO', 'BRASILEIRO', 'super_admin@email.com', '633411-2300', '63992019277', '13992019277',
-'ARAGUAINA', 'TO', '', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
-'02-02-2020', '02-02-2022', 'TEXTO TESTE DE OBSERVACAO', 3
-GO
---'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
---'C:\Users\axel_\Source\Repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg'
-EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '666.666.666-66', '66.666.666', 'SSP',
+EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '111.111.111-11', '11.111.111', 'SSP',
 '05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'CENTRO', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
 'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
@@ -715,13 +700,6 @@ AS
 	WHERE EstatusOS != 'FECHADO'
 GO
 
---EXEC SP_BuscarOS '123456789'
---EXEC SP_BuscarOSAberta
---SELECT * FROM OrdemServico
---SELECT * FROM Pessoa
---SELECT * FROM Plano
-SELECT NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
-
 /*'ABERTO' 'FECHADO' 'ENCAMINHADO'///////////////////////////////////// ESSE ESTA FUNCIONANDO
 CREATE PROC SP_BuscarOS
 	@Filtro VARCHAR(50) = ''
@@ -756,14 +734,45 @@ GO
 'INSTALAÇÃO FIBRA'
 'MUDANÇA DE ENDEREÇO' */
 
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
+	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
+GO
+
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('admin', 'admin', 'ADMINISTRADOR DO SISTEMA', '01-01-1995', '999.999.999-99', 1, 1, 4, 3, '', 1)
+GO
+
+INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('USUARIO TESTE UM', '01-01-2001', '111.111.111-11', 1, 1, 1, 1, '', 1)
+GO
+
+INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('USUARIO TESTE DOIS', '02-02-2002', '222.222.222-22', 1, 1, 1, 1, '', 0)
+GO
+
+INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('USUARIO TESTE TRES', '03-03-2003', '333.333.333.33', 1, 0, 1, 1, '', 1)
+GO
+
+INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('USUARIO TESTE QUATRO', '04-04-2004', '444.444.444.44', 1, 0, 1, 1, '', 0)
+GO
+
 EXEC SP_AbrirOrdemServico 0, 2022080101, 1, 'INSTALAÇÃO FIBRA','REALIZAR A INSTALAÇÃO', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
 EXEC SP_AbrirOrdemServico 0, 2022080102, 1, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
-EXEC SP_AbrirOrdemServico 0, 2022080103, 1, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
-EXEC SP_AbrirOrdemServico 0, 2022080104, 1, 'MUDANÇA DE ENDEREÇO','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080103, 2, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080104, 2, 'MUDANÇA DE ENDEREÇO','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
 EXEC SP_AbrirOrdemServico 0, 2022080105, 3, 'INSTALAÇÃO FIBRA','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
 EXEC SP_AbrirOrdemServico 0, 2022080106, 3, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
-EXEC SP_AbrirOrdemServico 0, 2022080107, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
-EXEC SP_AbrirOrdemServico 0, 2022080108, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
-EXEC SP_AbrirOrdemServico 0, 2022080109, 3, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080107, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080108, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080109, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
+GO
+
+--EXEC SP_BuscarOS '123456789'
+--EXEC SP_BuscarOSAberta
+--SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
+--SELECT * FROM Plano
+SELECT NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
 GO

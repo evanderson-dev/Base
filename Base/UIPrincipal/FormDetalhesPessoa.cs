@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -24,7 +18,6 @@ namespace UIPrincipal
 
         private void FormDetalhesPessoa_Load(object sender, EventArgs e)
         {
-            MessageBox.Show((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
             pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
             string nivelFuncionario = Convert.ToString(((DataRowView)usuarioBindingSource.Current).Row["Id_Permissao"]);
 
@@ -51,7 +44,7 @@ namespace UIPrincipal
             {
                 radioButtonNivelDois.Checked = true;
             }
-            else if (nivelFuncionario == "3")
+            else
             {
                 radioButtonNivelTres.Checked = true;
             }
