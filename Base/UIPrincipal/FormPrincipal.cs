@@ -205,7 +205,23 @@ namespace UIPrincipal
         {
             BindingSource bindingSourceConsultaCadastro = new BindingSource();
             bindingSourceConsultaCadastro.DataSource = usuarioBLL.Buscar(cpfPessoa);
-            using (FormCadastroUsuario frm = new FormCadastroUsuario(bindingSourceConsultaCadastro))
+            using (FormDetalhesPessoa frm = new FormDetalhesPessoa(bindingSourceConsultaCadastro))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void fORMPARATESTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDetalhesPessoa frm = new FormDetalhesPessoa();
+            frm.ShowDialog();
+        }
+
+        private void abrirOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BindingSource bindingSourceConsultaCadastro = new BindingSource();
+            bindingSourceConsultaCadastro.DataSource = usuarioBLL.Buscar(cpfPessoa);
+            using (FormOrdemServico frm = new FormOrdemServico(bindingSourceConsultaCadastro))
             {
                 frm.ShowDialog();
             }
