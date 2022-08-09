@@ -5,6 +5,7 @@
         private int id;
         private string descricao;
         private string valor;
+        private string stringDeConexao;
 
         public int Id
         {
@@ -22,6 +23,12 @@
         {
             get { return valor; }
             set { valor = value; }
+        }
+
+        public string StringDeConexao
+        {
+            get { return stringDeConexao; }
+            set { stringDeConexao = value; }
         }
     }
 }
