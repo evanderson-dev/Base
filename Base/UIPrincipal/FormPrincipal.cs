@@ -3,6 +3,7 @@ using Infra;
 using System;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -54,6 +55,9 @@ namespace UIPrincipal
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
             dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+            textBoxBuscarCadastro.Focus();
+            tabControlConsulta.TabPages.Remove(tabPageCadastrados);
+            buttonFecharAba.Visible = false;
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            /*try
             {
                 dataGridViewOSAbertas.CurrentRow.Selected = true;
                 string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -89,7 +93,7 @@ namespace UIPrincipal
             catch (ArgumentOutOfRangeException)
             {
                 return;
-            }
+            }*/
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -105,8 +109,15 @@ namespace UIPrincipal
         }
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConsultaOS frm = new FormConsultaOS(protocoloOculto);
-            frm.Show();
+            if (tabControlConsulta.SelectedIndex == 0)
+            {
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
+                using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
+                {
+                    frm.ShowDialog();
+                }
+            }
         }
 
         private void toolStripMenuItemNovo_Click(object sender, EventArgs e)
@@ -128,8 +139,13 @@ namespace UIPrincipal
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            buttonFecharAba.Visible = true;
+            if (!tabControlConsulta.Controls.Contains(tabPageCadastrados))
+            {
+                tabControlConsulta.Controls.Add(tabPageCadastrados);
+                //tabControlConsulta.TabPages.Insert(index, tabPageCadastrados);
+            }
             tabControlConsulta.SelectTab(1);
-            //usuarioBindingSource.DataSource = usuarioBLL.BuscarFuncionario("1");
         }
 
         private void buttonBuscarCadastro_Click(object sender, EventArgs e)
@@ -180,12 +196,19 @@ namespace UIPrincipal
         }
         private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            usuarioBindingSource.DataSource = null;
-            usuarioDataGridView.DataSource = usuarioBindingSource;
-            textBoxBuscarCadastro.Text = "";
-            checkBoxFuncionario.Checked = false;
-            checkBoxCliente.Checked = false;
-            checkBoxAtivo.Checked = false;
+            if (tabControlConsulta.SelectedIndex == 0)
+            {
+                dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+            }
+            else
+            {
+                usuarioBindingSource.DataSource = null;
+                usuarioDataGridView.DataSource = usuarioBindingSource;
+                textBoxBuscarCadastro.Text = "";
+                checkBoxFuncionario.Checked = false;
+                checkBoxCliente.Checked = false;
+                checkBoxAtivo.Checked = false;
+            }
         }
 
         private void usuarioDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -224,6 +247,34 @@ namespace UIPrincipal
             using (FormOrdemServico frm = new FormOrdemServico(bindingSourceConsultaCadastro))
             {
                 frm.ShowDialog();
+            }
+        }
+
+        private void textBoxBuscarCadastro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonBuscarCadastro_Click(sender, e);
+            }
+        }
+
+        private void buttonFecharAba_Click(object sender, EventArgs e)
+        {
+            tabControlConsulta.Controls.Remove(tabPageCadastrados);
+            buttonFecharAba.Visible = false;
+        }
+
+        private void tabControlConsulta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlConsulta.SelectedIndex == 0 && buttonFecharAba.Visible == true)
+            {
+                buttonFecharAba.Size = new Size(11,11);
+                buttonFecharAba.Location = new Point(181,37);
+            }
+            if (tabControlConsulta.SelectedIndex == 1 && buttonFecharAba.Visible == true)
+            {
+                buttonFecharAba.Size = new Size(13,13);
+                buttonFecharAba.Location = new Point(181,35);
             }
         }
     }

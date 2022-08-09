@@ -53,6 +53,7 @@
             this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.labelIdPessoa = new System.Windows.Forms.Label();
+            this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -83,10 +84,15 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
+            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
+            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
+            this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
+            this.sPBuscarOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -104,6 +110,10 @@
             this.groupBoxDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1CpfCNPJ
@@ -276,6 +286,7 @@
             // maskedTextBoxPrazo
             // 
             this.maskedTextBoxPrazo.BackColor = System.Drawing.Color.White;
+            this.maskedTextBoxPrazo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "DataPrazo", true));
             this.maskedTextBoxPrazo.Location = new System.Drawing.Point(469, 251);
             this.maskedTextBoxPrazo.Mask = "00-00-0000";
             this.maskedTextBoxPrazo.Name = "maskedTextBoxPrazo";
@@ -286,6 +297,7 @@
             // maskedTextBoxDataAbertura
             // 
             this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
+            this.maskedTextBoxDataAbertura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "DataAbertura", true));
             this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(385, 251);
             this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
             this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
@@ -335,6 +347,7 @@
             // textBoxPlano
             // 
             this.textBoxPlano.BackColor = System.Drawing.Color.White;
+            this.textBoxPlano.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Id_Plano", true));
             this.textBoxPlano.Location = new System.Drawing.Point(547, 79);
             this.textBoxPlano.Name = "textBoxPlano";
             this.textBoxPlano.ReadOnly = true;
@@ -345,6 +358,7 @@
             // 
             this.textBoxCpf.BackColor = System.Drawing.Color.White;
             this.textBoxCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Cpf", true));
             this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.ReadOnly = true;
@@ -355,6 +369,7 @@
             // 
             this.textBoxBairro.BackColor = System.Drawing.Color.White;
             this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Bairro", true));
             this.textBoxBairro.Location = new System.Drawing.Point(290, 79);
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.ReadOnly = true;
@@ -365,15 +380,21 @@
             // 
             this.labelIdPessoa.BackColor = System.Drawing.Color.White;
             this.labelIdPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelIdPessoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Id_Cliente", true));
             this.labelIdPessoa.Location = new System.Drawing.Point(6, 39);
             this.labelIdPessoa.Name = "labelIdPessoa";
             this.labelIdPessoa.Size = new System.Drawing.Size(58, 20);
             this.labelIdPessoa.TabIndex = 39;
             this.labelIdPessoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ordemServicoBindingSource
+            // 
+            this.ordemServicoBindingSource.DataSource = typeof(Model.OrdemServico);
+            // 
             // maskedTextBoxCep
             // 
             this.maskedTextBoxCep.BackColor = System.Drawing.Color.White;
+            this.maskedTextBoxCep.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Cep", true));
             this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 79);
             this.maskedTextBoxCep.Mask = "00000-000";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
@@ -385,6 +406,7 @@
             // 
             this.textBoxEmail.BackColor = System.Drawing.Color.White;
             this.textBoxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Email", true));
             this.textBoxEmail.Location = new System.Drawing.Point(6, 118);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.ReadOnly = true;
@@ -394,6 +416,7 @@
             // maskedTextBoxTelefone
             // 
             this.maskedTextBoxTelefone.BackColor = System.Drawing.Color.White;
+            this.maskedTextBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Telefone", true));
             this.maskedTextBoxTelefone.Location = new System.Drawing.Point(248, 118);
             this.maskedTextBoxTelefone.Mask = "(99) 0000-0000";
             this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
@@ -404,6 +427,7 @@
             // maskedTextBoxCelularDois
             // 
             this.maskedTextBoxCelularDois.BackColor = System.Drawing.Color.White;
+            this.maskedTextBoxCelularDois.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "CelularDois", true));
             this.maskedTextBoxCelularDois.Location = new System.Drawing.Point(450, 118);
             this.maskedTextBoxCelularDois.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularDois.Name = "maskedTextBoxCelularDois";
@@ -415,6 +439,7 @@
             // 
             this.textBoxNomeCompleto.BackColor = System.Drawing.Color.White;
             this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxNomeCompleto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "NomeCompleto", true));
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(70, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
             this.textBoxNomeCompleto.ReadOnly = true;
@@ -442,6 +467,7 @@
             // maskedTextBoxCelularUm
             // 
             this.maskedTextBoxCelularUm.BackColor = System.Drawing.Color.White;
+            this.maskedTextBoxCelularUm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "CelularUm", true));
             this.maskedTextBoxCelularUm.Location = new System.Drawing.Point(349, 118);
             this.maskedTextBoxCelularUm.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularUm.Name = "maskedTextBoxCelularUm";
@@ -453,6 +479,7 @@
             // 
             this.textBoxUf.BackColor = System.Drawing.Color.White;
             this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxUf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Uf", true));
             this.textBoxUf.Location = new System.Drawing.Point(508, 79);
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.ReadOnly = true;
@@ -462,6 +489,7 @@
             // textBoxAtendente
             // 
             this.textBoxAtendente.BackColor = System.Drawing.Color.White;
+            this.textBoxAtendente.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Atendente", true));
             this.textBoxAtendente.Location = new System.Drawing.Point(547, 118);
             this.textBoxAtendente.Name = "textBoxAtendente";
             this.textBoxAtendente.ReadOnly = true;
@@ -472,6 +500,7 @@
             // 
             this.textBoxCidade.BackColor = System.Drawing.Color.White;
             this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Cidade", true));
             this.textBoxCidade.Location = new System.Drawing.Point(390, 79);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.ReadOnly = true;
@@ -481,6 +510,7 @@
             // textBoxNumCasa
             // 
             this.textBoxNumCasa.BackColor = System.Drawing.Color.White;
+            this.textBoxNumCasa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "NumCasa", true));
             this.textBoxNumCasa.Location = new System.Drawing.Point(248, 79);
             this.textBoxNumCasa.Name = "textBoxNumCasa";
             this.textBoxNumCasa.ReadOnly = true;
@@ -491,6 +521,7 @@
             // 
             this.textBoxRua.BackColor = System.Drawing.Color.White;
             this.textBoxRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxRua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Rua", true));
             this.textBoxRua.Location = new System.Drawing.Point(70, 79);
             this.textBoxRua.Name = "textBoxRua";
             this.textBoxRua.ReadOnly = true;
@@ -510,6 +541,7 @@
             // 
             this.textBoxDescricao.BackColor = System.Drawing.Color.White;
             this.textBoxDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Descricao", true));
             this.textBoxDescricao.Location = new System.Drawing.Point(11, 290);
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
@@ -529,6 +561,7 @@
             // textBoxProtocolo
             // 
             this.textBoxProtocolo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxProtocolo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Protocolo", true));
             this.textBoxProtocolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProtocolo.Location = new System.Drawing.Point(366, 59);
             this.textBoxProtocolo.Name = "textBoxProtocolo";
@@ -662,10 +695,6 @@
             this.button2.Text = "SALVAR";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // ordemServicoBindingSource
-            // 
-            this.ordemServicoBindingSource.DataSource = typeof(Model.OrdemServico);
-            // 
             // buttonImprimir
             // 
             this.buttonImprimir.Location = new System.Drawing.Point(166, 526);
@@ -680,6 +709,34 @@
             // 
             this.openFileDialogAddFoto.FileName = "openFileDialogAddFoto";
             this.openFileDialogAddFoto.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
+            // 
+            // oRDEMSERVICODataSetOsPendente
+            // 
+            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
+            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPBuscarOSPendenteBindingSource
+            // 
+            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
+            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
+            // 
+            // sP_BuscarOSPendenteTableAdapter
+            // 
+            this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
+            // 
+            // oRDEMSERVICODataSet
+            // 
+            this.oRDEMSERVICODataSet.DataSetName = "ORDEMSERVICODataSet";
+            this.oRDEMSERVICODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPBuscarOSBindingSource
+            // 
+            this.sPBuscarOSBindingSource.DataMember = "SP_BuscarOS";
+            this.sPBuscarOSBindingSource.DataSource = this.oRDEMSERVICODataSet;
+            // 
+            // sP_BuscarOSTableAdapter
+            // 
+            this.sP_BuscarOSTableAdapter.ClearBeforeFill = true;
             // 
             // FormConsultaOS
             // 
@@ -720,6 +777,10 @@
             this.groupBoxDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -770,5 +831,11 @@
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
+        private ORDEMSERVICODataSetOsPendente oRDEMSERVICODataSetOsPendente;
+        private System.Windows.Forms.BindingSource sPBuscarOSPendenteBindingSource;
+        private ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter sP_BuscarOSPendenteTableAdapter;
+        private System.Windows.Forms.BindingSource sPBuscarOSBindingSource;
+        private ORDEMSERVICODataSet oRDEMSERVICODataSet;
+        private ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter sP_BuscarOSTableAdapter;
     }
 }

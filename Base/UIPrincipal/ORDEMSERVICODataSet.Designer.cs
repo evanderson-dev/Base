@@ -20,11 +20,9 @@ namespace UIPrincipal {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ORDEMSERVICODataSetOsPendente")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ORDEMSERVICODataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ORDEMSERVICODataSetOsPendente : global::System.Data.DataSet {
-        
-        private SP_BuscarOSPendenteDataTable tableSP_BuscarOSPendente;
+    public partial class ORDEMSERVICODataSet : global::System.Data.DataSet {
         
         private SP_BuscarOSDataTable tableSP_BuscarOS;
         
@@ -32,7 +30,7 @@ namespace UIPrincipal {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ORDEMSERVICODataSetOsPendente() {
+        public ORDEMSERVICODataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +41,7 @@ namespace UIPrincipal {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ORDEMSERVICODataSetOsPendente(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ORDEMSERVICODataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,9 +54,6 @@ namespace UIPrincipal {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SP_BuscarOSPendente"] != null)) {
-                    base.Tables.Add(new SP_BuscarOSPendenteDataTable(ds.Tables["SP_BuscarOSPendente"]));
-                }
                 if ((ds.Tables["SP_BuscarOS"] != null)) {
                     base.Tables.Add(new SP_BuscarOSDataTable(ds.Tables["SP_BuscarOS"]));
                 }
@@ -78,16 +73,6 @@ namespace UIPrincipal {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_BuscarOSPendenteDataTable SP_BuscarOSPendente {
-            get {
-                return this.tableSP_BuscarOSPendente;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -142,7 +127,7 @@ namespace UIPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ORDEMSERVICODataSetOsPendente cln = ((ORDEMSERVICODataSetOsPendente)(base.Clone()));
+            ORDEMSERVICODataSet cln = ((ORDEMSERVICODataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,9 +152,6 @@ namespace UIPrincipal {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SP_BuscarOSPendente"] != null)) {
-                    base.Tables.Add(new SP_BuscarOSPendenteDataTable(ds.Tables["SP_BuscarOSPendente"]));
-                }
                 if ((ds.Tables["SP_BuscarOS"] != null)) {
                     base.Tables.Add(new SP_BuscarOSDataTable(ds.Tables["SP_BuscarOS"]));
                 }
@@ -206,12 +188,6 @@ namespace UIPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSP_BuscarOSPendente = ((SP_BuscarOSPendenteDataTable)(base.Tables["SP_BuscarOSPendente"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_BuscarOSPendente != null)) {
-                    this.tableSP_BuscarOSPendente.InitVars();
-                }
-            }
             this.tableSP_BuscarOS = ((SP_BuscarOSDataTable)(base.Tables["SP_BuscarOS"]));
             if ((initTable == true)) {
                 if ((this.tableSP_BuscarOS != null)) {
@@ -223,21 +199,13 @@ namespace UIPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ORDEMSERVICODataSetOsPendente";
+            this.DataSetName = "ORDEMSERVICODataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ORDEMSERVICODataSetOsPendente.xsd";
+            this.Namespace = "http://tempuri.org/ORDEMSERVICODataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSP_BuscarOSPendente = new SP_BuscarOSPendenteDataTable();
-            base.Tables.Add(this.tableSP_BuscarOSPendente);
             this.tableSP_BuscarOS = new SP_BuscarOSDataTable();
             base.Tables.Add(this.tableSP_BuscarOS);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeSP_BuscarOSPendente() {
-            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -257,7 +225,7 @@ namespace UIPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ORDEMSERVICODataSetOsPendente ds = new ORDEMSERVICODataSetOsPendente();
+            ORDEMSERVICODataSet ds = new ORDEMSERVICODataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,432 +270,7 @@ namespace UIPrincipal {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void SP_BuscarOSPendenteRowChangeEventHandler(object sender, SP_BuscarOSPendenteRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void SP_BuscarOSRowChangeEventHandler(object sender, SP_BuscarOSRowChangeEvent e);
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_BuscarOSPendenteDataTable : global::System.Data.TypedTableBase<SP_BuscarOSPendenteRow> {
-            
-            private global::System.Data.DataColumn columnId;
-            
-            private global::System.Data.DataColumn columnProtocolo;
-            
-            private global::System.Data.DataColumn columnId_Cliente;
-            
-            private global::System.Data.DataColumn columnTipoChamado;
-            
-            private global::System.Data.DataColumn columnDescricao;
-            
-            private global::System.Data.DataColumn columnDataAbertura;
-            
-            private global::System.Data.DataColumn columnDataPrazo;
-            
-            private global::System.Data.DataColumn columnTecnicoResponsavel;
-            
-            private global::System.Data.DataColumn columnAtendente;
-            
-            private global::System.Data.DataColumn columnEstatusOS;
-            
-            private global::System.Data.DataColumn columnLigarAntes;
-            
-            private global::System.Data.DataColumn columnNomeCompleto;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteDataTable() {
-                this.TableName = "SP_BuscarOSPendente";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SP_BuscarOSPendenteDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected SP_BuscarOSPendenteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
-                get {
-                    return this.columnId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProtocoloColumn {
-                get {
-                    return this.columnProtocolo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_ClienteColumn {
-                get {
-                    return this.columnId_Cliente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TipoChamadoColumn {
-                get {
-                    return this.columnTipoChamado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescricaoColumn {
-                get {
-                    return this.columnDescricao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DataAberturaColumn {
-                get {
-                    return this.columnDataAbertura;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DataPrazoColumn {
-                get {
-                    return this.columnDataPrazo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TecnicoResponsavelColumn {
-                get {
-                    return this.columnTecnicoResponsavel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AtendenteColumn {
-                get {
-                    return this.columnAtendente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EstatusOSColumn {
-                get {
-                    return this.columnEstatusOS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LigarAntesColumn {
-                get {
-                    return this.columnLigarAntes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NomeCompletoColumn {
-                get {
-                    return this.columnNomeCompleto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteRow this[int index] {
-                get {
-                    return ((SP_BuscarOSPendenteRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_BuscarOSPendenteRowChangeEventHandler SP_BuscarOSPendenteRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_BuscarOSPendenteRowChangeEventHandler SP_BuscarOSPendenteRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_BuscarOSPendenteRowChangeEventHandler SP_BuscarOSPendenteRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_BuscarOSPendenteRowChangeEventHandler SP_BuscarOSPendenteRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddSP_BuscarOSPendenteRow(SP_BuscarOSPendenteRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteRow AddSP_BuscarOSPendenteRow(string Protocolo, int Id_Cliente, string TipoChamado, string Descricao, System.DateTime DataAbertura, System.DateTime DataPrazo, string TecnicoResponsavel, string Atendente, string EstatusOS, string LigarAntes, string NomeCompleto) {
-                SP_BuscarOSPendenteRow rowSP_BuscarOSPendenteRow = ((SP_BuscarOSPendenteRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Protocolo,
-                        Id_Cliente,
-                        TipoChamado,
-                        Descricao,
-                        DataAbertura,
-                        DataPrazo,
-                        TecnicoResponsavel,
-                        Atendente,
-                        EstatusOS,
-                        LigarAntes,
-                        NomeCompleto};
-                rowSP_BuscarOSPendenteRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_BuscarOSPendenteRow);
-                return rowSP_BuscarOSPendenteRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteRow FindById(int Id) {
-                return ((SP_BuscarOSPendenteRow)(this.Rows.Find(new object[] {
-                            Id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_BuscarOSPendenteDataTable cln = ((SP_BuscarOSPendenteDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_BuscarOSPendenteDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnId = base.Columns["Id"];
-                this.columnProtocolo = base.Columns["Protocolo"];
-                this.columnId_Cliente = base.Columns["Id_Cliente"];
-                this.columnTipoChamado = base.Columns["TipoChamado"];
-                this.columnDescricao = base.Columns["Descricao"];
-                this.columnDataAbertura = base.Columns["DataAbertura"];
-                this.columnDataPrazo = base.Columns["DataPrazo"];
-                this.columnTecnicoResponsavel = base.Columns["TecnicoResponsavel"];
-                this.columnAtendente = base.Columns["Atendente"];
-                this.columnEstatusOS = base.Columns["EstatusOS"];
-                this.columnLigarAntes = base.Columns["LigarAntes"];
-                this.columnNomeCompleto = base.Columns["NomeCompleto"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
-                this.columnProtocolo = new global::System.Data.DataColumn("Protocolo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProtocolo);
-                this.columnId_Cliente = new global::System.Data.DataColumn("Id_Cliente", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Cliente);
-                this.columnTipoChamado = new global::System.Data.DataColumn("TipoChamado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTipoChamado);
-                this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescricao);
-                this.columnDataAbertura = new global::System.Data.DataColumn("DataAbertura", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataAbertura);
-                this.columnDataPrazo = new global::System.Data.DataColumn("DataPrazo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataPrazo);
-                this.columnTecnicoResponsavel = new global::System.Data.DataColumn("TecnicoResponsavel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTecnicoResponsavel);
-                this.columnAtendente = new global::System.Data.DataColumn("Atendente", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAtendente);
-                this.columnEstatusOS = new global::System.Data.DataColumn("EstatusOS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEstatusOS);
-                this.columnLigarAntes = new global::System.Data.DataColumn("LigarAntes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLigarAntes);
-                this.columnNomeCompleto = new global::System.Data.DataColumn("NomeCompleto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNomeCompleto);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AllowDBNull = false;
-                this.columnId.ReadOnly = true;
-                this.columnId.Unique = true;
-                this.columnProtocolo.MaxLength = 20;
-                this.columnTipoChamado.MaxLength = 50;
-                this.columnDescricao.MaxLength = 1000;
-                this.columnTecnicoResponsavel.MaxLength = 150;
-                this.columnAtendente.MaxLength = 150;
-                this.columnEstatusOS.MaxLength = 20;
-                this.columnLigarAntes.MaxLength = 5;
-                this.columnNomeCompleto.MaxLength = 150;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteRow NewSP_BuscarOSPendenteRow() {
-                return ((SP_BuscarOSPendenteRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_BuscarOSPendenteRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_BuscarOSPendenteRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_BuscarOSPendenteRowChanged != null)) {
-                    this.SP_BuscarOSPendenteRowChanged(this, new SP_BuscarOSPendenteRowChangeEvent(((SP_BuscarOSPendenteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_BuscarOSPendenteRowChanging != null)) {
-                    this.SP_BuscarOSPendenteRowChanging(this, new SP_BuscarOSPendenteRowChangeEvent(((SP_BuscarOSPendenteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_BuscarOSPendenteRowDeleted != null)) {
-                    this.SP_BuscarOSPendenteRowDeleted(this, new SP_BuscarOSPendenteRowChangeEvent(((SP_BuscarOSPendenteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_BuscarOSPendenteRowDeleting != null)) {
-                    this.SP_BuscarOSPendenteRowDeleting(this, new SP_BuscarOSPendenteRowChangeEvent(((SP_BuscarOSPendenteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveSP_BuscarOSPendenteRow(SP_BuscarOSPendenteRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ORDEMSERVICODataSetOsPendente ds = new ORDEMSERVICODataSetOsPendente();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_BuscarOSPendenteDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1205,8 +748,6 @@ namespace UIPrincipal {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
@@ -1296,7 +837,7 @@ namespace UIPrincipal {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ORDEMSERVICODataSetOsPendente ds = new ORDEMSERVICODataSetOsPendente();
+                ORDEMSERVICODataSet ds = new ORDEMSERVICODataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1352,340 +893,6 @@ namespace UIPrincipal {
                 }
                 xs.Add(dsSchema);
                 return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class SP_BuscarOSPendenteRow : global::System.Data.DataRow {
-            
-            private SP_BuscarOSPendenteDataTable tableSP_BuscarOSPendente;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SP_BuscarOSPendenteRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_BuscarOSPendente = ((SP_BuscarOSPendenteDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableSP_BuscarOSPendente.IdColumn]));
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Protocolo {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.ProtocoloColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Protocolo\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.ProtocoloColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Cliente {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_BuscarOSPendente.Id_ClienteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Id_Cliente\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.Id_ClienteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TipoChamado {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.TipoChamadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TipoChamado\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.TipoChamadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Descricao {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.DescricaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Descricao\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.DescricaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime DataAbertura {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_BuscarOSPendente.DataAberturaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DataAbertura\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.DataAberturaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime DataPrazo {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_BuscarOSPendente.DataPrazoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DataPrazo\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.DataPrazoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TecnicoResponsavel {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.TecnicoResponsavelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TecnicoResponsavel\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.TecnicoResponsavelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Atendente {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.AtendenteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Atendente\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.AtendenteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EstatusOS {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.EstatusOSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EstatusOS\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.EstatusOSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string LigarAntes {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.LigarAntesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'LigarAntes\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.LigarAntesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NomeCompleto {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_BuscarOSPendente.NomeCompletoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NomeCompleto\' na tabela \'SP_BuscarOSPendente\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_BuscarOSPendente.NomeCompletoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProtocoloNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.ProtocoloColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProtocoloNull() {
-                this[this.tableSP_BuscarOSPendente.ProtocoloColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsId_ClienteNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.Id_ClienteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetId_ClienteNull() {
-                this[this.tableSP_BuscarOSPendente.Id_ClienteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTipoChamadoNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.TipoChamadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTipoChamadoNull() {
-                this[this.tableSP_BuscarOSPendente.TipoChamadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDescricaoNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.DescricaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDescricaoNull() {
-                this[this.tableSP_BuscarOSPendente.DescricaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDataAberturaNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.DataAberturaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDataAberturaNull() {
-                this[this.tableSP_BuscarOSPendente.DataAberturaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDataPrazoNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.DataPrazoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDataPrazoNull() {
-                this[this.tableSP_BuscarOSPendente.DataPrazoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTecnicoResponsavelNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.TecnicoResponsavelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTecnicoResponsavelNull() {
-                this[this.tableSP_BuscarOSPendente.TecnicoResponsavelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAtendenteNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.AtendenteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAtendenteNull() {
-                this[this.tableSP_BuscarOSPendente.AtendenteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEstatusOSNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.EstatusOSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEstatusOSNull() {
-                this[this.tableSP_BuscarOSPendente.EstatusOSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLigarAntesNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.LigarAntesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLigarAntesNull() {
-                this[this.tableSP_BuscarOSPendente.LigarAntesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNomeCompletoNull() {
-                return this.IsNull(this.tableSP_BuscarOSPendente.NomeCompletoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNomeCompletoNull() {
-                this[this.tableSP_BuscarOSPendente.NomeCompletoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2363,40 +1570,6 @@ namespace UIPrincipal {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class SP_BuscarOSPendenteRowChangeEvent : global::System.EventArgs {
-            
-            private SP_BuscarOSPendenteRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteRowChangeEvent(SP_BuscarOSPendenteRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_BuscarOSPendenteRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public class SP_BuscarOSRowChangeEvent : global::System.EventArgs {
             
             private SP_BuscarOSRow eventRow;
@@ -2428,187 +1601,8 @@ namespace UIPrincipal {
         }
     }
 }
-namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
+namespace UIPrincipal.ORDEMSERVICODataSetTableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_BuscarOSPendenteTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public SP_BuscarOSPendenteTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_BuscarOSPendente";
-            tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Protocolo", "Protocolo");
-            tableMapping.ColumnMappings.Add("Id_Cliente", "Id_Cliente");
-            tableMapping.ColumnMappings.Add("TipoChamado", "TipoChamado");
-            tableMapping.ColumnMappings.Add("Descricao", "Descricao");
-            tableMapping.ColumnMappings.Add("DataAbertura", "DataAbertura");
-            tableMapping.ColumnMappings.Add("DataPrazo", "DataPrazo");
-            tableMapping.ColumnMappings.Add("TecnicoResponsavel", "TecnicoResponsavel");
-            tableMapping.ColumnMappings.Add("Atendente", "Atendente");
-            tableMapping.ColumnMappings.Add("EstatusOS", "EstatusOS");
-            tableMapping.ColumnMappings.Add("LigarAntes", "LigarAntes");
-            tableMapping.ColumnMappings.Add("NomeCompleto", "NomeCompleto");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::UIPrincipal.Properties.Settings.Default.ORDEMSERVICOConnectionStringFunciona;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SP_BuscarOSPendente";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ORDEMSERVICODataSetOsPendente.SP_BuscarOSPendenteDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ORDEMSERVICODataSetOsPendente.SP_BuscarOSPendenteDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            ORDEMSERVICODataSetOsPendente.SP_BuscarOSPendenteDataTable dataTable = new ORDEMSERVICODataSetOsPendente.SP_BuscarOSPendenteDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -2781,7 +1775,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ORDEMSERVICODataSetOsPendente.SP_BuscarOSDataTable dataTable, string Filtro) {
+        public virtual int Fill(ORDEMSERVICODataSet.SP_BuscarOSDataTable dataTable, string Filtro) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Filtro == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2800,7 +1794,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ORDEMSERVICODataSetOsPendente.SP_BuscarOSDataTable GetData(string Filtro) {
+        public virtual ORDEMSERVICODataSet.SP_BuscarOSDataTable GetData(string Filtro) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Filtro == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2808,7 +1802,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Filtro));
             }
-            ORDEMSERVICODataSetOsPendente.SP_BuscarOSDataTable dataTable = new ORDEMSERVICODataSetOsPendente.SP_BuscarOSDataTable();
+            ORDEMSERVICODataSet.SP_BuscarOSDataTable dataTable = new ORDEMSERVICODataSet.SP_BuscarOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2882,7 +1876,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ORDEMSERVICODataSetOsPendente dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ORDEMSERVICODataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2892,7 +1886,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ORDEMSERVICODataSetOsPendente dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ORDEMSERVICODataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2902,7 +1896,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ORDEMSERVICODataSetOsPendente dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ORDEMSERVICODataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -2936,7 +1930,7 @@ namespace UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ORDEMSERVICODataSetOsPendente dataSet) {
+        public virtual int UpdateAll(ORDEMSERVICODataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

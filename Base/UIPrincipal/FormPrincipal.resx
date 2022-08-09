@@ -123,6 +123,17 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonFecharAba.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAARNJREFUOE+l
+        k99KhEAUxn0AX0cNWmJQa5d2oYKea61XiNp9gv6xxNaNMNKN+BYGezVzI8pp5oyio2NYXXyg53zfz5nj
+        jJUTYrPAuxWiLHQ/J0l6A+dGZi35wAIX/qTQiQRA0gzNSfKopZbUFvn1AviKdEy15sfAzk/0mshqAH55
+        ClWWQRXHOkSEy5cnKD/edUgfwEIPis0dwNcBKkqBX/gq/PyItXL3Kt5nPwD6kCTBkDGMXhMAGwKyvccg
+        hvdvwzD6xgCdZTcrwe30fUZAb8/F9kFBmpl0vQOAaWCmwY4B+NUZVGmKv0zCWqOCqK0E4wApCdHCjcIj
+        4EvTQfr/UXYic3OCfHddX2d5I395ncWHc0Lsb9sbipBvRjWfAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="sPBuscarOSPendenteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>491, 17</value>
   </metadata>
@@ -147,7 +158,6 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>98</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAgBAAAAAAAAAAAAAAAAAAAA

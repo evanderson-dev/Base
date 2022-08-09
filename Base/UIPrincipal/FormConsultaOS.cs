@@ -25,61 +25,91 @@ namespace UIPrincipal
         public FormConsultaOS(object _current)
         {
             InitializeComponent();
-            textBoxBuscarOS.Text = _current.ToString();
-            buttonBuscar_Click(null,null);
-            textBoxBuscarOS.Text = null;
+            //textBoxBuscarOS.Text = _current.ToString();
+            //buttonBuscar_Click(null,null);
             textBoxBuscarOS.Visible = false;
             buttonBuscar.Visible = false;
+            //ordemServicoBindingSource.DataSource = _current;
+            sPBuscarOSBindingSource.DataSource = _current;
         }
 
         private void FormConsultaOS_Load(object sender, EventArgs e)
         {
-            textBoxBuscarOS.Focus();
-        }
-        private void buttonBuscar_Click(object sender, EventArgs e)
-        {
-            ordemServicoBindingSource.DataSource = ordemServicoBLL.BuscarOS(textBoxBuscarOS.Text);
+            // TODO: esta linha de código carrega dados na tabela 'oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente'. Você pode movê-la ou removê-la conforme necessário.
+            //this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
             
-            textBoxProtocolo.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Protocolo"];
-            labelIdPessoa.Text = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["Id_Cliente"]);
-            textBoxNomeCompleto.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["NomeCompleto"];
-            textBoxCpf.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Cpf"];
-            maskedTextBoxCep.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Cep"];
-            textBoxRua.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Rua"];
-            textBoxNumCasa.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["NumCasa"];
-            textBoxBairro.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Bairro"];
-            textBoxEmail.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Email"];
-            maskedTextBoxTelefone.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Telefone"];
-            maskedTextBoxCelularUm.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["CelularUm"];
-            maskedTextBoxCelularDois.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["CelularDois"];
-            textBoxCidade.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Cidade"];
-            textBoxUf.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Uf"];
-
-            textBoxDescricao.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Descricao"];
-            textBoxAtendente.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Atendente"];
-            maskedTextBoxDataAbertura.Text = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["DataAbertura"]);
-            maskedTextBoxPrazo.Text = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["DataPrazo"]);
-
+            //ADICIONADO PARA TESTE
             comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             comboBoxTipoChamado.DisplayMember = "Descricao";
             comboBoxTipoChamado.ValueMember = "Id";
-            comboBoxTipoChamado.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["TipoChamado"];
+            comboBoxTipoChamado.Text = (string)((DataRowView)sPBuscarOSBindingSource.Current).Row["TipoChamado"];
 
             comboBoxEstatusOS.DataSource = statusOSBLL.BuscarStatusOS("");
             comboBoxEstatusOS.DisplayMember = "Descricao";
             comboBoxEstatusOS.ValueMember = "Id";
-            comboBoxEstatusOS.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["EstatusOS"];
+            comboBoxEstatusOS.Text = (string)((DataRowView)sPBuscarOSBindingSource.Current).Row["EstatusOS"];
 
-            comboBoxLigarAntes.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["LigarAntes"];
+            comboBoxLigarAntes.Text = (string)((DataRowView)sPBuscarOSBindingSource.Current).Row["LigarAntes"];
 
             comboBoxTecnicoResponsavel.DataSource = usuarioBLL.BuscarFuncionario("1");
             comboBoxTecnicoResponsavel.DisplayMember = "NomeCompleto";
             comboBoxTecnicoResponsavel.ValueMember = "Id";
-            comboBoxTecnicoResponsavel.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["TecnicoResponsavel"];
+            comboBoxTecnicoResponsavel.Text = (string)((DataRowView)sPBuscarOSBindingSource.Current).Row["TecnicoResponsavel"];
 
-            string id_Plano = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["Id_Plano"]);
+            string id_Plano = Convert.ToString(((DataRowView)sPBuscarOSBindingSource.Current).Row["Id_Plano"]);
             planoBindingSource.DataSource = planoBLL.BuscarPlano(id_Plano);
             textBoxPlano.Text = (string)(((DataRowView)planoBindingSource.Current).Row["Descricao"]);
+        }
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            ordemServicoBindingSource.DataSource = ordemServicoBLL.BuscarOS(textBoxBuscarOS.Text);
+            try
+            {
+                textBoxProtocolo.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Protocolo"];
+                labelIdPessoa.Text = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["Id_Cliente"]);
+                textBoxNomeCompleto.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["NomeCompleto"];
+                textBoxCpf.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Cpf"];
+                maskedTextBoxCep.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Cep"];
+                textBoxRua.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Rua"];
+                textBoxNumCasa.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["NumCasa"];
+                textBoxBairro.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Bairro"];
+                textBoxEmail.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Email"];
+                maskedTextBoxTelefone.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Telefone"];
+                maskedTextBoxCelularUm.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["CelularUm"];
+                maskedTextBoxCelularDois.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["CelularDois"];
+                textBoxCidade.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Cidade"];
+                textBoxUf.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Uf"];
+
+                textBoxDescricao.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Descricao"];
+                textBoxAtendente.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["Atendente"];
+                maskedTextBoxDataAbertura.Text = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["DataAbertura"]);
+                maskedTextBoxPrazo.Text = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["DataPrazo"]);
+
+                comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
+                comboBoxTipoChamado.DisplayMember = "Descricao";
+                comboBoxTipoChamado.ValueMember = "Id";
+                comboBoxTipoChamado.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["TipoChamado"];
+
+                comboBoxEstatusOS.DataSource = statusOSBLL.BuscarStatusOS("");
+                comboBoxEstatusOS.DisplayMember = "Descricao";
+                comboBoxEstatusOS.ValueMember = "Id";
+                comboBoxEstatusOS.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["EstatusOS"];
+
+                comboBoxLigarAntes.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["LigarAntes"];
+
+                comboBoxTecnicoResponsavel.DataSource = usuarioBLL.BuscarFuncionario("1");
+                comboBoxTecnicoResponsavel.DisplayMember = "NomeCompleto";
+                comboBoxTecnicoResponsavel.ValueMember = "Id";
+                comboBoxTecnicoResponsavel.Text = (string)((DataRowView)ordemServicoBindingSource.Current).Row["TecnicoResponsavel"];
+
+                string id_Plano = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["Id_Plano"]);
+                planoBindingSource.DataSource = planoBLL.BuscarPlano(id_Plano);
+                textBoxPlano.Text = (string)(((DataRowView)planoBindingSource.Current).Row["Descricao"]);
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
 
         private void textBoxBuscarOS_KeyDown(object sender, KeyEventArgs e)
@@ -134,16 +164,22 @@ namespace UIPrincipal
             {
                 MessageBox.Show(ex.Message);
             }
-            //###################################
 
-            Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logoSenai.png");
-            logo.ScaleToFit(100f, 100f);
-            PdfPCell cell_Imagem = new PdfPCell(new Phrase($"IMG", new Font(iTextSharp.text.Font.NORMAL, 10, (int)System.Drawing.FontStyle.Bold)));
-            cell_Imagem.AddElement(logo);
-            cell_Imagem.Border = 0;
-            cell_Imagem.PaddingBottom = 20;
-            cell_Imagem.Colspan = 2;
-            table.AddCell(cell_Imagem);
+            try
+            {
+                Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logoSenai.png");
+                logo.ScaleToFit(100f, 100f);
+                PdfPCell cell_Imagem = new PdfPCell(new Phrase($"IMG", new Font(iTextSharp.text.Font.NORMAL, 10, (int)System.Drawing.FontStyle.Bold)));
+                cell_Imagem.AddElement(logo);
+                cell_Imagem.Border = 0;
+                cell_Imagem.PaddingBottom = 20;
+                cell_Imagem.Colspan = 2;
+                table.AddCell(cell_Imagem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             PdfPCell cell_Protocolo = new PdfPCell(new Phrase($"PROTOCOLO: {textBoxProtocolo.Text}", new Font(iTextSharp.text.Font.NORMAL, 10, (int)System.Drawing.FontStyle.Bold)));
             cell_Protocolo.Border = 0;
