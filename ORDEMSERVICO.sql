@@ -23,8 +23,6 @@ CREATE TABLE EnderecoServidor
 	StringDeConexao VARCHAR(250)
 )
 GO
---EXEC SP_InserirEnderecoServidor 0, 'SERVIDOR UM', 'ENDERECO TESTE UM'
---EXEC SP_InserirEnderecoServidor 0, 'SERVIDOR DOIS', 'ENDERECO TESTE DOIS'
 
 CREATE PROCEDURE SP_InserirEnderecoServidor
 	@Id INT OUTPUT,
@@ -34,6 +32,10 @@ AS
 	INSERT INTO EnderecoServidor(Descricao, StringDeConexao)
 		VALUES(@Descricao,	@StringDeConexao)
 	SET @Id = (SELECT @@IDENTITY)
+GO
+EXEC SP_InserirEnderecoServidor 0, 'SENAI', 'User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS2019;Password=Senailab05'
+EXEC SP_InserirEnderecoServidor 0, 'TOLEDO', 'User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS;Password=Senailab05'
+EXEC SP_InserirEnderecoServidor 0, 'CASA', 'Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\\SQLEXPRESS; Integrated Security=True'
 GO
 CREATE PROC SP_BuscarEnderecoServidor
 	@Filtro VARCHAR(50)
