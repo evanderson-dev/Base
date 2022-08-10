@@ -236,7 +236,7 @@ namespace UIPrincipal
 
         private void fORMPARATESTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDetalhesPessoa frm = new FormDetalhesPessoa();
+            FormParaTeste frm = new FormParaTeste();
             frm.ShowDialog();
         }
 

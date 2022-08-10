@@ -15,6 +15,40 @@ GO
 
 USE ORDEMSERVICO
 GO
+--SELECT * FROM EnderecoServidor
+CREATE TABLE EnderecoServidor
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Descricao VARCHAR(250),
+	StringDeConexao VARCHAR(250)
+)
+GO
+--EXEC SP_InserirEnderecoServidor 0, 'SERVIDOR UM', 'ENDERECO TESTE UM'
+--EXEC SP_InserirEnderecoServidor 0, 'SERVIDOR DOIS', 'ENDERECO TESTE DOIS'
+
+CREATE PROCEDURE SP_InserirEnderecoServidor
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(250),
+	@StringDeConexao VARCHAR(250)
+AS
+	INSERT INTO EnderecoServidor(Descricao, StringDeConexao)
+		VALUES(@Descricao,	@StringDeConexao)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+CREATE PROC SP_BuscarEnderecoServidor
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM EnderecoServidor WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao, StringDeConexao FROM EnderecoServidor WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao, StringDeConexao FROM EnderecoServidor WHERE Descricao LIKE '%' + @filtro + '%'
+GO
+CREATE PROC SP_ExcluirEnderecoServidor
+	@Id INT
+AS
+	DELETE FROM EnderecoServidor WHERE Id = @Id
+GO
+
 --TABELA "PERMISSÕES DO USUARIO"
 CREATE TABLE Permissao
 (

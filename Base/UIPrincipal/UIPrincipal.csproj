@@ -82,11 +82,23 @@
     <Compile Include="FormDetalhesPessoa.Designer.cs">
       <DependentUpon>FormDetalhesPessoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGerenciamentoServidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGerenciamentoServidor.Designer.cs">
+      <DependentUpon>FormGerenciamentoServidor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOrdemServico.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOrdemServico.Designer.cs">
       <DependentUpon>FormOrdemServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParaTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParaTeste.Designer.cs">
+      <DependentUpon>FormParaTeste.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -143,11 +155,17 @@
     <EmbeddedResource Include="FormDetalhesPessoa.resx">
       <DependentUpon>FormDetalhesPessoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGerenciamentoServidor.resx">
+      <DependentUpon>FormGerenciamentoServidor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOrdemServico.resx">
       <DependentUpon>FormOrdemServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParaTeste.resx">
+      <DependentUpon>FormParaTeste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -190,6 +208,7 @@
       <DependentUpon>ORDEMSERVICODataSetOsPendente.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Model.EnderecoServidor.datasource" />
     <None Include="Properties\DataSources\Model.GrupoUsuario.datasource" />
     <None Include="Properties\DataSources\Model.OrdemServico.datasource" />
     <None Include="Properties\DataSources\Model.Permissao.datasource" />
