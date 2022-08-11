@@ -30,13 +30,13 @@ namespace UIPrincipal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gRUPODEUSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,11 +54,42 @@ namespace UIPrincipal
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelCentro = new System.Windows.Forms.Panel();
+            this.buttonFecharAba = new System.Windows.Forms.Button();
             this.textBoxBuscarCadastro = new System.Windows.Forms.TextBox();
             this.buttonBuscarCadastro = new System.Windows.Forms.Button();
+            this.tabControlConsulta = new System.Windows.Forms.TabControl();
+            this.tabPageOSPendentes = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.dataGridViewOSAbertas = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoChamadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
-            this.contextMenuStripTelaPrincipal = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tabPageCadastrados = new System.Windows.Forms.TabPage();
+            this.panelFiltroPessoa = new System.Windows.Forms.Panel();
+            this.labelFilto = new System.Windows.Forms.Label();
+            this.groupBoxFiltroCadastro = new System.Windows.Forms.GroupBox();
+            this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
+            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
+            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
+            this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCompletoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.funcionarioDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clienteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.contextMenuStripAbaDois = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.abrirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -67,54 +98,28 @@ namespace UIPrincipal
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
-            this.tabPageCadastrados = new System.Windows.Forms.TabPage();
-            this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clienteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.funcionarioDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCompletoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelFiltroPessoa = new System.Windows.Forms.Panel();
-            this.groupBoxFiltroCadastro = new System.Windows.Forms.GroupBox();
-            this.checkBoxFuncionario = new System.Windows.Forms.CheckBox();
-            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
-            this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
-            this.labelFilto = new System.Windows.Forms.Label();
-            this.tabPageOSPendentes = new System.Windows.Forms.TabPage();
-            this.dataGridViewOSAbertas = new System.Windows.Forms.DataGridView();
-            this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoChamadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabControlConsulta = new System.Windows.Forms.TabControl();
-            this.buttonFecharAba = new System.Windows.Forms.Button();
+            this.contextMenuStripAbaUm = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.imprimirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impressãoDiretaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
-            this.contextMenuStripTelaPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            this.menuStrip2.SuspendLayout();
-            this.tabPageCadastrados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
-            this.panelFiltroPessoa.SuspendLayout();
-            this.groupBoxFiltroCadastro.SuspendLayout();
+            this.tabControlConsulta.SuspendLayout();
             this.tabPageOSPendentes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabControlConsulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
+            this.tabPageCadastrados.SuspendLayout();
+            this.panelFiltroPessoa.SuspendLayout();
+            this.groupBoxFiltroCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
+            this.contextMenuStripAbaDois.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            this.menuStrip2.SuspendLayout();
+            this.contextMenuStripAbaUm.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -274,6 +279,26 @@ namespace UIPrincipal
             this.panelCentro.Size = new System.Drawing.Size(854, 551);
             this.panelCentro.TabIndex = 3;
             // 
+            // buttonFecharAba
+            // 
+            this.buttonFecharAba.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFecharAba.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonFecharAba.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFecharAba.FlatAppearance.BorderSize = 0;
+            this.buttonFecharAba.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonFecharAba.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonFecharAba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFecharAba.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonFecharAba.Image = ((System.Drawing.Image)(resources.GetObject("buttonFecharAba.Image")));
+            this.buttonFecharAba.Location = new System.Drawing.Point(181, 35);
+            this.buttonFecharAba.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonFecharAba.Name = "buttonFecharAba";
+            this.buttonFecharAba.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.buttonFecharAba.Size = new System.Drawing.Size(13, 13);
+            this.buttonFecharAba.TabIndex = 7;
+            this.buttonFecharAba.UseVisualStyleBackColor = false;
+            this.buttonFecharAba.Click += new System.EventHandler(this.buttonFecharAba_Click);
+            // 
             // textBoxBuscarCadastro
             // 
             this.textBoxBuscarCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -299,6 +324,197 @@ namespace UIPrincipal
             this.buttonBuscarCadastro.UseVisualStyleBackColor = true;
             this.buttonBuscarCadastro.Click += new System.EventHandler(this.buttonBuscarCadastro_Click);
             // 
+            // tabControlConsulta
+            // 
+            this.tabControlConsulta.Controls.Add(this.tabPageOSPendentes);
+            this.tabControlConsulta.Controls.Add(this.tabPageCadastrados);
+            this.tabControlConsulta.Location = new System.Drawing.Point(3, 31);
+            this.tabControlConsulta.Name = "tabControlConsulta";
+            this.tabControlConsulta.SelectedIndex = 0;
+            this.tabControlConsulta.Size = new System.Drawing.Size(848, 517);
+            this.tabControlConsulta.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControlConsulta.TabIndex = 1;
+            this.tabControlConsulta.SelectedIndexChanged += new System.EventHandler(this.tabControlConsulta_SelectedIndexChanged);
+            // 
+            // tabPageOSPendentes
+            // 
+            this.tabPageOSPendentes.Controls.Add(this.panel1);
+            this.tabPageOSPendentes.Controls.Add(this.dataGridViewOSAbertas);
+            this.tabPageOSPendentes.Location = new System.Drawing.Point(4, 22);
+            this.tabPageOSPendentes.Name = "tabPageOSPendentes";
+            this.tabPageOSPendentes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageOSPendentes.Size = new System.Drawing.Size(840, 491);
+            this.tabPageOSPendentes.TabIndex = 0;
+            this.tabPageOSPendentes.Text = "O.S Pendentes";
+            this.tabPageOSPendentes.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 25);
+            this.panel1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(5, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "FILTRO DE BUSCA:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox1.Location = new System.Drawing.Point(113, -6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(155, 27);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.ForeColor = System.Drawing.Color.Black;
+            this.checkBox2.Location = new System.Drawing.Point(61, 8);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(91, 17);
+            this.checkBox2.TabIndex = 10;
+            this.checkBox2.Text = "Encaminhada";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.ForeColor = System.Drawing.Color.Black;
+            this.checkBox3.Location = new System.Drawing.Point(6, 8);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(57, 17);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "Aberta";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewOSAbertas
+            // 
+            this.dataGridViewOSAbertas.AllowUserToResizeColumns = false;
+            this.dataGridViewOSAbertas.AllowUserToResizeRows = false;
+            this.dataGridViewOSAbertas.AutoGenerateColumns = false;
+            this.dataGridViewOSAbertas.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewOSAbertas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewOSAbertas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOSAbertas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.dataGridViewOSAbertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOSAbertas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.protocoloDataGridViewTextBoxColumn,
+            this.nomeCompletoDataGridViewTextBoxColumn,
+            this.tipoChamadoDataGridViewTextBoxColumn,
+            this.estatusOSDataGridViewTextBoxColumn,
+            this.dataAberturaDataGridViewTextBoxColumn,
+            this.dataPrazoDataGridViewTextBoxColumn});
+            this.dataGridViewOSAbertas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridViewOSAbertas.DataSource = this.sPBuscarOSPendenteBindingSource;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewOSAbertas.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dataGridViewOSAbertas.Location = new System.Drawing.Point(3, 29);
+            this.dataGridViewOSAbertas.MinimumSize = new System.Drawing.Size(814, 386);
+            this.dataGridViewOSAbertas.Name = "dataGridViewOSAbertas";
+            this.dataGridViewOSAbertas.ReadOnly = true;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOSAbertas.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridViewOSAbertas.RowHeadersVisible = false;
+            this.dataGridViewOSAbertas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridViewOSAbertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewOSAbertas.Size = new System.Drawing.Size(834, 459);
+            this.dataGridViewOSAbertas.TabIndex = 3;
+            this.dataGridViewOSAbertas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellClick);
+            this.dataGridViewOSAbertas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellDoubleClick);
+            this.dataGridViewOSAbertas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewOSAbertas_MouseClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "COD";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // protocoloDataGridViewTextBoxColumn
+            // 
+            this.protocoloDataGridViewTextBoxColumn.DataPropertyName = "Protocolo";
+            this.protocoloDataGridViewTextBoxColumn.HeaderText = "PROTOCOLO";
+            this.protocoloDataGridViewTextBoxColumn.Name = "protocoloDataGridViewTextBoxColumn";
+            this.protocoloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.protocoloDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // nomeCompletoDataGridViewTextBoxColumn
+            // 
+            this.nomeCompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeCompletoDataGridViewTextBoxColumn.DataPropertyName = "NomeCompleto";
+            this.nomeCompletoDataGridViewTextBoxColumn.HeaderText = "CLIENTE";
+            this.nomeCompletoDataGridViewTextBoxColumn.Name = "nomeCompletoDataGridViewTextBoxColumn";
+            this.nomeCompletoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoChamadoDataGridViewTextBoxColumn
+            // 
+            this.tipoChamadoDataGridViewTextBoxColumn.DataPropertyName = "TipoChamado";
+            this.tipoChamadoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
+            this.tipoChamadoDataGridViewTextBoxColumn.Name = "tipoChamadoDataGridViewTextBoxColumn";
+            this.tipoChamadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoChamadoDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // estatusOSDataGridViewTextBoxColumn
+            // 
+            this.estatusOSDataGridViewTextBoxColumn.DataPropertyName = "EstatusOS";
+            this.estatusOSDataGridViewTextBoxColumn.HeaderText = "STATUS";
+            this.estatusOSDataGridViewTextBoxColumn.Name = "estatusOSDataGridViewTextBoxColumn";
+            this.estatusOSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataAberturaDataGridViewTextBoxColumn
+            // 
+            this.dataAberturaDataGridViewTextBoxColumn.DataPropertyName = "DataAbertura";
+            this.dataAberturaDataGridViewTextBoxColumn.HeaderText = "ABERTURA";
+            this.dataAberturaDataGridViewTextBoxColumn.Name = "dataAberturaDataGridViewTextBoxColumn";
+            this.dataAberturaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataAberturaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // dataPrazoDataGridViewTextBoxColumn
+            // 
+            this.dataPrazoDataGridViewTextBoxColumn.DataPropertyName = "DataPrazo";
+            this.dataPrazoDataGridViewTextBoxColumn.HeaderText = "PRAZO";
+            this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
+            this.dataPrazoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataPrazoDataGridViewTextBoxColumn.Width = 70;
+            // 
             // sPBuscarOSPendenteBindingSource
             // 
             this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
@@ -309,21 +525,212 @@ namespace UIPrincipal
             this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
             this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // contextMenuStripTelaPrincipal
+            // tabPageCadastrados
             // 
-            this.contextMenuStripTelaPrincipal.AccessibleRole = System.Windows.Forms.AccessibleRole.Cell;
-            this.contextMenuStripTelaPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tabPageCadastrados.AllowDrop = true;
+            this.tabPageCadastrados.Controls.Add(this.panelFiltroPessoa);
+            this.tabPageCadastrados.Controls.Add(this.usuarioDataGridView);
+            this.tabPageCadastrados.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCadastrados.Name = "tabPageCadastrados";
+            this.tabPageCadastrados.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCadastrados.Size = new System.Drawing.Size(840, 491);
+            this.tabPageCadastrados.TabIndex = 1;
+            this.tabPageCadastrados.Text = "Cadastros";
+            this.tabPageCadastrados.UseVisualStyleBackColor = true;
+            // 
+            // panelFiltroPessoa
+            // 
+            this.panelFiltroPessoa.BackColor = System.Drawing.Color.DarkGray;
+            this.panelFiltroPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelFiltroPessoa.Controls.Add(this.labelFilto);
+            this.panelFiltroPessoa.Controls.Add(this.groupBoxFiltroCadastro);
+            this.panelFiltroPessoa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFiltroPessoa.Location = new System.Drawing.Point(3, 3);
+            this.panelFiltroPessoa.Name = "panelFiltroPessoa";
+            this.panelFiltroPessoa.Size = new System.Drawing.Size(834, 25);
+            this.panelFiltroPessoa.TabIndex = 4;
+            // 
+            // labelFilto
+            // 
+            this.labelFilto.AutoSize = true;
+            this.labelFilto.ForeColor = System.Drawing.Color.Black;
+            this.labelFilto.Location = new System.Drawing.Point(5, 4);
+            this.labelFilto.Name = "labelFilto";
+            this.labelFilto.Size = new System.Drawing.Size(105, 13);
+            this.labelFilto.TabIndex = 10;
+            this.labelFilto.Text = "FILTRO DE BUSCA:";
+            // 
+            // groupBoxFiltroCadastro
+            // 
+            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxAtivo);
+            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxCliente);
+            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxFuncionario);
+            this.groupBoxFiltroCadastro.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBoxFiltroCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxFiltroCadastro.ForeColor = System.Drawing.Color.Brown;
+            this.groupBoxFiltroCadastro.Location = new System.Drawing.Point(113, -6);
+            this.groupBoxFiltroCadastro.Name = "groupBoxFiltroCadastro";
+            this.groupBoxFiltroCadastro.Size = new System.Drawing.Size(205, 27);
+            this.groupBoxFiltroCadastro.TabIndex = 8;
+            this.groupBoxFiltroCadastro.TabStop = false;
+            // 
+            // checkBoxAtivo
+            // 
+            this.checkBoxAtivo.AutoSize = true;
+            this.checkBoxAtivo.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxAtivo.Location = new System.Drawing.Point(154, 8);
+            this.checkBoxAtivo.Name = "checkBoxAtivo";
+            this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxAtivo.TabIndex = 11;
+            this.checkBoxAtivo.Text = "Ativo";
+            this.checkBoxAtivo.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCliente
+            // 
+            this.checkBoxCliente.AutoSize = true;
+            this.checkBoxCliente.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxCliente.Location = new System.Drawing.Point(92, 8);
+            this.checkBoxCliente.Name = "checkBoxCliente";
+            this.checkBoxCliente.Size = new System.Drawing.Size(58, 17);
+            this.checkBoxCliente.TabIndex = 10;
+            this.checkBoxCliente.Text = "Cliente";
+            this.checkBoxCliente.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFuncionario
+            // 
+            this.checkBoxFuncionario.AutoSize = true;
+            this.checkBoxFuncionario.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxFuncionario.Location = new System.Drawing.Point(6, 8);
+            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
+            this.checkBoxFuncionario.Size = new System.Drawing.Size(81, 17);
+            this.checkBoxFuncionario.TabIndex = 0;
+            this.checkBoxFuncionario.Text = "Funcionario";
+            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
+            // 
+            // usuarioDataGridView
+            // 
+            this.usuarioDataGridView.AllowUserToOrderColumns = true;
+            this.usuarioDataGridView.AutoGenerateColumns = false;
+            this.usuarioDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.usuarioDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.usuarioDataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.usuarioDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.usuarioDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            this.usuarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nomeCompletoDataGridViewTextBoxColumn1,
+            this.cpfDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.funcionarioDataGridViewCheckBoxColumn,
+            this.clienteDataGridViewCheckBoxColumn,
+            this.ativoDataGridViewCheckBoxColumn});
+            this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.usuarioDataGridView.DefaultCellStyle = dataGridViewCellStyle29;
+            this.usuarioDataGridView.Location = new System.Drawing.Point(3, 29);
+            this.usuarioDataGridView.Name = "usuarioDataGridView";
+            this.usuarioDataGridView.ReadOnly = true;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.usuarioDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.usuarioDataGridView.RowHeadersVisible = false;
+            this.usuarioDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.usuarioDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.usuarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.usuarioDataGridView.Size = new System.Drawing.Size(834, 459);
+            this.usuarioDataGridView.TabIndex = 6;
+            this.usuarioDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellClick);
+            this.usuarioDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "COD";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // nomeCompletoDataGridViewTextBoxColumn1
+            // 
+            this.nomeCompletoDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeCompletoDataGridViewTextBoxColumn1.DataPropertyName = "NomeCompleto";
+            this.nomeCompletoDataGridViewTextBoxColumn1.HeaderText = "NOME";
+            this.nomeCompletoDataGridViewTextBoxColumn1.Name = "nomeCompletoDataGridViewTextBoxColumn1";
+            this.nomeCompletoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cpfDataGridViewTextBoxColumn
+            // 
+            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "Cpf";
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E-MAIL";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // funcionarioDataGridViewCheckBoxColumn
+            // 
+            this.funcionarioDataGridViewCheckBoxColumn.DataPropertyName = "Funcionario";
+            this.funcionarioDataGridViewCheckBoxColumn.HeaderText = "FUNCIONARIO";
+            this.funcionarioDataGridViewCheckBoxColumn.Name = "funcionarioDataGridViewCheckBoxColumn";
+            this.funcionarioDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.funcionarioDataGridViewCheckBoxColumn.Width = 85;
+            // 
+            // clienteDataGridViewCheckBoxColumn
+            // 
+            this.clienteDataGridViewCheckBoxColumn.DataPropertyName = "Cliente";
+            this.clienteDataGridViewCheckBoxColumn.HeaderText = "CLIENTE";
+            this.clienteDataGridViewCheckBoxColumn.Name = "clienteDataGridViewCheckBoxColumn";
+            this.clienteDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.clienteDataGridViewCheckBoxColumn.Width = 55;
+            // 
+            // ativoDataGridViewCheckBoxColumn
+            // 
+            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.HeaderText = "ATIVO";
+            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
+            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.ativoDataGridViewCheckBoxColumn.Width = 45;
+            // 
+            // contextMenuStripAbaDois
+            // 
+            this.contextMenuStripAbaDois.AccessibleRole = System.Windows.Forms.AccessibleRole.Cell;
+            this.contextMenuStripAbaDois.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abrirOSToolStripMenuItem});
-            this.contextMenuStripTelaPrincipal.Name = "contextMenuStripTelaPrincipal";
-            this.contextMenuStripTelaPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStripTelaPrincipal.Size = new System.Drawing.Size(122, 26);
+            this.contextMenuStripAbaDois.Name = "contextMenuStripTelaPrincipal";
+            this.contextMenuStripAbaDois.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStripAbaDois.Size = new System.Drawing.Size(105, 26);
             // 
             // abrirOSToolStripMenuItem
             // 
             this.abrirOSToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.Cell;
             this.abrirOSToolStripMenuItem.Name = "abrirOSToolStripMenuItem";
-            this.abrirOSToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.abrirOSToolStripMenuItem.Text = "Abrir O.S";
+            this.abrirOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirOSToolStripMenuItem.Text = "Editar";
             this.abrirOSToolStripMenuItem.Click += new System.EventHandler(this.abrirOSToolStripMenuItem_Click);
             // 
             // usuarioBindingSource
@@ -395,407 +802,35 @@ namespace UIPrincipal
             // 
             this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPageCadastrados
+            // contextMenuStripAbaUm
             // 
-            this.tabPageCadastrados.AllowDrop = true;
-            this.tabPageCadastrados.Controls.Add(this.panelFiltroPessoa);
-            this.tabPageCadastrados.Controls.Add(this.usuarioDataGridView);
-            this.tabPageCadastrados.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCadastrados.Name = "tabPageCadastrados";
-            this.tabPageCadastrados.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCadastrados.Size = new System.Drawing.Size(840, 491);
-            this.tabPageCadastrados.TabIndex = 1;
-            this.tabPageCadastrados.Text = "Cadastros";
-            this.tabPageCadastrados.UseVisualStyleBackColor = true;
+            this.contextMenuStripAbaUm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imprimirOSToolStripMenuItem,
+            this.visualizarDetalhesToolStripMenuItem,
+            this.impressãoDiretaToolStripMenuItem});
+            this.contextMenuStripAbaUm.Name = "contextMenuStripAbaUm";
+            this.contextMenuStripAbaUm.Size = new System.Drawing.Size(181, 92);
             // 
-            // usuarioDataGridView
+            // imprimirOSToolStripMenuItem
             // 
-            this.usuarioDataGridView.AllowUserToOrderColumns = true;
-            this.usuarioDataGridView.AutoGenerateColumns = false;
-            this.usuarioDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.usuarioDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.usuarioDataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.usuarioDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuarioDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.usuarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nomeCompletoDataGridViewTextBoxColumn1,
-            this.cpfDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.funcionarioDataGridViewCheckBoxColumn,
-            this.clienteDataGridViewCheckBoxColumn,
-            this.ativoDataGridViewCheckBoxColumn});
-            this.usuarioDataGridView.ContextMenuStrip = this.contextMenuStripTelaPrincipal;
-            this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuarioDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(3, 29);
-            this.usuarioDataGridView.Name = "usuarioDataGridView";
-            this.usuarioDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuarioDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.usuarioDataGridView.RowHeadersVisible = false;
-            this.usuarioDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.usuarioDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(834, 459);
-            this.usuarioDataGridView.TabIndex = 6;
-            this.usuarioDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellClick);
-            this.usuarioDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellDoubleClick);
+            this.imprimirOSToolStripMenuItem.Name = "imprimirOSToolStripMenuItem";
+            this.imprimirOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imprimirOSToolStripMenuItem.Text = "Imprimir O.S";
+            this.imprimirOSToolStripMenuItem.Click += new System.EventHandler(this.imprimirOSToolStripMenuItem_Click);
             // 
-            // ativoDataGridViewCheckBoxColumn
+            // visualizarDetalhesToolStripMenuItem
             // 
-            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
-            this.ativoDataGridViewCheckBoxColumn.HeaderText = "ATIVO";
-            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
-            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.ativoDataGridViewCheckBoxColumn.Width = 45;
+            this.visualizarDetalhesToolStripMenuItem.Name = "visualizarDetalhesToolStripMenuItem";
+            this.visualizarDetalhesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualizarDetalhesToolStripMenuItem.Text = "Visualizar Detalhes";
+            this.visualizarDetalhesToolStripMenuItem.Click += new System.EventHandler(this.visualizarDetalhesToolStripMenuItem_Click);
             // 
-            // clienteDataGridViewCheckBoxColumn
+            // impressãoDiretaToolStripMenuItem
             // 
-            this.clienteDataGridViewCheckBoxColumn.DataPropertyName = "Cliente";
-            this.clienteDataGridViewCheckBoxColumn.HeaderText = "CLIENTE";
-            this.clienteDataGridViewCheckBoxColumn.Name = "clienteDataGridViewCheckBoxColumn";
-            this.clienteDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.clienteDataGridViewCheckBoxColumn.Width = 55;
-            // 
-            // funcionarioDataGridViewCheckBoxColumn
-            // 
-            this.funcionarioDataGridViewCheckBoxColumn.DataPropertyName = "Funcionario";
-            this.funcionarioDataGridViewCheckBoxColumn.HeaderText = "FUNCIONARIO";
-            this.funcionarioDataGridViewCheckBoxColumn.Name = "funcionarioDataGridViewCheckBoxColumn";
-            this.funcionarioDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.funcionarioDataGridViewCheckBoxColumn.Width = 85;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E-MAIL";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cpfDataGridViewTextBoxColumn
-            // 
-            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "Cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
-            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeCompletoDataGridViewTextBoxColumn1
-            // 
-            this.nomeCompletoDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeCompletoDataGridViewTextBoxColumn1.DataPropertyName = "NomeCompleto";
-            this.nomeCompletoDataGridViewTextBoxColumn1.HeaderText = "NOME";
-            this.nomeCompletoDataGridViewTextBoxColumn1.Name = "nomeCompletoDataGridViewTextBoxColumn1";
-            this.nomeCompletoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "COD";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // panelFiltroPessoa
-            // 
-            this.panelFiltroPessoa.BackColor = System.Drawing.Color.DarkGray;
-            this.panelFiltroPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelFiltroPessoa.Controls.Add(this.labelFilto);
-            this.panelFiltroPessoa.Controls.Add(this.groupBoxFiltroCadastro);
-            this.panelFiltroPessoa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFiltroPessoa.Location = new System.Drawing.Point(3, 3);
-            this.panelFiltroPessoa.Name = "panelFiltroPessoa";
-            this.panelFiltroPessoa.Size = new System.Drawing.Size(834, 25);
-            this.panelFiltroPessoa.TabIndex = 4;
-            // 
-            // groupBoxFiltroCadastro
-            // 
-            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxAtivo);
-            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxCliente);
-            this.groupBoxFiltroCadastro.Controls.Add(this.checkBoxFuncionario);
-            this.groupBoxFiltroCadastro.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxFiltroCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFiltroCadastro.ForeColor = System.Drawing.Color.Brown;
-            this.groupBoxFiltroCadastro.Location = new System.Drawing.Point(113, -6);
-            this.groupBoxFiltroCadastro.Name = "groupBoxFiltroCadastro";
-            this.groupBoxFiltroCadastro.Size = new System.Drawing.Size(205, 27);
-            this.groupBoxFiltroCadastro.TabIndex = 8;
-            this.groupBoxFiltroCadastro.TabStop = false;
-            // 
-            // checkBoxFuncionario
-            // 
-            this.checkBoxFuncionario.AutoSize = true;
-            this.checkBoxFuncionario.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxFuncionario.Location = new System.Drawing.Point(6, 8);
-            this.checkBoxFuncionario.Name = "checkBoxFuncionario";
-            this.checkBoxFuncionario.Size = new System.Drawing.Size(81, 17);
-            this.checkBoxFuncionario.TabIndex = 0;
-            this.checkBoxFuncionario.Text = "Funcionario";
-            this.checkBoxFuncionario.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxCliente
-            // 
-            this.checkBoxCliente.AutoSize = true;
-            this.checkBoxCliente.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxCliente.Location = new System.Drawing.Point(92, 8);
-            this.checkBoxCliente.Name = "checkBoxCliente";
-            this.checkBoxCliente.Size = new System.Drawing.Size(58, 17);
-            this.checkBoxCliente.TabIndex = 10;
-            this.checkBoxCliente.Text = "Cliente";
-            this.checkBoxCliente.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAtivo
-            // 
-            this.checkBoxAtivo.AutoSize = true;
-            this.checkBoxAtivo.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxAtivo.Location = new System.Drawing.Point(154, 8);
-            this.checkBoxAtivo.Name = "checkBoxAtivo";
-            this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
-            this.checkBoxAtivo.TabIndex = 11;
-            this.checkBoxAtivo.Text = "Ativo";
-            this.checkBoxAtivo.UseVisualStyleBackColor = true;
-            // 
-            // labelFilto
-            // 
-            this.labelFilto.AutoSize = true;
-            this.labelFilto.ForeColor = System.Drawing.Color.Black;
-            this.labelFilto.Location = new System.Drawing.Point(5, 4);
-            this.labelFilto.Name = "labelFilto";
-            this.labelFilto.Size = new System.Drawing.Size(105, 13);
-            this.labelFilto.TabIndex = 10;
-            this.labelFilto.Text = "FILTRO DE BUSCA:";
-            // 
-            // tabPageOSPendentes
-            // 
-            this.tabPageOSPendentes.Controls.Add(this.panel1);
-            this.tabPageOSPendentes.Controls.Add(this.dataGridViewOSAbertas);
-            this.tabPageOSPendentes.Location = new System.Drawing.Point(4, 22);
-            this.tabPageOSPendentes.Name = "tabPageOSPendentes";
-            this.tabPageOSPendentes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOSPendentes.Size = new System.Drawing.Size(840, 491);
-            this.tabPageOSPendentes.TabIndex = 0;
-            this.tabPageOSPendentes.Text = "O.S Pendentes";
-            this.tabPageOSPendentes.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewOSAbertas
-            // 
-            this.dataGridViewOSAbertas.AllowUserToResizeColumns = false;
-            this.dataGridViewOSAbertas.AllowUserToResizeRows = false;
-            this.dataGridViewOSAbertas.AutoGenerateColumns = false;
-            this.dataGridViewOSAbertas.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewOSAbertas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewOSAbertas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOSAbertas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewOSAbertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOSAbertas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.protocoloDataGridViewTextBoxColumn,
-            this.nomeCompletoDataGridViewTextBoxColumn,
-            this.tipoChamadoDataGridViewTextBoxColumn,
-            this.estatusOSDataGridViewTextBoxColumn,
-            this.dataAberturaDataGridViewTextBoxColumn,
-            this.dataPrazoDataGridViewTextBoxColumn});
-            this.dataGridViewOSAbertas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewOSAbertas.DataSource = this.sPBuscarOSPendenteBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewOSAbertas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewOSAbertas.Location = new System.Drawing.Point(3, 29);
-            this.dataGridViewOSAbertas.MinimumSize = new System.Drawing.Size(814, 386);
-            this.dataGridViewOSAbertas.Name = "dataGridViewOSAbertas";
-            this.dataGridViewOSAbertas.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOSAbertas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewOSAbertas.RowHeadersVisible = false;
-            this.dataGridViewOSAbertas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridViewOSAbertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewOSAbertas.Size = new System.Drawing.Size(834, 459);
-            this.dataGridViewOSAbertas.TabIndex = 3;
-            this.dataGridViewOSAbertas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellClick);
-            this.dataGridViewOSAbertas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellDoubleClick);
-            // 
-            // dataPrazoDataGridViewTextBoxColumn
-            // 
-            this.dataPrazoDataGridViewTextBoxColumn.DataPropertyName = "DataPrazo";
-            this.dataPrazoDataGridViewTextBoxColumn.HeaderText = "PRAZO";
-            this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
-            this.dataPrazoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataPrazoDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // dataAberturaDataGridViewTextBoxColumn
-            // 
-            this.dataAberturaDataGridViewTextBoxColumn.DataPropertyName = "DataAbertura";
-            this.dataAberturaDataGridViewTextBoxColumn.HeaderText = "ABERTURA";
-            this.dataAberturaDataGridViewTextBoxColumn.Name = "dataAberturaDataGridViewTextBoxColumn";
-            this.dataAberturaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataAberturaDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // estatusOSDataGridViewTextBoxColumn
-            // 
-            this.estatusOSDataGridViewTextBoxColumn.DataPropertyName = "EstatusOS";
-            this.estatusOSDataGridViewTextBoxColumn.HeaderText = "STATUS";
-            this.estatusOSDataGridViewTextBoxColumn.Name = "estatusOSDataGridViewTextBoxColumn";
-            this.estatusOSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoChamadoDataGridViewTextBoxColumn
-            // 
-            this.tipoChamadoDataGridViewTextBoxColumn.DataPropertyName = "TipoChamado";
-            this.tipoChamadoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
-            this.tipoChamadoDataGridViewTextBoxColumn.Name = "tipoChamadoDataGridViewTextBoxColumn";
-            this.tipoChamadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoChamadoDataGridViewTextBoxColumn.Width = 155;
-            // 
-            // nomeCompletoDataGridViewTextBoxColumn
-            // 
-            this.nomeCompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeCompletoDataGridViewTextBoxColumn.DataPropertyName = "NomeCompleto";
-            this.nomeCompletoDataGridViewTextBoxColumn.HeaderText = "CLIENTE";
-            this.nomeCompletoDataGridViewTextBoxColumn.Name = "nomeCompletoDataGridViewTextBoxColumn";
-            this.nomeCompletoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // protocoloDataGridViewTextBoxColumn
-            // 
-            this.protocoloDataGridViewTextBoxColumn.DataPropertyName = "Protocolo";
-            this.protocoloDataGridViewTextBoxColumn.HeaderText = "PROTOCOLO";
-            this.protocoloDataGridViewTextBoxColumn.Name = "protocoloDataGridViewTextBoxColumn";
-            this.protocoloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.protocoloDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "COD";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 25);
-            this.panel1.TabIndex = 10;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox1.Location = new System.Drawing.Point(113, -6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(155, 27);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.ForeColor = System.Drawing.Color.Black;
-            this.checkBox3.Location = new System.Drawing.Point(6, 8);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(57, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Aberta";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.Color.Black;
-            this.checkBox2.Location = new System.Drawing.Point(61, 8);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(91, 17);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "Encaminhada";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(5, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "FILTRO DE BUSCA:";
-            // 
-            // tabControlConsulta
-            // 
-            this.tabControlConsulta.Controls.Add(this.tabPageOSPendentes);
-            this.tabControlConsulta.Controls.Add(this.tabPageCadastrados);
-            this.tabControlConsulta.Location = new System.Drawing.Point(3, 31);
-            this.tabControlConsulta.Name = "tabControlConsulta";
-            this.tabControlConsulta.SelectedIndex = 0;
-            this.tabControlConsulta.Size = new System.Drawing.Size(848, 517);
-            this.tabControlConsulta.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControlConsulta.TabIndex = 1;
-            this.tabControlConsulta.SelectedIndexChanged += new System.EventHandler(this.tabControlConsulta_SelectedIndexChanged);
-            // 
-            // buttonFecharAba
-            // 
-            this.buttonFecharAba.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFecharAba.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonFecharAba.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFecharAba.FlatAppearance.BorderSize = 0;
-            this.buttonFecharAba.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonFecharAba.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonFecharAba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFecharAba.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonFecharAba.Image = ((System.Drawing.Image)(resources.GetObject("buttonFecharAba.Image")));
-            this.buttonFecharAba.Location = new System.Drawing.Point(181, 35);
-            this.buttonFecharAba.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonFecharAba.Name = "buttonFecharAba";
-            this.buttonFecharAba.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
-            this.buttonFecharAba.Size = new System.Drawing.Size(13, 13);
-            this.buttonFecharAba.TabIndex = 7;
-            this.buttonFecharAba.UseVisualStyleBackColor = false;
-            this.buttonFecharAba.Click += new System.EventHandler(this.buttonFecharAba_Click);
+            this.impressãoDiretaToolStripMenuItem.Name = "impressãoDiretaToolStripMenuItem";
+            this.impressãoDiretaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.impressãoDiretaToolStripMenuItem.Text = "Impressão Direta";
+            this.impressãoDiretaToolStripMenuItem.Click += new System.EventHandler(this.impressãoDiretaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -824,25 +859,26 @@ namespace UIPrincipal
             this.statusStrip1.PerformLayout();
             this.panelCentro.ResumeLayout(false);
             this.panelCentro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
-            this.contextMenuStripTelaPrincipal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
-            this.tabPageCadastrados.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
-            this.panelFiltroPessoa.ResumeLayout(false);
-            this.panelFiltroPessoa.PerformLayout();
-            this.groupBoxFiltroCadastro.ResumeLayout(false);
-            this.groupBoxFiltroCadastro.PerformLayout();
+            this.tabControlConsulta.ResumeLayout(false);
             this.tabPageOSPendentes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabControlConsulta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
+            this.tabPageCadastrados.ResumeLayout(false);
+            this.panelFiltroPessoa.ResumeLayout(false);
+            this.panelFiltroPessoa.PerformLayout();
+            this.groupBoxFiltroCadastro.ResumeLayout(false);
+            this.groupBoxFiltroCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            this.contextMenuStripAbaDois.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            this.contextMenuStripAbaUm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -878,7 +914,7 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonBuscarCadastro;
         private System.Windows.Forms.TextBox textBoxBuscarCadastro;
         private System.Windows.Forms.ToolStripMenuItem atualizarToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripTelaPrincipal;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripAbaDois;
         private System.Windows.Forms.ToolStripMenuItem abrirOSToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControlConsulta;
         private System.Windows.Forms.TabPage tabPageOSPendentes;
@@ -911,5 +947,9 @@ namespace UIPrincipal
         private System.Windows.Forms.DataGridViewCheckBoxColumn clienteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Button buttonFecharAba;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripAbaUm;
+        private System.Windows.Forms.ToolStripMenuItem imprimirOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarDetalhesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impressãoDiretaToolStripMenuItem;
     }
 }

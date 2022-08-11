@@ -11,8 +11,23 @@ namespace UIPrincipal
     public partial class FormPrincipal : Form
     {
         private bool Logado = true;
+        private bool modificarProtcolo = false;
         private string protocoloOculto = "";
         public string cpfPessoa = "";
+        private string protocoloOcultoPropriedade
+        {
+            get { return protocoloOculto; }
+            set
+            {
+                protocoloOculto = value;
+                if (tabControlConsulta.SelectedIndex == 0)
+                {
+                    //MessageBox.Show("ABA NUMERO UM!");
+                    contextMenuStripAbaUm.Show(MousePosition.X, MousePosition.Y);
+                }
+            }
+        }
+
         OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         UsuarioBLL usuarioBLL = new UsuarioBLL();
 
@@ -101,10 +116,23 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            /*try
             {
                 dataGridViewOSAbertas.CurrentRow.Selected = true;
                 protocoloOculto = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }*/
+            try
+            {
+                dataGridViewOSAbertas.CurrentRow.Selected = true;
+                if (modificarProtcolo)
+                {
+                    protocoloOcultoPropriedade = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    modificarProtcolo = false;
+                }
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -287,6 +315,49 @@ namespace UIPrincipal
                 buttonFecharAba.Size = new Size(13,13);
                 buttonFecharAba.Location = new Point(181,35);
             }
+        }
+
+        private void dataGridViewOSAbertas_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                mouse_event(MOUSEEVENTF_LEFTDOWN, e.X, e.Y, 0, 0);
+                mouse_event(MOUSEEVENTF_LEFTUP, e.X, e.Y, 0, 0);
+                modificarProtcolo = true;
+            }
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
+
+        public const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        public const int MOUSEEVENTF_LEFTUP = 0x04;
+
+        private void imprimirOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
+            using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void visualizarDetalhesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
+            using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void impressãoDiretaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
+            Impressao.ImprimirOS(bindingSource);
         }
     }
 }

@@ -779,7 +779,7 @@ INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Client
 GO
 
 INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('USUARIO TESTE UM', '01-01-2001', '111.111.111-11', 1, 1, 1, 1, '', 1)
+	VALUES ('USUARIO TESTE UM', '01-01-2001', '111.222.111-22', 1, 1, 1, 1, '', 1)
 GO
 
 INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
@@ -792,6 +792,10 @@ GO
 
 INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
 	VALUES ('USUARIO TESTE QUATRO', '04-04-2004', '444.444.444.44', 1, 0, 1, 1, '', 0)
+GO
+
+INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
+	VALUES (1, '', '', 'CLIENTE TESTE UM', '05-01-1999', '77827150', 'RUA UM', '541', 'SETOR UM', '', '', '10000000001', '', '', 'clienteum@email.com', '6334110001', '63992010001', '63992019202', 'ARAGUAINA', 'TO', 1, 0, 1, '', '')
 GO
 
 EXEC SP_AbrirOrdemServico 0, 2022080101, 1, 'INSTALAÇÃO FIBRA','REALIZAR A INSTALAÇÃO', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
@@ -810,5 +814,5 @@ GO
 --SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
-SELECT NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
+SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
 GO

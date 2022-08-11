@@ -47,13 +47,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxPrazo = new System.Windows.Forms.MaskedTextBox();
+            this.sPBuscarOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
             this.maskedTextBoxDataAbertura = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
             this.textBoxPlano = new System.Windows.Forms.TextBox();
             this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.labelIdPessoa = new System.Windows.Forms.Label();
-            this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -67,6 +68,7 @@
             this.textBoxCidade = new System.Windows.Forms.TextBox();
             this.textBoxNumCasa = new System.Windows.Forms.TextBox();
             this.textBoxRua = new System.Windows.Forms.TextBox();
+            this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -90,8 +92,6 @@
             this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
             this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
-            this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
-            this.sPBuscarOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
@@ -107,13 +107,13 @@
             labelNumCasa = new System.Windows.Forms.Label();
             labelRua = new System.Windows.Forms.Label();
             labelDescricao = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).BeginInit();
             this.groupBoxDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1CpfCNPJ
@@ -294,6 +294,16 @@
             this.maskedTextBoxPrazo.Size = new System.Drawing.Size(78, 20);
             this.maskedTextBoxPrazo.TabIndex = 5;
             // 
+            // sPBuscarOSBindingSource
+            // 
+            this.sPBuscarOSBindingSource.DataMember = "SP_BuscarOS";
+            this.sPBuscarOSBindingSource.DataSource = this.oRDEMSERVICODataSet;
+            // 
+            // oRDEMSERVICODataSet
+            // 
+            this.oRDEMSERVICODataSet.DataSetName = "ORDEMSERVICODataSet";
+            this.oRDEMSERVICODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // maskedTextBoxDataAbertura
             // 
             this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
@@ -386,10 +396,6 @@
             this.labelIdPessoa.Size = new System.Drawing.Size(58, 20);
             this.labelIdPessoa.TabIndex = 39;
             this.labelIdPessoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ordemServicoBindingSource
-            // 
-            this.ordemServicoBindingSource.DataSource = typeof(Model.OrdemServico);
             // 
             // maskedTextBoxCep
             // 
@@ -527,6 +533,10 @@
             this.textBoxRua.ReadOnly = true;
             this.textBoxRua.Size = new System.Drawing.Size(172, 20);
             this.textBoxRua.TabIndex = 8;
+            // 
+            // ordemServicoBindingSource
+            // 
+            this.ordemServicoBindingSource.DataSource = typeof(Model.OrdemServico);
             // 
             // label3
             // 
@@ -724,16 +734,6 @@
             // 
             this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
             // 
-            // oRDEMSERVICODataSet
-            // 
-            this.oRDEMSERVICODataSet.DataSetName = "ORDEMSERVICODataSet";
-            this.oRDEMSERVICODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPBuscarOSBindingSource
-            // 
-            this.sPBuscarOSBindingSource.DataMember = "SP_BuscarOS";
-            this.sPBuscarOSBindingSource.DataSource = this.oRDEMSERVICODataSet;
-            // 
             // sP_BuscarOSTableAdapter
             // 
             this.sP_BuscarOSTableAdapter.ClearBeforeFill = true;
@@ -773,14 +773,14 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormConsultaOS_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).EndInit();
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -828,7 +828,6 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private ORDEMSERVICODataSetOsPendente oRDEMSERVICODataSetOsPendente;
@@ -837,5 +836,6 @@
         private System.Windows.Forms.BindingSource sPBuscarOSBindingSource;
         private ORDEMSERVICODataSet oRDEMSERVICODataSet;
         private ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter sP_BuscarOSTableAdapter;
+        public System.Windows.Forms.Button buttonImprimir;
     }
 }
