@@ -176,16 +176,6 @@ namespace UIPrincipal
                 comboBoxPlanos.ValueMember = "Id";
                 maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
             }
-            // O CODIGO ABAIXO É TEMPORARIO
-            if (checkBoxCliente.Checked && checkBoxFuncionario.Checked)
-            {
-                PlanoBLL planoBLL = new PlanoBLL();
-                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
-                comboBoxPlanos.DisplayMember = "Descricao";
-                comboBoxPlanos.ValueMember = "Id";
-                maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
-                maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
-            }
         }
         public void checkBoxFuncionario_CheckedChanged(object sender, EventArgs e)
         {
@@ -193,16 +183,6 @@ namespace UIPrincipal
                 maskedTextBoxDataAdmissao.Text = null;
             else
                 maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
-            // O CODIGO ABAIXO É TEMPORARIO
-            if (checkBoxCliente.Checked && checkBoxFuncionario.Checked)
-            {
-                PlanoBLL planoBLL = new PlanoBLL();
-                comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
-                comboBoxPlanos.DisplayMember = "Descricao";
-                comboBoxPlanos.ValueMember = "Id";
-                maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
-                maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
-            }
         }
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {

@@ -29,7 +29,7 @@ namespace UIPrincipal
             //buttonBuscar_Click(null,null);
             textBoxBuscarOS.Visible = false;
             buttonBuscar.Visible = false;
-            //ordemServicoBindingSource.DataSource = _current;
+            ordemServicoBindingSource.DataSource = _current;
             sPBuscarOSBindingSource.DataSource = _current;
         }
 

@@ -12,7 +12,7 @@ namespace UIPrincipal
     {
         private bool Logado = true;
         private string protocoloOculto = "";
-        private string cpfPessoa = "";
+        public string cpfPessoa = "";
         OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         UsuarioBLL usuarioBLL = new UsuarioBLL();
 
@@ -83,17 +83,21 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*try
+            try
             {
                 dataGridViewOSAbertas.CurrentRow.Selected = true;
                 string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
-                FormConsultaOS frm = new FormConsultaOS(protocolo);
-                frm.Show();
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
+                using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
+                {
+                    frm.ShowDialog();
+                }
             }
             catch (ArgumentOutOfRangeException)
             {
                 return;
-            }*/
+            }
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -215,8 +219,15 @@ namespace UIPrincipal
         {
             try
             {
-                usuarioDataGridView.CurrentRow.Selected = true;
-                cpfPessoa = usuarioDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                if (usuarioDataGridView.Rows.Count > 1)
+                {
+                    usuarioDataGridView.CurrentRow.Selected = true;
+                    cpfPessoa = usuarioDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (ArgumentOutOfRangeException)
             {
