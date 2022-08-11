@@ -174,15 +174,16 @@ namespace UIPrincipal
                 comboBoxPlanos.DataSource = planoBLL.BuscarPlano("");
                 comboBoxPlanos.DisplayMember = "Descricao";
                 comboBoxPlanos.ValueMember = "Id";
-                maskedTextBoxInicioContrato.Text = DateTime.Now.ToString();
+                if (inserindoNovo)
+                maskedTextBoxInicioContrato.Text = ((Usuario)usuarioBindingSource.Current).InicioDoContrato = DateTime.Now.ToString();
             }
         }
         public void checkBoxFuncionario_CheckedChanged(object sender, EventArgs e)
         {
             if (!checkBoxFuncionario.Checked)
                 maskedTextBoxDataAdmissao.Text = null;
-            else
-                maskedTextBoxDataAdmissao.Text = DateTime.Now.ToString();
+            else if (inserindoNovo)
+                maskedTextBoxDataAdmissao.Text = ((Usuario)usuarioBindingSource.Current).DataAdmissao = DateTime.Now.ToString();
         }
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
@@ -208,7 +209,6 @@ namespace UIPrincipal
             {
                 radioButtonNivelTres.Checked = true;
             }
-            
             //pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
         }
 
