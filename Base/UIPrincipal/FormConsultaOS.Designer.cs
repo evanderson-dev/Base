@@ -93,6 +93,8 @@
             this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
+            this.textBoxSolucao = new System.Windows.Forms.TextBox();
+            this.label1Solucao = new System.Windows.Forms.Label();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -553,6 +555,7 @@
             this.textBoxDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Descricao", true));
             this.textBoxDescricao.Location = new System.Drawing.Point(11, 290);
+            this.textBoxDescricao.MaxLength = 1000;
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.ReadOnly = true;
@@ -738,11 +741,36 @@
             // 
             this.sP_BuscarOSTableAdapter.ClearBeforeFill = true;
             // 
+            // textBoxSolucao
+            // 
+            this.textBoxSolucao.BackColor = System.Drawing.Color.White;
+            this.textBoxSolucao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSolucao.Location = new System.Drawing.Point(11, 412);
+            this.textBoxSolucao.MaxLength = 1000;
+            this.textBoxSolucao.Multiline = true;
+            this.textBoxSolucao.Name = "textBoxSolucao";
+            this.textBoxSolucao.ReadOnly = true;
+            this.textBoxSolucao.Size = new System.Drawing.Size(814, 100);
+            this.textBoxSolucao.TabIndex = 73;
+            this.textBoxSolucao.Visible = false;
+            // 
+            // label1Solucao
+            // 
+            this.label1Solucao.AutoSize = true;
+            this.label1Solucao.Location = new System.Drawing.Point(8, 396);
+            this.label1Solucao.Name = "label1Solucao";
+            this.label1Solucao.Size = new System.Drawing.Size(58, 13);
+            this.label1Solucao.TabIndex = 74;
+            this.label1Solucao.Text = "SOLUÇÃO";
+            this.label1Solucao.Visible = false;
+            // 
             // FormConsultaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 561);
+            this.Controls.Add(this.label1Solucao);
+            this.Controls.Add(this.textBoxSolucao);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -837,5 +865,7 @@
         private ORDEMSERVICODataSet oRDEMSERVICODataSet;
         private ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter sP_BuscarOSTableAdapter;
         public System.Windows.Forms.Button buttonImprimir;
+        private System.Windows.Forms.TextBox textBoxSolucao;
+        private System.Windows.Forms.Label label1Solucao;
     }
 }

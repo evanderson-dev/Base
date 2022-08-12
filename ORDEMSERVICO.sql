@@ -639,7 +639,8 @@ CREATE TABLE OrdemServico
 	TecnicoResponsavel VARCHAR(150),
 	Atendente VARCHAR(150),
 	EstatusOS VARCHAR(20),
-	LigarAntes VARCHAR(5)
+	LigarAntes VARCHAR(5),
+	MotivoFechamento VARCHAR(1000)
 )
 GO
 
@@ -668,18 +669,18 @@ AS
 	EstatusOS,
 	LigarAntes
 	)
-		VALUES(
-		@Protocolo,
-		@Id_Cliente,
-		@TipoChamado,
-		@Descricao,
-		@DataAbertura,
-		@DataPrazo,
-		@TecnicoResponsavel,
-		@Atendente,
-		@EstatusOS,
-		@LigarAntes
-		)
+	VALUES(
+	@Protocolo,
+	@Id_Cliente,
+	@TipoChamado,
+	@Descricao,
+	@DataAbertura,
+	@DataPrazo,
+	@TecnicoResponsavel,
+	@Atendente,
+	@EstatusOS,
+	@LigarAntes
+	)
 	SET @Id = (SELECT @@IDENTITY)
 GO
 
@@ -715,7 +716,7 @@ AS
 	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
 	WHERE Protocolo LIKE '%' + @filtro + '%'
 GO
-
+--
 CREATE PROC SP_BuscarOSPendente
 AS
 	SELECT
@@ -736,39 +737,16 @@ AS
 	WHERE EstatusOS != 'FECHADO'
 GO
 
-/*'ABERTO' 'FECHADO' 'ENCAMINHADO'///////////////////////////////////// ESSE ESTA FUNCIONANDO
-CREATE PROC SP_BuscarOS
-	@Filtro VARCHAR(50) = ''
+CREATE PROC SP_FecharOrdemServico
+	@Id INT,
+	@MotivoFechamento VARCHAR(1000)--,
+	--@DataDeFechamento DATETIME NULL
 AS
-	SELECT
-	Protocolo,
-	Id_Cliente,
-	TipoChamado,
-	Descricao,
-	DataAbertura,
-	DataPrazo,
-	TecnicoResponsavel,
-	Atendente,
-	EstatusOS,
-	LigarAntes
-	FROM OrdemServico
-	WHERE Protocolo LIKE '%' + @filtro + '%'
+	UPDATE OrdemServico SET
+	MotivoFechamento = @MotivoFechamento--,
+	--DataDeFechamento = @DataDeFechamento
+	WHERE Id = @Id
 GO
-
-////////////////////////////////////
-
-CREATE PROC SP_BuscarPlano
-	@Filtro VARCHAR(50)
-	as
-IF EXISTS(SELECT 1 FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
-	SELECT Id, Descricao, Valor FROM Plano WHERE CONVERT(VARCHAR(50), Id) = @Filtro
-ELSE
-	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
-GO
-'SUPORTE LOSS'
-'SUPORTE FIBRA'
-'INSTALAÇÃO FIBRA'
-'MUDANÇA DE ENDEREÇO' */
 
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
 	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
@@ -809,10 +787,13 @@ EXEC SP_AbrirOrdemServico 0, 2022080108, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO 
 EXEC SP_AbrirOrdemServico 0, 2022080109, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
 GO
 
+EXEC SP_FecharOrdemServico 4, 'MUDANÇA DE ENDEREÇO CONCLUIDA'--, '12-08-2022'
+GO
+
 --EXEC SP_BuscarOS '123456789'
 --EXEC SP_BuscarOSAberta
---SELECT * FROM OrdemServico
+SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
-SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
-GO
+--SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
+--GO
