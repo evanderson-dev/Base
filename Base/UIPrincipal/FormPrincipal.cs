@@ -25,6 +25,10 @@ namespace UIPrincipal
                     //MessageBox.Show("ABA NUMERO UM!");
                     contextMenuStripAbaUm.Show(MousePosition.X, MousePosition.Y);
                 }
+                if (tabControlConsulta.SelectedIndex == 1)
+                {
+                    contextMenuStripAbaDois.Show(MousePosition.X, MousePosition.Y);
+                }
             }
         }
 
@@ -116,15 +120,6 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*try
-            {
-                dataGridViewOSAbertas.CurrentRow.Selected = true;
-                protocoloOculto = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                return;
-            }*/
             try
             {
                 dataGridViewOSAbertas.CurrentRow.Selected = true;
@@ -261,6 +256,20 @@ namespace UIPrincipal
             {
                 return;
             }
+            //**********
+            try
+            {
+                usuarioDataGridView.CurrentRow.Selected = true;
+                if (modificarProtcolo)
+                {
+                    protocoloOcultoPropriedade = usuarioDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    modificarProtcolo = false;
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
         }
 
         private void usuarioDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -326,22 +335,21 @@ namespace UIPrincipal
                 modificarProtcolo = true;
             }
         }
+        private void usuarioDataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                mouse_event(MOUSEEVENTF_LEFTDOWN, e.X, e.Y, 0, 0);
+                mouse_event(MOUSEEVENTF_LEFTUP, e.X, e.Y, 0, 0);
+                modificarProtcolo = true;
+            }
+        }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
 
         public const int MOUSEEVENTF_LEFTDOWN = 0x02;
         public const int MOUSEEVENTF_LEFTUP = 0x04;
-
-        private void imprimirOSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
-            using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
-            {
-                frm.ShowDialog();
-            }
-        }
 
         private void visualizarDetalhesToolStripMenuItem_Click(object sender, EventArgs e)
         {
