@@ -65,7 +65,16 @@ namespace UIPrincipal
                 MessageBox.Show("OCORREU UM ERRO! " + ex.Message);
             }
         }
-
+        public static string Base64Decode(string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
         private void Inserir()
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
@@ -74,7 +83,10 @@ namespace UIPrincipal
             usuario.Id = Convert.ToInt32(labelIdPessoa.Text);
             usuario.Ativo = ativoCheckBox.Checked;
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
-            usuario.Senha = textBoxSenha.Text;
+            //usuario.Senha = textBoxSenha.Text;
+            string senhaNormal = textBoxSenha.Text;
+            usuario.Senha = Base64Encode(senhaNormal);
+            ////////////////////////////////////////////////
             usuario.NomeCompleto = textBoxNomeCompleto.Text;
             usuario.Cpf = maskedTextBoxCpf.Text;
             usuario.Rg = textBoxRg.Text;
@@ -194,6 +206,7 @@ namespace UIPrincipal
             else
             {
                 pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
+                textBoxSenha.Text = Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
             }
                         
             comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
