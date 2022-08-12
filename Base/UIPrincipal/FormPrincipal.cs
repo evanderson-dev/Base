@@ -102,7 +102,7 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            /*try
             {
                 dataGridViewOSAbertas.CurrentRow.Selected = true;
                 string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -116,7 +116,7 @@ namespace UIPrincipal
             catch (ArgumentOutOfRangeException)
             {
                 return;
-            }
+            }*/
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {

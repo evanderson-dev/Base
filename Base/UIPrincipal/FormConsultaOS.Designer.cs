@@ -83,9 +83,8 @@
             this.comboBoxTecnicoResponsavel = new System.Windows.Forms.ComboBox();
             this.buttonAtualizar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSalvarEdicao = new System.Windows.Forms.Button();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
@@ -94,7 +93,9 @@
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
             this.textBoxSolucao = new System.Windows.Forms.TextBox();
-            this.label1Solucao = new System.Windows.Forms.Label();
+            this.labelSolucao = new System.Windows.Forms.Label();
+            this.buttonSalvarFechamento = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -664,7 +665,7 @@
             // 
             // buttonAtualizar
             // 
-            this.buttonAtualizar.Location = new System.Drawing.Point(247, 526);
+            this.buttonAtualizar.Location = new System.Drawing.Point(92, 526);
             this.buttonAtualizar.Name = "buttonAtualizar";
             this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
             this.buttonAtualizar.TabIndex = 67;
@@ -673,25 +674,17 @@
             // 
             // buttonFechar
             // 
-            this.buttonFechar.Location = new System.Drawing.Point(490, 526);
+            this.buttonFechar.Location = new System.Drawing.Point(254, 526);
             this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(75, 23);
+            this.buttonFechar.Size = new System.Drawing.Size(83, 23);
             this.buttonFechar.TabIndex = 68;
-            this.buttonFechar.Text = "FECHAR";
+            this.buttonFechar.Text = "FECHAR O.S";
             this.buttonFechar.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Location = new System.Drawing.Point(409, 526);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 69;
-            this.buttonCancelar.Text = "CANCELAR";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(571, 526);
+            this.button1.Location = new System.Drawing.Point(750, 526);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 70;
@@ -699,18 +692,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonSalvarEdicao
             // 
-            this.button2.Location = new System.Drawing.Point(328, 526);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 71;
-            this.button2.Text = "SALVAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonSalvarEdicao.Location = new System.Drawing.Point(173, 526);
+            this.buttonSalvarEdicao.Name = "buttonSalvarEdicao";
+            this.buttonSalvarEdicao.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvarEdicao.TabIndex = 71;
+            this.buttonSalvarEdicao.Text = "SALVAR";
+            this.buttonSalvarEdicao.UseVisualStyleBackColor = true;
             // 
             // buttonImprimir
             // 
-            this.buttonImprimir.Location = new System.Drawing.Point(166, 526);
+            this.buttonImprimir.Location = new System.Drawing.Point(11, 526);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(75, 23);
             this.buttonImprimir.TabIndex = 72;
@@ -749,32 +742,54 @@
             this.textBoxSolucao.MaxLength = 1000;
             this.textBoxSolucao.Multiline = true;
             this.textBoxSolucao.Name = "textBoxSolucao";
-            this.textBoxSolucao.ReadOnly = true;
             this.textBoxSolucao.Size = new System.Drawing.Size(814, 100);
             this.textBoxSolucao.TabIndex = 73;
             this.textBoxSolucao.Visible = false;
             // 
-            // label1Solucao
+            // labelSolucao
             // 
-            this.label1Solucao.AutoSize = true;
-            this.label1Solucao.Location = new System.Drawing.Point(8, 396);
-            this.label1Solucao.Name = "label1Solucao";
-            this.label1Solucao.Size = new System.Drawing.Size(58, 13);
-            this.label1Solucao.TabIndex = 74;
-            this.label1Solucao.Text = "SOLUÇÃO";
-            this.label1Solucao.Visible = false;
+            this.labelSolucao.AutoSize = true;
+            this.labelSolucao.Location = new System.Drawing.Point(8, 396);
+            this.labelSolucao.Name = "labelSolucao";
+            this.labelSolucao.Size = new System.Drawing.Size(58, 13);
+            this.labelSolucao.TabIndex = 74;
+            this.labelSolucao.Text = "SOLUÇÃO";
+            this.labelSolucao.Visible = false;
+            // 
+            // buttonSalvarFechamento
+            // 
+            this.buttonSalvarFechamento.Location = new System.Drawing.Point(588, 526);
+            this.buttonSalvarFechamento.Name = "buttonSalvarFechamento";
+            this.buttonSalvarFechamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvarFechamento.TabIndex = 75;
+            this.buttonSalvarFechamento.Text = "SALVAR";
+            this.buttonSalvarFechamento.UseVisualStyleBackColor = true;
+            this.buttonSalvarFechamento.Visible = false;
+            this.buttonSalvarFechamento.Click += new System.EventHandler(this.buttonSalvarFechamento_Click);
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(669, 526);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.TabIndex = 76;
+            this.buttonCancelar.Text = "CANCELAR";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Visible = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FormConsultaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 561);
-            this.Controls.Add(this.label1Solucao);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonSalvarFechamento);
+            this.Controls.Add(this.labelSolucao);
             this.Controls.Add(this.textBoxSolucao);
             this.Controls.Add(this.buttonImprimir);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonSalvarEdicao);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.comboBoxTecnicoResponsavel);
@@ -853,9 +868,8 @@
         private System.Windows.Forms.BindingSource planoBindingSource;
         private System.Windows.Forms.Button buttonAtualizar;
         private System.Windows.Forms.Button buttonFechar;
-        private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSalvarEdicao;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private ORDEMSERVICODataSetOsPendente oRDEMSERVICODataSetOsPendente;
@@ -866,6 +880,8 @@
         private ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter sP_BuscarOSTableAdapter;
         public System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.TextBox textBoxSolucao;
-        private System.Windows.Forms.Label label1Solucao;
+        private System.Windows.Forms.Label labelSolucao;
+        private System.Windows.Forms.Button buttonSalvarFechamento;
+        private System.Windows.Forms.Button buttonCancelar;
     }
 }

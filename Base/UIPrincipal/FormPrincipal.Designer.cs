@@ -97,12 +97,11 @@ namespace UIPrincipal
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripAbaDois = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.abrirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.contextMenuStripAbaUm = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.visualizarDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impressãoDiretaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fecharOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -801,6 +800,12 @@ namespace UIPrincipal
             this.abrirOSToolStripMenuItem.Text = "Abrir O.S";
             this.abrirOSToolStripMenuItem.Click += new System.EventHandler(this.abrirOSToolStripMenuItem_Click);
             // 
+            // editarCadastroToolStripMenuItem
+            // 
+            this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
+            // 
             // sP_BuscarOSPendenteTableAdapter
             // 
             this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
@@ -808,11 +813,10 @@ namespace UIPrincipal
             // contextMenuStripAbaUm
             // 
             this.contextMenuStripAbaUm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fecharOSToolStripMenuItem,
             this.visualizarDetalhesToolStripMenuItem,
             this.impressãoDiretaToolStripMenuItem});
             this.contextMenuStripAbaUm.Name = "contextMenuStripAbaUm";
-            this.contextMenuStripAbaUm.Size = new System.Drawing.Size(172, 70);
+            this.contextMenuStripAbaUm.Size = new System.Drawing.Size(172, 48);
             // 
             // visualizarDetalhesToolStripMenuItem
             // 
@@ -827,18 +831,6 @@ namespace UIPrincipal
             this.impressãoDiretaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.impressãoDiretaToolStripMenuItem.Text = "Impressão Direta";
             this.impressãoDiretaToolStripMenuItem.Click += new System.EventHandler(this.impressãoDiretaToolStripMenuItem_Click);
-            // 
-            // editarCadastroToolStripMenuItem
-            // 
-            this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
-            // 
-            // fecharOSToolStripMenuItem
-            // 
-            this.fecharOSToolStripMenuItem.Name = "fecharOSToolStripMenuItem";
-            this.fecharOSToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.fecharOSToolStripMenuItem.Text = "Fechar O.S";
             // 
             // FormPrincipal
             // 
@@ -959,6 +951,5 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem visualizarDetalhesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem impressãoDiretaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarCadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fecharOSToolStripMenuItem;
     }
 }

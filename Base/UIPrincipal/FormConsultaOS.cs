@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using DAL;
+using BLL;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -8,11 +9,13 @@ using iTextSharp.text.pdf;
 using System.IO;
 using iTextSharp.text.html.simpleparser;
 using Infra;
+using System.Data.SqlClient;
 
 namespace UIPrincipal
 {
     public partial class FormConsultaOS : Form
     {
+        public string strConn;
         UsuarioBLL usuarioBLL = new UsuarioBLL();
         OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
         TipoChamadoBLL tipoChamadoBLL = new TipoChamadoBLL();
@@ -533,6 +536,85 @@ namespace UIPrincipal
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            labelSolucao.Visible = true;
+            textBoxSolucao.Visible = true;
+            buttonImprimir.Visible = false;
+            buttonAtualizar.Visible = false;
+            buttonSalvarEdicao.Visible = false;
+            buttonFechar.Visible = false;
+            buttonSalvarFechamento.Visible = true;
+            buttonCancelar.Visible = true;
+            textBoxSolucao.Focus();
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            labelSolucao.Visible = false;
+            textBoxSolucao.Visible = false;
+            buttonImprimir.Visible = true;
+            buttonAtualizar.Visible = true;
+            buttonSalvarEdicao.Visible = true;
+            buttonFechar.Visible = true;
+            buttonSalvarFechamento.Visible = false;
+            buttonCancelar.Visible = false;
+        }
+
+        private void buttonSalvarFechamento_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DESEJA ENCERRAR ESTA ORDEM DE SERVIÇO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                string id = Convert.ToString(((DataRowView)ordemServicoBindingSource.Current).Row["Id"]);
+
+                SqlConnection cn = new SqlConnection();
+                try
+                {
+                    cn.ConnectionString = Conexao.StringDeConexao;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = cn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "SP_FecharOrdemServico";
+
+                    SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
+                    pid.Value = id;
+                    cmd.Parameters.Add(pid);
+
+                    SqlParameter motivoFechamento = new SqlParameter("@MotivoFechamento", SqlDbType.VarChar);
+                    motivoFechamento.Value = textBoxSolucao.Text;
+                    cmd.Parameters.Add(motivoFechamento);
+
+                    SqlParameter estatusOS = new SqlParameter("@EstatusOS", SqlDbType.VarChar);
+                    estatusOS.Value = "FECHADO";
+                    cmd.Parameters.Add(estatusOS);
+
+                    SqlParameter dataDeFechamento = new SqlParameter("@DataDeFechamento", SqlDbType.Date);
+                    dataDeFechamento.Value = DateTime.Now;
+                    cmd.Parameters.Add(dataDeFechamento);
+
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    cn.Close();
+                }
+                this.Close();
+            }
         }
     }
 }

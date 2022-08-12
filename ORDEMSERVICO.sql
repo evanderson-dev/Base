@@ -635,7 +635,7 @@ CREATE TABLE OrdemServico
 	Descricao VARCHAR(1000),
 	DataAbertura DATETIME NULL,
 	DataPrazo DATETIME NULL,
-	DataDeFechamento DATETIME NULL,
+	DataDeFechamento DATE NULL,
 	TecnicoResponsavel VARCHAR(150),
 	Atendente VARCHAR(150),
 	EstatusOS VARCHAR(20),
@@ -739,12 +739,14 @@ GO
 
 CREATE PROC SP_FecharOrdemServico
 	@Id INT,
-	@MotivoFechamento VARCHAR(1000)--,
-	--@DataDeFechamento DATETIME NULL
+	@MotivoFechamento VARCHAR(1000),
+	@EstatusOS VARCHAR(20),
+	@DataDeFechamento DATE NULL
 AS
 	UPDATE OrdemServico SET
-	MotivoFechamento = @MotivoFechamento--,
-	--DataDeFechamento = @DataDeFechamento
+	MotivoFechamento = @MotivoFechamento,
+	EstatusOS = @EstatusOS,
+	DataDeFechamento = @DataDeFechamento
 	WHERE Id = @Id
 GO
 
@@ -782,17 +784,17 @@ EXEC SP_AbrirOrdemServico 0, 2022080103, 2, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO 
 EXEC SP_AbrirOrdemServico 0, 2022080104, 2, 'MUDANÇA DE ENDEREÇO','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
 EXEC SP_AbrirOrdemServico 0, 2022080105, 3, 'INSTALAÇÃO FIBRA','TESTE DA DESCRIÇÃO DA O.S UM', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
 EXEC SP_AbrirOrdemServico 0, 2022080106, 3, 'SUPORTE LOSS','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
-EXEC SP_AbrirOrdemServico 0, 2022080107, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080107, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
 EXEC SP_AbrirOrdemServico 0, 2022080108, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
-EXEC SP_AbrirOrdemServico 0, 2022080109, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'FECHADO', 'NAO'
+EXEC SP_AbrirOrdemServico 0, 2022080109, 4, 'SUPORTE FIBRA','TESTE DA DESCRIÇÃO DA O.S DOIS', '30-07-2022', '01-08-2022', 'TECNICO ZÉ', 'ATEND. DOIS', 'ABERTO', 'NAO'
 GO
 
-EXEC SP_FecharOrdemServico 4, 'MUDANÇA DE ENDEREÇO CONCLUIDA'--, '12-08-2022'
-GO
+--EXEC SP_FecharOrdemServico 4, 'MUDANÇA DE ENDEREÇO CONCLUIDA', 'FECHADO', '12-08-2022'
+--GO
 
 --EXEC SP_BuscarOS '123456789'
 --EXEC SP_BuscarOSAberta
-SELECT * FROM OrdemServico
+SELECT Protocolo, Id_Cliente, TipoChamado, Descricao, DataDeFechamento, EstatusOS, MotivoFechamento FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
 --SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
