@@ -14,6 +14,7 @@ namespace UIPrincipal
         private bool modificarProtcolo = false;
         private string protocoloOculto = "";
         public string cpfPessoa = "";
+        public string textoCopiado = "";
         private string protocoloOcultoPropriedade
         {
             get { return protocoloOculto; }
@@ -22,7 +23,6 @@ namespace UIPrincipal
                 protocoloOculto = value;
                 if (tabControlConsulta.SelectedIndex == 0)
                 {
-                    //MessageBox.Show("ABA NUMERO UM!");
                     contextMenuStripAbaUm.Show(MousePosition.X, MousePosition.Y);
                 }
                 if (tabControlConsulta.SelectedIndex == 1)
@@ -120,6 +120,7 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            textoCopiado = dataGridViewOSAbertas.CurrentCell.Value.ToString();
             try
             {
                 dataGridViewOSAbertas.CurrentRow.Selected = true;
@@ -240,6 +241,7 @@ namespace UIPrincipal
 
         private void usuarioDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            textoCopiado = usuarioDataGridView.CurrentCell.Value.ToString();
             try
             {
                 if (usuarioDataGridView.Rows.Count > 1)
@@ -256,7 +258,7 @@ namespace UIPrincipal
             {
                 return;
             }
-            //**********
+
             try
             {
                 usuarioDataGridView.CurrentRow.Selected = true;
@@ -366,6 +368,39 @@ namespace UIPrincipal
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
             Impressao.ImprimirOS(bindingSource);
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            Clipboard.SetText(textoCopiado);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void copiarAbaDoisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetText(textoCopiado);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void editarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (FormCadastroUsuario frm = new FormCadastroUsuario(usuarioBindingSource.Current))
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }
