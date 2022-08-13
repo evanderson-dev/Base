@@ -81,10 +81,8 @@
             this.comboBoxEstatusOS = new System.Windows.Forms.ComboBox();
             this.comboBoxLigarAntes = new System.Windows.Forms.ComboBox();
             this.comboBoxTecnicoResponsavel = new System.Windows.Forms.ComboBox();
-            this.buttonAtualizar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonSalvarEdicao = new System.Windows.Forms.Button();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
@@ -122,7 +120,7 @@
             // label1CpfCNPJ
             // 
             label1CpfCNPJ.AutoSize = true;
-            label1CpfCNPJ.ForeColor = System.Drawing.Color.Black;
+            label1CpfCNPJ.ForeColor = System.Drawing.Color.White;
             label1CpfCNPJ.Location = new System.Drawing.Point(544, 23);
             label1CpfCNPJ.Name = "label1CpfCNPJ";
             label1CpfCNPJ.Size = new System.Drawing.Size(68, 13);
@@ -132,7 +130,7 @@
             // labelBairro
             // 
             labelBairro.AutoSize = true;
-            labelBairro.ForeColor = System.Drawing.Color.Black;
+            labelBairro.ForeColor = System.Drawing.Color.White;
             labelBairro.Location = new System.Drawing.Point(286, 63);
             labelBairro.Name = "labelBairro";
             labelBairro.Size = new System.Drawing.Size(51, 13);
@@ -142,7 +140,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.ForeColor = System.Drawing.Color.Black;
+            label8.ForeColor = System.Drawing.Color.White;
             label8.Location = new System.Drawing.Point(4, 63);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(31, 13);
@@ -152,7 +150,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.ForeColor = System.Drawing.Color.Black;
+            label9.ForeColor = System.Drawing.Color.White;
             label9.Location = new System.Drawing.Point(67, 23);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(104, 13);
@@ -162,7 +160,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.ForeColor = System.Drawing.Color.Black;
+            label11.ForeColor = System.Drawing.Color.White;
             label11.Location = new System.Drawing.Point(3, 23);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(52, 13);
@@ -172,7 +170,7 @@
             // labelUf
             // 
             labelUf.AutoSize = true;
-            labelUf.ForeColor = System.Drawing.Color.Black;
+            labelUf.ForeColor = System.Drawing.Color.White;
             labelUf.Location = new System.Drawing.Point(505, 63);
             labelUf.Name = "labelUf";
             labelUf.Size = new System.Drawing.Size(24, 13);
@@ -182,7 +180,7 @@
             // labelCidade
             // 
             labelCidade.AutoSize = true;
-            labelCidade.ForeColor = System.Drawing.Color.Black;
+            labelCidade.ForeColor = System.Drawing.Color.White;
             labelCidade.Location = new System.Drawing.Point(387, 63);
             labelCidade.Name = "labelCidade";
             labelCidade.Size = new System.Drawing.Size(50, 13);
@@ -192,7 +190,7 @@
             // labelCelularDois
             // 
             labelCelularDois.AutoSize = true;
-            labelCelularDois.ForeColor = System.Drawing.Color.Black;
+            labelCelularDois.ForeColor = System.Drawing.Color.White;
             labelCelularDois.Location = new System.Drawing.Point(447, 102);
             labelCelularDois.Name = "labelCelularDois";
             labelCelularDois.Size = new System.Drawing.Size(68, 13);
@@ -202,7 +200,7 @@
             // labelCelularUm
             // 
             labelCelularUm.AutoSize = true;
-            labelCelularUm.ForeColor = System.Drawing.Color.Black;
+            labelCelularUm.ForeColor = System.Drawing.Color.White;
             labelCelularUm.Location = new System.Drawing.Point(346, 102);
             labelCelularUm.Name = "labelCelularUm";
             labelCelularUm.Size = new System.Drawing.Size(68, 13);
@@ -212,7 +210,7 @@
             // labelTelefone
             // 
             labelTelefone.AutoSize = true;
-            labelTelefone.ForeColor = System.Drawing.Color.Black;
+            labelTelefone.ForeColor = System.Drawing.Color.White;
             labelTelefone.Location = new System.Drawing.Point(245, 102);
             labelTelefone.Name = "labelTelefone";
             labelTelefone.Size = new System.Drawing.Size(66, 13);
@@ -222,7 +220,7 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.ForeColor = System.Drawing.Color.Black;
+            labelEmail.ForeColor = System.Drawing.Color.White;
             labelEmail.Location = new System.Drawing.Point(3, 102);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new System.Drawing.Size(45, 13);
@@ -232,7 +230,7 @@
             // labelNumCasa
             // 
             labelNumCasa.AutoSize = true;
-            labelNumCasa.ForeColor = System.Drawing.Color.Black;
+            labelNumCasa.ForeColor = System.Drawing.Color.White;
             labelNumCasa.Location = new System.Drawing.Point(245, 63);
             labelNumCasa.Name = "labelNumCasa";
             labelNumCasa.Size = new System.Drawing.Size(22, 13);
@@ -242,7 +240,7 @@
             // labelRua
             // 
             labelRua.AutoSize = true;
-            labelRua.ForeColor = System.Drawing.Color.Black;
+            labelRua.ForeColor = System.Drawing.Color.White;
             labelRua.Location = new System.Drawing.Point(67, 63);
             labelRua.Name = "labelRua";
             labelRua.Size = new System.Drawing.Size(33, 13);
@@ -252,8 +250,8 @@
             // labelDescricao
             // 
             labelDescricao.AutoSize = true;
-            labelDescricao.ForeColor = System.Drawing.Color.Black;
-            labelDescricao.Location = new System.Drawing.Point(10, 274);
+            labelDescricao.ForeColor = System.Drawing.Color.White;
+            labelDescricao.Location = new System.Drawing.Point(18, 274);
             labelDescricao.Name = "labelDescricao";
             labelDescricao.Size = new System.Drawing.Size(72, 13);
             labelDescricao.TabIndex = 55;
@@ -262,7 +260,8 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(298, 234);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(306, 231);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
             this.label13.TabIndex = 62;
@@ -271,7 +270,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(466, 234);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(474, 231);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 60;
@@ -280,7 +280,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(382, 234);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(390, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 59;
@@ -290,7 +291,7 @@
             // 
             this.maskedTextBoxPrazo.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxPrazo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "DataPrazo", true));
-            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(469, 251);
+            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(477, 248);
             this.maskedTextBoxPrazo.Mask = "00-00-0000";
             this.maskedTextBoxPrazo.Name = "maskedTextBoxPrazo";
             this.maskedTextBoxPrazo.ReadOnly = true;
@@ -311,7 +312,7 @@
             // 
             this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxDataAbertura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "DataAbertura", true));
-            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(385, 251);
+            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(393, 248);
             this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
             this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
             this.maskedTextBoxDataAbertura.ReadOnly = true;
@@ -351,7 +352,8 @@
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxNumCasa);
             this.groupBoxDadosPessoais.Controls.Add(labelRua);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
-            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(6, 81);
+            this.groupBoxDadosPessoais.ForeColor = System.Drawing.Color.White;
+            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(14, 81);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
             this.groupBoxDadosPessoais.Size = new System.Drawing.Size(825, 147);
             this.groupBoxDadosPessoais.TabIndex = 48;
@@ -394,6 +396,7 @@
             this.labelIdPessoa.BackColor = System.Drawing.Color.White;
             this.labelIdPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelIdPessoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Id_Cliente", true));
+            this.labelIdPessoa.ForeColor = System.Drawing.Color.Black;
             this.labelIdPessoa.Location = new System.Drawing.Point(6, 39);
             this.labelIdPessoa.Name = "labelIdPessoa";
             this.labelIdPessoa.Size = new System.Drawing.Size(58, 20);
@@ -544,7 +547,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(550, 234);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(558, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
             this.label3.TabIndex = 52;
@@ -553,20 +557,20 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.BackColor = System.Drawing.Color.White;
-            this.textBoxDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(11, 290);
+            this.textBoxDescricao.Location = new System.Drawing.Point(19, 290);
             this.textBoxDescricao.MaxLength = 1000;
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.ReadOnly = true;
-            this.textBoxDescricao.Size = new System.Drawing.Size(814, 100);
+            this.textBoxDescricao.Size = new System.Drawing.Size(814, 125);
             this.textBoxDescricao.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(175, 234);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(183, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 53;
@@ -574,9 +578,11 @@
             // 
             // textBoxProtocolo
             // 
+            this.textBoxProtocolo.BackColor = System.Drawing.Color.Black;
             this.textBoxProtocolo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxProtocolo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Protocolo", true));
             this.textBoxProtocolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProtocolo.ForeColor = System.Drawing.Color.White;
             this.textBoxProtocolo.Location = new System.Drawing.Point(366, 59);
             this.textBoxProtocolo.Name = "textBoxProtocolo";
             this.textBoxProtocolo.ReadOnly = true;
@@ -586,7 +592,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 234);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(17, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 51;
@@ -595,6 +602,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(287, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
@@ -625,7 +633,7 @@
             this.comboBoxTipoChamado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoChamado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxTipoChamado.FormattingEnabled = true;
-            this.comboBoxTipoChamado.Location = new System.Drawing.Point(13, 250);
+            this.comboBoxTipoChamado.Location = new System.Drawing.Point(21, 247);
             this.comboBoxTipoChamado.Name = "comboBoxTipoChamado";
             this.comboBoxTipoChamado.Size = new System.Drawing.Size(160, 21);
             this.comboBoxTipoChamado.TabIndex = 63;
@@ -635,7 +643,7 @@
             this.comboBoxEstatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEstatusOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxEstatusOS.FormattingEnabled = true;
-            this.comboBoxEstatusOS.Location = new System.Drawing.Point(179, 250);
+            this.comboBoxEstatusOS.Location = new System.Drawing.Point(187, 247);
             this.comboBoxEstatusOS.Name = "comboBoxEstatusOS";
             this.comboBoxEstatusOS.Size = new System.Drawing.Size(113, 21);
             this.comboBoxEstatusOS.TabIndex = 64;
@@ -648,7 +656,7 @@
             this.comboBoxLigarAntes.Items.AddRange(new object[] {
             "SIM",
             "NAO"});
-            this.comboBoxLigarAntes.Location = new System.Drawing.Point(301, 250);
+            this.comboBoxLigarAntes.Location = new System.Drawing.Point(309, 247);
             this.comboBoxLigarAntes.Name = "comboBoxLigarAntes";
             this.comboBoxLigarAntes.Size = new System.Drawing.Size(78, 21);
             this.comboBoxLigarAntes.TabIndex = 65;
@@ -658,57 +666,57 @@
             this.comboBoxTecnicoResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTecnicoResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
-            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(553, 250);
+            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(561, 247);
             this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
             this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(272, 21);
             this.comboBoxTecnicoResponsavel.TabIndex = 66;
             // 
-            // buttonAtualizar
-            // 
-            this.buttonAtualizar.Location = new System.Drawing.Point(92, 526);
-            this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAtualizar.TabIndex = 67;
-            this.buttonAtualizar.Text = "EDITAR";
-            this.buttonAtualizar.UseVisualStyleBackColor = true;
-            // 
             // buttonFechar
             // 
-            this.buttonFechar.Location = new System.Drawing.Point(254, 526);
+            this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonFechar.BackColor = System.Drawing.Color.White;
+            this.buttonFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFechar.ForeColor = System.Drawing.Color.Black;
+            this.buttonFechar.Location = new System.Drawing.Point(401, 567);
             this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(83, 23);
+            this.buttonFechar.Size = new System.Drawing.Size(79, 23);
             this.buttonFechar.TabIndex = 68;
             this.buttonFechar.Text = "FECHAR O.S";
-            this.buttonFechar.UseVisualStyleBackColor = true;
+            this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(750, 526);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(486, 567);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 70;
             this.button1.Text = "SAIR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonSalvarEdicao
-            // 
-            this.buttonSalvarEdicao.Location = new System.Drawing.Point(173, 526);
-            this.buttonSalvarEdicao.Name = "buttonSalvarEdicao";
-            this.buttonSalvarEdicao.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvarEdicao.TabIndex = 71;
-            this.buttonSalvarEdicao.Text = "SALVAR";
-            this.buttonSalvarEdicao.UseVisualStyleBackColor = true;
             // 
             // buttonImprimir
             // 
-            this.buttonImprimir.Location = new System.Drawing.Point(11, 526);
+            this.buttonImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonImprimir.BackColor = System.Drawing.Color.White;
+            this.buttonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimir.ForeColor = System.Drawing.Color.Black;
+            this.buttonImprimir.Location = new System.Drawing.Point(320, 567);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(75, 23);
             this.buttonImprimir.TabIndex = 72;
             this.buttonImprimir.Text = "IMPRIMIR";
-            this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.buttonImprimir.UseVisualStyleBackColor = false;
             this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // openFileDialogAddFoto
@@ -737,44 +745,56 @@
             // textBoxSolucao
             // 
             this.textBoxSolucao.BackColor = System.Drawing.Color.White;
-            this.textBoxSolucao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSolucao.Location = new System.Drawing.Point(11, 412);
+            this.textBoxSolucao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxSolucao.Location = new System.Drawing.Point(19, 436);
             this.textBoxSolucao.MaxLength = 1000;
             this.textBoxSolucao.Multiline = true;
             this.textBoxSolucao.Name = "textBoxSolucao";
-            this.textBoxSolucao.Size = new System.Drawing.Size(814, 100);
+            this.textBoxSolucao.Size = new System.Drawing.Size(814, 125);
             this.textBoxSolucao.TabIndex = 73;
             this.textBoxSolucao.Visible = false;
+            this.textBoxSolucao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSolucao_KeyPress);
             // 
             // labelSolucao
             // 
             this.labelSolucao.AutoSize = true;
-            this.labelSolucao.Location = new System.Drawing.Point(8, 396);
+            this.labelSolucao.ForeColor = System.Drawing.Color.White;
+            this.labelSolucao.Location = new System.Drawing.Point(16, 420);
             this.labelSolucao.Name = "labelSolucao";
-            this.labelSolucao.Size = new System.Drawing.Size(58, 13);
+            this.labelSolucao.Size = new System.Drawing.Size(61, 13);
             this.labelSolucao.TabIndex = 74;
-            this.labelSolucao.Text = "SOLUÇÃO";
+            this.labelSolucao.Text = "SOLUÇÃO:";
             this.labelSolucao.Visible = false;
             // 
             // buttonSalvarFechamento
             // 
-            this.buttonSalvarFechamento.Location = new System.Drawing.Point(588, 526);
+            this.buttonSalvarFechamento.BackColor = System.Drawing.Color.White;
+            this.buttonSalvarFechamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSalvarFechamento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSalvarFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarFechamento.ForeColor = System.Drawing.Color.Black;
+            this.buttonSalvarFechamento.Location = new System.Drawing.Point(320, 567);
             this.buttonSalvarFechamento.Name = "buttonSalvarFechamento";
             this.buttonSalvarFechamento.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvarFechamento.TabIndex = 75;
             this.buttonSalvarFechamento.Text = "SALVAR";
-            this.buttonSalvarFechamento.UseVisualStyleBackColor = true;
+            this.buttonSalvarFechamento.UseVisualStyleBackColor = false;
             this.buttonSalvarFechamento.Visible = false;
             this.buttonSalvarFechamento.Click += new System.EventHandler(this.buttonSalvarFechamento_Click);
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(669, 526);
+            this.buttonCancelar.BackColor = System.Drawing.Color.White;
+            this.buttonCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.ForeColor = System.Drawing.Color.Black;
+            this.buttonCancelar.Location = new System.Drawing.Point(403, 567);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 76;
             this.buttonCancelar.Text = "CANCELAR";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Visible = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
@@ -782,16 +802,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 561);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(854, 600);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvarFechamento);
             this.Controls.Add(this.labelSolucao);
             this.Controls.Add(this.textBoxSolucao);
             this.Controls.Add(this.buttonImprimir);
-            this.Controls.Add(this.buttonSalvarEdicao);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonFechar);
-            this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.comboBoxTecnicoResponsavel);
             this.Controls.Add(this.comboBoxLigarAntes);
             this.Controls.Add(this.comboBoxEstatusOS);
@@ -811,7 +830,7 @@
             this.Controls.Add(this.textBoxProtocolo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(840, 600);
+            this.MinimumSize = new System.Drawing.Size(870, 495);
             this.Name = "FormConsultaOS";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -866,10 +885,8 @@
         private System.Windows.Forms.ComboBox comboBoxTecnicoResponsavel;
         private System.Windows.Forms.TextBox textBoxPlano;
         private System.Windows.Forms.BindingSource planoBindingSource;
-        private System.Windows.Forms.Button buttonAtualizar;
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button buttonSalvarEdicao;
         private System.Windows.Forms.OpenFileDialog openFileDialogAddFoto;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private ORDEMSERVICODataSetOsPendente oRDEMSERVICODataSetOsPendente;

@@ -38,10 +38,8 @@ namespace UIPrincipal
 
         private void FormConsultaOS_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente'. Você pode movê-la ou removê-la conforme necessário.
-            //this.sP_BuscarOSPendenteTableAdapter.Fill(this.oRDEMSERVICODataSetOsPendente.SP_BuscarOSPendente);
-            
-            //ADICIONADO PARA TESTE
+            this.Size = new System.Drawing.Size(870, 495);
+
             comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             comboBoxTipoChamado.DisplayMember = "Descricao";
             comboBoxTipoChamado.ValueMember = "Id";
@@ -540,11 +538,10 @@ namespace UIPrincipal
 
         private void buttonFechar_Click(object sender, EventArgs e)
         {
+            this.Size = new System.Drawing.Size(870, 639);
             labelSolucao.Visible = true;
             textBoxSolucao.Visible = true;
             buttonImprimir.Visible = false;
-            buttonAtualizar.Visible = false;
-            buttonSalvarEdicao.Visible = false;
             buttonFechar.Visible = false;
             buttonSalvarFechamento.Visible = true;
             buttonCancelar.Visible = true;
@@ -553,11 +550,10 @@ namespace UIPrincipal
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
+            this.Size = new System.Drawing.Size(870, 495);
             labelSolucao.Visible = false;
             textBoxSolucao.Visible = false;
             buttonImprimir.Visible = true;
-            buttonAtualizar.Visible = true;
-            buttonSalvarEdicao.Visible = true;
             buttonFechar.Visible = true;
             buttonSalvarFechamento.Visible = false;
             buttonCancelar.Visible = false;
@@ -615,6 +611,11 @@ namespace UIPrincipal
                 }
                 this.Close();
             }
+        }
+
+        private void textBoxSolucao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FuncoesGlobais.somenteLetras(sender, e);
         }
     }
 }
