@@ -751,27 +751,27 @@ AS
 GO
 
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES (1, '3V4ND3R50N', 'Senha@123', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
+	VALUES (1, 'EVANDERSON', '18071988', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
 GO
 
 INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
 	VALUES ('admin', 'admin', 'ADMINISTRADOR DO SISTEMA', '01-01-1995', '999.999.999-99', 1, 1, 4, 3, '', 1)
 GO
 
-INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('USUARIO TESTE UM', '01-01-2001', '111.222.111-22', 1, 1, 1, 1, '', 1)
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('', '', 'USUARIO TESTE UM', '01-01-2001', '111.222.111-22', 1, 1, 1, 1, '', 1)
 GO
 
-INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('USUARIO TESTE DOIS', '02-02-2002', '222.222.222-22', 1, 1, 1, 1, '', 0)
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('', '', 'USUARIO TESTE DOIS', '02-02-2002', '222.222.222-22', 1, 1, 1, 1, '', 0)
 GO
 
-INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('USUARIO TESTE TRES', '03-03-2003', '333.333.333.33', 1, 0, 1, 1, '', 1)
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('', '', 'USUARIO TESTE TRES', '03-03-2003', '333.333.333.33', 1, 0, 1, 1, '', 1)
 GO
 
-INSERT INTO Pessoa(NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('USUARIO TESTE QUATRO', '04-04-2004', '444.444.444.44', 1, 0, 1, 1, '', 0)
+INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
+	VALUES ('', '', 'USUARIO TESTE QUATRO', '04-04-2004', '444.444.444.44', 1, 0, 1, 1, '', 0)
 GO
 
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
