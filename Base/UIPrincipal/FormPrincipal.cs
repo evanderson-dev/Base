@@ -226,6 +226,7 @@ namespace UIPrincipal
         {
             if (tabControlConsulta.SelectedIndex == 0)
             {
+                textBoxBuscarCadastro.Text = "";
                 dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
             }
             else
