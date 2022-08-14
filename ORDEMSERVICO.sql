@@ -15,7 +15,7 @@ GO
 
 USE ORDEMSERVICO
 GO
---SELECT * FROM EnderecoServidor
+
 CREATE TABLE EnderecoServidor
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
@@ -33,10 +33,12 @@ AS
 		VALUES(@Descricao,	@StringDeConexao)
 	SET @Id = (SELECT @@IDENTITY)
 GO
+
 EXEC SP_InserirEnderecoServidor 0, 'SENAI', 'User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS2019;Password=Senailab05'
 EXEC SP_InserirEnderecoServidor 0, 'TOLEDO', 'User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS;Password=Senailab05'
 EXEC SP_InserirEnderecoServidor 0, 'CASA', 'Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\\SQLEXPRESS; Integrated Security=True'
 GO
+
 CREATE PROC SP_BuscarEnderecoServidor
 	@Filtro VARCHAR(50)
 	as
@@ -45,26 +47,26 @@ IF EXISTS(SELECT 1 FROM EnderecoServidor WHERE CONVERT(VARCHAR(50), Id) = @Filtr
 ELSE
 	SELECT Id, Descricao, StringDeConexao FROM EnderecoServidor WHERE Descricao LIKE '%' + @filtro + '%'
 GO
+
 CREATE PROC SP_ExcluirEnderecoServidor
 	@Id INT
 AS
 	DELETE FROM EnderecoServidor WHERE Id = @Id
 GO
 
---TABELA "PERMISSÕES DO USUARIO"
 CREATE TABLE Permissao
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Descricao VARCHAR(250)
 )
 GO
---INSERT DA TABELA "PERMISSÃO"
+
 INSERT INTO Permissao(Descricao)
 	VALUES('Abrir O.S'),
 	('Abrir O.S, Fechar O.S'),
 	('Abrir O.S, Fechar O.S, Encaminhar O.S')
 GO
---TABELA "PLANO"
+
 CREATE TABLE Plano
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
@@ -79,6 +81,7 @@ INSERT INTO Plano(Descricao, Valor)
 	('400 MEGAS + 1 ROTEADOR EM COMODATO', 129.90),
 	('500 MEGAS + 2 ROTEADORES EM COMODATO', 139.90)
 GO
+
 CREATE PROCEDURE SP_InserirPlano
 	@Id INT OUTPUT,
 	@Descricao VARCHAR(150),
@@ -88,8 +91,8 @@ AS
 		VALUES(@Descricao,	@Valor)
 	SET @Id = (SELECT @@IDENTITY)
 GO
-
 --EXEC SP_InserirPlano 5, '1 GIGA + 3 PONTOS DE WI-FI', 500.00
+
 CREATE PROC SP_BuscarPlano
 	@Filtro VARCHAR(50)
 	as
@@ -99,12 +102,12 @@ ELSE
 	SELECT Id, Descricao, Valor FROM Plano WHERE Descricao LIKE '%' + @filtro + '%'
 GO
 
--- OR Id LIKE '%'+ @filtro +'%'
 CREATE PROC SP_ExcluirPlano
 	@Id INT
 AS
 	DELETE FROM Plano WHERE Id = @Id
 GO
+
 CREATE PROC SP_AlterarPlano
 	@Id INT,
 	@Descricao VARCHAR(150),
@@ -116,52 +119,50 @@ AS
 	WHERE Id = @Id
 GO
 -- EXEC SP_AlterarPlano 9, '600', '100'
--- SELECT*FROM Plano
 
---TABELA "PESSOA"
 CREATE TABLE Pessoa
 (
 	-- DADOS PESSOAIS
-	Id INT PRIMARY KEY IDENTITY(1,1),-----AUTOMATICO
-	Ativo BIT,----------------------------FEITO
-	NomeUsuario VARCHAR(150),-------------FEITO
-	Senha VARCHAR(150),-------------------FEITO
-	NomeCompleto VARCHAR(150),------------FEITO
-	Cpf VARCHAR(14),----------------------FEITO
-	Rg VARCHAR(13),-----------------------FEITO
-	OrgaoExpeditor VARCHAR(6),------------FEITO
-	DataNascimento DATETIME,--------------FEITO
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Ativo BIT,
+	Sexo BIT,---------------------------- EM ANDAMENTO
+	NomeUsuario VARCHAR(150),
+	Senha VARCHAR(150),
+	NomeCompleto VARCHAR(150),
+	Cpf VARCHAR(14),
+	Rg VARCHAR(13),
+	OrgaoExpeditor VARCHAR(6),
+	DataNascimento DATETIME,
 	Cep VARCHAR(10),
-	Rua VARCHAR(150),---------------------FEITO
-	NumCasa VARCHAR(10),------------------FEITO
-	Bairro VARCHAR(150),------------------ADICIONADO RECENTE
-	EstadoCivil VARCHAR(10),--------------FEITO
-	Nacionalidade VARCHAR(10),------------FEITO
-	Email VARCHAR(30),--------------------FEITO
-	Telefone VARCHAR(15),-----------------FEITO
-	CelularUm VARCHAR(16),----------------FEITO
-	CelularDois VARCHAR(16),--------------FEITO
-	Cidade VARCHAR(10),-------------------FEITO
-	Uf VARCHAR(2),------------------------FEITO
+	Rua VARCHAR(150),
+	NumCasa VARCHAR(10),
+	Bairro VARCHAR(150),
+	EstadoCivil VARCHAR(10),
+	Nacionalidade VARCHAR(10),
+	Email VARCHAR(30),
+	Telefone VARCHAR(15),
+	CelularUm VARCHAR(16),
+	CelularDois VARCHAR(16),
+	Cidade VARCHAR(10),
+	Uf VARCHAR(2),
 	Foto VARCHAR(150),
 	-- DADOS DO FUNCIONARIO
-	Funcionario BIT,----------------------FEITO
-	Id_Permissao INT,---------------------FEITO
+	Funcionario BIT,
+	Id_Permissao INT,
 	Salario varchar(15),
-	Cargo VARCHAR(50),--------------------FEITO
-	DataAdmissao DATETIME NULL,-----------FEITO
-	DataDemissao DATETIME NULL,-----------FEITO
-	Banco VARCHAR(40),--------------------FEITO
-	NumeroAgenciaBanco VARCHAR(10),-------FEITO
-	NumeroContaBanco VARCHAR(15),---------FEITO
+	Cargo VARCHAR(50),
+	DataAdmissao DATETIME NULL,
+	DataDemissao DATETIME NULL,
+	Banco VARCHAR(40),
+	NumeroAgenciaBanco VARCHAR(10),
+	NumeroContaBanco VARCHAR(15),
 	-- DADOS DO CLIENTE
-	Cliente BIT,--------------------------FEITO
+	Cliente BIT,
 	Id_Plano INT,
-	--InicioDoContrato DATETIME NULL,	--COMENTADO PARA REALIZAR TESTES
 	InicioDoContrato DATETIME NULL,
 	FimDoContrato DATETIME NULL,
 	-- OBSERVAÇOES GERAIS
-	Observacao VARCHAR(250)---------------FEITO
+	Observacao VARCHAR(250)
 )
 GO
 
