@@ -24,7 +24,7 @@ namespace UIPrincipal
             {
                 frm.ShowDialog();
             }
-        }
+        }                
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
@@ -33,11 +33,11 @@ namespace UIPrincipal
 
             if (usuarioBindingSource.Count != 0)
             {
+                string ativo = ((DataRowView)usuarioBindingSource.Current).Row["Ativo"].ToString();
                 string nome = ((DataRowView)usuarioBindingSource.Current).Row["NomeUsuario"].ToString();
                 string senha = ((DataRowView)usuarioBindingSource.Current).Row["Senha"].ToString();
-                string ativo = ((DataRowView)usuarioBindingSource.Current).Row["Ativo"].ToString();
-
-                if ((nome == textBoxUsuario.Text) && (senha == textBoxSenha.Text) && ativo == "True")
+                string senhaCriptografada = FuncoesGlobais.Base64Encode(textBoxSenha.Text);
+                if ((nome == textBoxUsuario.Text) && (senha == senhaCriptografada) && ativo == "True")
                 {
                     UsuarioLogado.Id = ((DataRowView)usuarioBindingSource.Current).Row["Id"].ToString();
                     UsuarioLogado.NomeCompleto = ((DataRowView)usuarioBindingSource.Current).Row["NomeCompleto"].ToString();
@@ -73,7 +73,6 @@ namespace UIPrincipal
                 textBoxSenha.Focus();
             }
         }
-
         private void textBoxSenha_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

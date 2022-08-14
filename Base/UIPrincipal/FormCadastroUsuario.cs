@@ -65,23 +65,6 @@ namespace UIPrincipal
                 MessageBox.Show("OCORREU UM ERRO! " + ex.Message);
             }
         }
-        public static string Base64Decode(string base64EncodedData)
-        {
-            try
-            {
-                var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
-                return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
-            }
-            catch (FormatException)
-            {
-                return "*****";
-            }            
-        }
-        public static string Base64Encode(string plainText)
-        {
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
-            return System.Convert.ToBase64String(plainTextBytes);
-        }
         private void Inserir()
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
@@ -90,10 +73,8 @@ namespace UIPrincipal
             usuario.Id = Convert.ToInt32(labelIdPessoa.Text);
             usuario.Ativo = ativoCheckBox.Checked;
             usuario.NomeUsuario = textBoxNomeUsuario.Text;
-            //usuario.Senha = textBoxSenha.Text;
             string senhaNormal = textBoxSenha.Text;
-            usuario.Senha = Base64Encode(senhaNormal);
-            ////////////////////////////////////////////////
+            usuario.Senha = FuncoesGlobais.Base64Encode(senhaNormal);
             usuario.NomeCompleto = textBoxNomeCompleto.Text;
             usuario.Cpf = maskedTextBoxCpf.Text;
             usuario.Rg = textBoxRg.Text;
@@ -137,49 +118,26 @@ namespace UIPrincipal
             else
                 usuarioBLL.Alterar(usuario);
         }
-
-        private void somenteLetras(object sender, KeyPressEventArgs e)
-        {// ESTE METODO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
-            if (!char.IsControl(e.KeyChar) &&
-                    !char.IsLetter(e.KeyChar) &&
-                    !char.IsWhiteSpace(e.KeyChar))
-                e.Handled = true;
-        }
         private void buttonCancelarCadastro_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        {Close();}
 
         private void textBoxRg_KeyPress(object sender, KeyPressEventArgs e)
-        {// ESTE EVENTO PERMITE QUE APENAS NUMEROS SEJAM INSERIDOS E APAGADOS NO TEXTBOX
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
-                e.Handled = true;
-        }
+        {FuncoesGlobais.somenteNumeros(sender, e);}
 
         private void textBoxNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            somenteLetras(sender, e);
-        }
+        {FuncoesGlobais.somenteLetras(sender, e);}
 
         private void textBoxNacionalidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            somenteLetras(sender, e);
-        }
+        {FuncoesGlobais.somenteLetras(sender, e);}
 
         private void textBoxEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            somenteLetras(sender, e);
-        }
+        {FuncoesGlobais.somenteLetras(sender, e);}
 
         private void textBoxUf_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            somenteLetras(sender, e);
-        }
+        {FuncoesGlobais.somenteLetras(sender, e);}
 
         private void textBoxCidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            somenteLetras(sender, e);
-        }
+        {FuncoesGlobais.somenteLetras(sender, e);}
         public void checkBoxCliente_CheckedChanged(object sender, EventArgs e)
         {
             if (!checkBoxCliente.Checked)
@@ -213,13 +171,12 @@ namespace UIPrincipal
             else
             {
                 pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
-                textBoxSenha.Text = Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
+                textBoxSenha.Text = FuncoesGlobais.Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
             }
                         
             comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
-            
-            // CARREGAMENTO DO NIVEL DE ACESSO DO CLIENTE
-            if (labelId_Permissao.Text == "1")
+                        
+            if (labelId_Permissao.Text == "1")// CARREGAMENTO DO NIVEL DE ACESSO DO CLIENTE
             {
                 radioButtonNivelUm.Checked = true;
             } else if (labelId_Permissao.Text == "2")
@@ -229,7 +186,6 @@ namespace UIPrincipal
             {
                 radioButtonNivelTres.Checked = true;
             }
-            //pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
         }
 
         private void buttonAddFoto_Click(object sender, EventArgs e)
@@ -270,6 +226,21 @@ namespace UIPrincipal
             else
             {
                 MessageBox.Show("ARQUIVO NÃO COPIADO");
+            }
+        }
+
+        private void checkBoxMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxMasculino.Checked)
+            {
+                checkBoxFeminino.Checked = false;
+            }
+        }
+        private void checkBoxFeminino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFeminino.Checked)
+            {
+                checkBoxMasculino.Checked = false;
             }
         }
     }

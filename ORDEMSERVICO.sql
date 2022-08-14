@@ -277,7 +277,7 @@ AS
 	SET @Id = (SELECT @@IDENTITY)
 GO
 
-EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'Senha123', 'MATHEUS MORTO-VIVO', '111.111.111-11', '11.111.111', 'SSP',
+EXEC SP_InserirUsuario 0, 0, 'Usuario123', 'U2VuaGExMjM=', 'MATHEUS MORTO-VIVO', '111.111.111-11', '11.111.111', 'SSP',
 '05-01-2000', '77827-150', 'CEMITÉRIO JARDIM DAS PAINEIRAS', '543', 'CENTRO', 'SOLTEIRO', 'BRASILEIRO', 'ze_preguica@gmail.com', '633411-2300', '63991035240', null,
 'ARAGUAINA', 'TO', 'C:\Users\ADM\source\repos\3V4ND3R5ON\Base\Base\UIPrincipal\bin\Debug\Imgs\Matheus.jpeg', 1, 3, '2.500', 'SUPORTE1', '01-01-2014', '01-01-2018', 'Banco 0260 Nu Pagamentos S.A', '0001', '5658481-4', 1,
 '02-02-2020', '02-02-2022', 'ESSE FUNCIONARIO MATA LEFOA O DIA TODO NO ALMOXARIFADO', 3
@@ -751,11 +751,11 @@ AS
 GO
 
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES (1, 'EVANDERSON', '18071988', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
+	VALUES (1, 'EVANDERSON', 'MTgwNzE5ODg=', 'EVANDERSON RIBEIRO', '05-01-1988', '77827150', 'RUA DOS ABACATEIROS', '543', 'ARAG SL', 'SOLTEIRO', 'BRASILEIRO', '02227866193', '6666666', 'SSPTO', 'evanderson@email.com', '6334112300', '13992019277', '63992019277', 'ARAGUAINA', 'TO', 1, 1, 4, 3, '')
 GO
 
 INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('admin', 'admin', 'ADMINISTRADOR DO SISTEMA', '01-01-1995', '999.999.999-99', 1, 1, 4, 3, '', 1)
+	VALUES ('admin', 'YWRtaW4=', 'ADMINISTRADOR DO SISTEMA', '01-01-1995', '999.999.999-99', 1, 1, 4, 3, '', 1)
 GO
 
 INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
@@ -798,4 +798,5 @@ SELECT Protocolo, Id_Cliente, TipoChamado, Descricao, DataDeFechamento, EstatusO
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
 --SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
+SELECT NomeUsuario, Senha, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
 --GO

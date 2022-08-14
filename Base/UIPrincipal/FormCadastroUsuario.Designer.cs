@@ -115,6 +115,9 @@ namespace UIPrincipal
             this.buttonAddFoto = new System.Windows.Forms.Button();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.groupBoxSexo = new System.Windows.Forms.GroupBox();
+            this.checkBoxMasculino = new System.Windows.Forms.CheckBox();
+            this.checkBoxFeminino = new System.Windows.Forms.CheckBox();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             labelSenha = new System.Windows.Forms.Label();
             labelSalario = new System.Windows.Forms.Label();
@@ -156,13 +159,14 @@ namespace UIPrincipal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBoxSituacao.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
+            this.groupBoxSexo.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeUsuarioLabel
             // 
             nomeUsuarioLabel.AutoSize = true;
-            nomeUsuarioLabel.ForeColor = System.Drawing.Color.Black;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(3, 15);
+            nomeUsuarioLabel.ForeColor = System.Drawing.Color.White;
+            nomeUsuarioLabel.Location = new System.Drawing.Point(18, 15);
             nomeUsuarioLabel.Name = "nomeUsuarioLabel";
             nomeUsuarioLabel.Size = new System.Drawing.Size(43, 13);
             nomeUsuarioLabel.TabIndex = 3;
@@ -171,8 +175,8 @@ namespace UIPrincipal
             // labelSenha
             // 
             labelSenha.AutoSize = true;
-            labelSenha.ForeColor = System.Drawing.Color.Black;
-            labelSenha.Location = new System.Drawing.Point(159, 15);
+            labelSenha.ForeColor = System.Drawing.Color.White;
+            labelSenha.Location = new System.Drawing.Point(174, 15);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new System.Drawing.Size(47, 13);
             labelSenha.TabIndex = 0;
@@ -181,8 +185,8 @@ namespace UIPrincipal
             // labelSalario
             // 
             labelSalario.AutoSize = true;
-            labelSalario.ForeColor = System.Drawing.Color.Black;
-            labelSalario.Location = new System.Drawing.Point(166, 93);
+            labelSalario.ForeColor = System.Drawing.Color.White;
+            labelSalario.Location = new System.Drawing.Point(236, 93);
             labelSalario.Name = "labelSalario";
             labelSalario.Size = new System.Drawing.Size(56, 13);
             labelSalario.TabIndex = 4;
@@ -191,7 +195,7 @@ namespace UIPrincipal
             // labelCargo
             // 
             labelCargo.AutoSize = true;
-            labelCargo.ForeColor = System.Drawing.Color.Black;
+            labelCargo.ForeColor = System.Drawing.Color.White;
             labelCargo.Location = new System.Drawing.Point(3, 93);
             labelCargo.Name = "labelCargo";
             labelCargo.Size = new System.Drawing.Size(48, 13);
@@ -201,8 +205,8 @@ namespace UIPrincipal
             // labelBanco
             // 
             labelBanco.AutoSize = true;
-            labelBanco.ForeColor = System.Drawing.Color.Black;
-            labelBanco.Location = new System.Drawing.Point(272, 93);
+            labelBanco.ForeColor = System.Drawing.Color.White;
+            labelBanco.Location = new System.Drawing.Point(342, 93);
             labelBanco.Name = "labelBanco";
             labelBanco.Size = new System.Drawing.Size(47, 13);
             labelBanco.TabIndex = 6;
@@ -211,8 +215,8 @@ namespace UIPrincipal
             // labelAgencia
             // 
             labelAgencia.AutoSize = true;
-            labelAgencia.ForeColor = System.Drawing.Color.Black;
-            labelAgencia.Location = new System.Drawing.Point(512, 93);
+            labelAgencia.ForeColor = System.Drawing.Color.White;
+            labelAgencia.Location = new System.Drawing.Point(582, 93);
             labelAgencia.Name = "labelAgencia";
             labelAgencia.Size = new System.Drawing.Size(57, 13);
             labelAgencia.TabIndex = 8;
@@ -221,8 +225,8 @@ namespace UIPrincipal
             // labelNumConta
             // 
             labelNumConta.AutoSize = true;
-            labelNumConta.ForeColor = System.Drawing.Color.Black;
-            labelNumConta.Location = new System.Drawing.Point(615, 93);
+            labelNumConta.ForeColor = System.Drawing.Color.White;
+            labelNumConta.Location = new System.Drawing.Point(685, 93);
             labelNumConta.Name = "labelNumConta";
             labelNumConta.Size = new System.Drawing.Size(116, 13);
             labelNumConta.TabIndex = 10;
@@ -231,7 +235,7 @@ namespace UIPrincipal
             // labelDataAdmissao
             // 
             labelDataAdmissao.AutoSize = true;
-            labelDataAdmissao.ForeColor = System.Drawing.Color.Black;
+            labelDataAdmissao.ForeColor = System.Drawing.Color.White;
             labelDataAdmissao.Location = new System.Drawing.Point(3, 132);
             labelDataAdmissao.Name = "labelDataAdmissao";
             labelDataAdmissao.Size = new System.Drawing.Size(116, 13);
@@ -241,7 +245,7 @@ namespace UIPrincipal
             // labelDataDemissao
             // 
             labelDataDemissao.AutoSize = true;
-            labelDataDemissao.ForeColor = System.Drawing.Color.Black;
+            labelDataDemissao.ForeColor = System.Drawing.Color.White;
             labelDataDemissao.Location = new System.Drawing.Point(138, 132);
             labelDataDemissao.Name = "labelDataDemissao";
             labelDataDemissao.Size = new System.Drawing.Size(116, 13);
@@ -251,7 +255,7 @@ namespace UIPrincipal
             // labelPlano
             // 
             labelPlano.AutoSize = true;
-            labelPlano.ForeColor = System.Drawing.Color.Black;
+            labelPlano.ForeColor = System.Drawing.Color.White;
             labelPlano.Location = new System.Drawing.Point(3, 16);
             labelPlano.Name = "labelPlano";
             labelPlano.Size = new System.Drawing.Size(46, 13);
@@ -261,7 +265,7 @@ namespace UIPrincipal
             // labelInicioContrato
             // 
             labelInicioContrato.AutoSize = true;
-            labelInicioContrato.ForeColor = System.Drawing.Color.Black;
+            labelInicioContrato.ForeColor = System.Drawing.Color.White;
             labelInicioContrato.Location = new System.Drawing.Point(272, 16);
             labelInicioContrato.Name = "labelInicioContrato";
             labelInicioContrato.Size = new System.Drawing.Size(124, 13);
@@ -271,7 +275,7 @@ namespace UIPrincipal
             // labelFimContrato
             // 
             labelFimContrato.AutoSize = true;
-            labelFimContrato.ForeColor = System.Drawing.Color.Black;
+            labelFimContrato.ForeColor = System.Drawing.Color.White;
             labelFimContrato.Location = new System.Drawing.Point(399, 16);
             labelFimContrato.Name = "labelFimContrato";
             labelFimContrato.Size = new System.Drawing.Size(110, 13);
@@ -281,7 +285,7 @@ namespace UIPrincipal
             // labelRua
             // 
             labelRua.AutoSize = true;
-            labelRua.ForeColor = System.Drawing.Color.Black;
+            labelRua.ForeColor = System.Drawing.Color.White;
             labelRua.Location = new System.Drawing.Point(67, 101);
             labelRua.Name = "labelRua";
             labelRua.Size = new System.Drawing.Size(33, 13);
@@ -291,8 +295,8 @@ namespace UIPrincipal
             // labelEstadoCivil
             // 
             labelEstadoCivil.AutoSize = true;
-            labelEstadoCivil.ForeColor = System.Drawing.Color.Black;
-            labelEstadoCivil.Location = new System.Drawing.Point(403, 62);
+            labelEstadoCivil.ForeColor = System.Drawing.Color.White;
+            labelEstadoCivil.Location = new System.Drawing.Point(436, 62);
             labelEstadoCivil.Name = "labelEstadoCivil";
             labelEstadoCivil.Size = new System.Drawing.Size(83, 13);
             labelEstadoCivil.TabIndex = 15;
@@ -301,8 +305,8 @@ namespace UIPrincipal
             // labelNumCasa
             // 
             labelNumCasa.AutoSize = true;
-            labelNumCasa.ForeColor = System.Drawing.Color.Black;
-            labelNumCasa.Location = new System.Drawing.Point(218, 101);
+            labelNumCasa.ForeColor = System.Drawing.Color.White;
+            labelNumCasa.Location = new System.Drawing.Point(263, 101);
             labelNumCasa.Name = "labelNumCasa";
             labelNumCasa.Size = new System.Drawing.Size(22, 13);
             labelNumCasa.TabIndex = 25;
@@ -311,8 +315,8 @@ namespace UIPrincipal
             // labelNacionalidade
             // 
             labelNacionalidade.AutoSize = true;
-            labelNacionalidade.ForeColor = System.Drawing.Color.Black;
-            labelNacionalidade.Location = new System.Drawing.Point(299, 62);
+            labelNacionalidade.ForeColor = System.Drawing.Color.White;
+            labelNacionalidade.Location = new System.Drawing.Point(301, 62);
             labelNacionalidade.Name = "labelNacionalidade";
             labelNacionalidade.Size = new System.Drawing.Size(97, 13);
             labelNacionalidade.TabIndex = 13;
@@ -321,7 +325,7 @@ namespace UIPrincipal
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.ForeColor = System.Drawing.Color.Black;
+            labelEmail.ForeColor = System.Drawing.Color.White;
             labelEmail.Location = new System.Drawing.Point(3, 140);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new System.Drawing.Size(45, 13);
@@ -331,8 +335,8 @@ namespace UIPrincipal
             // labelTelefone
             // 
             labelTelefone.AutoSize = true;
-            labelTelefone.ForeColor = System.Drawing.Color.Black;
-            labelTelefone.Location = new System.Drawing.Point(218, 140);
+            labelTelefone.ForeColor = System.Drawing.Color.White;
+            labelTelefone.Location = new System.Drawing.Point(290, 140);
             labelTelefone.Name = "labelTelefone";
             labelTelefone.Size = new System.Drawing.Size(66, 13);
             labelTelefone.TabIndex = 27;
@@ -341,8 +345,8 @@ namespace UIPrincipal
             // label3
             // 
             label3.AutoSize = true;
-            label3.ForeColor = System.Drawing.Color.Black;
-            label3.Location = new System.Drawing.Point(425, 23);
+            label3.ForeColor = System.Drawing.Color.White;
+            label3.Location = new System.Drawing.Point(497, 23);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(81, 13);
             label3.TabIndex = 1;
@@ -351,8 +355,8 @@ namespace UIPrincipal
             // labelCelularUm
             // 
             labelCelularUm.AutoSize = true;
-            labelCelularUm.ForeColor = System.Drawing.Color.Black;
-            labelCelularUm.Location = new System.Drawing.Point(315, 140);
+            labelCelularUm.ForeColor = System.Drawing.Color.White;
+            labelCelularUm.Location = new System.Drawing.Point(387, 140);
             labelCelularUm.Name = "labelCelularUm";
             labelCelularUm.Size = new System.Drawing.Size(68, 13);
             labelCelularUm.TabIndex = 22;
@@ -361,8 +365,8 @@ namespace UIPrincipal
             // labelCelularDois
             // 
             labelCelularDois.AutoSize = true;
-            labelCelularDois.ForeColor = System.Drawing.Color.Black;
-            labelCelularDois.Location = new System.Drawing.Point(412, 140);
+            labelCelularDois.ForeColor = System.Drawing.Color.White;
+            labelCelularDois.Location = new System.Drawing.Point(484, 140);
             labelCelularDois.Name = "labelCelularDois";
             labelCelularDois.Size = new System.Drawing.Size(68, 13);
             labelCelularDois.TabIndex = 19;
@@ -371,7 +375,7 @@ namespace UIPrincipal
             // labelOrgExpeditor
             // 
             labelOrgExpeditor.AutoSize = true;
-            labelOrgExpeditor.ForeColor = System.Drawing.Color.Black;
+            labelOrgExpeditor.ForeColor = System.Drawing.Color.White;
             labelOrgExpeditor.Location = new System.Drawing.Point(191, 62);
             labelOrgExpeditor.Name = "labelOrgExpeditor";
             labelOrgExpeditor.Size = new System.Drawing.Size(102, 13);
@@ -381,8 +385,8 @@ namespace UIPrincipal
             // labelCidade
             // 
             labelCidade.AutoSize = true;
-            labelCidade.ForeColor = System.Drawing.Color.Black;
-            labelCidade.Location = new System.Drawing.Point(372, 101);
+            labelCidade.ForeColor = System.Drawing.Color.White;
+            labelCidade.Location = new System.Drawing.Point(434, 101);
             labelCidade.Name = "labelCidade";
             labelCidade.Size = new System.Drawing.Size(50, 13);
             labelCidade.TabIndex = 24;
@@ -391,8 +395,8 @@ namespace UIPrincipal
             // labelUf
             // 
             labelUf.AutoSize = true;
-            labelUf.ForeColor = System.Drawing.Color.Black;
-            labelUf.Location = new System.Drawing.Point(478, 101);
+            labelUf.ForeColor = System.Drawing.Color.White;
+            labelUf.Location = new System.Drawing.Point(550, 101);
             labelUf.Name = "labelUf";
             labelUf.Size = new System.Drawing.Size(24, 13);
             labelUf.TabIndex = 17;
@@ -401,7 +405,7 @@ namespace UIPrincipal
             // RgLabel
             // 
             RgLabel.AutoSize = true;
-            RgLabel.ForeColor = System.Drawing.Color.Black;
+            RgLabel.ForeColor = System.Drawing.Color.White;
             RgLabel.Location = new System.Drawing.Point(100, 62);
             RgLabel.Name = "RgLabel";
             RgLabel.Size = new System.Drawing.Size(26, 13);
@@ -411,7 +415,7 @@ namespace UIPrincipal
             // label2
             // 
             label2.AutoSize = true;
-            label2.ForeColor = System.Drawing.Color.Black;
+            label2.ForeColor = System.Drawing.Color.White;
             label2.Location = new System.Drawing.Point(3, 23);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(52, 13);
@@ -421,7 +425,7 @@ namespace UIPrincipal
             // label1
             // 
             label1.AutoSize = true;
-            label1.ForeColor = System.Drawing.Color.Black;
+            label1.ForeColor = System.Drawing.Color.White;
             label1.Location = new System.Drawing.Point(67, 23);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(104, 13);
@@ -431,7 +435,7 @@ namespace UIPrincipal
             // cpfLabel
             // 
             cpfLabel.AutoSize = true;
-            cpfLabel.ForeColor = System.Drawing.Color.Black;
+            cpfLabel.ForeColor = System.Drawing.Color.White;
             cpfLabel.Location = new System.Drawing.Point(3, 62);
             cpfLabel.Name = "cpfLabel";
             cpfLabel.Size = new System.Drawing.Size(30, 13);
@@ -441,7 +445,7 @@ namespace UIPrincipal
             // label4
             // 
             label4.AutoSize = true;
-            label4.ForeColor = System.Drawing.Color.Black;
+            label4.ForeColor = System.Drawing.Color.White;
             label4.Location = new System.Drawing.Point(4, 101);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(31, 13);
@@ -451,7 +455,7 @@ namespace UIPrincipal
             // labelObservacao
             // 
             labelObservacao.AutoSize = true;
-            labelObservacao.ForeColor = System.Drawing.Color.Black;
+            labelObservacao.ForeColor = System.Drawing.Color.White;
             labelObservacao.Location = new System.Drawing.Point(6, 187);
             labelObservacao.Name = "labelObservacao";
             labelObservacao.Size = new System.Drawing.Size(83, 13);
@@ -461,8 +465,8 @@ namespace UIPrincipal
             // label5
             // 
             label5.AutoSize = true;
-            label5.ForeColor = System.Drawing.Color.Black;
-            label5.Location = new System.Drawing.Point(260, 101);
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(319, 101);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(51, 13);
             label5.TabIndex = 42;
@@ -470,17 +474,19 @@ namespace UIPrincipal
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.BackColor = System.Drawing.Color.White;
             this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSalvar.FlatAppearance.BorderSize = 0;
             this.buttonSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(301, 526);
+            this.buttonSalvar.Location = new System.Drawing.Point(343, 568);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(80, 22);
             this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "&SALVAR";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.UseVisualStyleBackColor = false;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // usuarioBindingSource
@@ -491,7 +497,8 @@ namespace UIPrincipal
             // 
             this.textBoxNomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
             this.textBoxNomeUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxNomeUsuario.Location = new System.Drawing.Point(6, 31);
+            this.textBoxNomeUsuario.Location = new System.Drawing.Point(21, 31);
+            this.textBoxNomeUsuario.MaxLength = 150;
             this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
             this.textBoxNomeUsuario.Size = new System.Drawing.Size(150, 20);
             this.textBoxNomeUsuario.TabIndex = 0;
@@ -503,19 +510,21 @@ namespace UIPrincipal
             this.buttonCancelarCadastro.FlatAppearance.BorderSize = 0;
             this.buttonCancelarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonCancelarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonCancelarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCancelarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastro.Location = new System.Drawing.Point(387, 526);
+            this.buttonCancelarCadastro.Location = new System.Drawing.Point(429, 568);
             this.buttonCancelarCadastro.Name = "buttonCancelarCadastro";
             this.buttonCancelarCadastro.Size = new System.Drawing.Size(80, 22);
             this.buttonCancelarCadastro.TabIndex = 5;
             this.buttonCancelarCadastro.Text = "&CANCELAR";
-            this.buttonCancelarCadastro.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastro.UseVisualStyleBackColor = false;
             this.buttonCancelarCadastro.Click += new System.EventHandler(this.buttonCancelarCadastro_Click);
             // 
             // textBoxSenha
             // 
             this.textBoxSenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
-            this.textBoxSenha.Location = new System.Drawing.Point(162, 31);
+            this.textBoxSenha.Location = new System.Drawing.Point(177, 31);
+            this.textBoxSenha.MaxLength = 150;
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(150, 20);
             this.textBoxSenha.TabIndex = 1;
@@ -538,9 +547,10 @@ namespace UIPrincipal
             this.groupBoxFuncionario.Controls.Add(this.textBoxSalario);
             this.groupBoxFuncionario.Controls.Add(this.groupBoxNivelFuncionario);
             this.groupBoxFuncionario.Controls.Add(this.groupBoxDadosDeAcesso);
-            this.groupBoxFuncionario.Location = new System.Drawing.Point(9, 279);
+            this.groupBoxFuncionario.ForeColor = System.Drawing.Color.White;
+            this.groupBoxFuncionario.Location = new System.Drawing.Point(9, 319);
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
-            this.groupBoxFuncionario.Size = new System.Drawing.Size(763, 176);
+            this.groupBoxFuncionario.Size = new System.Drawing.Size(833, 176);
             this.groupBoxFuncionario.TabIndex = 1;
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "DADOS DO FUNCIONARIO";
@@ -568,7 +578,8 @@ namespace UIPrincipal
             // textBoxNumConta
             // 
             this.textBoxNumConta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroContaBanco", true));
-            this.textBoxNumConta.Location = new System.Drawing.Point(618, 109);
+            this.textBoxNumConta.Location = new System.Drawing.Point(688, 109);
+            this.textBoxNumConta.MaxLength = 15;
             this.textBoxNumConta.Name = "textBoxNumConta";
             this.textBoxNumConta.Size = new System.Drawing.Size(139, 20);
             this.textBoxNumConta.TabIndex = 4;
@@ -576,7 +587,8 @@ namespace UIPrincipal
             // textBoxAgencia
             // 
             this.textBoxAgencia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroAgenciaBanco", true));
-            this.textBoxAgencia.Location = new System.Drawing.Point(512, 109);
+            this.textBoxAgencia.Location = new System.Drawing.Point(582, 109);
+            this.textBoxAgencia.MaxLength = 10;
             this.textBoxAgencia.Name = "textBoxAgencia";
             this.textBoxAgencia.Size = new System.Drawing.Size(100, 20);
             this.textBoxAgencia.TabIndex = 3;
@@ -585,7 +597,8 @@ namespace UIPrincipal
             // 
             this.textBoxBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxBanco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Banco", true));
-            this.textBoxBanco.Location = new System.Drawing.Point(275, 109);
+            this.textBoxBanco.Location = new System.Drawing.Point(345, 109);
+            this.textBoxBanco.MaxLength = 40;
             this.textBoxBanco.Name = "textBoxBanco";
             this.textBoxBanco.Size = new System.Drawing.Size(231, 20);
             this.textBoxBanco.TabIndex = 2;
@@ -595,14 +608,16 @@ namespace UIPrincipal
             this.textBoxCargo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCargo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cargo", true));
             this.textBoxCargo.Location = new System.Drawing.Point(6, 109);
+            this.textBoxCargo.MaxLength = 50;
             this.textBoxCargo.Name = "textBoxCargo";
-            this.textBoxCargo.Size = new System.Drawing.Size(157, 20);
+            this.textBoxCargo.Size = new System.Drawing.Size(227, 20);
             this.textBoxCargo.TabIndex = 0;
             // 
             // textBoxSalario
             // 
             this.textBoxSalario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Salario", true));
-            this.textBoxSalario.Location = new System.Drawing.Point(169, 109);
+            this.textBoxSalario.Location = new System.Drawing.Point(239, 109);
+            this.textBoxSalario.MaxLength = 10;
             this.textBoxSalario.Name = "textBoxSalario";
             this.textBoxSalario.Size = new System.Drawing.Size(100, 20);
             this.textBoxSalario.TabIndex = 1;
@@ -612,9 +627,10 @@ namespace UIPrincipal
             this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelUm);
             this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelDois);
             this.groupBoxNivelFuncionario.Controls.Add(this.radioButtonNivelTres);
-            this.groupBoxNivelFuncionario.Location = new System.Drawing.Point(353, 20);
+            this.groupBoxNivelFuncionario.ForeColor = System.Drawing.Color.White;
+            this.groupBoxNivelFuncionario.Location = new System.Drawing.Point(362, 20);
             this.groupBoxNivelFuncionario.Name = "groupBoxNivelFuncionario";
-            this.groupBoxNivelFuncionario.Size = new System.Drawing.Size(404, 70);
+            this.groupBoxNivelFuncionario.Size = new System.Drawing.Size(465, 70);
             this.groupBoxNivelFuncionario.TabIndex = 0;
             this.groupBoxNivelFuncionario.TabStop = false;
             this.groupBoxNivelFuncionario.Text = "NIVEL DO FUNCIONARIO NO SISTEMA";
@@ -657,9 +673,10 @@ namespace UIPrincipal
             this.groupBoxDadosDeAcesso.Controls.Add(labelSenha);
             this.groupBoxDadosDeAcesso.Controls.Add(nomeUsuarioLabel);
             this.groupBoxDadosDeAcesso.Controls.Add(this.textBoxSenha);
+            this.groupBoxDadosDeAcesso.ForeColor = System.Drawing.Color.White;
             this.groupBoxDadosDeAcesso.Location = new System.Drawing.Point(7, 20);
             this.groupBoxDadosDeAcesso.Name = "groupBoxDadosDeAcesso";
-            this.groupBoxDadosDeAcesso.Size = new System.Drawing.Size(319, 70);
+            this.groupBoxDadosDeAcesso.Size = new System.Drawing.Size(349, 70);
             this.groupBoxDadosDeAcesso.TabIndex = 1;
             this.groupBoxDadosDeAcesso.TabStop = false;
             this.groupBoxDadosDeAcesso.Text = "DADOS DE ACESSO";
@@ -672,9 +689,10 @@ namespace UIPrincipal
             this.groupBoxDadosCliente.Controls.Add(this.maskedTextBoxInicioContrato);
             this.groupBoxDadosCliente.Controls.Add(labelPlano);
             this.groupBoxDadosCliente.Controls.Add(this.comboBoxPlanos);
-            this.groupBoxDadosCliente.Location = new System.Drawing.Point(9, 461);
+            this.groupBoxDadosCliente.ForeColor = System.Drawing.Color.White;
+            this.groupBoxDadosCliente.Location = new System.Drawing.Point(9, 501);
             this.groupBoxDadosCliente.Name = "groupBoxDadosCliente";
-            this.groupBoxDadosCliente.Size = new System.Drawing.Size(763, 59);
+            this.groupBoxDadosCliente.Size = new System.Drawing.Size(833, 59);
             this.groupBoxDadosCliente.TabIndex = 2;
             this.groupBoxDadosCliente.TabStop = false;
             this.groupBoxDadosCliente.Text = "DADOS DO CLIENTE";
@@ -707,7 +725,7 @@ namespace UIPrincipal
             this.comboBoxPlanos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPlanos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxPlanos.FormattingEnabled = true;
-            this.comboBoxPlanos.Location = new System.Drawing.Point(6, 32);
+            this.comboBoxPlanos.Location = new System.Drawing.Point(6, 31);
             this.comboBoxPlanos.Name = "comboBoxPlanos";
             this.comboBoxPlanos.Size = new System.Drawing.Size(263, 21);
             this.comboBoxPlanos.TabIndex = 1;
@@ -716,8 +734,8 @@ namespace UIPrincipal
             // 
             this.labelIdPlano.BackColor = System.Drawing.Color.Transparent;
             this.labelIdPlano.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id_Plano", true));
-            this.labelIdPlano.ForeColor = System.Drawing.Color.Transparent;
-            this.labelIdPlano.Location = new System.Drawing.Point(707, 532);
+            this.labelIdPlano.ForeColor = System.Drawing.Color.Black;
+            this.labelIdPlano.Location = new System.Drawing.Point(777, 571);
             this.labelIdPlano.Name = "labelIdPlano";
             this.labelIdPlano.Size = new System.Drawing.Size(65, 20);
             this.labelIdPlano.TabIndex = 40;
@@ -727,8 +745,8 @@ namespace UIPrincipal
             // 
             this.labelId_Permissao.BackColor = System.Drawing.Color.Transparent;
             this.labelId_Permissao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id_Permissao", true));
-            this.labelId_Permissao.ForeColor = System.Drawing.Color.Transparent;
-            this.labelId_Permissao.Location = new System.Drawing.Point(12, 532);
+            this.labelId_Permissao.ForeColor = System.Drawing.Color.Black;
+            this.labelId_Permissao.Location = new System.Drawing.Point(6, 571);
             this.labelId_Permissao.Name = "labelId_Permissao";
             this.labelId_Permissao.Size = new System.Drawing.Size(65, 20);
             this.labelId_Permissao.TabIndex = 41;
@@ -743,25 +761,28 @@ namespace UIPrincipal
             this.textBoxRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rua", true));
             this.textBoxRua.Location = new System.Drawing.Point(70, 117);
+            this.textBoxRua.MaxLength = 25;
             this.textBoxRua.Name = "textBoxRua";
-            this.textBoxRua.Size = new System.Drawing.Size(145, 20);
+            this.textBoxRua.Size = new System.Drawing.Size(190, 20);
             this.textBoxRua.TabIndex = 8;
             // 
             // textBoxNumCasa
             // 
             this.textBoxNumCasa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumCasa", true));
-            this.textBoxNumCasa.Location = new System.Drawing.Point(221, 117);
+            this.textBoxNumCasa.Location = new System.Drawing.Point(266, 117);
+            this.textBoxNumCasa.MaxLength = 5;
             this.textBoxNumCasa.Name = "textBoxNumCasa";
-            this.textBoxNumCasa.Size = new System.Drawing.Size(36, 20);
+            this.textBoxNumCasa.Size = new System.Drawing.Size(50, 20);
             this.textBoxNumCasa.TabIndex = 9;
             // 
             // textBoxEstadoCivil
             // 
             this.textBoxEstadoCivil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEstadoCivil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "EstadoCivil", true));
-            this.textBoxEstadoCivil.Location = new System.Drawing.Point(406, 78);
+            this.textBoxEstadoCivil.Location = new System.Drawing.Point(439, 78);
+            this.textBoxEstadoCivil.MaxLength = 10;
             this.textBoxEstadoCivil.Name = "textBoxEstadoCivil";
-            this.textBoxEstadoCivil.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEstadoCivil.Size = new System.Drawing.Size(139, 20);
             this.textBoxEstadoCivil.TabIndex = 7;
             this.textBoxEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEstadoCivil_KeyPress);
             // 
@@ -769,9 +790,10 @@ namespace UIPrincipal
             // 
             this.textBoxNacionalidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNacionalidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nacionalidade", true));
-            this.textBoxNacionalidade.Location = new System.Drawing.Point(300, 78);
+            this.textBoxNacionalidade.Location = new System.Drawing.Point(302, 78);
+            this.textBoxNacionalidade.MaxLength = 15;
             this.textBoxNacionalidade.Name = "textBoxNacionalidade";
-            this.textBoxNacionalidade.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNacionalidade.Size = new System.Drawing.Size(130, 20);
             this.textBoxNacionalidade.TabIndex = 6;
             this.textBoxNacionalidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNacionalidade_KeyPress);
             // 
@@ -779,7 +801,7 @@ namespace UIPrincipal
             // 
             this.maskedTextBoxDataNascimento.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxDataNascimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "DataNascimento", true));
-            this.maskedTextBoxDataNascimento.Location = new System.Drawing.Point(428, 39);
+            this.maskedTextBoxDataNascimento.Location = new System.Drawing.Point(500, 39);
             this.maskedTextBoxDataNascimento.Mask = "00-00-0000";
             this.maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
             this.maskedTextBoxDataNascimento.Size = new System.Drawing.Size(78, 20);
@@ -791,6 +813,7 @@ namespace UIPrincipal
             this.textBoxOrgExpeditor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxOrgExpeditor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "OrgaoExpeditor", true));
             this.textBoxOrgExpeditor.Location = new System.Drawing.Point(194, 78);
+            this.textBoxOrgExpeditor.MaxLength = 6;
             this.textBoxOrgExpeditor.Name = "textBoxOrgExpeditor";
             this.textBoxOrgExpeditor.Size = new System.Drawing.Size(100, 20);
             this.textBoxOrgExpeditor.TabIndex = 5;
@@ -799,9 +822,10 @@ namespace UIPrincipal
             // 
             this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cidade", true));
-            this.textBoxCidade.Location = new System.Drawing.Point(375, 117);
+            this.textBoxCidade.Location = new System.Drawing.Point(437, 117);
+            this.textBoxCidade.MaxLength = 20;
             this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCidade.Size = new System.Drawing.Size(110, 20);
             this.textBoxCidade.TabIndex = 10;
             this.textBoxCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCidade_KeyPress);
             // 
@@ -818,7 +842,8 @@ namespace UIPrincipal
             // 
             this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxUf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Uf", true));
-            this.textBoxUf.Location = new System.Drawing.Point(481, 117);
+            this.textBoxUf.Location = new System.Drawing.Point(553, 117);
+            this.textBoxUf.MaxLength = 2;
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.Size = new System.Drawing.Size(25, 20);
             this.textBoxUf.TabIndex = 11;
@@ -827,7 +852,7 @@ namespace UIPrincipal
             // maskedTextBoxCelularUm
             // 
             this.maskedTextBoxCelularUm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CelularUm", true));
-            this.maskedTextBoxCelularUm.Location = new System.Drawing.Point(318, 156);
+            this.maskedTextBoxCelularUm.Location = new System.Drawing.Point(390, 156);
             this.maskedTextBoxCelularUm.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularUm.Name = "maskedTextBoxCelularUm";
             this.maskedTextBoxCelularUm.Size = new System.Drawing.Size(91, 20);
@@ -840,15 +865,16 @@ namespace UIPrincipal
             this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNomeCompleto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeCompleto", true));
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(70, 39);
+            this.textBoxNomeCompleto.MaxLength = 50;
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
-            this.textBoxNomeCompleto.Size = new System.Drawing.Size(352, 20);
+            this.textBoxNomeCompleto.Size = new System.Drawing.Size(424, 20);
             this.textBoxNomeCompleto.TabIndex = 0;
             this.textBoxNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNomeCompleto_KeyPress);
             // 
             // maskedTextBoxCelularDois
             // 
             this.maskedTextBoxCelularDois.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CelularDois", true));
-            this.maskedTextBoxCelularDois.Location = new System.Drawing.Point(415, 156);
+            this.maskedTextBoxCelularDois.Location = new System.Drawing.Point(487, 156);
             this.maskedTextBoxCelularDois.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularDois.Name = "maskedTextBoxCelularDois";
             this.maskedTextBoxCelularDois.Size = new System.Drawing.Size(91, 20);
@@ -857,7 +883,7 @@ namespace UIPrincipal
             // maskedTextBoxTelefone
             // 
             this.maskedTextBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Telefone", true));
-            this.maskedTextBoxTelefone.Location = new System.Drawing.Point(221, 156);
+            this.maskedTextBoxTelefone.Location = new System.Drawing.Point(293, 156);
             this.maskedTextBoxTelefone.Mask = "(99) 0000-0000";
             this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             this.maskedTextBoxTelefone.Size = new System.Drawing.Size(91, 20);
@@ -868,8 +894,9 @@ namespace UIPrincipal
             this.textBoxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Email", true));
             this.textBoxEmail.Location = new System.Drawing.Point(6, 156);
+            this.textBoxEmail.MaxLength = 20;
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(209, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(281, 20);
             this.textBoxEmail.TabIndex = 12;
             // 
             // textBoxRg
@@ -877,6 +904,7 @@ namespace UIPrincipal
             this.textBoxRg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rg", true));
             this.textBoxRg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBoxRg.Location = new System.Drawing.Point(103, 78);
+            this.textBoxRg.MaxLength = 15;
             this.textBoxRg.Name = "textBoxRg";
             this.textBoxRg.Size = new System.Drawing.Size(85, 20);
             this.textBoxRg.TabIndex = 4;
@@ -895,9 +923,10 @@ namespace UIPrincipal
             // 
             this.groupBoxTipo.Controls.Add(this.checkBoxCliente);
             this.groupBoxTipo.Controls.Add(this.checkBoxFuncionario);
-            this.groupBoxTipo.Location = new System.Drawing.Point(514, 71);
+            this.groupBoxTipo.ForeColor = System.Drawing.Color.White;
+            this.groupBoxTipo.Location = new System.Drawing.Point(584, 123);
             this.groupBoxTipo.Name = "groupBoxTipo";
-            this.groupBoxTipo.Size = new System.Drawing.Size(111, 105);
+            this.groupBoxTipo.Size = new System.Drawing.Size(111, 52);
             this.groupBoxTipo.TabIndex = 34;
             this.groupBoxTipo.TabStop = false;
             this.groupBoxTipo.Text = "TIPO";
@@ -907,7 +936,7 @@ namespace UIPrincipal
             this.checkBoxCliente.AutoSize = true;
             this.checkBoxCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxCliente.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.usuarioBindingSource, "Cliente", true));
-            this.checkBoxCliente.Location = new System.Drawing.Point(5, 36);
+            this.checkBoxCliente.Location = new System.Drawing.Point(5, 15);
             this.checkBoxCliente.Name = "checkBoxCliente";
             this.checkBoxCliente.Size = new System.Drawing.Size(71, 17);
             this.checkBoxCliente.TabIndex = 17;
@@ -920,7 +949,7 @@ namespace UIPrincipal
             this.checkBoxFuncionario.AutoSize = true;
             this.checkBoxFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxFuncionario.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.usuarioBindingSource, "Funcionario", true));
-            this.checkBoxFuncionario.Location = new System.Drawing.Point(5, 59);
+            this.checkBoxFuncionario.Location = new System.Drawing.Point(5, 32);
             this.checkBoxFuncionario.Name = "checkBoxFuncionario";
             this.checkBoxFuncionario.Size = new System.Drawing.Size(100, 17);
             this.checkBoxFuncionario.TabIndex = 16;
@@ -930,11 +959,12 @@ namespace UIPrincipal
             // 
             // pictureBoxFoto
             // 
+            this.pictureBoxFoto.BackColor = System.Drawing.Color.White;
             this.pictureBoxFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxFoto.ErrorImage = null;
             this.pictureBoxFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFoto.Image")));
             this.pictureBoxFoto.InitialImage = null;
-            this.pictureBoxFoto.Location = new System.Drawing.Point(631, 23);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(701, 23);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(126, 153);
             this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -944,9 +974,10 @@ namespace UIPrincipal
             // groupBoxSituacao
             // 
             this.groupBoxSituacao.Controls.Add(this.ativoCheckBox);
-            this.groupBoxSituacao.Location = new System.Drawing.Point(514, 17);
+            this.groupBoxSituacao.ForeColor = System.Drawing.Color.White;
+            this.groupBoxSituacao.Location = new System.Drawing.Point(584, 19);
             this.groupBoxSituacao.Name = "groupBoxSituacao";
-            this.groupBoxSituacao.Size = new System.Drawing.Size(111, 48);
+            this.groupBoxSituacao.Size = new System.Drawing.Size(111, 35);
             this.groupBoxSituacao.TabIndex = 36;
             this.groupBoxSituacao.TabStop = false;
             this.groupBoxSituacao.Text = "SITUAÇÃO";
@@ -955,10 +986,10 @@ namespace UIPrincipal
             // 
             this.ativoCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.usuarioBindingSource, "Ativo", true));
-            this.ativoCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.ativoCheckBox.Location = new System.Drawing.Point(6, 16);
+            this.ativoCheckBox.ForeColor = System.Drawing.Color.White;
+            this.ativoCheckBox.Location = new System.Drawing.Point(6, 14);
             this.ativoCheckBox.Name = "ativoCheckBox";
-            this.ativoCheckBox.Size = new System.Drawing.Size(58, 24);
+            this.ativoCheckBox.Size = new System.Drawing.Size(58, 19);
             this.ativoCheckBox.TabIndex = 2;
             this.ativoCheckBox.Text = "ATIVO";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
@@ -968,9 +999,10 @@ namespace UIPrincipal
             this.textBoxObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxObservacao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Observacao", true));
             this.textBoxObservacao.Location = new System.Drawing.Point(7, 203);
+            this.textBoxObservacao.MaxLength = 1000;
             this.textBoxObservacao.Multiline = true;
             this.textBoxObservacao.Name = "textBoxObservacao";
-            this.textBoxObservacao.Size = new System.Drawing.Size(750, 52);
+            this.textBoxObservacao.Size = new System.Drawing.Size(820, 92);
             this.textBoxObservacao.TabIndex = 37;
             // 
             // labelIdPessoa
@@ -986,27 +1018,33 @@ namespace UIPrincipal
             // 
             // buttonAddFoto
             // 
+            this.buttonAddFoto.BackColor = System.Drawing.Color.White;
             this.buttonAddFoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddFoto.Location = new System.Drawing.Point(652, 165);
+            this.buttonAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddFoto.ForeColor = System.Drawing.Color.Black;
+            this.buttonAddFoto.Location = new System.Drawing.Point(722, 165);
             this.buttonAddFoto.Name = "buttonAddFoto";
             this.buttonAddFoto.Size = new System.Drawing.Size(87, 23);
             this.buttonAddFoto.TabIndex = 40;
             this.buttonAddFoto.Text = "ADD FOTO";
-            this.buttonAddFoto.UseVisualStyleBackColor = true;
+            this.buttonAddFoto.UseVisualStyleBackColor = false;
             this.buttonAddFoto.Click += new System.EventHandler(this.buttonAddFoto_Click);
             // 
             // textBoxBairro
             // 
             this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rua", true));
-            this.textBoxBairro.Location = new System.Drawing.Point(263, 117);
+            this.textBoxBairro.Location = new System.Drawing.Point(322, 117);
+            this.textBoxBairro.MaxLength = 20;
             this.textBoxBairro.Name = "textBoxBairro";
-            this.textBoxBairro.Size = new System.Drawing.Size(106, 20);
+            this.textBoxBairro.Size = new System.Drawing.Size(110, 20);
             this.textBoxBairro.TabIndex = 41;
             // 
             // groupBoxDadosPessoais
             // 
             this.groupBoxDadosPessoais.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxDadosPessoais.Controls.Add(this.groupBoxSexo);
             this.groupBoxDadosPessoais.Controls.Add(label5);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxBairro);
             this.groupBoxDadosPessoais.Controls.Add(this.buttonAddFoto);
@@ -1049,19 +1087,56 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.Controls.Add(labelEstadoCivil);
             this.groupBoxDadosPessoais.Controls.Add(labelRua);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
+            this.groupBoxDadosPessoais.ForeColor = System.Drawing.Color.White;
             this.groupBoxDadosPessoais.Location = new System.Drawing.Point(9, 12);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
-            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(763, 261);
+            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(833, 301);
             this.groupBoxDadosPessoais.TabIndex = 0;
             this.groupBoxDadosPessoais.TabStop = false;
             this.groupBoxDadosPessoais.Text = "DADOS PESSOAIS";
+            // 
+            // groupBoxSexo
+            // 
+            this.groupBoxSexo.Controls.Add(this.checkBoxMasculino);
+            this.groupBoxSexo.Controls.Add(this.checkBoxFeminino);
+            this.groupBoxSexo.ForeColor = System.Drawing.Color.White;
+            this.groupBoxSexo.Location = new System.Drawing.Point(584, 64);
+            this.groupBoxSexo.Name = "groupBoxSexo";
+            this.groupBoxSexo.Size = new System.Drawing.Size(111, 52);
+            this.groupBoxSexo.TabIndex = 35;
+            this.groupBoxSexo.TabStop = false;
+            this.groupBoxSexo.Text = "SEXO";
+            // 
+            // checkBoxMasculino
+            // 
+            this.checkBoxMasculino.AutoSize = true;
+            this.checkBoxMasculino.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxMasculino.Location = new System.Drawing.Point(5, 15);
+            this.checkBoxMasculino.Name = "checkBoxMasculino";
+            this.checkBoxMasculino.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxMasculino.TabIndex = 17;
+            this.checkBoxMasculino.Text = "MASCULINO";
+            this.checkBoxMasculino.UseVisualStyleBackColor = true;
+            this.checkBoxMasculino.CheckedChanged += new System.EventHandler(this.checkBoxMasculino_CheckedChanged);
+            // 
+            // checkBoxFeminino
+            // 
+            this.checkBoxFeminino.AutoSize = true;
+            this.checkBoxFeminino.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxFeminino.Location = new System.Drawing.Point(5, 32);
+            this.checkBoxFeminino.Name = "checkBoxFeminino";
+            this.checkBoxFeminino.Size = new System.Drawing.Size(78, 17);
+            this.checkBoxFeminino.TabIndex = 16;
+            this.checkBoxFeminino.Text = "FEMININO";
+            this.checkBoxFeminino.UseVisualStyleBackColor = true;
+            this.checkBoxFeminino.CheckedChanged += new System.EventHandler(this.checkBoxFeminino_CheckedChanged);
             // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(854, 600);
             this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.labelId_Permissao);
             this.Controls.Add(this.labelIdPlano);
@@ -1095,6 +1170,8 @@ namespace UIPrincipal
             this.groupBoxSituacao.ResumeLayout(false);
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
+            this.groupBoxSexo.ResumeLayout(false);
+            this.groupBoxSexo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1153,6 +1230,9 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonAddFoto;
         private System.Windows.Forms.TextBox textBoxBairro;
         private System.Windows.Forms.GroupBox groupBoxDadosPessoais;
+        private System.Windows.Forms.GroupBox groupBoxSexo;
+        private System.Windows.Forms.CheckBox checkBoxMasculino;
+        private System.Windows.Forms.CheckBox checkBoxFeminino;
     }
 }
 
