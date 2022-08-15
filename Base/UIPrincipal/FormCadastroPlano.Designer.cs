@@ -30,49 +30,51 @@ namespace UIPrincipal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label nomeUsuarioLabel;
-            System.Windows.Forms.Label senhaLabel;
+            System.Windows.Forms.Label labelDescricao;
+            System.Windows.Forms.Label labelValor;
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.textBoxValor = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            nomeUsuarioLabel = new System.Windows.Forms.Label();
-            senhaLabel = new System.Windows.Forms.Label();
+            this.labelDadosPlano = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            labelDescricao = new System.Windows.Forms.Label();
+            labelValor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // nomeUsuarioLabel
+            // labelDescricao
             // 
-            nomeUsuarioLabel.AutoSize = true;
-            nomeUsuarioLabel.ForeColor = System.Drawing.Color.White;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(87, 48);
-            nomeUsuarioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            nomeUsuarioLabel.Name = "nomeUsuarioLabel";
-            nomeUsuarioLabel.Size = new System.Drawing.Size(72, 13);
-            nomeUsuarioLabel.TabIndex = 0;
-            nomeUsuarioLabel.Text = "DESCRIÇÃO:";
+            labelDescricao.AutoSize = true;
+            labelDescricao.ForeColor = System.Drawing.Color.White;
+            labelDescricao.Location = new System.Drawing.Point(48, 14);
+            labelDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelDescricao.Name = "labelDescricao";
+            labelDescricao.Size = new System.Drawing.Size(72, 13);
+            labelDescricao.TabIndex = 0;
+            labelDescricao.Text = "DESCRIÇÃO:";
             // 
-            // senhaLabel
+            // labelValor
             // 
-            senhaLabel.AutoSize = true;
-            senhaLabel.ForeColor = System.Drawing.Color.White;
-            senhaLabel.Location = new System.Drawing.Point(404, 48);
-            senhaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            senhaLabel.Name = "senhaLabel";
-            senhaLabel.Size = new System.Drawing.Size(46, 13);
-            senhaLabel.TabIndex = 2;
-            senhaLabel.Text = "VALOR:";
+            labelValor.AutoSize = true;
+            labelValor.ForeColor = System.Drawing.Color.White;
+            labelValor.Location = new System.Drawing.Point(368, 14);
+            labelValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelValor.Name = "labelValor";
+            labelValor.Size = new System.Drawing.Size(46, 13);
+            labelValor.TabIndex = 2;
+            labelValor.Text = "VALOR:";
             // 
             // buttonSalvar
             // 
             this.buttonSalvar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonSalvar.BackColor = System.Drawing.Color.White;
-            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.ForeColor = System.Drawing.Color.White;
-            this.buttonSalvar.Location = new System.Drawing.Point(228, 99);
+            this.buttonSalvar.ForeColor = System.Drawing.Color.Black;
+            this.buttonSalvar.Location = new System.Drawing.Point(227, 104);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
@@ -85,10 +87,10 @@ namespace UIPrincipal
             // 
             this.buttonSair.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonSair.BackColor = System.Drawing.Color.White;
-            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.ForeColor = System.Drawing.Color.White;
-            this.buttonSair.Location = new System.Drawing.Point(307, 99);
+            this.buttonSair.ForeColor = System.Drawing.Color.Black;
+            this.buttonSair.Location = new System.Drawing.Point(306, 104);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
@@ -104,7 +106,7 @@ namespace UIPrincipal
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.planoBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(90, 64);
+            this.textBoxDescricao.Location = new System.Drawing.Point(51, 29);
             this.textBoxDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(313, 20);
@@ -113,24 +115,36 @@ namespace UIPrincipal
             // textBoxValor
             // 
             this.textBoxValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.planoBindingSource, "Valor", true));
-            this.textBoxValor.Location = new System.Drawing.Point(406, 64);
+            this.textBoxValor.Location = new System.Drawing.Point(368, 29);
             this.textBoxValor.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxValor.Name = "textBoxValor";
             this.textBoxValor.Size = new System.Drawing.Size(122, 20);
             this.textBoxValor.TabIndex = 2;
             // 
-            // label1
+            // labelDadosPlano
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(606, 40);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "INSIRA OS DADOS DO NOVO PLANO";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDadosPlano.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelDadosPlano.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDadosPlano.ForeColor = System.Drawing.Color.White;
+            this.labelDadosPlano.Location = new System.Drawing.Point(0, 0);
+            this.labelDadosPlano.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDadosPlano.Name = "labelDadosPlano";
+            this.labelDadosPlano.Size = new System.Drawing.Size(606, 34);
+            this.labelDadosPlano.TabIndex = 12;
+            this.labelDadosPlano.Text = "INSIRA OS DADOS DO NOVO PLANO";
+            this.labelDadosPlano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(labelDescricao);
+            this.groupBox1.Controls.Add(this.textBoxDescricao);
+            this.groupBox1.Controls.Add(this.textBoxValor);
+            this.groupBox1.Controls.Add(labelValor);
+            this.groupBox1.Location = new System.Drawing.Point(34, 37);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(544, 62);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
             // 
             // FormCadastroPlano
             // 
@@ -138,13 +152,10 @@ namespace UIPrincipal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(606, 133);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(senhaLabel);
-            this.Controls.Add(this.textBoxValor);
-            this.Controls.Add(nomeUsuarioLabel);
-            this.Controls.Add(this.textBoxDescricao);
+            this.Controls.Add(this.labelDadosPlano);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -153,8 +164,9 @@ namespace UIPrincipal
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -164,8 +176,9 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.TextBox textBoxValor;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDadosPlano;
         private System.Windows.Forms.BindingSource planoBindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
