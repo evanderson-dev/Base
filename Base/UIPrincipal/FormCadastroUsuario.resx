@@ -213,13 +213,25 @@
   <metadata name="usuarioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonVisualizarSenha.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bQAAAG0BjlwfygAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFJSURBVDhPjdPN
+        K0RRGMfxpzGUIgvFSEqRrKTMysrarGVQNlIWVppkLKQo+UMkZWmllBWhUSxsKDuyJu91fX+3c8d9OcVT
+        n+ac5zznObd751gQBBnEFGp4xiVmfXWSTZgt4hN7mMYuPlBJ14b1iYlZE16wkcqv4Q3N8Xy4lpiYjUCD
+        Qirf6fLFeD5cS0zMxlQYz0WU13omXx+Y5VF2hb0eyms9n2lAVPAATf7yiGq9AdGHL+iN+05Om4TqB6IG
+        KziNOv6H6rXPjW0dx+kiHyLnfsfR78a/DYiS04Ytl2vBPM7xhG2Em30NCuLGw+jBPa6wgBns4BvlTIM4
+        ogG3OEIrTqCNQ9BX04schS2h5mmQwzXO0I5DvGIQm3hHEdYFXZ5V6J8Y6UYHbqAnWcYcDqDLVQoPcqfp
+        215Ak8i+W2vEBPQEd6jC3ZXAfgBsMoSWneOCUQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="planoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 17</value>
   </metadata>
   <metadata name="openFileDialogAddFoto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>348, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxFoto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAK8AAADICAYAAACeY7GXAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH

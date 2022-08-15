@@ -41,11 +41,11 @@ namespace UIPrincipal
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
@@ -65,27 +65,30 @@ namespace UIPrincipal
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(784, 100);
             this.label1.TabIndex = 2;
-            this.label1.Text = "CADASTRO DE PESSOAS";
+            this.label1.Text = "GERENCIAMENTO DE CADASTROS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonSair
             // 
+            this.buttonSair.BackColor = System.Drawing.Color.White;
             this.buttonSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSair.FlatAppearance.BorderSize = 0;
-            this.buttonSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.buttonSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(476, 9);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(81, 24);
             this.buttonSair.TabIndex = 4;
             this.buttonSair.Text = "&CANCELAR";
-            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // panel2
@@ -97,23 +100,25 @@ namespace UIPrincipal
             this.panel2.Controls.Add(this.buttonNovo);
             this.panel2.Location = new System.Drawing.Point(0, 519);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 42);
+            this.panel2.Size = new System.Drawing.Size(784, 42);
             this.panel2.TabIndex = 1;
             // 
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonExcluir.BackColor = System.Drawing.Color.White;
             this.buttonExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExcluir.FlatAppearance.BorderSize = 0;
-            this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.Location = new System.Drawing.Point(395, 9);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 24);
             this.buttonExcluir.TabIndex = 2;
             this.buttonExcluir.Text = "&EXCLUIR";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.UseVisualStyleBackColor = false;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonAlterar
@@ -122,8 +127,9 @@ namespace UIPrincipal
             this.buttonAlterar.BackColor = System.Drawing.Color.White;
             this.buttonAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAlterar.FlatAppearance.BorderSize = 0;
-            this.buttonAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.buttonAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.ImageKey = "(nenhum/a)";
             this.buttonAlterar.Location = new System.Drawing.Point(314, 9);
@@ -137,17 +143,19 @@ namespace UIPrincipal
             // buttonNovo
             // 
             this.buttonNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNovo.BackColor = System.Drawing.Color.White;
             this.buttonNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNovo.FlatAppearance.BorderSize = 0;
-            this.buttonNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNovo.Location = new System.Drawing.Point(233, 9);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(75, 24);
             this.buttonNovo.TabIndex = 0;
             this.buttonNovo.Text = "&NOVO";
-            this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.UseVisualStyleBackColor = false;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // textBoxBuscar
@@ -156,27 +164,32 @@ namespace UIPrincipal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.Location = new System.Drawing.Point(22, 106);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(662, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(713, 20);
             this.textBoxBuscar.TabIndex = 0;
             // 
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscar.FlatAppearance.BorderSize = 0;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscar.Location = new System.Drawing.Point(690, 104);
+            this.buttonBuscar.Image = global::UIPrincipal.Properties.Resources.magnifier;
+            this.buttonBuscar.Location = new System.Drawing.Point(738, 103);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 24);
+            this.buttonBuscar.Size = new System.Drawing.Size(26, 24);
             this.buttonBuscar.TabIndex = 1;
-            this.buttonBuscar.Text = "&BUSCAR";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // usuarioDataGridView
             // 
+            this.usuarioDataGridView.AllowUserToResizeColumns = false;
+            this.usuarioDataGridView.AllowUserToResizeRows = false;
             this.usuarioDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usuarioDataGridView.AutoGenerateColumns = false;
+            this.usuarioDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.usuarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -190,10 +203,6 @@ namespace UIPrincipal
             this.usuarioDataGridView.RowHeadersVisible = false;
             this.usuarioDataGridView.Size = new System.Drawing.Size(742, 388);
             this.usuarioDataGridView.TabIndex = 5;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -227,10 +236,15 @@ namespace UIPrincipal
             this.Ativo.Name = "Ativo";
             this.Ativo.ReadOnly = true;
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Model.Usuario);
+            // 
             // FormConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.usuarioDataGridView);
             this.Controls.Add(this.buttonBuscar);

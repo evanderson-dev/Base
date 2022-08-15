@@ -54,9 +54,16 @@ namespace UIPrincipal
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            using (FormCadastroUsuario frm = new FormCadastroUsuario(usuarioBindingSource.Current))
+            if (usuarioDataGridView.Rows.Count > 1)
             {
-                frm.ShowDialog();
+                using (FormCadastroUsuario frm = new FormCadastroUsuario(usuarioBindingSource.Current))
+                {
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                return;
             }
         }
         private void FormConsultaUsuario_KeyDown(object sender, KeyEventArgs e)

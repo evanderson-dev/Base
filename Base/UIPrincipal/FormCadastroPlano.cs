@@ -32,7 +32,7 @@ namespace UIPrincipal
             {
                 planoBindingSource.EndEdit();
                 Inserir();
-                MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
+                MessageBox.Show("PLANO CADASTRADO COM SUCESSO!");
                 Close();
             }
             catch (Exception ex)
@@ -43,17 +43,17 @@ namespace UIPrincipal
 
         private void Inserir()
         {
-            PlanoBLL usuarioBLL = new PlanoBLL();
-            Plano usuario = new Plano();
+            PlanoBLL planoBLL = new PlanoBLL();
+            Plano plano = new Plano();
 
-            usuario.Id = Convert.ToInt32(textBoxId.Text);
-            usuario.Descricao = textBoxDescricao.Text;
-            usuario.Valor = textBoxValor.Text;
+            plano.Id = 0;//Convert.ToInt32(textBoxId.Text);
+            plano.Descricao = textBoxDescricao.Text;
+            plano.Valor = textBoxValor.Text;
 
             if (inserindoNovo)
-                usuarioBLL.Inserir(usuario);
+                planoBLL.Inserir(plano);
             else
-                usuarioBLL.Alterar(usuario);
+                planoBLL.Alterar(plano);
         }
     }
 }

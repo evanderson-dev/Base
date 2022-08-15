@@ -830,7 +830,8 @@
             this.Controls.Add(this.textBoxProtocolo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(870, 495);
+            this.MaximumSize = new System.Drawing.Size(870, 639);
+            this.MinimumSize = new System.Drawing.Size(870, 639);
             this.Name = "FormConsultaOS";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

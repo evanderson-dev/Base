@@ -186,6 +186,7 @@ namespace UIPrincipal
             {
                 radioButtonNivelTres.Checked = true;
             }
+            buttonVisualizarSenha_Click(sender, e);
         }
 
         private void buttonAddFoto_Click(object sender, EventArgs e)
@@ -213,7 +214,7 @@ namespace UIPrincipal
 
             if (File.Exists(destinoCompleto))
             {
-                if (MessageBox.Show("O ARQUIVO JÁ EXISTE, DESEJA SUBSTITUIR?","",MessageBoxButtons.YesNo)==DialogResult.No)
+                if (MessageBox.Show("O ARQUIVO JÁ EXISTE, DESEJA SUBSTITUIR?","",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.No)
                 {
                     return;
                 }
@@ -241,6 +242,19 @@ namespace UIPrincipal
             if (checkBoxFeminino.Checked)
             {
                 checkBoxMasculino.Checked = false;
+            }
+        }
+
+        private void buttonVisualizarSenha_Click(object sender, EventArgs e)
+        {
+            if (textBoxSenha.UseSystemPasswordChar)
+            {
+                textBoxSenha.UseSystemPasswordChar = false;
+                textBoxSenha.Text = FuncoesGlobais.Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
+            }
+            else
+            {
+                textBoxSenha.UseSystemPasswordChar = true;
             }
         }
     }

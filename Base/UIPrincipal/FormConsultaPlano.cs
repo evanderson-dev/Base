@@ -41,16 +41,15 @@ namespace UIPrincipal
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("DESEJA REALMENTE EXCLUIR ESTE PLANO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
             PlanoBLL planoBLL = new PlanoBLL();
-            int id;
-            id = Convert.ToInt32(((DataRowView)planoBindingSource.Current).Row["Id"]);
+            int id = Convert.ToInt32(((DataRowView)planoBindingSource.Current).Row["Id"]);
 
             planoBLL.Excluir(id);
             planoBindingSource.RemoveCurrent();
-            MessageBox.Show("Registro excluído com sucesso!");
+            MessageBox.Show("PLANO EXCLUÍDO COM SUCESSO!");
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)

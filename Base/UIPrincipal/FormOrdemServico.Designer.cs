@@ -58,7 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panelBotoes = new System.Windows.Forms.Panel();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
@@ -110,7 +109,6 @@
             label1CpfCNPJ = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            this.panelBotoes.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoChamadoBindingSource)).BeginInit();
@@ -123,7 +121,7 @@
             labelDescricao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             labelDescricao.AutoSize = true;
             labelDescricao.ForeColor = System.Drawing.Color.White;
-            labelDescricao.Location = new System.Drawing.Point(333, 228);
+            labelDescricao.Location = new System.Drawing.Point(32, 223);
             labelDescricao.Name = "labelDescricao";
             labelDescricao.Size = new System.Drawing.Size(72, 13);
             labelDescricao.TabIndex = 38;
@@ -280,10 +278,10 @@
             this.idDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn3});
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(23, 35);
+            this.usuarioDataGridView.Location = new System.Drawing.Point(34, 390);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.RowHeadersVisible = false;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(300, 612);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(800, 198);
             this.usuarioDataGridView.TabIndex = 10;
             // 
             // idDataGridViewTextBoxColumn
@@ -307,19 +305,20 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscar.Location = new System.Drawing.Point(248, 5);
+            this.buttonBuscar.Image = global::UIPrincipal.Properties.Resources.magnifier;
+            this.buttonBuscar.Location = new System.Drawing.Point(255, 362);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 24);
+            this.buttonBuscar.Size = new System.Drawing.Size(29, 24);
             this.buttonBuscar.TabIndex = 0;
-            this.buttonBuscar.Text = "&BUSCAR";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // textBoxBuscar
             // 
             this.textBoxBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxBuscar.Location = new System.Drawing.Point(23, 7);
+            this.textBoxBuscar.Location = new System.Drawing.Point(35, 364);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(219, 20);
             this.textBoxBuscar.TabIndex = 0;
@@ -332,7 +331,7 @@
             this.textBoxProtocolo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxProtocolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProtocolo.ForeColor = System.Drawing.Color.White;
-            this.textBoxProtocolo.Location = new System.Drawing.Point(700, 12);
+            this.textBoxProtocolo.Location = new System.Drawing.Point(400, 7);
             this.textBoxProtocolo.Name = "textBoxProtocolo";
             this.textBoxProtocolo.ReadOnly = true;
             this.textBoxProtocolo.Size = new System.Drawing.Size(136, 16);
@@ -352,7 +351,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(621, 14);
+            this.label1.Location = new System.Drawing.Point(321, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 17;
@@ -363,7 +362,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(332, 188);
+            this.label2.Location = new System.Drawing.Point(-130, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 18;
@@ -374,7 +373,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(873, 187);
+            this.label3.Location = new System.Drawing.Point(573, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
             this.label3.TabIndex = 19;
@@ -405,30 +404,18 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(498, 188);
+            this.label7.Location = new System.Drawing.Point(198, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 23;
             this.label7.Text = "STATUS:";
             // 
-            // panelBotoes
-            // 
-            this.panelBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panelBotoes.Controls.Add(this.buttonCancelar);
-            this.panelBotoes.Controls.Add(this.buttonSalvar);
-            this.panelBotoes.Controls.Add(this.buttonSair);
-            this.panelBotoes.Controls.Add(this.buttonNovo);
-            this.panelBotoes.Location = new System.Drawing.Point(329, 606);
-            this.panelBotoes.Name = "panelBotoes";
-            this.panelBotoes.Size = new System.Drawing.Size(820, 41);
-            this.panelBotoes.TabIndex = 0;
-            // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(428, 2);
+            this.buttonCancelar.Location = new System.Drawing.Point(456, 605);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(85, 37);
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 51;
             this.buttonCancelar.Text = "&CANCELAR";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -436,10 +423,10 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(339, 2);
+            this.buttonSalvar.Location = new System.Drawing.Point(367, 605);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(85, 37);
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 50;
             this.buttonSalvar.Text = "&SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -448,10 +435,10 @@
             // buttonSair
             // 
             this.buttonSair.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonSair.Location = new System.Drawing.Point(517, 2);
+            this.buttonSair.Location = new System.Drawing.Point(545, 605);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(84, 37);
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 49;
             this.buttonSair.Text = "SAIR";
             this.buttonSair.UseVisualStyleBackColor = true;
@@ -459,10 +446,10 @@
             // 
             // buttonNovo
             // 
-            this.buttonNovo.Location = new System.Drawing.Point(250, 2);
+            this.buttonNovo.Location = new System.Drawing.Point(278, 605);
             this.buttonNovo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(85, 37);
+            this.buttonNovo.Size = new System.Drawing.Size(75, 23);
             this.buttonNovo.TabIndex = 47;
             this.buttonNovo.Text = "&NOVO";
             this.buttonNovo.UseVisualStyleBackColor = true;
@@ -471,9 +458,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.panelBotoes);
+            this.panel1.Controls.Add(this.buttonCancelar);
+            this.panel1.Controls.Add(this.buttonSalvar);
             this.panel1.Controls.Add(this.comboBoxTecnicoResponsavel);
+            this.panel1.Controls.Add(this.buttonSair);
             this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.buttonNovo);
             this.panel1.Controls.Add(this.comboBoxlLigarAntes);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label5);
@@ -494,8 +484,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(870, 639);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1160, 650);
+            this.panel1.Size = new System.Drawing.Size(870, 639);
             this.panel1.TabIndex = 1;
             // 
             // comboBoxTecnicoResponsavel
@@ -505,7 +496,7 @@
             this.comboBoxTecnicoResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTecnicoResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
-            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(876, 203);
+            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(576, 198);
             this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
             this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(258, 21);
             this.comboBoxTecnicoResponsavel.TabIndex = 46;
@@ -516,7 +507,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(621, 189);
+            this.label13.Location = new System.Drawing.Point(321, 184);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
             this.label13.TabIndex = 45;
@@ -532,7 +523,7 @@
             this.comboBoxlLigarAntes.Items.AddRange(new object[] {
             "SIM",
             "NAO"});
-            this.comboBoxlLigarAntes.Location = new System.Drawing.Point(624, 204);
+            this.comboBoxlLigarAntes.Location = new System.Drawing.Point(324, 199);
             this.comboBoxlLigarAntes.Name = "comboBoxlLigarAntes";
             this.comboBoxlLigarAntes.Size = new System.Drawing.Size(78, 21);
             this.comboBoxlLigarAntes.TabIndex = 44;
@@ -542,7 +533,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(789, 187);
+            this.label10.Location = new System.Drawing.Point(489, 182);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 43;
@@ -553,7 +544,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(705, 187);
+            this.label5.Location = new System.Drawing.Point(405, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 42;
@@ -563,7 +554,7 @@
             // 
             this.maskedTextBoxPrazo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maskedTextBoxPrazo.BackColor = System.Drawing.Color.White;
-            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(792, 204);
+            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(492, 199);
             this.maskedTextBoxPrazo.Mask = "00-00-0000";
             this.maskedTextBoxPrazo.Name = "maskedTextBoxPrazo";
             this.maskedTextBoxPrazo.ReadOnly = true;
@@ -574,7 +565,7 @@
             // 
             this.maskedTextBoxDataAbertura.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
-            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(708, 204);
+            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(408, 199);
             this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
             this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
             this.maskedTextBoxDataAbertura.ReadOnly = true;
@@ -588,7 +579,7 @@
             this.comboBoxStatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatusOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxStatusOS.FormattingEnabled = true;
-            this.comboBoxStatusOS.Location = new System.Drawing.Point(501, 204);
+            this.comboBoxStatusOS.Location = new System.Drawing.Point(201, 199);
             this.comboBoxStatusOS.Name = "comboBoxStatusOS";
             this.comboBoxStatusOS.Size = new System.Drawing.Size(117, 21);
             this.comboBoxStatusOS.TabIndex = 39;
@@ -599,7 +590,7 @@
             this.comboBoxTipoChamado.BackColor = System.Drawing.Color.White;
             this.comboBoxTipoChamado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoChamado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxTipoChamado.Location = new System.Drawing.Point(335, 204);
+            this.comboBoxTipoChamado.Location = new System.Drawing.Point(35, 199);
             this.comboBoxTipoChamado.Name = "comboBoxTipoChamado";
             this.comboBoxTipoChamado.Size = new System.Drawing.Size(160, 21);
             this.comboBoxTipoChamado.TabIndex = 0;
@@ -640,7 +631,7 @@
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxNumCasa);
             this.groupBoxDadosPessoais.Controls.Add(labelRua);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
-            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(329, 35);
+            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(29, 30);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
             this.groupBoxDadosPessoais.Size = new System.Drawing.Size(811, 147);
             this.groupBoxDadosPessoais.TabIndex = 0;
@@ -814,7 +805,7 @@
             // 
             this.textBoxDescricao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDescricao.Location = new System.Drawing.Point(334, 244);
+            this.textBoxDescricao.Location = new System.Drawing.Point(34, 239);
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(800, 100);
@@ -836,11 +827,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 650);
+            this.ClientSize = new System.Drawing.Size(870, 639);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1160, 650);
             this.Name = "FormOrdemServico";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -849,7 +839,6 @@
             this.Load += new System.EventHandler(this.FormOrdemServico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            this.panelBotoes.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxDadosPessoais.ResumeLayout(false);
@@ -875,7 +864,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panelBotoes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBoxDadosPessoais;
         private System.Windows.Forms.Label labelIdPessoa;

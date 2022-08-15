@@ -80,6 +80,7 @@ namespace UIPrincipal
             this.radioButtonNivelDois = new System.Windows.Forms.RadioButton();
             this.radioButtonNivelTres = new System.Windows.Forms.RadioButton();
             this.groupBoxDadosDeAcesso = new System.Windows.Forms.GroupBox();
+            this.buttonVisualizarSenha = new System.Windows.Forms.Button();
             this.groupBoxDadosCliente = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxFimContrato = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxInicioContrato = new System.Windows.Forms.MaskedTextBox();
@@ -166,7 +167,7 @@ namespace UIPrincipal
             // 
             nomeUsuarioLabel.AutoSize = true;
             nomeUsuarioLabel.ForeColor = System.Drawing.Color.White;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(18, 15);
+            nomeUsuarioLabel.Location = new System.Drawing.Point(15, 18);
             nomeUsuarioLabel.Name = "nomeUsuarioLabel";
             nomeUsuarioLabel.Size = new System.Drawing.Size(43, 13);
             nomeUsuarioLabel.TabIndex = 3;
@@ -176,7 +177,7 @@ namespace UIPrincipal
             // 
             labelSenha.AutoSize = true;
             labelSenha.ForeColor = System.Drawing.Color.White;
-            labelSenha.Location = new System.Drawing.Point(174, 15);
+            labelSenha.Location = new System.Drawing.Point(171, 18);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new System.Drawing.Size(47, 13);
             labelSenha.TabIndex = 0;
@@ -497,7 +498,7 @@ namespace UIPrincipal
             // 
             this.textBoxNomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
             this.textBoxNomeUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxNomeUsuario.Location = new System.Drawing.Point(21, 31);
+            this.textBoxNomeUsuario.Location = new System.Drawing.Point(18, 34);
             this.textBoxNomeUsuario.MaxLength = 150;
             this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
             this.textBoxNomeUsuario.Size = new System.Drawing.Size(150, 20);
@@ -523,7 +524,7 @@ namespace UIPrincipal
             // textBoxSenha
             // 
             this.textBoxSenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
-            this.textBoxSenha.Location = new System.Drawing.Point(177, 31);
+            this.textBoxSenha.Location = new System.Drawing.Point(174, 34);
             this.textBoxSenha.MaxLength = 150;
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(150, 20);
@@ -669,6 +670,7 @@ namespace UIPrincipal
             // 
             // groupBoxDadosDeAcesso
             // 
+            this.groupBoxDadosDeAcesso.Controls.Add(this.buttonVisualizarSenha);
             this.groupBoxDadosDeAcesso.Controls.Add(this.textBoxNomeUsuario);
             this.groupBoxDadosDeAcesso.Controls.Add(labelSenha);
             this.groupBoxDadosDeAcesso.Controls.Add(nomeUsuarioLabel);
@@ -680,6 +682,20 @@ namespace UIPrincipal
             this.groupBoxDadosDeAcesso.TabIndex = 1;
             this.groupBoxDadosDeAcesso.TabStop = false;
             this.groupBoxDadosDeAcesso.Text = "DADOS DE ACESSO";
+            // 
+            // buttonVisualizarSenha
+            // 
+            this.buttonVisualizarSenha.BackColor = System.Drawing.Color.White;
+            this.buttonVisualizarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVisualizarSenha.FlatAppearance.BorderSize = 0;
+            this.buttonVisualizarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVisualizarSenha.Image = ((System.Drawing.Image)(resources.GetObject("buttonVisualizarSenha.Image")));
+            this.buttonVisualizarSenha.Location = new System.Drawing.Point(304, 35);
+            this.buttonVisualizarSenha.Name = "buttonVisualizarSenha";
+            this.buttonVisualizarSenha.Size = new System.Drawing.Size(17, 17);
+            this.buttonVisualizarSenha.TabIndex = 4;
+            this.buttonVisualizarSenha.UseVisualStyleBackColor = false;
+            this.buttonVisualizarSenha.Click += new System.EventHandler(this.buttonVisualizarSenha_Click);
             // 
             // groupBoxDadosCliente
             // 
@@ -1010,6 +1026,7 @@ namespace UIPrincipal
             this.labelIdPessoa.BackColor = System.Drawing.Color.White;
             this.labelIdPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelIdPessoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id", true));
+            this.labelIdPessoa.ForeColor = System.Drawing.Color.Black;
             this.labelIdPessoa.Location = new System.Drawing.Point(6, 39);
             this.labelIdPessoa.Name = "labelIdPessoa";
             this.labelIdPessoa.Size = new System.Drawing.Size(58, 20);
@@ -1233,6 +1250,7 @@ namespace UIPrincipal
         private System.Windows.Forms.GroupBox groupBoxSexo;
         private System.Windows.Forms.CheckBox checkBoxMasculino;
         private System.Windows.Forms.CheckBox checkBoxFeminino;
+        private System.Windows.Forms.Button buttonVisualizarSenha;
     }
 }
 

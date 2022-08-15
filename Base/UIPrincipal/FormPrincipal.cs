@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -174,13 +175,15 @@ namespace UIPrincipal
                 //tabControlConsulta.TabPages.Insert(index, tabPageCadastrados);
             }
             tabControlConsulta.SelectTab(1);
+            cadastrarPessoaToolStripMenuItem.Visible = true;
+            deletarPessoaToolStripMenuItem.Visible = true;
+            editarPessoaToolStripMenuItem.Visible = true;
         }
 
         private void buttonBuscarCadastro_Click(object sender, EventArgs e)
         {
             if (tabControlConsulta.SelectedIndex == 0)
             {
-                //labelFilto.Visible = false;
                 if (textBoxBuscarCadastro.Text == "")
                 {
                     dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
@@ -321,11 +324,15 @@ namespace UIPrincipal
             {
                 buttonFecharAba.Size = new Size(11,11);
                 buttonFecharAba.Location = new Point(181,37);
+                deletarPessoaToolStripMenuItem.Visible = false;
+                editarPessoaToolStripMenuItem.Visible = false;
             }
             if (tabControlConsulta.SelectedIndex == 1 && buttonFecharAba.Visible == true)
             {
                 buttonFecharAba.Size = new Size(13,13);
                 buttonFecharAba.Location = new Point(181,35);
+                deletarPessoaToolStripMenuItem.Visible = true;
+                editarPessoaToolStripMenuItem.Visible = true;
             }
         }
 
@@ -397,8 +404,56 @@ namespace UIPrincipal
 
         private void editarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             using (FormCadastroUsuario frm = new FormCadastroUsuario(usuarioBindingSource.Current))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void editarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (usuarioDataGridView.Rows.Count > 1)
+            {
+                using (FormCadastroUsuario frm = new FormCadastroUsuario(usuarioBindingSource.Current))
+                {
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void deletarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (usuarioDataGridView.Rows.Count > 1)
+            {
+                if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
+                    if ((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"] != "")
+                    {
+                        File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
+                    }
+                    usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
+                    usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
+                    MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void cadastrarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
                 frm.ShowDialog();
             }
