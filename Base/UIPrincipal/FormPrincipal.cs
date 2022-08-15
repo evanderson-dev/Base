@@ -340,8 +340,8 @@ namespace UIPrincipal
         {
             if (e.Button == MouseButtons.Right)
             {
-                mouse_event(MOUSEEVENTF_LEFTDOWN, e.X, e.Y, 0, 0);
-                mouse_event(MOUSEEVENTF_LEFTUP, e.X, e.Y, 0, 0);
+                FuncoesGlobais.mouse_event(FuncoesGlobais.MOUSEEVENTF_LEFTDOWN, e.X, e.Y, 0, 0);
+                FuncoesGlobais.mouse_event(FuncoesGlobais.MOUSEEVENTF_LEFTUP, e.X, e.Y, 0, 0);
                 modificarProtcolo = true;
             }
         }
@@ -349,17 +349,11 @@ namespace UIPrincipal
         {
             if (e.Button == MouseButtons.Right)
             {
-                mouse_event(MOUSEEVENTF_LEFTDOWN, e.X, e.Y, 0, 0);
-                mouse_event(MOUSEEVENTF_LEFTUP, e.X, e.Y, 0, 0);
+                FuncoesGlobais.mouse_event(FuncoesGlobais.MOUSEEVENTF_LEFTDOWN, e.X, e.Y, 0, 0);
+                FuncoesGlobais.mouse_event(FuncoesGlobais.MOUSEEVENTF_LEFTUP, e.X, e.Y, 0, 0);
                 modificarProtcolo = true;
             }
         }
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
-
-        public const int MOUSEEVENTF_LEFTDOWN = 0x02;
-        public const int MOUSEEVENTF_LEFTUP = 0x04;
 
         private void visualizarDetalhesToolStripMenuItem_Click(object sender, EventArgs e)
         {
