@@ -756,27 +756,16 @@ INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep,
 GO
 
 INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('admin', 'YWRtaW4=', 'ADMINISTRADOR DO SISTEMA', '01-01-1995', '999.999.999-99', 1, 1, 4, 3, '', 1)
-GO
-
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('', '', 'USUARIO TESTE UM', '01-01-2001', '111.222.111-22', 1, 1, 1, 1, '', 1)
-GO
-
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('', '', 'USUARIO TESTE DOIS', '02-02-2002', '222.222.222-22', 1, 1, 1, 1, '', 0)
-GO
-
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('', '', 'USUARIO TESTE TRES', '03-03-2003', '333.333.333.33', 1, 0, 1, 1, '', 1)
-GO
-
-INSERT INTO Pessoa(NomeUsuario, Senha, NomeCompleto, DataNascimento, Cpf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto, Ativo)
-	VALUES ('', '', 'USUARIO TESTE QUATRO', '04-04-2004', '444.444.444.44', 1, 0, 1, 1, '', 0)
+	VALUES ('admin', 'YWRtaW4=', 'ADMINISTRADOR DO SISTEMA', '01-01-1995', '999.999.999-99', 1, 1, 4, 3, '', 1),
+		   ('', '', 'USUARIO TESTE UM', '01-01-2001', '111.222.111-22', 1, 1, 1, 1, '', 1),
+		   ('', '', 'USUARIO TESTE DOIS', '02-02-2002', '222.222.222-22', 1, 1, 1, 1, '', 0),
+		   ('', '', 'USUARIO TESTE TRES', '03-03-2003', '333.333.333.33', 1, 0, 1, 1, '', 1),
+		   ('', '', 'USUARIO TESTE QUATRO', '04-04-2004', '444.444.444.44', 1, 0, 1, 1, '', 0)
 GO
 
 INSERT INTO Pessoa(Ativo, NomeUsuario, Senha, NomeCompleto, DataNascimento, Cep, Rua, NumCasa, Bairro, EstadoCivil, Nacionalidade, Cpf, Rg, OrgaoExpeditor, Email, Telefone, CelularUm, CelularDois, Cidade, Uf, Cliente, Funcionario, Id_Plano, Id_Permissao, Foto)
-	VALUES (1, '', '', 'CLIENTE TESTE UM', '05-01-1999', '77827150', 'RUA UM', '541', 'SETOR UM', '', '', '10000000001', '', '', 'clienteum@email.com', '6334110001', '63992010001', '63992019202', 'ARAGUAINA', 'TO', 1, 0, 1, '', '')
+	VALUES (1, '', '', 'CLIENTE TESTE UM', '05-01-1999', '77827150', 'RUA UM', '541', 'SETOR UM', '', '', '11111111112', '', '', 'cliente_um@email.com', '6334110001', '63992010001', '63992019201', 'ARAGUAINA', 'TO', 1, 0, 1, 0, ''),
+		   (1, '', '', 'CLIENTE TESTE DOIS', '06-01-2000', '77827150', 'RUA DOIS', '542', 'SETOR DOIS', '', '', '11111111113', '', '', 'cliente_dois@email.com', '6334110002', '63992010002', '63992019202', 'ARAGUAINA', 'TO', 1, 0, 1, 0, '')
 GO
 
 EXEC SP_AbrirOrdemServico 0, 2022080101, 1, 'INSTALAÇÃO FIBRA','REALIZAR A INSTALAÇÃO E CONFIGURAÇÃO DO ROTEADOR', '28-07-2022', '30-07-2022', 'TECNICO JÃO', 'ATEND. UM', 'ENCAMINHADO', 'SIM'
@@ -795,9 +784,9 @@ GO
 
 --EXEC SP_BuscarOS '123456789'
 --EXEC SP_BuscarOSAberta
-SELECT Protocolo, Id_Cliente, TipoChamado, Descricao, DataDeFechamento, EstatusOS, MotivoFechamento FROM OrdemServico
+--SELECT Protocolo, Id_Cliente, TipoChamado, Descricao, DataDeFechamento, EstatusOS, MotivoFechamento FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
 --SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
-SELECT NomeUsuario, Senha, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
+SELECT NomeUsuario, Senha, NomeCompleto, Cliente, Funcionario, Ativo, Id_Permissao FROM Pessoa
 --GO
