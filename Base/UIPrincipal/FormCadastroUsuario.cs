@@ -157,6 +157,18 @@ namespace UIPrincipal
         }
         public void checkBoxFuncionario_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBoxFuncionario.Checked)
+            {
+                textBoxNomeUsuario.Enabled = true;
+                textBoxSenha.Enabled = true;
+            }
+            else
+            {
+                textBoxNomeUsuario.Text = null;
+                textBoxSenha.Text = null;
+                textBoxNomeUsuario.Enabled = false;
+                textBoxSenha.Enabled = false;
+            }
             if (!checkBoxFuncionario.Checked)
                 maskedTextBoxDataAdmissao.Text = null;
             else if (inserindoNovo)
@@ -167,25 +179,35 @@ namespace UIPrincipal
             if (inserindoNovo)
             {// SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
                 checkBoxCliente.Checked = false;
+                textBoxNomeUsuario.Enabled = false;
+                textBoxSenha.Enabled = false;
             }
             else
             {
                 pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
                 textBoxSenha.Text = FuncoesGlobais.Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
-            }
-                        
+
+                if (((int)((DataRowView)usuarioBindingSource.Current).Row["Id_Permissao"]) == 1)
+                {
+                    radioButtonNivelUm.Checked = true;
+                }
+                else if (((int)((DataRowView)usuarioBindingSource.Current).Row["Id_Permissao"]) == 2)
+                {
+                    radioButtonNivelDois.Checked = true;
+                }
+                else if (((int)((DataRowView)usuarioBindingSource.Current).Row["Id_Permissao"]) == 0)
+                {
+                    radioButtonNivelUm.Checked = false;
+                    radioButtonNivelDois.Checked = false;
+                    radioButtonNivelTres.Checked = false;
+                }
+                else
+                {
+                    radioButtonNivelTres.Checked = true;
+                }
+            }          
             comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
-                        
-            if (labelId_Permissao.Text == "1")// CARREGAMENTO DO NIVEL DE ACESSO DO CLIENTE
-            {
-                radioButtonNivelUm.Checked = true;
-            } else if (labelId_Permissao.Text == "2")
-            {
-                radioButtonNivelDois.Checked = true;
-            } else
-            {
-                radioButtonNivelTres.Checked = true;
-            }
+
             buttonVisualizarSenha_Click(sender, e);
         }
 
@@ -233,16 +255,12 @@ namespace UIPrincipal
         private void checkBoxMasculino_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxMasculino.Checked)
-            {
                 checkBoxFeminino.Checked = false;
-            }
         }
         private void checkBoxFeminino_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxFeminino.Checked)
-            {
                 checkBoxMasculino.Checked = false;
-            }
         }
 
         private void buttonVisualizarSenha_Click(object sender, EventArgs e)
