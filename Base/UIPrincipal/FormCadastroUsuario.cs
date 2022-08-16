@@ -247,14 +247,17 @@ namespace UIPrincipal
 
         private void buttonVisualizarSenha_Click(object sender, EventArgs e)
         {
-            if (textBoxSenha.UseSystemPasswordChar)
+            if (!inserindoNovo)
             {
-                textBoxSenha.UseSystemPasswordChar = false;
-                textBoxSenha.Text = FuncoesGlobais.Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
-            }
-            else
-            {
-                textBoxSenha.UseSystemPasswordChar = true;
+                if (textBoxSenha.UseSystemPasswordChar)
+                {
+                    textBoxSenha.UseSystemPasswordChar = false;
+                    textBoxSenha.Text = FuncoesGlobais.Base64Decode((string)((DataRowView)usuarioBindingSource.Current).Row["Senha"]);
+                }
+                else
+                {
+                    textBoxSenha.UseSystemPasswordChar = true;
+                }
             }
         }
     }
