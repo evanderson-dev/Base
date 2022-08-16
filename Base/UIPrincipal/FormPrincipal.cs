@@ -247,11 +247,11 @@ namespace UIPrincipal
 
         private void usuarioDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textoCopiado = usuarioDataGridView.CurrentCell.Value.ToString();
             try
             {
                 if (usuarioDataGridView.Rows.Count > 1)
                 {
+                    textoCopiado = usuarioDataGridView.CurrentCell.Value.ToString();
                     usuarioDataGridView.CurrentRow.Selected = true;
                     cpfPessoa = usuarioDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
                 }
