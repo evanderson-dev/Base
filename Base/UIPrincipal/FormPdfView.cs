@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Infra;
 using PdfiumViewer;
 using System;
 using System.Collections.Generic;
@@ -21,24 +22,12 @@ namespace UIPrincipal
             pdf = new PdfViewer();
             this.Controls.Add(pdf);
             pdf.Width = this.Width - 20;
-            pdf.Height = this.Height - 40;
-        }
-        public FormPdfView(object _current)
-        {
-            InitializeComponent();
-            pdf = new PdfViewer();
-            this.Controls.Add(pdf);
-            pdf.Width = this.Width - 20;
-            pdf.Height = this.Height - 40;
-        }
-
-        private void buttonAbrirPDF_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                openfile(dialog.FileName);
-            }
+            pdf.Height = this.Height - 80;
+            //pdf.Width = this.Width;
+            //pdf.Height = this.Height;
+            pdf.Anchor = AnchorStyles.Top;
+            pdf.AutoSize = true;
+            openfile(Constante.DiretorioDePDF + "\\visualizarImpressao.pdf");
         }
         public void openfile(string filepath)
         {
@@ -47,7 +36,5 @@ namespace UIPrincipal
             PdfDocument pdfDocument = PdfDocument.Load(stream);
             pdf.Document = pdfDocument;
         }
-        //var arq = @"c:\dados\teste.pdf");
-        //openfile(arq);
     }
 }

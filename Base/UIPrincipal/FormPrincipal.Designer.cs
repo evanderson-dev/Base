@@ -42,9 +42,6 @@ namespace UIPrincipal
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tIPODECHAMADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pLANOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.opçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOBREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,7 +129,6 @@ namespace UIPrincipal
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gRUPODEUSUARIOToolStripMenuItem,
-            this.ferramentasToolStripMenuItem,
             this.aJUDAToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -172,28 +168,6 @@ namespace UIPrincipal
             this.pLANOToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.pLANOToolStripMenuItem.Text = "&PLANO";
             this.pLANOToolStripMenuItem.Click += new System.EventHandler(this.pLANOToolStripMenuItem_Click);
-            // 
-            // ferramentasToolStripMenuItem
-            // 
-            this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personalizarToolStripMenuItem,
-            this.opçõesToolStripMenuItem});
-            this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
-            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.ferramentasToolStripMenuItem.Text = "&FERRAMENTAS";
-            // 
-            // personalizarToolStripMenuItem
-            // 
-            this.personalizarToolStripMenuItem.Name = "personalizarToolStripMenuItem";
-            this.personalizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.personalizarToolStripMenuItem.Text = "PERSONALIZAR";
-            // 
-            // opçõesToolStripMenuItem
-            // 
-            this.opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
-            this.opçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.opçõesToolStripMenuItem.Text = "OPÇÕES";
             // 
             // aJUDAToolStripMenuItem
             // 
@@ -605,7 +579,8 @@ namespace UIPrincipal
             // 
             // usuarioDataGridView
             // 
-            this.usuarioDataGridView.AllowUserToOrderColumns = true;
+            this.usuarioDataGridView.AllowUserToResizeColumns = false;
+            this.usuarioDataGridView.AllowUserToResizeRows = false;
             this.usuarioDataGridView.AutoGenerateColumns = false;
             this.usuarioDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.usuarioDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -762,14 +737,13 @@ namespace UIPrincipal
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.imprimirToolStripMenuItem.Image = global::UIPrincipal.Properties.Resources.printer;
+            this.imprimirToolStripMenuItem.Image = global::UIPrincipal.Properties.Resources.page_white_magnify;
             this.imprimirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.imprimirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
             this.imprimirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.imprimirToolStripMenuItem.Text = "&Imprimir";
-            this.imprimirToolStripMenuItem.ToolTipText = "Imprimir O.S";
+            this.imprimirToolStripMenuItem.ToolTipText = "Visualizar Impressão";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
@@ -944,9 +918,6 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNovo;
         private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deligarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ferramentasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem personalizarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem opçõesToolStripMenuItem;
         private ORDEMSERVICODataSetOsPendente oRDEMSERVICODataSetOsPendente;
         private System.Windows.Forms.BindingSource sPBuscarOSPendenteBindingSource;
         private ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter sP_BuscarOSPendenteTableAdapter;

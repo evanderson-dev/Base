@@ -142,12 +142,12 @@ namespace UIPrincipal
             {
                 BindingSource bindingSource = new BindingSource();
                 bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
-                using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
+                Impressao.GerarArquivoPdfOS(bindingSource);
+
+                using (FormPdfView formPdfView = new FormPdfView())
                 {
-                    frm.ShowDialog();
+                    formPdfView.ShowDialog();
                 }
-                //FormPdfView formPdfView = new FormPdfView();
-                //formPdfView.ShowDialog();
             }
         }
 

@@ -147,10 +147,23 @@ namespace UIPrincipal
             string pastaDestino = Constante.DiretorioDeImagem;
             string destinoCompleto = "";
 
+            void addLogo()
+            {
+                Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logoSenai.png");
+                logo.ScaleToFit(100f, 100f);
+                PdfPCell cell_Imagem = new PdfPCell(new Phrase($"IMG", new Font(iTextSharp.text.Font.NORMAL, 10, 1)));
+                cell_Imagem.AddElement(logo);
+                cell_Imagem.Border = 0;
+                cell_Imagem.PaddingBottom = 20;
+                cell_Imagem.Colspan = 2;
+                table.AddCell(cell_Imagem);
+            }
+
             try
             {
                 if (!Directory.Exists(pastaDestino))
                 {
+                    OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
                     MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Directory.CreateDirectory(pastaDestino);
                     openFileDialogAddFoto.ShowDialog();
@@ -160,22 +173,37 @@ namespace UIPrincipal
                     System.IO.File.Copy(origemCompleto, destinoCompleto, true);
                     File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                else
+                {
+                    try
+                    {
+                        addLogo();
+                    }
+                    catch (Exception ex)
+                    {
+                        if ((MessageBox.Show($"{ex.Message}, \n\nDESEJA SELECIONAR UMA LOGO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                        {
+                            OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
+                            Directory.CreateDirectory(pastaDestino);
+                            openFileDialogAddFoto.ShowDialog();
+                            origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
+                            foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
+                            destinoCompleto = pastaDestino + foto;
+                            System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+                            File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
 
-            try
-            {
-                Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logoSenai.png");
-                logo.ScaleToFit(100f, 100f);
-                PdfPCell cell_Imagem = new PdfPCell(new Phrase($"IMG", new Font(iTextSharp.text.Font.NORMAL, 10, (int)System.Drawing.FontStyle.Bold)));
-                cell_Imagem.AddElement(logo);
-                cell_Imagem.Border = 0;
-                cell_Imagem.PaddingBottom = 20;
-                cell_Imagem.Colspan = 2;
-                table.AddCell(cell_Imagem);
+                            addLogo();
+                        }
+                        else
+                        {
+                            PdfPCell cell_Imagem = new PdfPCell(new Phrase($" "));
+                            cell_Imagem.Border = 0;
+                            cell_Imagem.PaddingBottom = 20;
+                            cell_Imagem.Colspan = 2;
+                            table.AddCell(cell_Imagem);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
