@@ -1051,7 +1051,7 @@ namespace UIPrincipal
             // textBoxBairro
             // 
             this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rua", true));
+            this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Bairro", true));
             this.textBoxBairro.Location = new System.Drawing.Point(322, 117);
             this.textBoxBairro.MaxLength = 20;
             this.textBoxBairro.Name = "textBoxBairro";

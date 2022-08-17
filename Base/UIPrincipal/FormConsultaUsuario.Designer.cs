@@ -58,7 +58,7 @@ namespace UIPrincipal
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 100);
+            this.panel1.Size = new System.Drawing.Size(854, 100);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -68,7 +68,7 @@ namespace UIPrincipal
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(784, 100);
+            this.label1.Size = new System.Drawing.Size(854, 100);
             this.label1.TabIndex = 2;
             this.label1.Text = "GERENCIAMENTO DE CADASTROS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,7 +83,7 @@ namespace UIPrincipal
             this.buttonSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(476, 9);
+            this.buttonSair.Location = new System.Drawing.Point(512, 7);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(81, 24);
             this.buttonSair.TabIndex = 4;
@@ -93,14 +93,14 @@ namespace UIPrincipal
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.buttonSair);
             this.panel2.Controls.Add(this.buttonExcluir);
             this.panel2.Controls.Add(this.buttonAlterar);
             this.panel2.Controls.Add(this.buttonNovo);
-            this.panel2.Location = new System.Drawing.Point(0, 519);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 558);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 42);
+            this.panel2.Size = new System.Drawing.Size(854, 42);
             this.panel2.TabIndex = 1;
             // 
             // buttonExcluir
@@ -113,7 +113,7 @@ namespace UIPrincipal
             this.buttonExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(395, 9);
+            this.buttonExcluir.Location = new System.Drawing.Point(431, 7);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 24);
             this.buttonExcluir.TabIndex = 2;
@@ -132,7 +132,7 @@ namespace UIPrincipal
             this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.ImageKey = "(nenhum/a)";
-            this.buttonAlterar.Location = new System.Drawing.Point(314, 9);
+            this.buttonAlterar.Location = new System.Drawing.Point(350, 7);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 24);
             this.buttonAlterar.TabIndex = 1;
@@ -150,7 +150,7 @@ namespace UIPrincipal
             this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNovo.Location = new System.Drawing.Point(233, 9);
+            this.buttonNovo.Location = new System.Drawing.Point(269, 7);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(75, 24);
             this.buttonNovo.TabIndex = 0;
@@ -164,21 +164,22 @@ namespace UIPrincipal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.Location = new System.Drawing.Point(22, 106);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(713, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(812, 20);
             this.textBoxBuscar.TabIndex = 0;
             // 
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscar.BackColor = System.Drawing.Color.White;
             this.buttonBuscar.FlatAppearance.BorderSize = 0;
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.Image = global::UIPrincipal.Properties.Resources.magnifier;
-            this.buttonBuscar.Location = new System.Drawing.Point(738, 103);
+            this.buttonBuscar.Location = new System.Drawing.Point(814, 107);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(26, 24);
+            this.buttonBuscar.Size = new System.Drawing.Size(18, 18);
             this.buttonBuscar.TabIndex = 1;
-            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.UseVisualStyleBackColor = false;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // usuarioDataGridView
@@ -201,7 +202,7 @@ namespace UIPrincipal
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.ReadOnly = true;
             this.usuarioDataGridView.RowHeadersVisible = false;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(742, 388);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(812, 427);
             this.usuarioDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn2
@@ -245,7 +246,7 @@ namespace UIPrincipal
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(854, 600);
             this.Controls.Add(this.usuarioDataGridView);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.panel2);
