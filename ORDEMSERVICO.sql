@@ -803,6 +803,31 @@ AS
 	WHERE EstatusOS = 'ENCAMINHADO'
 GO
 
+CREATE PROC SP_BuscarSuportes
+	@Filtro VARCHAR(10) = ''
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	MotivoFechamento,
+	Pessoa.NomeCompleto AS NomeCompleto
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE Id_Cliente = @filtro
+GO
+
+--SP_BuscarSuportes '2'
+--SP_BuscarOSPendente
+
 CREATE PROC SP_FecharOrdemServico
 	@Id INT,
 	@MotivoFechamento VARCHAR(1000),
