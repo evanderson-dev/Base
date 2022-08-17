@@ -499,5 +499,15 @@ namespace UIPrincipal
                 checkBoxEncaminhado.Checked = false;
             }
         }
+
+        private void exibirDetalhesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BindingSource bindingSourceConsultaCadastro = new BindingSource();
+            bindingSourceConsultaCadastro.DataSource = usuarioBLL.Buscar(cpfPessoa);
+            using (FormDetalhesPessoa frm = new FormDetalhesPessoa(bindingSourceConsultaCadastro))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
