@@ -97,6 +97,44 @@ namespace DAL
             }
         }
 
+        public DataTable BuscarSuportes(string _filtro)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection();
+
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;//ESTRUTURA DE CONEXÃO
+                SqlCommand cmd = new SqlCommand();
+                da.SelectCommand = cmd;
+                da.SelectCommand.Connection = cn;
+                da.SelectCommand.CommandText = "SP_BuscarSuportes";//PROCEDURE DO BANCO SQL
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;//TIPO DE COMANDO QUE SERÁ EXECUTADO
+
+                SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
+                pfiltro.Value = _filtro;
+                da.SelectCommand.Parameters.Add(pfiltro);
+
+                cn.Open();//ABERTURA DA CONEXÃO COM O BANCO
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public DataTable BuscarOrdemServico(string _filtro)
         {
             SqlDataAdapter da = new SqlDataAdapter();

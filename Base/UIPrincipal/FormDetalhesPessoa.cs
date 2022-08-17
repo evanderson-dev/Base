@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -48,6 +49,8 @@ namespace UIPrincipal
             {
                 radioButtonNivelTres.Checked = true;
             }
+            OrdemServicoBLL ordemServicoBLL = new OrdemServicoBLL();
+            dataGridViewSuportes.DataSource = ordemServicoBLL.BuscarSuportes(Convert.ToString(((DataRowView)usuarioBindingSource.Current).Row["Id"]));
         }
     }
 }
