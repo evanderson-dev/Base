@@ -188,7 +188,22 @@ namespace UIPrincipal
             {
                 if (textBoxBuscarCadastro.Text == "")
                 {
-                    dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+                    if (checkBoxFechada.Checked == true)
+                    {
+                        dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSFechada();
+                    }
+                    else if (checkBoxAberto.Checked == true)
+                    {
+                        dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSAberta();
+                    }
+                    else if (checkBoxEncaminhado.Checked == true)
+                    {
+                        dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSEncaminhada();
+                    }
+                    else
+                    {
+                        dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+                    }
                 }
                 else
                 {
@@ -233,6 +248,9 @@ namespace UIPrincipal
             {
                 textBoxBuscarCadastro.Text = "";
                 dataGridViewOSAbertas.DataSource = ordemServicoBLL.BuscarOSPendente();
+                checkBoxAberto.Checked = false;
+                checkBoxFechada.Checked = false;
+                checkBoxEncaminhado.Checked = false;
             }
             else
             {
@@ -452,6 +470,33 @@ namespace UIPrincipal
             using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
                 frm.ShowDialog();
+            }
+        }
+
+        private void checkBoxAberto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAberto.Checked == true)
+            {
+                checkBoxEncaminhado.Checked = false;
+                checkBoxFechada.Checked = false;
+            }
+        }
+
+        private void checkBoxEncaminhado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxEncaminhado.Checked == true)
+            {
+                checkBoxAberto.Checked = false;
+                checkBoxFechada.Checked = false;
+            }
+        }
+
+        private void checkBoxFechada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFechada.Checked == true)
+            {
+                checkBoxAberto.Checked = false;
+                checkBoxEncaminhado.Checked = false;
             }
         }
     }

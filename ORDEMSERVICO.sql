@@ -761,6 +761,48 @@ AS
 	WHERE EstatusOS = 'FECHADO'
 GO
 
+CREATE PROC SP_BuscarOSAberta
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	MotivoFechamento,
+	Pessoa.NomeCompleto AS NomeCompleto
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE EstatusOS = 'ABERTO'
+GO
+
+CREATE PROC SP_BuscarOSEncaminhada
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	MotivoFechamento,
+	Pessoa.NomeCompleto AS NomeCompleto
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE EstatusOS = 'ENCAMINHADO'
+GO
+
 CREATE PROC SP_FecharOrdemServico
 	@Id INT,
 	@MotivoFechamento VARCHAR(1000),
