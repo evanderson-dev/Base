@@ -47,8 +47,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxPrazo = new System.Windows.Forms.MaskedTextBox();
-            this.sPBuscarOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
             this.maskedTextBoxDataAbertura = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxDadosPessoais = new System.Windows.Forms.GroupBox();
             this.textBoxPlano = new System.Windows.Forms.TextBox();
@@ -89,11 +87,13 @@
             this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
             this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
-            this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
             this.textBoxSolucao = new System.Windows.Forms.TextBox();
             this.labelSolucao = new System.Windows.Forms.Label();
             this.buttonSalvarFechamento = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.sPBuscarOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
+            this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -108,13 +108,13 @@
             labelNumCasa = new System.Windows.Forms.Label();
             labelRua = new System.Windows.Forms.Label();
             labelDescricao = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).BeginInit();
             this.groupBoxDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1CpfCNPJ
@@ -297,16 +297,6 @@
             this.maskedTextBoxPrazo.ReadOnly = true;
             this.maskedTextBoxPrazo.Size = new System.Drawing.Size(78, 20);
             this.maskedTextBoxPrazo.TabIndex = 5;
-            // 
-            // sPBuscarOSBindingSource
-            // 
-            this.sPBuscarOSBindingSource.DataMember = "SP_BuscarOS";
-            this.sPBuscarOSBindingSource.DataSource = this.oRDEMSERVICODataSet;
-            // 
-            // oRDEMSERVICODataSet
-            // 
-            this.oRDEMSERVICODataSet.DataSetName = "ORDEMSERVICODataSet";
-            this.oRDEMSERVICODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // maskedTextBoxDataAbertura
             // 
@@ -738,14 +728,11 @@
             // 
             this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
             // 
-            // sP_BuscarOSTableAdapter
-            // 
-            this.sP_BuscarOSTableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxSolucao
             // 
             this.textBoxSolucao.BackColor = System.Drawing.Color.White;
             this.textBoxSolucao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxSolucao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "MotivoFechamento", true));
             this.textBoxSolucao.Location = new System.Drawing.Point(19, 436);
             this.textBoxSolucao.MaxLength = 1000;
             this.textBoxSolucao.Multiline = true;
@@ -798,6 +785,20 @@
             this.buttonCancelar.Visible = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // sPBuscarOSBindingSource
+            // 
+            this.sPBuscarOSBindingSource.DataMember = "SP_BuscarOS";
+            this.sPBuscarOSBindingSource.DataSource = this.oRDEMSERVICODataSet;
+            // 
+            // oRDEMSERVICODataSet
+            // 
+            this.oRDEMSERVICODataSet.DataSetName = "ORDEMSERVICODataSet";
+            this.oRDEMSERVICODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_BuscarOSTableAdapter
+            // 
+            this.sP_BuscarOSTableAdapter.ClearBeforeFill = true;
+            // 
             // FormConsultaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,14 +837,14 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormConsultaOS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).EndInit();
             this.groupBoxDadosPessoais.ResumeLayout(false);
             this.groupBoxDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

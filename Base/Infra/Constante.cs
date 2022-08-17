@@ -108,6 +108,8 @@ namespace Infra
                     destinoCompleto = pastaDestino + foto;
                     System.IO.File.Copy(origemCompleto, destinoCompleto, true);
                     File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
+
+                    addLogo();
                 }
                 else
                 {
@@ -548,6 +550,7 @@ namespace Infra
                     destinoCompleto = pastaDestino + foto;
                     System.IO.File.Copy(origemCompleto, destinoCompleto, true);
                     File.Move(destinoCompleto, pastaDestino + @"\logo.png");
+                    addLogo();
                 }
                 else
                 {
@@ -567,7 +570,6 @@ namespace Infra
                             destinoCompleto = pastaDestino + foto;
                             System.IO.File.Copy(origemCompleto, destinoCompleto, true);
                             File.Move(destinoCompleto, pastaDestino + @"\logo.png");
-
                             addLogo();
                         }
                         else

@@ -327,6 +327,8 @@ namespace UIPrincipal {
             
             private global::System.Data.DataColumn columnId_Plano;
             
+            private global::System.Data.DataColumn columnMotivoFechamento;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SP_BuscarOSDataTable() {
@@ -554,6 +556,14 @@ namespace UIPrincipal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MotivoFechamentoColumn {
+                get {
+                    return this.columnMotivoFechamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -612,7 +622,8 @@ namespace UIPrincipal {
                         string CelularDois, 
                         string Cidade, 
                         string Uf, 
-                        int Id_Plano) {
+                        int Id_Plano, 
+                        string MotivoFechamento) {
                 SP_BuscarOSRow rowSP_BuscarOSRow = ((SP_BuscarOSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -638,7 +649,8 @@ namespace UIPrincipal {
                         CelularDois,
                         Cidade,
                         Uf,
-                        Id_Plano};
+                        Id_Plano,
+                        MotivoFechamento};
                 rowSP_BuscarOSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_BuscarOSRow);
                 return rowSP_BuscarOSRow;
@@ -692,6 +704,7 @@ namespace UIPrincipal {
                 this.columnCidade = base.Columns["Cidade"];
                 this.columnUf = base.Columns["Uf"];
                 this.columnId_Plano = base.Columns["Id_Plano"];
+                this.columnMotivoFechamento = base.Columns["MotivoFechamento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -745,6 +758,8 @@ namespace UIPrincipal {
                 base.Columns.Add(this.columnUf);
                 this.columnId_Plano = new global::System.Data.DataColumn("Id_Plano", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_Plano);
+                this.columnMotivoFechamento = new global::System.Data.DataColumn("MotivoFechamento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMotivoFechamento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1291,6 +1306,22 @@ namespace UIPrincipal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MotivoFechamento {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_BuscarOS.MotivoFechamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'MotivoFechamento\' na tabela \'SP_BuscarOS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_BuscarOS.MotivoFechamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsProtocoloNull() {
                 return this.IsNull(this.tableSP_BuscarOS.ProtocoloColumn);
             }
@@ -1563,6 +1594,18 @@ namespace UIPrincipal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetId_PlanoNull() {
                 this[this.tableSP_BuscarOS.Id_PlanoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMotivoFechamentoNull() {
+                return this.IsNull(this.tableSP_BuscarOS.MotivoFechamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMotivoFechamentoNull() {
+                this[this.tableSP_BuscarOS.MotivoFechamentoColumn] = global::System.Convert.DBNull;
             }
         }
         

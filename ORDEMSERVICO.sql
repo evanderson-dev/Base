@@ -700,6 +700,7 @@ AS
 	Atendente,
 	EstatusOS,
 	LigarAntes,
+	MotivoFechamento,
 	Pessoa.NomeCompleto,
 	Pessoa.Cpf,
 	Pessoa.Cep,
@@ -732,10 +733,32 @@ AS
 	Atendente,
 	EstatusOS,
 	LigarAntes,
+	MotivoFechamento,
 	Pessoa.NomeCompleto AS NomeCompleto
 	FROM OrdemServico
 	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
 	WHERE EstatusOS != 'FECHADO'
+GO
+
+CREATE PROC SP_BuscarOSFechada
+AS
+	SELECT
+	OrdemServico.Id,
+	Protocolo,
+	Id_Cliente,
+	TipoChamado,
+	Descricao,
+	DataAbertura,
+	DataPrazo,
+	TecnicoResponsavel,
+	Atendente,
+	EstatusOS,
+	LigarAntes,
+	MotivoFechamento,
+	Pessoa.NomeCompleto AS NomeCompleto
+	FROM OrdemServico
+	LEFT JOIN Pessoa ON OrdemServico.Id_Cliente = Pessoa.Id
+	WHERE EstatusOS = 'FECHADO'
 GO
 
 CREATE PROC SP_FecharOrdemServico

@@ -28,8 +28,6 @@ namespace UIPrincipal
         public FormConsultaOS(object _current)
         {
             InitializeComponent();
-            //textBoxBuscarOS.Text = _current.ToString();
-            //buttonBuscar_Click(null,null);
             textBoxBuscarOS.Visible = false;
             buttonBuscar.Visible = false;
             ordemServicoBindingSource.DataSource = _current;
@@ -38,7 +36,7 @@ namespace UIPrincipal
 
         private void FormConsultaOS_Load(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(870, 495);
+            //this.Size = new System.Drawing.Size(870, 495);
 
             comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             comboBoxTipoChamado.DisplayMember = "Descricao";
@@ -60,6 +58,13 @@ namespace UIPrincipal
             string id_Plano = Convert.ToString(((DataRowView)sPBuscarOSBindingSource.Current).Row["Id_Plano"]);
             planoBindingSource.DataSource = planoBLL.BuscarPlano(id_Plano);
             textBoxPlano.Text = (string)(((DataRowView)planoBindingSource.Current).Row["Descricao"]);
+
+            if (comboBoxEstatusOS.Text == "FECHADO")
+            {
+                labelSolucao.Visible = true;
+                textBoxSolucao.Visible = true;
+                buttonFechar.Enabled = false;
+            }
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
@@ -172,6 +177,8 @@ namespace UIPrincipal
                     destinoCompleto = pastaDestino + foto;
                     System.IO.File.Copy(origemCompleto, destinoCompleto, true);
                     File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
+
+                    addLogo();
                 }
                 else
                 {
@@ -204,6 +211,11 @@ namespace UIPrincipal
                         }
                     }
                 }
+                /*PdfPCell cell_Img = new PdfPCell(new Phrase(destinoCompleto));
+                cell_Img.Border = 0;
+                cell_Img.PaddingBottom = 20;
+                cell_Img.Colspan = 2;
+                table.AddCell(cell_Img);*/
             }
             catch (Exception ex)
             {
