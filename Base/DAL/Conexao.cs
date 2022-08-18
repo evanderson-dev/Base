@@ -1,4 +1,6 @@
-﻿namespace DAL
+﻿using Infra;
+
+namespace DAL
 {
     public static class Conexao
     {
@@ -9,8 +11,9 @@
                 // ".\" SIGINIFICA QUE É O ENDEREÇO DA MAQUINA LOCAL.
                 // "Integrated Security=True" SIGNIFICA QUE ESTA USANDO A AUTENTICAÇÃO DO WINDOWS.
                 //return "User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS2019;Password=Senailab05";
-                return @"Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS; Integrated Security=True";
+                //return @"Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS; Integrated Security=True";
                 //return "User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS;Password=Senailab05";
+                return UsuarioLogado.conexaoAtual;
             }
         }
     }

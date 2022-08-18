@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.Data;
 using Infra;
+using System.IO;
 
 namespace UIPrincipal
 {
@@ -29,7 +30,14 @@ namespace UIPrincipal
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             BindingSource usuarioBindingSource = new BindingSource();
+            try
+            {
             usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxUsuario.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             if (usuarioBindingSource.Count != 0)
             {
@@ -77,6 +85,44 @@ namespace UIPrincipal
         {
             if (e.KeyCode == Keys.Enter)
                 buttonLogin_Click(null, null);
+        }
+
+        private void buttonGerenciarServidor_Click(object sender, EventArgs e)
+        {
+            //FormGerenciamentoServidor frm = new FormGerenciamentoServidor();
+            //frm.ShowDialog();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            string[] lineOfContents = File.ReadAllLines(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco);
+            UsuarioLogado.conexaoAtual = lineOfContents[0];
+        }
+
+        private void buttonConfirmarServidor_Click(object sender, EventArgs e)
+        {
+            UsuarioLogado.conexaoAtual = comboBoxEnderecoDoBanco.Text;
+            ArquivoBanco.GravarBanco(Convert.ToString(comboBoxEnderecoDoBanco.Text));
+        }
+
+        private void comboBoxEnderecoDoBanco_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                EnderecoServidorBLL enderecoServidorBLL = new EnderecoServidorBLL();
+                comboBoxEnderecoDoBanco.DataSource = enderecoServidorBLL.Buscar("");
+                comboBoxEnderecoDoBanco.DisplayMember = "Descricao";
+                comboBoxEnderecoDoBanco.ValueMember = "StringDeConexao";
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+        private void comboBoxEnderecoDoBanco_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UsuarioLogado.conexaoAtual = Convert.ToString(comboBoxEnderecoDoBanco.SelectedValue);
+            ArquivoBanco.GravarBanco(Convert.ToString(comboBoxEnderecoDoBanco.SelectedValue));
         }
     }
 }

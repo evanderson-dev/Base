@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonDeletar = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
             this.dataGridViewGerenciamentoServidor = new System.Windows.Forms.DataGridView();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stringDeConexaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,44 +41,28 @@
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.BackColor = System.Drawing.Color.White;
-            this.buttonAdicionar.Location = new System.Drawing.Point(599, 46);
+            this.buttonAdicionar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdicionar.FlatAppearance.BorderSize = 0;
+            this.buttonAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdicionar.Image = global::UIPrincipal.Properties.Resources.server_add;
+            this.buttonAdicionar.Location = new System.Drawing.Point(12, 10);
             this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionar.Size = new System.Drawing.Size(23, 23);
             this.buttonAdicionar.TabIndex = 0;
-            this.buttonAdicionar.Text = "ADICIONAR";
             this.buttonAdicionar.UseVisualStyleBackColor = false;
             // 
             // buttonDeletar
             // 
-            this.buttonDeletar.BackColor = System.Drawing.Color.White;
-            this.buttonDeletar.Location = new System.Drawing.Point(599, 75);
+            this.buttonDeletar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDeletar.FlatAppearance.BorderSize = 0;
+            this.buttonDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeletar.Image = global::UIPrincipal.Properties.Resources.server_delete;
+            this.buttonDeletar.Location = new System.Drawing.Point(41, 10);
             this.buttonDeletar.Name = "buttonDeletar";
-            this.buttonDeletar.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeletar.Size = new System.Drawing.Size(23, 23);
             this.buttonDeletar.TabIndex = 1;
-            this.buttonDeletar.Text = "DELETAR";
             this.buttonDeletar.UseVisualStyleBackColor = false;
             this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.BackColor = System.Drawing.Color.White;
-            this.buttonSalvar.Location = new System.Drawing.Point(599, 104);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvar.TabIndex = 2;
-            this.buttonSalvar.Text = "SALVAR";
-            this.buttonSalvar.UseVisualStyleBackColor = false;
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.BackColor = System.Drawing.Color.White;
-            this.buttonCancelar.Location = new System.Drawing.Point(599, 133);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 3;
-            this.buttonCancelar.Text = "CANCELAR";
-            this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
             // dataGridViewGerenciamentoServidor
             // 
@@ -93,10 +75,10 @@
             this.descricaoDataGridViewTextBoxColumn,
             this.stringDeConexaoDataGridViewTextBoxColumn});
             this.dataGridViewGerenciamentoServidor.DataSource = this.enderecoServidorBindingSource;
-            this.dataGridViewGerenciamentoServidor.Location = new System.Drawing.Point(2, 1);
+            this.dataGridViewGerenciamentoServidor.Location = new System.Drawing.Point(2, 39);
             this.dataGridViewGerenciamentoServidor.Name = "dataGridViewGerenciamentoServidor";
             this.dataGridViewGerenciamentoServidor.RowHeadersVisible = false;
-            this.dataGridViewGerenciamentoServidor.Size = new System.Drawing.Size(589, 200);
+            this.dataGridViewGerenciamentoServidor.Size = new System.Drawing.Size(829, 200);
             this.dataGridViewGerenciamentoServidor.TabIndex = 4;
             // 
             // descricaoDataGridViewTextBoxColumn
@@ -121,10 +103,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(684, 203);
+            this.ClientSize = new System.Drawing.Size(834, 242);
             this.Controls.Add(this.dataGridViewGerenciamentoServidor);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.buttonAdicionar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -146,8 +126,6 @@
 
         private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Button buttonDeletar;
-        private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.DataGridView dataGridViewGerenciamentoServidor;
         private System.Windows.Forms.BindingSource enderecoServidorBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;

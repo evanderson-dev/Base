@@ -509,5 +509,11 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
+
+        private void sERVIDORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGerenciamentoServidor frm = new FormGerenciamentoServidor();
+            frm.ShowDialog();
+        }
     }
 }

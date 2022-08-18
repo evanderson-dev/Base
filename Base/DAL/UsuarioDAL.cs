@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Infra;
+using Model;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -211,7 +212,6 @@ namespace DAL
 
                 #endregion
 
-                /////////////////////////////////////////////////////////////
                 cn.Open();
                 _usuario.Id = Convert.ToInt32(cmd.ExecuteScalar());
 

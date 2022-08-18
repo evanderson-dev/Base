@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Infra;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -21,6 +22,8 @@ namespace UIPrincipal
         {
             pictureBoxFoto.ImageLocation = (string)((DataRowView)usuarioBindingSource.Current).Row["Foto"];
             string nivelFuncionario = Convert.ToString(((DataRowView)usuarioBindingSource.Current).Row["Id_Permissao"]);
+            string senha = (string)((DataRowView)usuarioBindingSource.Current).Row["Senha"];
+            labelSenha.Text = FuncoesGlobais.Base64Decode(senha);
 
             if (Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Ativo"]) == 1)
             {

@@ -96,15 +96,17 @@ namespace UIPrincipal
             this.deletarPessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarPessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripAbaDois = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.abrirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarAbaDoisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exibirDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.contextMenuStripAbaUm = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.visualizarDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impressãoDiretaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exibirDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fERRAMENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sERVIDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -131,6 +133,7 @@ namespace UIPrincipal
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gRUPODEUSUARIOToolStripMenuItem,
+            this.fERRAMENTASToolStripMenuItem,
             this.aJUDAToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -187,20 +190,20 @@ namespace UIPrincipal
             this.sOBREToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.sOBREToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.sOBREToolStripMenuItem.Name = "sOBREToolStripMenuItem";
-            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.sOBREToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sOBREToolStripMenuItem.Text = "&SOBRE";
             // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sAIRToolStripMenuItem.Text = "&LOGOFF";
             this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
             // deligarToolStripMenuItem
             // 
             this.deligarToolStripMenuItem.Name = "deligarToolStripMenuItem";
-            this.deligarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.deligarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deligarToolStripMenuItem.Text = "DESLIGAR";
             this.deligarToolStripMenuItem.Click += new System.EventHandler(this.deligarToolStripMenuItem_Click);
             // 
@@ -810,6 +813,27 @@ namespace UIPrincipal
             this.contextMenuStripAbaDois.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.contextMenuStripAbaDois.Size = new System.Drawing.Size(155, 92);
             // 
+            // copiarAbaDoisToolStripMenuItem
+            // 
+            this.copiarAbaDoisToolStripMenuItem.Name = "copiarAbaDoisToolStripMenuItem";
+            this.copiarAbaDoisToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.copiarAbaDoisToolStripMenuItem.Text = "Copiar";
+            this.copiarAbaDoisToolStripMenuItem.Click += new System.EventHandler(this.copiarAbaDoisToolStripMenuItem_Click);
+            // 
+            // editarCadastroToolStripMenuItem
+            // 
+            this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
+            this.editarCadastroToolStripMenuItem.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem_Click);
+            // 
+            // exibirDetalhesToolStripMenuItem
+            // 
+            this.exibirDetalhesToolStripMenuItem.Name = "exibirDetalhesToolStripMenuItem";
+            this.exibirDetalhesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.exibirDetalhesToolStripMenuItem.Text = "Exibir Detalhes";
+            this.exibirDetalhesToolStripMenuItem.Click += new System.EventHandler(this.exibirDetalhesToolStripMenuItem_Click);
+            // 
             // abrirOSToolStripMenuItem
             // 
             this.abrirOSToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.Cell;
@@ -817,20 +841,6 @@ namespace UIPrincipal
             this.abrirOSToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.abrirOSToolStripMenuItem.Text = "Iniciar Suporte";
             this.abrirOSToolStripMenuItem.Click += new System.EventHandler(this.abrirOSToolStripMenuItem_Click);
-            // 
-            // editarCadastroToolStripMenuItem
-            // 
-            this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
-            this.editarCadastroToolStripMenuItem.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem_Click);
-            // 
-            // copiarAbaDoisToolStripMenuItem
-            // 
-            this.copiarAbaDoisToolStripMenuItem.Name = "copiarAbaDoisToolStripMenuItem";
-            this.copiarAbaDoisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.copiarAbaDoisToolStripMenuItem.Text = "Copiar";
-            this.copiarAbaDoisToolStripMenuItem.Click += new System.EventHandler(this.copiarAbaDoisToolStripMenuItem_Click);
             // 
             // sP_BuscarOSPendenteTableAdapter
             // 
@@ -866,12 +876,21 @@ namespace UIPrincipal
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
-            // exibirDetalhesToolStripMenuItem
+            // fERRAMENTASToolStripMenuItem
             // 
-            this.exibirDetalhesToolStripMenuItem.Name = "exibirDetalhesToolStripMenuItem";
-            this.exibirDetalhesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exibirDetalhesToolStripMenuItem.Text = "Exibir Detalhes";
-            this.exibirDetalhesToolStripMenuItem.Click += new System.EventHandler(this.exibirDetalhesToolStripMenuItem_Click);
+            this.fERRAMENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sERVIDORToolStripMenuItem});
+            this.fERRAMENTASToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.fERRAMENTASToolStripMenuItem.Name = "fERRAMENTASToolStripMenuItem";
+            this.fERRAMENTASToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.fERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS";
+            // 
+            // sERVIDORToolStripMenuItem
+            // 
+            this.sERVIDORToolStripMenuItem.Name = "sERVIDORToolStripMenuItem";
+            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sERVIDORToolStripMenuItem.Text = "SERVIDOR";
+            this.sERVIDORToolStripMenuItem.Click += new System.EventHandler(this.sERVIDORToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -995,5 +1014,7 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem editarPessoaToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBoxFechada;
         private System.Windows.Forms.ToolStripMenuItem exibirDetalhesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fERRAMENTASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sERVIDORToolStripMenuItem;
     }
 }

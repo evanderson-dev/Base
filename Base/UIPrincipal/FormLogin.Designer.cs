@@ -39,6 +39,9 @@ namespace UIPrincipal
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
             this.labelUsuarioDesativado = new System.Windows.Forms.Label();
+            this.labelServidor = new System.Windows.Forms.Label();
+            this.comboBoxEnderecoDoBanco = new System.Windows.Forms.ComboBox();
+            this.buttonConfirmarServidor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
             this.SuspendLayout();
@@ -128,9 +131,9 @@ namespace UIPrincipal
             this.groupBoxLogin.Controls.Add(this.labelLogin);
             this.groupBoxLogin.Controls.Add(this.textBoxUsuario);
             this.groupBoxLogin.Controls.Add(this.textBoxSenha);
-            this.groupBoxLogin.Location = new System.Drawing.Point(41, 40);
+            this.groupBoxLogin.Location = new System.Drawing.Point(41, 34);
             this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(494, 280);
+            this.groupBoxLogin.Size = new System.Drawing.Size(494, 230);
             this.groupBoxLogin.TabIndex = 7;
             this.groupBoxLogin.TabStop = false;
             // 
@@ -143,12 +146,47 @@ namespace UIPrincipal
             this.labelUsuarioDesativado.Size = new System.Drawing.Size(0, 13);
             this.labelUsuarioDesativado.TabIndex = 7;
             // 
+            // labelServidor
+            // 
+            this.labelServidor.AutoSize = true;
+            this.labelServidor.ForeColor = System.Drawing.Color.White;
+            this.labelServidor.Location = new System.Drawing.Point(38, 283);
+            this.labelServidor.Name = "labelServidor";
+            this.labelServidor.Size = new System.Drawing.Size(137, 13);
+            this.labelServidor.TabIndex = 9;
+            this.labelServidor.Text = "SELECIONAR SERVIDOR:";
+            // 
+            // comboBoxEnderecoDoBanco
+            // 
+            this.comboBoxEnderecoDoBanco.FormattingEnabled = true;
+            this.comboBoxEnderecoDoBanco.Location = new System.Drawing.Point(41, 299);
+            this.comboBoxEnderecoDoBanco.Name = "comboBoxEnderecoDoBanco";
+            this.comboBoxEnderecoDoBanco.Size = new System.Drawing.Size(465, 21);
+            this.comboBoxEnderecoDoBanco.TabIndex = 8;
+            this.comboBoxEnderecoDoBanco.SelectedIndexChanged += new System.EventHandler(this.comboBoxEnderecoDoBanco_SelectedIndexChanged);
+            this.comboBoxEnderecoDoBanco.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxEnderecoDoBanco_MouseClick);
+            // 
+            // buttonConfirmarServidor
+            // 
+            this.buttonConfirmarServidor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonConfirmarServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmarServidor.Image = global::UIPrincipal.Properties.Resources.server_add;
+            this.buttonConfirmarServidor.Location = new System.Drawing.Point(512, 297);
+            this.buttonConfirmarServidor.Name = "buttonConfirmarServidor";
+            this.buttonConfirmarServidor.Size = new System.Drawing.Size(23, 23);
+            this.buttonConfirmarServidor.TabIndex = 11;
+            this.buttonConfirmarServidor.UseVisualStyleBackColor = false;
+            this.buttonConfirmarServidor.Click += new System.EventHandler(this.buttonConfirmarServidor_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(580, 361);
+            this.ClientSize = new System.Drawing.Size(580, 349);
+            this.Controls.Add(this.buttonConfirmarServidor);
+            this.Controls.Add(this.labelServidor);
+            this.Controls.Add(this.comboBoxEnderecoDoBanco);
             this.Controls.Add(this.groupBoxLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -156,11 +194,13 @@ namespace UIPrincipal
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LOGIN DE USUARIO";
+            this.Text = "LOGIN";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxLogin.ResumeLayout(false);
             this.groupBoxLogin.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +215,8 @@ namespace UIPrincipal
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBoxLogin;
         private System.Windows.Forms.Label labelUsuarioDesativado;
+        private System.Windows.Forms.Label labelServidor;
+        private System.Windows.Forms.ComboBox comboBoxEnderecoDoBanco;
+        private System.Windows.Forms.Button buttonConfirmarServidor;
     }
 }

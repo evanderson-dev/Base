@@ -3,12 +3,8 @@ using System.Data;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.html.simpleparser;
-using System.Windows.Forms;
-//using static System.Windows.Forms.Form;
 
 namespace Infra
 {
@@ -17,23 +13,23 @@ namespace Infra
         public static string DiretorioDeImagem = Environment.CurrentDirectory + "\\Imgs\\";
         public static string DiretorioDePDF = Environment.CurrentDirectory + @"\PDF\";
         public static string DiretorioDoEnderecoBanco = Environment.CurrentDirectory + @"\Servidores\";
-        public static string NomeArquivoBanco = "Bancos.txt";
+        public static string NomeArquivoBanco = "Endereço do Servidor.txt";
     }
     public static class UsuarioLogado
     {
         public static string Id = null;
         public static string NomeUsuario = null;
         public static string NomeCompleto = null;
+        public static string conexaoAtual = "";
     }
-    
+
     public static class ArquivoBanco
     {
-        public static void GravarEnderecoBancoNoFinalDoArquivo(string _texto, string _caminho)
+        public static void GravarEnderecoBancoNoArquivo(string _texto, string _caminho)
         {
-            FileStream fileStream = new FileStream(_caminho, FileMode.Append);
+            FileStream fileStream = new FileStream(_caminho, FileMode.Create);//Append);
             StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.UTF8);
-            streamWriter.WriteLine(_texto);
-
+            streamWriter.Write(_texto);
             streamWriter.Flush();
             streamWriter.Close();
             fileStream.Close();
@@ -42,7 +38,7 @@ namespace Infra
         public static void GravarBanco(string _texto)
         {
             CriarPasta(Constante.DiretorioDoEnderecoBanco);
-            GravarEnderecoBancoNoFinalDoArquivo(_texto, Constante.DiretorioDoEnderecoBanco + "\\" + Constante.NomeArquivoBanco);
+            GravarEnderecoBancoNoArquivo(_texto, Constante.DiretorioDoEnderecoBanco + "\\" + Constante.NomeArquivoBanco);
         }
 
         public static void CriarPasta(string _caminho)
