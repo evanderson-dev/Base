@@ -37,7 +37,7 @@ GO
 EXEC SP_InserirEnderecoServidor 0, 'SENAI', 'User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS2019;Password=Senailab05'
 --EXEC SP_InserirEnderecoServidor 0, 'TOLEDO', 'User ID=SA;Initial Catalog=ORDEMSERVICO;Data Source=.\\SQLEXPRESS;Password=Senailab05'
 EXEC SP_InserirEnderecoServidor 0, 'TOLEDO', 'User ID=SA; Initial Catalog=ORDEMSERVICO; Data Source=TLD-AUX-SU-006\SQLEXPRESS; Password=Senailab05'
-EXEC SP_InserirEnderecoServidor 0, 'CASA', 'Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\\SQLEXPRESS; Integrated Security=True'
+EXEC SP_InserirEnderecoServidor 0, 'CASA', 'Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS; Integrated Security=True'
 GO
 
 CREATE PROC SP_BuscarEnderecoServidor
