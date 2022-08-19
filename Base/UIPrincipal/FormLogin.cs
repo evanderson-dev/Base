@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Data;
 using Infra;
 using System.IO;
+using System.Collections;
 
 namespace UIPrincipal
 {
@@ -91,8 +92,15 @@ namespace UIPrincipal
         {
             try
             {
+                ToolTip toolTip1 = new ToolTip();
+                //toolTip1.ReshowDelay = 500;
+                //toolTip1.ShowAlways = true;
+                toolTip1.SetToolTip(this.buttonConfirmarServidor, "My button1");
+                toolTip1.SetToolTip(this.comboBoxEnderecoDoBanco, "My checkBox1");
+
                 string[] lineOfContents = File.ReadAllLines(FuncoesGlobais.Base64Decode(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco));
                 UsuarioLogado.conexaoAtual = lineOfContents[0];
+
             }
             catch (Exception)
             {
@@ -113,7 +121,7 @@ namespace UIPrincipal
                 try
                 {
                     EnderecoServidorBLL enderecoServidorBLL = new EnderecoServidorBLL();
-                    comboBoxEnderecoDoBanco.DataSource = enderecoServidorBLL.Buscar("");
+                    comboBoxEnderecoDoBanco.DataSource = enderecoServidorBLL.Buscar();
                     comboBoxEnderecoDoBanco.DisplayMember = "Descricao";
                     comboBoxEnderecoDoBanco.ValueMember = "StringDeConexao";
                 }

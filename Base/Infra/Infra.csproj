@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arquivo.cs" />
     <Compile Include="Constante.cs" />
     <Compile Include="FuncoesGlobais.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
