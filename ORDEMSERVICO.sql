@@ -1,6 +1,5 @@
 -- CTR + SHIFT + R = ATUALIZA O SCRIP CASO ESTEJA ACUSANDO ERROS
 -- CTR + R = ATALHO PARA FECHAR RESULTADO
--- SET DATEFORMAT DMY
 USE MASTER
 GO
 
@@ -17,9 +16,43 @@ GO
 USE ORDEMSERVICO
 GO
 
--- SENAI  | Initial Catalog=ORDEMSERVICO; Data Source = LAB05-03\SQLEXPRESS2019;   User ID=SA; Password = Senailab05
--- TOLEDO | Initial Catalog=ORDEMSERVICO; Data Source = TLD-AUX-SU-006\SQLEXPRESS; User ID=SA; Password = Senailab05
--- CASA   | Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS;	   Integrated Security  = True
+CREATE TABLE EnderecoServidor
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Descricao VARCHAR(250),
+	StringDeConexao VARCHAR(250)
+)
+GO
+
+CREATE PROCEDURE SP_InserirEnderecoServidor
+	@Id INT OUTPUT,
+	@Descricao VARCHAR(250),
+	@StringDeConexao VARCHAR(250)
+AS
+	INSERT INTO EnderecoServidor(Descricao, StringDeConexao)
+		VALUES(@Descricao,	@StringDeConexao)
+	SET @Id = (SELECT @@IDENTITY)
+GO
+
+EXEC SP_InserirEnderecoServidor 0, 'SENAI', 'User ID=SA; Initial Catalog=ORDEMSERVICO; Data Source=LAB05-03\SQLEXPRESS2019; Password=Senailab05'
+EXEC SP_InserirEnderecoServidor 0, 'TOLEDO', 'User ID=SA; Initial Catalog=ORDEMSERVICO; Data Source=TLD-AUX-SU-006\SQLEXPRESS; Password=Senailab05'
+EXEC SP_InserirEnderecoServidor 0, 'CASA', 'Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS; Integrated Security=True'
+GO
+
+CREATE PROC SP_BuscarEnderecoServidor
+	@Filtro VARCHAR(50)
+	as
+IF EXISTS(SELECT 1 FROM EnderecoServidor WHERE CONVERT(VARCHAR(50), Id) = @Filtro)
+	SELECT Id, Descricao, StringDeConexao FROM EnderecoServidor WHERE CONVERT(VARCHAR(50), Id) = @Filtro
+ELSE
+	SELECT Id, Descricao, StringDeConexao FROM EnderecoServidor WHERE Descricao LIKE '%' + @filtro + '%'
+GO
+
+CREATE PROC SP_ExcluirEnderecoServidor
+	@Id INT
+AS
+	DELETE FROM EnderecoServidor WHERE Id = @Id
+GO
 
 CREATE TABLE Permissao
 (
