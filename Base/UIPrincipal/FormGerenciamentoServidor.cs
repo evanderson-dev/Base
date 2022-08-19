@@ -14,7 +14,14 @@ namespace UIPrincipal
 
         private void FormGerenciamentoServidor_Load(object sender, EventArgs e)
         {
-            dataGridViewGerenciamentoServidor.DataSource = enderecoServidorBLL.Buscar("");
+            try
+            {
+                dataGridViewGerenciamentoServidor.DataSource = enderecoServidorBLL.Buscar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonDeletar_Click(object sender, EventArgs e)
@@ -29,7 +36,6 @@ namespace UIPrincipal
 
             //enderecoServidorBLL.Excluir(id);
             //planoBindingSource.RemoveCurrent();
-            MessageBox.Show("TESTE");
         }
     }
 }

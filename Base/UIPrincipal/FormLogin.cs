@@ -90,21 +90,18 @@ namespace UIPrincipal
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            ToolTip confirmarServidor = new ToolTip();
+            confirmarServidor.SetToolTip(this.buttonConfirmarServidor, "Confirmar Servidor");
+
             try
             {
-                ToolTip toolTip1 = new ToolTip();
-                //toolTip1.ReshowDelay = 500;
-                //toolTip1.ShowAlways = true;
-                toolTip1.SetToolTip(this.buttonConfirmarServidor, "My button1");
-                toolTip1.SetToolTip(this.comboBoxEnderecoDoBanco, "My checkBox1");
-
-                string[] lineOfContents = File.ReadAllLines(FuncoesGlobais.Base64Decode(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco));
-                UsuarioLogado.conexaoAtual = lineOfContents[0];
-
+                string[] texto = File.ReadAllLines(Convert.ToString(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco));
+                string servidorDecriptografado = texto[0];
+                UsuarioLogado.conexaoAtual = FuncoesGlobais.Base64Decode(servidorDecriptografado);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return;
+                MessageBox.Show(ex.Message);
             }
         }
 
