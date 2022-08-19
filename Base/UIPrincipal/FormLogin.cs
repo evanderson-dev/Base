@@ -133,5 +133,11 @@ namespace UIPrincipal
             UsuarioLogado.conexaoAtual = Convert.ToString(comboBoxEnderecoDoBanco.SelectedValue);
             ArquivoBanco.GravarBanco(FuncoesGlobais.Base64Encode(Convert.ToString(comboBoxEnderecoDoBanco.SelectedValue)));
         }
+
+        private void buttonAddServidor_Click(object sender, EventArgs e)
+        {
+            FormAddEnderecoServidor frm = new FormAddEnderecoServidor();
+            frm.ShowDialog();
+        }
     }
 }

@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAddEnderecoServidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEnderecoServidor.Designer.cs">
+      <DependentUpon>FormAddEnderecoServidor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroPlano.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="FormTipoChamado.Designer.cs">
       <DependentUpon>FormTipoChamado.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAddEnderecoServidor.resx">
+      <DependentUpon>FormAddEnderecoServidor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroPlano.resx">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
     </EmbeddedResource>

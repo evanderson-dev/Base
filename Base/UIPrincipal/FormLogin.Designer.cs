@@ -42,6 +42,7 @@ namespace UIPrincipal
             this.labelServidor = new System.Windows.Forms.Label();
             this.comboBoxEnderecoDoBanco = new System.Windows.Forms.ComboBox();
             this.buttonConfirmarServidor = new System.Windows.Forms.Button();
+            this.buttonAddServidor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
             this.SuspendLayout();
@@ -178,12 +179,23 @@ namespace UIPrincipal
             this.buttonConfirmarServidor.UseVisualStyleBackColor = false;
             this.buttonConfirmarServidor.Click += new System.EventHandler(this.buttonConfirmarServidor_Click);
             // 
+            // buttonAddServidor
+            // 
+            this.buttonAddServidor.Location = new System.Drawing.Point(538, 297);
+            this.buttonAddServidor.Name = "buttonAddServidor";
+            this.buttonAddServidor.Size = new System.Drawing.Size(37, 23);
+            this.buttonAddServidor.TabIndex = 12;
+            this.buttonAddServidor.Text = "add";
+            this.buttonAddServidor.UseVisualStyleBackColor = true;
+            this.buttonAddServidor.Click += new System.EventHandler(this.buttonAddServidor_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(580, 349);
+            this.Controls.Add(this.buttonAddServidor);
             this.Controls.Add(this.buttonConfirmarServidor);
             this.Controls.Add(this.labelServidor);
             this.Controls.Add(this.comboBoxEnderecoDoBanco);
@@ -218,5 +230,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelServidor;
         private System.Windows.Forms.ComboBox comboBoxEnderecoDoBanco;
         private System.Windows.Forms.Button buttonConfirmarServidor;
+        private System.Windows.Forms.Button buttonAddServidor;
     }
 }
