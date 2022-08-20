@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Collections;
+using System.Text;
 
 namespace Infra
 {
@@ -16,7 +17,7 @@ namespace Infra
             {
                 string conteudo = File.ReadAllText(caminho);
                 if (!string.IsNullOrEmpty(conteudo))
-                    retorno.Add(conteudo);
+                    retorno.Add(FuncoesGlobais.Base64Decode(conteudo));// ADICIONADO O ENDEREÇO DO SERVIDOR CRIPTOGRAFADO
 
                 contador++;
                 caminho = string.Format("{0}{1}{2}.txt", Constante.DiretorioDoEnderecoBanco, arquivo, contador);

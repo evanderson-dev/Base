@@ -10,7 +10,7 @@ namespace Infra
 {
     public static class Constante
     {
-        public static string DiretorioDeImagem = Environment.CurrentDirectory + "\\Imgs\\";
+        public static string DiretorioDeImagem = Environment.CurrentDirectory + @"\Imgs\";
         public static string DiretorioDePDF = Environment.CurrentDirectory + @"\PDF\";
         public static string DiretorioDoEnderecoBanco = Environment.CurrentDirectory + @"\Servidores\";
         public static string NomeArquivoBanco = "Endereço do Servidor.txt";
@@ -27,12 +27,30 @@ namespace Infra
     {
         public static void GravarEnderecoBancoNoArquivo(string _texto, string _caminho)
         {
-            FileStream fileStream = new FileStream(_caminho, FileMode.Create);//Append);
+            FileStream fileStream = new FileStream(_caminho, FileMode.Create);
             StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.UTF8);
             streamWriter.Write(_texto);
             streamWriter.Flush();
             streamWriter.Close();
             fileStream.Close();
+        }
+
+        public static void GravarStringDeConexaoNoArquivo(string _texto)
+        {
+            string nomeArquivo = "BD";
+            for (int i = 1; i > 0; i++)
+            {
+                if (!File.Exists(Constante.DiretorioDoEnderecoBanco + nomeArquivo + i + ".txt"))
+                {
+                    FileStream fileStream = new FileStream(Constante.DiretorioDoEnderecoBanco + nomeArquivo + i + ".txt", FileMode.Create);
+                    StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.UTF8);
+                    streamWriter.Write(FuncoesGlobais.Base64Encode(_texto));
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                    fileStream.Close();
+                    break;
+                }
+            }
         }
 
         public static void GravarBanco(string _texto)
@@ -46,7 +64,7 @@ namespace Infra
             Directory.CreateDirectory(_caminho);
         }
     }
-    
+    #region Impressao
     public static class Impressao
     {
 
@@ -917,4 +935,5 @@ namespace Infra
             doc.Close();//fechando documento para que seja salva as alteraçoes.
         }
     }
+    #endregion
 }

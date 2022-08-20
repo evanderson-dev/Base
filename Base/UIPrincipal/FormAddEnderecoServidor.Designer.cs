@@ -278,7 +278,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.FormAddEnderecoServidor_Load);
             this.groupBoxDadosLogin.ResumeLayout(false);
             this.groupBoxDadosLogin.PerformLayout();
             this.groupBoxDadosServidor.ResumeLayout(false);

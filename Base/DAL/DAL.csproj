@@ -46,7 +46,6 @@
     <Compile Include="Banco.cs" />
     <Compile Include="ComandoSQL.cs" />
     <Compile Include="Conexao.cs" />
-    <Compile Include="EnderecoServidorDAL.cs" />
     <Compile Include="OrdemServicoDAL.cs" />
     <Compile Include="ParametroSQL.cs" />
     <Compile Include="PlanoDAL.cs" />
