@@ -17,9 +17,9 @@ GO
 USE ORDEMSERVICO
 GO
 
--- SENAI  | Initial Catalog=ORDEMSERVICO; Data Source = LAB05-03\SQLEXPRESS2019;   User ID=SA; Password = Senailab05
--- TOLEDO | Initial Catalog=ORDEMSERVICO; Data Source = TLD-AUX-SU-006\SQLEXPRESS; User ID=SA; Password = Senailab05
--- CASA   | Initial Catalog=ORDEMSERVICO; Data Source = EVANDERSON\SQLEXPRESS;	   Integrated Security  = True
+-- SENAI  | Initial Catalog = ORDEMSERVICO; Data Source = .\SQLEXPRESS2019;	User ID=SA; Password	= Senailab05
+-- TOLEDO | Initial Catalog = ORDEMSERVICO; Data Source = .\SQLEXPRESS;		User ID=SA; Password	= Senailab05
+-- CASA   | Initial Catalog = ORDEMSERVICO; Data Source = .\SQLEXPRESS;		Integrated Security		= True
 --GO
 
 CREATE TABLE Permissao

@@ -43,15 +43,18 @@ namespace UIPrincipal
             this.comboBoxEnderecoDoBanco = new System.Windows.Forms.ComboBox();
             this.buttonConfirmarServidor = new System.Windows.Forms.Button();
             this.buttonAddServidor = new System.Windows.Forms.Button();
+            this.panelLogin = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.White;
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.ForeColor = System.Drawing.Color.Black;
+            this.buttonLogin.BackColor = System.Drawing.Color.Black;
+            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
             this.buttonLogin.Location = new System.Drawing.Point(281, 188);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
@@ -62,9 +65,11 @@ namespace UIPrincipal
             // 
             // buttonSair
             // 
-            this.buttonSair.BackColor = System.Drawing.Color.White;
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.ForeColor = System.Drawing.Color.Black;
+            this.buttonSair.BackColor = System.Drawing.Color.Black;
+            this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.ForeColor = System.Drawing.Color.White;
             this.buttonSair.Location = new System.Drawing.Point(362, 188);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
@@ -75,6 +80,7 @@ namespace UIPrincipal
             // 
             // textBoxUsuario
             // 
+            this.textBoxUsuario.BackColor = System.Drawing.Color.White;
             this.textBoxUsuario.Location = new System.Drawing.Point(254, 65);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(208, 20);
@@ -82,6 +88,7 @@ namespace UIPrincipal
             // 
             // textBoxSenha
             // 
+            this.textBoxSenha.BackColor = System.Drawing.Color.White;
             this.textBoxSenha.Location = new System.Drawing.Point(254, 133);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.PasswordChar = '*';
@@ -132,7 +139,8 @@ namespace UIPrincipal
             this.groupBoxLogin.Controls.Add(this.labelLogin);
             this.groupBoxLogin.Controls.Add(this.textBoxUsuario);
             this.groupBoxLogin.Controls.Add(this.textBoxSenha);
-            this.groupBoxLogin.Location = new System.Drawing.Point(41, 34);
+            this.groupBoxLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBoxLogin.Location = new System.Drawing.Point(168, 34);
             this.groupBoxLogin.Name = "groupBoxLogin";
             this.groupBoxLogin.Size = new System.Drawing.Size(494, 230);
             this.groupBoxLogin.TabIndex = 7;
@@ -151,7 +159,7 @@ namespace UIPrincipal
             // 
             this.labelServidor.AutoSize = true;
             this.labelServidor.ForeColor = System.Drawing.Color.White;
-            this.labelServidor.Location = new System.Drawing.Point(38, 283);
+            this.labelServidor.Location = new System.Drawing.Point(165, 269);
             this.labelServidor.Name = "labelServidor";
             this.labelServidor.Size = new System.Drawing.Size(137, 13);
             this.labelServidor.TabIndex = 9;
@@ -160,9 +168,9 @@ namespace UIPrincipal
             // comboBoxEnderecoDoBanco
             // 
             this.comboBoxEnderecoDoBanco.FormattingEnabled = true;
-            this.comboBoxEnderecoDoBanco.Location = new System.Drawing.Point(41, 299);
+            this.comboBoxEnderecoDoBanco.Location = new System.Drawing.Point(168, 285);
             this.comboBoxEnderecoDoBanco.Name = "comboBoxEnderecoDoBanco";
-            this.comboBoxEnderecoDoBanco.Size = new System.Drawing.Size(465, 21);
+            this.comboBoxEnderecoDoBanco.Size = new System.Drawing.Size(437, 21);
             this.comboBoxEnderecoDoBanco.TabIndex = 8;
             this.comboBoxEnderecoDoBanco.SelectedIndexChanged += new System.EventHandler(this.comboBoxEnderecoDoBanco_SelectedIndexChanged);
             this.comboBoxEnderecoDoBanco.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxEnderecoDoBanco_MouseClick);
@@ -171,8 +179,8 @@ namespace UIPrincipal
             // 
             this.buttonConfirmarServidor.BackColor = System.Drawing.Color.Transparent;
             this.buttonConfirmarServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConfirmarServidor.Image = global::UIPrincipal.Properties.Resources.server_add;
-            this.buttonConfirmarServidor.Location = new System.Drawing.Point(512, 297);
+            this.buttonConfirmarServidor.Image = global::UIPrincipal.Properties.Resources.server_go;
+            this.buttonConfirmarServidor.Location = new System.Drawing.Point(611, 283);
             this.buttonConfirmarServidor.Name = "buttonConfirmarServidor";
             this.buttonConfirmarServidor.Size = new System.Drawing.Size(23, 23);
             this.buttonConfirmarServidor.TabIndex = 11;
@@ -181,25 +189,37 @@ namespace UIPrincipal
             // 
             // buttonAddServidor
             // 
-            this.buttonAddServidor.Location = new System.Drawing.Point(538, 297);
+            this.buttonAddServidor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAddServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddServidor.Image = global::UIPrincipal.Properties.Resources.server_add;
+            this.buttonAddServidor.Location = new System.Drawing.Point(640, 283);
             this.buttonAddServidor.Name = "buttonAddServidor";
-            this.buttonAddServidor.Size = new System.Drawing.Size(37, 23);
+            this.buttonAddServidor.Size = new System.Drawing.Size(23, 23);
             this.buttonAddServidor.TabIndex = 12;
-            this.buttonAddServidor.Text = "add";
-            this.buttonAddServidor.UseVisualStyleBackColor = true;
+            this.buttonAddServidor.UseVisualStyleBackColor = false;
             this.buttonAddServidor.Click += new System.EventHandler(this.buttonAddServidor_Click);
+            // 
+            // panelLogin
+            // 
+            this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLogin.Location = new System.Drawing.Point(0, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(834, 349);
+            this.panelLogin.TabIndex = 13;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(580, 349);
+            this.ClientSize = new System.Drawing.Size(834, 349);
             this.Controls.Add(this.buttonAddServidor);
             this.Controls.Add(this.buttonConfirmarServidor);
             this.Controls.Add(this.labelServidor);
             this.Controls.Add(this.comboBoxEnderecoDoBanco);
             this.Controls.Add(this.groupBoxLogin);
+            this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -231,5 +251,6 @@ namespace UIPrincipal
         private System.Windows.Forms.ComboBox comboBoxEnderecoDoBanco;
         private System.Windows.Forms.Button buttonConfirmarServidor;
         private System.Windows.Forms.Button buttonAddServidor;
+        private System.Windows.Forms.Panel panelLogin;
     }
 }

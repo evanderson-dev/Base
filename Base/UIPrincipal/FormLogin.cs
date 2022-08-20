@@ -90,8 +90,9 @@ namespace UIPrincipal
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            ToolTip confirmarServidor = new ToolTip();
-            confirmarServidor.SetToolTip(this.buttonConfirmarServidor, "Confirmar Servidor");
+            ToolTip toolTipServidor = new ToolTip();
+            toolTipServidor.SetToolTip(this.buttonConfirmarServidor, "Confirmar Servidor");
+            toolTipServidor.SetToolTip(this.buttonAddServidor, "Adicionar Servidor");
 
             try
             {

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -29,19 +22,22 @@ namespace UIPrincipal
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            string dadosLogin = $"User ID = {textBoxUsuario.Text}; Password = {textBoxSenha.Text}";
+            if (checkBoxAutenticacaoWindows.Checked)
+                dadosLogin = "Integrated Security = True";
+
             if (checkBoxDiretorioLocal.Checked)
-            {
                 textBoxNomeMaquinaLocalOuIP.Text = ".";
-            }
+
             if (checkBoxAutenticacaoWindows.Checked)
             {
-                textBoxUsuario.Text = "";
+                textBoxUsuario.Text = "Integrated Security = True";
                 textBoxSenha.Text = "";
             }
-            string stringDeConexao = $"{textBoxNomeServidor.Text}|Initial Catalog={textBoxNomeBanco.Text}; Data Source={textBoxNomeMaquinaLocalOuIP.Text}/{textBoxVersaoSQL.Text}; User ID={textBoxUsuario.Text}; Password={textBoxSenha.Text}";
+
+            string stringDeConexao = $"{textBoxNomeServidor.Text}|Initial Catalog = {textBoxNomeBanco.Text}; Data Source = {textBoxNomeMaquinaLocalOuIP.Text}/{textBoxVersaoSQL.Text}; {dadosLogin}";
             MessageBox.Show(stringDeConexao);
             Close();
         }
     }
 }
-//TOLEDO SERVER|Initial Catalog=ORDEMSERVICO; Data Source=.\SQLEXPRESS; User ID=SA; Password=Senailab05
