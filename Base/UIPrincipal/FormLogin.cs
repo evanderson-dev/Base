@@ -29,6 +29,7 @@ namespace UIPrincipal
         }                
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            labelInformacaoErro.Text = "";
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             BindingSource usuarioBindingSource = new BindingSource();
             try
@@ -56,17 +57,23 @@ namespace UIPrincipal
                     TelaInicial();
                     this.Close();
                 }
-                else if (ativo == "False")
+                else if ((nome == textBoxUsuario.Text) && (senha == senhaCriptografada) && ativo == "False")
                 {
-                    labelUsuarioDesativado.Text = "USUARIO DESATIVADO!";
+                    labelInformacaoErro.Text = "USUARIO DESATIVADO!";
                     textBoxSenha.Text = "";
                     textBoxUsuario.Focus();
                 }                
-                else if(senha != textBoxSenha.Text)
+                else if((nome == textBoxUsuario.Text) && (senha != senhaCriptografada))
                 {
-                    labelUsuarioDesativado.Text = "SENHA INCORRETA!";
+                    labelInformacaoErro.Text = "SENHA INCORRETA!";
                     textBoxSenha.Text = "";
                     textBoxSenha.Focus();
+                }
+                else if ((nome != textBoxUsuario.Text))
+                {
+                    labelInformacaoErro.Text = "O USUARIO NÃO EXISTE";
+                    textBoxSenha.Text = "";
+                    textBoxUsuario.Focus();
                 }
             }
         }

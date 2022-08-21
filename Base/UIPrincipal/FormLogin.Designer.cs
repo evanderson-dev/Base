@@ -38,7 +38,7 @@ namespace UIPrincipal
             this.labelSenha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
-            this.labelUsuarioDesativado = new System.Windows.Forms.Label();
+            this.labelInformacaoErro = new System.Windows.Forms.Label();
             this.labelServidor = new System.Windows.Forms.Label();
             this.comboBoxEnderecoDoBanco = new System.Windows.Forms.ComboBox();
             this.buttonConfirmarServidor = new System.Windows.Forms.Button();
@@ -133,7 +133,7 @@ namespace UIPrincipal
             // groupBoxLogin
             // 
             this.groupBoxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBoxLogin.Controls.Add(this.labelUsuarioDesativado);
+            this.groupBoxLogin.Controls.Add(this.labelInformacaoErro);
             this.groupBoxLogin.Controls.Add(this.pictureBox1);
             this.groupBoxLogin.Controls.Add(this.buttonLogin);
             this.groupBoxLogin.Controls.Add(this.labelSenha);
@@ -148,14 +148,14 @@ namespace UIPrincipal
             this.groupBoxLogin.TabIndex = 7;
             this.groupBoxLogin.TabStop = false;
             // 
-            // labelUsuarioDesativado
+            // labelInformacaoErro
             // 
-            this.labelUsuarioDesativado.AutoSize = true;
-            this.labelUsuarioDesativado.ForeColor = System.Drawing.Color.Red;
-            this.labelUsuarioDesativado.Location = new System.Drawing.Point(251, 88);
-            this.labelUsuarioDesativado.Name = "labelUsuarioDesativado";
-            this.labelUsuarioDesativado.Size = new System.Drawing.Size(0, 13);
-            this.labelUsuarioDesativado.TabIndex = 7;
+            this.labelInformacaoErro.AutoSize = true;
+            this.labelInformacaoErro.ForeColor = System.Drawing.Color.Red;
+            this.labelInformacaoErro.Location = new System.Drawing.Point(251, 88);
+            this.labelInformacaoErro.Name = "labelInformacaoErro";
+            this.labelInformacaoErro.Size = new System.Drawing.Size(0, 13);
+            this.labelInformacaoErro.TabIndex = 7;
             // 
             // labelServidor
             // 
@@ -262,7 +262,7 @@ namespace UIPrincipal
         private System.Windows.Forms.Label labelSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBoxLogin;
-        private System.Windows.Forms.Label labelUsuarioDesativado;
+        private System.Windows.Forms.Label labelInformacaoErro;
         private System.Windows.Forms.Label labelServidor;
         private System.Windows.Forms.ComboBox comboBoxEnderecoDoBanco;
         private System.Windows.Forms.Button buttonConfirmarServidor;
