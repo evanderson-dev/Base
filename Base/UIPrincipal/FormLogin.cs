@@ -67,19 +67,7 @@ namespace UIPrincipal
                     labelUsuarioDesativado.Text = "SENHA INCORRETA!";
                     textBoxSenha.Text = "";
                     textBoxSenha.Focus();
-                }                
-                else
-                {
-                    labelUsuarioDesativado.Text = "USUARIO OU SENHA INCORRETO!";
-                    textBoxSenha.Text = "";
-                    textBoxSenha.Focus();
                 }
-            }
-            else
-            {
-                labelUsuarioDesativado.Text = "USUARIO OU SENHA INCORRETO!";
-                textBoxSenha.Text = "";
-                textBoxSenha.Focus();
             }
         }
         private void textBoxSenha_KeyDown(object sender, KeyEventArgs e)
@@ -93,6 +81,7 @@ namespace UIPrincipal
             ToolTip toolTipServidor = new ToolTip();
             toolTipServidor.SetToolTip(this.buttonConfirmarServidor, "Confirmar Servidor");
             toolTipServidor.SetToolTip(this.buttonAddServidor, "Adicionar Servidor");
+            toolTipServidor.SetToolTip(this.buttonAtualizar, "Atualizar Lista");
 
             try
             {
@@ -139,6 +128,21 @@ namespace UIPrincipal
         {
             FormAddEnderecoServidor frm = new FormAddEnderecoServidor();
             frm.ShowDialog();
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EnderecoServidorBLL enderecoServidorBLL = new EnderecoServidorBLL();
+                comboBoxEnderecoDoBanco.DataSource = enderecoServidorBLL.Buscar();
+                comboBoxEnderecoDoBanco.DisplayMember = "Descricao";
+                comboBoxEnderecoDoBanco.ValueMember = "StringDeConexao";
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
     }
 }

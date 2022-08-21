@@ -44,8 +44,10 @@ namespace UIPrincipal
             this.buttonConfirmarServidor = new System.Windows.Forms.Button();
             this.buttonAddServidor = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.buttonAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -170,7 +172,7 @@ namespace UIPrincipal
             this.comboBoxEnderecoDoBanco.FormattingEnabled = true;
             this.comboBoxEnderecoDoBanco.Location = new System.Drawing.Point(168, 285);
             this.comboBoxEnderecoDoBanco.Name = "comboBoxEnderecoDoBanco";
-            this.comboBoxEnderecoDoBanco.Size = new System.Drawing.Size(437, 21);
+            this.comboBoxEnderecoDoBanco.Size = new System.Drawing.Size(408, 21);
             this.comboBoxEnderecoDoBanco.TabIndex = 8;
             this.comboBoxEnderecoDoBanco.SelectedIndexChanged += new System.EventHandler(this.comboBoxEnderecoDoBanco_SelectedIndexChanged);
             this.comboBoxEnderecoDoBanco.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxEnderecoDoBanco_MouseClick);
@@ -202,11 +204,24 @@ namespace UIPrincipal
             // panelLogin
             // 
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLogin.Controls.Add(this.buttonAtualizar);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogin.Location = new System.Drawing.Point(0, 0);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(834, 349);
             this.panelLogin.TabIndex = 13;
+            // 
+            // buttonAtualizar
+            // 
+            this.buttonAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtualizar.Image = global::UIPrincipal.Properties.Resources.arrow_refresh;
+            this.buttonAtualizar.Location = new System.Drawing.Point(580, 281);
+            this.buttonAtualizar.Name = "buttonAtualizar";
+            this.buttonAtualizar.Size = new System.Drawing.Size(23, 23);
+            this.buttonAtualizar.TabIndex = 14;
+            this.buttonAtualizar.UseVisualStyleBackColor = false;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // FormLogin
             // 
@@ -231,6 +246,7 @@ namespace UIPrincipal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxLogin.ResumeLayout(false);
             this.groupBoxLogin.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +268,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonConfirmarServidor;
         private System.Windows.Forms.Button buttonAddServidor;
         private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.Button buttonAtualizar;
     }
 }
