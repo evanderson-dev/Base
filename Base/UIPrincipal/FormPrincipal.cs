@@ -78,6 +78,16 @@ namespace UIPrincipal
             textBoxBuscarCadastro.Focus();
             tabControlConsulta.TabPages.Remove(tabPageCadastrados);
             buttonFecharAba.Visible = false;
+            ToolTip toolTipOS = new ToolTip();
+            ToolTip toolTipCadastro = new ToolTip();
+            if (tabControlConsulta.SelectedIndex == 0)
+            {
+                toolTipOS.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
+            }
+            else if (tabControlConsulta.SelectedIndex == 1)
+            {
+                toolTipCadastro.SetToolTip(this.buttonBuscarCadastro, "Buscar Cadastro");
+            }
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -496,6 +506,12 @@ namespace UIPrincipal
         {
             FormGerenciamentoServidor frm = new FormGerenciamentoServidor();
             frm.ShowDialog();
+        }
+
+        private void jANELADETESTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormParaTeste formParaTeste = new FormParaTeste();
+            formParaTeste.ShowDialog();
         }
     }
 }

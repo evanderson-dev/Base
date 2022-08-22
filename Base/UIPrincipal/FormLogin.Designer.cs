@@ -64,6 +64,8 @@ namespace UIPrincipal
             this.buttonLogin.Text = "LOGAR";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
+            this.buttonLogin.MouseHover += new System.EventHandler(this.buttonLogin_MouseHover);
             // 
             // buttonSair
             // 
@@ -79,6 +81,8 @@ namespace UIPrincipal
             this.buttonSair.Text = "SAIR";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            this.buttonSair.MouseLeave += new System.EventHandler(this.buttonSair_MouseLeave);
+            this.buttonSair.MouseHover += new System.EventHandler(this.buttonSair_MouseHover);
             // 
             // textBoxUsuario
             // 

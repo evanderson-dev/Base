@@ -13,7 +13,7 @@ namespace BLL
         {
             List<EnderecoServidor> retorno = new List<EnderecoServidor>();
             EnderecoServidor enderecoServidor = new EnderecoServidor();
-            ArrayList conexoes = Infra.Arquivo.BuscarConexoes();
+            ArrayList conexoes = Infra.Arquivo.BuscarConexoesBD();
 
             foreach (var item in conexoes)
             {

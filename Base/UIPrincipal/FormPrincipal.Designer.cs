@@ -107,6 +107,7 @@ namespace UIPrincipal
             this.visualizarDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impressãoDiretaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jANELADETESTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -177,7 +178,8 @@ namespace UIPrincipal
             // fERRAMENTASToolStripMenuItem
             // 
             this.fERRAMENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sERVIDORToolStripMenuItem});
+            this.sERVIDORToolStripMenuItem,
+            this.jANELADETESTESToolStripMenuItem});
             this.fERRAMENTASToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fERRAMENTASToolStripMenuItem.Name = "fERRAMENTASToolStripMenuItem";
             this.fERRAMENTASToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
@@ -186,7 +188,7 @@ namespace UIPrincipal
             // sERVIDORToolStripMenuItem
             // 
             this.sERVIDORToolStripMenuItem.Name = "sERVIDORToolStripMenuItem";
-            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sERVIDORToolStripMenuItem.Text = "SERVIDOR";
             this.sERVIDORToolStripMenuItem.Click += new System.EventHandler(this.sERVIDORToolStripMenuItem_Click);
             // 
@@ -900,6 +902,13 @@ namespace UIPrincipal
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
+            // jANELADETESTESToolStripMenuItem
+            // 
+            this.jANELADETESTESToolStripMenuItem.Name = "jANELADETESTESToolStripMenuItem";
+            this.jANELADETESTESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jANELADETESTESToolStripMenuItem.Text = "JANELA DE TESTES";
+            this.jANELADETESTESToolStripMenuItem.Click += new System.EventHandler(this.jANELADETESTESToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,6 +927,7 @@ namespace UIPrincipal
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SISTEMA O.S";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1023,5 +1033,6 @@ namespace UIPrincipal
         private System.Windows.Forms.ToolStripMenuItem exibirDetalhesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fERRAMENTASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sERVIDORToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jANELADETESTESToolStripMenuItem;
     }
 }
