@@ -101,24 +101,6 @@ namespace UIPrincipal
                 e.Cancel = true;
             }*/
         }
-        private void dataGridViewOSAbertas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*try
-            {
-                dataGridViewOSAbertas.CurrentRow.Selected = true;
-                string protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
-                BindingSource bindingSource = new BindingSource();
-                bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
-                using (FormConsultaOS frm = new FormConsultaOS(bindingSource))
-                {
-                    frm.ShowDialog();
-                }
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                return;
-            }*/
-        }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textoCopiado = dataGridViewOSAbertas.CurrentCell.Value.ToString();
@@ -443,7 +425,7 @@ namespace UIPrincipal
         {
             if (usuarioDataGridView.Rows.Count > 1)
             {
-                if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     return;
                 }
