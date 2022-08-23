@@ -19,7 +19,7 @@ namespace UIPrincipal
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            FormMessageBoxPersonalizado.ShowBox("TESTE DE MENSAGEM", "Teste de Titulo", MessageBoxButtons.YesNo);
+            FormMessageBoxPersonalizado.Show("TESTE DE MENSAGEM", "Teste de Titulo");
         }
     }
 }

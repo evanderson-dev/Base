@@ -54,6 +54,7 @@ namespace UIPrincipal
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.Black;
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
@@ -64,13 +65,12 @@ namespace UIPrincipal
             this.buttonLogin.Text = "LOGAR";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
-            this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
-            this.buttonLogin.MouseHover += new System.EventHandler(this.buttonLogin_MouseHover);
             // 
             // buttonSair
             // 
             this.buttonSair.BackColor = System.Drawing.Color.Black;
             this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.ForeColor = System.Drawing.Color.White;
@@ -81,8 +81,6 @@ namespace UIPrincipal
             this.buttonSair.Text = "SAIR";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            this.buttonSair.MouseLeave += new System.EventHandler(this.buttonSair_MouseLeave);
-            this.buttonSair.MouseHover += new System.EventHandler(this.buttonSair_MouseHover);
             // 
             // textBoxUsuario
             // 
@@ -184,6 +182,7 @@ namespace UIPrincipal
             // buttonConfirmarServidor
             // 
             this.buttonConfirmarServidor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonConfirmarServidor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonConfirmarServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmarServidor.Image = global::UIPrincipal.Properties.Resources.server_go;
             this.buttonConfirmarServidor.Location = new System.Drawing.Point(611, 283);
@@ -196,6 +195,7 @@ namespace UIPrincipal
             // buttonAddServidor
             // 
             this.buttonAddServidor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAddServidor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAddServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddServidor.Image = global::UIPrincipal.Properties.Resources.server_add;
             this.buttonAddServidor.Location = new System.Drawing.Point(640, 283);
@@ -218,6 +218,7 @@ namespace UIPrincipal
             // buttonAtualizar
             // 
             this.buttonAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAtualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtualizar.Image = global::UIPrincipal.Properties.Resources.arrow_refresh;
             this.buttonAtualizar.Location = new System.Drawing.Point(580, 281);

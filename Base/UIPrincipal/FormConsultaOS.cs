@@ -36,8 +36,6 @@ namespace UIPrincipal
 
         private void FormConsultaOS_Load(object sender, EventArgs e)
         {
-            //this.Size = new System.Drawing.Size(870, 495);
-
             comboBoxTipoChamado.DataSource = tipoChamadoBLL.BuscarTipoChamado("");
             comboBoxTipoChamado.DisplayMember = "Descricao";
             comboBoxTipoChamado.ValueMember = "Id";
@@ -211,11 +209,6 @@ namespace UIPrincipal
                         }
                     }
                 }
-                /*PdfPCell cell_Img = new PdfPCell(new Phrase(destinoCompleto));
-                cell_Img.Border = 0;
-                cell_Img.PaddingBottom = 20;
-                cell_Img.Colspan = 2;
-                table.AddCell(cell_Img);*/
             }
             catch (Exception ex)
             {
@@ -652,7 +645,6 @@ namespace UIPrincipal
                 this.Close();
             }
         }
-
         private void textBoxSolucao_KeyPress(object sender, KeyPressEventArgs e)
         {
             FuncoesGlobais.somenteLetras(sender, e);

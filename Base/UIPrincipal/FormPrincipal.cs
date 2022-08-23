@@ -13,6 +13,7 @@ namespace UIPrincipal
     {
         private bool Logado = true;
         private bool modificarProtcolo = false;
+        private string protocolo;
         private string protocoloOculto = "";
         public string cpfPessoa = "";
         public string textoCopiado = "";
@@ -113,6 +114,15 @@ namespace UIPrincipal
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                protocolo = dataGridViewOSAbertas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
             textoCopiado = dataGridViewOSAbertas.CurrentCell.Value.ToString();
             try
             {
@@ -133,7 +143,7 @@ namespace UIPrincipal
             if (tabControlConsulta.SelectedIndex == 0)
             {
                 BindingSource bindingSource = new BindingSource();
-                bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocoloOculto);
+                bindingSource.DataSource = ordemServicoBLL.BuscarOrdemServico(protocolo);
                 Impressao.GerarArquivoPdfOS(bindingSource);
 
                 using (FormPdfView formPdfView = new FormPdfView())
@@ -433,9 +443,11 @@ namespace UIPrincipal
 
         private void deletarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //FormMessageBoxPersonalizado frm = new FormMessageBoxPersonalizado();
             if (usuarioDataGridView.Rows.Count > 1)
             {
-                if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                //if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (FormMessageBoxPersonalizado.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO") == DialogResult.No)
                 {
                     return;
                 }

@@ -32,12 +32,12 @@
             System.Windows.Forms.Label labelDescricao;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
-            System.Windows.Forms.Label label11;
+            System.Windows.Forms.Label labelCodigo;
             System.Windows.Forms.Label labelUf;
             System.Windows.Forms.Label labelCidade;
             System.Windows.Forms.Label labelCelularDois;
             System.Windows.Forms.Label labelCelularUm;
-            System.Windows.Forms.Label label12;
+            System.Windows.Forms.Label labelNascimento;
             System.Windows.Forms.Label labelTelefone;
             System.Windows.Forms.Label labelEmail;
             System.Windows.Forms.Label labelNumCasa;
@@ -52,8 +52,8 @@
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.textBoxProtocolo = new System.Windows.Forms.TextBox();
             this.textBoxAtendente = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelProtocolo = new System.Windows.Forms.Label();
+            this.labelTipoChamado = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,9 +64,9 @@
             this.buttonNovo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxTecnicoResponsavel = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelLigarAntes = new System.Windows.Forms.Label();
             this.comboBoxlLigarAntes = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelPrazo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxPrazo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxDataAbertura = new System.Windows.Forms.MaskedTextBox();
@@ -95,12 +95,12 @@
             labelDescricao = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
-            label11 = new System.Windows.Forms.Label();
+            labelCodigo = new System.Windows.Forms.Label();
             labelUf = new System.Windows.Forms.Label();
             labelCidade = new System.Windows.Forms.Label();
             labelCelularDois = new System.Windows.Forms.Label();
             labelCelularUm = new System.Windows.Forms.Label();
-            label12 = new System.Windows.Forms.Label();
+            labelNascimento = new System.Windows.Forms.Label();
             labelTelefone = new System.Windows.Forms.Label();
             labelEmail = new System.Windows.Forms.Label();
             labelNumCasa = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@
             labelDescricao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             labelDescricao.AutoSize = true;
             labelDescricao.ForeColor = System.Drawing.Color.White;
-            labelDescricao.Location = new System.Drawing.Point(32, 223);
+            labelDescricao.Location = new System.Drawing.Point(13, 226);
             labelDescricao.Name = "labelDescricao";
             labelDescricao.Size = new System.Drawing.Size(72, 13);
             labelDescricao.TabIndex = 38;
@@ -147,15 +147,15 @@
             label9.TabIndex = 5;
             label9.Text = "NOME COMPLETO:";
             // 
-            // label11
+            // labelCodigo
             // 
-            label11.AutoSize = true;
-            label11.ForeColor = System.Drawing.Color.White;
-            label11.Location = new System.Drawing.Point(3, 23);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(52, 13);
-            label11.TabIndex = 3;
-            label11.Text = "CODIGO:";
+            labelCodigo.AutoSize = true;
+            labelCodigo.ForeColor = System.Drawing.Color.White;
+            labelCodigo.Location = new System.Drawing.Point(3, 23);
+            labelCodigo.Name = "labelCodigo";
+            labelCodigo.Size = new System.Drawing.Size(52, 13);
+            labelCodigo.TabIndex = 3;
+            labelCodigo.Text = "CODIGO:";
             // 
             // labelUf
             // 
@@ -197,15 +197,15 @@
             labelCelularUm.TabIndex = 22;
             labelCelularUm.Text = "CELULAR 1:";
             // 
-            // label12
+            // labelNascimento
             // 
-            label12.AutoSize = true;
-            label12.ForeColor = System.Drawing.Color.White;
-            label12.Location = new System.Drawing.Point(460, 23);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(81, 13);
-            label12.TabIndex = 1;
-            label12.Text = "NASCIMENTO:";
+            labelNascimento.AutoSize = true;
+            labelNascimento.ForeColor = System.Drawing.Color.White;
+            labelNascimento.Location = new System.Drawing.Point(460, 23);
+            labelNascimento.Name = "labelNascimento";
+            labelNascimento.Size = new System.Drawing.Size(81, 13);
+            labelNascimento.TabIndex = 1;
+            labelNascimento.Text = "NASCIMENTO:";
             // 
             // labelTelefone
             // 
@@ -278,10 +278,10 @@
             this.idDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn3});
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(34, 390);
+            this.usuarioDataGridView.Location = new System.Drawing.Point(14, 390);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.RowHeadersVisible = false;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(800, 198);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(836, 194);
             this.usuarioDataGridView.TabIndex = 10;
             // 
             // idDataGridViewTextBoxColumn
@@ -308,7 +308,7 @@
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.Image = global::UIPrincipal.Properties.Resources.magnifier;
-            this.buttonBuscar.Location = new System.Drawing.Point(255, 362);
+            this.buttonBuscar.Location = new System.Drawing.Point(235, 362);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(29, 24);
             this.buttonBuscar.TabIndex = 0;
@@ -318,7 +318,7 @@
             // textBoxBuscar
             // 
             this.textBoxBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxBuscar.Location = new System.Drawing.Point(35, 364);
+            this.textBoxBuscar.Location = new System.Drawing.Point(15, 364);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(219, 20);
             this.textBoxBuscar.TabIndex = 0;
@@ -331,7 +331,7 @@
             this.textBoxProtocolo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxProtocolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProtocolo.ForeColor = System.Drawing.Color.White;
-            this.textBoxProtocolo.Location = new System.Drawing.Point(400, 7);
+            this.textBoxProtocolo.Location = new System.Drawing.Point(398, 7);
             this.textBoxProtocolo.Name = "textBoxProtocolo";
             this.textBoxProtocolo.ReadOnly = true;
             this.textBoxProtocolo.Size = new System.Drawing.Size(136, 16);
@@ -340,40 +340,42 @@
             // textBoxAtendente
             // 
             this.textBoxAtendente.BackColor = System.Drawing.Color.White;
+            this.textBoxAtendente.Enabled = false;
             this.textBoxAtendente.Location = new System.Drawing.Point(547, 118);
             this.textBoxAtendente.Name = "textBoxAtendente";
             this.textBoxAtendente.ReadOnly = true;
-            this.textBoxAtendente.Size = new System.Drawing.Size(258, 20);
+            this.textBoxAtendente.Size = new System.Drawing.Size(293, 20);
             this.textBoxAtendente.TabIndex = 13;
             // 
-            // label1
+            // labelProtocolo
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(321, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "PROTOCOLO:";
+            this.labelProtocolo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelProtocolo.AutoSize = true;
+            this.labelProtocolo.ForeColor = System.Drawing.Color.White;
+            this.labelProtocolo.Location = new System.Drawing.Point(319, 9);
+            this.labelProtocolo.Name = "labelProtocolo";
+            this.labelProtocolo.Size = new System.Drawing.Size(77, 13);
+            this.labelProtocolo.TabIndex = 17;
+            this.labelProtocolo.Text = "PROTOCOLO:";
             // 
-            // label2
+            // labelTipoChamado
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(-130, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "TIPO DE CHAMADO:";
+            this.labelTipoChamado.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelTipoChamado.AutoSize = true;
+            this.labelTipoChamado.BackColor = System.Drawing.Color.Black;
+            this.labelTipoChamado.ForeColor = System.Drawing.Color.White;
+            this.labelTipoChamado.Location = new System.Drawing.Point(12, 183);
+            this.labelTipoChamado.Name = "labelTipoChamado";
+            this.labelTipoChamado.Size = new System.Drawing.Size(110, 13);
+            this.labelTipoChamado.TabIndex = 18;
+            this.labelTipoChamado.Text = "TIPO DE CHAMADO:";
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(573, 182);
+            this.label3.Location = new System.Drawing.Point(584, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
             this.label3.TabIndex = 19;
@@ -404,7 +406,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(198, 183);
+            this.label7.Location = new System.Drawing.Point(177, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 23;
@@ -412,7 +414,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(456, 605);
+            this.buttonCancelar.Location = new System.Drawing.Point(435, 598);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
@@ -423,7 +425,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(367, 605);
+            this.buttonSalvar.Location = new System.Drawing.Point(346, 598);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
@@ -435,7 +437,7 @@
             // buttonSair
             // 
             this.buttonSair.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonSair.Location = new System.Drawing.Point(545, 605);
+            this.buttonSair.Location = new System.Drawing.Point(521, 598);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
@@ -446,7 +448,7 @@
             // 
             // buttonNovo
             // 
-            this.buttonNovo.Location = new System.Drawing.Point(278, 605);
+            this.buttonNovo.Location = new System.Drawing.Point(257, 598);
             this.buttonNovo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(75, 23);
@@ -458,14 +460,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.buttonCancelar);
             this.panel1.Controls.Add(this.buttonSalvar);
             this.panel1.Controls.Add(this.comboBoxTecnicoResponsavel);
             this.panel1.Controls.Add(this.buttonSair);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.labelLigarAntes);
             this.panel1.Controls.Add(this.buttonNovo);
             this.panel1.Controls.Add(this.comboBoxlLigarAntes);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.labelPrazo);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.maskedTextBoxPrazo);
             this.panel1.Controls.Add(this.maskedTextBoxDataAbertura);
@@ -480,8 +483,8 @@
             this.panel1.Controls.Add(this.buttonBuscar);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textBoxProtocolo);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelTipoChamado);
+            this.panel1.Controls.Add(this.labelProtocolo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.MaximumSize = new System.Drawing.Size(870, 639);
@@ -496,22 +499,22 @@
             this.comboBoxTecnicoResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTecnicoResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
-            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(576, 198);
+            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(587, 199);
             this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
-            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(258, 21);
+            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(263, 21);
             this.comboBoxTecnicoResponsavel.TabIndex = 46;
             this.comboBoxTecnicoResponsavel.Click += new System.EventHandler(this.comboBoxTecnicoResponsavel_Click);
             // 
-            // label13
+            // labelLigarAntes
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(321, 184);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 13);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "LIGAR ANTES:";
+            this.labelLigarAntes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelLigarAntes.AutoSize = true;
+            this.labelLigarAntes.ForeColor = System.Drawing.Color.White;
+            this.labelLigarAntes.Location = new System.Drawing.Point(298, 183);
+            this.labelLigarAntes.Name = "labelLigarAntes";
+            this.labelLigarAntes.Size = new System.Drawing.Size(81, 13);
+            this.labelLigarAntes.TabIndex = 45;
+            this.labelLigarAntes.Text = "LIGAR ANTES:";
             // 
             // comboBoxlLigarAntes
             // 
@@ -523,28 +526,28 @@
             this.comboBoxlLigarAntes.Items.AddRange(new object[] {
             "SIM",
             "NAO"});
-            this.comboBoxlLigarAntes.Location = new System.Drawing.Point(324, 199);
+            this.comboBoxlLigarAntes.Location = new System.Drawing.Point(301, 199);
             this.comboBoxlLigarAntes.Name = "comboBoxlLigarAntes";
             this.comboBoxlLigarAntes.Size = new System.Drawing.Size(78, 21);
             this.comboBoxlLigarAntes.TabIndex = 44;
             // 
-            // label10
+            // labelPrazo
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(489, 182);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 13);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "PRAZO:";
+            this.labelPrazo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelPrazo.AutoSize = true;
+            this.labelPrazo.ForeColor = System.Drawing.Color.White;
+            this.labelPrazo.Location = new System.Drawing.Point(482, 184);
+            this.labelPrazo.Name = "labelPrazo";
+            this.labelPrazo.Size = new System.Drawing.Size(47, 13);
+            this.labelPrazo.TabIndex = 43;
+            this.labelPrazo.Text = "PRAZO:";
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(405, 182);
+            this.label5.Location = new System.Drawing.Point(380, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 42;
@@ -554,23 +557,26 @@
             // 
             this.maskedTextBoxPrazo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maskedTextBoxPrazo.BackColor = System.Drawing.Color.White;
-            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(492, 199);
-            this.maskedTextBoxPrazo.Mask = "00-00-0000";
+            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(485, 200);
+            this.maskedTextBoxPrazo.Mask = "00/00/0000 90:00";
             this.maskedTextBoxPrazo.Name = "maskedTextBoxPrazo";
             this.maskedTextBoxPrazo.ReadOnly = true;
-            this.maskedTextBoxPrazo.Size = new System.Drawing.Size(78, 20);
+            this.maskedTextBoxPrazo.Size = new System.Drawing.Size(98, 20);
             this.maskedTextBoxPrazo.TabIndex = 41;
+            this.maskedTextBoxPrazo.ValidatingType = typeof(System.DateTime);
             // 
             // maskedTextBoxDataAbertura
             // 
             this.maskedTextBoxDataAbertura.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
-            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(408, 199);
-            this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
+            this.maskedTextBoxDataAbertura.Enabled = false;
+            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(383, 200);
+            this.maskedTextBoxDataAbertura.Mask = "00/00/0000 90:00";
             this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
             this.maskedTextBoxDataAbertura.ReadOnly = true;
-            this.maskedTextBoxDataAbertura.Size = new System.Drawing.Size(78, 20);
+            this.maskedTextBoxDataAbertura.Size = new System.Drawing.Size(98, 20);
             this.maskedTextBoxDataAbertura.TabIndex = 40;
+            this.maskedTextBoxDataAbertura.ValidatingType = typeof(System.DateTime);
             // 
             // comboBoxStatusOS
             // 
@@ -579,7 +585,7 @@
             this.comboBoxStatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatusOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxStatusOS.FormattingEnabled = true;
-            this.comboBoxStatusOS.Location = new System.Drawing.Point(201, 199);
+            this.comboBoxStatusOS.Location = new System.Drawing.Point(180, 199);
             this.comboBoxStatusOS.Name = "comboBoxStatusOS";
             this.comboBoxStatusOS.Size = new System.Drawing.Size(117, 21);
             this.comboBoxStatusOS.TabIndex = 39;
@@ -590,7 +596,7 @@
             this.comboBoxTipoChamado.BackColor = System.Drawing.Color.White;
             this.comboBoxTipoChamado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoChamado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxTipoChamado.Location = new System.Drawing.Point(35, 199);
+            this.comboBoxTipoChamado.Location = new System.Drawing.Point(16, 199);
             this.comboBoxTipoChamado.Name = "comboBoxTipoChamado";
             this.comboBoxTipoChamado.Size = new System.Drawing.Size(160, 21);
             this.comboBoxTipoChamado.TabIndex = 0;
@@ -614,7 +620,7 @@
             this.groupBoxDadosPessoais.Controls.Add(this.label6);
             this.groupBoxDadosPessoais.Controls.Add(this.label4);
             this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxCelularUm);
-            this.groupBoxDadosPessoais.Controls.Add(label11);
+            this.groupBoxDadosPessoais.Controls.Add(labelCodigo);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxUf);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxAtendente);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxCidade);
@@ -624,16 +630,16 @@
             this.groupBoxDadosPessoais.Controls.Add(this.maskedTextBoxDataNascimento);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxPlano);
             this.groupBoxDadosPessoais.Controls.Add(labelCelularUm);
-            this.groupBoxDadosPessoais.Controls.Add(label12);
+            this.groupBoxDadosPessoais.Controls.Add(labelNascimento);
             this.groupBoxDadosPessoais.Controls.Add(labelTelefone);
             this.groupBoxDadosPessoais.Controls.Add(labelEmail);
             this.groupBoxDadosPessoais.Controls.Add(labelNumCasa);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxNumCasa);
             this.groupBoxDadosPessoais.Controls.Add(labelRua);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
-            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(29, 30);
+            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(10, 29);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
-            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(811, 147);
+            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(846, 147);
             this.groupBoxDadosPessoais.TabIndex = 0;
             this.groupBoxDadosPessoais.TabStop = false;
             // 
@@ -642,10 +648,11 @@
             this.textBoxCpf.BackColor = System.Drawing.Color.White;
             this.textBoxCpf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cpf", true));
+            this.textBoxCpf.Enabled = false;
             this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.ReadOnly = true;
-            this.textBoxCpf.Size = new System.Drawing.Size(258, 20);
+            this.textBoxCpf.Size = new System.Drawing.Size(293, 20);
             this.textBoxCpf.TabIndex = 42;
             // 
             // textBoxBairro
@@ -653,6 +660,7 @@
             this.textBoxBairro.BackColor = System.Drawing.Color.White;
             this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Bairro", true));
+            this.textBoxBairro.Enabled = false;
             this.textBoxBairro.Location = new System.Drawing.Point(290, 79);
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.ReadOnly = true;
@@ -674,6 +682,7 @@
             // 
             this.maskedTextBoxCep.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxCep.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cep", true));
+            this.maskedTextBoxCep.Enabled = false;
             this.maskedTextBoxCep.Location = new System.Drawing.Point(6, 79);
             this.maskedTextBoxCep.Mask = "00000-000";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
@@ -686,6 +695,7 @@
             this.textBoxEmail.BackColor = System.Drawing.Color.White;
             this.textBoxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Email", true));
+            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(6, 118);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.ReadOnly = true;
@@ -696,6 +706,7 @@
             // 
             this.maskedTextBoxTelefone.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Telefone", true));
+            this.maskedTextBoxTelefone.Enabled = false;
             this.maskedTextBoxTelefone.Location = new System.Drawing.Point(248, 118);
             this.maskedTextBoxTelefone.Mask = "(99) 0000-0000";
             this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
@@ -707,6 +718,7 @@
             // 
             this.maskedTextBoxCelularDois.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxCelularDois.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CelularDois", true));
+            this.maskedTextBoxCelularDois.Enabled = false;
             this.maskedTextBoxCelularDois.Location = new System.Drawing.Point(450, 118);
             this.maskedTextBoxCelularDois.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularDois.Name = "maskedTextBoxCelularDois";
@@ -719,6 +731,7 @@
             this.textBoxNomeCompleto.BackColor = System.Drawing.Color.White;
             this.textBoxNomeCompleto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxNomeCompleto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeCompleto", true));
+            this.textBoxNomeCompleto.Enabled = false;
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(70, 39);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
             this.textBoxNomeCompleto.ReadOnly = true;
@@ -729,6 +742,7 @@
             // 
             this.maskedTextBoxCelularUm.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxCelularUm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CelularUm", true));
+            this.maskedTextBoxCelularUm.Enabled = false;
             this.maskedTextBoxCelularUm.Location = new System.Drawing.Point(349, 118);
             this.maskedTextBoxCelularUm.Mask = "(99) 0 0000-0000";
             this.maskedTextBoxCelularUm.Name = "maskedTextBoxCelularUm";
@@ -741,6 +755,7 @@
             this.textBoxUf.BackColor = System.Drawing.Color.White;
             this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxUf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Uf", true));
+            this.textBoxUf.Enabled = false;
             this.textBoxUf.Location = new System.Drawing.Point(508, 79);
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.ReadOnly = true;
@@ -752,6 +767,7 @@
             this.textBoxCidade.BackColor = System.Drawing.Color.White;
             this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cidade", true));
+            this.textBoxCidade.Enabled = false;
             this.textBoxCidade.Location = new System.Drawing.Point(390, 79);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.ReadOnly = true;
@@ -762,8 +778,9 @@
             // 
             this.maskedTextBoxDataNascimento.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxDataNascimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "DataNascimento", true));
+            this.maskedTextBoxDataNascimento.Enabled = false;
             this.maskedTextBoxDataNascimento.Location = new System.Drawing.Point(463, 39);
-            this.maskedTextBoxDataNascimento.Mask = "00-00-0000";
+            this.maskedTextBoxDataNascimento.Mask = "00/00/0000";
             this.maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
             this.maskedTextBoxDataNascimento.ReadOnly = true;
             this.maskedTextBoxDataNascimento.Size = new System.Drawing.Size(78, 20);
@@ -774,16 +791,18 @@
             // 
             this.textBoxPlano.BackColor = System.Drawing.Color.White;
             this.textBoxPlano.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Plano", true));
+            this.textBoxPlano.Enabled = false;
             this.textBoxPlano.Location = new System.Drawing.Point(547, 79);
             this.textBoxPlano.Name = "textBoxPlano";
             this.textBoxPlano.ReadOnly = true;
-            this.textBoxPlano.Size = new System.Drawing.Size(258, 20);
+            this.textBoxPlano.Size = new System.Drawing.Size(293, 20);
             this.textBoxPlano.TabIndex = 9;
             // 
             // textBoxNumCasa
             // 
             this.textBoxNumCasa.BackColor = System.Drawing.Color.White;
             this.textBoxNumCasa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumCasa", true));
+            this.textBoxNumCasa.Enabled = false;
             this.textBoxNumCasa.Location = new System.Drawing.Point(248, 79);
             this.textBoxNumCasa.Name = "textBoxNumCasa";
             this.textBoxNumCasa.ReadOnly = true;
@@ -795,6 +814,7 @@
             this.textBoxRua.BackColor = System.Drawing.Color.White;
             this.textBoxRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rua", true));
+            this.textBoxRua.Enabled = false;
             this.textBoxRua.Location = new System.Drawing.Point(70, 79);
             this.textBoxRua.Name = "textBoxRua";
             this.textBoxRua.ReadOnly = true;
@@ -804,11 +824,10 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDescricao.Location = new System.Drawing.Point(34, 239);
+            this.textBoxDescricao.Location = new System.Drawing.Point(15, 242);
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(800, 100);
+            this.textBoxDescricao.Size = new System.Drawing.Size(835, 100);
             this.textBoxDescricao.TabIndex = 37;
             // 
             // tipoChamadoBindingSource
@@ -858,8 +877,8 @@
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.TextBox textBoxProtocolo;
         private System.Windows.Forms.TextBox textBoxAtendente;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelProtocolo;
+        private System.Windows.Forms.Label labelTipoChamado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
@@ -884,11 +903,11 @@
         private System.Windows.Forms.BindingSource tipoChamadoBindingSource;
         private System.Windows.Forms.TextBox textBoxBairro;
         private System.Windows.Forms.ComboBox comboBoxStatusOS;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelPrazo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPrazo;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataAbertura;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelLigarAntes;
         private System.Windows.Forms.ComboBox comboBoxlLigarAntes;
         private System.Windows.Forms.TextBox textBoxCpf;
         private System.Windows.Forms.BindingSource funcionarioBindingSource;

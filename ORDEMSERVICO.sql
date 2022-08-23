@@ -602,8 +602,8 @@ CREATE TABLE OrdemServico
 	Id_Cliente INT,
 	TipoChamado VARCHAR(50),
 	Descricao VARCHAR(1000),
-	DataAbertura DATETIME NULL,
-	DataPrazo DATETIME NULL,
+	DataAbertura SMALLDATETIME NULL,
+	DataPrazo SMALLDATETIME NULL,
 	DataDeFechamento DATE NULL,
 	TecnicoResponsavel VARCHAR(150),
 	Atendente VARCHAR(150),
@@ -619,8 +619,8 @@ CREATE PROCEDURE SP_AbrirOrdemServico
 	@Id_Cliente INT,
 	@TipoChamado VARCHAR(50),
 	@Descricao VARCHAR(1000),
-	@DataAbertura DATETIME NULL,
-	@DataPrazo DATETIME NULL,
+	@DataAbertura SMALLDATETIME NULL,
+	@DataPrazo SMALLDATETIME NULL,
 	@TecnicoResponsavel VARCHAR(150),
 	@Atendente VARCHAR(150),
 	@EstatusOS VARCHAR(20),
@@ -800,7 +800,7 @@ CREATE PROC SP_FecharOrdemServico
 	@Id INT,
 	@MotivoFechamento VARCHAR(1000),
 	@EstatusOS VARCHAR(20),
-	@DataDeFechamento DATE NULL
+	@DataDeFechamento SMALLDATETIME NULL
 AS
 	UPDATE OrdemServico SET
 	MotivoFechamento = @MotivoFechamento,
@@ -840,8 +840,9 @@ GO
 --EXEC SP_BuscarOS '123456789'
 --EXEC SP_BuscarOSAberta
 --SELECT Protocolo, Id_Cliente, TipoChamado, Descricao, DataDeFechamento, EstatusOS, MotivoFechamento FROM OrdemServico
+--SELECT * FROM OrdemServico
 --SELECT * FROM Pessoa
 --SELECT * FROM Plano
 --SELECT Cpf, NomeCompleto, Cliente, Funcionario, Ativo FROM Pessoa
-SELECT NomeUsuario, Senha, NomeCompleto, Cliente, Funcionario, Ativo, Id_Permissao FROM Pessoa
+--SELECT NomeUsuario, Senha, NomeCompleto, Cliente, Funcionario, Ativo, Id_Permissao FROM Pessoa
 --GO

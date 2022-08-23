@@ -84,15 +84,16 @@
             this.planoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.openFileDialogAddFoto = new System.Windows.Forms.OpenFileDialog();
-            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
-            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.textBoxSolucao = new System.Windows.Forms.TextBox();
             this.labelSolucao = new System.Windows.Forms.Label();
             this.buttonSalvarFechamento = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.sPBuscarOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDEMSERVICODataSet = new UIPrincipal.ORDEMSERVICODataSet();
+            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
+            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
             this.sP_BuscarOSTableAdapter = new UIPrincipal.ORDEMSERVICODataSetTableAdapters.SP_BuscarOSTableAdapter();
             label1CpfCNPJ = new System.Windows.Forms.Label();
             labelBairro = new System.Windows.Forms.Label();
@@ -111,10 +112,11 @@
             this.groupBoxDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1CpfCNPJ
@@ -251,7 +253,7 @@
             // 
             labelDescricao.AutoSize = true;
             labelDescricao.ForeColor = System.Drawing.Color.White;
-            labelDescricao.Location = new System.Drawing.Point(18, 274);
+            labelDescricao.Location = new System.Drawing.Point(16, 274);
             labelDescricao.Name = "labelDescricao";
             labelDescricao.Size = new System.Drawing.Size(72, 13);
             labelDescricao.TabIndex = 55;
@@ -261,7 +263,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(306, 231);
+            this.label13.Location = new System.Drawing.Point(298, 231);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
             this.label13.TabIndex = 62;
@@ -271,7 +273,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(474, 231);
+            this.label10.Location = new System.Drawing.Point(481, 229);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 60;
@@ -281,7 +283,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(390, 231);
+            this.label5.Location = new System.Drawing.Point(381, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 59;
@@ -291,23 +293,25 @@
             // 
             this.maskedTextBoxPrazo.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxPrazo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "DataPrazo", true));
-            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(477, 248);
-            this.maskedTextBoxPrazo.Mask = "00-00-0000";
+            this.maskedTextBoxPrazo.Location = new System.Drawing.Point(484, 246);
+            this.maskedTextBoxPrazo.Mask = "00/00/0000 90:00";
             this.maskedTextBoxPrazo.Name = "maskedTextBoxPrazo";
             this.maskedTextBoxPrazo.ReadOnly = true;
-            this.maskedTextBoxPrazo.Size = new System.Drawing.Size(78, 20);
+            this.maskedTextBoxPrazo.Size = new System.Drawing.Size(98, 20);
             this.maskedTextBoxPrazo.TabIndex = 5;
+            this.maskedTextBoxPrazo.ValidatingType = typeof(System.DateTime);
             // 
             // maskedTextBoxDataAbertura
             // 
             this.maskedTextBoxDataAbertura.BackColor = System.Drawing.Color.White;
             this.maskedTextBoxDataAbertura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "DataAbertura", true));
-            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(393, 248);
-            this.maskedTextBoxDataAbertura.Mask = "00-00-0000";
+            this.maskedTextBoxDataAbertura.Location = new System.Drawing.Point(384, 248);
+            this.maskedTextBoxDataAbertura.Mask = "00/00/0000 90:00";
             this.maskedTextBoxDataAbertura.Name = "maskedTextBoxDataAbertura";
             this.maskedTextBoxDataAbertura.ReadOnly = true;
-            this.maskedTextBoxDataAbertura.Size = new System.Drawing.Size(78, 20);
+            this.maskedTextBoxDataAbertura.Size = new System.Drawing.Size(98, 20);
             this.maskedTextBoxDataAbertura.TabIndex = 57;
+            this.maskedTextBoxDataAbertura.ValidatingType = typeof(System.DateTime);
             // 
             // groupBoxDadosPessoais
             // 
@@ -343,9 +347,9 @@
             this.groupBoxDadosPessoais.Controls.Add(labelRua);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
             this.groupBoxDadosPessoais.ForeColor = System.Drawing.Color.White;
-            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(14, 81);
+            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(12, 81);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
-            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(825, 147);
+            this.groupBoxDadosPessoais.Size = new System.Drawing.Size(846, 147);
             this.groupBoxDadosPessoais.TabIndex = 48;
             this.groupBoxDadosPessoais.TabStop = false;
             // 
@@ -356,7 +360,7 @@
             this.textBoxPlano.Location = new System.Drawing.Point(547, 79);
             this.textBoxPlano.Name = "textBoxPlano";
             this.textBoxPlano.ReadOnly = true;
-            this.textBoxPlano.Size = new System.Drawing.Size(272, 20);
+            this.textBoxPlano.Size = new System.Drawing.Size(293, 20);
             this.textBoxPlano.TabIndex = 68;
             // 
             // textBoxCpf
@@ -367,7 +371,7 @@
             this.textBoxCpf.Location = new System.Drawing.Point(547, 39);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.ReadOnly = true;
-            this.textBoxCpf.Size = new System.Drawing.Size(272, 20);
+            this.textBoxCpf.Size = new System.Drawing.Size(293, 20);
             this.textBoxCpf.TabIndex = 42;
             // 
             // textBoxBairro
@@ -495,7 +499,7 @@
             this.textBoxAtendente.Location = new System.Drawing.Point(547, 118);
             this.textBoxAtendente.Name = "textBoxAtendente";
             this.textBoxAtendente.ReadOnly = true;
-            this.textBoxAtendente.Size = new System.Drawing.Size(272, 20);
+            this.textBoxAtendente.Size = new System.Drawing.Size(293, 20);
             this.textBoxAtendente.TabIndex = 13;
             // 
             // textBoxCidade
@@ -538,7 +542,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(558, 231);
+            this.label3.Location = new System.Drawing.Point(584, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
             this.label3.TabIndex = 52;
@@ -548,19 +552,19 @@
             // 
             this.textBoxDescricao.BackColor = System.Drawing.Color.White;
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(19, 290);
+            this.textBoxDescricao.Location = new System.Drawing.Point(17, 290);
             this.textBoxDescricao.MaxLength = 1000;
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.ReadOnly = true;
-            this.textBoxDescricao.Size = new System.Drawing.Size(814, 125);
+            this.textBoxDescricao.Size = new System.Drawing.Size(835, 125);
             this.textBoxDescricao.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(183, 231);
+            this.label7.Location = new System.Drawing.Point(179, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 53;
@@ -573,7 +577,7 @@
             this.textBoxProtocolo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "Protocolo", true));
             this.textBoxProtocolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProtocolo.ForeColor = System.Drawing.Color.White;
-            this.textBoxProtocolo.Location = new System.Drawing.Point(366, 59);
+            this.textBoxProtocolo.Location = new System.Drawing.Point(364, 59);
             this.textBoxProtocolo.Name = "textBoxProtocolo";
             this.textBoxProtocolo.ReadOnly = true;
             this.textBoxProtocolo.Size = new System.Drawing.Size(136, 16);
@@ -583,7 +587,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 231);
+            this.label2.Location = new System.Drawing.Point(15, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 51;
@@ -593,7 +597,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(287, 61);
+            this.label1.Location = new System.Drawing.Point(285, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 50;
@@ -623,7 +627,7 @@
             this.comboBoxTipoChamado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoChamado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxTipoChamado.FormattingEnabled = true;
-            this.comboBoxTipoChamado.Location = new System.Drawing.Point(21, 247);
+            this.comboBoxTipoChamado.Location = new System.Drawing.Point(19, 247);
             this.comboBoxTipoChamado.Name = "comboBoxTipoChamado";
             this.comboBoxTipoChamado.Size = new System.Drawing.Size(160, 21);
             this.comboBoxTipoChamado.TabIndex = 63;
@@ -633,7 +637,7 @@
             this.comboBoxEstatusOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEstatusOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxEstatusOS.FormattingEnabled = true;
-            this.comboBoxEstatusOS.Location = new System.Drawing.Point(187, 247);
+            this.comboBoxEstatusOS.Location = new System.Drawing.Point(183, 247);
             this.comboBoxEstatusOS.Name = "comboBoxEstatusOS";
             this.comboBoxEstatusOS.Size = new System.Drawing.Size(113, 21);
             this.comboBoxEstatusOS.TabIndex = 64;
@@ -646,7 +650,7 @@
             this.comboBoxLigarAntes.Items.AddRange(new object[] {
             "SIM",
             "NAO"});
-            this.comboBoxLigarAntes.Location = new System.Drawing.Point(309, 247);
+            this.comboBoxLigarAntes.Location = new System.Drawing.Point(301, 247);
             this.comboBoxLigarAntes.Name = "comboBoxLigarAntes";
             this.comboBoxLigarAntes.Size = new System.Drawing.Size(78, 21);
             this.comboBoxLigarAntes.TabIndex = 65;
@@ -656,9 +660,9 @@
             this.comboBoxTecnicoResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTecnicoResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTecnicoResponsavel.FormattingEnabled = true;
-            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(561, 247);
+            this.comboBoxTecnicoResponsavel.Location = new System.Drawing.Point(587, 245);
             this.comboBoxTecnicoResponsavel.Name = "comboBoxTecnicoResponsavel";
-            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(272, 21);
+            this.comboBoxTecnicoResponsavel.Size = new System.Drawing.Size(263, 21);
             this.comboBoxTecnicoResponsavel.TabIndex = 66;
             // 
             // buttonFechar
@@ -669,7 +673,7 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.Color.Black;
-            this.buttonFechar.Location = new System.Drawing.Point(401, 567);
+            this.buttonFechar.Location = new System.Drawing.Point(396, 567);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(79, 23);
             this.buttonFechar.TabIndex = 68;
@@ -685,7 +689,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(486, 567);
+            this.button1.Location = new System.Drawing.Point(480, 567);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 70;
@@ -701,7 +705,7 @@
             this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonImprimir.ForeColor = System.Drawing.Color.Black;
-            this.buttonImprimir.Location = new System.Drawing.Point(320, 567);
+            this.buttonImprimir.Location = new System.Drawing.Point(315, 567);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(75, 23);
             this.buttonImprimir.TabIndex = 72;
@@ -714,30 +718,16 @@
             this.openFileDialogAddFoto.FileName = "openFileDialogAddFoto";
             this.openFileDialogAddFoto.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
             // 
-            // oRDEMSERVICODataSetOsPendente
-            // 
-            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
-            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPBuscarOSPendenteBindingSource
-            // 
-            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
-            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
-            // 
-            // sP_BuscarOSPendenteTableAdapter
-            // 
-            this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxSolucao
             // 
             this.textBoxSolucao.BackColor = System.Drawing.Color.White;
             this.textBoxSolucao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxSolucao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPBuscarOSBindingSource, "MotivoFechamento", true));
-            this.textBoxSolucao.Location = new System.Drawing.Point(19, 436);
+            this.textBoxSolucao.Location = new System.Drawing.Point(17, 436);
             this.textBoxSolucao.MaxLength = 1000;
             this.textBoxSolucao.Multiline = true;
             this.textBoxSolucao.Name = "textBoxSolucao";
-            this.textBoxSolucao.Size = new System.Drawing.Size(814, 125);
+            this.textBoxSolucao.Size = new System.Drawing.Size(835, 125);
             this.textBoxSolucao.TabIndex = 73;
             this.textBoxSolucao.Visible = false;
             this.textBoxSolucao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSolucao_KeyPress);
@@ -746,7 +736,7 @@
             // 
             this.labelSolucao.AutoSize = true;
             this.labelSolucao.ForeColor = System.Drawing.Color.White;
-            this.labelSolucao.Location = new System.Drawing.Point(16, 420);
+            this.labelSolucao.Location = new System.Drawing.Point(14, 420);
             this.labelSolucao.Name = "labelSolucao";
             this.labelSolucao.Size = new System.Drawing.Size(61, 13);
             this.labelSolucao.TabIndex = 74;
@@ -760,7 +750,7 @@
             this.buttonSalvarFechamento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSalvarFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarFechamento.ForeColor = System.Drawing.Color.Black;
-            this.buttonSalvarFechamento.Location = new System.Drawing.Point(320, 567);
+            this.buttonSalvarFechamento.Location = new System.Drawing.Point(315, 567);
             this.buttonSalvarFechamento.Name = "buttonSalvarFechamento";
             this.buttonSalvarFechamento.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvarFechamento.TabIndex = 75;
@@ -776,7 +766,7 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.Color.Black;
-            this.buttonCancelar.Location = new System.Drawing.Point(403, 567);
+            this.buttonCancelar.Location = new System.Drawing.Point(398, 567);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 76;
@@ -784,6 +774,19 @@
             this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Visible = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.comboBoxTecnicoResponsavel);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.maskedTextBoxPrazo);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(870, 600);
+            this.panel1.TabIndex = 77;
             // 
             // sPBuscarOSBindingSource
             // 
@@ -795,6 +798,20 @@
             this.oRDEMSERVICODataSet.DataSetName = "ORDEMSERVICODataSet";
             this.oRDEMSERVICODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // oRDEMSERVICODataSetOsPendente
+            // 
+            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
+            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPBuscarOSPendenteBindingSource
+            // 
+            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
+            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
+            // 
+            // sP_BuscarOSPendenteTableAdapter
+            // 
+            this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
+            // 
             // sP_BuscarOSTableAdapter
             // 
             this.sP_BuscarOSTableAdapter.ClearBeforeFill = true;
@@ -804,7 +821,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(854, 600);
+            this.ClientSize = new System.Drawing.Size(870, 600);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvarFechamento);
             this.Controls.Add(this.labelSolucao);
@@ -812,27 +829,23 @@
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonFechar);
-            this.Controls.Add(this.comboBoxTecnicoResponsavel);
             this.Controls.Add(this.comboBoxLigarAntes);
             this.Controls.Add(this.comboBoxEstatusOS);
             this.Controls.Add(this.comboBoxTipoChamado);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBoxBuscarOS);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.maskedTextBoxPrazo);
             this.Controls.Add(this.maskedTextBoxDataAbertura);
             this.Controls.Add(this.groupBoxDadosPessoais);
             this.Controls.Add(labelDescricao);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxProtocolo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(870, 639);
-            this.MinimumSize = new System.Drawing.Size(870, 639);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConsultaOS";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -841,10 +854,12 @@
             this.groupBoxDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -902,5 +917,6 @@
         private System.Windows.Forms.Label labelSolucao;
         private System.Windows.Forms.Button buttonSalvarFechamento;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

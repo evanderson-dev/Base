@@ -151,25 +151,5 @@ namespace UIPrincipal
                 return;
             }
         }
-
-        private void buttonLogin_MouseHover(object sender, EventArgs e)
-        {
-            buttonLogin.BackColor = System.Drawing.Color.Blue;
-        }
-
-        private void buttonLogin_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLogin.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void buttonSair_MouseHover(object sender, EventArgs e)
-        {
-            buttonSair.BackColor = System.Drawing.Color.Blue;
-        }
-
-        private void buttonSair_MouseLeave(object sender, EventArgs e)
-        {
-            buttonSair.BackColor = System.Drawing.Color.Black;
-        }
     }
 }
