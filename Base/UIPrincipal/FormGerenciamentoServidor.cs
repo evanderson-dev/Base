@@ -49,7 +49,7 @@ namespace UIPrincipal
         {
             string caminhoCriptografado, caminhoDescriptografado;
             string[] caminho = Directory.GetFiles(Constante.DiretorioDoEnderecoBanco, "BD*");
-            if (MessageBox.Show("CONFIRMA A EXCLUSÃO DESTE ENDEREÇO DE SERVIDOR?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("CONFIRMA A EXCLUSÃO DESTE ENDEREÇO DE SERVIDOR?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -61,7 +61,7 @@ namespace UIPrincipal
                         {
                             File.Delete(caminho[i]);
                             buttonAtualizar_Click(sender, e);
-                            MessageBox.Show($"O ARQUIVO {caminho[i]} FOI EXCLUÍDO!");
+                            MessageBox.Show($"O ARQUIVO:\n{caminho[i]}\nFOI EXCLUÍDO COM SUCESSO!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         }
                     }
