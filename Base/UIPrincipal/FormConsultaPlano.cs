@@ -41,7 +41,7 @@ namespace UIPrincipal
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DESEJA REALMENTE EXCLUIR ESTE PLANO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBoxCustomizada.Show("CONFIRMA A EXCLUSÃO DESTE PLANO?", "", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
             PlanoBLL planoBLL = new PlanoBLL();
@@ -49,7 +49,7 @@ namespace UIPrincipal
 
             planoBLL.Excluir(id);
             planoBindingSource.RemoveCurrent();
-            MessageBox.Show("PLANO EXCLUÍDO COM SUCESSO!");
+            MessageBoxCustomizada.Show("PLANO EXCLUÍDO COM SUCESSO!");
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)

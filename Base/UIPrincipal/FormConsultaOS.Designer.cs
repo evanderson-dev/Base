@@ -730,7 +730,6 @@
             this.textBoxSolucao.Size = new System.Drawing.Size(835, 125);
             this.textBoxSolucao.TabIndex = 73;
             this.textBoxSolucao.Visible = false;
-            this.textBoxSolucao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSolucao_KeyPress);
             // 
             // labelSolucao
             // 

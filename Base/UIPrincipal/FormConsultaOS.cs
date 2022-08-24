@@ -3,11 +3,9 @@ using BLL;
 using System;
 using System.Data;
 using System.Windows.Forms;
-using iTextSharp; // BIBLIOTECA PARA TRABALHAR COM ARQUIVOS PDF
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
-using iTextSharp.text.html.simpleparser;
 using Infra;
 using System.Data.SqlClient;
 
@@ -167,7 +165,7 @@ namespace UIPrincipal
                 if (!Directory.Exists(pastaDestino))
                 {
                     OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
-                    MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxCustomizada.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK);
                     Directory.CreateDirectory(pastaDestino);
                     openFileDialogAddFoto.ShowDialog();
                     origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
@@ -186,7 +184,7 @@ namespace UIPrincipal
                     }
                     catch (Exception ex)
                     {
-                        if ((MessageBox.Show($"{ex.Message}, \n\nDESEJA SELECIONAR UMA LOGO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                        if ((MessageBoxCustomizada.Show($"{ex.Message}, \n\nDESEJA SELECIONAR UMA LOGO?", "", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                         {
                             OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
                             Directory.CreateDirectory(pastaDestino);
@@ -594,7 +592,7 @@ namespace UIPrincipal
 
         private void buttonSalvarFechamento_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DESEJA ENCERRAR ESTA ORDEM DE SERVIÇO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBoxCustomizada.Show("DESEJA ENCERRAR ESTA ORDEM DE SERVIÇO?", "", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
@@ -632,22 +630,18 @@ namespace UIPrincipal
                 }
                 catch (SqlException ex)
                 {
-                    throw new Exception("SERVIDOR SQL ERRO: " + ex.Message);
+                    MessageBoxCustomizada.Show("SERVIDOR SQL ERRO: " + ex.Message);
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception(ex.Message);
+                    MessageBoxCustomizada.Show(ex.Message);
                 }
                 finally
                 {
                     cn.Close();
                 }
-                this.Close();
+                Close();
             }
-        }
-        private void textBoxSolucao_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            FuncoesGlobais.somenteLetras(sender, e);
         }
     }
 }

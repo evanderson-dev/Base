@@ -114,7 +114,7 @@ namespace Infra
                 if (!Directory.Exists(pastaDestino))
                 {
                     OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
-                    MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK);
                     Directory.CreateDirectory(pastaDestino);
                     openFileDialogAddFoto.ShowDialog();
                     origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO

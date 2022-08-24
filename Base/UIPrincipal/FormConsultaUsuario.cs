@@ -34,21 +34,21 @@ namespace UIPrincipal
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBoxCustomizada.Show("CONFIRMA A EXCLUSÃO DO CADASTRO?", "ATENÇÃO!", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
             else
             {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
-            if ((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"] != "")
-            {
-                File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
-            }
-            usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
-            usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
-            MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+                int id = Convert.ToInt32(((DataRowView)usuarioBindingSource.Current).Row["Id"]);
+                if ((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"] != "")
+                {
+                    File.Delete((string)((DataRowView)usuarioBindingSource.Current).Row["Foto"]);
+                }
+                usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
+                usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
+                MessageBoxCustomizada.Show("CADASTRO EXCLUIDO COM SUCESSO!");
             }
         }
 

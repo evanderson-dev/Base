@@ -8,7 +8,6 @@ namespace UIPrincipal
     public partial class FormCadastroPlano : Form
     {
         private bool inserindoNovo;
-
         public FormCadastroPlano()
         {
             InitializeComponent();
@@ -25,22 +24,20 @@ namespace UIPrincipal
         {
             Close();
         }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
             {
                 planoBindingSource.EndEdit();
                 Inserir();
-                MessageBox.Show("PLANO CADASTRADO COM SUCESSO!");
+                MessageBoxCustomizada.Show("PLANO CADASTRADO COM SUCESSO!");
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("OCORREU UM ERRO: " + ex.Message);
+                MessageBoxCustomizada.Show("OCORREU UM ERRO: " + ex.Message);
             }
         }
-
         private void Inserir()
         {
             PlanoBLL planoBLL = new PlanoBLL();

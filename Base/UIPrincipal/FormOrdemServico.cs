@@ -137,17 +137,17 @@ namespace UIPrincipal
                         ordemServicoBLL.AlterarOS(ordemServico);
                     }
 
-                    MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBoxCustomizada.Show("CADASTRO REALIZADO COM SUCESSO!");
                     Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("OCORREU UM ERRO" + ex.Message);
+                    MessageBoxCustomizada.Show("OCORREU UM ERRO: " + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("DADOS INSUFICIENTES!","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBoxCustomizada.Show("DADOS INSUFICIENTES!");
             }
         }
     }

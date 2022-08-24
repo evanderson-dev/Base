@@ -34,11 +34,11 @@ namespace UIPrincipal
             BindingSource usuarioBindingSource = new BindingSource();
             try
             {
-            usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxUsuario.Text);
+                usuarioBindingSource.DataSource = usuarioBLL.Buscar(textBoxUsuario.Text);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBoxCustomizada.Show(ex.Message);
             }
 
             if (usuarioBindingSource.Count != 0)
@@ -98,7 +98,7 @@ namespace UIPrincipal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBoxCustomizada.Show(ex.Message);
             }
         }
 

@@ -447,7 +447,8 @@ namespace UIPrincipal
             if (usuarioDataGridView.Rows.Count > 1)
             {
                 //if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                if (FormMessageBoxPersonalizado.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO") == DialogResult.No)
+                //if (MessageBoxPersonalizado.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO") == DialogResult.No)
+                if (MessageBoxCustomizada.Show("CONFIRMA A EXCLUSÃO DO CADASTRO?", "", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     return;
                 }
@@ -460,7 +461,7 @@ namespace UIPrincipal
                     }
                     usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
                     usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
-                    MessageBox.Show("CADASTRO EXCLUIDO COM SUCESSO!");
+                    MessageBoxCustomizada.Show("CADASTRO EXCLUIDO COM SUCESSO!");
                 }
             }
             else

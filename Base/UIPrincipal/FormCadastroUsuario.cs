@@ -32,7 +32,7 @@ namespace UIPrincipal
         {
             if (pictureBoxFoto.ImageLocation == "")
             {
-                if (MessageBox.Show("DESEJA CADASTRAR SEM FOTO?","ERRO!",MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBoxCustomizada.Show("DESEJA CADASTRAR SEM FOTO?","",MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     return;
                 }
@@ -46,7 +46,7 @@ namespace UIPrincipal
                 }
                 else
                 {
-                    if (MessageBox.Show("ERRO SO LOCALIZAR A FOTO, DESEJA CONTINUAR?", "ERRO!", MessageBoxButtons.YesNo) == DialogResult.No)
+                    if (MessageBoxCustomizada.Show("ERRO SO LOCALIZAR A FOTO, DESEJA CONTINUAR?", "ERRO!", MessageBoxButtons.YesNo) == DialogResult.No)
                     {
                         return;
                     }
@@ -57,12 +57,12 @@ namespace UIPrincipal
             {
                 //usuarioBindingSource.EndEdit();
                 Inserir();
-                MessageBox.Show("OPERAÇÃO REALIZADO COM SUCESSO!");
+                MessageBoxCustomizada.Show("OPERAÇÃO REALIZADA COM SUCESSO!");
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("OCORREU UM ERRO! " + ex.Message);
+                MessageBoxCustomizada.Show("OCORREU UM ERRO! " + ex.Message);
             }
         }
         private void Inserir()
@@ -236,7 +236,7 @@ namespace UIPrincipal
 
             if (File.Exists(destinoCompleto))
             {
-                if (MessageBox.Show("O ARQUIVO JÁ EXISTE, DESEJA SUBSTITUIR?","",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.No)
+                if (MessageBoxCustomizada.Show("O ARQUIVO JÁ EXISTE, DESEJA SUBSTITUIR?","",MessageBoxButtons.YesNo)==DialogResult.No)
                 {
                     return;
                 }
@@ -248,7 +248,7 @@ namespace UIPrincipal
             }
             else
             {
-                MessageBox.Show("ARQUIVO NÃO COPIADO");
+                MessageBoxCustomizada.Show("ARQUIVO NÃO COPIADO!");
             }
         }
 

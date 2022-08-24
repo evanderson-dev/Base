@@ -42,7 +42,7 @@ namespace UIPrincipal
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DESEJA EXCLUIR O TIPO DE CHAMADO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBoxCustomizada.Show("DESEJA EXCLUIR ESTE DE CHAMADO?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
             int id;
@@ -50,7 +50,7 @@ namespace UIPrincipal
             
             tipoChamadoBLL.Excluir(id);
             tipoChamadoBindingSource.RemoveCurrent();
-            MessageBox.Show("TIPO DE CHAMADO EXCLUIDO COM SUCESSO!");
+            MessageBoxCustomizada.Show("TIPO DE CHAMADO EXCLUIDO COM SUCESSO!");
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)
@@ -101,16 +101,16 @@ namespace UIPrincipal
                     tipoChamadoBindingSource.DataSource = tipoChamadoBLL.BuscarTipoChamado(textBoxBuscar.Text);
                     permitirSalvar = false;
                     
-                    MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!");
+                    MessageBoxCustomizada.Show("CADASTRO REALIZADO COM SUCESSO!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("OCORREU UM ERRO" + ex.Message);
+                    MessageBoxCustomizada.Show("OCORREU UM ERRO" + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("SELECIONE A OPÇÃO NOVO OU ALTERAR ANTES DE SALVAR!");
+                MessageBoxCustomizada.Show("SELECIONE A OPÇÃO NOVO OU ALTERAR ANTES DE SALVAR!");
             }
         }
 
