@@ -523,5 +523,11 @@ namespace UIPrincipal
             FormParaTeste formParaTeste = new FormParaTeste();
             formParaTeste.ShowDialog();
         }
+
+        private void cONFIGURAÇÕESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConfiguracoes frm = new FormConfiguracoes();
+            frm.Show();
+        }
     }
 }

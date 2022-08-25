@@ -70,6 +70,12 @@
     <Compile Include="FormCadastroPlano.designer.cs">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConfiguracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfiguracoes.Designer.cs">
+      <DependentUpon>FormConfiguracoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultaOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroPlano.resx">
       <DependentUpon>FormCadastroPlano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfiguracoes.resx">
+      <DependentUpon>FormConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaOS.resx">
       <DependentUpon>FormConsultaOS.cs</DependentUpon>

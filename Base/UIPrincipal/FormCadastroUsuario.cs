@@ -223,7 +223,6 @@ namespace UIPrincipal
                 if (!Directory.Exists(Constante.DiretorioDeImagem))//CRIA A PASTA CASO ELA NAO EXISTA
                 {
                     Directory.CreateDirectory(Constante.DiretorioDeImagem);
-                    Console.WriteLine(Constante.DiretorioDeImagem);
                 }
                 origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
                 foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO

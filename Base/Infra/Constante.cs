@@ -67,8 +67,7 @@ namespace Infra
     #region Impressao
     public static class Impressao
     {
-
-        public static void ImprimirOS(object _current)
+        public static void ImprimirOS(object _current)//IMPRESSAO DIRETA
         {
             BindingSource bindingSourceImprimirOS = new BindingSource();
             bindingSourceImprimirOS.DataSource = _current;
@@ -91,15 +90,18 @@ namespace Infra
             PdfPTable table = new PdfPTable(6);
             table.TotalWidth = 520f;
             table.LockedWidth = true;
-            //###################################
-            string origemCompleto = "";
-            string foto = @"\logoSenai.png";
-            string pastaDestino = Constante.DiretorioDeImagem;
-            string destinoCompleto = "";
 
-            void addLogo()
+            if (!File.Exists(Constante.DiretorioDeImagem + @"\logo.png"))
             {
-                Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logoSenai.png");
+                PdfPCell cell_Imagem = new PdfPCell(new Phrase($" "));
+                cell_Imagem.Border = 0;
+                cell_Imagem.PaddingBottom = 20;
+                cell_Imagem.Colspan = 2;
+                table.AddCell(cell_Imagem);
+            }
+            else
+            {
+                Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logo.png");
                 logo.ScaleToFit(100f, 100f);
                 PdfPCell cell_Imagem = new PdfPCell(new Phrase($"IMG", new Font(iTextSharp.text.Font.NORMAL, 10, 1)));
                 cell_Imagem.AddElement(logo);
@@ -107,59 +109,6 @@ namespace Infra
                 cell_Imagem.PaddingBottom = 20;
                 cell_Imagem.Colspan = 2;
                 table.AddCell(cell_Imagem);
-            }
-
-            try
-            {
-                if (!Directory.Exists(pastaDestino))
-                {
-                    OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
-                    MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK);
-                    Directory.CreateDirectory(pastaDestino);
-                    openFileDialogAddFoto.ShowDialog();
-                    origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
-                    foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
-                    destinoCompleto = pastaDestino + foto;
-                    System.IO.File.Copy(origemCompleto, destinoCompleto, true);
-                    File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
-
-                    addLogo();
-                }
-                else
-                {
-                    try
-                    {
-                        addLogo();
-                    }
-                    catch (Exception ex)
-                    {
-                        if ((MessageBox.Show($"{ex.Message}, \n\nDESEJA SELECIONAR UMA LOGO?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question)) == DialogResult.Yes)
-                        {
-                            OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
-                            Directory.CreateDirectory(pastaDestino);
-                            openFileDialogAddFoto.ShowDialog();
-                            origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
-                            foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
-                            destinoCompleto = pastaDestino + foto;
-                            System.IO.File.Copy(origemCompleto, destinoCompleto, true);
-                            File.Move(destinoCompleto, pastaDestino + @"\logoSenai.png");
-
-                            addLogo();
-                        }
-                        else
-                        {
-                            PdfPCell cell_Imagem = new PdfPCell(new Phrase($" "));
-                            cell_Imagem.Border = 0;
-                            cell_Imagem.PaddingBottom = 20;
-                            cell_Imagem.Colspan = 2;
-                            table.AddCell(cell_Imagem);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
 
             PdfPCell cell_Protocolo = new PdfPCell(new Phrase($"PROTOCOLO: {(string)((DataRowView)bindingSourceImprimirOS.Current).Row["Protocolo"]}", new Font(iTextSharp.text.Font.NORMAL, 10, 1)));
@@ -264,14 +213,14 @@ namespace Infra
             cell_LigarAntes.PaddingTop = 1f;
             table.AddCell(cell_LigarAntes);
 
-            PdfPCell cell_Abertura = new PdfPCell(new Phrase($"Abertura: {Convert.ToString(((DataRowView)bindingSourceImprimirOS.Current).Row["DataAbertura"]).Replace("00:00:00","")}", new Font(iTextSharp.text.Font.NORMAL, 8, 1)));
+            PdfPCell cell_Abertura = new PdfPCell(new Phrase($"Abertura: {Convert.ToString(((DataRowView)bindingSourceImprimirOS.Current).Row["DataAbertura"]).Replace("00:00:00", "")}", new Font(iTextSharp.text.Font.NORMAL, 8, 1)));
             cell_Abertura.Border = Rectangle.BOTTOM_BORDER | Rectangle.TOP_BORDER | Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
             cell_Abertura.BorderWidth = 1f;
             cell_Abertura.Padding = 4f;
             cell_Abertura.PaddingTop = 1f;
             table.AddCell(cell_Abertura);
 
-            PdfPCell cell_Prazo = new PdfPCell(new Phrase($"Prazo: {Convert.ToString(((DataRowView)bindingSourceImprimirOS.Current).Row["DataPrazo"]).Replace("00:00:00","")}", new Font(iTextSharp.text.Font.NORMAL, 8, 1)));
+            PdfPCell cell_Prazo = new PdfPCell(new Phrase($"Prazo: {Convert.ToString(((DataRowView)bindingSourceImprimirOS.Current).Row["DataPrazo"]).Replace("00:00:00", "")}", new Font(iTextSharp.text.Font.NORMAL, 8, 1)));
             cell_Prazo.Border = Rectangle.BOTTOM_BORDER | Rectangle.TOP_BORDER | Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
             cell_Prazo.BorderWidth = 1f;
             cell_Prazo.Padding = 4f;

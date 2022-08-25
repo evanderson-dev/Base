@@ -65,6 +65,15 @@ namespace UIPrincipal
             this.checkBoxEncaminhado = new System.Windows.Forms.CheckBox();
             this.checkBoxAberto = new System.Windows.Forms.CheckBox();
             this.dataGridViewOSAbertas = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoChamadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
             this.tabPageCadastrados = new System.Windows.Forms.TabPage();
             this.panelFiltroPessoa = new System.Windows.Forms.Panel();
             this.labelFilto = new System.Windows.Forms.Label();
@@ -98,16 +107,8 @@ namespace UIPrincipal
             this.visualizarDetalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impressãoDiretaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sPBuscarOSPendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDEMSERVICODataSetOsPendente = new UIPrincipal.ORDEMSERVICODataSetOsPendente();
             this.sP_BuscarOSPendenteTableAdapter = new UIPrincipal.ORDEMSERVICODataSetOsPendenteTableAdapters.SP_BuscarOSPendenteTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.protocoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoChamadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPrazoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cONFIGURAÇÕESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -116,6 +117,8 @@ namespace UIPrincipal
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
             this.tabPageCadastrados.SuspendLayout();
             this.panelFiltroPessoa.SuspendLayout();
             this.groupBoxFiltroCadastro.SuspendLayout();
@@ -124,8 +127,6 @@ namespace UIPrincipal
             this.menuStrip2.SuspendLayout();
             this.contextMenuStripAbaDois.SuspendLayout();
             this.contextMenuStripAbaUm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -179,7 +180,8 @@ namespace UIPrincipal
             // 
             this.fERRAMENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sERVIDORToolStripMenuItem,
-            this.jANELADETESTESToolStripMenuItem});
+            this.jANELADETESTESToolStripMenuItem,
+            this.cONFIGURAÇÕESToolStripMenuItem});
             this.fERRAMENTASToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fERRAMENTASToolStripMenuItem.Name = "fERRAMENTASToolStripMenuItem";
             this.fERRAMENTASToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
@@ -188,14 +190,14 @@ namespace UIPrincipal
             // sERVIDORToolStripMenuItem
             // 
             this.sERVIDORToolStripMenuItem.Name = "sERVIDORToolStripMenuItem";
-            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sERVIDORToolStripMenuItem.Text = "SERVIDOR";
             this.sERVIDORToolStripMenuItem.Click += new System.EventHandler(this.sERVIDORToolStripMenuItem_Click);
             // 
             // jANELADETESTESToolStripMenuItem
             // 
             this.jANELADETESTESToolStripMenuItem.Name = "jANELADETESTESToolStripMenuItem";
-            this.jANELADETESTESToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.jANELADETESTESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jANELADETESTESToolStripMenuItem.Text = "JANELA DE TESTES";
             this.jANELADETESTESToolStripMenuItem.Click += new System.EventHandler(this.jANELADETESTESToolStripMenuItem_Click);
             // 
@@ -479,6 +481,69 @@ namespace UIPrincipal
             this.dataGridViewOSAbertas.TabIndex = 3;
             this.dataGridViewOSAbertas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOSAbertas_CellClick);
             this.dataGridViewOSAbertas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewOSAbertas_MouseClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "COD";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // protocoloDataGridViewTextBoxColumn
+            // 
+            this.protocoloDataGridViewTextBoxColumn.DataPropertyName = "Protocolo";
+            this.protocoloDataGridViewTextBoxColumn.HeaderText = "PROTOCOLO";
+            this.protocoloDataGridViewTextBoxColumn.Name = "protocoloDataGridViewTextBoxColumn";
+            this.protocoloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.protocoloDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // nomeCompletoDataGridViewTextBoxColumn
+            // 
+            this.nomeCompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeCompletoDataGridViewTextBoxColumn.DataPropertyName = "NomeCompleto";
+            this.nomeCompletoDataGridViewTextBoxColumn.HeaderText = "CLIENTE";
+            this.nomeCompletoDataGridViewTextBoxColumn.Name = "nomeCompletoDataGridViewTextBoxColumn";
+            this.nomeCompletoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoChamadoDataGridViewTextBoxColumn
+            // 
+            this.tipoChamadoDataGridViewTextBoxColumn.DataPropertyName = "TipoChamado";
+            this.tipoChamadoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
+            this.tipoChamadoDataGridViewTextBoxColumn.Name = "tipoChamadoDataGridViewTextBoxColumn";
+            this.tipoChamadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoChamadoDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // estatusOSDataGridViewTextBoxColumn
+            // 
+            this.estatusOSDataGridViewTextBoxColumn.DataPropertyName = "EstatusOS";
+            this.estatusOSDataGridViewTextBoxColumn.HeaderText = "STATUS";
+            this.estatusOSDataGridViewTextBoxColumn.Name = "estatusOSDataGridViewTextBoxColumn";
+            this.estatusOSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataAberturaDataGridViewTextBoxColumn
+            // 
+            this.dataAberturaDataGridViewTextBoxColumn.DataPropertyName = "DataAbertura";
+            this.dataAberturaDataGridViewTextBoxColumn.HeaderText = "ABERTURA";
+            this.dataAberturaDataGridViewTextBoxColumn.Name = "dataAberturaDataGridViewTextBoxColumn";
+            this.dataAberturaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataPrazoDataGridViewTextBoxColumn
+            // 
+            this.dataPrazoDataGridViewTextBoxColumn.DataPropertyName = "DataPrazo";
+            this.dataPrazoDataGridViewTextBoxColumn.HeaderText = "PRAZO";
+            this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
+            this.dataPrazoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sPBuscarOSPendenteBindingSource
+            // 
+            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
+            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
+            // 
+            // oRDEMSERVICODataSetOsPendente
+            // 
+            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
+            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPageCadastrados
             // 
@@ -840,72 +905,16 @@ namespace UIPrincipal
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
-            // sPBuscarOSPendenteBindingSource
-            // 
-            this.sPBuscarOSPendenteBindingSource.DataMember = "SP_BuscarOSPendente";
-            this.sPBuscarOSPendenteBindingSource.DataSource = this.oRDEMSERVICODataSetOsPendente;
-            // 
-            // oRDEMSERVICODataSetOsPendente
-            // 
-            this.oRDEMSERVICODataSetOsPendente.DataSetName = "ORDEMSERVICODataSetOsPendente";
-            this.oRDEMSERVICODataSetOsPendente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // sP_BuscarOSPendenteTableAdapter
             // 
             this.sP_BuscarOSPendenteTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // cONFIGURAÇÕESToolStripMenuItem
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "COD";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // protocoloDataGridViewTextBoxColumn
-            // 
-            this.protocoloDataGridViewTextBoxColumn.DataPropertyName = "Protocolo";
-            this.protocoloDataGridViewTextBoxColumn.HeaderText = "PROTOCOLO";
-            this.protocoloDataGridViewTextBoxColumn.Name = "protocoloDataGridViewTextBoxColumn";
-            this.protocoloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.protocoloDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // nomeCompletoDataGridViewTextBoxColumn
-            // 
-            this.nomeCompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeCompletoDataGridViewTextBoxColumn.DataPropertyName = "NomeCompleto";
-            this.nomeCompletoDataGridViewTextBoxColumn.HeaderText = "CLIENTE";
-            this.nomeCompletoDataGridViewTextBoxColumn.Name = "nomeCompletoDataGridViewTextBoxColumn";
-            this.nomeCompletoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoChamadoDataGridViewTextBoxColumn
-            // 
-            this.tipoChamadoDataGridViewTextBoxColumn.DataPropertyName = "TipoChamado";
-            this.tipoChamadoDataGridViewTextBoxColumn.HeaderText = "TIPO DE CHAMADO";
-            this.tipoChamadoDataGridViewTextBoxColumn.Name = "tipoChamadoDataGridViewTextBoxColumn";
-            this.tipoChamadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoChamadoDataGridViewTextBoxColumn.Width = 155;
-            // 
-            // estatusOSDataGridViewTextBoxColumn
-            // 
-            this.estatusOSDataGridViewTextBoxColumn.DataPropertyName = "EstatusOS";
-            this.estatusOSDataGridViewTextBoxColumn.HeaderText = "STATUS";
-            this.estatusOSDataGridViewTextBoxColumn.Name = "estatusOSDataGridViewTextBoxColumn";
-            this.estatusOSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataAberturaDataGridViewTextBoxColumn
-            // 
-            this.dataAberturaDataGridViewTextBoxColumn.DataPropertyName = "DataAbertura";
-            this.dataAberturaDataGridViewTextBoxColumn.HeaderText = "ABERTURA";
-            this.dataAberturaDataGridViewTextBoxColumn.Name = "dataAberturaDataGridViewTextBoxColumn";
-            this.dataAberturaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataPrazoDataGridViewTextBoxColumn
-            // 
-            this.dataPrazoDataGridViewTextBoxColumn.DataPropertyName = "DataPrazo";
-            this.dataPrazoDataGridViewTextBoxColumn.HeaderText = "PRAZO";
-            this.dataPrazoDataGridViewTextBoxColumn.Name = "dataPrazoDataGridViewTextBoxColumn";
-            this.dataPrazoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cONFIGURAÇÕESToolStripMenuItem.Name = "cONFIGURAÇÕESToolStripMenuItem";
+            this.cONFIGURAÇÕESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cONFIGURAÇÕESToolStripMenuItem.Text = "CONFIGURAÇÕES";
+            this.cONFIGURAÇÕESToolStripMenuItem.Click += new System.EventHandler(this.cONFIGURAÇÕESToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -941,6 +950,8 @@ namespace UIPrincipal
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOSAbertas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
             this.tabPageCadastrados.ResumeLayout(false);
             this.panelFiltroPessoa.ResumeLayout(false);
             this.panelFiltroPessoa.PerformLayout();
@@ -952,8 +963,6 @@ namespace UIPrincipal
             this.menuStrip2.PerformLayout();
             this.contextMenuStripAbaDois.ResumeLayout(false);
             this.contextMenuStripAbaUm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sPBuscarOSPendenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDEMSERVICODataSetOsPendente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1032,5 +1041,6 @@ namespace UIPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAberturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPrazoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem cONFIGURAÇÕESToolStripMenuItem;
     }
 }
