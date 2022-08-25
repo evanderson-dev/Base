@@ -443,12 +443,9 @@ namespace UIPrincipal
 
         private void deletarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FormMessageBoxPersonalizado frm = new FormMessageBoxPersonalizado();
             if (usuarioDataGridView.Rows.Count > 1)
             {
-                //if (MessageBox.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                //if (MessageBoxPersonalizado.Show("DESEJA EXCLUIR O CADASTRO?", "ATENÇÃO") == DialogResult.No)
-                if (MessageBoxCustomizada.Show("CONFIRMA A EXCLUSÃO DO CADASTRO?", "", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBoxCustomizada.Show("CONFIRMA A EXCLUSÃO DO CADASTRO?", "", MessageBoxButtons.YesNo,"?") == DialogResult.No)
                 {
                     return;
                 }
@@ -461,7 +458,7 @@ namespace UIPrincipal
                     }
                     usuarioBLL.Excluir(id);// EXCLUSÃO DO CADASTRO NO BANCO
                     usuarioBindingSource.RemoveCurrent();// ATUALIZAÇÃO DA GRID VIEW REMOVENDO O ITEM EXCLUIDO
-                    MessageBoxCustomizada.Show("CADASTRO EXCLUIDO COM SUCESSO!");
+                    MessageBoxCustomizada.Show("CADASTRO EXCLUIDO COM SUCESSO!","",MessageBoxButtons.OK,"!");
                 }
             }
             else

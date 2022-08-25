@@ -29,19 +29,26 @@ namespace UIPrincipal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageBoxPersonalizado));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonNo = new System.Windows.Forms.Button();
             this.buttonYes = new System.Windows.Forms.Button();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelMessagem = new System.Windows.Forms.Label();
+            this.pictureBoxQuestion = new System.Windows.Forms.PictureBox();
+            this.pictureBoxExclamacao = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuestion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExclamacao)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBoxExclamacao);
+            this.panel1.Controls.Add(this.pictureBoxQuestion);
             this.panel1.Controls.Add(this.buttonOk);
             this.panel1.Controls.Add(this.buttonNo);
             this.panel1.Controls.Add(this.buttonYes);
@@ -124,12 +131,34 @@ namespace UIPrincipal
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMessagem.ForeColor = System.Drawing.Color.White;
-            this.labelMessagem.Location = new System.Drawing.Point(3, 22);
+            this.labelMessagem.Location = new System.Drawing.Point(66, 22);
             this.labelMessagem.Name = "labelMessagem";
-            this.labelMessagem.Size = new System.Drawing.Size(390, 88);
+            this.labelMessagem.Size = new System.Drawing.Size(264, 88);
             this.labelMessagem.TabIndex = 0;
             this.labelMessagem.Text = "MESSAGEM";
             this.labelMessagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxQuestion
+            // 
+            this.pictureBoxQuestion.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxQuestion.Image")));
+            this.pictureBoxQuestion.Location = new System.Drawing.Point(10, 41);
+            this.pictureBoxQuestion.Name = "pictureBoxQuestion";
+            this.pictureBoxQuestion.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxQuestion.TabIndex = 2;
+            this.pictureBoxQuestion.TabStop = false;
+            this.pictureBoxQuestion.Visible = false;
+            // 
+            // pictureBoxExclamacao
+            // 
+            this.pictureBoxExclamacao.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxExclamacao.Image")));
+            this.pictureBoxExclamacao.Location = new System.Drawing.Point(10, 41);
+            this.pictureBoxExclamacao.Name = "pictureBoxExclamacao";
+            this.pictureBoxExclamacao.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxExclamacao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxExclamacao.TabIndex = 3;
+            this.pictureBoxExclamacao.TabStop = false;
+            this.pictureBoxExclamacao.Visible = false;
             // 
             // MessageBoxPersonalizado
             // 
@@ -143,6 +172,8 @@ namespace UIPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuestion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExclamacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +186,7 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonYes;
         private System.Windows.Forms.Button buttonNo;
         private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.PictureBox pictureBoxQuestion;
+        private System.Windows.Forms.PictureBox pictureBoxExclamacao;
     }
 }
