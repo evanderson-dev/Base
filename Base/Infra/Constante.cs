@@ -1,6 +1,9 @@
-﻿using System;
+﻿using System.Configuration;
+using System.Collections.Specialized;
+using System;
 using System.Data;
 using System.IO;
+using System.Runtime;
 using System.Text;
 using System.Windows.Forms;
 using iTextSharp.text;
@@ -21,6 +24,8 @@ namespace Infra
         public static string NomeUsuario = null;
         public static string NomeCompleto = null;
         public static string conexaoAtual = "";
+        public static bool luzLigada = false;
+        public static bool luz = false;
     }
 
     public static class ArquivoBanco

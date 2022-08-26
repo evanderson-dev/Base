@@ -1,18 +1,23 @@
-﻿using BLL;
+﻿using System.Configuration;
+using System.Collections.Specialized;
+using BLL;
 using System;
 using System.Windows.Forms;
 using System.Data;
 using Infra;
 using System.IO;
+using System.Drawing;
 
 namespace UIPrincipal
 {
     public partial class FormLogin : Form
     {
         public bool Logou;
+        ToolTip toolTipServidor = new ToolTip();
         public FormLogin()
         {
             InitializeComponent();
+            FuncoesGlobais.temaModoNorturno(this);
             Logou = false;
         }
         private void buttonSair_Click(object sender, EventArgs e)
@@ -84,10 +89,17 @@ namespace UIPrincipal
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            ToolTip toolTipServidor = new ToolTip();
             toolTipServidor.SetToolTip(this.buttonConfirmarServidor, "Confirmar Servidor");
             toolTipServidor.SetToolTip(this.buttonAddServidor, "Adicionar Servidor");
             toolTipServidor.SetToolTip(this.buttonAtualizar, "Atualizar Lista");
+            if (UsuarioLogado.luzLigada)
+            {
+                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Noturno");
+            }
+            else
+            {
+                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Claro");
+            }
 
             try
             {
@@ -99,6 +111,12 @@ namespace UIPrincipal
             {
                 MessageBoxCustomizada.Show(ex.Message);
             }
+
+            string test = ConfigurationManager.AppSettings.Get("luz");
+            MessageBoxCustomizada.Show(test);
+            ConfigurationManager.AppSettings.Set("luz", "0");
+            test = ConfigurationManager.AppSettings.Get("luz");
+            MessageBoxCustomizada.Show(test);
         }
 
         private void buttonConfirmarServidor_Click(object sender, EventArgs e)
@@ -153,20 +171,20 @@ namespace UIPrincipal
 
         private void buttonBlackWhite_Click(object sender, EventArgs e)
         {
-            panelLogin.BackColor = System.Drawing.Color.White;
-            groupBoxLogin.BackColor = System.Drawing.Color.White;
-            labelServidor.BackColor = System.Drawing.Color.White;
-            labelServidor.ForeColor = System.Drawing.Color.Black;
-            groupBoxLogin.BackColor = System.Drawing.Color.White;
-            buttonAddServidor.BackColor = System.Drawing.Color.White;
-            buttonAtualizar.BackColor = System.Drawing.Color.White;
-            buttonConfirmarServidor.BackColor = System.Drawing.Color.White;
-            buttonLogin.BackColor = System.Drawing.Color.LightGray;
-            buttonLogin.ForeColor = System.Drawing.Color.Black;
-            buttonSair.BackColor = System.Drawing.Color.LightGray;
-            buttonSair.ForeColor = System.Drawing.Color.Black;
-
-            buttonBlackWhite.Image = Properties.Resources.lightbulb_off;
+            if (!UsuarioLogado.luzLigada)
+            {
+                UsuarioLogado.luzLigada = true;
+                buttonBlackWhite.Image = Properties.Resources.lightbulb;
+                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Noturno");
+                FuncoesGlobais.temaModoClaro(this);
+            }
+            else
+            {
+                UsuarioLogado.luzLigada = false;
+                buttonBlackWhite.Image = Properties.Resources.lightbulb_off;
+                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Claro");
+                FuncoesGlobais.temaModoNorturno(this);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,55 @@ namespace Infra
 {
     public static class FuncoesGlobais
     {
+        // RESETA TODOS OS CONTROLES PARA A COR PADRAO DEFINIDA PELO USUARIO. 
+        public static void temaModoNorturno(Control controle)
+        {
+            controle.BackColor = Color.Black;//SystemColors.Control;
+            controle.ForeColor = Color.White;//SystemColors.ControlText;
+            if (controle.HasChildren)
+            {
+                foreach (Control controleFilho in controle.Controls)
+                {
+                    temaModoNorturno(controleFilho);
+                }
+            }
+        }
+        public static void temaModoClaro(Control controle)
+        {
+            controle.BackColor = Color.White;
+            controle.ForeColor = Color.Black;
+            if (controle.HasChildren)
+            {
+                foreach (Control controleFilho in controle.Controls)
+                {
+                    temaModoClaro(controleFilho);
+                }
+            }
+        }
+        public static void temaPadraoSistema(Control controle)
+        {
+            controle.BackColor = SystemColors.Control;
+            controle.ForeColor = SystemColors.ControlText;
+            if (controle.HasChildren)
+            {
+                foreach (Control controleFilho in controle.Controls)
+                {
+                    temaPadraoSistema(controleFilho);
+                }
+            }
+        }
+        public static void temaPersonalizado(Control controle, Color _corUm, Color _corDois)
+        {
+            controle.BackColor = _corUm;
+            controle.ForeColor = _corDois;
+            if (controle.HasChildren)
+            {
+                foreach (Control controleFilho in controle.Controls)
+                {
+                    temaPersonalizado(controleFilho, _corUm, _corDois);
+                }
+            }
+        }
         public static void somenteLetras(object sender, KeyPressEventArgs e)
         {// ESTE METODO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX
             if (!char.IsControl(e.KeyChar) &&

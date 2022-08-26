@@ -14,7 +14,10 @@ namespace UIPrincipal
 {
     public partial class FormConfiguracoes : Form
     {
-        string origemCompleto="", foto="", destinoCompleto="", pastaDestino = Constante.DiretorioDeImagem;
+        private string origemCompleto = "";
+        private string foto = "";
+        private string destinoCompleto = "";
+        private readonly string pastaDestino = Constante.DiretorioDeImagem;
 
         private void buttonFechar_Click(object sender, EventArgs e)
         {
