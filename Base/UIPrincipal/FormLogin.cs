@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Data;
 using Infra;
 using System.IO;
-using System.Collections;
 
 namespace UIPrincipal
 {
@@ -150,6 +149,24 @@ namespace UIPrincipal
             {
                 return;
             }
+        }
+
+        private void buttonBlackWhite_Click(object sender, EventArgs e)
+        {
+            panelLogin.BackColor = System.Drawing.Color.White;
+            groupBoxLogin.BackColor = System.Drawing.Color.White;
+            labelServidor.BackColor = System.Drawing.Color.White;
+            labelServidor.ForeColor = System.Drawing.Color.Black;
+            groupBoxLogin.BackColor = System.Drawing.Color.White;
+            buttonAddServidor.BackColor = System.Drawing.Color.White;
+            buttonAtualizar.BackColor = System.Drawing.Color.White;
+            buttonConfirmarServidor.BackColor = System.Drawing.Color.White;
+            buttonLogin.BackColor = System.Drawing.Color.LightGray;
+            buttonLogin.ForeColor = System.Drawing.Color.Black;
+            buttonSair.BackColor = System.Drawing.Color.LightGray;
+            buttonSair.ForeColor = System.Drawing.Color.Black;
+
+            buttonBlackWhite.Image = Properties.Resources.lightbulb_off;
         }
     }
 }

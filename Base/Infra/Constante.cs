@@ -64,9 +64,10 @@ namespace Infra
             Directory.CreateDirectory(_caminho);
         }
     }
-    #region Impressao
+    
     public static class Impressao
     {
+        #region Impressao Direta
         public static void ImprimirOS(object _current)//IMPRESSAO DIRETA
         {
             BindingSource bindingSourceImprimirOS = new BindingSource();
@@ -460,7 +461,9 @@ namespace Infra
             // table.AddCell("TEXTO PARA SER EXIBIDO");
             // (int)System.Drawing.FontStyle.Bold
         }
+        #endregion Impressao Direta
 
+        #region Visualizar Impressao
         public static void GerarArquivoPdfOS(object _current)
         {
             BindingSource bindingSourceImprimirOS = new BindingSource();
@@ -483,12 +486,15 @@ namespace Infra
             table.TotalWidth = 520f;
             table.LockedWidth = true;
 
-            string origemCompleto = "";
-            string foto = @"\logo.png";
-            string pastaDestino = Constante.DiretorioDeImagem;
-            string destinoCompleto = "";
-
-            void addLogo()
+            if (!File.Exists(Constante.DiretorioDeImagem + @"\logo.png"))
+            {
+                PdfPCell cell_Imagem = new PdfPCell(new Phrase($" "));
+                cell_Imagem.Border = 0;
+                cell_Imagem.PaddingBottom = 20;
+                cell_Imagem.Colspan = 2;
+                table.AddCell(cell_Imagem);
+            }
+            else
             {
                 Image logo = Image.GetInstance(Constante.DiretorioDeImagem + @"\logo.png");
                 logo.ScaleToFit(100f, 100f);
@@ -498,57 +504,6 @@ namespace Infra
                 cell_Imagem.PaddingBottom = 20;
                 cell_Imagem.Colspan = 2;
                 table.AddCell(cell_Imagem);
-            }
-
-            try
-            {
-                if (!Directory.Exists(pastaDestino))
-                {
-                    OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
-                    MessageBox.Show("LOGO NÃO ENCONTRA, SELECIONE UMA NOVA IMAGEM!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Directory.CreateDirectory(pastaDestino);
-                    openFileDialogAddFoto.ShowDialog();
-                    origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
-                    foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
-                    destinoCompleto = pastaDestino + foto;
-                    System.IO.File.Copy(origemCompleto, destinoCompleto, true);
-                    File.Move(destinoCompleto, pastaDestino + @"\logo.png");
-                    addLogo();
-                }
-                else
-                {
-                    try
-                    {
-                        addLogo();
-                    }
-                    catch (Exception ex)
-                    {
-                        if ((MessageBox.Show($"{ex.Message}, \n\nDESEJA SELECIONAR UMA LOGO?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
-                        {
-                            OpenFileDialog openFileDialogAddFoto = new OpenFileDialog();
-                            Directory.CreateDirectory(pastaDestino);
-                            openFileDialogAddFoto.ShowDialog();
-                            origemCompleto = openFileDialogAddFoto.FileName;//RETORNA O CAMINHO COMPLETO E NOME DO ARQUIVO
-                            foto = openFileDialogAddFoto.SafeFileName;//RETORNA O NOME DO ARQUIVO
-                            destinoCompleto = pastaDestino + foto;
-                            System.IO.File.Copy(origemCompleto, destinoCompleto, true);
-                            File.Move(destinoCompleto, pastaDestino + @"\logo.png");
-                            addLogo();
-                        }
-                        else
-                        {
-                            PdfPCell cell_Imagem = new PdfPCell(new Phrase($" "));
-                            cell_Imagem.Border = 0;
-                            cell_Imagem.PaddingBottom = 20;
-                            cell_Imagem.Colspan = 2;
-                            table.AddCell(cell_Imagem);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
 
             PdfPCell cell_Protocolo = new PdfPCell(new Phrase($"PROTOCOLO: {(string)((DataRowView)bindingSourceImprimirOS.Current).Row["Protocolo"]}", new Font(iTextSharp.text.Font.NORMAL, 10, 1)));
@@ -883,6 +838,6 @@ namespace Infra
             doc.Add(table);//adicionando escrita no arquivo.
             doc.Close();//fechando documento para que seja salva as alteraçoes.
         }
+        #endregion Visualizar Impressao
     }
-    #endregion
 }

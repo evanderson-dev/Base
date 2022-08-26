@@ -45,6 +45,7 @@ namespace UIPrincipal
             this.buttonAddServidor = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.buttonAtualizar = new System.Windows.Forms.Button();
+            this.buttonBlackWhite = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
             this.panelLogin.SuspendLayout();
@@ -162,6 +163,7 @@ namespace UIPrincipal
             // labelServidor
             // 
             this.labelServidor.AutoSize = true;
+            this.labelServidor.BackColor = System.Drawing.Color.Transparent;
             this.labelServidor.ForeColor = System.Drawing.Color.White;
             this.labelServidor.Location = new System.Drawing.Point(165, 269);
             this.labelServidor.Name = "labelServidor";
@@ -181,7 +183,8 @@ namespace UIPrincipal
             // 
             // buttonConfirmarServidor
             // 
-            this.buttonConfirmarServidor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonConfirmarServidor.BackColor = System.Drawing.Color.Black;
+            this.buttonConfirmarServidor.FlatAppearance.BorderSize = 0;
             this.buttonConfirmarServidor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonConfirmarServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmarServidor.Image = global::UIPrincipal.Properties.Resources.server_go;
@@ -194,7 +197,8 @@ namespace UIPrincipal
             // 
             // buttonAddServidor
             // 
-            this.buttonAddServidor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAddServidor.BackColor = System.Drawing.Color.Black;
+            this.buttonAddServidor.FlatAppearance.BorderSize = 0;
             this.buttonAddServidor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAddServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddServidor.Image = global::UIPrincipal.Properties.Resources.server_add;
@@ -207,7 +211,9 @@ namespace UIPrincipal
             // 
             // panelLogin
             // 
+            this.panelLogin.BackColor = System.Drawing.Color.Black;
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLogin.Controls.Add(this.buttonBlackWhite);
             this.panelLogin.Controls.Add(this.buttonAtualizar);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogin.Location = new System.Drawing.Point(0, 0);
@@ -217,7 +223,8 @@ namespace UIPrincipal
             // 
             // buttonAtualizar
             // 
-            this.buttonAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAtualizar.BackColor = System.Drawing.Color.Black;
+            this.buttonAtualizar.FlatAppearance.BorderSize = 0;
             this.buttonAtualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtualizar.Image = global::UIPrincipal.Properties.Resources.arrow_refresh;
@@ -227,6 +234,19 @@ namespace UIPrincipal
             this.buttonAtualizar.TabIndex = 14;
             this.buttonAtualizar.UseVisualStyleBackColor = false;
             this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
+            // 
+            // buttonBlackWhite
+            // 
+            this.buttonBlackWhite.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBlackWhite.FlatAppearance.BorderSize = 0;
+            this.buttonBlackWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBlackWhite.Image = global::UIPrincipal.Properties.Resources.lightbulb;
+            this.buttonBlackWhite.Location = new System.Drawing.Point(804, 3);
+            this.buttonBlackWhite.Name = "buttonBlackWhite";
+            this.buttonBlackWhite.Size = new System.Drawing.Size(23, 23);
+            this.buttonBlackWhite.TabIndex = 15;
+            this.buttonBlackWhite.UseVisualStyleBackColor = false;
+            this.buttonBlackWhite.Click += new System.EventHandler(this.buttonBlackWhite_Click);
             // 
             // FormLogin
             // 
@@ -274,5 +294,6 @@ namespace UIPrincipal
         private System.Windows.Forms.Button buttonAddServidor;
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Button buttonAtualizar;
+        private System.Windows.Forms.Button buttonBlackWhite;
     }
 }

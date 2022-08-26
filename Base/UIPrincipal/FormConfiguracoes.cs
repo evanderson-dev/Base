@@ -26,6 +26,14 @@ namespace UIPrincipal
             InitializeComponent();
             pictureBoxLogoOS.ImageLocation = Constante.DiretorioDeImagem + "\\logo.png";
         }
+        private void buttonDeleteLogo_Click(object sender, EventArgs e)
+        {
+            if (pictureBoxLogoOS.ImageLocation != "" || pictureBoxLogoOS.ImageLocation != null)
+            {
+                File.Delete(pictureBoxLogoOS.ImageLocation);
+                pictureBoxLogoOS.ImageLocation = "";
+            }
+        }
 
         private void buttonAddLogo_Click(object sender, EventArgs e)
         {
