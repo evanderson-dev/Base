@@ -21,9 +21,7 @@ namespace UIPrincipal
             string dadosLogin = $"User ID = {textBoxUsuario.Text}; Password = {textBoxSenha.Text}";
 
             if (checkBoxAutenticacaoWindows.Checked)
-            {
                 dadosLogin = "Integrated Security = True";
-            }
 
             if (checkBoxDiretorioLocal.Checked)
                 textBoxNomeMaquinaLocalOuIP.Text = ".";

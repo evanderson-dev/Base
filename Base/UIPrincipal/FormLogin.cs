@@ -17,8 +17,35 @@ namespace UIPrincipal
         public FormLogin()
         {
             InitializeComponent();
-            FuncoesGlobais.temaModoNorturno(this);
             Logou = false;
+            if (UsuarioLogado.luzLigada)
+            {
+                FuncoesGlobais.temaModoClaro(this);
+                foreach (Control controle in this.Controls)
+                {
+                    if (controle is TextBox)
+                    {
+                        controle.BackColor = Color.Red;
+                    }
+                }
+            }
+            else
+            {
+                FuncoesGlobais.temaModoNorturno(this);
+                /*foreach (Control controle in this.Controls)
+                {
+                    if (controle.HasChildren)
+                    {
+                        foreach (Control controleFilho in controle.Controls)
+                        {
+                            if (controleFilho is TextBox)
+                            {
+                                controleFilho.BackColor = Color.Red;
+                            }
+                        }
+                    }
+                }*/
+            }
         }
         private void buttonSair_Click(object sender, EventArgs e)
         {
@@ -89,34 +116,36 @@ namespace UIPrincipal
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            toolTipServidor.SetToolTip(this.buttonConfirmarServidor, "Confirmar Servidor");
-            toolTipServidor.SetToolTip(this.buttonAddServidor, "Adicionar Servidor");
-            toolTipServidor.SetToolTip(this.buttonAtualizar, "Atualizar Lista");
+            toolTipServidor.SetToolTip(buttonConfirmarServidor, "Confirmar Servidor");
+            toolTipServidor.SetToolTip(buttonAddServidor, "Adicionar Servidor");
+            toolTipServidor.SetToolTip(buttonAtualizar, "Atualizar Lista");
             if (UsuarioLogado.luzLigada)
             {
-                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Noturno");
+                toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Noturno");
             }
             else
             {
-                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Claro");
+                toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Claro");
             }
 
             try
             {
-                string[] texto = File.ReadAllLines(Convert.ToString(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco));
-                string servidorDecriptografado = texto[0];
-                UsuarioLogado.conexaoAtual = FuncoesGlobais.Base64Decode(servidorDecriptografado);
+                if (File.Exists(Convert.ToString(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco)))
+                {
+                    string[] texto = File.ReadAllLines(Convert.ToString(Constante.DiretorioDoEnderecoBanco + Constante.NomeArquivoBanco));
+                    string servidorDecriptografado = texto[0];
+                    UsuarioLogado.conexaoAtual = FuncoesGlobais.Base64Decode(servidorDecriptografado);
+                }
             }
             catch (Exception ex)
             {
                 MessageBoxCustomizada.Show(ex.Message);
             }
-
-            string test = ConfigurationManager.AppSettings.Get("luz");
-            MessageBoxCustomizada.Show(test);
-            ConfigurationManager.AppSettings.Set("luz", "0");
-            test = ConfigurationManager.AppSettings.Get("luz");
-            MessageBoxCustomizada.Show(test);
+            //string test = ConfigurationManager.AppSettings.Get("luz");
+            //MessageBoxCustomizada.Show(test);
+            //ConfigurationManager.AppSettings.Set("luz", "0");
+            //test = ConfigurationManager.AppSettings.Get("luz");
+            //MessageBoxCustomizada.Show(test);
         }
 
         private void buttonConfirmarServidor_Click(object sender, EventArgs e)
@@ -175,14 +204,14 @@ namespace UIPrincipal
             {
                 UsuarioLogado.luzLigada = true;
                 buttonBlackWhite.Image = Properties.Resources.lightbulb;
-                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Noturno");
+                toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Noturno");
                 FuncoesGlobais.temaModoClaro(this);
             }
             else
             {
                 UsuarioLogado.luzLigada = false;
                 buttonBlackWhite.Image = Properties.Resources.lightbulb_off;
-                toolTipServidor.SetToolTip(this.buttonBlackWhite, "Ativar Modo Claro");
+                toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Claro");
                 FuncoesGlobais.temaModoNorturno(this);
             }
         }

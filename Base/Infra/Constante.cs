@@ -43,6 +43,10 @@ namespace Infra
         public static void GravarStringDeConexaoNoArquivo(string _texto)
         {
             string nomeArquivo = "BD";
+
+            if (!Directory.Exists(Constante.DiretorioDoEnderecoBanco))
+                CriarPasta(Constante.DiretorioDoEnderecoBanco);
+
             for (int i = 1; i > 0; i++)
             {
                 if (!File.Exists(Constante.DiretorioDoEnderecoBanco + nomeArquivo + i + ".txt"))

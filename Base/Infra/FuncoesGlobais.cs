@@ -15,13 +15,27 @@ namespace Infra
         {
             controle.BackColor = Color.Black;//SystemColors.Control;
             controle.ForeColor = Color.White;//SystemColors.ControlText;
-            if (controle.HasChildren)
+            /*if (controle.HasChildren)
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
                     temaModoNorturno(controleFilho);
                 }
-            }
+            }*/
+
+            
+                if (controle.HasChildren)
+                {
+                MessageBox.Show("ACESSOU UM");
+                    foreach (Control controleFilho in controle.Controls)
+                    {
+                        if (controleFilho is TextBox)
+                        {
+                            MessageBox.Show("ACESSOU DOIS");
+                            controleFilho.BackColor = Color.Red;
+                        }
+                    }
+                }
         }
         public static void temaModoClaro(Control controle)
         {

@@ -40,6 +40,16 @@ namespace UIPrincipal
         public FormPrincipal()
         {
             InitializeComponent();
+            if (UsuarioLogado.luzLigada)
+            {
+                FuncoesGlobais.temaPadraoSistema(this);
+                FuncoesGlobais.temaModoNorturno(menuStrip1);
+                FuncoesGlobais.temaModoNorturno(statusStrip1);
+            }
+            else
+            {
+                FuncoesGlobais.temaModoNorturno(this);
+            }
         }
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
