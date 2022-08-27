@@ -42,9 +42,7 @@ namespace UIPrincipal
             InitializeComponent();
             if (UsuarioLogado.luzLigada)
             {
-                FuncoesGlobais.temaPadraoSistema(this);
-                FuncoesGlobais.temaModoNorturno(menuStrip1);
-                FuncoesGlobais.temaModoNorturno(statusStrip1);
+                FuncoesGlobais.temaModoClaro(this);
             }
             else
             {

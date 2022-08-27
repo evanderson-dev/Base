@@ -21,6 +21,7 @@ namespace UIPrincipal
             InitializeComponent();
             usuarioBindingSource.AddNew();
             inserindoNovo = true;
+            InitializeComponent();
         }
         public FormCadastroUsuario(object _current)
         {
@@ -176,6 +177,14 @@ namespace UIPrincipal
         }
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
+            if (UsuarioLogado.luzLigada)
+            {
+                FuncoesGlobais.temaModoClaro(this);
+            }
+            else
+            {
+                FuncoesGlobais.temaModoNorturno(this);
+            }
             if (inserindoNovo)
             {// SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
                 checkBoxCliente.Checked = false;

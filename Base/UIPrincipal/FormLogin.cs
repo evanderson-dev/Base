@@ -20,31 +20,12 @@ namespace UIPrincipal
             Logou = false;
             if (UsuarioLogado.luzLigada)
             {
-                FuncoesGlobais.temaModoClaro(this);
-                foreach (Control controle in this.Controls)
-                {
-                    if (controle is TextBox)
-                    {
-                        controle.BackColor = Color.Red;
-                    }
-                }
+                FuncoesGlobais.temaPadraoSistema(this);
             }
             else
             {
                 FuncoesGlobais.temaModoNorturno(this);
-                /*foreach (Control controle in this.Controls)
-                {
-                    if (controle.HasChildren)
-                    {
-                        foreach (Control controleFilho in controle.Controls)
-                        {
-                            if (controleFilho is TextBox)
-                            {
-                                controleFilho.BackColor = Color.Red;
-                            }
-                        }
-                    }
-                }*/
+                //foreach (Control controle in this.Controls)
             }
         }
         private void buttonSair_Click(object sender, EventArgs e)

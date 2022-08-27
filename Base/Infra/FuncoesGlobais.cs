@@ -10,32 +10,48 @@ namespace Infra
 {
     public static class FuncoesGlobais
     {
-        // RESETA TODOS OS CONTROLES PARA A COR PADRAO DEFINIDA PELO USUARIO. 
         public static void temaModoNorturno(Control controle)
         {
             controle.BackColor = Color.Black;//SystemColors.Control;
             controle.ForeColor = Color.White;//SystemColors.ControlText;
-            /*if (controle.HasChildren)
+            if (controle is MaskedTextBox)
+            {
+                controle.BackColor = Color.White;
+                controle.ForeColor = Color.Black;
+            }
+            // CONTROLE FILHO UM
+            if (controle.HasChildren)
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
-                    temaModoNorturno(controleFilho);
-                }
-            }*/
-
-            
-                if (controle.HasChildren)
-                {
-                MessageBox.Show("ACESSOU UM");
-                    foreach (Control controleFilho in controle.Controls)
+                    if (controleFilho is TextBox || controleFilho is ComboBox || controleFilho is DataGridView || controleFilho is MaskedTextBox)
+                        temaModoClaro(controleFilho);
+                    else
+                        temaModoNorturno(controleFilho);
+                    // CONTROLE FILHO DOIS
+                    if (controleFilho.HasChildren)
                     {
-                        if (controleFilho is TextBox)
+                        foreach (Control controleFilhoDois in controleFilho.Controls)
                         {
-                            MessageBox.Show("ACESSOU DOIS");
-                            controleFilho.BackColor = Color.Red;
+                            if (controleFilhoDois is TextBox || controleFilhoDois is ComboBox || controleFilhoDois is DataGridView || controleFilho is MaskedTextBox)
+                                temaModoClaro(controleFilhoDois);
+                            else
+                                temaModoNorturno(controleFilhoDois);
+                            // CONTROLE FILHO TRES
+                            if (controleFilhoDois.HasChildren)
+                            {
+                                foreach (Control controleFilhoTres in controleFilhoDois.Controls)
+                                {
+                                    if (controleFilhoTres is TextBox || controleFilhoTres is ComboBox || controleFilhoTres is DataGridView || controleFilho is MaskedTextBox)
+                                        temaModoClaro(controleFilhoTres);
+                                    else
+                                        temaModoNorturno(controleFilhoTres);
+                                }
+                            }
                         }
                     }
                 }
+            }
         }
         public static void temaModoClaro(Control controle)
         {
@@ -45,7 +61,30 @@ namespace Infra
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
-                    temaModoClaro(controleFilho);
+                    if (controleFilho is MenuStrip || controleFilho is StatusStrip)
+                        controleFilho.BackColor = Color.Gray;
+                    else
+                        temaPadraoSistema(controleFilho);
+                    if (controleFilho.HasChildren)
+                    {
+                        foreach (Control controleFilhoDois in controleFilho.Controls)
+                        {
+                            if (controleFilhoDois is MenuStrip || controleFilhoDois is StatusStrip)
+                                controleFilhoDois.BackColor = Color.LightGray;
+                            else
+                                temaPadraoSistema(controleFilhoDois);
+                            if (controleFilhoDois.HasChildren)
+                            {
+                                foreach (Control controleFilhoTres in controleFilhoDois.Controls)
+                                {
+                                    if (controleFilhoTres is MenuStrip || controleFilhoTres is StatusStrip)
+                                        controleFilhoTres.BackColor = Color.LightGray;
+                                    else
+                                        temaPadraoSistema(controleFilhoTres);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

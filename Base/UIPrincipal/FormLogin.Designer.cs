@@ -188,7 +188,7 @@ namespace UIPrincipal
             this.buttonConfirmarServidor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonConfirmarServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmarServidor.Image = global::UIPrincipal.Properties.Resources.server_go;
-            this.buttonConfirmarServidor.Location = new System.Drawing.Point(611, 283);
+            this.buttonConfirmarServidor.Location = new System.Drawing.Point(609, 281);
             this.buttonConfirmarServidor.Name = "buttonConfirmarServidor";
             this.buttonConfirmarServidor.Size = new System.Drawing.Size(23, 23);
             this.buttonConfirmarServidor.TabIndex = 11;
@@ -202,7 +202,7 @@ namespace UIPrincipal
             this.buttonAddServidor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAddServidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddServidor.Image = global::UIPrincipal.Properties.Resources.server_add;
-            this.buttonAddServidor.Location = new System.Drawing.Point(640, 283);
+            this.buttonAddServidor.Location = new System.Drawing.Point(638, 281);
             this.buttonAddServidor.Name = "buttonAddServidor";
             this.buttonAddServidor.Size = new System.Drawing.Size(23, 23);
             this.buttonAddServidor.TabIndex = 12;
@@ -213,8 +213,10 @@ namespace UIPrincipal
             // 
             this.panelLogin.BackColor = System.Drawing.Color.Black;
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelLogin.Controls.Add(this.buttonBlackWhite);
+            this.panelLogin.Controls.Add(this.buttonAddServidor);
+            this.panelLogin.Controls.Add(this.buttonConfirmarServidor);
             this.panelLogin.Controls.Add(this.buttonAtualizar);
+            this.panelLogin.Controls.Add(this.buttonBlackWhite);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogin.Location = new System.Drawing.Point(0, 0);
             this.panelLogin.Name = "panelLogin";
@@ -254,8 +256,6 @@ namespace UIPrincipal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(834, 349);
-            this.Controls.Add(this.buttonAddServidor);
-            this.Controls.Add(this.buttonConfirmarServidor);
             this.Controls.Add(this.labelServidor);
             this.Controls.Add(this.comboBoxEnderecoDoBanco);
             this.Controls.Add(this.groupBoxLogin);
