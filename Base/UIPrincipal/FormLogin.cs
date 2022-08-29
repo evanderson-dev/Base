@@ -20,12 +20,11 @@ namespace UIPrincipal
             Logou = false;
             if (UsuarioLogado.luzLigada)
             {
-                FuncoesGlobais.temaPadraoSistema(this);
+                FuncoesGlobais.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.Red, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
             }
             else
             {
                 FuncoesGlobais.temaModoNorturno(this);
-                //foreach (Control controle in this.Controls)
             }
         }
         private void buttonSair_Click(object sender, EventArgs e)
@@ -106,7 +105,7 @@ namespace UIPrincipal
             }
             else
             {
-                toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Claro");
+                toolTipServidor.SetToolTip(buttonBlackWhite, "Desativar Modo Noturno");
             }
 
             try
@@ -186,7 +185,7 @@ namespace UIPrincipal
                 UsuarioLogado.luzLigada = true;
                 buttonBlackWhite.Image = Properties.Resources.lightbulb;
                 toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Noturno");
-                FuncoesGlobais.temaModoClaro(this);
+                FuncoesGlobais.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.Red, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
             }
             else
             {

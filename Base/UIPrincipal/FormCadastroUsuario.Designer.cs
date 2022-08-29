@@ -480,7 +480,7 @@ namespace UIPrincipal
             this.buttonSalvar.FlatAppearance.BorderSize = 0;
             this.buttonSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.Location = new System.Drawing.Point(343, 568);
             this.buttonSalvar.Name = "buttonSalvar";
@@ -511,7 +511,7 @@ namespace UIPrincipal
             this.buttonCancelarCadastro.FlatAppearance.BorderSize = 0;
             this.buttonCancelarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonCancelarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonCancelarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCancelarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastro.Location = new System.Drawing.Point(429, 568);
             this.buttonCancelarCadastro.Name = "buttonCancelarCadastro";
@@ -1037,7 +1037,7 @@ namespace UIPrincipal
             // 
             this.buttonAddFoto.BackColor = System.Drawing.Color.White;
             this.buttonAddFoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddFoto.ForeColor = System.Drawing.Color.Black;
             this.buttonAddFoto.Location = new System.Drawing.Point(722, 165);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,32 +45,28 @@ namespace Infra
         }
         public static void temaModoClaro(Control controle)
         {
-            controle.BackColor = Color.White;
+            controle.BackColor = Color.LightGray;
             controle.ForeColor = Color.Black;
+            if (controle is TextBox || controle is MaskedTextBox || controle is ComboBox || controle is DataGridView)
+            {
+                controle.BackColor = Color.White;
+                controle.ForeColor = Color.Black;
+            }
             if (controle.HasChildren)
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
-                    if (controleFilho is MenuStrip || controleFilho is StatusStrip)
-                        controleFilho.BackColor = Color.Gray;
-                    else
-                        temaPadraoSistema(controleFilho);
+                    temaModoClaro(controleFilho);
                     if (controleFilho.HasChildren)
                     {
                         foreach (Control controleFilhoDois in controleFilho.Controls)
                         {
-                            if (controleFilhoDois is MenuStrip || controleFilhoDois is StatusStrip)
-                                controleFilhoDois.BackColor = Color.LightGray;
-                            else
-                                temaPadraoSistema(controleFilhoDois);
+                            temaModoClaro(controleFilhoDois);
                             if (controleFilhoDois.HasChildren)
                             {
                                 foreach (Control controleFilhoTres in controleFilhoDois.Controls)
                                 {
-                                    if (controleFilhoTres is MenuStrip || controleFilhoTres is StatusStrip)
-                                        controleFilhoTres.BackColor = Color.LightGray;
-                                    else
-                                        temaPadraoSistema(controleFilhoTres);
+                                    temaModoClaro(controleFilhoTres);                                    
                                 }
                             }
                         }
@@ -77,29 +74,64 @@ namespace Infra
                 }
             }
         }
-        public static void temaPadraoSistema(Control controle)
+        public static void temaPersonalizado
+            (
+            Control controle,
+            Color _fundo,
+            Color _texto,
+            Color _texBoxFundo,
+            Color _texBoxTexto,
+            Color _maskedTextBoxFundo,
+            Color _maskedTextBoxTexto,
+            Color _comboBoxFundo,
+            Color _comboBoxTexto,
+            Color _dataGridViewFundo,
+            Color _dataGridViewTexto
+            )
         {
-            controle.BackColor = SystemColors.Control;
-            controle.ForeColor = SystemColors.ControlText;
+            controle.BackColor = _fundo;
+            controle.ForeColor = _texto;
+
+            if (controle is TextBox)
+            {
+                controle.BackColor = _texBoxFundo;
+                controle.ForeColor = _texBoxTexto;
+            }
+            if (controle is MaskedTextBox)
+            {
+                controle.BackColor = _maskedTextBoxFundo;
+                controle.ForeColor = _maskedTextBoxTexto;
+            }
+            if (controle is ComboBox)
+            {
+                controle.BackColor = _comboBoxFundo;
+                controle.ForeColor = _comboBoxTexto;
+            }
+            if (controle is DataGridView)
+            {
+                controle.BackColor = _dataGridViewFundo;
+                controle.ForeColor = _dataGridViewTexto;
+            }
             if (controle.HasChildren)
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
-                    temaPadraoSistema(controleFilho);
+                    temaPersonalizado(controleFilho, _fundo, _texto, _texBoxFundo, _texBoxTexto, _maskedTextBoxFundo, _maskedTextBoxTexto, _comboBoxFundo, _comboBoxTexto, _dataGridViewFundo, _dataGridViewTexto);
+                    if (controleFilho.HasChildren)
+                    {
+                        foreach (Control controleFilhoDois in controleFilho.Controls)
+                        {
+                            temaPersonalizado(controleFilhoDois, _fundo, _texto, _texBoxFundo, _texBoxTexto, _maskedTextBoxFundo, _maskedTextBoxTexto, _comboBoxFundo, _comboBoxTexto, _dataGridViewFundo, _dataGridViewTexto);
+                        }
+                    }
                 }
             }
         }
-        public static void temaPersonalizado(Control controle, Color _corUm, Color _corDois)
+        public static Color StringToColor(string colorStr)
         {
-            controle.BackColor = _corUm;
-            controle.ForeColor = _corDois;
-            if (controle.HasChildren)
-            {
-                foreach (Control controleFilho in controle.Controls)
-                {
-                    temaPersonalizado(controleFilho, _corUm, _corDois);
-                }
-            }
+            TypeConverter cc = TypeDescriptor.GetConverter(typeof(Color));
+            var result = (Color)cc.ConvertFromString(colorStr);
+            return result;
         }
         public static void somenteLetras(object sender, KeyPressEventArgs e)
         {// ESTE METODO PERMITE QUE APENAS LETRAS E ESPAÇO SEJAM INSERIDOS NO TEXTBOX

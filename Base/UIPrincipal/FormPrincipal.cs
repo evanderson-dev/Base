@@ -42,21 +42,17 @@ namespace UIPrincipal
             InitializeComponent();
             if (UsuarioLogado.luzLigada)
             {
-                FuncoesGlobais.temaModoClaro(this);
+                FuncoesGlobais.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.White, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
+                for (int i = 0; i < menuStrip1.Items.Count; i++)
+                    menuStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
             }
             else
             {
                 FuncoesGlobais.temaModoNorturno(this);
-                menuStrip1.BackColor = Color.Black;
                 for (int i = 0; i < menuStrip1.Items.Count; i++)
-                {
                     menuStrip1.Items[i].ForeColor = Color.White;
-                }
-                statusStrip1.BackColor = Color.Black;
                 for (int i = 0; i < statusStrip1.Items.Count; i++)
-                {
                     statusStrip1.Items[i].ForeColor = Color.White;
-                }
             }
         }
         
@@ -364,14 +360,14 @@ namespace UIPrincipal
             if (tabControlConsulta.SelectedIndex == 0 && buttonFecharAba.Visible == true)
             {
                 buttonFecharAba.Size = new Size(11,11);
-                buttonFecharAba.Location = new Point(181,37);
+                buttonFecharAba.Location = new Point(180, 66);
                 deletarPessoaToolStripMenuItem.Visible = false;
                 editarPessoaToolStripMenuItem.Visible = false;
             }
             if (tabControlConsulta.SelectedIndex == 1 && buttonFecharAba.Visible == true)
             {
                 buttonFecharAba.Size = new Size(13,13);
-                buttonFecharAba.Location = new Point(181,35);
+                buttonFecharAba.Location = new Point(180,64);
                 deletarPessoaToolStripMenuItem.Visible = true;
                 editarPessoaToolStripMenuItem.Visible = true;
             }

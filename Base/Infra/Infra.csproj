@@ -55,6 +55,7 @@
     <Compile Include="Constante.cs" />
     <Compile Include="FuncoesGlobais.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Temas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

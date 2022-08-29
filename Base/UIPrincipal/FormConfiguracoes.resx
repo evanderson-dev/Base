@@ -121,7 +121,7 @@
   <data name="pictureBoxLogoOS.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJ8AAABQCAIAAACIxzDWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAMJJREFUeF7t0QENAAAMw6D7N737IMUCt7jalbUra1fWrqxdWbuydmXtytqVtStr
+        vQAADr0BR/uQrQAAAMJJREFUeF7t0QENAAAMw6D7N737IMUCt7jalbUra1fWrqxdWbuydmXtytqVtStr
         V9aurF1Zu7J2Ze3K2pW1K2tX1q6sXVm7snZl7cralbUra1fWrqxdWbuydmXtytqVtStrV9aurF1Zu7J2
         Ze3K2pW1K2tX1q6sXVm7snZl7cralbUra1fWrqxdWbuydmXtytqVtStrV9aurF1Zu7J2Ze3K2pW1K2tX
         1q6sXVm7snZl7cralbUra1fWrqxdWbuydl3bA2i4g51qcq8EAAAAAElFTkSuQmCC
@@ -130,7 +130,7 @@
   <data name="pictureBoxLogoOS.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJ8AAABQCAIAAACIxzDWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAMJJREFUeF7t0QENAAAMw6D7N737IMUCt7jalbUra1fWrqxdWbuydmXtytqVtStr
+        vQAADr0BR/uQrQAAAMJJREFUeF7t0QENAAAMw6D7N737IMUCt7jalbUra1fWrqxdWbuydmXtytqVtStr
         V9aurF1Zu7J2Ze3K2pW1K2tX1q6sXVm7snZl7cralbUra1fWrqxdWbuydmXtytqVtStrV9aurF1Zu7J2
         Ze3K2pW1K2tX1q6sXVm7snZl7cralbUra1fWrqxdWbuydmXtytqVtStrV9aurF1Zu7J2Ze3K2pW1K2tX
         1q6sXVm7snZl7cralbUra1fWrqxdWbuydl3bA2i4g51qcq8EAAAAAElFTkSuQmCC
@@ -139,10 +139,13 @@
   <data name="pictureBoxLogoOS.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJ8AAABQCAIAAACIxzDWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAMJJREFUeF7t0QENAAAMw6D7N737IMUCt7jalbUra1fWrqxdWbuydmXtytqVtStr
+        vQAADr0BR/uQrQAAAMJJREFUeF7t0QENAAAMw6D7N737IMUCt7jalbUra1fWrqxdWbuydmXtytqVtStr
         V9aurF1Zu7J2Ze3K2pW1K2tX1q6sXVm7snZl7cralbUra1fWrqxdWbuydmXtytqVtStrV9aurF1Zu7J2
         Ze3K2pW1K2tX1q6sXVm7snZl7cralbUra1fWrqxdWbuydmXtytqVtStrV9aurF1Zu7J2Ze3K2pW1K2tX
         1q6sXVm7snZl7cralbUra1fWrqxdWbuydl3bA2i4g51qcq8EAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="colorDialogSistema.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

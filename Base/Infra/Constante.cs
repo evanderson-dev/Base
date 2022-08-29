@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+//using System.Drawing;
 
 namespace Infra
 {
@@ -72,7 +73,7 @@ namespace Infra
         {
             Directory.CreateDirectory(_caminho);
         }
-    }
+    }    
     
     public static class Impressao
     {

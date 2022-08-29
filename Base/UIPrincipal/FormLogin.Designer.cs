@@ -44,8 +44,8 @@ namespace UIPrincipal
             this.buttonConfirmarServidor = new System.Windows.Forms.Button();
             this.buttonAddServidor = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.buttonBlackWhite = new System.Windows.Forms.Button();
             this.buttonAtualizar = new System.Windows.Forms.Button();
+            this.buttonBlackWhite = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxLogin.SuspendLayout();
             this.panelLogin.SuspendLayout();
@@ -174,7 +174,7 @@ namespace UIPrincipal
             // comboBoxEnderecoDoBanco
             // 
             this.comboBoxEnderecoDoBanco.FormattingEnabled = true;
-            this.comboBoxEnderecoDoBanco.Location = new System.Drawing.Point(168, 285);
+            this.comboBoxEnderecoDoBanco.Location = new System.Drawing.Point(166, 283);
             this.comboBoxEnderecoDoBanco.Name = "comboBoxEnderecoDoBanco";
             this.comboBoxEnderecoDoBanco.Size = new System.Drawing.Size(408, 21);
             this.comboBoxEnderecoDoBanco.TabIndex = 8;
@@ -213,6 +213,7 @@ namespace UIPrincipal
             // 
             this.panelLogin.BackColor = System.Drawing.Color.Black;
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLogin.Controls.Add(this.comboBoxEnderecoDoBanco);
             this.panelLogin.Controls.Add(this.buttonAddServidor);
             this.panelLogin.Controls.Add(this.buttonConfirmarServidor);
             this.panelLogin.Controls.Add(this.buttonAtualizar);
@@ -222,19 +223,6 @@ namespace UIPrincipal
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(834, 349);
             this.panelLogin.TabIndex = 13;
-            // 
-            // buttonBlackWhite
-            // 
-            this.buttonBlackWhite.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBlackWhite.FlatAppearance.BorderSize = 0;
-            this.buttonBlackWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBlackWhite.Image = global::UIPrincipal.Properties.Resources.lightbulb_off;
-            this.buttonBlackWhite.Location = new System.Drawing.Point(804, 3);
-            this.buttonBlackWhite.Name = "buttonBlackWhite";
-            this.buttonBlackWhite.Size = new System.Drawing.Size(23, 23);
-            this.buttonBlackWhite.TabIndex = 15;
-            this.buttonBlackWhite.UseVisualStyleBackColor = false;
-            this.buttonBlackWhite.Click += new System.EventHandler(this.buttonBlackWhite_Click);
             // 
             // buttonAtualizar
             // 
@@ -250,6 +238,19 @@ namespace UIPrincipal
             this.buttonAtualizar.UseVisualStyleBackColor = false;
             this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
+            // buttonBlackWhite
+            // 
+            this.buttonBlackWhite.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBlackWhite.FlatAppearance.BorderSize = 0;
+            this.buttonBlackWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBlackWhite.Image = global::UIPrincipal.Properties.Resources.lightbulb_off;
+            this.buttonBlackWhite.Location = new System.Drawing.Point(804, 3);
+            this.buttonBlackWhite.Name = "buttonBlackWhite";
+            this.buttonBlackWhite.Size = new System.Drawing.Size(23, 23);
+            this.buttonBlackWhite.TabIndex = 15;
+            this.buttonBlackWhite.UseVisualStyleBackColor = false;
+            this.buttonBlackWhite.Click += new System.EventHandler(this.buttonBlackWhite_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,7 +258,6 @@ namespace UIPrincipal
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(834, 349);
             this.Controls.Add(this.labelServidor);
-            this.Controls.Add(this.comboBoxEnderecoDoBanco);
             this.Controls.Add(this.groupBoxLogin);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
