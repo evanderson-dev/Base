@@ -21,7 +21,6 @@ namespace UIPrincipal
             InitializeComponent();
             usuarioBindingSource.AddNew();
             inserindoNovo = true;
-            InitializeComponent();
         }
         public FormCadastroUsuario(object _current)
         {
@@ -160,6 +159,10 @@ namespace UIPrincipal
         {
             if (checkBoxFuncionario.Checked)
             {
+                if (inserindoNovo)
+                {
+                    maskedTextBoxDataAdmissao.Text = ((Usuario)usuarioBindingSource.Current).DataAdmissao = DateTime.Now.ToString();
+                }
                 textBoxNomeUsuario.Enabled = true;
                 textBoxSenha.Enabled = true;
             }
@@ -169,22 +172,16 @@ namespace UIPrincipal
                 textBoxSenha.Text = null;
                 textBoxNomeUsuario.Enabled = false;
                 textBoxSenha.Enabled = false;
-            }
-            if (!checkBoxFuncionario.Checked)
                 maskedTextBoxDataAdmissao.Text = null;
-            else if (inserindoNovo)
-                maskedTextBoxDataAdmissao.Text = ((Usuario)usuarioBindingSource.Current).DataAdmissao = DateTime.Now.ToString();
+            }
         }
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
             if (UsuarioLogado.luzLigada)
-            {
                 FuncoesGlobais.temaModoClaro(this);
-            }
             else
-            {
                 FuncoesGlobais.temaModoNorturno(this);
-            }
+
             if (inserindoNovo)
             {// SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
                 checkBoxCliente.Checked = false;
@@ -216,7 +213,6 @@ namespace UIPrincipal
                 }
             }          
             comboBoxPlanos.DataBindings.Add(new Binding("Text", usuarioBindingSource, "Plano", true));
-
             buttonVisualizarSenha_Click(sender, e);
         }
 

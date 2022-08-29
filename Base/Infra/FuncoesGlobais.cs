@@ -14,38 +14,26 @@ namespace Infra
         {
             controle.BackColor = Color.Black;//SystemColors.Control;
             controle.ForeColor = Color.White;//SystemColors.ControlText;
-            if (controle is MaskedTextBox)
+            if (controle is TextBox || controle is MaskedTextBox || controle is ComboBox || controle is DataGridView)
             {
                 controle.BackColor = Color.White;
                 controle.ForeColor = Color.Black;
             }
-            // CONTROLE FILHO UM
-            if (controle.HasChildren)
+            if (controle.HasChildren)// CONTROLE FILHO UM
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
-                    if (controleFilho is TextBox || controleFilho is ComboBox || controleFilho is DataGridView || controleFilho is MaskedTextBox)
-                        temaModoClaro(controleFilho);
-                    else
-                        temaModoNorturno(controleFilho);
-                    // CONTROLE FILHO DOIS
-                    if (controleFilho.HasChildren)
+                    temaModoNorturno(controleFilho);
+                    if (controleFilho.HasChildren)// CONTROLE FILHO DOIS
                     {
                         foreach (Control controleFilhoDois in controleFilho.Controls)
                         {
-                            if (controleFilhoDois is TextBox || controleFilhoDois is ComboBox || controleFilhoDois is DataGridView || controleFilho is MaskedTextBox)
-                                temaModoClaro(controleFilhoDois);
-                            else
-                                temaModoNorturno(controleFilhoDois);
-                            // CONTROLE FILHO TRES
-                            if (controleFilhoDois.HasChildren)
+                            temaModoNorturno(controleFilhoDois);
+                            if (controleFilhoDois.HasChildren)// CONTROLE FILHO TRES
                             {
                                 foreach (Control controleFilhoTres in controleFilhoDois.Controls)
                                 {
-                                    if (controleFilhoTres is TextBox || controleFilhoTres is ComboBox || controleFilhoTres is DataGridView || controleFilho is MaskedTextBox)
-                                        temaModoClaro(controleFilhoTres);
-                                    else
-                                        temaModoNorturno(controleFilhoTres);
+                                     temaModoNorturno(controleFilhoTres);
                                 }
                             }
                         }
