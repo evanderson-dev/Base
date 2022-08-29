@@ -19,6 +19,7 @@ namespace Infra
                 controle.BackColor = Color.White;
                 controle.ForeColor = Color.Black;
             }
+            
             if (controle.HasChildren)// CONTROLE FILHO UM
             {
                 foreach (Control controleFilho in controle.Controls)

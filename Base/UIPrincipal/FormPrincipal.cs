@@ -47,8 +47,19 @@ namespace UIPrincipal
             else
             {
                 FuncoesGlobais.temaModoNorturno(this);
+                menuStrip1.BackColor = Color.Black;
+                for (int i = 0; i < menuStrip1.Items.Count; i++)
+                {
+                    menuStrip1.Items[i].ForeColor = Color.White;
+                }
+                statusStrip1.BackColor = Color.Black;
+                for (int i = 0; i < statusStrip1.Items.Count; i++)
+                {
+                    statusStrip1.Items[i].ForeColor = Color.White;
+                }
             }
         }
+        
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormConsultaUsuario frm = new FormConsultaUsuario())
