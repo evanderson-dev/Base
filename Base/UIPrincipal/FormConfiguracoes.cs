@@ -36,6 +36,22 @@ namespace UIPrincipal
             buttonCorFundoComboBox.BackColor = Temas.corComboBoxFundo;
             buttonCorTextoComboBox.BackColor = Temas.corComboBoxTexto;
             comboBox.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
+            for (int i = 0; i < 3; i++)
+                dataGridView.Rows.Add($"{i}", "NOME EXEMPLO", "123.456.789-12");
+            int row = dataGridView.RowCount;
+            int col = dataGridView.ColumnCount;
+            for (int j = 0; j < row; j++)
+            {
+                for (int i = 0; i < col; i++)
+                {
+                    dataGridView.Rows[j].Cells[i].Style.BackColor = Temas.corGridViewFundo;
+                }
+            }
+            buttonCorFundoGridView.BackColor = Temas.corGridViewFundo;
+            buttonCorTextoGridView.BackColor = Temas.corGridViewTexto;
+            buttonCorLinhaGridView.BackColor = Temas.corGridViewLinhas;
+            dataGridView.ForeColor = Temas.corGridViewTexto;
+            dataGridView.GridColor = Temas.corGridViewLinhas;
         }
         private void buttonDeleteLogo_Click(object sender, EventArgs e)
         {
@@ -92,8 +108,20 @@ namespace UIPrincipal
             MyDialog.ShowDialog();
             return MyDialog.Color;            
         }
+        private void corDeFundoPrimeiroPlano_Click(object sender, EventArgs e)
+        {// COR DE FUNDO GERAL
+            Temas.corTemporaria = corDeFundoPrimeiroPlano.BackColor;
+            Temas.corDeFundoPrimeiroPlano = selecionarCor(sender, e);
+            corDeFundoPrimeiroPlano.BackColor = Temas.corDeFundoPrimeiroPlano;
+        }
+        private void corTextoPrimeiroPlano_Click(object sender, EventArgs e)
+        {// COR DO TEXTO GERAL
+            Temas.corTemporaria = corTextoPrimeiroPlano.BackColor;
+            Temas.corTextoPrimeiroPlano = selecionarCor(sender, e);
+            corTextoPrimeiroPlano.BackColor = Temas.corTextoPrimeiroPlano;
+        }
         private void buttonCorTextBox_Click(object sender, EventArgs e)
-        {
+        {// COR DO FUNDO DA TEXT BOX
             Temas.corTemporaria = buttonCorTextBox.BackColor;
             Temas.corTextBoxFundo = selecionarCor(sender, e);
             textBoxPersonalizado.BackColor = Temas.corTextBoxFundo;
@@ -101,27 +129,15 @@ namespace UIPrincipal
             textBoxPersonalizado.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
         }
         private void buttonCorTextoTextBox_Click(object sender, EventArgs e)
-        {
+        {// COR DO TEXTO DA TEXT BOX
             Temas.corTemporaria = buttonCorTextoTextBox.BackColor;
             Temas.corTextBoxTexto = selecionarCor(sender, e);
             textBoxPersonalizado.ForeColor = Temas.corTextBoxTexto;
             buttonCorTextoTextBox.BackColor = Temas.corTextBoxTexto;
             textBoxPersonalizado.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
         }
-        private void corDeFundoPrimeiroPlano_Click(object sender, EventArgs e)
-        {
-            Temas.corTemporaria = corDeFundoPrimeiroPlano.BackColor;
-            Temas.corDeFundoPrimeiroPlano = selecionarCor(sender, e);
-            corDeFundoPrimeiroPlano.BackColor = Temas.corDeFundoPrimeiroPlano;
-        }
-        private void corTextoPrimeiroPlano_Click(object sender, EventArgs e)
-        {
-            Temas.corTemporaria = corTextoPrimeiroPlano.BackColor;
-            Temas.corTextoPrimeiroPlano = selecionarCor(sender, e);
-            corTextoPrimeiroPlano.BackColor = Temas.corTextoPrimeiroPlano;
-        }
         private void buttonCorFundoComboBox_Click(object sender, EventArgs e)
-        {
+        {// COR DE FUNDO DO COMBO BOX
             Temas.corTemporaria = buttonCorFundoComboBox.BackColor;
             Temas.corComboBoxFundo = selecionarCor(sender, e);
             comboBox.BackColor = Temas.corComboBoxFundo;
@@ -129,12 +145,45 @@ namespace UIPrincipal
             buttonCorFundoComboBox.BackColor = Temas.corComboBoxFundo;
         }
         private void buttonCorTextoComboBox_Click(object sender, EventArgs e)
-        {
+        {// COR DO TEXTO DO COMBO BOX
             Temas.corTemporaria = buttonCorTextoComboBox.BackColor;
-            Temas.corComboBoxTexto = selecionarCor(sender, e);
-            comboBox.ForeColor = Temas.corComboBoxTexto;
-            comboBox.Text = "TEXTO: " + Temas.corComboBoxTexto.ToString() + " FUNDO: " + Temas.corComboBoxFundo.ToString();
-            buttonCorTextoComboBox.BackColor = Temas.corComboBoxTexto;
+            buttonCorTextoComboBox.BackColor = selecionarCor(sender, e);
+            comboBox.ForeColor = buttonCorTextoComboBox.BackColor;
+            comboBox.Text = "TEXTO: " + buttonCorTextoComboBox.BackColor.ToString() + " FUNDO: " + buttonCorFundoComboBox.BackColor.ToString();
+        }
+        private void buttonCorFundoGridView_Click(object sender, EventArgs e)
+        {// COR DO FUNDO DAS CELULAS DA GRIDVIEW
+            Temas.corTemporaria = buttonCorFundoGridView.BackColor;
+            buttonCorFundoGridView.BackColor = selecionarCor(sender, e);
+            int row = dataGridView.RowCount;
+            int col = dataGridView.ColumnCount;
+            for (int j = 0; j < row; j++)
+            {
+                for (int i = 0; i < col; i++)
+                {
+                    dataGridView.Rows[j].Cells[i].Style.BackColor = buttonCorFundoGridView.BackColor;
+                }
+            }
+        }
+        private void buttonCorTextoGridView_Click(object sender, EventArgs e)
+        {// COR DO TEXTO DA GRIDVIEW
+            Temas.corTemporaria = buttonCorTextoGridView.BackColor;
+            buttonCorTextoGridView.BackColor = selecionarCor(sender, e);
+            dataGridView.ForeColor = Temas.corGridViewTexto;
+        }
+        private void buttonCorLinhaGridView_Click(object sender, EventArgs e)
+        {// COR DA LINHA DA GRIDVIEW
+            Temas.corTemporaria = buttonCorLinhaGridView.BackColor;
+            buttonCorLinhaGridView.BackColor = selecionarCor(sender, e);
+            dataGridView.GridColor = buttonCorLinhaGridView.BackColor;
+        }
+        private void buttonSalvarTema_Click(object sender, EventArgs e)
+        {
+            
+            Temas.corComboBoxTexto = buttonCorTextoComboBox.BackColor;
+            Temas.corGridViewFundo = buttonCorFundoGridView.BackColor;
+            Temas.corGridViewTexto = buttonCorTextoGridView.BackColor;
+            Temas.corGridViewLinhas = buttonCorLinhaGridView.BackColor;
         }
     }
 }

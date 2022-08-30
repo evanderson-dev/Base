@@ -31,6 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfiguracoes));
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.groupBoxCoresSistema = new System.Windows.Forms.GroupBox();
+            this.buttonCorLinhaGridView = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSalvarTema = new System.Windows.Forms.Button();
+            this.buttonCorTextoGridView = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonCorFundoGridView = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.buttonCorTextoComboBox = new System.Windows.Forms.Button();
@@ -47,6 +59,7 @@
             this.buttonCorTextBox = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPersonalizado = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBoxOS = new System.Windows.Forms.GroupBox();
             this.pictureBoxLogoOS = new System.Windows.Forms.PictureBox();
             this.buttonDeleteLogo = new System.Windows.Forms.Button();
@@ -55,14 +68,9 @@
             this.buttonFechar = new System.Windows.Forms.Button();
             this.labelSuperior = new System.Windows.Forms.Label();
             this.colorDialogSistema = new System.Windows.Forms.ColorDialog();
-            this.buttonCorTextoGridView = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.buttonCorFundoGridView = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.buttonSalvarTema = new System.Windows.Forms.Button();
             this.panelPrincipal.SuspendLayout();
             this.groupBoxCoresSistema.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBoxOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoOS)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +90,10 @@
             // 
             // groupBoxCoresSistema
             // 
+            this.groupBoxCoresSistema.Controls.Add(this.buttonCorLinhaGridView);
+            this.groupBoxCoresSistema.Controls.Add(this.label13);
+            this.groupBoxCoresSistema.Controls.Add(this.label12);
+            this.groupBoxCoresSistema.Controls.Add(this.dataGridView);
             this.groupBoxCoresSistema.Controls.Add(this.buttonSalvarTema);
             this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextoGridView);
             this.groupBoxCoresSistema.Controls.Add(this.label9);
@@ -107,15 +119,153 @@
             this.groupBoxCoresSistema.ForeColor = System.Drawing.Color.White;
             this.groupBoxCoresSistema.Location = new System.Drawing.Point(2, 149);
             this.groupBoxCoresSistema.Name = "groupBoxCoresSistema";
-            this.groupBoxCoresSistema.Size = new System.Drawing.Size(844, 225);
+            this.groupBoxCoresSistema.Size = new System.Drawing.Size(844, 244);
             this.groupBoxCoresSistema.TabIndex = 24;
             this.groupBoxCoresSistema.TabStop = false;
             this.groupBoxCoresSistema.Text = "CORES DO SISTEMA";
             // 
+            // buttonCorLinhaGridView
+            // 
+            this.buttonCorLinhaGridView.BackColor = System.Drawing.Color.White;
+            this.buttonCorLinhaGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorLinhaGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorLinhaGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorLinhaGridView.Location = new System.Drawing.Point(9, 210);
+            this.buttonCorLinhaGridView.Name = "buttonCorLinhaGridView";
+            this.buttonCorLinhaGridView.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorLinhaGridView.TabIndex = 46;
+            this.buttonCorLinhaGridView.UseVisualStyleBackColor = false;
+            this.buttonCorLinhaGridView.Click += new System.EventHandler(this.buttonCorLinhaGridView_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(32, 215);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(145, 13);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "COR DA LINHA DA TABELA";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(347, 107);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 13);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "COMBO BOX:";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cod,
+            this.Nome,
+            this.Cpf});
+            this.dataGridView.Location = new System.Drawing.Point(350, 123);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.Size = new System.Drawing.Size(449, 112);
+            this.dataGridView.TabIndex = 43;
+            // 
+            // Cod
+            // 
+            this.Cod.HeaderText = "COD";
+            this.Cod.Name = "Cod";
+            this.Cod.ReadOnly = true;
+            this.Cod.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Cod.Width = 40;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.HeaderText = "NOME";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Cpf
+            // 
+            this.Cpf.HeaderText = "CPF";
+            this.Cpf.Name = "Cpf";
+            this.Cpf.ReadOnly = true;
+            this.Cpf.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // buttonSalvarTema
+            // 
+            this.buttonSalvarTema.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSalvarTema.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonSalvarTema.FlatAppearance.BorderSize = 0;
+            this.buttonSalvarTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSalvarTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalvarTema.Image = global::UIPrincipal.Properties.Resources.disk;
+            this.buttonSalvarTema.Location = new System.Drawing.Point(815, 212);
+            this.buttonSalvarTema.Name = "buttonSalvarTema";
+            this.buttonSalvarTema.Size = new System.Drawing.Size(23, 23);
+            this.buttonSalvarTema.TabIndex = 25;
+            this.buttonSalvarTema.UseVisualStyleBackColor = false;
+            this.buttonSalvarTema.Click += new System.EventHandler(this.buttonSalvarTema_Click);
+            // 
+            // buttonCorTextoGridView
+            // 
+            this.buttonCorTextoGridView.BackColor = System.Drawing.Color.White;
+            this.buttonCorTextoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorTextoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorTextoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorTextoGridView.Location = new System.Drawing.Point(9, 186);
+            this.buttonCorTextoGridView.Name = "buttonCorTextoGridView";
+            this.buttonCorTextoGridView.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorTextoGridView.TabIndex = 41;
+            this.buttonCorTextoGridView.UseVisualStyleBackColor = false;
+            this.buttonCorTextoGridView.Click += new System.EventHandler(this.buttonCorTextoGridView_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(32, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 13);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "COR DO TEXTO DA TABELA";
+            // 
+            // buttonCorFundoGridView
+            // 
+            this.buttonCorFundoGridView.BackColor = System.Drawing.Color.White;
+            this.buttonCorFundoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorFundoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorFundoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorFundoGridView.Location = new System.Drawing.Point(9, 162);
+            this.buttonCorFundoGridView.Name = "buttonCorFundoGridView";
+            this.buttonCorFundoGridView.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorFundoGridView.TabIndex = 39;
+            this.buttonCorFundoGridView.UseVisualStyleBackColor = false;
+            this.buttonCorFundoGridView.Click += new System.EventHandler(this.buttonCorFundoGridView_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(32, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(168, 13);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "COR DAS CELULAS DA TABELA";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 93);
+            this.label8.Location = new System.Drawing.Point(347, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 37;
@@ -124,7 +274,7 @@
             // comboBox
             // 
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(388, 109);
+            this.comboBox.Location = new System.Drawing.Point(350, 76);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(449, 21);
             this.comboBox.TabIndex = 36;
@@ -228,7 +378,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 54);
+            this.label3.Location = new System.Drawing.Point(347, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 27;
@@ -284,10 +434,19 @@
             // 
             // textBoxPersonalizado
             // 
-            this.textBoxPersonalizado.Location = new System.Drawing.Point(388, 70);
+            this.textBoxPersonalizado.Location = new System.Drawing.Point(350, 29);
             this.textBoxPersonalizado.Name = "textBoxPersonalizado";
             this.textBoxPersonalizado.Size = new System.Drawing.Size(450, 20);
             this.textBoxPersonalizado.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.Location = new System.Drawing.Point(8, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(215, 219);
+            this.label11.TabIndex = 42;
             // 
             // groupBoxOS
             // 
@@ -382,75 +541,6 @@
             this.labelSuperior.Text = "CONFIGURAÇÕES";
             this.labelSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonCorTextoGridView
-            // 
-            this.buttonCorTextoGridView.BackColor = System.Drawing.Color.White;
-            this.buttonCorTextoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorTextoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCorTextoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoGridView.Location = new System.Drawing.Point(9, 186);
-            this.buttonCorTextoGridView.Name = "buttonCorTextoGridView";
-            this.buttonCorTextoGridView.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorTextoGridView.TabIndex = 41;
-            this.buttonCorTextoGridView.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(32, 191);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 13);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "COR DO TEXTO DA TABELA";
-            // 
-            // buttonCorFundoGridView
-            // 
-            this.buttonCorFundoGridView.BackColor = System.Drawing.Color.White;
-            this.buttonCorFundoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorFundoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCorFundoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorFundoGridView.Location = new System.Drawing.Point(9, 162);
-            this.buttonCorFundoGridView.Name = "buttonCorFundoGridView";
-            this.buttonCorFundoGridView.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorFundoGridView.TabIndex = 39;
-            this.buttonCorFundoGridView.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(32, 167);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 13);
-            this.label10.TabIndex = 38;
-            this.label10.Text = "COR DO FUNDO DA TABELA";
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Location = new System.Drawing.Point(6, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(215, 200);
-            this.label11.TabIndex = 42;
-            // 
-            // buttonSalvarTema
-            // 
-            this.buttonSalvarTema.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSalvarTema.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonSalvarTema.FlatAppearance.BorderSize = 0;
-            this.buttonSalvarTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSalvarTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalvarTema.Image = global::UIPrincipal.Properties.Resources.disk;
-            this.buttonSalvarTema.Location = new System.Drawing.Point(815, 195);
-            this.buttonSalvarTema.Name = "buttonSalvarTema";
-            this.buttonSalvarTema.Size = new System.Drawing.Size(23, 23);
-            this.buttonSalvarTema.TabIndex = 25;
-            this.buttonSalvarTema.UseVisualStyleBackColor = false;
-            // 
             // FormConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +558,7 @@
             this.panelPrincipal.ResumeLayout(false);
             this.groupBoxCoresSistema.ResumeLayout(false);
             this.groupBoxCoresSistema.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBoxOS.ResumeLayout(false);
             this.groupBoxOS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoOS)).EndInit();
@@ -508,5 +599,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonSalvarTema;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cpf;
+        private System.Windows.Forms.Button buttonCorLinhaGridView;
+        private System.Windows.Forms.Label label13;
     }
 }

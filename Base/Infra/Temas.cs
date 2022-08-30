@@ -17,6 +17,7 @@ namespace Infra
         public static Color corComboBoxTexto = Color.Black;
         public static Color corGridViewFundo = Color.White;
         public static Color corGridViewTexto = Color.Black;
+        public static Color corGridViewLinhas = Color.Black;
 
         public static void temaModoNorturno(Control controle)
         {

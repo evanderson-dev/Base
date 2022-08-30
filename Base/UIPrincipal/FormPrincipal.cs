@@ -98,6 +98,20 @@ namespace UIPrincipal
             tabControlConsulta.TabPages.Remove(tabPageCadastrados);
             buttonFecharAba.Visible = false;
             toolTipTelaPrincipal.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
+            if (UsuarioLogado.luzLigada)
+            {
+                int row = dataGridViewOSAbertas.RowCount;
+                int col = dataGridViewOSAbertas.ColumnCount;
+                for (int j = 0; j < row; j++)
+                {
+                    for (int i = 0; i < col; i++)
+                    {
+                        dataGridViewOSAbertas.Rows[j].Cells[i].Style.BackColor = Temas.corGridViewFundo;
+                    }
+                }
+                dataGridViewOSAbertas.ForeColor = Temas.corGridViewTexto;
+                dataGridViewOSAbertas.GridColor = Temas.corGridViewLinhas;
+            }
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
