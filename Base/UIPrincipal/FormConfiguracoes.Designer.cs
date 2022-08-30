@@ -31,7 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfiguracoes));
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.groupBoxCoresSistema = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.buttonCorTextoComboBox = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonCorFundoComboBox = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.corTextoPrimeiroPlano = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.corDeFundoPrimeiroPlano = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonCorTextoTextBox = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonCorTextBox = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBoxPersonalizado = new System.Windows.Forms.TextBox();
             this.groupBoxOS = new System.Windows.Forms.GroupBox();
             this.pictureBoxLogoOS = new System.Windows.Forms.PictureBox();
@@ -41,20 +55,12 @@
             this.buttonFechar = new System.Windows.Forms.Button();
             this.labelSuperior = new System.Windows.Forms.Label();
             this.colorDialogSistema = new System.Windows.Forms.ColorDialog();
-            this.buttonCorTextoTextBox = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.corTextoPrimeiroPlano = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.corDeFundoPrimeiroPlano = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.buttonCorTextoComboBox = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonCorFundoComboBox = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.buttonCorTextoGridView = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonCorFundoGridView = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buttonSalvarTema = new System.Windows.Forms.Button();
             this.panelPrincipal.SuspendLayout();
             this.groupBoxCoresSistema.SuspendLayout();
             this.groupBoxOS.SuspendLayout();
@@ -76,6 +82,11 @@
             // 
             // groupBoxCoresSistema
             // 
+            this.groupBoxCoresSistema.Controls.Add(this.buttonSalvarTema);
+            this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextoGridView);
+            this.groupBoxCoresSistema.Controls.Add(this.label9);
+            this.groupBoxCoresSistema.Controls.Add(this.buttonCorFundoGridView);
+            this.groupBoxCoresSistema.Controls.Add(this.label10);
             this.groupBoxCoresSistema.Controls.Add(this.label8);
             this.groupBoxCoresSistema.Controls.Add(this.comboBox);
             this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextoComboBox);
@@ -92,6 +103,7 @@
             this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextBox);
             this.groupBoxCoresSistema.Controls.Add(this.label1);
             this.groupBoxCoresSistema.Controls.Add(this.textBoxPersonalizado);
+            this.groupBoxCoresSistema.Controls.Add(this.label11);
             this.groupBoxCoresSistema.ForeColor = System.Drawing.Color.White;
             this.groupBoxCoresSistema.Location = new System.Drawing.Point(2, 149);
             this.groupBoxCoresSistema.Name = "groupBoxCoresSistema";
@@ -100,19 +112,175 @@
             this.groupBoxCoresSistema.TabStop = false;
             this.groupBoxCoresSistema.Text = "CORES DO SISTEMA";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(385, 93);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "COMBO BOX:";
+            // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(388, 109);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(449, 21);
+            this.comboBox.TabIndex = 36;
+            // 
+            // buttonCorTextoComboBox
+            // 
+            this.buttonCorTextoComboBox.BackColor = System.Drawing.Color.White;
+            this.buttonCorTextoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorTextoComboBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorTextoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorTextoComboBox.Location = new System.Drawing.Point(9, 138);
+            this.buttonCorTextoComboBox.Name = "buttonCorTextoComboBox";
+            this.buttonCorTextoComboBox.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorTextoComboBox.TabIndex = 35;
+            this.buttonCorTextoComboBox.UseVisualStyleBackColor = false;
+            this.buttonCorTextoComboBox.Click += new System.EventHandler(this.buttonCorTextoComboBox_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(32, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(174, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "COR DO TEXTO DO COMBO BOX";
+            // 
+            // buttonCorFundoComboBox
+            // 
+            this.buttonCorFundoComboBox.BackColor = System.Drawing.Color.White;
+            this.buttonCorFundoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorFundoComboBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorFundoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorFundoComboBox.Location = new System.Drawing.Point(9, 114);
+            this.buttonCorFundoComboBox.Name = "buttonCorFundoComboBox";
+            this.buttonCorFundoComboBox.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorFundoComboBox.TabIndex = 33;
+            this.buttonCorFundoComboBox.UseVisualStyleBackColor = false;
+            this.buttonCorFundoComboBox.Click += new System.EventHandler(this.buttonCorFundoComboBox_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(32, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(176, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "COR DO FUNDO DO COMBO BOX";
+            // 
+            // corTextoPrimeiroPlano
+            // 
+            this.corTextoPrimeiroPlano.BackColor = System.Drawing.Color.White;
+            this.corTextoPrimeiroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.corTextoPrimeiroPlano.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.corTextoPrimeiroPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.corTextoPrimeiroPlano.Location = new System.Drawing.Point(9, 42);
+            this.corTextoPrimeiroPlano.Name = "corTextoPrimeiroPlano";
+            this.corTextoPrimeiroPlano.Size = new System.Drawing.Size(22, 23);
+            this.corTextoPrimeiroPlano.TabIndex = 31;
+            this.corTextoPrimeiroPlano.UseVisualStyleBackColor = false;
+            this.corTextoPrimeiroPlano.Click += new System.EventHandler(this.corTextoPrimeiroPlano_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(32, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "COR DO TEXTO GERAL";
+            // 
+            // corDeFundoPrimeiroPlano
+            // 
+            this.corDeFundoPrimeiroPlano.BackColor = System.Drawing.Color.White;
+            this.corDeFundoPrimeiroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.corDeFundoPrimeiroPlano.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.corDeFundoPrimeiroPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.corDeFundoPrimeiroPlano.Location = new System.Drawing.Point(9, 18);
+            this.corDeFundoPrimeiroPlano.Name = "corDeFundoPrimeiroPlano";
+            this.corDeFundoPrimeiroPlano.Size = new System.Drawing.Size(22, 23);
+            this.corDeFundoPrimeiroPlano.TabIndex = 29;
+            this.corDeFundoPrimeiroPlano.UseVisualStyleBackColor = false;
+            this.corDeFundoPrimeiroPlano.Click += new System.EventHandler(this.corDeFundoPrimeiroPlano_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(32, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "COR DO FUNDO GERAL";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(385, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "TEXT BOX:";
+            // 
+            // buttonCorTextoTextBox
+            // 
+            this.buttonCorTextoTextBox.BackColor = System.Drawing.Color.White;
+            this.buttonCorTextoTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorTextoTextBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorTextoTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorTextoTextBox.Location = new System.Drawing.Point(9, 90);
+            this.buttonCorTextoTextBox.Name = "buttonCorTextoTextBox";
+            this.buttonCorTextoTextBox.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorTextoTextBox.TabIndex = 26;
+            this.buttonCorTextoTextBox.UseVisualStyleBackColor = false;
+            this.buttonCorTextoTextBox.Click += new System.EventHandler(this.buttonCorTextoTextBox_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(32, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "COR DO TEXTO DO TEXT BOX";
+            // 
             // buttonCorTextBox
             // 
-            this.buttonCorTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCorTextBox.BackColor = System.Drawing.Color.White;
             this.buttonCorTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorTextBox.FlatAppearance.BorderSize = 0;
+            this.buttonCorTextBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextBox.Image = global::UIPrincipal.Properties.Resources.color_swatch;
-            this.buttonCorTextBox.Location = new System.Drawing.Point(4, 58);
+            this.buttonCorTextBox.Location = new System.Drawing.Point(9, 66);
             this.buttonCorTextBox.Name = "buttonCorTextBox";
             this.buttonCorTextBox.Size = new System.Drawing.Size(22, 23);
             this.buttonCorTextBox.TabIndex = 24;
             this.buttonCorTextBox.UseVisualStyleBackColor = false;
             this.buttonCorTextBox.Click += new System.EventHandler(this.buttonCorTextBox_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(32, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "COR DO FUNDO DO TEXT BOX";
             // 
             // textBoxPersonalizado
             // 
@@ -120,7 +288,6 @@
             this.textBoxPersonalizado.Name = "textBoxPersonalizado";
             this.textBoxPersonalizado.Size = new System.Drawing.Size(450, 20);
             this.textBoxPersonalizado.TabIndex = 0;
-            this.textBoxPersonalizado.Text = "Exemplo de Texto";
             // 
             // groupBoxOS
             // 
@@ -215,155 +382,74 @@
             this.labelSuperior.Text = "CONFIGURAÇÕES";
             this.labelSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonCorTextoTextBox
+            // buttonCorTextoGridView
             // 
-            this.buttonCorTextoTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCorTextoTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorTextoTextBox.FlatAppearance.BorderSize = 0;
-            this.buttonCorTextoTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoTextBox.Image = global::UIPrincipal.Properties.Resources.color_swatch;
-            this.buttonCorTextoTextBox.Location = new System.Drawing.Point(4, 78);
-            this.buttonCorTextoTextBox.Name = "buttonCorTextoTextBox";
-            this.buttonCorTextoTextBox.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorTextoTextBox.TabIndex = 26;
-            this.buttonCorTextoTextBox.UseVisualStyleBackColor = false;
-            this.buttonCorTextoTextBox.Click += new System.EventHandler(this.buttonCorTextoTextBox_Click);
+            this.buttonCorTextoGridView.BackColor = System.Drawing.Color.White;
+            this.buttonCorTextoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorTextoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorTextoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorTextoGridView.Location = new System.Drawing.Point(9, 186);
+            this.buttonCorTextoGridView.Name = "buttonCorTextoGridView";
+            this.buttonCorTextoGridView.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorTextoGridView.TabIndex = 41;
+            this.buttonCorTextoGridView.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // label9
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 13);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "COR DO TEXTO DO TEXT BOX";
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(32, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 13);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "COR DO TEXTO DA TABELA";
             // 
-            // label1
+            // buttonCorFundoGridView
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "COR DO FUNDO DO TEXT BOX";
+            this.buttonCorFundoGridView.BackColor = System.Drawing.Color.White;
+            this.buttonCorFundoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorFundoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorFundoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorFundoGridView.Location = new System.Drawing.Point(9, 162);
+            this.buttonCorFundoGridView.Name = "buttonCorFundoGridView";
+            this.buttonCorFundoGridView.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorFundoGridView.TabIndex = 39;
+            this.buttonCorFundoGridView.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // label10
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "TEXT BOX:";
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(32, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(152, 13);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "COR DO FUNDO DA TABELA";
             // 
-            // corTextoPrimeiroPlano
+            // label11
             // 
-            this.corTextoPrimeiroPlano.BackColor = System.Drawing.Color.Transparent;
-            this.corTextoPrimeiroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.corTextoPrimeiroPlano.FlatAppearance.BorderSize = 0;
-            this.corTextoPrimeiroPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.corTextoPrimeiroPlano.Image = global::UIPrincipal.Properties.Resources.color_swatch;
-            this.corTextoPrimeiroPlano.Location = new System.Drawing.Point(4, 38);
-            this.corTextoPrimeiroPlano.Name = "corTextoPrimeiroPlano";
-            this.corTextoPrimeiroPlano.Size = new System.Drawing.Size(22, 23);
-            this.corTextoPrimeiroPlano.TabIndex = 31;
-            this.corTextoPrimeiroPlano.UseVisualStyleBackColor = false;
-            this.corTextoPrimeiroPlano.Click += new System.EventHandler(this.corTextoPrimeiroPlano_Click);
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.Location = new System.Drawing.Point(6, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(215, 200);
+            this.label11.TabIndex = 42;
             // 
-            // label4
+            // buttonSalvarTema
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 13);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "COR DO TEXTO GERAL";
-            // 
-            // corDeFundoPrimeiroPlano
-            // 
-            this.corDeFundoPrimeiroPlano.BackColor = System.Drawing.Color.Transparent;
-            this.corDeFundoPrimeiroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.corDeFundoPrimeiroPlano.FlatAppearance.BorderSize = 0;
-            this.corDeFundoPrimeiroPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.corDeFundoPrimeiroPlano.Image = global::UIPrincipal.Properties.Resources.color_swatch;
-            this.corDeFundoPrimeiroPlano.Location = new System.Drawing.Point(4, 18);
-            this.corDeFundoPrimeiroPlano.Name = "corDeFundoPrimeiroPlano";
-            this.corDeFundoPrimeiroPlano.Size = new System.Drawing.Size(22, 23);
-            this.corDeFundoPrimeiroPlano.TabIndex = 29;
-            this.corDeFundoPrimeiroPlano.UseVisualStyleBackColor = false;
-            this.corDeFundoPrimeiroPlano.Click += new System.EventHandler(this.corDeFundoPrimeiroPlano_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "COR DE FUNDO";
-            // 
-            // buttonCorTextoComboBox
-            // 
-            this.buttonCorTextoComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCorTextoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorTextoComboBox.FlatAppearance.BorderSize = 0;
-            this.buttonCorTextoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoComboBox.Image = global::UIPrincipal.Properties.Resources.color_swatch;
-            this.buttonCorTextoComboBox.Location = new System.Drawing.Point(4, 118);
-            this.buttonCorTextoComboBox.Name = "buttonCorTextoComboBox";
-            this.buttonCorTextoComboBox.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorTextoComboBox.TabIndex = 35;
-            this.buttonCorTextoComboBox.UseVisualStyleBackColor = false;
-            this.buttonCorTextoComboBox.Click += new System.EventHandler(this.buttonCorTextoComboBox_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(174, 13);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "COR DO TEXTO DO COMBO BOX";
-            // 
-            // buttonCorFundoComboBox
-            // 
-            this.buttonCorFundoComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCorFundoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorFundoComboBox.FlatAppearance.BorderSize = 0;
-            this.buttonCorFundoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorFundoComboBox.Image = global::UIPrincipal.Properties.Resources.color_swatch;
-            this.buttonCorFundoComboBox.Location = new System.Drawing.Point(4, 98);
-            this.buttonCorFundoComboBox.Name = "buttonCorFundoComboBox";
-            this.buttonCorFundoComboBox.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorFundoComboBox.TabIndex = 33;
-            this.buttonCorFundoComboBox.UseVisualStyleBackColor = false;
-            this.buttonCorFundoComboBox.Click += new System.EventHandler(this.buttonCorFundoComboBox_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(176, 13);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "COR DO FUNDO DO COMBO BOX";
-            // 
-            // comboBox
-            // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(388, 109);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(449, 21);
-            this.comboBox.TabIndex = 36;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 93);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 13);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "COMBO BOX:";
+            this.buttonSalvarTema.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSalvarTema.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonSalvarTema.FlatAppearance.BorderSize = 0;
+            this.buttonSalvarTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSalvarTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalvarTema.Image = global::UIPrincipal.Properties.Resources.disk;
+            this.buttonSalvarTema.Location = new System.Drawing.Point(815, 195);
+            this.buttonSalvarTema.Name = "buttonSalvarTema";
+            this.buttonSalvarTema.Size = new System.Drawing.Size(23, 23);
+            this.buttonSalvarTema.TabIndex = 25;
+            this.buttonSalvarTema.UseVisualStyleBackColor = false;
             // 
             // FormConfiguracoes
             // 
@@ -416,5 +502,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonCorFundoComboBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonCorTextoGridView;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button buttonCorFundoGridView;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonSalvarTema;
     }
 }

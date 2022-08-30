@@ -1,13 +1,7 @@
 ﻿using Infra;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIPrincipal
@@ -18,6 +12,8 @@ namespace UIPrincipal
         private string foto = "";
         private string destinoCompleto = "";
         private readonly string pastaDestino = Constante.DiretorioDeImagem;
+        ToolTip toolTipConfiguracoes = new ToolTip();
+        
 
         private void buttonFechar_Click(object sender, EventArgs e)
         {
@@ -27,9 +23,19 @@ namespace UIPrincipal
         public FormConfiguracoes()
         {
             InitializeComponent();
+            toolTipConfiguracoes.SetToolTip(buttonAddLogo, "Adicionar Logo");
+            toolTipConfiguracoes.SetToolTip(buttonDeleteLogo, "Deletar Logo");
+            toolTipConfiguracoes.SetToolTip(buttonSalvarTema, "Salvar Tema");
             pictureBoxLogoOS.ImageLocation = Constante.DiretorioDeImagem + "\\logo.png";
             textBoxPersonalizado.BackColor = Temas.corTextBoxFundo;
             textBoxPersonalizado.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
+            corDeFundoPrimeiroPlano.BackColor = Temas.corDeFundoPrimeiroPlano;
+            corTextoPrimeiroPlano.BackColor = Temas.corTextoPrimeiroPlano;
+            buttonCorTextBox.BackColor = Temas.corTextBoxFundo;
+            buttonCorTextoTextBox.BackColor = Temas.corTextBoxTexto;
+            buttonCorFundoComboBox.BackColor = Temas.corComboBoxFundo;
+            buttonCorTextoComboBox.BackColor = Temas.corComboBoxTexto;
+            comboBox.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
         }
         private void buttonDeleteLogo_Click(object sender, EventArgs e)
         {
@@ -82,43 +88,53 @@ namespace UIPrincipal
             3758726, 12566463, 7526079, 7405793, 6945974, 241502, 2296476, 5130294,
             3102017, 7324121, 14993507, 11730944,};
             MyDialog.ShowHelp = true;
-            MyDialog.Color = this.BackColor;
+            MyDialog.Color = Temas.corTemporaria;
             MyDialog.ShowDialog();
-            return MyDialog.Color;
+            return MyDialog.Color;            
         }
         private void buttonCorTextBox_Click(object sender, EventArgs e)
         {
+            Temas.corTemporaria = buttonCorTextBox.BackColor;
             Temas.corTextBoxFundo = selecionarCor(sender, e);
             textBoxPersonalizado.BackColor = Temas.corTextBoxFundo;
+            buttonCorTextBox.BackColor = Temas.corTextBoxFundo;
             textBoxPersonalizado.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
         }
         private void buttonCorTextoTextBox_Click(object sender, EventArgs e)
         {
+            Temas.corTemporaria = buttonCorTextoTextBox.BackColor;
             Temas.corTextBoxTexto = selecionarCor(sender, e);
             textBoxPersonalizado.ForeColor = Temas.corTextBoxTexto;
+            buttonCorTextoTextBox.BackColor = Temas.corTextBoxTexto;
             textBoxPersonalizado.Text = "TEXTO: " + Temas.corTextBoxTexto.ToString() + " FUNDO: " + Temas.corTextBoxFundo.ToString();
         }
         private void corDeFundoPrimeiroPlano_Click(object sender, EventArgs e)
         {
+            Temas.corTemporaria = corDeFundoPrimeiroPlano.BackColor;
             Temas.corDeFundoPrimeiroPlano = selecionarCor(sender, e);
-            groupBoxCoresSistema.BackColor = Temas.corDeFundoPrimeiroPlano;
+            corDeFundoPrimeiroPlano.BackColor = Temas.corDeFundoPrimeiroPlano;
         }
         private void corTextoPrimeiroPlano_Click(object sender, EventArgs e)
         {
+            Temas.corTemporaria = corTextoPrimeiroPlano.BackColor;
             Temas.corTextoPrimeiroPlano = selecionarCor(sender, e);
-            groupBoxCoresSistema.ForeColor = Temas.corTextoPrimeiroPlano;
+            corTextoPrimeiroPlano.BackColor = Temas.corTextoPrimeiroPlano;
         }
-
         private void buttonCorFundoComboBox_Click(object sender, EventArgs e)
         {
+            Temas.corTemporaria = buttonCorFundoComboBox.BackColor;
             Temas.corComboBoxFundo = selecionarCor(sender, e);
             comboBox.BackColor = Temas.corComboBoxFundo;
+            comboBox.Text = "TEXTO: " + Temas.corComboBoxTexto.ToString() + " FUNDO: " + Temas.corComboBoxFundo.ToString();
+            buttonCorFundoComboBox.BackColor = Temas.corComboBoxFundo;
         }
-
         private void buttonCorTextoComboBox_Click(object sender, EventArgs e)
         {
+            Temas.corTemporaria = buttonCorTextoComboBox.BackColor;
             Temas.corComboBoxTexto = selecionarCor(sender, e);
             comboBox.ForeColor = Temas.corComboBoxTexto;
+            comboBox.Text = "TEXTO: " + Temas.corComboBoxTexto.ToString() + " FUNDO: " + Temas.corComboBoxFundo.ToString();
+            buttonCorTextoComboBox.BackColor = Temas.corComboBoxTexto;
         }
     }
 }

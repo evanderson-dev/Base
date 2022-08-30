@@ -20,11 +20,11 @@ namespace UIPrincipal
             Logou = false;
             if (UsuarioLogado.luzLigada)
             {
-                FuncoesGlobais.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.Red, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
+                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Temas.corMaskedTextBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corComboBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corGridViewFundo, Temas.corGridViewTexto);
             }
             else
             {
-                FuncoesGlobais.temaModoNorturno(this);
+                Temas.temaModoNorturno(this);
             }
         }
         private void buttonSair_Click(object sender, EventArgs e)
@@ -185,14 +185,14 @@ namespace UIPrincipal
                 UsuarioLogado.luzLigada = true;
                 buttonBlackWhite.Image = Properties.Resources.lightbulb;
                 toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Noturno");
-                FuncoesGlobais.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.Red, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
+                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Temas.corMaskedTextBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corComboBoxFundo, Temas.corComboBoxTexto, Temas.corGridViewFundo, Temas.corGridViewTexto);
             }
             else
             {
                 UsuarioLogado.luzLigada = false;
                 buttonBlackWhite.Image = Properties.Resources.lightbulb_off;
                 toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Claro");
-                FuncoesGlobais.temaModoNorturno(this);
+                Temas.temaModoNorturno(this);
             }
         }
     }

@@ -17,6 +17,7 @@ namespace UIPrincipal
         private string protocoloOculto = "";
         public string cpfPessoa = "";
         public string textoCopiado = "";
+        ToolTip toolTipTelaPrincipal = new ToolTip();
         private string protocoloOcultoPropriedade
         {
             get { return protocoloOculto; }
@@ -42,13 +43,15 @@ namespace UIPrincipal
             InitializeComponent();
             if (UsuarioLogado.luzLigada)
             {
-                FuncoesGlobais.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.White, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
+                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.White, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
                 for (int i = 0; i < menuStrip1.Items.Count; i++)
                     menuStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
+                for (int i = 0; i < statusStrip1.Items.Count; i++)
+                    statusStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
             }
             else
             {
-                FuncoesGlobais.temaModoNorturno(this);
+                Temas.temaModoNorturno(this);
                 for (int i = 0; i < menuStrip1.Items.Count; i++)
                     menuStrip1.Items[i].ForeColor = Color.White;
                 for (int i = 0; i < statusStrip1.Items.Count; i++)
@@ -94,16 +97,7 @@ namespace UIPrincipal
             textBoxBuscarCadastro.Focus();
             tabControlConsulta.TabPages.Remove(tabPageCadastrados);
             buttonFecharAba.Visible = false;
-            ToolTip toolTipOS = new ToolTip();
-            ToolTip toolTipCadastro = new ToolTip();
-            if (tabControlConsulta.SelectedIndex == 0)
-            {
-                toolTipOS.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
-            }
-            else if (tabControlConsulta.SelectedIndex == 1)
-            {
-                toolTipCadastro.SetToolTip(this.buttonBuscarCadastro, "Buscar Cadastro");
-            }
+            toolTipTelaPrincipal.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
         }
                 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,16 +110,6 @@ namespace UIPrincipal
                 frmLogin.ShowDialog();
                 this.Close();
             }
-        }
-
-        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-            /*DialogResult resposta = MessageBox.Show("DESEJA ENCERRAR O SISTEMA?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resposta == DialogResult.No)
-            {
-                e.Cancel = true;
-            }*/
         }
         private void dataGridViewOSAbertas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -363,6 +347,7 @@ namespace UIPrincipal
                 buttonFecharAba.Location = new Point(180, 66);
                 deletarPessoaToolStripMenuItem.Visible = false;
                 editarPessoaToolStripMenuItem.Visible = false;
+                toolTipTelaPrincipal.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
             }
             if (tabControlConsulta.SelectedIndex == 1 && buttonFecharAba.Visible == true)
             {
@@ -370,6 +355,7 @@ namespace UIPrincipal
                 buttonFecharAba.Location = new Point(180,64);
                 deletarPessoaToolStripMenuItem.Visible = true;
                 editarPessoaToolStripMenuItem.Visible = true;
+                toolTipTelaPrincipal.SetToolTip(this.buttonBuscarCadastro, "Buscar Cadastro");
             }
         }
 

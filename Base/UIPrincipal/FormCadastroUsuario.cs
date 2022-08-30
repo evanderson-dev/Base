@@ -178,9 +178,9 @@ namespace UIPrincipal
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
             if (UsuarioLogado.luzLigada)
-                FuncoesGlobais.temaModoClaro(this);
+                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Temas.corMaskedTextBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corComboBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corGridViewFundo, Temas.corGridViewTexto);
             else
-                FuncoesGlobais.temaModoNorturno(this);
+                Temas.temaModoNorturno(this);
 
             if (inserindoNovo)
             {// SE FOR UM NOVO CADASTRO, O CHECKBOX CLIENTE INICIARÁ DESMARCADO
