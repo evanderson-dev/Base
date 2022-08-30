@@ -33,7 +33,7 @@
             this.groupBoxCoresSistema = new System.Windows.Forms.GroupBox();
             this.buttonCorLinhaGridView = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labelTabela = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.buttonCorFundoGridView = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelComboBox = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.buttonCorTextoComboBox = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,13 +53,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.corDeFundoPrimeiroPlano = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelTextBox = new System.Windows.Forms.Label();
             this.buttonCorTextoTextBox = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCorTextBox = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPersonalizado = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBoxOS = new System.Windows.Forms.GroupBox();
             this.pictureBoxLogoOS = new System.Windows.Forms.PictureBox();
             this.buttonDeleteLogo = new System.Windows.Forms.Button();
@@ -68,11 +67,21 @@
             this.buttonFechar = new System.Windows.Forms.Button();
             this.labelSuperior = new System.Windows.Forms.Label();
             this.colorDialogSistema = new System.Windows.Forms.ColorDialog();
+            this.panelJanelaCustomizada = new System.Windows.Forms.Panel();
+            this.labelBarraSuperior = new System.Windows.Forms.Label();
+            this.buttonFecharCustomizado = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCorBarraSuperior = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonCorTextoBarraSuperior = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelPrincipal.SuspendLayout();
             this.groupBoxCoresSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBoxOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoOS)).BeginInit();
+            this.panelJanelaCustomizada.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrincipal
@@ -90,36 +99,13 @@
             // 
             // groupBoxCoresSistema
             // 
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorLinhaGridView);
-            this.groupBoxCoresSistema.Controls.Add(this.label13);
-            this.groupBoxCoresSistema.Controls.Add(this.label12);
-            this.groupBoxCoresSistema.Controls.Add(this.dataGridView);
+            this.groupBoxCoresSistema.Controls.Add(this.panel1);
+            this.groupBoxCoresSistema.Controls.Add(this.panelJanelaCustomizada);
             this.groupBoxCoresSistema.Controls.Add(this.buttonSalvarTema);
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextoGridView);
-            this.groupBoxCoresSistema.Controls.Add(this.label9);
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorFundoGridView);
-            this.groupBoxCoresSistema.Controls.Add(this.label10);
-            this.groupBoxCoresSistema.Controls.Add(this.label8);
-            this.groupBoxCoresSistema.Controls.Add(this.comboBox);
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextoComboBox);
-            this.groupBoxCoresSistema.Controls.Add(this.label6);
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorFundoComboBox);
-            this.groupBoxCoresSistema.Controls.Add(this.label7);
-            this.groupBoxCoresSistema.Controls.Add(this.corTextoPrimeiroPlano);
-            this.groupBoxCoresSistema.Controls.Add(this.label4);
-            this.groupBoxCoresSistema.Controls.Add(this.corDeFundoPrimeiroPlano);
-            this.groupBoxCoresSistema.Controls.Add(this.label5);
-            this.groupBoxCoresSistema.Controls.Add(this.label3);
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextoTextBox);
-            this.groupBoxCoresSistema.Controls.Add(this.label2);
-            this.groupBoxCoresSistema.Controls.Add(this.buttonCorTextBox);
-            this.groupBoxCoresSistema.Controls.Add(this.label1);
-            this.groupBoxCoresSistema.Controls.Add(this.textBoxPersonalizado);
-            this.groupBoxCoresSistema.Controls.Add(this.label11);
             this.groupBoxCoresSistema.ForeColor = System.Drawing.Color.White;
             this.groupBoxCoresSistema.Location = new System.Drawing.Point(2, 149);
             this.groupBoxCoresSistema.Name = "groupBoxCoresSistema";
-            this.groupBoxCoresSistema.Size = new System.Drawing.Size(844, 244);
+            this.groupBoxCoresSistema.Size = new System.Drawing.Size(844, 437);
             this.groupBoxCoresSistema.TabIndex = 24;
             this.groupBoxCoresSistema.TabStop = false;
             this.groupBoxCoresSistema.Text = "CORES DO SISTEMA";
@@ -130,7 +116,7 @@
             this.buttonCorLinhaGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorLinhaGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorLinhaGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorLinhaGridView.Location = new System.Drawing.Point(9, 210);
+            this.buttonCorLinhaGridView.Location = new System.Drawing.Point(6, 198);
             this.buttonCorLinhaGridView.Name = "buttonCorLinhaGridView";
             this.buttonCorLinhaGridView.Size = new System.Drawing.Size(22, 23);
             this.buttonCorLinhaGridView.TabIndex = 46;
@@ -142,20 +128,20 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(32, 215);
+            this.label13.Location = new System.Drawing.Point(29, 203);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(145, 13);
             this.label13.TabIndex = 45;
             this.label13.Text = "COR DA LINHA DA TABELA";
             // 
-            // label12
+            // labelTabela
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(347, 107);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "COMBO BOX:";
+            this.labelTabela.AutoSize = true;
+            this.labelTabela.Location = new System.Drawing.Point(7, 124);
+            this.labelTabela.Name = "labelTabela";
+            this.labelTabela.Size = new System.Drawing.Size(54, 13);
+            this.labelTabela.TabIndex = 44;
+            this.labelTabela.Text = "TEBELA::";
             // 
             // dataGridView
             // 
@@ -169,7 +155,7 @@
             this.Cod,
             this.Nome,
             this.Cpf});
-            this.dataGridView.Location = new System.Drawing.Point(350, 123);
+            this.dataGridView.Location = new System.Drawing.Point(10, 140);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
@@ -207,7 +193,7 @@
             this.buttonSalvarTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonSalvarTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvarTema.Image = global::UIPrincipal.Properties.Resources.disk;
-            this.buttonSalvarTema.Location = new System.Drawing.Point(815, 212);
+            this.buttonSalvarTema.Location = new System.Drawing.Point(748, 15);
             this.buttonSalvarTema.Name = "buttonSalvarTema";
             this.buttonSalvarTema.Size = new System.Drawing.Size(23, 23);
             this.buttonSalvarTema.TabIndex = 25;
@@ -220,7 +206,7 @@
             this.buttonCorTextoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorTextoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorTextoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoGridView.Location = new System.Drawing.Point(9, 186);
+            this.buttonCorTextoGridView.Location = new System.Drawing.Point(6, 174);
             this.buttonCorTextoGridView.Name = "buttonCorTextoGridView";
             this.buttonCorTextoGridView.Size = new System.Drawing.Size(22, 23);
             this.buttonCorTextoGridView.TabIndex = 41;
@@ -232,7 +218,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(32, 191);
+            this.label9.Location = new System.Drawing.Point(29, 179);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(150, 13);
             this.label9.TabIndex = 40;
@@ -244,7 +230,7 @@
             this.buttonCorFundoGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorFundoGridView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorFundoGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorFundoGridView.Location = new System.Drawing.Point(9, 162);
+            this.buttonCorFundoGridView.Location = new System.Drawing.Point(6, 150);
             this.buttonCorFundoGridView.Name = "buttonCorFundoGridView";
             this.buttonCorFundoGridView.Size = new System.Drawing.Size(22, 23);
             this.buttonCorFundoGridView.TabIndex = 39;
@@ -256,25 +242,25 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(32, 167);
+            this.label10.Location = new System.Drawing.Point(29, 155);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(168, 13);
             this.label10.TabIndex = 38;
             this.label10.Text = "COR DAS CELULAS DA TABELA";
             // 
-            // label8
+            // labelComboBox
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(347, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 13);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "COMBO BOX:";
+            this.labelComboBox.AutoSize = true;
+            this.labelComboBox.Location = new System.Drawing.Point(7, 84);
+            this.labelComboBox.Name = "labelComboBox";
+            this.labelComboBox.Size = new System.Drawing.Size(74, 13);
+            this.labelComboBox.TabIndex = 37;
+            this.labelComboBox.Text = "COMBO BOX:";
             // 
             // comboBox
             // 
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(350, 76);
+            this.comboBox.Location = new System.Drawing.Point(10, 100);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(449, 21);
             this.comboBox.TabIndex = 36;
@@ -285,7 +271,7 @@
             this.buttonCorTextoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorTextoComboBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorTextoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoComboBox.Location = new System.Drawing.Point(9, 138);
+            this.buttonCorTextoComboBox.Location = new System.Drawing.Point(6, 126);
             this.buttonCorTextoComboBox.Name = "buttonCorTextoComboBox";
             this.buttonCorTextoComboBox.Size = new System.Drawing.Size(22, 23);
             this.buttonCorTextoComboBox.TabIndex = 35;
@@ -297,7 +283,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(32, 143);
+            this.label6.Location = new System.Drawing.Point(29, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 13);
             this.label6.TabIndex = 34;
@@ -309,7 +295,7 @@
             this.buttonCorFundoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorFundoComboBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorFundoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorFundoComboBox.Location = new System.Drawing.Point(9, 114);
+            this.buttonCorFundoComboBox.Location = new System.Drawing.Point(6, 102);
             this.buttonCorFundoComboBox.Name = "buttonCorFundoComboBox";
             this.buttonCorFundoComboBox.Size = new System.Drawing.Size(22, 23);
             this.buttonCorFundoComboBox.TabIndex = 33;
@@ -321,7 +307,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(32, 119);
+            this.label7.Location = new System.Drawing.Point(29, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(176, 13);
             this.label7.TabIndex = 32;
@@ -333,7 +319,7 @@
             this.corTextoPrimeiroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
             this.corTextoPrimeiroPlano.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.corTextoPrimeiroPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.corTextoPrimeiroPlano.Location = new System.Drawing.Point(9, 42);
+            this.corTextoPrimeiroPlano.Location = new System.Drawing.Point(6, 30);
             this.corTextoPrimeiroPlano.Name = "corTextoPrimeiroPlano";
             this.corTextoPrimeiroPlano.Size = new System.Drawing.Size(22, 23);
             this.corTextoPrimeiroPlano.TabIndex = 31;
@@ -345,7 +331,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(32, 47);
+            this.label4.Location = new System.Drawing.Point(29, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 13);
             this.label4.TabIndex = 30;
@@ -357,7 +343,7 @@
             this.corDeFundoPrimeiroPlano.Cursor = System.Windows.Forms.Cursors.Hand;
             this.corDeFundoPrimeiroPlano.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.corDeFundoPrimeiroPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.corDeFundoPrimeiroPlano.Location = new System.Drawing.Point(9, 18);
+            this.corDeFundoPrimeiroPlano.Location = new System.Drawing.Point(6, 6);
             this.corDeFundoPrimeiroPlano.Name = "corDeFundoPrimeiroPlano";
             this.corDeFundoPrimeiroPlano.Size = new System.Drawing.Size(22, 23);
             this.corDeFundoPrimeiroPlano.TabIndex = 29;
@@ -369,20 +355,20 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(32, 23);
+            this.label5.Location = new System.Drawing.Point(29, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 13);
             this.label5.TabIndex = 28;
             this.label5.Text = "COR DO FUNDO GERAL";
             // 
-            // label3
+            // labelTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(347, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "TEXT BOX:";
+            this.labelTextBox.AutoSize = true;
+            this.labelTextBox.Location = new System.Drawing.Point(7, 45);
+            this.labelTextBox.Name = "labelTextBox";
+            this.labelTextBox.Size = new System.Drawing.Size(63, 13);
+            this.labelTextBox.TabIndex = 27;
+            this.labelTextBox.Text = "TEXT BOX:";
             // 
             // buttonCorTextoTextBox
             // 
@@ -390,7 +376,7 @@
             this.buttonCorTextoTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorTextoTextBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorTextoTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoTextBox.Location = new System.Drawing.Point(9, 90);
+            this.buttonCorTextoTextBox.Location = new System.Drawing.Point(6, 78);
             this.buttonCorTextoTextBox.Name = "buttonCorTextoTextBox";
             this.buttonCorTextoTextBox.Size = new System.Drawing.Size(22, 23);
             this.buttonCorTextoTextBox.TabIndex = 26;
@@ -402,7 +388,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(32, 95);
+            this.label2.Location = new System.Drawing.Point(29, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 13);
             this.label2.TabIndex = 25;
@@ -414,7 +400,7 @@
             this.buttonCorTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCorTextBox.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCorTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextBox.Location = new System.Drawing.Point(9, 66);
+            this.buttonCorTextBox.Location = new System.Drawing.Point(6, 54);
             this.buttonCorTextBox.Name = "buttonCorTextBox";
             this.buttonCorTextBox.Size = new System.Drawing.Size(22, 23);
             this.buttonCorTextBox.TabIndex = 24;
@@ -426,7 +412,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(32, 71);
+            this.label1.Location = new System.Drawing.Point(29, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 13);
             this.label1.TabIndex = 23;
@@ -434,19 +420,10 @@
             // 
             // textBoxPersonalizado
             // 
-            this.textBoxPersonalizado.Location = new System.Drawing.Point(350, 29);
+            this.textBoxPersonalizado.Location = new System.Drawing.Point(10, 61);
             this.textBoxPersonalizado.Name = "textBoxPersonalizado";
             this.textBoxPersonalizado.Size = new System.Drawing.Size(450, 20);
             this.textBoxPersonalizado.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Location = new System.Drawing.Point(8, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(215, 219);
-            this.label11.TabIndex = 42;
             // 
             // groupBoxOS
             // 
@@ -541,6 +518,125 @@
             this.labelSuperior.Text = "CONFIGURAÇÕES";
             this.labelSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panelJanelaCustomizada
+            // 
+            this.panelJanelaCustomizada.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelJanelaCustomizada.Controls.Add(this.buttonFecharCustomizado);
+            this.panelJanelaCustomizada.Controls.Add(this.labelBarraSuperior);
+            this.panelJanelaCustomizada.Controls.Add(this.dataGridView);
+            this.panelJanelaCustomizada.Controls.Add(this.labelTabela);
+            this.panelJanelaCustomizada.Controls.Add(this.comboBox);
+            this.panelJanelaCustomizada.Controls.Add(this.labelComboBox);
+            this.panelJanelaCustomizada.Controls.Add(this.textBoxPersonalizado);
+            this.panelJanelaCustomizada.Controls.Add(this.labelTextBox);
+            this.panelJanelaCustomizada.Location = new System.Drawing.Point(258, 19);
+            this.panelJanelaCustomizada.Name = "panelJanelaCustomizada";
+            this.panelJanelaCustomizada.Size = new System.Drawing.Size(473, 281);
+            this.panelJanelaCustomizada.TabIndex = 47;
+            // 
+            // labelBarraSuperior
+            // 
+            this.labelBarraSuperior.BackColor = System.Drawing.Color.DimGray;
+            this.labelBarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelBarraSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarraSuperior.Location = new System.Drawing.Point(0, 0);
+            this.labelBarraSuperior.Name = "labelBarraSuperior";
+            this.labelBarraSuperior.Size = new System.Drawing.Size(469, 23);
+            this.labelBarraSuperior.TabIndex = 25;
+            this.labelBarraSuperior.Text = "JANELA COM CORES CUSTOMIZADAS";
+            this.labelBarraSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // buttonFecharCustomizado
+            // 
+            this.buttonFecharCustomizado.BackColor = System.Drawing.Color.DimGray;
+            this.buttonFecharCustomizado.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonFecharCustomizado.FlatAppearance.BorderSize = 0;
+            this.buttonFecharCustomizado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonFecharCustomizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFecharCustomizado.Image = global::UIPrincipal.Properties.Resources.cancel;
+            this.buttonFecharCustomizado.Location = new System.Drawing.Point(443, -2);
+            this.buttonFecharCustomizado.Name = "buttonFecharCustomizado";
+            this.buttonFecharCustomizado.Size = new System.Drawing.Size(23, 23);
+            this.buttonFecharCustomizado.TabIndex = 25;
+            this.buttonFecharCustomizado.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonCorTextoBarraSuperior);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.buttonCorBarraSuperior);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.buttonCorLinhaGridView);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.buttonCorTextoTextBox);
+            this.panel1.Controls.Add(this.corTextoPrimeiroPlano);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.corDeFundoPrimeiroPlano);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.buttonCorFundoComboBox);
+            this.panel1.Controls.Add(this.buttonCorTextBox);
+            this.panel1.Controls.Add(this.buttonCorTextoGridView);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.buttonCorTextoComboBox);
+            this.panel1.Controls.Add(this.buttonCorFundoGridView);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(8, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(244, 281);
+            this.panel1.TabIndex = 48;
+            // 
+            // buttonCorBarraSuperior
+            // 
+            this.buttonCorBarraSuperior.BackColor = System.Drawing.Color.White;
+            this.buttonCorBarraSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorBarraSuperior.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorBarraSuperior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorBarraSuperior.Location = new System.Drawing.Point(6, 222);
+            this.buttonCorBarraSuperior.Name = "buttonCorBarraSuperior";
+            this.buttonCorBarraSuperior.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorBarraSuperior.TabIndex = 48;
+            this.buttonCorBarraSuperior.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(29, 227);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "COR DA BARRA SUPERIOR";
+            // 
+            // buttonCorTextoBarraSuperior
+            // 
+            this.buttonCorTextoBarraSuperior.BackColor = System.Drawing.Color.White;
+            this.buttonCorTextoBarraSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorTextoBarraSuperior.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorTextoBarraSuperior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorTextoBarraSuperior.Location = new System.Drawing.Point(6, 246);
+            this.buttonCorTextoBarraSuperior.Name = "buttonCorTextoBarraSuperior";
+            this.buttonCorTextoBarraSuperior.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorTextoBarraSuperior.TabIndex = 50;
+            this.buttonCorTextoBarraSuperior.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(29, 251);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(205, 13);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "COR DO TEXTO DA BARRA SUPERIOR";
+            // 
             // FormConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,11 +653,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelPrincipal.ResumeLayout(false);
             this.groupBoxCoresSistema.ResumeLayout(false);
-            this.groupBoxCoresSistema.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBoxOS.ResumeLayout(false);
             this.groupBoxOS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoOS)).EndInit();
+            this.panelJanelaCustomizada.ResumeLayout(false);
+            this.panelJanelaCustomizada.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -579,7 +678,7 @@
         private System.Windows.Forms.Button buttonCorTextBox;
         private System.Windows.Forms.TextBox textBoxPersonalizado;
         private System.Windows.Forms.ColorDialog colorDialogSistema;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelTextBox;
         private System.Windows.Forms.Button buttonCorTextoTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -587,7 +686,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button corDeFundoPrimeiroPlano;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelComboBox;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Button buttonCorTextoComboBox;
         private System.Windows.Forms.Label label6;
@@ -597,14 +696,21 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonCorFundoGridView;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonSalvarTema;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelTabela;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cpf;
         private System.Windows.Forms.Button buttonCorLinhaGridView;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panelJanelaCustomizada;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonFecharCustomizado;
+        private System.Windows.Forms.Label labelBarraSuperior;
+        private System.Windows.Forms.Button buttonCorTextoBarraSuperior;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonCorBarraSuperior;
+        private System.Windows.Forms.Label label3;
     }
 }
