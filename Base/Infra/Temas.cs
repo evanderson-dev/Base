@@ -7,7 +7,7 @@ namespace Infra
     public static class Temas
     {
         public static Color corTemporaria;
-        public static Color corDeFundoPrimeiroPlano = Color.Gray;
+        public static Color corDeFundoPrimeiroPlano = Color.LightGray;
         public static Color corTextoPrimeiroPlano = Color.Black;
         public static Color corTextBoxFundo = Color.White;
         public static Color corTextBoxTexto = Color.Black;
@@ -18,6 +18,10 @@ namespace Infra
         public static Color corGridViewFundo = Color.White;
         public static Color corGridViewTexto = Color.Black;
         public static Color corGridViewLinhas = Color.Black;
+        public static Color corLabelSuperior = Color.Gray;
+        public static Color corLabelSuperiorTexto = Color.White;
+        public static Color corBotao = Color.White;
+        public static Color corBotaoTexto = Color.Black;
 
         public static void temaModoNorturno(Control controle)
         {
@@ -62,8 +66,9 @@ namespace Infra
             Color _maskedTextBoxTexto,
             Color _comboBoxFundo,
             Color _comboBoxTexto,
-            Color _dataGridViewFundo,
-            Color _dataGridViewTexto
+            Color _dataGridViewTexto,
+            Color _botaoFundo,
+            Color _botaoTexto
             )
         {
             controle.BackColor = _fundo;
@@ -86,19 +91,51 @@ namespace Infra
             }
             if (controle is DataGridView)
             {
-                controle.BackColor = _dataGridViewFundo;
                 controle.ForeColor = _dataGridViewTexto;
+            }
+            if (controle is Button)
+            {
+                controle.BackColor = _botaoFundo;
+                controle.ForeColor = _botaoTexto;
             }
             if (controle.HasChildren)
             {
                 foreach (Control controleFilho in controle.Controls)
                 {
-                    temaPersonalizado(controleFilho, _fundo, _texto, _texBoxFundo, _texBoxTexto, _maskedTextBoxFundo, _maskedTextBoxTexto, _comboBoxFundo, _comboBoxTexto, _dataGridViewFundo, _dataGridViewTexto);
+                    temaPersonalizado
+                    (
+                    controleFilho,
+                    _fundo,
+                    _texto,
+                    _texBoxFundo,
+                    _texBoxTexto,
+                    _maskedTextBoxFundo,
+                    _maskedTextBoxTexto,
+                    _comboBoxFundo,
+                    _comboBoxTexto,
+                    _dataGridViewTexto,
+                    _botaoFundo,
+                    _botaoTexto
+                    );
                     if (controleFilho.HasChildren)
                     {
                         foreach (Control controleFilhoDois in controleFilho.Controls)
                         {
-                            temaPersonalizado(controleFilhoDois, _fundo, _texto, _texBoxFundo, _texBoxTexto, _maskedTextBoxFundo, _maskedTextBoxTexto, _comboBoxFundo, _comboBoxTexto, _dataGridViewFundo, _dataGridViewTexto);
+                            temaPersonalizado
+                            (
+                            controleFilhoDois,
+                            _fundo,
+                            _texto,
+                            _texBoxFundo,
+                            _texBoxTexto,
+                            _maskedTextBoxFundo,
+                            _maskedTextBoxTexto,
+                            _comboBoxFundo,
+                            _comboBoxTexto,
+                            _dataGridViewTexto,
+                            _botaoFundo,
+                            _botaoTexto
+                            );
                         }
                     }
                 }

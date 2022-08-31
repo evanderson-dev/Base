@@ -18,14 +18,6 @@ namespace UIPrincipal
         {
             InitializeComponent();
             Logou = false;
-            if (UsuarioLogado.luzLigada)
-            {
-                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Temas.corMaskedTextBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corComboBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corGridViewFundo, Temas.corGridViewTexto);
-            }
-            else
-            {
-                Temas.temaModoNorturno(this);
-            }
         }
         private void buttonSair_Click(object sender, EventArgs e)
         {
@@ -101,10 +93,31 @@ namespace UIPrincipal
             toolTipServidor.SetToolTip(buttonAtualizar, "Atualizar Lista");
             if (UsuarioLogado.luzLigada)
             {
+                Temas.temaPersonalizado
+                (
+                this,
+                Temas.corDeFundoPrimeiroPlano,
+                Temas.corTextoPrimeiroPlano,
+                Temas.corTextBoxFundo,
+                Temas.corTextBoxTexto,
+                Temas.corMaskedTextBoxFundo,
+                Temas.corMaskedTextBoxTexto,
+                Temas.corComboBoxFundo,
+                Temas.corComboBoxTexto,
+                Temas.corGridViewTexto,
+                Temas.corBotao,
+                Temas.corBotaoTexto
+                );
                 toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Noturno");
+                buttonBlackWhite.Image = Properties.Resources.lightbulb;
+                buttonBlackWhite.BackColor = Temas.corDeFundoPrimeiroPlano;
+                buttonAddServidor.BackColor = Temas.corDeFundoPrimeiroPlano;
+                buttonAtualizar.BackColor = Temas.corDeFundoPrimeiroPlano;
+                buttonConfirmarServidor.BackColor = Temas.corDeFundoPrimeiroPlano;
             }
             else
             {
+                Temas.temaModoNorturno(this);
                 toolTipServidor.SetToolTip(buttonBlackWhite, "Desativar Modo Noturno");
             }
 
@@ -183,9 +196,27 @@ namespace UIPrincipal
             if (!UsuarioLogado.luzLigada)
             {
                 UsuarioLogado.luzLigada = true;
-                buttonBlackWhite.Image = Properties.Resources.lightbulb;
                 toolTipServidor.SetToolTip(buttonBlackWhite, "Ativar Modo Noturno");
-                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Temas.corMaskedTextBoxFundo, Temas.corMaskedTextBoxTexto, Temas.corComboBoxFundo, Temas.corComboBoxTexto, Temas.corGridViewFundo, Temas.corGridViewTexto);
+                Temas.temaPersonalizado
+                (
+                this,
+                Temas.corDeFundoPrimeiroPlano,
+                Temas.corTextoPrimeiroPlano,
+                Temas.corTextBoxFundo,
+                Temas.corTextBoxTexto,
+                Temas.corMaskedTextBoxFundo,
+                Temas.corMaskedTextBoxTexto,
+                Temas.corComboBoxFundo,
+                Temas.corMaskedTextBoxTexto,
+                Temas.corGridViewTexto,
+                Temas.corBotao,
+                Temas.corBotaoTexto
+                );
+                buttonBlackWhite.Image = Properties.Resources.lightbulb;
+                buttonBlackWhite.BackColor = Temas.corDeFundoPrimeiroPlano;
+                buttonAddServidor.BackColor = Temas.corDeFundoPrimeiroPlano;
+                buttonAtualizar.BackColor = Temas.corDeFundoPrimeiroPlano;
+                buttonConfirmarServidor.BackColor = Temas.corDeFundoPrimeiroPlano;
             }
             else
             {

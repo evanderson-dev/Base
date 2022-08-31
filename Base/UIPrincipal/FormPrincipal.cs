@@ -40,23 +40,7 @@ namespace UIPrincipal
 
         public FormPrincipal()
         {
-            InitializeComponent();
-            if (UsuarioLogado.luzLigada)
-            {
-                Temas.temaPersonalizado(this, Temas.corDeFundoPrimeiroPlano, Temas.corTextoPrimeiroPlano, Temas.corTextBoxFundo, Temas.corTextBoxTexto, Color.White, Color.Black, Color.White, Color.Black, Color.White, Color.Black);
-                for (int i = 0; i < menuStrip1.Items.Count; i++)
-                    menuStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
-                for (int i = 0; i < statusStrip1.Items.Count; i++)
-                    statusStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
-            }
-            else
-            {
-                Temas.temaModoNorturno(this);
-                for (int i = 0; i < menuStrip1.Items.Count; i++)
-                    menuStrip1.Items[i].ForeColor = Color.White;
-                for (int i = 0; i < statusStrip1.Items.Count; i++)
-                    statusStrip1.Items[i].ForeColor = Color.White;
-            }
+            InitializeComponent();            
         }
         
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,7 +65,6 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void buttonAbrirOS_Click(object sender, EventArgs e)
         {
             using (FormOrdemServico frm = new FormOrdemServico())
@@ -89,7 +72,6 @@ namespace UIPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             toolStripStatusLabelUsuario.Text = UsuarioLogado.NomeUsuario;
@@ -98,19 +80,44 @@ namespace UIPrincipal
             tabControlConsulta.TabPages.Remove(tabPageCadastrados);
             buttonFecharAba.Visible = false;
             toolTipTelaPrincipal.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
+
             if (UsuarioLogado.luzLigada)
             {
-                int row = dataGridViewOSAbertas.RowCount;
-                int col = dataGridViewOSAbertas.ColumnCount;
-                for (int j = 0; j < row; j++)
+                Temas.temaPersonalizado
+                (
+                this,
+                Temas.corDeFundoPrimeiroPlano,
+                Temas.corTextoPrimeiroPlano,
+                Temas.corTextBoxFundo,
+                Temas.corTextBoxTexto,
+                Temas.corMaskedTextBoxFundo,
+                Temas.corMaskedTextBoxTexto,
+                Temas.corComboBoxFundo,
+                Temas.corComboBoxTexto,
+                Temas.corGridViewTexto,
+                Temas.corBotao,
+                Temas.corBotaoTexto
+                );
+                for (int i = 0; i < menuStrip1.Items.Count; i++)
+                    menuStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
+                for (int i = 0; i < statusStrip1.Items.Count; i++)
+                    statusStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
+
+                for (int r = 0; r < dataGridViewOSAbertas.RowCount; r++)
                 {
-                    for (int i = 0; i < col; i++)
-                    {
-                        dataGridViewOSAbertas.Rows[j].Cells[i].Style.BackColor = Temas.corGridViewFundo;
-                    }
+                    for (int c = 0; c < dataGridViewOSAbertas.ColumnCount; c++)
+                        dataGridViewOSAbertas.Rows[r].Cells[c].Style.BackColor = Temas.corGridViewFundo;
                 }
-                dataGridViewOSAbertas.ForeColor = Temas.corGridViewTexto;
+                dataGridViewOSAbertas.BackgroundColor = Temas.corGridViewFundo;
                 dataGridViewOSAbertas.GridColor = Temas.corGridViewLinhas;
+            }
+            else
+            {
+                Temas.temaModoNorturno(this);
+                for (int i = 0; i < menuStrip1.Items.Count; i++)
+                    menuStrip1.Items[i].ForeColor = Color.White;
+                for (int i = 0; i < statusStrip1.Items.Count; i++)
+                    statusStrip1.Items[i].ForeColor = Color.White;
             }
         }
                 

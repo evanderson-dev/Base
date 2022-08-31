@@ -119,6 +119,9 @@ namespace UIPrincipal
             this.groupBoxSexo = new System.Windows.Forms.GroupBox();
             this.checkBoxMasculino = new System.Windows.Forms.CheckBox();
             this.checkBoxFeminino = new System.Windows.Forms.CheckBox();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.buttonFechar = new System.Windows.Forms.Button();
+            this.labelSuperior = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             labelSenha = new System.Windows.Forms.Label();
             labelSalario = new System.Windows.Forms.Label();
@@ -161,6 +164,7 @@ namespace UIPrincipal
             this.groupBoxSituacao.SuspendLayout();
             this.groupBoxDadosPessoais.SuspendLayout();
             this.groupBoxSexo.SuspendLayout();
+            this.panelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeUsuarioLabel
@@ -475,16 +479,17 @@ namespace UIPrincipal
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.BackColor = System.Drawing.Color.White;
+            this.buttonSalvar.BackColor = System.Drawing.Color.Black;
             this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSalvar.FlatAppearance.BorderSize = 0;
+            this.buttonSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(343, 568);
+            this.buttonSalvar.ForeColor = System.Drawing.Color.White;
+            this.buttonSalvar.Location = new System.Drawing.Point(344, 609);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(80, 22);
+            this.buttonSalvar.Size = new System.Drawing.Size(89, 22);
             this.buttonSalvar.TabIndex = 3;
             this.buttonSalvar.Text = "&SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = false;
@@ -506,16 +511,17 @@ namespace UIPrincipal
             // 
             // buttonCancelarCadastro
             // 
-            this.buttonCancelarCadastro.BackColor = System.Drawing.Color.White;
+            this.buttonCancelarCadastro.BackColor = System.Drawing.Color.Black;
             this.buttonCancelarCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancelarCadastro.FlatAppearance.BorderSize = 0;
+            this.buttonCancelarCadastro.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonCancelarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonCancelarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonCancelarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastro.Location = new System.Drawing.Point(429, 568);
+            this.buttonCancelarCadastro.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelarCadastro.Location = new System.Drawing.Point(439, 609);
             this.buttonCancelarCadastro.Name = "buttonCancelarCadastro";
-            this.buttonCancelarCadastro.Size = new System.Drawing.Size(80, 22);
+            this.buttonCancelarCadastro.Size = new System.Drawing.Size(89, 22);
             this.buttonCancelarCadastro.TabIndex = 5;
             this.buttonCancelarCadastro.Text = "&CANCELAR";
             this.buttonCancelarCadastro.UseVisualStyleBackColor = false;
@@ -549,7 +555,7 @@ namespace UIPrincipal
             this.groupBoxFuncionario.Controls.Add(this.groupBoxNivelFuncionario);
             this.groupBoxFuncionario.Controls.Add(this.groupBoxDadosDeAcesso);
             this.groupBoxFuncionario.ForeColor = System.Drawing.Color.White;
-            this.groupBoxFuncionario.Location = new System.Drawing.Point(9, 319);
+            this.groupBoxFuncionario.Location = new System.Drawing.Point(19, 360);
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
             this.groupBoxFuncionario.Size = new System.Drawing.Size(833, 176);
             this.groupBoxFuncionario.TabIndex = 1;
@@ -706,7 +712,7 @@ namespace UIPrincipal
             this.groupBoxDadosCliente.Controls.Add(labelPlano);
             this.groupBoxDadosCliente.Controls.Add(this.comboBoxPlanos);
             this.groupBoxDadosCliente.ForeColor = System.Drawing.Color.White;
-            this.groupBoxDadosCliente.Location = new System.Drawing.Point(9, 501);
+            this.groupBoxDadosCliente.Location = new System.Drawing.Point(19, 542);
             this.groupBoxDadosCliente.Name = "groupBoxDadosCliente";
             this.groupBoxDadosCliente.Size = new System.Drawing.Size(833, 59);
             this.groupBoxDadosCliente.TabIndex = 2;
@@ -751,7 +757,7 @@ namespace UIPrincipal
             this.labelIdPlano.BackColor = System.Drawing.Color.Transparent;
             this.labelIdPlano.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id_Plano", true));
             this.labelIdPlano.ForeColor = System.Drawing.Color.Black;
-            this.labelIdPlano.Location = new System.Drawing.Point(777, 571);
+            this.labelIdPlano.Location = new System.Drawing.Point(787, 612);
             this.labelIdPlano.Name = "labelIdPlano";
             this.labelIdPlano.Size = new System.Drawing.Size(65, 20);
             this.labelIdPlano.TabIndex = 40;
@@ -762,7 +768,7 @@ namespace UIPrincipal
             this.labelId_Permissao.BackColor = System.Drawing.Color.Transparent;
             this.labelId_Permissao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Id_Permissao", true));
             this.labelId_Permissao.ForeColor = System.Drawing.Color.Black;
-            this.labelId_Permissao.Location = new System.Drawing.Point(6, 571);
+            this.labelId_Permissao.Location = new System.Drawing.Point(16, 612);
             this.labelId_Permissao.Name = "labelId_Permissao";
             this.labelId_Permissao.Size = new System.Drawing.Size(65, 20);
             this.labelId_Permissao.TabIndex = 41;
@@ -1035,11 +1041,14 @@ namespace UIPrincipal
             // 
             // buttonAddFoto
             // 
-            this.buttonAddFoto.BackColor = System.Drawing.Color.White;
+            this.buttonAddFoto.BackColor = System.Drawing.Color.Black;
             this.buttonAddFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddFoto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddFoto.ForeColor = System.Drawing.Color.Black;
+            this.buttonAddFoto.ForeColor = System.Drawing.Color.White;
             this.buttonAddFoto.Location = new System.Drawing.Point(722, 165);
             this.buttonAddFoto.Name = "buttonAddFoto";
             this.buttonAddFoto.Size = new System.Drawing.Size(87, 23);
@@ -1105,7 +1114,7 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.Controls.Add(labelRua);
             this.groupBoxDadosPessoais.Controls.Add(this.textBoxRua);
             this.groupBoxDadosPessoais.ForeColor = System.Drawing.Color.White;
-            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(9, 12);
+            this.groupBoxDadosPessoais.Location = new System.Drawing.Point(19, 53);
             this.groupBoxDadosPessoais.Name = "groupBoxDadosPessoais";
             this.groupBoxDadosPessoais.Size = new System.Drawing.Size(833, 301);
             this.groupBoxDadosPessoais.TabIndex = 0;
@@ -1148,12 +1157,52 @@ namespace UIPrincipal
             this.checkBoxFeminino.UseVisualStyleBackColor = true;
             this.checkBoxFeminino.CheckedChanged += new System.EventHandler(this.checkBoxFeminino_CheckedChanged);
             // 
+            // panelPrincipal
+            // 
+            this.panelPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPrincipal.Controls.Add(this.buttonFechar);
+            this.panelPrincipal.Controls.Add(this.labelSuperior);
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(870, 639);
+            this.panelPrincipal.TabIndex = 42;
+            // 
+            // buttonFechar
+            // 
+            this.buttonFechar.BackColor = System.Drawing.Color.DimGray;
+            this.buttonFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonFechar.FlatAppearance.BorderSize = 0;
+            this.buttonFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFechar.Image = global::UIPrincipal.Properties.Resources.cancel;
+            this.buttonFechar.Location = new System.Drawing.Point(840, -1);
+            this.buttonFechar.Name = "buttonFechar";
+            this.buttonFechar.Size = new System.Drawing.Size(23, 23);
+            this.buttonFechar.TabIndex = 19;
+            this.buttonFechar.UseVisualStyleBackColor = false;
+            // 
+            // labelSuperior
+            // 
+            this.labelSuperior.BackColor = System.Drawing.Color.DimGray;
+            this.labelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSuperior.ForeColor = System.Drawing.Color.White;
+            this.labelSuperior.Location = new System.Drawing.Point(0, 0);
+            this.labelSuperior.Name = "labelSuperior";
+            this.labelSuperior.Size = new System.Drawing.Size(866, 23);
+            this.labelSuperior.TabIndex = 18;
+            this.labelSuperior.Text = "CADASTRO DE PESSOAS";
+            this.labelSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(854, 600);
+            this.ClientSize = new System.Drawing.Size(870, 639);
             this.Controls.Add(this.groupBoxFuncionario);
             this.Controls.Add(this.labelId_Permissao);
             this.Controls.Add(this.labelIdPlano);
@@ -1161,8 +1210,9 @@ namespace UIPrincipal
             this.Controls.Add(this.groupBoxDadosCliente);
             this.Controls.Add(this.buttonCancelarCadastro);
             this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.panelPrincipal);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroUsuario";
@@ -1189,6 +1239,7 @@ namespace UIPrincipal
             this.groupBoxDadosPessoais.PerformLayout();
             this.groupBoxSexo.ResumeLayout(false);
             this.groupBoxSexo.PerformLayout();
+            this.panelPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1251,6 +1302,9 @@ namespace UIPrincipal
         private System.Windows.Forms.CheckBox checkBoxMasculino;
         private System.Windows.Forms.CheckBox checkBoxFeminino;
         private System.Windows.Forms.Button buttonVisualizarSenha;
+        private System.Windows.Forms.Panel panelPrincipal;
+        private System.Windows.Forms.Label labelSuperior;
+        private System.Windows.Forms.Button buttonFechar;
     }
 }
 
