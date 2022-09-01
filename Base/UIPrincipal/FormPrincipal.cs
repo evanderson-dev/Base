@@ -80,23 +80,27 @@ namespace UIPrincipal
             tabControlConsulta.TabPages.Remove(tabPageCadastrados);
             buttonFecharAba.Visible = false;
             toolTipTelaPrincipal.SetToolTip(this.buttonBuscarCadastro, "Buscar O.S");
+            CarregarTema();
+        }
 
+        private void CarregarTema()
+        {
             if (UsuarioLogado.luzLigada)
             {
                 Temas.temaPersonalizado
                 (
-                this,
-                Temas.corDeFundoPrimeiroPlano,
-                Temas.corTextoPrimeiroPlano,
-                Temas.corTextBoxFundo,
-                Temas.corTextBoxTexto,
-                Temas.corMaskedTextBoxFundo,
-                Temas.corMaskedTextBoxTexto,
-                Temas.corComboBoxFundo,
-                Temas.corComboBoxTexto,
-                Temas.corGridViewTexto,
-                Temas.corBotao,
-                Temas.corBotaoTexto
+                    this,
+                    Temas.corDeFundoPrimeiroPlano,
+                    Temas.corTextoPrimeiroPlano,
+                    Temas.corTextBoxFundo,
+                    Temas.corTextBoxTexto,
+                    Temas.corMaskedTextBoxFundo,
+                    Temas.corMaskedTextBoxTexto,
+                    Temas.corComboBoxFundo,
+                    Temas.corComboBoxTexto,
+                    Temas.corGridViewTexto,
+                    Temas.corBotao,
+                    Temas.corBotaoTexto
                 );
                 for (int i = 0; i < menuStrip1.Items.Count; i++)
                     menuStrip1.Items[i].ForeColor = Temas.corTextoPrimeiroPlano;
@@ -110,6 +114,7 @@ namespace UIPrincipal
                 }
                 dataGridViewOSAbertas.BackgroundColor = Temas.corGridViewFundo;
                 dataGridViewOSAbertas.GridColor = Temas.corGridViewLinhas;
+                buttonBuscarCadastro.BackColor = Temas.corDeFundoPrimeiroPlano;
             }
             else
             {
@@ -120,7 +125,7 @@ namespace UIPrincipal
                     statusStrip1.Items[i].ForeColor = Color.White;
             }
         }
-                
+
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormLogin frmLogin = new FormLogin();
@@ -549,7 +554,8 @@ namespace UIPrincipal
         private void cONFIGURAÇÕESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormConfiguracoes frm = new FormConfiguracoes();
-            frm.Show();
+            frm.ShowDialog();
+            CarregarTema();
         }
     }
 }

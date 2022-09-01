@@ -17,7 +17,7 @@ namespace Infra
         public static Color corComboBoxTexto = Color.Black;
         public static Color corGridViewFundo = Color.White;
         public static Color corGridViewTexto = Color.Black;
-        public static Color corGridViewLinhas = Color.Black;
+        public static Color corGridViewLinhas = Color.LightGray;
         public static Color corLabelSuperior = Color.Gray;
         public static Color corLabelSuperiorTexto = Color.White;
         public static Color corBotao = Color.White;

@@ -26,6 +26,11 @@ namespace UIPrincipal
             toolTipConfiguracoes.SetToolTip(buttonDeleteLogo, "Deletar Logo");
             toolTipConfiguracoes.SetToolTip(buttonSalvarTema, "Salvar Tema");
             pictureBoxLogoOS.ImageLocation = Constante.DiretorioDeImagem + "\\logo.png";
+            CarregarTema();
+        }
+
+        private void CarregarTema()
+        {
             textBoxPersonalizado.BackColor = Temas.corTextBoxFundo;
             textBoxPersonalizado.Text = $"TEXTO: {Temas.corTextBoxTexto} FUNDO: {Temas.corTextBoxFundo}";
             corDeFundoPrimeiroPlano.BackColor = Temas.corDeFundoPrimeiroPlano;
@@ -56,7 +61,9 @@ namespace UIPrincipal
             labelTabela.ForeColor = Temas.corTextoPrimeiroPlano;
             labelSuperior.BackColor = Temas.corLabelSuperior;
             buttonFechar.BackColor = Temas.corLabelSuperior;
-            buttonFechar.ForeColor = Temas.corBotaoTexto;
+            buttonCorCustomizado.BackColor = Temas.corBotao;
+            buttonCorCustomizado.ForeColor = Temas.corBotaoTexto;
+            buttonCorTextoBotao.BackColor = Temas.corBotaoTexto;
         }
 
         private void buttonDeleteLogo_Click(object sender, EventArgs e)
@@ -196,6 +203,7 @@ namespace UIPrincipal
             Temas.corTemporaria = buttonCorBarraSuperior.BackColor;
             buttonCorBarraSuperior.BackColor = selecionarCor(sender, e);
             labelBarraSuperior.BackColor = buttonCorBarraSuperior.BackColor;
+            buttonFechar.BackColor = buttonCorBarraSuperior.BackColor;
         }
 
         private void buttonCorTextoBarraSuperior_Click(object sender, EventArgs e)
@@ -209,18 +217,16 @@ namespace UIPrincipal
         {// COR DOS BOTOES
             Temas.corTemporaria = buttonCorBotao.BackColor;
             buttonCorBotao.BackColor = selecionarCor(sender, e);
-            buttonCorCustomizado.BackColor = buttonCorBotao.BackColor;
-            buttonCorBotao.BackColor = buttonCorCustomizado.BackColor;
-            if (panelJanelaCustomizada.HasChildren)
-            {
-                foreach (Control controleFilho in panelJanelaCustomizada.Controls)
-                {
-                    if (controleFilho is Button)
-                    controleFilho.BackColor = buttonCorBotao.BackColor;
-                }
-            }
+            buttonCorCustomizado.BackColor = buttonCorBotao.BackColor;            
         }
 
+        private void buttonCorTextoBotao_Click(object sender, EventArgs e)
+        {
+            Temas.corTemporaria = buttonCorTextoBotao.BackColor;
+            buttonCorTextoBotao.BackColor = selecionarCor(sender, e);
+            buttonCorCustomizado.ForeColor = buttonCorTextoBotao.BackColor;
+            
+        }
         private void buttonSalvarTema_Click(object sender, EventArgs e)
         {
             if (MessageBoxCustomizada.Show("DESEJA SALVAR ESTE TEMA? ","",MessageBoxButtons.YesNo,"?") == DialogResult.Yes)
@@ -237,6 +243,7 @@ namespace UIPrincipal
                 Temas.corLabelSuperior = buttonCorBarraSuperior.BackColor;
                 Temas.corLabelSuperiorTexto = buttonCorTextoBarraSuperior.BackColor;
                 Temas.corBotao = buttonCorBotao.BackColor;
+                Temas.corBotaoTexto = buttonCorTextoBotao.BackColor;
                 MessageBoxCustomizada.Show("TEMA SALVO COM SUCESSO!");
             }
             else

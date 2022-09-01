@@ -32,6 +32,10 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.groupBoxCoresSistema = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCorTextoBotao = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buttonCorBotao = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.buttonCorTextoBarraSuperior = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonCorBarraSuperior = new System.Windows.Forms.Button();
@@ -55,6 +59,7 @@
             this.buttonCorFundoGridView = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panelJanelaCustomizada = new System.Windows.Forms.Panel();
+            this.buttonCorCustomizado = new System.Windows.Forms.Button();
             this.buttonFecharCustomizado = new System.Windows.Forms.Button();
             this.labelBarraSuperior = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -74,11 +79,6 @@
             this.buttonAddLogo = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.labelSuperior = new System.Windows.Forms.Label();
-            this.buttonCorTextoBotao = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.buttonCorBotao = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.buttonCorCustomizado = new System.Windows.Forms.Button();
             this.panelPrincipal.SuspendLayout();
             this.groupBoxCoresSistema.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -148,6 +148,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 327);
             this.panel1.TabIndex = 48;
+            // 
+            // buttonCorTextoBotao
+            // 
+            this.buttonCorTextoBotao.BackColor = System.Drawing.Color.White;
+            this.buttonCorTextoBotao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorTextoBotao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorTextoBotao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorTextoBotao.Location = new System.Drawing.Point(6, 294);
+            this.buttonCorTextoBotao.Name = "buttonCorTextoBotao";
+            this.buttonCorTextoBotao.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorTextoBotao.TabIndex = 54;
+            this.buttonCorTextoBotao.UseVisualStyleBackColor = false;
+            this.buttonCorTextoBotao.Click += new System.EventHandler(this.buttonCorTextoBotao_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(29, 299);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(161, 13);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "COR DO TEXTO DOS BOTOES";
+            // 
+            // buttonCorBotao
+            // 
+            this.buttonCorBotao.BackColor = System.Drawing.Color.White;
+            this.buttonCorBotao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCorBotao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCorBotao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorBotao.Location = new System.Drawing.Point(6, 270);
+            this.buttonCorBotao.Name = "buttonCorBotao";
+            this.buttonCorBotao.Size = new System.Drawing.Size(22, 23);
+            this.buttonCorBotao.TabIndex = 52;
+            this.buttonCorBotao.UseVisualStyleBackColor = false;
+            this.buttonCorBotao.Click += new System.EventHandler(this.buttonCorBotao_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(29, 275);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 13);
+            this.label12.TabIndex = 51;
+            this.label12.Text = "COR DOS BOTOES";
             // 
             // buttonCorTextoBarraSuperior
             // 
@@ -431,6 +479,17 @@
             this.panelJanelaCustomizada.Size = new System.Drawing.Size(473, 327);
             this.panelJanelaCustomizada.TabIndex = 47;
             // 
+            // buttonCorCustomizado
+            // 
+            this.buttonCorCustomizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCorCustomizado.ForeColor = System.Drawing.Color.Black;
+            this.buttonCorCustomizado.Location = new System.Drawing.Point(186, 275);
+            this.buttonCorCustomizado.Name = "buttonCorCustomizado";
+            this.buttonCorCustomizado.Size = new System.Drawing.Size(75, 23);
+            this.buttonCorCustomizado.TabIndex = 48;
+            this.buttonCorCustomizado.Text = "Botão";
+            this.buttonCorCustomizado.UseVisualStyleBackColor = true;
+            // 
             // buttonFecharCustomizado
             // 
             this.buttonFecharCustomizado.BackColor = System.Drawing.Color.Gray;
@@ -651,64 +710,6 @@
             this.labelSuperior.TabIndex = 17;
             this.labelSuperior.Text = "CONFIGURAÇÕES";
             this.labelSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // buttonCorTextoBotao
-            // 
-            this.buttonCorTextoBotao.BackColor = System.Drawing.Color.White;
-            this.buttonCorTextoBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorTextoBotao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCorTextoBotao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorTextoBotao.Location = new System.Drawing.Point(6, 294);
-            this.buttonCorTextoBotao.Name = "buttonCorTextoBotao";
-            this.buttonCorTextoBotao.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorTextoBotao.TabIndex = 54;
-            this.buttonCorTextoBotao.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(29, 299);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(161, 13);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "COR DO TEXTO DOS BOTOES";
-            // 
-            // buttonCorBotao
-            // 
-            this.buttonCorBotao.BackColor = System.Drawing.Color.White;
-            this.buttonCorBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCorBotao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCorBotao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorBotao.Location = new System.Drawing.Point(6, 270);
-            this.buttonCorBotao.Name = "buttonCorBotao";
-            this.buttonCorBotao.Size = new System.Drawing.Size(22, 23);
-            this.buttonCorBotao.TabIndex = 52;
-            this.buttonCorBotao.UseVisualStyleBackColor = false;
-            this.buttonCorBotao.Click += new System.EventHandler(this.buttonCorBotao_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(29, 275);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 13);
-            this.label12.TabIndex = 51;
-            this.label12.Text = "COR DOS BOTOES";
-            // 
-            // buttonCorCustomizado
-            // 
-            this.buttonCorCustomizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCorCustomizado.ForeColor = System.Drawing.Color.Black;
-            this.buttonCorCustomizado.Location = new System.Drawing.Point(186, 275);
-            this.buttonCorCustomizado.Name = "buttonCorCustomizado";
-            this.buttonCorCustomizado.Size = new System.Drawing.Size(75, 23);
-            this.buttonCorCustomizado.TabIndex = 48;
-            this.buttonCorCustomizado.Text = "Botão";
-            this.buttonCorCustomizado.UseVisualStyleBackColor = true;
             // 
             // FormConfiguracoes
             // 
